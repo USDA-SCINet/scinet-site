@@ -35,6 +35,7 @@ There are two ways to do this.
 ## To get started
 
 This site uses Jekyll - a ruby gem.  You will need Node.js and Ruby to use this repository locally.
+If you do not already have Ruby installed, you can use the Jekyll guide to get set up: https://jekyllrb.com/docs/
 
 Clone the repository, then run 'bundle install' and 'npm install' to get dependencies.
 
