@@ -1,0 +1,32 @@
+{% assign alert = include.alert %}
+
+{% case alert.type %}
+{% when "warning" %}
+{% assign typeclass = "usa-alert--warning" %}
+{% when "error" %}
+{% assign typeclass = "usa-alert--error" %}
+{% when "success" %}
+{% assign typeclass = "usa-alert--success" %}
+{% when "info" %}
+{% assign typeclass = "usa-alert--info" %}
+{% endcase %}
+
+<div
+    class="usa-alert {{ typeclass }} {% if alert.slim %} usa-alert--slim {% endif %} {% if alert.no_icon %} usa-alert--no-icon {% endif %}">
+
+    <div class="usa-alert__body">
+
+        {% if alert.heading %}
+        <h4 class="usa-alert__heading">{{ alert.heading }}</h4>
+        {% endif %}
+        <p class="usa-alert__text">
+            {% if alert.url %}
+            <a href="{{ alert.url }}">
+                {% endif %}
+                {{ alert.text }}
+                {% if alert.url %}
+            </a>
+            {% endif %}
+        </p>
+    </div>
+</div>

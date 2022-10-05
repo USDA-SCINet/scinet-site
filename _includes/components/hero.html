@@ -1,0 +1,41 @@
+{% if hero %}
+<section class="usa-hero" {% if hero.image %} style="background-image: url({{ hero.image | relative_url}})" {% else %} style="background-image: none"{% endif %}
+  aria-label="Introduction" ;>
+  <div class="grid-container {% unless hero.image %} full{% endunless %}">
+    <div class="usa-hero__callout">
+      {% if hero.callout %}
+      {% if hero.callout.image %}
+      <div class="grid-row">
+        <div class="desktop:grid-col-3 padding-2 hero-graphic">
+          {% include components/graphic-link.html graphic=hero.callout %}
+        </div>
+        <div class="desktop:grid-col-9">
+      {% endif %}
+          <h1 class="usa-hero__heading">
+            {% if hero.callout.alt %}
+            <span class="usa-hero__heading--alt">{{ hero.callout.alt }}</span>
+            <h3 class="text-primary-light">
+              {% endif %}
+              {{ hero.callout.text | default: hero.callout }}
+              {% if hero.callout.alt %}
+            </h3>
+            {% endif %}
+          </h1>
+          {% endif %}
+
+          {{ hero.content | markdownify }}
+
+          {% if hero.button %}
+          <a class="usa-button" href="{% if hero.button.external %}{{ hero.button.url }}{% else %}{{ hero.button.url | relative_url }}{% endif %}">
+            {{ hero.button.text }}
+          </a>
+
+      {% if hero.callout.img %}
+        </div>
+      </div>
+      {% endif %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}

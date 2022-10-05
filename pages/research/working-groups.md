@@ -1,0 +1,55 @@
+---
+title: SCINet Working Groups Overview
+description: summary of current working groups
+permalink: /research/working-groups
+author: 
+layout: nav
+
+ 
+# sidenav: Research
+subnav:
+  - title: Ag100Pest
+    url: /research/working-groups/ag100pest
+    internal: link
+  - title: Arthropod Genomics
+    url: /research/working-groups/arthropods
+    internal: link
+  - title: Geospatial Research
+    url: /research/working-groups/geospatial
+    internal: link
+  - title: Microbiome
+    url: /research/working-groups/microbiome
+    internal: link
+  - title: LTAR Phenology
+    url: /research/working-groups/LTARphenology
+    internal: link
+  - title: SCINet Policy Committee
+    url: /research/working-groups/policy
+    internal: link
+  - title: SCINet Website Developers
+    url: /research/working-groups/webdev
+    internal: link
+  - title: Workbook Developers
+    url: /research/working-groups/workbooks
+    internal: link
+  - title: Pollinator
+    url: /research/working-groups/pollinator
+    internal: link
+---
+
+The SCINet initiative contributes funding to various working groups that use SCINet computational resources for research. The funding is generally used to convene in-person group workshops. There are also two working groups that develop SCINet learning/training materials.
+
+
+The current working groups are:
+* [Ag100Pest Initiative (subgroup of AGR)]({{ site.baseurl }}/research/working-groups/ag100pest)
+* [Arthropod Genomics Research (AGR) Working Group]({{ site.baseurl }}/research/working-groups/arthropods)
+* [Geospatial Research Working Group]({{ site.baseurl }}/research/working-groups/geospatial)
+* [Microbiome Working Group]({{ site.baseurl }}/research/working-groups/microbiome)
+* [Pollinator Working Group]({{ site.baseurl }}/research/working-groups/pollinator)
+* [SCINet-Longterm Agroecosystem Research (LTAR) Phenology Working Group]({{ site.baseurl }}/research/working-groups/LTARphenology)
+* [SCINet Policy Committee]({{ site.baseurl }}/research/working-groups/policy)
+* [SCINet Website Developers]({{ site.baseurl }}/research/working-groups/webdev)
+* [Workbook Developers]({{ site.baseurl }}/research/working-groups/workbooks)
+
+<br>
+

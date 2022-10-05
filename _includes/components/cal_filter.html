@@ -1,0 +1,142 @@
+{% assign formid = pagetitle | prepend: "form-" %}
+{% assign typeid = formid | prepend: "type-" %}
+{% assign providerid = formid | prepend: "provider-" %}
+{% assign topicsid = formid | prepend: "topics-" %}
+{% assign yearid = formid | prepend: "year-" %}
+{% assign monthid = formid | prepend: "month-" %}
+{% assign buttonid = formid | prepend: "button-" %}
+<div class="usa-card">
+    <div class="usa-card__container bg-base-lighter maxw-tablet" id="{{ formid }}">
+        <div class="usa-card__header">
+            <h2 class="usa-card__heading">Filter Events</h2>
+        </div>
+        <div class="usa-card__body grid-row tablet-lg:grid-gap-2">
+            <div class="tablet-lg:grid-col-6 ">
+                <label class="usa-label" for="{{ typeid }}">Event Type:</label>
+                <div class="usa-combo-box">
+                    <select class="usa-select" name="{{ typeid }}" id="{{ typeid }}">
+                        <option value>Filter Events by Type</option>
+                        {% for type in types %}
+                        <option value="{{ type }}">{{ type | capitalize }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="tablet-lg:grid-col-6 ">
+                <label class="usa-label" for="{{ providerid }}">Event Provider:</label>
+                <div class="usa-combo-box">
+                    <select class="usa-select" name="{{ providerid }}" id="{{ providerid }}">
+                        <option value>Filter Events by Provider</option>
+                        {% for provider in providers %}
+                        <option value="{{ provider }}">{{ provider }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="usa-card__body grid-row tablet-lg:grid-gap-2">
+            <div class="tablet-lg:grid-col">
+                <label class="usa-label" for="{{ topicsid }}">Topics:</label>
+                <div class="usa-combo-box">
+                    <select class="usa-select" name="{{ topicsid }}" id="{{ topicsid }}">
+                        <option value>Filter Events by Topics</option>
+                        {% for tag in tags %}
+                        <option value="{{ tag }}">{{ tag | upcase }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="usa-card__footer grid-row">
+            <button type="button" class="usa-button grid-col-3" id="{{ buttonid }}">Filter</button>
+            <div id="current-filters" class="current-filters grid-col margin-x-2 text-right"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    const sub = document.getElementById("{{ buttonid }}");
+    sub.onclick = function () {
+        console.log("clicked");
+        var types = document.getElementById("{{ typeid }}");
+        var providers = document.getElementById("{{ providerid }}");
+        var topics = document.getElementById("{{ topicsid }}");
+
+        let type = types.value.toLowerCase(),
+            provider = providers.value.toLowerCase(),
+            topic = topics.value.toLowerCase();
+
+        filterList(type, provider, topic);
+    };
+
+    function filterList(type, provider, topic) {
+
+        var mylist = document.getElementsByClassName("{{ cal_id }}");
+
+        for (var i = 0; i < mylist.length; i++) {
+            if (mylist[i].classList.contains("no-display")) { }
+            else mylist[i].classList.add("no-display");
+
+            let thistype = mylist[i].getAttribute('type'),
+                thisinstruct = mylist[i].getAttribute('instructor'),
+                thistopic = mylist[i].getAttribute('tagged');
+
+            if (thistype.toLowerCase().includes(type) && thisinstruct.toLowerCase().includes(provider) && thistopic.toLowerCase().includes(topic)) {
+                mylist[i].classList.remove("no-display")
+            }
+        }
+
+
+        console.log(type, provider, topic);
+
+        var mylist = formatText(type, provider, topic);
+        document.getElementById("current-filters").innerHTML = mylist;
+    };
+
+    function format(val) {
+        if (val == null) {
+            return ""
+        } else {
+            return val.toString().toLowerCase()
+        }
+    };
+
+    function formatText(type, provider, topic) {
+        var mylist = [],
+            current = '';
+        if (type == "" && provider == "" && topic == "") {
+            return "";
+        } else {
+            current = '<b>Current Filters: </b>';
+            if (type != "") {
+                mylist.push(type.toUpperCase())
+            };
+            if (provider != "") {
+                mylist.push(provider.toUpperCase())
+            };
+            if (topic != "") {
+                mylist.push(topic.toUpperCase())
+            };
+
+            return current+mylist.join(", ");
+        }
+
+}
+
+    function setValue(id, newvalue) {
+        var s = document.getElementById(id);
+        s.value = newvalue;
+    };
+
+    window.onload = function () {
+        var queryString = window.location.search,
+            urlParams = new URLSearchParams(queryString),
+            load_type = format(urlParams.get('type')),
+            load_prov = format(urlParams.get('provider')),
+            load_topic = format(urlParams.get('topic'));
+
+        console.log(load_type, load_prov, load_topic);
+        filterList(load_type, load_prov, load_topic);
+    }
+</script>

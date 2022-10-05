@@ -1,0 +1,12 @@
+{% assign graphic = include.graphic %}
+{% if graphic.image.link %}
+<a href="{{ graphic.image.link | relative_url }}">
+  {% endif %}
+  {% include {{ graphic.image.src | prepend: 'svg' }} %}
+  <div class="usa-media-block__body">
+    {% if graphic.title %}<h2 class="usa-graphic-list__heading no-decor">{{ graphic.title }}</h2>{% endif %}
+    <span class="no-decor">{{ graphic.description | markdownify }}</span>
+  </div>
+  {% if graphic.image.link %}
+</a>
+{% endif %}

@@ -1,0 +1,33 @@
+{% assign summary = include.summary %}
+<div class="usa-summary-box" role="region" aria-labelledby="summary-box-key-information">
+  <div class="usa-summary-box__body">
+    {% if summary.header %}
+    <h3 class="usa-summary-box__heading" id="summary-box-key-information">
+      {{ summary.header }}
+    </h3>
+    {% endif %}
+    <div class="usa-summary-box__text">
+      {% if summary.text %}
+      {{ summary.text }}
+      {% endif %}
+      {% if summary.list %}
+      <ul>
+        {% for _point in summary.list %}
+        <li>{{ _point.point }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% if summary.buttons %}
+      <div class="grid-row margin-top-2">
+        {% for _button in summary.buttons %}
+        <div class="grid-col display-flex flex-column flex-align-center">
+        <a class="usa-button" href="{{ _button.url | relative_url }}">
+          {{ _button.text }}
+        </a>
+      </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+{% assign card = include.card %}
+
+<li class="usa-card {{ classes }} {% if card.url %}featured_posts{% endif %}">
+    {% if card.url %}
+    <a href="{% if card.external %}{{ card.url }}{% else %}{{ card.url | relative_url }}{% endif %}">
+        {% endif %}
+      <div class="usa-card__container">
+      <div class="usa-card__header">
+        <h2 class="usa-card__heading">{{ card.title }}</h2>
+      </div>
+      {% if card.feature-img-src %}
+      <div class="usa-card__media">
+        <div class="usa-card__img padding-05    feature_img">
+          <img class="maxh-card" src="{{ card.feature-img-src | relative_url }}" alt="{{ card.feature-img-alt }}" />
+        </div>
+      </div>
+      {% endif %}
+      <div class="usa-card__body">
+        <p>
+          {{ card.excerpt }}
+        </p>
+      </div>
+    </div>
+    {% if card.url %}
+    </a>
+    {% endif %}
+  </li>

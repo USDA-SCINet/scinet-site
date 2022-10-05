@@ -1,0 +1,182 @@
+title: "SCINet | USDA Scientific Computing Initiative"
+description: SCINet is a USDA initiative to provide agricultural scientists access to high performance computing, networking and training
+
+# GitHub information
+# This is used for adding an edit this page link to the footer
+github:
+  organization: USDA-SCINet
+  repository: scinet-site
+  default_branch: main
+
+baseurl: /scinet-site
+url: "https://USDA-SCINet.github.io"
+
+# Configure a separator for post excerpts
+excerpt_separator: "<!--end-excerpt-->"
+
+# Configuration for setting the site width to 100%
+# To enable, uncomment the following line
+# site_width: wide
+site_width: 90%
+
+
+# Configuration for Google Analytics, add your UA code here:
+# google_analytics_ua: UA-????????-??
+
+# Configuration for DAP, add your agency ID here:
+dap_agency: USDA
+dap_subagency: ARS
+
+# Uncomment to enable AnchorJS functionality on docs layout.
+# See https://github.com/bryanbraun/anchorjs for more information.
+anchor_js_targets: [h1, h2, h3, h4, h5, h6]
+
+# Enables Private Eye functionality.
+# See https://github.com/18F/private-eye for more information.
+# Private Eye configuration is in assets/js/main.js
+# private_eye: true
+
+# To enable search, uncomment the search section
+# You will need to setup a search account with search.gov
+# https://search.usa.gov/signup
+# Your search_site_handle value is from the search.gov settings page.
+
+# Your search_site_handle value is from the search.gov settings page.
+search_site_handle: scinet-usda
+
+# touchpoints_form_id:
+
+# Configuration for projects and team collections
+# See https://jekyllrb.com/docs/collections/ for more information about collections.
+collections_dir: sn_collections
+collections:
+  announcements:
+    output: true
+    permalink: /:collection/:path
+  downtime:
+    output: true
+    future: true
+    permalink: /:collection/:path
+  events:
+    output: true
+    future: true
+    permalink: /:collection/:path
+  posts:
+    output: true
+    permalink: /:collection/:path
+  workshops:
+    output: true
+    future: true
+    permalink: /:collection/:path
+  guides:
+    output: true
+    permalink: /:collection/:categories
+  guidesection:
+    output: true
+    permalink: /guides/:categories/:name
+# collections:
+#   projects:
+#     output: true
+#   team:
+#     output: true
+
+defaults:
+  - 
+    scope:
+      path: ""
+      type: "events"
+    values:
+      future: "show"
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "downtime"
+    values:
+      future: "show"
+      layout: "post"
+      categories: [Downtime]
+  -
+    scope:
+      path: ""
+      type: "announcements"
+    values:
+      future: "show"
+      layout: "post"
+      categories: [Announcements]
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - 
+    scope:
+      path: ""
+      type: "workshops"
+    values:
+      future: "show"
+      layout: "nav"
+      layout_type: "workshop"
+  - 
+    scope:
+      path: ""
+      type: "guides"
+    values:
+      layout: "guides"
+      layout_type: "guides"
+      sidenav_link: /guide/start
+      class: "border-top-05 bg-base-lightest"
+  - 
+    scope:
+      path: ""
+      type: "guidesection"
+    values:
+      layout: "nav"
+      layout_type: "guides"
+      sidenav_link: /guide/start
+
+# allow posts with dates in the future to be published now
+future: true
+
+# Compress Sass
+sass:
+  style: compressed
+
+# Add code blocks to text
+highlighter: rouge
+
+plugins:
+  - jekyll-last-modified-at
+  - jekyll-sitemap
+
+# https://designsystem.digital.gov/documentation/developers/#sass-compilation-requirements
+autoprefixer:
+  browsers:
+    - "> 2%"
+    - last 2 versions
+    - IE 11
+    - not dead
+
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - package.json
+  - gulpfile.js

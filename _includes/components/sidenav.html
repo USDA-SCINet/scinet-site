@@ -1,0 +1,33 @@
+{% assign link = include.link %}
+
+{% if alt_nav %}
+    {% assign _href = link.url %}
+    {% if forloop.first and alt_nav == 'Workshop' %}
+        {% assign _title = "Workshop Home" %}
+    {% else %}
+        {% assign _title = link.title %}
+    {% endif %}
+{% else %}
+    {% assign _href = link.url %}
+    {% assign _title = link.title %}
+{% endif %}
+
+{% assign _current = false %}
+{% if _href == page.url or _href == page.permalink %}
+{% assign _current = true %}
+{% endif %}
+<li class="usa-sidenav__item">
+    <a href="{% if link.external == true %}{{ _href }}{% else %}{{ _href | relative_url }}{% endif %}" {% if
+        _current %} class="usa-current" {% endif %} {% if link.class %}class="{{ link.class }}" {% endif %}>
+        {{ _title }}
+    </a>
+    {% if _current and page.subnav %}
+    <ul class="usa-sidenav__sublist">
+        {% include components/subnav.html links=page.subnav %}
+        {% if page.guidegroup.all %}
+        {% assign allguides = site.guides %}
+            {% include components/subnav.html links=allguides %}
+        {% endif %}
+    </ul>
+    {% endif %}
+</li>

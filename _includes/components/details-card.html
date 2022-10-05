@@ -1,0 +1,17 @@
+{% assign option = include.option %}
+
+<li class="tablet:grid-col-6 featured_posts margin-y-1">
+    <a href="{% if option.external %}{{ option.url }}{% else %}{{ option.url | relative_url }}{% endif %}">
+        <div class="usa-card__container display-flex flex-row padding-2">
+            {% if option.image %}
+            <svg class="usa-icon icon-card" aria-hidden="true" focusable="false" role="img">
+                <use xlink:href="assets/uswds/img/sprite.svg#{{ option.image }}"></use>
+            </svg>
+            {% endif %}
+            <div class="overflow-hidden desktop:grid-col-fill {% if option.image %}margin-left-1{% endif %}">
+                <h3 class="arrow margin-0">{{ option.title }}</h3>
+                <p class="margin-0">{% if option.excerpt %}{{ option.excerpt }}{% else %}{{ option.text }}{% endif %}</p>
+            </div>
+        </div>
+    </a>
+</li>

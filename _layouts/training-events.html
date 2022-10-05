@@ -1,0 +1,54 @@
+---
+layout: nav
+title: Training and Events
+main:
+  class: usa-layout-docs usa-layout-docs__main usa-prose 
+---
+
+
+  {{content}}
+  
+{% assign post_type = 'calendar' %}
+
+{% if page.type == "future" %}
+  {% assign all_events = site.events | where: 'future', 'show' %}
+
+  {% assign timeint = site.time | date: "%Y%m%d" | plus: 0 %}
+  {% assign myevents = all_events | where_exp: "post", "post.date >= site.time or post.end_date >= timeint" %}
+  {% assign flow = 'normal' %}
+
+{% elsif page.type == "archive" %}
+  {% assign myevents = site.events | where_exp: "post", "post.date < site.time" %}
+  {% assign flow = 'reverse' %}
+
+{% else %}
+  {% assign myevents = site.events %}
+  {% assign flow = 'reverse' %}
+{% endif %}
+
+
+{% assign tags = myevents | map: 'tags' | uniq %}
+{% assign types = myevents | map: 'type' | uniq %}
+{% assign providers = myevents | map: 'provider' | uniq %}
+{% assign sort_list = true %}
+
+{% assign pagetitle = page.title | slugify %}
+  
+{% assign cal_id = pagetitle | prepend: "cal-" %}
+
+{% include components/cal_filter.html %}
+
+<ul class="usa-list usa-list--unstyled">
+{% if flow == 'normal' %}
+  {% for post in myevents %}
+    {% include components/collection.html %}
+  {% endfor %}
+{% else %}
+  {% for post in myevents reversed %}
+    {% include components/collection.html %}
+  {% endfor %}
+{% endif %}
+</ul>
+
+
+<br>

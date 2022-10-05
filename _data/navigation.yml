@@ -1,0 +1,190 @@
+# This is the configuration for the site navigation.
+
+sidenav-breakpoint: 'desktop'
+
+# This file defines the structure of various named navigational
+# listings, any of which can be used (with some caveats) as the
+# links in your header, footer, and per-page side navigation.
+#
+# For instance, if you have a "primary" navigation list here, you
+# can use that as your header's primary navigation by setting
+# `primary.links` to "primary":
+#
+# primary:
+#   links: primary
+#
+primary:
+  - title: Home
+    url: /
+  - title: About
+    links:
+      - title: Sign up for an account
+        url: /about/signup
+      - title: Computer Systems
+        url: /about/compute
+#     - title: Networking
+#       url: /about/networking
+      - title: Organization
+        url: /about/organization
+      - title: Contact
+        url: /about/contact
+  - title: News
+    links:
+      - title: System Downtime
+        url: /news/downtime
+      - title: Announcements
+        url: /news/announcements
+      - title: User Stories
+        url: /news/stories
+      - title: Newsletter
+        url: /news/newsletter
+      - title: SCINet-X
+        url: /news/scinet-x
+  - title: User Guides
+    links:
+      - title: Quick Start
+        url: /guide/start
+      - title: Software and Storage
+        url: /guide/tools
+      - title: All User Guides
+        url: /guides
+  - title: Research
+    sublinks: true
+    links:
+      - title: Overview
+        url: /research/overview
+      - title: Working Groups
+        url: /research/working-groups
+        sublinks:
+        - title: Ag100Pest
+          url: /research/working-groups/ag100pest
+        - title: Arthropod Genomics
+          url: /research/working-groups/arthropods
+        - title: Geospatial Research
+          url: /research/working-groups/geospatial
+        - title: Microbiome
+          url: /research/working-groups/microbiome
+        - title: LTAR Phenology
+          url: /research/working-groups/LTARphenology
+        - title: SCINet Policy Committee
+          url: /research/working-groups/policy
+        - title: SCINet Website Developers
+          url: /research/working-groups/webdev
+        - title: Workbook Developers
+          url: /research/working-groups/workbooks
+        - title: Pollinator
+          url: /research/working-groups/pollinator
+      - title: Use Cases
+        url: /research/uses
+        sublinks:
+        - title: Genomics
+          url: /research/uses/genomics
+        - title: Plant breeding
+          url: /research/uses/plant-breeding
+        - title: Geospatial
+          url: /research/uses/geospatial
+        - title: Hydrology
+          url: /research/uses/hydrology
+      
+  - title: Training and Events
+    links:
+#     - title: Overview
+#       url: /training/overview
+#     - title: ARS Science Tutorials
+#       url: /training/tutorials/
+      - title: Learning Pathway
+        url: /training/learningpath
+      - title: Free Online Training
+        url: /training/free-online-training
+#     - title: Videos
+#       url: /training/video/
+      - title: Upcoming Events
+        url: /events/upcoming
+      - title: Event Archive
+        url: /events/archive
+      - title: Bioinformatics Workbook
+        url: /training/bioinformatics-workbook
+#     - title: Useful Links
+#       url: /training/useful-links
+      - title: Coursera
+        url: /training/coursera
+  - title: Support
+    links:
+      - title: Virtual Research Support Core (VSRC)
+        url: /support/vrsc
+      - title: FAQ's
+        url: /support/faq
+      - title: USDA-ARS SCINet Forum
+        url: https://forum.scinet.usda.gov
+      - title: Request Project Storage
+        url: /support/request-storage
+      - title: Request Software
+        url: /support/request-software
+      - title: Request AWS
+        url: /support/request-AWS
+      - title: Ceres Job Script Generator
+        url: /support/ceres-job-script
+  - title: Opportunities
+    links:
+      - title: SAC Membership
+        url: /opportunities/SAC
+      - title: Request a Workshop
+        url: /opportunities/request-workshop
+      - title: Fellowships (PhD & MS)
+        url: /opportunities/fellowships
+      - title: AI Innovation Fund
+        url: /opportunities/ai-innovation
+      - title: SCINet and AI-COE fellowship proposals
+        url: /opportunities/scinet-aicoe-fellowships
+#      - title: Open Positions
+#        url: /opportunities/open_positions
+
+
+
+footer:
+  - title: RESOURCES
+    links: 
+    - title: Feedback
+      url: mailto:scinet_vrsc@usda.gov
+      external: true
+    - title: Sign Up
+      url: /about/signup
+    - title: Contact
+      url: /about/contact
+    - title: Fellowships
+      url: /opportunities/postdocs
+  - title: USDA
+    links:
+    - title: AskUSDA
+      url: https://ask.usda.gov/
+      external: true
+    - title: USDA.gov
+      url: https://usda.gov/
+      external: true
+    - title: USA.gov
+      url: https://www.usa.gov
+      external: true
+    - title: WhiteHouse.gov
+      url: https://www.whitehouse.gov
+      external: true
+    - title: Plain Writing
+      url: https://usda.gov/plain-writing
+      external: true
+  - title: LEGAL
+    links:
+    - title: Accessibility Statement
+      url: https://usda.gov/accessibility-statement
+      external: true
+    - title: Non-Discrimination Statement
+      url: https://usda.gov/non-discrimination-statement
+      external: true
+    - title: Privacy Policy
+      url: https://usda.gov/privacy-policy
+      external: true
+    - title: FOIA
+      url: https://www.dm.usda.gov/foia/
+      external: true
+    - title: Information Quality
+      url: https://www.ocio.usda.gov/policy-directives-records-forms/information-quality-activities
+      external: true
+

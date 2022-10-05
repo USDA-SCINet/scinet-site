@@ -1,0 +1,10 @@
+{% assign graphics = include.graphics %}
+{% if graphics %}
+    <div class="grid-row grid-gap">
+    {% for graphic in graphics %}
+      <div class="usa-media-block maxw-mobile graphic-link">
+        {% include components/graphic-link.html graphic=graphic %}
+      </div>
+    {% endfor %}
+    </div>
+{% endif %}

@@ -1,0 +1,136 @@
+---
+layout: default
+main:
+class:
+---
+
+<div class="grid-row sci-container" aria-label="Getting Started and Event Calendar">
+
+    <div class="grid-row width-full">
+
+        <div class="desktop:grid-col-auto flex-sci-card" aria-label="Getting Started">
+            {% include sci-card.html highlight = page.intro %}
+        </div>
+        <div class="desktop:grid-col-fill" aria-label="Calendar">
+            <div class="home-block">
+
+                {% assign featured_cal = site.events | where: 'future', 'show' %}
+                {% assign timeint = site.time | date: "%Y%m%d" | plus: 0 %}
+
+                {% assign filtered_posts = featured_cal | where_exp: "post", "post.date >= site.time or post.end_date >= timeint" %}
+
+                {% assign pnum = filtered_posts | size %}
+                {% if pnum == 0 %}
+                <div class="width-full padding-4 text-center">
+                    <h3 class="site-preview-heading">{{ page.alt_calendar.title }}</h3>
+                    <div><p>{{ page.alt_calendar.text }}</p>
+                        <a class="usa-button margin-y-2" href="{{ page.alt_calendar.url }}">
+                            {{ page.alt_calendar.link }}
+                        </a>
+                    </div>
+                    <ul class="usa-card-group margin-y-4 maxw-tablet margin-x-auto flex-align-center">
+                        {% assign alt_buttons = page.alt_calendar.buttons %}
+                        {% for _button in alt_buttons %}
+                            {% include components/details-card.html option= _button %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% else %}
+                <div class="width-full padding-2">
+                    <h3 class="site-preview-heading">{{ page.calendar.title }}</h3>
+                    <ul class="usa-list usa-list--unstyled">
+                        {% for post in filtered_posts limit:3 %}
+                        {% assign post_type = 'calendar' %}
+                        {% include components/collection.html %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="right-button padding-x-2">
+                    <a class="usa-button margin-x-auto margin-y-2" href=" {{ page.calendar.url | relative_url }}">
+                        {{ page.calendar.button }}
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-row usa-section--dark margin-bottom-4" aria-label="Forum">
+    <div class="sci-container  grid-container margin-y-2 text-center">
+        <a class="usa-button usa-button--big usa-button--outline usa-button--inverse width-full"
+            href=" {{ page.forum.url }}">
+            {{ page.forum.title }}
+        </a>
+    </div>
+</div>
+<div class="grid-row bg-primary-lighter" aria-label="News">
+    <div class="grid-container sci-container" aria-label="Featured Stories">
+
+        {% if page.featured %}
+        {% assign featured_main = site.posts | where: 'featured', 'home' %}
+        <section class="padding-y-4">
+            <h2 class="top-header">{{ page.featured.title }}</h2>
+            <div class="home-block">
+                <ul class="usa-card-group">
+
+                    {% for post in featured_main limit:3 %}
+
+                    {% include feature.html %}
+
+                    {% endfor %}
+
+                </ul>
+                <div class="right-button">
+                    <a class="usa-button" href="{{ page.featured.button-href | relative_url }}">
+                        {{ page.featured.button-text }}
+                    </a>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+    </div>
+</div>
+
+{% if page.support %}
+<div class="grid-row" aria-label="Support and Research">
+    <div class="grid-container sci-container">
+        <section class="padding-y-4">
+            <h2>{{ page.support.title }}</h2>
+            <div class="home-block">
+                <ul class="usa-card-group margin-bottom-2">
+                    {% for _option in page.support.options %}
+
+                    {% include components/details-card.html option=_option %}
+
+                    {% endfor %}
+                </ul>
+                <div class="right-button">
+                    <a class="usa-button" href="{{ page.support.url | relative_url }}">
+                        {{ page.support.button }}
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{% endif %}
+
+<div class="grid-row usa-section--dark" aria-label="Use Cases">
+    <div class="grid-container sci-container">
+        <section class="padding-y-4">
+            <h2>{{ page.usecases.title }}</h2>
+            <div class="home-block {% if page.icons %} graphic-links {% endif %} grid-container">
+                {% include graphic-links.html graphics=page.usecases.icons %}
+            </div>
+        </section>
+        <!--SCINet funded Research fellowship opportunities-->
+    </div>
+</div>
+<div class="grid-row sci-container">
+    <!--Support-->
+</div>
+<div class="grid-row">
+    <div class="tablet:grid-col">
+        {{ content }}
+    </div>
+</div>

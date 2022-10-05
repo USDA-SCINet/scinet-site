@@ -1,0 +1,17 @@
+{% assign highlight = include.highlight %}
+{% if highlight %}
+<div class="sci-card usa-section--light2">
+    <div class="sci-flex" aria-label="About">
+        <div class="text-center" >
+            <h1 class="sn-page-title">{{ highlight.blurb.title }}</h1>
+            <p class="sn-text-intro">{{ highlight.blurb.text }}</p>
+        </div>
+    </div>
+    {% if highlight.card %}
+    <div class="sci-flex" aria-label="Get Started">
+        {% include components/select-card.html card=highlight.card %}
+    </div>
+    {% endif %}
+
+</div>
+{% endif %}

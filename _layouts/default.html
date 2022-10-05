@@ -1,0 +1,78 @@
+---
+main: foo, bar, qaz
+scripts: /assets/js/external.js
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en-US' }}">
+
+<head>
+  {% include meta.html %}
+  {% include styles.html %}
+  {% if site.google_analytics_ua or site.dap_agency %}
+  {% include analytics.html %}
+  {% endif %}
+  <script>0</script>
+</head>
+
+<body class="{% if site.site_width %}site-{{ site.site_width }}{% endif %}">
+
+  {% include skipnav.html %}
+  {% include header.html %}
+
+  {% if page.layout == 'scinet_home' or  page.layout == 'workshop' %}
+  <main id="main-content" {% for _attr in layout.main %} {{ _attr[0] }}="{{ _attr[1] }}" {% endfor %}>
+    {% endif %}
+
+    {% if page.alerts %}
+    <section class="grid-container">
+    {% for _alert in page.alerts %}
+    {% include alert.html alert=_alert %}
+    {% endfor %}
+    </section>
+    {% endif %}
+
+
+    {% assign hero = page.hero %}
+    {% include components/hero.html %}
+
+    {% if page.tagline and page.intro %}
+    <section class="grid-container usa-section">
+      <div class="grid-row grid-gap">
+        <div class="tablet:grid-col-4">
+          <h2 class="font-heading-xl margin-top-0 tablet:margin-bottom-0">{{ page.tagline }}</h2>
+        </div>
+        <div class="tablet:grid-col-8 usa-prose">
+          {{ page.intro | markdownify }}
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    {% capture _graphics %}
+    {% include graphic-list.html graphics=page.graphics %}
+    {% endcapture %}
+
+    {% if page.graphics_position != 'after' %}
+    {{ _graphics }}
+    {% endif %}
+
+
+    {{ content }}
+    <br>
+
+    {% if page.graphics_position == 'after' %}
+    {{ _graphics }}
+    {% endif %}
+
+  {% if page.layout == 'scinet_home' or  page.layout == 'workshop' %}
+  </main>
+  {% endif %}
+
+  {% include footer.html %}
+
+  {% include scripts.html %}
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+---
+layout: page
+main:
+class: usa-grid usa-content usa-layout-docs maxw-tablet margin-x-auto
+---
+
+
+
+
+
+
+{% capture header %}
+{% if page.author %}By: {{ page.author }} | {% elsif page.lead %}Lead: {{ page.lead }} | {% endif %}
+{{ page.date | date: "%m/%d/%Y" }}
+{% if page.end_date %} - {{ page.end_date | date: "%m/%d/%Y" }}{% endif %}
+{% endcapture %}
+
+<h3>{{ header }}</h3>
+
+
+{{ content }}

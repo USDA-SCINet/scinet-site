@@ -1,0 +1,113 @@
+---
+layout: default
+main:
+  class: usa-layout-docs usa-layout-docs__main usa-prose 
+---
+
+
+<div class="grid-container main-side">
+
+
+  {% if page.sidenav_link %}
+    {% assign pagelink = page.sidenav_link %}
+  {% else %}
+    {% assign pagelink = page.permalink %}
+  {% endif %}
+
+
+  {% if page.layout_type == 'workshop' %}
+
+    {% assign alt_nav = "Workshop" %}
+
+    {% assign allevents = site.events | where: 'future', 'show' %}
+    {% assign allworkshops = site.workshops | where: 'future', 'show' %}
+    {% assign all_posts = allevents | concat: allworkshops %}
+
+    {% assign myset = all_posts | where_exp: "post", "post.categories == page.categories" %}
+
+    {% assign bc_sidenav = myset %}
+  
+  {% else %}
+    {% assign header = site.data.header %}
+    {% assign _primary = header.primary.links %}
+      {% assign primary_links = site.data.navigation[_primary] | default: _primary %}
+      {% if primary_links %}
+        {% for _section in primary_links %}
+          {% unless _section.url == pagelink %} 
+            {% if _section.links %}
+                {% assign section_links = site.data.navigation[_section.links] | default: _section.links %}
+                {% for _link in section_links %}
+                    {% if _link.url == pagelink %} 
+                        {% assign bc_section = _section %}
+                        {% assign bc_sidenav = section_links %}
+                    {% else %}
+                        {% if _section.sublinks %}
+                        {% assign link_sublinks = site.data.navigation[_link.sublinks] | default: _link.sublinks %}
+                          {% for _sublink in link_sublinks %}
+                            {% if _sublink.url == pagelink %} 
+                                {% assign bc_section = _section %}
+                                {% assign bc_sectionlink = _link %}
+                                {% assign bc_sidenav = link_sublinks %}
+                            {% endif %}
+                          {% endfor %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+          {% endunless %}
+        {% endfor %}
+      {% endif %}
+  {% endif %}
+
+  {% if page.layout_type == 'guides' %}
+
+    {% assign alt_nav = page.categories %}
+
+    {% assign allguides = site.guides %}
+    {% assign allsections = site.guidesection %}
+    {% assign all_posts = allguides | concat: allsections %}
+
+    {% assign breadcrumb_set = all_posts | where_exp: "post", "post.categories == page.categories" %}
+
+    {% if bc_sidenav %}
+      {% assign bc_sidenav = bc_sidenav | concat: breadcrumb_set %}
+    {% else %}
+      {% assign bc_sidenav = breadcrumb_set %}
+    {% endif %}
+
+  {% endif %}
+
+{% if page.sidenav_other %}
+    {% assign sidenav = site.data.navigation[page.sidenav_other] | default: sidenav %}
+{% else %}
+    {% assign sidenav = bc_sidenav %}
+{% endif %}
+
+{% if page.sidenav_append %}
+  {% assign sidenav = sidenav | concat: page.sidenav_append %}
+{% endif %}
+
+
+
+<div class="grid-row grid-gap flex-align-start">
+    <div class="usa-layout-docs__sidenav desktop:grid-col-3 desktop:padding-y-9{% unless page.sidenav %} usa-sticky-sidenav{% endunless %}">
+        {% include sidenav.html links=sidenav %}
+    </div>
+    
+    <main class="{{ layout.main.class }}{% if sidenav %} desktop:grid-col-9{% endif %}" id="main-content">
+        {% if bc_sectionlink or alt_nav %}{% include breadcrumb.html %}{% else %}<nav class="usa-breadcrumb usa-breadcrumb--wrap"><div class="padding-y-2"></div></nav>{% endif %}
+        {% unless page.hide-title %}
+        {% if page.title %}
+            <h1 class="top-header">{{ page.title }}</h1>
+        {% endif %}
+        {% endunless %}
+
+        {% if page.summarybox %}
+          {% include components/summary.html summary=page.summarybox %}
+        {% endif %}
+        {{ content }}
+        <br>
+    </main>
+</div>
+</div>
+

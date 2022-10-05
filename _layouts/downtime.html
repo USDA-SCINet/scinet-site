@@ -1,0 +1,95 @@
+---
+layout: nav
+title: Downtime
+main:
+  class: usa-layout-docs usa-layout-docs__main usa-prose 
+---
+
+    {{content}}
+
+    {% if page.type == "future" %}
+    {% assign all_downtime = site.downtime | where: 'future', 'show' %}
+    {% assign dis_posts = all_downtime | where_exp: "post", "post.date >= site.time" %}
+    {% assign post_type = 'calendar' %}
+    {% assign table_title = "SCINet Future Scheduled Outages" %}
+    {% elsif page.type == "archive" %}
+    {% assign dis_posts = site.downtime | where_exp: "post", "post.date < site.time" %} 
+    {% assign reverse = true %} 
+    {% else %} 
+    {% assign dis_posts = site.downtime %} 
+    {% assign reverse = true %} 
+    {% endif %} 
+
+    <br>
+    {% assign pnum = dis_posts | size %}
+    {% if pnum == 0 %}
+
+    
+    <h5>There are no planned outages to display at this time.</h5>
+    
+    {% else %}
+
+    {% if page.show_table %}
+
+    <div class="usa-table-container--scrollable" tabindex="0">
+    <table class="usa-table usa-table--striped">
+        <caption>
+            {{ table_title | default: "SciNet Outages" }}
+        </caption>
+        <thead>
+            <tr>
+                <th data-sortable scope="col" role="columnheader">Date</th>
+                <th scope="col" role="columnheader">Time</th>
+                <th data-sortable scope="col" role="columnheader">System</th>
+                <th data-sortable scope="col" role="columnheader">Affected Locations</th>
+                <th data-sortable scope="col" role="columnheader">Reason</th>
+            </tr>
+
+        </thead>
+        {% for post in dis_posts %}
+        {% assign postdate = post.date | date: "%m/%d/%Y" %}
+        {% if post.end_date %}
+        <script>console.log("{{ postdate }}")</script>
+            {% assign date_str = post.end_date | append: "" %}
+            {% assign yr = date_str | slice: 0, 4 %}
+            {% assign mon = date_str | slice: 4, 2 %}
+            {% assign day = date_str | slice: 6, 2 %}
+            {% assign end_date = mon | append: '/' | append: day | append: '/' | append: yr %}
+
+            {% assign post_date = postdate | append: ' - ' | append: end_date %}
+        {% else %}
+        {% assign post_date = postdate %}
+        {% endif %}
+        {% assign post_date_val = post.date | date: "%Y%m%d" | plus: 0 %}
+        <tr>
+            <td scope="row" data-sort-value="{{ post_date_val }}">{{ post_date }}</td>
+            <td>{{ post.outage.time }}</td>
+            <td data-sort-value="{{ post.outage.systems }}">{{ post.outage.systems }}</td>
+            <td data-sort-value="{{ post.outage.locations }}">{{ post.outage.locations }}</td>
+            <td>{{ post.outage.reason }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="usa-sr-only usa-table__announcement-region" aria-live="polite"></div>
+</div>
+
+    <p></p>
+
+    <h5>Further detail for each outage is posted in the announcements below if availible.</h5>
+    {% endif %}
+
+    <ul class="usa-list usa-list--unstyled">
+    {% if reverse %}
+    {% for post in dis_posts reversed %}
+    {% include components/collection.html %}
+    {% endfor %}
+    {% else %}
+    {% for post in dis_posts %}
+    {% include components/collection.html %}
+    {% endfor %}
+    {% endif %}
+    </ul>
+
+    {% endif %}
+
+    <br>

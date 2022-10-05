@@ -1,0 +1,22 @@
+{% for link in include.links %}
+{% if link.layout %}
+<li>
+  <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
+</li>
+{% elsif link.subnav %}
+<li>
+  <a href="{% if link.internal %}{{ link.url | relative_url }}{% else %}{{ link.url }}{% endif %}" {% if link.class
+    %}class="{{ link.class }}" {% endif %}>
+    {{ link.title }}
+  </a>
+  <ul class="usa-sidenav__sublist">
+    {% include components/subnav.html links=link.subnav %}
+  </ul>
+</li>
+{% else %}
+<li>
+  <a href="{% if link.internal %}{{ link.url | relative_url }}{% else %}{{ link.url }}{% endif %}" {% if link.class %}
+    class="{{ link.class }}" {% endif %}>{{ link.title }}</a>
+</li>
+{% endif %}
+{% endfor %}

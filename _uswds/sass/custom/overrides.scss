@@ -1,0 +1,19 @@
+@mixin top-header {
+    margin-top: .5em !important;
+}
+
+@mixin m-top-0 {
+    margin-top: 0 !important;
+}
+
+@mixin no-display {
+    display: none !important;
+ }
+
+ @mixin max-tablet {
+    max-width: 40em !important;
+ }
+
+ @mixin pad-05 {
+   padding: .5em !important;
+}

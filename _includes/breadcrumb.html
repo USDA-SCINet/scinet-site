@@ -1,0 +1,37 @@
+<nav class="usa-breadcrumb usa-breadcrumb--wrap" aria-label="Breadcrumbs">
+  <ol class="usa-breadcrumb__list">
+    {% if page.layout_type == 'guides' %}
+      {% include components/breadcrumb.html title='All User Guides' url='/guides' %}
+    {% else %}
+    <li class="usa-breadcrumb__list-item">
+      <a href="{{ site.baseurl }}/" class="usa-breadcrumb__link"><span>{% if alt_nav %}Site Home{% else %}Home{% endif
+          %}</span></a>
+    </li>
+    {% endif %}
+
+    {% if alt_nav %}
+      {% if breadcrumb_set %}
+        {% assign sidenav = breadcrumb_set %}
+      {% endif %}
+      {% for _link in sidenav limit:1 %}
+        {% unless _link.url == page.url or _link.url == page.permalink %}
+          {% capture linktitle %}{% if alt_nav == 'Workshop' %}{{ alt_nav }} Home{% else %}{{ _link.title }}{% endif %}{% endcapture %}
+          {% include components/breadcrumb.html title=linktitle url=_link.url %}
+        {% endunless %}
+      {% endfor %}
+    {% else %}
+
+    {% if bc_section %}
+      {% include components/breadcrumb.html title=bc_section.title url=bc_section.url %}
+    {% endif %}
+    {% if bc_sectionlink %}
+      {% include components/breadcrumb.html title=bc_sectionlink.title url=bc_sectionlink.url %}
+    {% endif %}
+    {% endif %}
+
+
+    <li class="usa-breadcrumb__list-item usa-current" aria-current="page">
+      <span>{{ page.title }}</span>
+    </li>
+  </ol>
+</nav>

@@ -1,0 +1,103 @@
+/*
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+========================================
+========================================
+========================================
+----------------------------------------
+USWDS THEME CUSTOM STYLES
+----------------------------------------
+!! Copy this file to your project's
+   sass root. Don't edit the version
+   in node_modules.
+----------------------------------------
+Custom project SASS goes here.
+
+i.e.
+@include u-padding-right('05');
+----------------------------------------
+*/
+
+@use "uswds-core" as *;
+
+//theme sizes
+ 
+.sci-container {
+   @include u-maxw('desktop-lg');
+   @include u-margin-x('auto');
+}
+
+
+.usa-header + .usa-hero {
+   border-top: 0;
+ }
+ 
+//side nav formatting
+.main-side {
+  @include u-maxw('desktop-lg');
+}
+
+//code block scroll
+pre { 
+   @include u-padding-left(1); 
+   overflow-x: auto; 
+}
+
+//hero adjustments
+
+.usa-hero__callout {
+
+   @include at-media("tablet") {
+      max-width: units("tablet");
+   }
+}
+
+.full {
+   .usa-hero__callout {
+      @include at-media($theme-header-min-width) {
+         max-width: units($theme-header-min-width);
+      }
+   }
+   .hero-graphic{
+      @include at-media-max($theme-header-min-width) {
+         @include u-display('none') 
+      }
+   }
+}
+
+.usa-hero {
+   @include u-bg('primary');
+   .usa-hero__callout {
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+         @if variable-exists(hero-header) {
+            color: color("white");
+         }
+      }
+   }
+}
+
+//temp footer test
+
+.usa-footer__secondary-link {
+   text-align: left;
+}
+
+.footer-mr {
+   @include u-padding-y(3);
+}
+
+.usa-footer__secondary-link a {
+   text-decoration: none;
+
+   &:hover {
+      text-decoration: underline;
+   }
+}

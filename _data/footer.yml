@@ -1,0 +1,67 @@
+# This is the configuration for the site footer.
+
+# Configuration for type of footer.
+# Footer types can be 'slim', 'default', or 'big'.
+# https://designsystem.digital.gov/components/footers/
+type: usda
+# Configuration for "Return to top" link.
+# Customize with 'title' and 'href' properties.
+# Comment out to the following section to hide.
+top:
+  title: Return to top
+  url: "#"
+
+# Configuration for "Edit this page" link in the footer.
+# Customize with 'title' property.
+# Uncomment the following lines to show.
+#edit_page:
+#  text: Edit this page
+
+# Configuration for "Last updated" date and time.
+# Uncomment the following line to show.
+last_updated: true
+
+# Configuration for which links show at the top of the footer.
+# this is a key into _data/navigation.yml
+links: footer
+
+# Configuration for the big footer's email sign-up form.
+# Set to true to make the form visible.
+# Hooking it up to send the data somewhere is up to you :)
+big_footer_signup_form: false
+
+# Configuration for footer heading. (optional)
+heading: USDA Agricultural Research Service
+
+# Configuration for agency logo(s) (shown side by side).
+# If the logo is external add external: true
+logos: false
+  #- src: {{ site.baseurl }}/assets/img/usda-symbol-rgb-color.svg
+  #  alt: USDA-ARS
+  #  external: false
+
+# Configuration for footer contact links
+contact:
+  # Configuration for social media links
+  # Comment out links you don't want to use (RSS is an example)
+  - title: Twitter
+    url: https://twitter.com/USDA_ARS
+    external: true
+    type: twitter
+  - title: Contact VRSC
+    url: mailto:scinet_vrsc@usda.gov
+    external: true
+    type: mail
+  #  - title: YouTube
+  #    url: https://youtube.com
+  #    external: true
+  #    type: youtube
+  # - title: RSS Feed
+  #   url: https://usa.gov/
+  #   external: true
+  #   type: rss
+# heading: Contact us
+# Configuration for contact links for email, phone, etc...
+# contact_links:
+#    - title: scinet_vrsc@usda.gov
+#      url: mailto:scinet_vrsc@usda.gov

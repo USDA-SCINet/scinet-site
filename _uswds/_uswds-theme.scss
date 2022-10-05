@@ -1,0 +1,44 @@
+/*
+----------------------------------------
+USWDS with settings overrides
+----------------------------------------
+Uncomment the following lines and add a list of changed settings
+in the form $setting: value,
+----------------------------------------
+*/
+
+//
+@use "uswds-core" with (
+  $theme-image-path: "../uswds/img",
+  $theme-font-path: "../uswds/fonts",
+  $theme-show-compile-warnings: true,
+  $theme-banner-max-width: "none",
+  $theme-utility-breakpoints: ("card": true,
+    "card-lg": true,
+    "mobile": true,
+    "mobile-lg": true,
+    "tablet": true,
+    "tablet-lg": true,
+    "desktop": true,
+    "desktop-lg": true,
+    "widescreen": true
+    ),
+    $theme-font-type-sans: "open-sans",
+    $theme-global-paragraph-styles: true,
+    $theme-text-measure: 6,
+    $theme-site-margins-width:          6,
+    $theme-site-margins-mobile-width:   2,
+    $theme-site-margins-breakpoint: 'tablet'
+    );
+
+
+// Add white color
+$theme-white: #FFFFFF;
+
+.back-white {
+  background-color: $theme-white;
+}
+
+.white-txt {
+  color: $theme-white;
+}

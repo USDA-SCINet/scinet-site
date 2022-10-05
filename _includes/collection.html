@@ -1,0 +1,19 @@
+{% assign post = include.post %}
+
+{% if post.categories contains page.title or post.type contains page.posttype or post.categories == page.categories %}
+  {% if no-year %}
+    {% if forloop.first %}<ul>{% endif %}
+    {% include components/collection.html %}
+    {% if forloop.last %}</ul>{% endif %}
+  {% else %}
+    {% assign currentdate = post.date | date: "%Y" %}
+    {% if currentdate != date %}
+      {% unless forloop.first %}</ul>{% endunless %}
+      <h2 id="y{{post.date | date: "%Y"}}">{{ currentdate }}</h2>
+      <ul>
+      {% assign date = currentdate %}
+    {% endif %}
+    {% include components/collection.html %}
+  {% if forloop.last %}</ul>{% endif %}
+{% endif %}
+{% endif %}
