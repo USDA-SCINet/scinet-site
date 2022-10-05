@@ -26,13 +26,15 @@ There are two ways to do this.
 
 ## Edit online in Github
 1. get a GitHub account if you don't have one
-2. go to the scinet repository: https://github.com/USDA-ARS-GBRU/scinet-site and navigate to your file and click the pencil. this will "fork the archive for you".
+2. go to the scinet repository: https://github.com/USDA-SCINet/scinet-site and navigate to your file and click the pencil. this will "fork the archive for you".
 3 edit it and say what you did in the comment box and click "propose file change"
 
 
 # Using this repository locally
 
 ## To get started
+
+This site uses Jekyll - a ruby gem.  You will need Node.js and Ruby to use this repository locally.
 
 Clone the repository, then run 'bundle install' and 'npm install' to get dependencies.
 
