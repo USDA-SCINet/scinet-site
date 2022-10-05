@@ -100,7 +100,6 @@ DEPENDENCIES
   html-proofer
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.2.2)
-  jekyll-feed (~> 0.12)
   jekyll-last-modified-at
   jekyll-sitemap
   json
