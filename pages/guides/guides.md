@@ -3,6 +3,7 @@ title: SCINet Guides List
 description: A guide to the SCINet guides
 permalink: /guides
 layout: guides
+layout_type: guides
 
 alerts:
   - alert:
@@ -17,10 +18,7 @@ alerts:
 guidegroup:
   all: true
 
-subnav:
-  - title: SCINet Guides List
-    url: /guides
-    internal: true
+
 
 ---
 

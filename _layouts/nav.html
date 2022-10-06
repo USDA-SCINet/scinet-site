@@ -65,6 +65,11 @@ main:
 
     {% assign allguides = site.guides %}
     {% assign allsections = site.guidesection %}
+
+    {% if page.sorted %}
+      {% assign allsections = allsections | sort: 'order_number' %}
+    {% endif %}
+
     {% assign all_posts = allguides | concat: allsections %}
 
     {% assign breadcrumb_set = all_posts | where_exp: "post", "post.categories == page.categories" %}
