@@ -1,11 +1,9 @@
 ---
 title: FAQ's
 description: Frequently asked Questions
-permalink: /support/faq/
+permalink: /support/faq
 author: VRSC
 layout: nav
-
- 
 
 subnav:
   - title: General Information
@@ -24,71 +22,13 @@ subnav:
     url: '#parallel-computing'
   - title: Technical Issues
     url: '#technical-issues'
-  - title: All FAQs
-    url: '#all-faqs'
-
-
-
 
 
 ---
 
-## FAQs by Topic
-### General Information
-[What is the difference between Ceres and SCINet?](#what-is-the-difference-between-ceres-and-scinet)<br>
-[Who is eligible for a SCINet account?](#who-is-eligible-for-a-scinet-account)<br>
-[How do I find documentation on Ceres and SCINet?](#how-do-i-find-documentation-on-ceres-and-scinet)<br>
-[How much does a Ceres account cost?](#how-much-does-a-ceres-account-cost)<br>
-[How much does Amazon Web Services (AWS) cost?](#how-much-does-amazon-web-services-aws-cost)<br>
-[Who manages SCINet?](#who-manages-scinet)<br>
-[Who can I contact for help using SCINet?](#who-can-i-contact-for-help-using-scinet)<br>
-[How do I use Basecamp?](#how-do-i-use-basecamp) <br>
-[How do I acknowledge SCINet in my publications?](#how-do-i-acknowledge-scinet-in-my-publications)
 
-### Accounts & Login
-[How do I get an account (I am an ARS employee)?](#how-do-i-get-an-account-i-am-an-ars-employee)<br>
-[How do I get an account for non-ARS collaborators, students, or postdocs?](#how-do-i-get-an-account-for-non-ars-collaborators-students-or-postdocs)<br>
-[How do I reactivate my account?](#how-do-i-reactivate-my-account)<br>
-[How do I reset or change my password?](#how-do-i-reset-or-change-my-password)<br>
-[What are the SCINet password requirements?](#what-are-the-scinet-password-requirements)<br>
-[How do I login to Ceres?](#how-do-i-login-to-ceres)<br>
-[I took my onboarding a long time ago, how do I get a refresher course?](#i-took-my-onboarding-a-long-time-ago-how-do-i-get-a-refresher-course)<br>
-
-### Software
-[What software is available on SCINet?](#what-software-is-available-on-scinet)<br>
-[How do I request software to be loaded onto Ceres?](#how-do-i-request-software-to-be-loaded-onto-ceres)<br>
-[How do I install my own software programs?](#how-do-i-install-my-own-software-programs)<br>
-[How do I compile software?](#how-do-i-compile-software)<br>
-[What is Galaxy?](#what-is-galaxy)<br>
-[How do I login to SCINet Galaxy?](#how-do-i-login-to-scinet-galaxy)<br>
-[How do I request software to be loaded onto SCINet Galaxy?](#how-do-i-request-software-to-be-loaded-onto-scinet-galaxy)<br>
-
-### Storage Space
-[How much data can I store on Ceres?](#how-much-data-can-i-store-on-ceres)<br>
-[How do I request an increase in storage space?](#how-do-i-request-an-increase-in-storage-space)<br>
-[How do I request access to a project directory?](#how-do-i-request-access-to-a-project-directory)<br>
-
-### Data Transfer
-[How do I get my data onto and off of Ceres?](#how-do-i-get-my-data-onto-and-off-of-ceres)<br>
-[How do I get my data onto Ceres via SCINet Galaxy?](#how-do-i-get-my-data-onto-ceres-via-scinet-galaxy)<br>
-
-### Support, Policy, O&M
-[What is the Virtual Research Support Core (VRSC)?](#what-is-the-virtual-research-support-core-vrsc)<br>
-[How do I contact the VRSC for assistance?](#how-do-i-contact-the-vrsc-for-assistance)<br>
-[Who is the SCINet program manager?](#who-is-the-scinet-program-manager)<br>
-[What is the Scientific Advisory Committee (SAC)?](#what-is-the-scientific-advisory-committee-sac)<br>
-
-### Parallel Computing
-[How do I write a batch script to submit a compute job?](#how-do-i-write-a-batch-script-to-submit-a-compute-job)<br>
-[How do I compile MPI codes?](#how-do-i-compile-mpi-codes)<br>
-
-### Technical Issues
-[My terminal window keeps freezing. Is there something I can do to stop this?](#my-terminal-window-keeps-freezing-is-there-something-i-can-do-to-stop-this)<br>
-[I log in at the command line but the system keeps logging me out. Is there something I can do to stop this?](#i-log-in-at-the-command-line-but-the-system-keeps-logging-me-out-is-there-something-i-can-do-to-stop-this)<br>
-
-<br><br>
-## All FAQs
-
+## General Information
+---
 ### What is the difference between Ceres and SCINet?
 SCINet is a high-speed network connecting equipment like compute servers, data transfer nodes, scientific instruments, and workstations. Ceres is a high-performance compute cluster at the Ames location that is accessible to all SCINet users.
 
@@ -123,6 +63,9 @@ Add the following sentence as an acknowledgment for using SCINet/Ceres as a reso
 
 “This research used resources provided by the SCINet project and the AI Center of Excellence of the USDA Agricultural Research Service, ARS project number 0500-00093-001-00-D.”
 
+
+## Accounts & Login
+---
 ### How do I get an account (I am an ARS employee)?
 Please fill out the [SCINet Account Request Form](https://scinet.usda.gov/about/signup). The request will be forwarded to your supervisor for approval. You may want to notify your supervisor so they are aware of the incoming email that requires a response. Once your supervisor has granted approval, an account will be created for you and you will receive an email from the Virtual Research Support Core (VRSC) with logon information.
 
@@ -165,6 +108,9 @@ Command line access is available via Secure Shell (SSH) and Virtual Private Netw
 ### I took my onboarding a long time ago, how do I get a refresher course?
 Email the VRSC scinet_vrsc@usda.gov for a time and day. You can also read the [Ceres Quick Start]({{ site.baseurl }}/guide/quickstart) or [Ceres User Guide]({{ site.baseurl }}/guide/ceres/).
 
+
+## Software
+---
 ### What software is available on SCINet?
 See the Ceres [Software Overview]({{ site.baseurl }}/guide/software) for a list of available software. You can also login to Ceres or Atlas and issue the command “module avail” to see the same list of available software modules.
 
@@ -194,6 +140,9 @@ Go to [galaxy.scinet.usda.gov](https://galaxy.scinet.usda.gov/). Enter your emai
 ### How do I request software to be loaded onto SCINet Galaxy?
 Please submit software install request at https://e.arsnet.usda.gov/sites/OCIO/scinet/Pages/SCINet-New-Application.aspx and check next to Galaxy Application.
 
+
+## Storage Space
+---
 ### How much data can I store on Ceres?
 Each user is allowed 5GB of data in the home directory. 
 
@@ -209,12 +158,18 @@ Please fill out an application form at [Request Project Storage]({{ site.baseurl
 ### How do I request access to a project directory?
 Only project directory managers can request access to their project space for other users. 
 
+
+## Data Transfer
+---
 ### How do I get my data onto and off of Ceres?
 SCP, SFTP, lftp (to/from Box accounts) Globus, and hard drive shipment are supported. This is described in the [File Transfers section of the Ceres User Guide]({{ site.baseurl }}/guide/ceres/#file-transfers). If you work near Beltsville, you may also use the SCINet lab located at the National Agricultural Library (NAL). Two computers with 10GB Internet2 SCINet connections are available.
 
 ### How do I get my data onto Ceres via SCINet Galaxy?
 See [Getting Started with Galaxy on Ceres]({{ site.baseurl }}/guide/galaxy).
 
+
+## Support, Policy, O&M
+---
 ### What is the Virtual Research Support Core (VRSC)?
 The Virtual Research Support Core is a team of Iowa State University and ARS personnel who manage the maintenance and operation of the Ceres HPC system and provide user support. See the [Virtual Research Support Core page]({{ site.baseurl }}/support/vrsc/) and [How do I contact the VRSC for assistance?](#how-do-i-contact-the-vrsc-for-assistance) for more details.
 
@@ -239,6 +194,9 @@ The Scientific Advisory Committee is composed of ARS scientists across all the f
 
 There is a call for new SAC members every spring. If you would like serve on the SAC, please discuss your interest with your supervisor and email the SAC Chair. Current SAC members can be found on the [SCINet Organization page]({{ site.baseurl }}/about/organization/).
 
+
+## Parallel Computing
+---
 ### How do I write a batch script to submit a compute job?
 Please use the [Ceres job script generator](https://scinet.usda.gov/support/ceres-job-script). The [Atlas user guide](https://www.hpc.msstate.edu/computing/atlas/) provides similar generator for the Atlas cluster.
 
@@ -256,6 +214,9 @@ The table below summarizes the relevant GNU compiler names and command line flag
  | C            | gcc          | mpicc   | gcc -fopenmp          | mpicc -fopenmp
  | C++        | g++          | mpicxx  | g++ -fopenmp          | mpicxx -fopenmp
 
+
+## Technical Issues
+---
 ### My terminal window keeps freezing. Is there something I can do to stop this?
 As a result of the current networking infrastructure, working at the command line can be difficult sometimes because displaying hundreds of lines freezes the display. The solution to this is to enable SSH compression. There are a few different ways to do ssh using compression: do  ```ssh -C```  from the command line; or instead of ssh in Putty, click on SSH on the left, then check Enable Compression In Unix; or alter your ~/.ssh/config file to contain these lines:
 

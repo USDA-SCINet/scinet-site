@@ -21,13 +21,17 @@
         _current %} class="usa-current" {% endif %} {% if link.class %}class="{{ link.class }}" {% endif %}>
         {{ _title }}
     </a>
-    {% if _current and page.subnav %}
+    {% if _current %}
+    {% if page.guidegroup.all or page.subnav %}
     <ul class="usa-sidenav__sublist">
-        {% include components/subnav.html links=page.subnav %}
+        {% if page.subnav %}
+            {% include components/subnav.html links=page.subnav %}
+        {% endif %}
         {% if page.guidegroup.all %}
-        {% assign allguides = site.guides %}
+        {% assign allguides  = site.guides | sort: 'order_number' %}
             {% include components/subnav.html links=allguides %}
         {% endif %}
     </ul>
+    {% endif %}
     {% endif %}
 </li>

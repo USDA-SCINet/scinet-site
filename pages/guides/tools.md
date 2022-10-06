@@ -30,4 +30,4 @@ alerts:
 ---
 
 
-**Use the navgation options to find SCINet tools**
+**Use the navgation options or select one of the guides below to find SCINet tools**
