@@ -24,4 +24,4 @@ subnav:
 
 ---
 
-**Use the navgation options to explore our guides to using SCINet**
+**Use the navgation options or select one of the guides below**
