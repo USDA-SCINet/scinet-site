@@ -26,7 +26,7 @@ Ceres is one of the HPC systems (located in Iowa) connected to the SCINet infras
 
 Atlas is the more recently added HPC system 
 
-For more information on the HPC systems that SCINet offers, see the [Computer Systems page.](/about/compute)
+For more information on the HPC systems that SCINet offers, see the [Computer Systems page.]({{ site.baseurl }}/about/compute)
 
 ## Open OnDemand
 

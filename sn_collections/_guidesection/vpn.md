@@ -29,11 +29,11 @@ The SCINet OpenConnect VPN server is compatible with the Cisco Anyconnect client
 
 First open AnyConnect and enter **ocvpn.scinet.usda.gov** in the box and click \[Connect\]
 
-![](/assets/img/anyconnectvpn1.png)
+![]({{ site.baseurl }}/assets/img/guides/access/vpn/anyconnectvpn1.png)
 
 Enter your SCINet Username.
 
-![](/assets/img/anyconnectvpn2.png)
+![]({{ site.baseurl }}/assets/img/guides/access/vpn/anyconnectvpn2.png)
 
 Enter your password with your GA 6-digit code appended to the end. For example if your password is "qwerty" and your GA app is showing "456321" you would enter:
 
@@ -41,26 +41,26 @@ Enter your password with your GA 6-digit code appended to the end. For example i
 qwerty456321
 ```
 
-![](/assets/img/anyconnectvpn3.png)
+![]({{ site.baseurl }}/assets/img/guides/access/vpn/anyconnectvpn3.png)
 
 You should now get the welcome banner. This may change over time from what is shown here. 
 Click \[Accept\]
 
-![](/assets/img/anyconnectvpn4.png)
+![]({{ site.baseurl }}/assets/img/guides/access/vpn/anyconnectvpn4.png)
 
 You are now connected to the SCINet VPN.
 
 On OSX this shows up on the status bar (typically at the top of your screen) like this:
 
-![](/assets/img/anyconnectvpn5.png)
+![]({{ site.baseurl }}/assets/img/guides/access/vpn/anyconnectvpn5.png)
 
 In Windows the notifications will appear in the tray (typically at the bottom of your screen) and looks like this:
 
-![](/assets/img/anyconnectvpn6.png)
+![]({{ site.baseurl }}/assets/img/guides/access/vpn/anyconnectvpn6.png)
 
 In linux there is no notification icon but you should see this window.
 
-![](/assets/img/anyconnectvpn7.png)
+![]({{ site.baseurl }}/assets/img/guides/access/vpn/anyconnectvpn7.png)
 
 
 ---
@@ -93,7 +93,7 @@ This will take a few minutes.
 
 Open the client and click the "Edit connection details" button as shown below.
 
-![](/assets/img/openconnectvpn1.png)
+![]({{ site.baseurl }}/assets/img/guides/access/vpn/openconnectvpn1.png)
 
 for Gateway enter:
 
@@ -103,11 +103,11 @@ for Gateway enter:
 
 and click [Save & Connect]
 
-![](/assets/img/openconnectvpn2.png)
+![]({{ site.baseurl }}/assets/img/guides/access/vpn/openconnectvpn2.png)
 
 Enter your SCINet Username
 
-![](/assets/img/openconnectvpn3.png)
+![]({{ site.baseurl }}/assets/img/guides/access/vpn/openconnectvpn3.png)
 
 Enter your password with your GA 6-digit code appended to the end. For example if your password is "qwerty" and your GA app is showing "456321" you would enter:
 
@@ -115,21 +115,21 @@ Enter your password with your GA 6-digit code appended to the end. For example i
 qwerty456321
 ```
 
-![](/assets/img/openconnectvpn4.png)
+![]({{ site.baseurl }}/assets/img/guides/access/vpn/openconnectvpn4.png)
 
 The "Green Lock" indicates that you should now be connected.
 
-![](/assets/img/openconnectvpn5.png)
+![]({{ site.baseurl }}/assets/img/guides/access/vpn/openconnectvpn5.png)
 
 You can also see the connection status in the system tray 
 
-![](/assets/img/openconnectvpn6.png)
+![]({{ site.baseurl }}/assets/img/guides/access/vpn/openconnectvpn6.png)
 
 ### Configuring and running on OSX
 
 After installation openconnect-gui will appear on your Applications menu under "MacPorts". 
 
-![](/assets/img/openconnectvpn7.png)
+![]({{ site.baseurl }}/assets/img/guides/access/vpn/openconnectvpn7.png)
 
 However ***this will not work*** as the the VPN need to run with elevated privileges.
 
@@ -141,11 +141,11 @@ sudo /Applications/MacPorts/openconnect-gui.app/Contents/MacOS/openconnect-gui
 
 After opening the client enter **ocvpn.scinet.science** and click \[Connect\]
 
-![](/assets/img/openconnectvpn8.png)
+![]({{ site.baseurl }}/assets/img/guides/access/vpn/openconnectvpn8.png)
 
 Enter your SCINet username.
 
-![](/assets/img/openconnectvpn9.png)
+![]({{ site.baseurl }}/assets/img/guides/access/vpn/openconnectvpn9.png)
 
 Enter your password with your GA 6-digit code appended to the end. For example if your password is "qwerty" and your GA app is showing "456321" you would enter:
 
@@ -153,11 +153,11 @@ Enter your password with your GA 6-digit code appended to the end. For example i
 qwerty456321
 ```
 
-![](/assets/img/openconnectvpn10.png)
+![]({{ site.baseurl }}/assets/img/guides/access/vpn/openconnectvpn10.png)
 
 If you have a "Green Light" You should now be connected.  
 
-![](/assets/img/openconnectvpn11.png)
+![]({{ site.baseurl }}/assets/img/guides/access/vpn/openconnectvpn11.png)
 
 
 

@@ -101,10 +101,10 @@ ls -l /reference/containers/RStudio/
 If you wish to use a different version, replace 3.6.0 below with the version number you choose.
 
 1. (If using VPN) Connect to SCINet VPN (see video instructions): <br>
-[VPN Using the OpenConnect Client](/guide/openconnect)<br>
-[VPN Using the Cisco AnyConnect Client](/guide/anyconnect)
+[VPN Using the OpenConnect Client]({{ site.baseurl }}/guide/openconnect)<br>
+[VPN Using the Cisco AnyConnect Client]({{ site.baseurl }}/guide/anyconnect)
 
-2. Log into Ceres via SSH (see the [Quick Start Guide](/guide/quickstart#accessing-scinet) for instructions).
+2. Log into Ceres via SSH (see the [Quick Start Guide]({{ site.baseurl }}/guide/quickstart#accessing-scinet) for instructions).
 
 3. Submit the RStudio SLURM job script with the following command:
 ```
@@ -153,7 +153,7 @@ sbatch /reference/containers/RStudio/3.6.0/rstudio.job
 #### Using VPN
 
 *If using VPN* point your web browser to the listed hostname / port (in the example above, http://ceres14-compute-3-eth.scinet.local:44200), then enter your SCINet user name and the temporary password (valid only for this job only; in this example *4wjRJfpIvQDtKdDZpmzY*)
-![screenshot of signing into RStudio in a web browser](/assets/img/RStudio.png)
+![screenshot of signing into RStudio in a web browser]({{ site.baseurl }}/assets/img/guides/analysis/rstudio/RStudio.png)
 
 
 #### SSH Port Forwarding (instead of VPN)
@@ -165,7 +165,7 @@ sbatch /reference/containers/RStudio/3.6.0/rstudio.job
 1. Open a **new** PuTTY window
 2. In Session > Host Name, enter: **ceres.scinet.usda.gov**
 3. In the category: Connection > SSH > Tunnels, enter 8787 in Source Port, the Destination hostname:port listed in the job script output (in this example: **ceres14-compute-3-eth:44200**), click “Add”, then click “Open”.
-![screenshot of PuTTY software Connection-SSH-Tunnels screen](/assets/img/putty-annotated.png)
+![screenshot of PuTTY software Connection-SSH-Tunnels screen]({{ site.baseurl }}/assets/img/guides/analysis/rstudio/putty-annotated.png)
 4. Point your browser to http://localhost:8787. Enter your SCINet user name, and one-time password listed in the job script output file.
 
 ##### macOS / Linux / Windows + Windows PowerShell users
@@ -181,7 +181,7 @@ There will be no output after logging in. Keep the window / SSH tunnel open for 
 ### Stopping RStudio Server
 
 1. Click the Quit Session (“power”) button in the top-right corner of the RStudio window (see picture below), or select “File > Quit Session...”
-![screenshot of the Quit Session power button in RStudio](/assets/img/RStudio2.gif)
+![screenshot of the Quit Session power button in RStudio]({{ site.baseurl }}/assets/img/guides/analysis/rstudio/RStudio2.PNG)
 2. After the “R Session has Ended” window appears, cancel the SLURM job from the Ceres command line. E.g., if the job ID is 214664:
 ```
 [jane.user@sn-cn-8-1 ~]$ scancel -f 214664
@@ -198,5 +198,5 @@ The default job resources (4 hour time limit, 1 processor core, 6600 MB memory) 
 sbatch --time=08:00:00 --mem=16G --cpus-per-task=4 /reference/containers/RStudio/3.6.0/rstudio.job
 ```
 * Copying the job script to a directory one has write access to and modifying the appropriate SLURM #SBATCH directives.
-* Using the [Ceres Job Script Generator](/support/ceres-job-script) to create a new job RStudio Server job script
+* Using the [Ceres Job Script Generator]({{ site.baseurl }}/support/ceres-job-script) to create a new job RStudio Server job script
   * In the **Job Script Template** drop down menu, select RStudio Server

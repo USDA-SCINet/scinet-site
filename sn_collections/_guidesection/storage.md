@@ -29,7 +29,7 @@ subnav:
 
 # Introduction
 
-This document provides detailed information about the storage options provided by SCINet and how to use them.  For a simpler overview of suggested procedures for managing data on SCINet, please see [Managing Data on ARS HPC and Storage Infrastructure](/guide/data_management_sop/).
+This document provides detailed information about the storage options provided by SCINet and how to use them.  For a simpler overview of suggested procedures for managing data on SCINet, please see [Managing Data on ARS HPC and Storage Infrastructure]({{ site.baseurl }}/guide/data_management_sop/).
 
 
 There are multiple places to store data on the Ceres and Atlas clusters that all serve different purposes. 
@@ -68,7 +68,7 @@ after deleting files in home directories, becomes available only after 6 days.
 
 Project directories are usually associated with ARS Research Projects. While it's possible to run simulations on Ceres or Atlas using only home directories and [Large Short-term Storage](#large-short-term-storage) in `/90daydata/shared`, it is recommended to request a project directory. Having a project directory will allow to install software packages in /project and keep important data on [Juno Archive Storage](#juno-archive-storage).
 
-To request a new project directory see [Request Project Storage](/support/request-storage). Here is a direct link to the form (eAuthentication required) which includes submitting a Data Management Plan:
+To request a new project directory see [Request Project Storage]({{ site.baseurl }}/support/request-storage). Here is a direct link to the form (eAuthentication required) which includes submitting a Data Management Plan:
 
 [Request a project directory](https://e.arsnet.usda.gov/sites/OCIO/scinet/accounts/SitePages/Project_Allocation_Request.aspx){: .usa-button }
 
@@ -145,4 +145,4 @@ This storage is useful for workflows that extensively use disk space reading and
 
 # Juno Archive Storage
 
-Project directories are not meant to be used as a data archive. Data that cannot be easily reproduced should be manually backed up to Juno. Juno is a large, multi-petabyte ARS storage device at the National Agricultural Library in Maryland. For instructions on how to transfer data to and from Juno, see [Managing Data on ARS HPC and Storage Infrastructure](/guide/data_management_sop/)
+Project directories are not meant to be used as a data archive. Data that cannot be easily reproduced should be manually backed up to Juno. Juno is a large, multi-petabyte ARS storage device at the National Agricultural Library in Maryland. For instructions on how to transfer data to and from Juno, see [Managing Data on ARS HPC and Storage Infrastructure]({{ site.baseurl }}/guide/data_management_sop/)
