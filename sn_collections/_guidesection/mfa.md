@@ -57,12 +57,12 @@ To use Google Authenticator on your Android device, it must be running Android v
 
 Open the Google authenticator app on your mobile device.
 
-![screenshot of Google Authenticator Android app setup screen](/assets/img/mfa-guide/Screenshot_20191029-105813-w300.png)
+![screenshot of Google Authenticator Android app setup screen](/assets/img/guides/access/mfa-setup.png)
 
 
 If this is the first time you have used Authenticator, click the **Add an account** button. If you already use the app and are adding a new account, choose "Add an account" from the app's menu.
 
-![screenshot of Google Authenticator Android app Add an Account screen](/assets/img/mfa-guide/Screenshot_20191029-105840-w300.png)
+![screenshot of Google Authenticator Android app Add an Account screen](/assets/img/guides/access/mfa-add-account.png)
 
 
 There are two ways to link your device to your account. Using QR code is easier but requires a barcode scanner which you can install if you don't have it yet (Google Authenticator app will prompt you to install it). An alternative would be to use a Google Authenticator key as mentioned on the above screenshot.
@@ -72,14 +72,14 @@ There are two ways to link your device to your account. Using QR code is easier 
 
 Select Scan a barcode. If the Authenticator app cannot locate a barcode scanner app on your phone, you might be prompted to download and install one. If you want to install a barcode scanner app so you can complete the setup process, press Install then go through the installation process. Once the app is installed, reopen Google Authenticator, display QR code on your computer by clicking on the link in the "Welcome to Ceres" email and point your camera at the QR code.
 
-![screenshot of barcode scanner app](/assets/img/mfa-guide/Screenshot_20191029-105914-w300.png)
+![screenshot of barcode scanner app](/assets/img/guides/access/mfa-barcode-scanner.png)
 
 
 #### Link phone manually with a GA key
 
 Select Enter a provided key, then Enter account name, which is \<your SCINet username>@ceres. Next, enter the Google Authenticator key from the "Welcome to Ceres" email into the box under Enter Key. Make sure you've chosen to make the key time-based and press "Save."
 
-![screenshot of Google Authenticator Android app Enter Account Details screen](/assets/img/mfa-guide/Screenshot_20191029-105940-w300.png)
+![screenshot of Google Authenticator Android app Enter Account Details screen](/assets/img/guides/access/mfa-account-details.png)
 
 
 #### Verify
@@ -114,7 +114,7 @@ To use Google Authenticator on your iPhone, iPod Touch, or iPad, you must have i
 
 On your iOS device, open the Google Authenticator application. Tap the plus icon. Tap "Time Based" (label 1).
 
-![screenshot of Google Authenticator iOS app Add Token screen with added labels](/assets/img/mfa-guide/ios-screenshot-w300.png)
+![screenshot of Google Authenticator iOS app Add Token screen with added labels](/assets/img/guides/access/mfa-ios.png)
 
 
 There are two ways to link your device to your account. Using a QR code is easier but requires a camera. An alternative would be to use a Google Authenticator key in the Key field (label 2c in above screenshot).
