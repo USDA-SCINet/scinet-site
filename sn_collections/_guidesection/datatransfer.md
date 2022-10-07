@@ -33,7 +33,7 @@ subnav:
 ## Best Practices
 
 * Globus Online is the recommended method for transferring data to and from the Ceres cluster. It provides faster data transfer speeds compared to scp, has a graphical interface, and does not require a GA verification code for every file transfer.
-* Given the space and access limitations of a home directory, large amounts of data or data that will be used collaboratively should be transferred to a project directory. See the Ceres User Manual section [Quotas on Home and Project Directories](/guide/ceres/#quotas-on-home-and-project-directories) for more information on home and project directory quotas.
+* Given the space and access limitations of a home directory, large amounts of data or data that will be used collaboratively should be transferred to a project directory. See the Ceres User Manual section [Quotas on Home and Project Directories]({{ site.baseurl }}/guide/ceres/#quotas-on-home-and-project-directories) for more information on home and project directory quotas.
 * If you have to transfer very large amounts of data or if network speed at your location is slow, please submit a request to the Virtual Research Support Core (VRSC) to ingress data from a hard drive as described below (section [Large Data Transfer by Shipping Hard Drives](#large-data-transfer-by-shipping-hard-drives)).
 * If you have issues with transferring data, please contact the VRSC at [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=help%20with%20transferring%20data).
 
@@ -53,7 +53,7 @@ The instructional video at [https://www.youtube.com/watch?v=I3lnsCAfx3Q](https:/
   4. Google account login. Click on “Sign in with Google” at the bottom of the page if you want to use your google account.
 * You should now be on the Globus ‘File Manager’ page. You should see two panels. If you don't, click on the 2-panels icon at the top right of the screen. You should now see two panels:
 
-![Globus online homescreen showing two panels](/assets/img/file-transfer/globus-homescreen.png)
+![Globus online homescreen showing two panels]({{ site.baseurl }}/assets/img/file-transfer/globus-homescreen.png)
 
 ### Copying Data
 * The two panes represent the two systems that you want to copy data between. You will need to select a Collection (an Endpoint) for each pane and most likely, authenticate.
