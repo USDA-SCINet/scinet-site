@@ -8,8 +8,8 @@ github:
   repository: scinet-site
   default_branch: main
 
-baseurl: /scinet-site
-url: "https://USDA-SCINet.github.io"
+# baseurl: /scinet-site
+url: "https://USDA-SCINet.github.io/scinet-site"
 
 # Configure a separator for post excerpts
 excerpt_separator: "<!--end-excerpt-->"
