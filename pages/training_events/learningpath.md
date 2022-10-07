@@ -29,7 +29,7 @@ With the expansive list of free training available online, finding the right tra
 
 | Get Started |   Dive Deeper |  Find Your Community |
 |---|---|---|
-![Getting Started](/assets/img/events/Getting_Started.png)  | ![Dive Deeper](/assets/img/events/Dive_Deeper.png)| ![Find Your Community](/assets/img/events/community.png) |
+![Getting Started]({{ site.baseurl }}/assets/img/events/Getting_Started.png)  | ![Dive Deeper]({{ site.baseurl }}/assets/img/events/Dive_Deeper.png)| ![Find Your Community]({{ site.baseurl }}/assets/img/events/community.png) |
 | Watch these videos to learn how to get started with SCINet |  Explore these training resources to find specific content to meet your research needs |  Find others in your community to work with, get answers, and explore ideas with |
 | [Intro to SCINet](https://web.microsoftstream.com/video/9a2b95a3-79e6-4176-b5e6-cfd674c034aa)  | [Coursera](https://scinet.usda.gov/training/coursera) | [Working Group](https://scinet.usda.gov/working-groups) |
 | [SCINet Onboarding](https://web.microsoftstream.com/video/bed89bf6-99fc-44f0-9f4a-3e16cd2f2d49) | [Carpentries: UNIX, GIT, Python, R, OpenRefine, SQL](https://scinet.usda.gov/training/carpentries) | [SCINet Forum](https://forum.scinet.usda.gov/) |
@@ -45,13 +45,13 @@ With the expansive list of free training available online, finding the right tra
 | Resource Links |  Description |  
 |---|---|
 | [Upcoming Trainings](https://scinet.usda.gov/training/training_event) |  Browse all scheduled trainings | 
-| [Free Online Trainings](/training/free-online-training) |   Explore the extensive list of free online trainings organized by topic  |
+| [Free Online Trainings]({{ site.baseurl }}/training/free-online-training) |   Explore the extensive list of free online trainings organized by topic  |
 | [Intro to UNIX](https://bioinformaticsworkbook.org/Appendix/Unix/unix-basics-1.html#gsc.tab=0) | Tutorial on UNIX commands |
 | [Long term storage and Juno](https://web.microsoftstream.com/video/c1e0a6c1-467f-452b-913a-93677a93d56c) | Learn more about SCINet's data storage options, suggested workflows for using SCINet storage for your research, and how to efficiently move data between SCINet's storage systems. |
-| [Machine Learning Tutorial](/tutorials/ARS-UF-machine-learning-training/) |   Tutorial introducing  machine learning methods using Jupyter notebooks and coding excercises | 
-| [Geospatial Analysis with Python on Ceres](/tutorials/geospatial-analysis-with-python-on-ceres/) |  Tutorial on efficient data practices, using JupyterHub and Lab on Ceres, using Dask for parallel computing| 
-| [NEON High Resolution Hyperspectral Data Exercise](/tutorials/geospatial-analysis-NEON-hyperspectral/) |  Tutorial to explore NEON AOP hyperspectral data, calculate/visualize spectral indices, unsupervised ML (clustering)| 
-| [Quantitative Trait Locus (QTL) Analysis for Breeding](/tutorials/plant-breeding/) |   Tutorial on how to use QTL-surge and RStudio on Ceres| 
+| [Machine Learning Tutorial]({{ site.baseurl }}/tutorials/ARS-UF-machine-learning-training/) |   Tutorial introducing  machine learning methods using Jupyter notebooks and coding excercises | 
+| [Geospatial Analysis with Python on Ceres]({{ site.baseurl }}/tutorials/geospatial-analysis-with-python-on-ceres/) |  Tutorial on efficient data practices, using JupyterHub and Lab on Ceres, using Dask for parallel computing| 
+| [NEON High Resolution Hyperspectral Data Exercise]({{ site.baseurl }}/tutorials/geospatial-analysis-NEON-hyperspectral/) |  Tutorial to explore NEON AOP hyperspectral data, calculate/visualize spectral indices, unsupervised ML (clustering)| 
+| [Quantitative Trait Locus (QTL) Analysis for Breeding]({{ site.baseurl }}/tutorials/plant-breeding/) |   Tutorial on how to use QTL-surge and RStudio on Ceres| 
 
 <br />
 

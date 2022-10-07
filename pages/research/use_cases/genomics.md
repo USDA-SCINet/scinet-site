@@ -30,7 +30,7 @@ The [National Agricultural Library (NAL)](https://www.nal.usda.gov/main/) mainta
 
 ARS is among the world’s leading producer and user of genomic, transcriptomic, proteomic, and other -omics data for non-model organisms of agricultural importance, including pathogens, insects, animals, and plants. On-going projects in the agency related to these efforts include *de novo* genome and transcriptome assembly and annotation, whole genome resequencing for population, strain, and biotype analyses, and comparative genomics and gene family evolution.
 
-SCINet hosts the following tools to facilitate these studies (see the [Software Overview](/guide/software) for a full list of software currently available on Ceres):
+SCINet hosts the following tools to facilitate these studies (see the [Software Overview]({{ site.baseurl }}/guide/software) for a full list of software currently available on Ceres):
 
 **GOanna** Gene Ontology tool ([see instructions for using on Ceres](https://agbase-docs.readthedocs.io/en/latest/goanna/using_goanna_ceres.html))
 
@@ -54,9 +54,9 @@ BLAST, Circos, DIAMOND, MCScanX, and OrthoFinder
 GARLI, PhyML, and RAxML
 
 ### GUI tools for working with genomic data
-Floating licenses for several GUI (graphic user interface) tools are also available through SCINet, including [CLC Workbench](/guide/clc) and [Geneious](/guide/geneious). 
+Floating licenses for several GUI (graphic user interface) tools are also available through SCINet, including [CLC Workbench]({{ site.baseurl }}/guide/clc) and [Geneious]({{ site.baseurl }}/guide/geneious). 
 
-A [Galaxy](/guide/galaxy) instance is also available on Ceres, allowing users to run popular command line tools through a GUI.
+A [Galaxy]({{ site.baseurl }}/guide/galaxy) instance is also available on Ceres, allowing users to run popular command line tools through a GUI.
 <br><br><br>
 
-**SCINet users can also install other freely-available software to suit their research needs or request system-wide installation by contacting the [Virtual Research Support Core](/support/vrsc).** 
+**SCINet users can also install other freely-available software to suit their research needs or request system-wide installation by contacting the [Virtual Research Support Core]({{ site.baseurl }}/support/vrsc).** 
