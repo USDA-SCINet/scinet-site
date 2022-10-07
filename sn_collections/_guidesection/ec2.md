@@ -52,20 +52,20 @@ alerts:
 You must be using the  **US East (N. Virginia)** region for all AWS activities. **Please check your currently selected region** before following this document's instructions.
 To check and update your region, click on the dropdown in the upper right of the console window, just next to "Support". Select **US East.(N. Virginia)**
 
-![](/assets/img/guides/AWS/ec2instance1.png)
+![](/assets/img/ec2instance1.png)
 
 
 In the main Console page, click on "Services" in the top menu then "EC2" within the Compute section, or type "EC2" into the search bar.
 
-![](/assets/img/guides/AWS/ec2instance2.png)
-![](/assets/img/guides/AWS/ec2instance3.png)
+![](/assets/img/ec2instance2.png)
+![](/assets/img/ec2instance3.png)
 
 ### Step 1: Create Key Pair
 
 Click on the "Key Pairs" link in the left menu or under Resources. Then click the **Create Key Pair** button.
 
-![](/assets/img/guides/AWS/ec2instance4.png)
-![](/assets/img/guides/AWS/ec2instance5.png)
+![](/assets/img/ec2instance4.png)
+![](/assets/img/ec2instance5.png)
 
 Click the **Create** button. Your browser will download the private key contents.
 
@@ -77,8 +77,8 @@ Save your private key somewhere for future use. This key will enable you to log 
 
 Use the top menu to navigate to Services > **Service Catalog**. Click the three-dots button on the "EC2 Instance" product card and choose **Launch Product**, or click on the product name and click **Launch Product** on the following screen. Enter a name for the product and select a version from the list of versions.
 
-![](/assets/img/guides/AWS/ec2instance6.png)
-![](/assets/img/guides/AWS/ec2instance7.png)
+![](/assets/img/ec2instance6.png)
+![](/assets/img/ec2instance7.png)
 
 ### Step 3: Product parameters
 
@@ -88,26 +88,26 @@ Fill in the parameters as made available by the product template definition. Cli
 Some parameters may have limits or requirements. If you receive a warning message saying 'abcde must equal the value of "Parameter"', copy and paste the value on the left-hand side into the parameter field to proceed through the warning
 
 
-![](/assets/img/guides/AWS/ec2instance8.png)
+![](/assets/img/ec2instance8.png)
 
 ### Step 4: TagOptions
 
 You may provide optional tags to help you locate and track your resources. For most users, the default tags are sufficient. Click **Next**.
 
-![](/assets/img/guides/AWS/ec2instance9.png)
+![](/assets/img/ec2instance9.png)
 
 ### Steps 5-6: Notifications and Review
 
 Continue through the Notifications screen by clicking Next. Finally, click **Launch** on the last page to launch the product.
 
-![](/assets/img/guides/AWS/ec2instance10.png)
-![](/assets/img/guides/AWS/ec2instance11.png)
+![](/assets/img/ec2instance10.png)
+![](/assets/img/ec2instance11.png)
 
 ### Provisioned Product Details
 
 After initially launch, the product details page will show the product as "Under change" with status "In progress". The page will automaticallyupdate (or you can refresh the page if desired). When complete, the product will change to "Available" with status "Succeeded"
 
-![](/assets/img/guides/AWS/ec2instance12.png)
+![](/assets/img/ec2instance12.png)
 
 ### Connecting to an Instance
 
@@ -123,13 +123,13 @@ ssh -i /path/to/keypair.pem ec2-user@&lt;PublicDNS&gt;
 If you are using PuTTY on Windows, the private key (.pem) will have to be [converted using PuTTYgen](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html).
 
 
-![](/assets/img/guides/AWS/ec2instance13.png)
+![](/assets/img/ec2instance13.png)
 
 ### Terminate an Instance
 
 View the list of provisioned products (resources previously launched) by clicking "Provisioned products list" in the Service Catalog console menu(the three bars icon in the upper-left). Click "Terminate" to confirm termination of the product.
 
-![](/assets/img/guides/AWS/ec2instance14.png)
+![](/assets/img/ec2instance14.png)
 
 ---
 

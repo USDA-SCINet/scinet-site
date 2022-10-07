@@ -41,15 +41,15 @@ The SCINet initiative contributes funding to various working groups that use SCI
 
 
 The current working groups are:
-* [Ag100Pest Initiative (subgroup of AGR)](/research/working-groups/ag100pest)
-* [Arthropod Genomics Research (AGR) Working Group](/research/working-groups/arthropods)
-* [Geospatial Research Working Group](/research/working-groups/geospatial)
-* [Microbiome Working Group](/research/working-groups/microbiome)
-* [Pollinator Working Group](/research/working-groups/pollinator)
-* [SCINet-Longterm Agroecosystem Research (LTAR) Phenology Working Group](/research/working-groups/LTARphenology)
-* [SCINet Policy Committee](/research/working-groups/policy)
-* [SCINet Website Developers](/research/working-groups/webdev)
-* [Workbook Developers](/research/working-groups/workbooks)
+* [Ag100Pest Initiative (subgroup of AGR)]({{ site.baseurl }}/research/working-groups/ag100pest)
+* [Arthropod Genomics Research (AGR) Working Group]({{ site.baseurl }}/research/working-groups/arthropods)
+* [Geospatial Research Working Group]({{ site.baseurl }}/research/working-groups/geospatial)
+* [Microbiome Working Group]({{ site.baseurl }}/research/working-groups/microbiome)
+* [Pollinator Working Group]({{ site.baseurl }}/research/working-groups/pollinator)
+* [SCINet-Longterm Agroecosystem Research (LTAR) Phenology Working Group]({{ site.baseurl }}/research/working-groups/LTARphenology)
+* [SCINet Policy Committee]({{ site.baseurl }}/research/working-groups/policy)
+* [SCINet Website Developers]({{ site.baseurl }}/research/working-groups/webdev)
+* [Workbook Developers]({{ site.baseurl }}/research/working-groups/workbooks)
 
 <br>
 
