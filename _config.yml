@@ -8,6 +8,7 @@ github:
   repository: scinet-site
   default_branch: main
 
+
 baseurl: /scinet-site
 url: "https://USDA-SCINet.github.io"
 
