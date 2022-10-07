@@ -53,7 +53,7 @@ The survey for providing feedback about this workshop will be available here dur
 
 ## Further trainings
 
-Coming soon: links to suggested trainings. For general information about SCINet trainings, [see these opportunities](/training/learningpath).
+Coming soon: links to suggested trainings. For general information about SCINet trainings, [see these opportunities]({{ site.baseurl }}/training/learningpath).
 
 ## Future needs
 

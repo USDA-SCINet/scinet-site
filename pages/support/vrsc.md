@@ -53,7 +53,7 @@ Additionally, the VRSC provides research IT support, computational expertise in 
 
 
 ## Support for SCINet-Funded Workshops/Training
-The SCINet initiative funds various workshops and training events annually ([Apply to Hold a SCINet-Funded Workshop/Training](/opportunities/request-workshop)) to which the VRSC can provide the following types of support:
+The SCINet initiative funds various workshops and training events annually ([Apply to Hold a SCINet-Funded Workshop/Training]({{ site.baseurl }}/opportunities/request-workshop)) to which the VRSC can provide the following types of support:
 
 * general SCINet information presentation with Q&A
 
@@ -65,7 +65,7 @@ The SCINet initiative funds various workshops and training events annually ([App
 
 ## How and When to Contact the VRSC
 
-Discussion that is relevant to other SCINet users such as questions about the best practices for research computations should be posted on the [SCINet Forum](https://forum.scinet.usda.gov/) message board. Access to the Forum is provided during the SCINet account application process ([Apply for an Account](/about/signup/)).
+Discussion that is relevant to other SCINet users such as questions about the best practices for research computations should be posted on the [SCINet Forum](https://forum.scinet.usda.gov/) message board. Access to the Forum is provided during the SCINet account application process ([Apply for an Account]({{ site.baseurl }}/about/signup/)).
 
 If your question is related to SCINet policy or development, contact the acting SCINet Program Manager, Stan Kosecki.
 
@@ -81,6 +81,6 @@ Single user operational questions should be emailed to the VRSC at [Ceres](mailt
 
 Again, please note that support requests for login issues on _either_ Ceres or Atlas should be sent to [scinet_vrsc@usda.gov](mailto:scinet_vrsc@usda.gov).
 
-For new software installation requests, see [Request Software Installation on SCINet](/support/request-software).
+For new software installation requests, see [Request Software Installation on SCINet]({{ site.baseurl }}/support/request-software).
 
-For new SCINet AWS project requests, see [Request SCINet AWS](/support/request-AWS).
+For new SCINet AWS project requests, see [Request SCINet AWS]({{ site.baseurl }}/support/request-AWS).

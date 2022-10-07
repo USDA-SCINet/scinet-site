@@ -130,7 +130,7 @@ Domain | Software
 --- | ---
 Operating System	| CentOS
 Scheduler	| SLURM
-Software | For the full list of installed scientific software refer to the [Software Overview](/guide/software) page or issue the  `module spider`  command on the Ceres login node.  
+Software | For the full list of installed scientific software refer to the [Software Overview]({{ site.baseurl }}/guide/software) page or issue the  `module spider`  command on the Ceres login node.  
 Modeling	| BeoPEST, EPIC, KINEROS2, MED-FOES, SWAT, h2o
 Compilers | GNU (C, C++, Fortran), clang, llvm, Intel Parallel Studio
 Languages | Java 6, Java 7, Java 8, Python, Python 3, R, Perl 5, Julia, Node
@@ -148,13 +148,13 @@ Users can connect directly to Ceres using an ssh client. ssh is usually availabl
 $ ssh <SCINet UserID>@ceres.scinet.usda.gov
 ```
 
-For older Microsoft Windows machines, we recommend using PuTTY or OpenSSH (see the [Quick Start Guide](/guide/quickstart))
+For older Microsoft Windows machines, we recommend using PuTTY or OpenSSH (see the [Quick Start Guide]({{ site.baseurl }}/guide/quickstart))
 
 When you log in to SCINet HPC you will be on the Ceres login node. The login node is a shared resource among all SCINet users that are currently logged in to the system. **Please do NOT run computationally or memory intensive tasks on the login node, this will negatively impact performance for all other users on the system.** See section [Running Application Jobs on Compute Nodes](#running-application-jobs-on-compute-nodes) for instructions on how to run such tasks on compute nodes.
 
 
 ### MFA
-Logins to the Ceres cluster require the use of multi-factor authentication (MFA). Ceres uses Google Authenticator (GA) for MFA. Information required to set up your SCINet GA account is sent along with the temporary password in the Welcome email. When ssh-ing to the cluster you will first be prompted for Verification Code, and then for password. **Note that when you type the code or the password, nothing will be shown on the screen.** See detailed instructions in the [MFA guide](/guide/multifactor).
+Logins to the Ceres cluster require the use of multi-factor authentication (MFA). Ceres uses Google Authenticator (GA) for MFA. Information required to set up your SCINet GA account is sent along with the temporary password in the Welcome email. When ssh-ing to the cluster you will first be prompted for Verification Code, and then for password. **Note that when you type the code or the password, nothing will be shown on the screen.** See detailed instructions in the [MFA guide]({{ site.baseurl }}/guide/multifactor).
 
 ### Password expiration
 When a new SCINet account is created, the temporary password set by the system expires right away. Passwords set by users expire after 60 days. Users can still login to Ceres with the expired password, but they're prompted to change their password right away. Users can also initiate password change on their own by issuing the command  `passwd`  on the Ceres login node. **When prompted for the current password, users need to enter the old (possibly expired) password**.
@@ -169,7 +169,7 @@ If you have forgotten your login password, please email the VRSC: [scinet_vrsc@U
 
 ### Globus Online Data Transfers
 
-We recommend using Globus Online to transfer data to and from the Ceres cluster. It provides faster data transfer speeds compared to scp, has a graphical interface, and does not require a GA verification code for every file transfer. To transfer data to/from a local computer, users will need to install Globus Personal which does NOT require admin privileges. More information about Globus Online for Ceres can be found in the [Guide for Transferring Files](/guide/file-transfer/).
+We recommend using Globus Online to transfer data to and from the Ceres cluster. It provides faster data transfer speeds compared to scp, has a graphical interface, and does not require a GA verification code for every file transfer. To transfer data to/from a local computer, users will need to install Globus Personal which does NOT require admin privileges. More information about Globus Online for Ceres can be found in the [Guide for Transferring Files]({{ site.baseurl }}/guide/file-transfer/).
 
 ### Using scp to Transfer Data
 Like ssh, scp is usually available on any Linux or MacOS machine, and on Microsoft Windows 10 (in powershell).
@@ -362,7 +362,7 @@ At login, current usage and quotas are displayed for all groups that a user belo
 $ my_quotas
 ```
 
-If users need more storage than what is available in the home directory, they should visit the [Request a Project Storage](/support/request-storage) page. Several users may work on the same project and share the same project directory.
+If users need more storage than what is available in the home directory, they should visit the [Request a Project Storage]({{ site.baseurl }}/support/request-storage) page. Several users may work on the same project and share the same project directory.
 
 Project directories are located in the 2.3PB Lustre space that is mounted on all nodes as /lustre/project and is also accessible as /project. Directories in /project are not backed up. **It is not recommended to run jobs from a directory in /KEEP.**
 
@@ -376,7 +376,7 @@ To search for files owned by your primary group in a project directory, issue:
 $ find /project/<project_directory_name> -group <SCINet UserID> -type f
 ```
 
-For more information about storage options, refer to [SCINet Storage Guide](/guide/storage).
+For more information about storage options, refer to [SCINet Storage Guide]({{ site.baseurl }}/guide/storage).
 
 ## Local Sharing of Files with Other Users
 Users who would like to share files with other users can use /90daydata/shared directory. Files older than 90 days will be automatically deleted.
@@ -388,7 +388,7 @@ NOTE: Files in /90daydata/shared folder by default are accessible to everybody o
 
 Users will run their applications on the cluster in either interactive mode or in batch mode. Interactive mode ( `salloc`  or  `srun`  command) is familiar to anyone using the command line: the user specifies an application by name and various arguments, hits Enter, and the application runs. However, in interactive mode on a cluster the user is automatically switched from using a login node to using a compute node. This keeps all the intense computation off the login nodes, so that login nodes can have all the resources necessary for managing the cluster. You should always use interactive mode when you are running your application but not using batch mode. **Please do not run your applications on the login nodes, use the interactive mode.**
 
-Interactive mode should only be used when interaction is required, for example when preparing or debugging a pipeline. Otherwise the batch mode should be used. Batch mode requires the user to write a short job script (see examples at section [Batch Mode](#batch-mode)) or use the [Ceres Job Script Generator](/support/ceres-job-script).
+Interactive mode should only be used when interaction is required, for example when preparing or debugging a pipeline. Otherwise the batch mode should be used. Batch mode requires the user to write a short job script (see examples at section [Batch Mode](#batch-mode)) or use the [Ceres Job Script Generator]({{ site.baseurl }}/support/ceres-job-script).
 
 Ceres uses Simple Linux Utility for Resource Management (SLURM) to submit interactive and batch jobs to the compute nodes. Requested resources can be specified either within the job script or using options with the  `salloc`,  `srun`, or  `sbatch`  commands.
 
@@ -684,13 +684,13 @@ cd $TMPDIR
 
 The Ceres login node provides access to a wide variety of scientific software tools that users can access and use via the module system. These software tools were compiled and optimized for use on Ceres by members of the Virtual Research Support Core (VRSC) team. Most users will find the software tools they need for their research among the provided packages and thus will not need to compile their own software packages.
 
-If users would like to compile their own software with GNU compilers, they will need to load the gcc module. It is recommended to **compile on compute nodes and not on the login node**. However, before embarking on compiling their own software packages we strongly encourage users to contact the VRSC team to ensure that their required tool(s) might not be better distributed as a shared package within the official software modules tree. All new software needs to be approved by SOC committee before being centrally installed on the system. To request a new software package to be installed, visit the [Request Software](/support/request-software) page.
+If users would like to compile their own software with GNU compilers, they will need to load the gcc module. It is recommended to **compile on compute nodes and not on the login node**. However, before embarking on compiling their own software packages we strongly encourage users to contact the VRSC team to ensure that their required tool(s) might not be better distributed as a shared package within the official software modules tree. All new software needs to be approved by SOC committee before being centrally installed on the system. To request a new software package to be installed, visit the [Request Software]({{ site.baseurl }}/support/request-software) page.
 
-The popular R, Perl, and Python languages have many packages/modules available. Some of the packages are installed on Ceres and are available with the r/perl/python_2/python_3 modules. To see the list of installed packages, visit the [Software Overview](/guide/software) page or use  `module help <module_name>`  command. If users need packages that are not available, they can either request VRSC to add packages, or they can download and install packages in their home/project directories. We recommend installing packages in the project directories since collaborators on the same project most probably would need the same packages. In addition, home quotas are much lower than project directories quotas. See the [Guide to Installing R, Python, and Perl Packages](/guide/packageinstall/) for instructions and examples on how to add packages/modules for these languages.
+The popular R, Perl, and Python languages have many packages/modules available. Some of the packages are installed on Ceres and are available with the r/perl/python_2/python_3 modules. To see the list of installed packages, visit the [Software Overview]({{ site.baseurl }}/guide/software) page or use  `module help <module_name>`  command. If users need packages that are not available, they can either request VRSC to add packages, or they can download and install packages in their home/project directories. We recommend installing packages in the project directories since collaborators on the same project most probably would need the same packages. In addition, home quotas are much lower than project directories quotas. See the [Guide to Installing R, Python, and Perl Packages]({{ site.baseurl }}/guide/packageinstall/) for instructions and examples on how to add packages/modules for these languages.
 
-Another resource for installing your own software programs is the Conda package manager. See the [User-Installed Software on Ceres Using Conda Guide](/guide/conda).
+Another resource for installing your own software programs is the Conda package manager. See the [User-Installed Software on Ceres Using Conda Guide]({{ site.baseurl }}/guide/conda).
 
-Some software packages may not be available for the version of Linux running on the Ceres cluster. In this case users may want to run containers. Containers are self-contained application execution environments that contain all necessary software to run an application or workflow, so users don't need to worry about installing all the dependencies. There are many pre-built container images for scientific applications available for download and use. See the document [Singularity on Ceres](/guide/singularity) for instructions and examples on how to download and run Docker and Singularity containers on Ceres.
+Some software packages may not be available for the version of Linux running on the Ceres cluster. In this case users may want to run containers. Containers are self-contained application execution environments that contain all necessary software to run an application or workflow, so users don't need to worry about installing all the dependencies. There are many pre-built container images for scientific applications available for download and use. See the document [Singularity on Ceres]({{ site.baseurl }}/guide/singularity) for instructions and examples on how to download and run Docker and Singularity containers on Ceres.
 
 # SCINet Citation/Acknowledgment in Publications
 

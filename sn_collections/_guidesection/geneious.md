@@ -24,14 +24,14 @@ Install it as usual and start it up.
 
 Geneious will complain about not having a license. Click "Activate a License"
 
-![screenshot of Geneious software No License for Geneious R11 popup](/assets/img/guides/analysis/geneious/geneious_license_expired.png)
+![screenshot of Geneious software No License for Geneious R11 popup]({{ site.baseurl }}/assets/img/guides/analysis/geneious/geneious_license_expired.png)
 
 On the "Enter Your License Details" screen,
   - select "Use floating license server",
   - enter `geneious.scinet.usda.gov` in the "License Server" box, and
   - enter `27001` in the "Port" box.
 
-![screenshot of Geneious software Enter Your License Details screen](/assets/img/guides/analysis/geneious/geneious_floating_license_server.png)
+![screenshot of Geneious software Enter Your License Details screen]({{ site.baseurl }}/assets/img/guides/analysis/geneious/geneious_floating_license_server.png)
 
 After Geneious is started (see picture below):
 * Click on "Geneious Server" in the list of Sources on the left
@@ -47,6 +47,6 @@ After Geneious is started (see picture below):
    - Enter your Ceres password immediately followed by your Ceres GA code in the "Password" box  as an example if your password was "MyP@55w0rd" and GA app is showing "123456" you would use MyP@55w0rd123456
    - Click  "OK"
 
-![screenshot of Geneious software login screen](/assets/img/guides/analysis/geneious/geneious_login.png)
+![screenshot of Geneious software login screen]({{ site.baseurl }}/assets/img/guides/analysis/geneious/geneious_login.png)
 
 You should now be connected to the Geneious Server.
