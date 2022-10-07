@@ -1,7 +1,7 @@
 ---
-title: From Ceres To Atlas
-description: Guide to transitioning from Ceres cluster to Atlas cluster
-## author: Marina Kraeva
+title: Differences between Ceres and Atlas
+description: A guide to the differences between the Ceres cluster and the Atlas cluster
+### author: Marina Kraeva
 
 categories: [Resources]
 
@@ -31,7 +31,6 @@ subnav:
 
 
 ---
-
 
 This guide lists differences between the Atlas and Ceres clusters to ease transition from one cluster to another.
 
@@ -128,3 +127,4 @@ On Atlas compute nodes do not have access to internet. If your job requires inte
 ### salloc
 
 On Ceres issuing "`salloc`" command will allocate resources for an interactive job and log you into the node assigned to the job. On Atlas the "`salloc -A <slurm_account_name>`" command will only allocate resources, but one will still need to use srun command to utilize resources assigned to the job. To login to the node, issue "`srun --pty --preserve-env bash`". Note that exiting from that session will not kill the job, and to release resources assigned to the job, you will need to issue "`scancel <job_number>`" command. Note that salloc command is not needed, and one can only use the "`srun -A <slurm_account_name> --pty --preserve-env bash`" command to use a node interactively. 
+
