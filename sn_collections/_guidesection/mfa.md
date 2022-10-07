@@ -27,7 +27,7 @@ Federal computer systems are required to use multifactor authentication for site
 
 You will need to install an app on a mobile device or a small program on your computer that will generate your verification codes. The app is initialized with your SCINet Google Authentication (GA) account, that is normally created along with your SCINet account.
 
-To add your SCINet GA account to the app, you will need a key or a QR code, that you can find in your "Welcome to Ceres" email. 
+To add your SCINet GA account to the app, you will need a key or a QR code, that you can find in your "Welcome to SCINet" email. 
 
 Note: If your SCINet account was created **before January 2020**, and a GA account was never created, attempt to login to the Ceres DTN node:
 ```
@@ -57,12 +57,12 @@ To use Google Authenticator on your Android device, it must be running Android v
 
 Open the Google authenticator app on your mobile device.
 
-![screenshot of Google Authenticator Android app setup screen](/assets/img/mfa-guide/Screenshot_20191029-105813-w300.png)
+![screenshot of Google Authenticator Android app setup screen](/assets/img/guides/access/mfa-setup.png)
 
 
 If this is the first time you have used Authenticator, click the **Add an account** button. If you already use the app and are adding a new account, choose "Add an account" from the app's menu.
 
-![screenshot of Google Authenticator Android app Add an Account screen](/assets/img/mfa-guide/Screenshot_20191029-105840-w300.png)
+![screenshot of Google Authenticator Android app Add an Account screen](/assets/img/guides/access/mfa-add-account.png)
 
 
 There are two ways to link your device to your account. Using QR code is easier but requires a barcode scanner which you can install if you don't have it yet (Google Authenticator app will prompt you to install it). An alternative would be to use a Google Authenticator key as mentioned on the above screenshot.
@@ -70,16 +70,16 @@ There are two ways to link your device to your account. Using QR code is easier 
 
 #### Link phone using QR code
 
-Select Scan a barcode. If the Authenticator app cannot locate a barcode scanner app on your phone, you might be prompted to download and install one. If you want to install a barcode scanner app so you can complete the setup process, press Install then go through the installation process. Once the app is installed, reopen Google Authenticator, display QR code on your computer by clicking on the link in the "Welcome to Ceres" email and point your camera at the QR code.
+Select Scan a barcode. If the Authenticator app cannot locate a barcode scanner app on your phone, you might be prompted to download and install one. If you want to install a barcode scanner app so you can complete the setup process, press Install then go through the installation process. Once the app is installed, reopen Google Authenticator, display QR code on your computer by clicking on the link in the "Welcome to SCINet" email and point your camera at the QR code.
 
-![screenshot of barcode scanner app](/assets/img/mfa-guide/Screenshot_20191029-105914-w300.png)
+![screenshot of barcode scanner app](/assets/img/guides/access/mfa-barcode-scanner.png)
 
 
 #### Link phone manually with a GA key
 
-Select Enter a provided key, then Enter account name, which is \<your SCINet username>@ceres. Next, enter the Google Authenticator key from the "Welcome to Ceres" email into the box under Enter Key. Make sure you've chosen to make the key time-based and press "Save."
+Select Enter a provided key, then Enter account name, which is \<your SCINet username>@ceres. Next, enter the Google Authenticator key from the "Welcome to SCINet" email into the box under Enter Key. Make sure you've chosen to make the key time-based and press "Save."
 
-![screenshot of Google Authenticator Android app Enter Account Details screen](/assets/img/mfa-guide/Screenshot_20191029-105940-w300.png)
+![screenshot of Google Authenticator Android app Enter Account Details screen](/assets/img/guides/access/mfa-account-details.png)
 
 
 #### Verify
@@ -114,18 +114,18 @@ To use Google Authenticator on your iPhone, iPod Touch, or iPad, you must have i
 
 On your iOS device, open the Google Authenticator application. Tap the plus icon. Tap "Time Based" (label 1).
 
-![screenshot of Google Authenticator iOS app Add Token screen with added labels](/assets/img/mfa-guide/ios-screenshot-w300.png)
+![screenshot of Google Authenticator iOS app Add Token screen with added labels](/assets/img/guides/access/mfa-ios.png)
 
 
 There are two ways to link your device to your account. Using a QR code is easier but requires a camera. An alternative would be to use a Google Authenticator key in the Key field (label 2c in above screenshot).
 
 #### Link phone using QR code
 
-Tap "Scan Barcode" (label 2a above) and then point your camera at the QR code on your computer screen (click on the link in the "Welcome to Ceres" email to access QR code).
+Tap "Scan Barcode" (label 2a above) and then point your camera at the QR code on your computer screen (click on the link in the "Welcome to SCINet" email to access QR code).
 
 #### Link phone manually with a GA key
 
-In the box next to Account (label 2b above), enter your account name, which is \<your SCINet username>@ceres . Then, enter the Google Authenticator key from the "Welcome to Ceres" email into the box next to "Key" (label 2c above) and tap "Done" (label 2d above).
+In the box next to Account (label 2b above), enter your account name, which is \<your SCINet username>@ceres . Then, enter the Google Authenticator key from the "Welcome to SCINet" email into the box next to "Key" (label 2c above) and tap "Done" (label 2d above).
 
 #### Verify
 
@@ -161,7 +161,7 @@ After making your choice a code will be shown and you should receive a call or a
 
 You are now setup and can add your SCINet GA key to Authy.
 
-To do so click the red "+" in the Authy app and enter the key from the email you received titled "Welcome to Ceres".
+To do so click the red "+" in the Authy app and enter the key from the email you received titled "Welcome to SCINet".
 
 You will need to enter the key from the email since Authy cannot use QR codes.
 

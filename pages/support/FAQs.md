@@ -42,7 +42,7 @@ The most up-to-date documentation is available on this website although some inf
 Ceres is currently free to USDA-ARS researchers and collaborators.
 
 ### How much does Amazon Web Services (AWS) cost?
-SCINet provides AWS at no cost to SCINet users with suitable workloads. A limited amount of funding is available annually. Interested SCINet users must submit a [SCINet AWS Project Request]({{ site.baseurl }}/support/request-AWS) to be considered for AWS funding.
+SCINet provides AWS at no cost to SCINet users with suitable workloads. A limited amount of funding is available annually. Interested SCINet users must submit a [SCINet AWS Project Request](/support/request-AWS) to be considered for AWS funding.
 
 ### Who manages SCINet?
 Day to day operations and user support are provided by the Virtual Research Support Core (see [What is the Virtual Research Support Core (VRSC)?](#what-is-the-virtual-research-support-core-vrsc)). Higher level policy and development are managed by the SCINet Executive Committee, including the SCINet program manager Rob Butler, with input from the Scientific Advisory Committee (SAC; see [What is the Scientific Advisory Committee (SAC)?](#what-is-the-scientific-advisory-committee-sac))
@@ -52,7 +52,7 @@ Single user operational questions should be emailed to the VRSC scinet_vrsc@usda
 
 Discussion that is relevant to other SCINet users such as questions about the best practices for research computations should be posted on the SCINet VRSC Forum. Access to [SCINet Forum](https://forum.scinet.usda.gov) is provided during the SCINet account application process.
 
-Policy and development questions should be directed to the SCINet program manager, Rob Butler, or to your area representatives on the SCINet Scientific Advisory Committee (SAC), see the [SCINet Organization]({{ site.baseurl }}/about/organization/) page.
+Policy and development questions should be directed to the SCINet program manager, Rob Butler, or to your area representatives on the SCINet Scientific Advisory Committee (SAC), see the [SCINet Organization](/about/organization/) page.
 
 ### How do I use Basecamp?
 Basecamp  has been replaced by [SCINet Forum](https://forum.scinet.usda.gov). SCINet documentation previously available on Basecamp can now be found in the User Guides section of the [SCINet website](https://scinet.usda.gov).
@@ -103,39 +103,39 @@ If you have forgotten your login password, please email the VRSC: scinet_vrsc@us
 Older passwords CAN NOT be reused.
 
 ### How do I login to Ceres?
-Command line access is available via Secure Shell (SSH) and Virtual Private Network (VPN). For more info, see the [Ceres Quick Start Guide]({{ site.baseurl }}/guide/quickstart).
+Command line access is available via Secure Shell (SSH) and Virtual Private Network (VPN). For more info, see the [Ceres Quick Start Guide](/guide/quickstart).
 
 ### I took my onboarding a long time ago, how do I get a refresher course?
-Email the VRSC scinet_vrsc@usda.gov for a time and day. You can also read the [Ceres Quick Start]({{ site.baseurl }}/guide/quickstart) or [Ceres User Guide]({{ site.baseurl }}/guide/ceres/).
+Email the VRSC scinet_vrsc@usda.gov for a time and day. You can also read the [Ceres Quick Start](/guide/quickstart) or [Ceres User Guide](/guide/ceres/).
 
 
 ## Software
 ---
 ### What software is available on SCINet?
-See the Ceres [Software Overview]({{ site.baseurl }}/guide/software) for a list of available software. You can also login to Ceres or Atlas and issue the command “module avail” to see the same list of available software modules.
+See the Ceres [Software Overview](/guide/software) for a list of available software. You can also login to Ceres or Atlas and issue the command “module avail” to see the same list of available software modules.
 
 ### How do I request software to be loaded onto Ceres?
-For new software requests, go to the [Request Software page]({{ site.baseurl }}/support/request-software) and follow the instructions which include 1) checking if the software is already installed, 2) considering whether to install software yourself, and 3) requesting new software to be installed as a module by the VRSC. Software requests sent to the VRSC require USDA Security Operations Center (SOC) review and approval which takes a few weeks.
+For new software requests, go to the [Request Software page](/support/request-software) and follow the instructions which include 1) checking if the software is already installed, 2) considering whether to install software yourself, and 3) requesting new software to be installed as a module by the VRSC. Software requests sent to the VRSC require USDA Security Operations Center (SOC) review and approval which takes a few weeks.
 
 ### How do I install my own software programs?
 You may install your own software in your own directories, however, we strongly encourage users to contact the VRSC team to ensure that their required tool(s) might not be better distributed as a shared package within the official software modules tree.
 
-The popular R, Perl and Python languages have many packages/modules available. Some of the programming-language-specific packages are installed on Ceres and are available with the r/perl/python_2/python_3 modules. See the list of installed packages on the [Software Overview page]({{ site.baseurl }}/guide/software) or use “module avail” at the command line. To see more information on a specific module, issue the "module help <module_name>" command. Also see the [Installing R/Python/Perl Packages guide]({{ site.baseurl }}/guide/packageinstall).
+The popular R, Perl and Python languages have many packages/modules available. Some of the programming-language-specific packages are installed on Ceres and are available with the r/perl/python_2/python_3 modules. See the list of installed packages on the [Software Overview page](/guide/software) or use “module avail” at the command line. To see more information on a specific module, issue the "module help <module_name>" command. Also see the [Installing R/Python/Perl Packages guide](/guide/packageinstall).
 
-Another resource for installing your own software programs is the Conda package manager. See the [User-Installed Software on Ceres Using Conda guide]({{ site.baseurl }}/guide/conda)
+Another resource for installing your own software programs is the Conda package manager. See the [User-Installed Software on Ceres Using Conda guide](/guide/conda)
 
 Experienced command-line users can also install open-source software locally in their project. We recommend installing packages in the project directories since collaborators on the same project most probably would need the same packages. In addition, home quotas are much lower than project directories quotas.
 
-Alternatively, one can use Singularity to run software container images (including Docker images). For more information, see the [Singularity on Ceres guide]({{ site.baseurl }}/guide/singularity).
+Alternatively, one can use Singularity to run software container images (including Docker images). For more information, see the [Singularity on Ceres guide](/guide/singularity).
 
 ### How do I compile software?
-Ceres has development libraries available on all nodes. There is a system version of gcc which is well maintained by CentOS. The VRSC also makes available modules with newer versions of gcc and the intel compilers. See the [Software Overview]({{ site.baseurl }}/guide/software) for available versions or use  ```module avail intel```  or  ```module avail gcc```  at the command line to see all of the versions that are available at any given time to make use of them. To access the software use  ```module load gcc```  or  ```module load intel``` . Note that after using these compilers you will probably need to load the modules again in the future to run the code you compiled as well.
+Ceres has development libraries available on all nodes. There is a system version of gcc which is well maintained by CentOS. The VRSC also makes available modules with newer versions of gcc and the intel compilers. See the [Software Overview](/guide/software) for available versions or use  ```module avail intel```  or  ```module avail gcc```  at the command line to see all of the versions that are available at any given time to make use of them. To access the software use  ```module load gcc```  or  ```module load intel``` . Note that after using these compilers you will probably need to load the modules again in the future to run the code you compiled as well.
 
 ### What is Galaxy?
-Galaxy is a web-based interface to software on Ceres in which users can build analysis workflows. See [Getting Started with Galaxy on SCINet]({{ site.baseurl }}/guide/galaxy/). General information about Galaxy as well as training guides can be found at [galaxyproject.org](https://galaxyproject.org/).
+Galaxy is a web-based interface to software on Ceres in which users can build analysis workflows. See [Getting Started with Galaxy on SCINet](/guide/galaxy/). General information about Galaxy as well as training guides can be found at [galaxyproject.org](https://galaxyproject.org/).
 
 ### How do I login to SCINet Galaxy?
-Go to [galaxy.scinet.usda.gov](https://galaxy.scinet.usda.gov/). Enter your email address and SCINet password followed by Verification code. See [Getting Started with Galaxy on SCINet]({{ site.baseurl }}/guide/galaxy/) for more details.
+Go to [galaxy.scinet.usda.gov](https://galaxy.scinet.usda.gov/). Enter your email address and SCINet password followed by Verification code. See [Getting Started with Galaxy on SCINet](/guide/galaxy/) for more details.
 
 ### How do I request software to be loaded onto SCINet Galaxy?
 Please submit software install request at https://e.arsnet.usda.gov/sites/OCIO/scinet/Pages/SCINet-New-Application.aspx and check next to Galaxy Application.
@@ -153,7 +153,7 @@ When requesting additional data storage you will be asked for a project summary,
 Besides /project data can be store in the short-term storage /90daydata which has no quotas. For more information refer to the [SCINet Storage Guide](https://scinet.usda.gov/guide/storage/).
 
 ### How do I request an increase in storage space?
-Please fill out an application form at [Request Project Storage]({{ site.baseurl }}/support/request-storage) (eAuthentication required, non-ARS users should contact their sponsor) to request more storage.
+Please fill out an application form at [Request Project Storage](/support/request-storage) (eAuthentication required, non-ARS users should contact their sponsor) to request more storage.
 
 ### How do I request access to a project directory?
 Only project directory managers can request access to their project space for other users. 
@@ -162,16 +162,16 @@ Only project directory managers can request access to their project space for ot
 ## Data Transfer
 ---
 ### How do I get my data onto and off of Ceres?
-SCP, SFTP, lftp (to/from Box accounts) Globus, and hard drive shipment are supported. This is described in the [File Transfers section of the Ceres User Guide]({{ site.baseurl }}/guide/ceres/#file-transfers). If you work near Beltsville, you may also use the SCINet lab located at the National Agricultural Library (NAL). Two computers with 10GB Internet2 SCINet connections are available.
+SCP, SFTP, lftp (to/from Box accounts) Globus, and hard drive shipment are supported. This is described in the [File Transfers section of the Ceres User Guide](/guide/ceres/#file-transfers). If you work near Beltsville, you may also use the SCINet lab located at the National Agricultural Library (NAL). Two computers with 10GB Internet2 SCINet connections are available.
 
 ### How do I get my data onto Ceres via SCINet Galaxy?
-See [Getting Started with Galaxy on Ceres]({{ site.baseurl }}/guide/galaxy).
+See [Getting Started with Galaxy on Ceres](/guide/galaxy).
 
 
 ## Support, Policy, O&M
 ---
 ### What is the Virtual Research Support Core (VRSC)?
-The Virtual Research Support Core is a team of Iowa State University and ARS personnel who manage the maintenance and operation of the Ceres HPC system and provide user support. See the [Virtual Research Support Core page]({{ site.baseurl }}/support/vrsc/) and [How do I contact the VRSC for assistance?](#how-do-i-contact-the-vrsc-for-assistance) for more details.
+The Virtual Research Support Core is a team of Iowa State University and ARS personnel who manage the maintenance and operation of the Ceres HPC system and provide user support. See the [Virtual Research Support Core page](/support/vrsc/) and [How do I contact the VRSC for assistance?](#how-do-i-contact-the-vrsc-for-assistance) for more details.
 
 ### How do I contact the VRSC for assistance?
 Contact scinet_vrsc@usda.gov for operational issues affecting a single user such as:
@@ -192,7 +192,7 @@ The current acting SCINet program manager is Rob Butler.
 ### What is the Scientific Advisory Committee (SAC)?
 The Scientific Advisory Committee is composed of ARS scientists across all the five physical Areas, NAL, and a representative from the Area Statisticians. These scientists serve 3-year terms on the committee and represent a broad spectrum of the computational research efforts within ARS. The SAC, which is also referred to as the executive SAC (eSAC), interacts directly with the SCINet Executive Committee on SCINet policy, development, and training.
 
-There is a call for new SAC members every spring. If you would like serve on the SAC, please discuss your interest with your supervisor and email the SAC Chair. Current SAC members can be found on the [SCINet Organization page]({{ site.baseurl }}/about/organization/).
+There is a call for new SAC members every spring. If you would like serve on the SAC, please discuss your interest with your supervisor and email the SAC Chair. Current SAC members can be found on the [SCINet Organization page](/about/organization/).
 
 
 ## Parallel Computing

@@ -12,8 +12,8 @@ layout: nav
 
 :  To obtain a SCINet account, a SCINet Account Request must be submitted.  The approval process depends on the affiliation of the requester. 
 
-   * ARS: [SCINet Account Request]({{ site.baseurl }}/about/signup#ars-employees)
-   * Other: [Non-ARS SCINet Account Request]({{ site.baseurl }}/about/signup#non-ars-employees)  
+   * ARS: [SCINet Account Request](/about/signup#ars-employees)
+   * Other: [Non-ARS SCINet Account Request](/about/signup#non-ars-employees)  
    {: .padding-bottom-2}
 
 **Terms and Conditions:**  
@@ -49,7 +49,7 @@ layout: nav
 
 :  Home directory quota on all HPC clusters is automatically granted to all SCINet user accounts.  You have space by default as a user, but you can request Project Allocation.
 
-   * Project Allocation Request: A [SCINet Project Allocation Request]({{ site.baseurl }}/support/request-storage#to-request-a-quota-increase-for-an-existing-scinet-project-allocation) form must be submitted by the project's Principal Investigator (PI).
+   * Project Allocation Request: A [SCINet Project Allocation Request](/support/request-storage#to-request-a-quota-increase-for-an-existing-scinet-project-allocation) form must be submitted by the project's Principal Investigator (PI).
 
 
 ## Job Queues 
@@ -59,7 +59,7 @@ layout: nav
 
 :  Queue policies are subject to periodic change.
 
-   *  [Ceres User Guide]({{ site.baseurl }}/guide/ceres/#partitions-or-queues)
+   *  [Ceres User Guide](/guide/ceres/#partitions-or-queues)
    *  [Atlas User Guide](https://www.hpc.msstate.edu/computing/atlas/)
 
 
