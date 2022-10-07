@@ -36,6 +36,6 @@ Server port: 7777
 
 4.	Log in.
 
-![screenshot of CLC Genomics Workbench 22.0.2 software homescreen](/assets/img/misc/CLC2.png)
+![screenshot of CLC Genomics Workbench 22.0.2 software homescreen](/assets/img/guides/misc/CLC2.png)
 
 After successful login, you should see a directory CLC-\<your project> in the top left window.
