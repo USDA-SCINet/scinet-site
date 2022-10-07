@@ -21,7 +21,7 @@ subnav:
 
 ### Expanding SCINet for the Future of Science
 
-![SCINet-X visualization]({{ site.baseurl }}/assets/img/news/scinet-x-visualization.jpg)
+![SCINet-X visualization](/assets/img/news/scinet-x-visualization.jpg)
 
 ## Overview of the SCINet-X Project
 
