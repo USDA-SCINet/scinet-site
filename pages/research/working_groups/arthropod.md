@@ -11,9 +11,9 @@ subnav:
     url: '#workshops'
 ---
 
-![AGR Logo](/assets/img/working-group/Arthropod-Genomics-Research-WG-400w.png)
+![AGR Logo]({{ site.baseurl }}/assets/img/working-group/Arthropod-Genomics-Research-WG-400w.png)
 
-The AGR working group focuses on outreach within USDA-ARS aimed at enhancing the genomic analyse knowledge and skill sets of members and collaborators. This is delivered through monthly teleconferences and webinars by internal and external scientists focused on genome assembly, gene and protein expression, population genomics, and reverse genetic (RNAi and CRISPR) approaches. The AGR was initiated following two organizational meetings in 2014 (AGR Workshop I) and 2016 ([AGR Workshop II](/pages/research/uses/working-groups/old-workshop-pages/old_2016-07-26-Arthropod-Genomics-Workshop-2/)), at which participants communicated needs and devised solutions for challenging analytical pipelines. The AGR facilitates internal and external collaborations by merging those with complementary knowledge, skills, and capabilities within a given research area. Collaborations among AGR members have also resulted in two published papers reviewing ARS arthropod genomics research<sup>1</sup> and developing RNAi and CRISPR technologies<sup>2</sup>.  Work within the AGR includes the Ag100Pest Initiative, which aims to provide reference quality genome sequence assemblies for arthropod pests of U.S. agricultural commodities.
+The AGR working group focuses on outreach within USDA-ARS aimed at enhancing the genomic analyse knowledge and skill sets of members and collaborators. This is delivered through monthly teleconferences and webinars by internal and external scientists focused on genome assembly, gene and protein expression, population genomics, and reverse genetic (RNAi and CRISPR) approaches. The AGR was initiated following two organizational meetings in 2014 (AGR Workshop I) and 2016 ([AGR Workshop II]({{ site.baseurl }}/pages/research/uses/working-groups/old-workshop-pages/old_2016-07-26-Arthropod-Genomics-Workshop-2/)), at which participants communicated needs and devised solutions for challenging analytical pipelines. The AGR facilitates internal and external collaborations by merging those with complementary knowledge, skills, and capabilities within a given research area. Collaborations among AGR members have also resulted in two published papers reviewing ARS arthropod genomics research<sup>1</sup> and developing RNAi and CRISPR technologies<sup>2</sup>.  Work within the AGR includes the Ag100Pest Initiative, which aims to provide reference quality genome sequence assemblies for arthropod pests of U.S. agricultural commodities.
 
 The AGR is open to anyone within ARS, and those interested in joining can contact Brad Coates.
 
@@ -63,7 +63,7 @@ The ARS AGR working group along with the [i5K Community](http://i5k.github.io/),
 
 There were 628 participations across four AGSx 2021 sessions. Although the majority of attendees were from the United States, the AGSx reached a global audience inclusive of many scientists in Asia, Europe and South America.
 
-![Geographic Location of Participants Chart](/assets/img/working-group/AGSx2021_ParticipantSummaryV2.jpg){: style="float: right"}
+![Geographic Location of Participants Chart]({{ site.baseurl }}/assets/img/working-group/AGSx2021_ParticipantSummaryV2.jpg){: style="float: right"}
 
 | Location    | Number of Participants |
 | ----------- | ---------------------- |
@@ -132,15 +132,15 @@ Webinars from each session were recorded and made available on the [i5K Communit
 
 Thirty three members of the Arthropod Genomics Research (AGR) community representing all five Areas of the Agricultural Research Service (ARS) convened a workshop charged with building collaborative research communities and improving communication channels in the Agency. Participants assessed how the current knowledge, skills and abilities of the AGR scientists impact the effectiveness of genomic data analyses, and affect the capacity of the Agency to address arthropod-specific challenge areas; 1) Controlling Vectored Diseases, 2) Managing Herbivorous Insects, and 3) Implementing Biocontrol, as well as meet the Grand Challenge of reducing agricultural inputs and environmental impact by 25% while increasing output by 25% by 2025. Participants were charged with forming long-term scientific teams that will support the exchange of scientific knowledge and expertise. The workshop was structured to evaluate gaps in knowledge and communication that currently exist, and to subsequently propose solutions that would increase the capacity of ARS to pursue genomics-based scientific inquiry. This task is aligned with the ARS Big Data Vision aimed to develop a well-trained scientific and technical staff and enhance knowledge, skills and abilities within the ARS workforce.
 
-[Workshop Agenda](/assets/pdf/workshops/2016-07-AGRW2-Beltsville/ArthropodGenomicsResearchWorkshop2_Agenda.pdf) (opens pdf in this browser window)
+[Workshop Agenda]({{ site.baseurl }}/assets/pdf/workshops/2016-07-AGRW2-Beltsville/ArthropodGenomicsResearchWorkshop2_Agenda.pdf) (opens pdf in this browser window)
 
-[Participant List](/assets/pdf/workshops/2016-07-AGRW2-Beltsville/ArthropodGenomicsResearchWorkshop_Participants.pdf) (opens pdf in this browser window)
+[Participant List]({{ site.baseurl }}/assets/pdf/workshops/2016-07-AGRW2-Beltsville/ArthropodGenomicsResearchWorkshop_Participants.pdf) (opens pdf in this browser window)
 
-[Breakout Session I Exercise: Gap Analysis](/assets/pdf/workshops/2016-07-AGRW2-Beltsville/ArthropodGenomicsResearchWorkshop2_BreakoutSessionI.pdf) (opens pdf in this browser window)
+[Breakout Session I Exercise: Gap Analysis]({{ site.baseurl }}/assets/pdf/workshops/2016-07-AGRW2-Beltsville/ArthropodGenomicsResearchWorkshop2_BreakoutSessionI.pdf) (opens pdf in this browser window)
 
-[Breakout Session II Exercise: Devising solutions within and among Grand Challenge Areas](/assets/pdf/workshops/2016-07-AGRW2-Beltsville/ArthropodGenomicsResearchWorkshop2_BreakoutSessionII.pdf) (opens pdf in this browser window)
+[Breakout Session II Exercise: Devising solutions within and among Grand Challenge Areas]({{ site.baseurl }}/assets/pdf/workshops/2016-07-AGRW2-Beltsville/ArthropodGenomicsResearchWorkshop2_BreakoutSessionII.pdf) (opens pdf in this browser window)
 
-[Workshop Summary Document](/assets/pdf/workshops/2016-07-AGRW2-Beltsville/ArthropodGenomicsResearchWorkshop2_SummaryDocument.pdf) (opens pdf in this browser window)
+[Workshop Summary Document]({{ site.baseurl }}/assets/pdf/workshops/2016-07-AGRW2-Beltsville/ArthropodGenomicsResearchWorkshop2_SummaryDocument.pdf) (opens pdf in this browser window)
 
 <br>
 
@@ -171,10 +171,10 @@ Workshop Goals/Deliverables:
 * Build roadmap to accomplish ARS-wide goals with respect to AGR.
 * Plan movement towards integrative, multidisciplinary, and translational genomics.
 
-[Workshop Agenda](/assets/pdf/workshops/2014-09-AGRW1-Beltsville/AGRworkshop1-Agenda.pdf) (opens pdf in this browser window)
+[Workshop Agenda]({{ site.baseurl }}/assets/pdf/workshops/2014-09-AGRW1-Beltsville/AGRworkshop1-Agenda.pdf) (opens pdf in this browser window)
 
-[Participant List](/assets/pdf/workshops/2014-09-AGRW1-Beltsville/AGRworkshop1-Participant-Summaries.pdf) (opens pdf in this browser window)
+[Participant List]({{ site.baseurl }}/assets/pdf/workshops/2014-09-AGRW1-Beltsville/AGRworkshop1-Participant-Summaries.pdf) (opens pdf in this browser window)
 
-[Breakout Session Questions](/assets/pdf/workshops/2014-09-AGRW1-Beltsville/AGRworkshop1-Breakout-Session-Questions.pdf) (opens pdf in this browser window)
+[Breakout Session Questions]({{ site.baseurl }}/assets/pdf/workshops/2014-09-AGRW1-Beltsville/AGRworkshop1-Breakout-Session-Questions.pdf) (opens pdf in this browser window)
 
-[AGR Impact on Agriculture Statement](/assets/pdf/workshops/2014-09-AGRW1-Beltsville/AGRworkshop1-AGR-Impacts-on-agriculture-statement.pdf) (opens pdf in this browser window)
+[AGR Impact on Agriculture Statement]({{ site.baseurl }}/assets/pdf/workshops/2014-09-AGRW1-Beltsville/AGRworkshop1-AGR-Impacts-on-agriculture-statement.pdf) (opens pdf in this browser window)
