@@ -6,8 +6,6 @@ excerpt: This document provides detailed information about the storage options p
 categories: [Data]
 
 subnav:
-  - title: Introduction
-    url: '#introduction'
   - title: Quotas
     url: '#quotas'
   - title: Home Directories
@@ -27,9 +25,7 @@ subnav:
 
 
 
-# Introduction
-
-This document provides detailed information about the storage options provided by SCINet and how to use them.  For a simpler overview of suggested procedures for managing data on SCINet, please see [Managing Data on ARS HPC and Storage Infrastructure]({{ site.baseurl }}/guide/data_management_sop/).
+This document provides detailed information about the storage options provided by SCINet and how to use them.  For a simpler overview of suggested procedures for managing data on SCINet, please see [Managing Data on ARS HPC and Storage Infrastructure]({{ site.baseurl }}/guide/data_management_sop/).<!--more-->
 
 
 There are multiple places to store data on the Ceres and Atlas clusters that all serve different purposes. 

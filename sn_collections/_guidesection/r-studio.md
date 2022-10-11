@@ -5,8 +5,6 @@ description: Using Rstudio
 categories: [Analysis]
 
 subnav:
-  - title: Introduction
-    url: '#introduction'
   - title: SCINet Options for RStudio
     url: '#scinet-options-for-rstudio'
   - title: RStudio Server on Ceres
@@ -32,9 +30,7 @@ subnav:
 ---
 
 
-## Introduction
-
-[RStudio](https://www.rstudio.com/products/rstudio/) is an integrated development environment (IDE) for the R programming language, with limited support for other programming languages (including Python, bash, and SQL). RStudio provides a powerful graphical environment for [importing data in a number of formats](https://support.rstudio.com/hc/en-us/articles/218611977-Importing-Data-with-RStudio) (including CSV, Excel spreadsheets, SAS, and SPSS); manipulating, analyzing, and visualizing data; version control with git or SVN; a graphical R package manager that provides point/click search/installation/uninstallation of R packages from its substantial ecosystem (including the Bioconductor repository, which provides almost 1500 software tools “for the analysis and comprehension of high-throughput genomic data.”); and [many other features](https://www.rstudio.com/products/rstudio/features/).
+[RStudio](https://www.rstudio.com/products/rstudio/) is an integrated development environment (IDE) for the R programming language, with limited support for other programming languages (including Python, bash, and SQL).<!--more--> RStudio provides a powerful graphical environment for [importing data in a number of formats](https://support.rstudio.com/hc/en-us/articles/218611977-Importing-Data-with-RStudio) (including CSV, Excel spreadsheets, SAS, and SPSS); manipulating, analyzing, and visualizing data; version control with git or SVN; a graphical R package manager that provides point/click search/installation/uninstallation of R packages from its substantial ecosystem (including the Bioconductor repository, which provides almost 1500 software tools “for the analysis and comprehension of high-throughput genomic data.”); and [many other features](https://www.rstudio.com/products/rstudio/features/).
 
 RStudio Server is a client/server version of RStudio that runs on a remote server and is accessed via the client’s web browser. A graphical file manager allows file upload/download from Ceres via web browser.
 

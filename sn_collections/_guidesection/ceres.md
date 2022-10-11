@@ -1,6 +1,7 @@
 ---
 title: SCINet Ceres
 description: Guide to Ceres
+excerpt: Guide to Ceres
 
 categories: [Resources]
 

@@ -23,7 +23,7 @@ subnav:
 
 ## What is Multifactor Authentication
 
-Federal computer systems are required to use multifactor authentication for site security. This means that a code is required in addition to a password to login to SCINet. If you're ssh-ing to Ceres cluster from a connected site (where you already had to use second factor such as PIV/CAC), you probably won't be prompted for a verification code. However the code is always required to ssh to the [Atlas cluster](https://www.hpc.msstate.edu/computing/atlas) and to use other SCINet resources, such as [SCINet Galaxy](https://scinet.usda.gov/guide/galaxy) or [SCINet Forum](https://forum.scinet.usda.gov/). It's also needed to connect to [SCINet VPN](https://scinet.usda.gov/guide/vpn).
+Federal computer systems are required to use multifactor authentication for site security. This means that a code is required in addition to a password to login to SCINet.<!--more--> If you're ssh-ing to Ceres cluster from a connected site (where you already had to use second factor such as PIV/CAC), you probably won't be prompted for a verification code. However the code is always required to ssh to the [Atlas cluster](https://www.hpc.msstate.edu/computing/atlas) and to use other SCINet resources, such as [SCINet Galaxy](https://scinet.usda.gov/guide/galaxy) or [SCINet Forum](https://forum.scinet.usda.gov/). It's also needed to connect to [SCINet VPN](https://scinet.usda.gov/guide/vpn).
 
 You will need to install an app on a mobile device or a small program on your computer that will generate your verification codes. The app is initialized with your SCINet Google Authentication (GA) account, that is normally created along with your SCINet account.
 

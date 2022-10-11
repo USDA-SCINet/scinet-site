@@ -6,8 +6,6 @@ description: Using Conda
 categories: [Software]
 
 subnav:
-  - title: Introduction
-    url: '#introduction'
   - title: Setup
     url: '#setup'
   - title: Installing Software
@@ -26,9 +24,8 @@ subnav:
 ---
 
 
-## Introduction
-
 [Conda](https://conda.io/) is a software package manager for data science that allows unprivileged (non-administrative) Linux or MacOS users to search, fetch, install, upgrade, use, and manage supported open-source software packages and programming languages/libraries/environments (primarily Python and R, but also others such as Perl, Java, and Julia) in a directory they have write access to. Conda allows SCINet users to create reproducible scientific software environments (including outside of Ceres) without requiring the submission of a SCINet software request form for new software, or contacting the VRSC to upgrade existing software.
+<!--more-->
 
 Many open-source scientific software packages are available:
 * [Browse/search](https://anaconda.org/search) all conda packages
