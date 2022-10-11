@@ -127,7 +127,7 @@ defaults:
       layout: "guides"
       layout_type: "guides"
       sidenav_link: /guide/start
-      class: "border-top-05 bg-base-lightest"
+      class: "guide-nav"
   - 
     scope:
       path: ""

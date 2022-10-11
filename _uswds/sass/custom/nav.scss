@@ -1,0 +1,11 @@
+@use "uswds-core" as *;
+
+.guide-nav{
+    @include u-border-top('05');
+    @include u-bg('base-lightest') 
+}
+
+.guide-nav.usa-current{
+    @include u-border-top(0);
+    @include u-border-bottom(2px);
+}
