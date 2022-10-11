@@ -118,7 +118,7 @@ usecases:
         src: /plant.svg
         alt: ""
         link: /research/uses/plant-breeding
-      title: Plant Breeding.
+      title: Plant Breeding
       description: The USDA’s National Plant Germplasm System maintains the world’s foremost collection of crop diversity.
 
 ---
