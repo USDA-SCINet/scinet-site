@@ -10,7 +10,7 @@ demo_banner: true
 # determiner or other automated feature. If undefined, the default is .gov
 # government_tld: .mil
 
-title: SCINet Scintific Computing
+title: SCINet Scientific Computing
 tagline: U.S. Department of Agriculture
 
 # Defines the type of header.
