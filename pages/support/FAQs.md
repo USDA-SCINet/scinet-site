@@ -1,5 +1,5 @@
 ---
-title: FAQ's
+title: FAQs
 description: Frequently asked Questions
 permalink: /support/faq
 author: VRSC
