@@ -13,10 +13,13 @@ alerts:
   - alert: 
     type: warning
     slim: true 
-    text: This section is intended to be replaced with <a href="/guide/start">this new guide</a>
+    text: This section is intended to be replaced with <a href="/scinet-site/guide/start">this new guide landing page</a>
 
 
-sidenav: unstick
+sidenav_link: /guide/start
+sidenav_append:
+  - title: Old Quickstart Guide
+    url: /guide/quickstart
 subnav:
   - title: What is SCINet?
     url: '#what-is-scinet'

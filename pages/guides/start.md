@@ -12,7 +12,7 @@ alerts:
   - alert: 
     type: warning
     slim: true 
-    text: This section is intended to replace the <a href="/guide/start">old Quickstart guide</a>
+    text: This section is intended to replace the <a href="/scinet-site/guide/quickstart">old Quickstart guide</a>
 
 guidegroup:
     subnav: true
