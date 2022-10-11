@@ -8,8 +8,6 @@ order_number: 40
 categories: [Access]
 
 subnav:
-  - title: Introduction
-    url: '#introduction'
   - title: Access
     url: '#access'
   - title: Using
@@ -17,8 +15,8 @@ subnav:
 
 ---
 
-## Introduction
-[Open OnDemand](https://openondemand.org/) is an intuitive, innovative, and interactive interface to remote computing resources. The key benefit for SCINet users is that they can use any web browser, including browsers on a mobile phone, to access Ceres. 
+
+[Open OnDemand](https://openondemand.org/) is an intuitive, innovative, and interactive interface to remote computing resources. The key benefit for SCINet users is that they can use any web browser, including browsers on a mobile phone, to access Ceres. <!--more-->
 
 ---
 ## Access

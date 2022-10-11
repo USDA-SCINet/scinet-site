@@ -8,7 +8,7 @@ categories: [Misc]
 
 
 **This document assumes that a licensed copy of CLC Genomics WorkBench 22 is installed locally and available to the user.**
-
+<!--more-->
 ## Before You Begin
 
 Email [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=CLC%20setup) so that the admins can setup the import/export directories and permissions for access.

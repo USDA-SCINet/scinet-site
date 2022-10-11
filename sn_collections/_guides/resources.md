@@ -5,6 +5,8 @@ order_number: 20
 
 categories: [Resources]
 
+show_full: true
+
 sidenav_append:
   - title: Atlas HPC User Guide
     url: https://www.hpc.msstate.edu/computing/atlas

@@ -1,6 +1,7 @@
 ---
 title: EC2 Instance and Pathway Tools
 description: AWS Tools
+excerpt: Tools for AWS
 categories: [AWS]
 # author: Jordan Hoosman
 

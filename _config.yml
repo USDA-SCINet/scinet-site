@@ -47,6 +47,8 @@ search_site_handle: scinet-usda
 
 # touchpoints_form_id:
 
+excerpt_separator: <!--more-->
+
 # Configuration for projects and team collections
 # See https://jekyllrb.com/docs/collections/ for more information about collections.
 collections_dir: sn_collections

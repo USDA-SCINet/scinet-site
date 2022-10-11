@@ -1,7 +1,7 @@
 ---
 title: Galaxy on SCINet
 description: Using Galaxy
-
+excerpt: Using Galaxy on SCINet
 categories: [Analysis]
 
 #author: VRSC and Jordan Hoosman

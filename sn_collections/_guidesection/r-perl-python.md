@@ -16,7 +16,7 @@ subnav:
 
 ---
 
-The Ceres login node provides access to a wide variety of scientific software tools which users can access and use via the module system (see [Ceres User Manual]({{ site.baseurl }}/guide/ceres/) for more information). These software tools were compiled and optimized for use on Ceres by members of the Virtual Research Support Core (VRSC) team. Most users will find the software tools they need for their research among the provided packages and thus will not need to compile their own software packages.
+The Ceres login node provides access to a wide variety of scientific software tools which users can access and use via the module system (see [Ceres User Manual]({{ site.baseurl }}/guide/ceres/) for more information). These software tools were compiled and optimized for use on Ceres by members of the Virtual Research Support Core (VRSC) team. Most users will find the software tools they need for their research among the provided packages and thus will not need to compile their own software packages.<!--more-->
 
 The popular R, Perl and Python languages have many packages/modules available. Some of the packages are installed on Ceres and are available with the r/perl/python_2/python_3 modules. To see the list of installed packages, visit the [Software Overview]({{ site.baseurl }}/guide/software) page or use  `module help <module_name>`  command. If users need packages that are not available, they can either request VRSC to add packages, or they can download and install packages in their home/project directories. We recommend installing packages in the project directories since collaborators on the same project most probably would need same packages. In addition, home quotas are much lower than quotas for project directories.
 

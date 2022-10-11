@@ -1,6 +1,7 @@
 ---
 title: Geneious Software Guide
 description: Geneious Software Use Guide
+excerpt: Geneious Software Use Guide
 ## author: VRSC
 
 categories: [Analysis]

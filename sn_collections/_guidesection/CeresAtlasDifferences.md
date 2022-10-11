@@ -34,6 +34,8 @@ subnav:
 
 This guide lists differences between the Atlas and Ceres clusters to ease transition from one cluster to another.
 
+<!--more-->
+
 ## Quotas
 
 All project directories exist on both clusters, however they may have different quotas. Data in the project (and home) directories is not automatically synced between the clusters. The default project directory quota on Atlas is 1TB. 

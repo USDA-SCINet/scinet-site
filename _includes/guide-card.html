@@ -1,0 +1,100 @@
+
+{% assign allguides = site.guides | sort: 'order_number' %}
+{% assign allsections = site.guidesection %}
+{% assign all_posts = allguides | concat: allsections %}
+
+{% if page.guidegroup.all %}
+    {% assign intlinks = true %}
+    {% assign show_full = true %}
+    {% assign show_list = true %}
+    {% assign _navsections = allguides %}
+
+{% elsif page.guidegroup.subnav %}
+    {% assign _navsections = page.subnav %}
+
+{% else %}
+    {% assign intlinks = true %}
+    {% assign _navsections = allsections | where_exp: "post", "post.categories == page.categories" %}
+    {% if page.sorted %}
+        {% assign _navsections = _navsections | sort: 'order_number' %}
+    {% endif %}
+
+{% endif %}
+
+
+
+{% assign listpnum = _navsections | size %}
+{% unless listpnum == 0 %}
+<div class="home-block">
+  <ul class="usa-card-group margin-bottom-2 tablet:margin-x-2">
+{% for _option in _navsections %}
+{% capture optionurl %}{% if _option.internal or intlinks %}{{ _option.url | relative_url }}{% else %}{{ _option.url }}{% endif %}{% endcapture %}
+<li class="tablet:grid-col-12 margin-y-1">
+    <div class="usa-card__container">
+        <div class="usa-card__heading padding-2 bg-primary-lighter">
+            <a href="{{ optionurl }}">
+                <h3 class="arrow margin-0">{{ _option.title }}</h3>
+            </a>
+        </div>
+        <div class="usa-card__body">
+            {% if intlinks %}
+                {% assign _post = _option %}
+            {% else %}
+                {% if _option.internal %}
+                    {% assign _post = allposts  | where_exp: "post", "post.url == _option.url" %}
+                {% else %}
+                    {% assign _post = _option %}
+                {% endif %}
+            {% endif %}
+            <p class=" padding-x-2">
+                {% if _post.excerpt %}
+                    {{ _post.excerpt }}
+                {% elsif _post.show_full and show_full %}
+                    {{ _post }}
+                {% else %}
+                    {% if _post.description %}
+                        {{ _post.description }}
+                    {% endif %}
+                {% endif %}
+            </p>
+            <div class="text-right">
+                <a class="usa-button usa-button--outline margin-y-1"
+                    href="{{ optionurl }}">
+                    Read More
+                </a>
+            </div>
+        </div>
+        {% if show_list or _option.shows_list %}
+        <div class="usa-card__footer">
+            {% assign guide = allsections | where_exp: "post", "post.categories == _post.categories" %}
+            {% assign pnum = guide | size %}
+            {% unless pnum == 0 %}
+            {% if _post.sorted %}
+            {% assign guide = guide | sort: 'order_number' %}
+            {% endif %}
+            <div class="border-top-2px margin-3">
+                <h3>Guide Sections</h3>
+                <ul class="usa-card-group margin-y-4 maxw-tablet margin-x-auto flex-align-center">
+                    {% assign alt_buttons = page.alt_calendar.buttons %}
+                    {% for _section in guide %}
+                    <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                        <a href="{{ _section.url | relative_url }}">
+                            <div class="usa-card__container display-flex flex-row padding-2">
+                                <div class="overflow-hidden desktop:grid-col-fill">
+                                    <h4 class="arrow margin-0">{{ _section.title }}</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endunless %}
+        </div>
+        {% endif %}
+    </div>
+</li>
+{% endfor %}
+</ul>
+</div>
+{% endunless %}
