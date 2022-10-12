@@ -2,7 +2,7 @@
 title: User Stories
 layout: categories
 permalink: /news/stories
-
+categories: [Stories]
  
 
 
