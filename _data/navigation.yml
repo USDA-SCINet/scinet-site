@@ -51,8 +51,6 @@ primary:
   - title: Research
     sublinks: true
     links:
-      - title: Overview
-        url: /research/overview
       - title: Working Groups
         url: /research/working-groups
         sublinks:
