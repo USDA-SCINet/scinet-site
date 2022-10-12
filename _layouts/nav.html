@@ -120,7 +120,12 @@ main:
         {% if page.summarybox %}
           {% include components/summary.html summary=page.summarybox %}
         {% endif %}
+
         {{ content }}
+
+        {% if page.type == 'event' or page.type == 'training' %}
+        {% include components/collection.html post=page eventpage=page.type %}
+      {% endif %}
         <br>
     </main>
   </div>
