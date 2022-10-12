@@ -31,12 +31,6 @@
     {% if _src %}
       <script src="{{ _src | replace: _async_marker, '' | relative_url }}"{% if _script.async or _src contains _async_marker %} async{% endif %}></script>
     {% endif %}
-    {% if _dontprintthis %}
-    <!--    async caused significant loading delay on js
-      {% if _src %}
-      <script src="{{ _src | replace: _async_marker, '' | relative_url }}"{% if _script.async or _src contains _async_marker %} async{% endif %}></script>
-    {% endif %}-->
-    {% endif %}
 {% endfor %}
 
 
