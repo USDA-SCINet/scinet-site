@@ -49,7 +49,9 @@ main:
                           {% for _sublink in link_sublinks %}
                             {% if _sublink.url == pagelink %} 
                                 {% assign bc_section = _section %}
-                                {% assign show_bc_section = _section %}
+                                {% if _section.link %}
+                                  {% assign show_bc_section = _section %}
+                                {% endif %}
                                 {% assign bc_sectionlink = _link %}
                                 {% assign bc_sidenav = link_sublinks %}
                                 {% if page.sidenav_link %}
