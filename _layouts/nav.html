@@ -89,8 +89,6 @@ main:
 
   {% endif %}
 
-<!--  //breadcrumb section is "get guide if matches category and gimme one while also compiling the sidenav for guides"-->
-
 {% if page.sidenav_other %}
     {% assign sidenav = site.data.navigation[page.sidenav_other] | default: sidenav %}
 {% else %}
@@ -104,13 +102,13 @@ main:
 
 
 <div class="grid-row grid-gap flex-align-start">
-    <div class="usa-layout-docs__sidenav desktop:grid-col-3 desktop:padding-y-9{% unless page.sidenav %} usa-sticky-sidenav{% endunless %}">
+    <div class="usa-layout-docs__sidenav desktop:grid-col-3 desktop:padding-y-10{% unless page.sidenav %} usa-sticky-sidenav{% endunless %}">
         {% include sidenav.html links=sidenav %}
     </div>
     
-    <div class="{{ layout.main.class }}{% if sidenav %} desktop:grid-col-9{% endif %}">
+    <div class="usa-layout-docs__main desktop:grid-col-9">
         {% include breadcrumb.html %}
-        <main id="main-content">
+        <main class="{{ layout.main.class }}" id="main-content">
         {% unless page.hide-title %}
         {% if page.title %}
             <h1 class="top-header">{{ page.title }}</h1>
@@ -123,7 +121,7 @@ main:
         {{ content }}
         <br>
     </main>
-    </div>
+  </div>
 </div>
 </div>
 
