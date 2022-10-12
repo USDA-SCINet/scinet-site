@@ -1,5 +1,5 @@
 ---
-title: Downtime
+title: Downtime Archive
 layout: downtime
 permalink: /news/downtime/archive
 
