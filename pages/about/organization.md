@@ -25,6 +25,40 @@ subnav:
 
 
 # About SCINet
+The SCINet initiative is an effort by the USDA Agricultural Research Service to improve the USDA’s research capacity by providing scientists with access to high-performance computing (HPC) clusters, high-speed networking for data transfer, and training in scientific computing.
+
+SCINet supports a growing community of nearly 2,000 USDA research scientists and university partners to accelerate agricultural discovery through advanced computational infrastructure and scientific computing. 
+
+Current uses of SCINet span multiple disciplines, including genomics, plant breeding, hydrology, crop production, plant and animal disease modeling, and natural resource management. SCINet users include ARS and other federal scientists, as well as prtners external to the federal government.
+
+SCINet supports a broad range of computational tools, including R (and RStudio), Python (and Jupyter notebooks), and software for bioinformatics, geospatial analyses, machine learning and deep learning, and image processing.
+
+<div class="grid-row grid-gap">
+<div class="desktop:grid-col-auto">
+<h3>Training and Support</h3>
+<ul>
+  <li>​Computational skills​</li>
+  <li>Data management​</li>
+  <li>Scientific algorithms for HPC​</li>
+  <li>Computational workflow design</li>
+  <li>Software installation and support​</li>
+  <li>AI and machine learning</li>
+</ul>
+</div>
+<div class="desktop:grid-col">
+<h3>Computing Resources</h3>
+<ul>
+  <li>2 High-Performance Computing Clusters
+    <ul>
+      <li>320 Standard Compute Nodes</li>
+      <li>41 High-Memory Compute Nodes</li>
+      <li>9 GPU Nodes (more on the way)</li>
+    </ul>
+  </li>
+</ul>
+</div>
+</div>
+
 The ARS Scientific Computing Initiative is led by an Executive Committee comprised of ARS leadership including Dr. Steven Kappes – Associate Administrator for National Programs,  Dr. Debra Peters – Acting Chief Scientific Information Officer, Rob Butler – Acting SCINet Project Manager, ARS scientists representing IT and security, and users of the HPC systems. SCINet committees report to the Executive Committee, including the Scientific Advisory Committee (SAC), an HPC Policy Committee, and an HPC Software Committee.
 
 The program runs two high performance computer clusters and a storage unit.  The Ceres cluster is housed at the National Animal Disease Center in Ames, IA and operated by Iowa State University. The Atlas cluster is located and ran by Mississippi State University in Starkville, MS, and the Juno storage unit is located at the National Agricultural Library in Beltsville, MD. 
