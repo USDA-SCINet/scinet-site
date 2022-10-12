@@ -90,29 +90,33 @@ defaults:
       type: "events"
     values:
       future: "show"
-      layout: "post"
+      layout: "nav"
+      sidenav_link: /events/upcoming
   -
     scope:
       path: ""
       type: "downtime"
     values:
       future: "show"
-      layout: "post"
+      layout: "nav"
       categories: [Downtime]
+      sidenav_link: /news/downtime
   -
     scope:
       path: ""
       type: "announcements"
     values:
       future: "show"
-      layout: "post"
+      layout: "nav"
       categories: [Announcements]
+      sidenav_link: /news/announcements
   -
     scope:
       path: ""
       type: "posts"
     values:
-      layout: "post"
+      layout: "nav"
+      sidenav_link: /news/stories
   - 
     scope:
       path: ""
