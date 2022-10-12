@@ -1,9 +1,5 @@
 <ul id="{{ _section_id }}" class="usa-nav__submenu usa-megamenu" hidden="">
     <div class="grid-row grid-gap-4">
-        {% assign num = section_links | size %}
-        {% if num < 3 %}
-        <li class="desktop:grid-col-3"></li>
-        {% endif %}
         {% for _link in section_links %}
             {% assign next_i = forloop.index0 | plus: 1 %}
             {% assign prev_i = forloop.index0 | minus: 1 %}
@@ -25,7 +21,7 @@
                         {% for _sublink in link_sublinks %}
 
                             <li>
-                                <a class="sublinks" href="{% if _sublink.external %}{{ _sublink.url }}{% else %}{{ _sublink.url | relative_url }}{% endif %}">
+                                <a href="{% if _sublink.external %}{{ _sublink.url }}{% else %}{{ _sublink.url | relative_url }}{% endif %}">
                                     {{ _sublink.title }}
                                 </a>
                             </li>
