@@ -117,6 +117,7 @@ defaults:
     values:
       layout: "nav"
       sidenav_link: /news/stories
+      breadcrumb_title: "Selected Story"
   - 
     scope:
       path: ""
@@ -132,7 +133,7 @@ defaults:
     values:
       layout: "guides"
       layout_type: "guides"
-      sidenav_link: /guide/start
+      sidenav_link: /guides
       class: "guide-nav"
   - 
     scope:
@@ -141,7 +142,7 @@ defaults:
     values:
       layout: "nav"
       layout_type: "guides"
-      sidenav_link: /guide/start
+      sidenav_link: /guides
 
 # allow posts with dates in the future to be published now
 future: true

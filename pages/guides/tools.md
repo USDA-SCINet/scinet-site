@@ -1,8 +1,9 @@
 ---
 title: SCINet Software, Tools, and Storage
 description: Navigation for SCINet tools
-permalink: /guide/tools
+permalink: /guides/tools
 layout: nav
+layout_type: guides
 
 guidegroup:
   - category: Software

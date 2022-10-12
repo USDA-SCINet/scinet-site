@@ -40,14 +40,21 @@ main:
                     {% if _link.url == pagelink %} 
                         {% assign bc_section = _section %}
                         {% assign bc_sidenav = section_links %}
+                        {% if page.sidenav_link %}
+                          {% assign bc_base = _link %}
+                        {% endif %}
                     {% else %}
                         {% if _section.sublinks %}
                         {% assign link_sublinks = site.data.navigation[_link.sublinks] | default: _link.sublinks %}
                           {% for _sublink in link_sublinks %}
                             {% if _sublink.url == pagelink %} 
                                 {% assign bc_section = _section %}
+                                {% assign show_bc_section = _section %}
                                 {% assign bc_sectionlink = _link %}
                                 {% assign bc_sidenav = link_sublinks %}
+                                {% if page.sidenav_link %}
+                                  {% assign bc_base = _sublink %}
+                                {% endif %}
                             {% endif %}
                           {% endfor %}
                         {% endif %}
@@ -82,6 +89,8 @@ main:
 
   {% endif %}
 
+<!--  //breadcrumb section is "get guide if matches category and gimme one while also compiling the sidenav for guides"-->
+
 {% if page.sidenav_other %}
     {% assign sidenav = site.data.navigation[page.sidenav_other] | default: sidenav %}
 {% else %}
@@ -99,8 +108,9 @@ main:
         {% include sidenav.html links=sidenav %}
     </div>
     
-    <main class="{{ layout.main.class }}{% if sidenav %} desktop:grid-col-9{% endif %}" id="main-content">
-        {% if bc_sectionlink or alt_nav %}{% include breadcrumb.html %}{% else %}<nav class="usa-breadcrumb usa-breadcrumb--wrap"><div class="padding-y-2"></div></nav>{% endif %}
+    <div class="{{ layout.main.class }}{% if sidenav %} desktop:grid-col-9{% endif %}">
+        {% include breadcrumb.html %}
+        <main id="main-content">
         {% unless page.hide-title %}
         {% if page.title %}
             <h1 class="top-header">{{ page.title }}</h1>
@@ -113,6 +123,7 @@ main:
         {{ content }}
         <br>
     </main>
+    </div>
 </div>
 </div>
 

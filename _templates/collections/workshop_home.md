@@ -48,7 +48,7 @@ intro: # this is the first detailed section on the page.
     title: "Get Started with SCINet"
     text: "For this workshop, you will need to have a SCINet account and be able to successfully log in. We recommend applying for an account at least two weeks prior to the first session"
     button: Register for SCINet # button text
-    url: /guide/quickstart # button link
+    url: /guides/start # button link
 
 calendar:
   title: "Workshop Itinerary"

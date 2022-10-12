@@ -1,5 +1,5 @@
 ---
-title: Stories
+title: User Stories
 layout: categories
 permalink: /news/stories
 

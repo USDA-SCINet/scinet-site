@@ -36,7 +36,7 @@ intro:
     title: "Get Started with SCINet"
     text: "ARS scientists/collaborators: </br> Register for an account"
     button: Get Started
-    url: /guide/quickstart
+    url: /guides/start
 
 calendar:
   title: "Upcoming Training and Events"
@@ -78,7 +78,7 @@ support:
     - title: How to Use SCINet
       text: "Quick Start guide to getting up and running with SCINet"
       image: info_outline
-      url: /guide/start
+      url: /guides/start
     - title: Running Analyses
       text: "Guides for running different analyses"
       image: insights
