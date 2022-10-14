@@ -16,7 +16,7 @@
 {% endif %}
 
 
-{% if include.filter %}
+{% if include.filter == "true" %}
 {% assign gettags = '' | split: '' %}
 {% endif %}
 
@@ -28,7 +28,7 @@
 
   {% for _event in mysimple_events %}
 
-    {% if include.filter %}
+    {% if include.filter == "true" %}
     {% assign gettags = gettags | push: _event %}
     {% endif %}
 
@@ -74,7 +74,7 @@
 
       {% if _sessiondate_int >= timemin and _sessiondate_int <= timemax %}
 
-        {% if include.filter %}
+        {% if include.filter == "true" %}
         {% assign gettags = gettags | push: _event %}
         {% endif %}
 
@@ -120,7 +120,7 @@
 {% include components/collection/collection-noevent.html %}
 {% else %}
 
-{% if include.filter %}
+{% if include.filter == "true" %}
 
 {% assign tags = gettags | map: 'tags' | uniq %}
 {% assign types = gettags | map: 'type' | uniq %}
@@ -133,11 +133,6 @@
   
 {% assign cal_id = pagetitle | prepend: "cal-" %}
 
-
-
-{% if include.filter %}
-{% include components/cal_filter.html %}
-{% endif %}
 
 {% capture eventpage %}{% if include.eventpage %}{{ include.eventpage }}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
 {% if page.layout == "scinet_home" %}
@@ -155,6 +150,11 @@
   </a>
 </div>
 {% else %}
+
+{% if include.filter == "true" %}
+{% include components/cal_filter.html %}
+{% endif %}
+
 <ul class="usa-list usa-list--unstyled">
 
       {% if flow == 'normal' %}
