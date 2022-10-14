@@ -3,7 +3,7 @@ title: Upcoming Events
 description: Advertise upcoming events
 permalink: /events/upcoming
 author: Moe Richert
-layout: training-events
+layout: eventcalendar
 
  
 

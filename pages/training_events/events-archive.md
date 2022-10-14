@@ -1,8 +1,7 @@
 ---
-layout: training-events
 title: Events Archive
 permalink: /events/archive
-
+layout: eventcalendar
 type: archive
  
 

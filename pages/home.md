@@ -1,6 +1,7 @@
 ---
 title: Home
 permalink: /
+type: future
 
 # alerts:
 #  - alert:

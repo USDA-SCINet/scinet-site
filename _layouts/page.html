@@ -1,16 +1,21 @@
 ---
-layout: default
+layout: nav
 main:
   class: usa-layout-docs usa-layout-docs__main usa-prose 
 ---
 
-<div class="usa-section">
-  <main class="grid-container" id="main-content">
-      <div class="{{ layout.main.class }}">
-        {% if page.title %}
-          <h1>{{ page.title }}</h1>
-        {% endif %}
-        {{ content }}
-      </div>
-    </main>
-</div>
+<main class="{{ layout.main.class }}" id="main-content">
+  {% unless page.hide-title %}
+  {% if page.title %}
+      <h1 class="top-header">{{ page.title }}</h1>
+  {% endif %}
+  {% endunless %}
+
+  {% if page.summarybox %}
+    {% include components/summary.html summary=page.summarybox %}
+  {% endif %}
+
+  {{ content }}
+
+  <br>
+</main>

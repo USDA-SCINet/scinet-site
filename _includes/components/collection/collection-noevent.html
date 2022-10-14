@@ -1,0 +1,16 @@
+{% assign altcal = site.data.display.alt_calendar %}
+
+<div class="width-full padding-4 text-center flex-align-center{% unless page.layout == 'scinet_home' %} bg-primary-lighter{% endunless %}" >
+    <h3 class="site-preview-heading">{{ altcal.title }}</h3>
+    <div class="display-flex flex-column flex-align-center"><p >{{ altcal.text }}</p>
+        <a class="usa-button margin-y-2 " href="{{ page.alt_calendar.url }}">
+            {{ altcal.link }}
+        </a>
+    </div>
+    <ul class="usa-card-group margin-y-4 maxw-tablet margin-x-auto flex-align-center">
+        {% assign alt_buttons = altcal.buttons %}
+        {% for _button in alt_buttons %}
+            {% include components/details-card.html option= _button %}
+        {% endfor %}
+    </ul>
+</div>

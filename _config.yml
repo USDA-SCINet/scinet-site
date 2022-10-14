@@ -60,6 +60,10 @@ collections:
     output: true
     future: true
     permalink: /:collection/:path
+  events-recurring:
+    output: true
+    future: true
+    permalink: /events/:name
   events:
     output: true
     future: true
@@ -90,8 +94,17 @@ defaults:
       type: "events"
     values:
       future: "show"
-      layout: "nav"
+      layout: "event"
       sidenav_link: /events/upcoming
+  - 
+    scope:
+      path: ""
+      type: "events-recurring"
+    values:
+      future: "show"
+      layout: "event"
+      sidenav_link: /events/upcoming
+      recurring: true
   -
     scope:
       path: ""

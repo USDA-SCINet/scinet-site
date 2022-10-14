@@ -9,9 +9,28 @@ lead: Adam Thrash
 
 sessions:
   - session: 
+    date: 2022-12-08
     time: 2:00pm-3:00pm CT
     instructor: Adam Thrash
-    register: Registration Closed
+    register: Register Here
+    register_url: https://reg.extension.msstate.edu/view/cal10a.aspx?ek=&ref=&aa=&sid1=&sid2=&as=81&wp=476&tz=&ms=&nav=&cc=&cat1=&cat2=&cat3=&aid=MSU&rf=&pn=
+  - session: 
+    date: 2022-11-10
+    time: 2:00pm-3:00pm CT
+    instructor: Adam Thrash
+    register: Register Here
+    register_url: https://reg.extension.msstate.edu/view/cal10a.aspx?ek=&ref=&aa=&sid1=&sid2=&as=81&wp=476&tz=&ms=&nav=&cc=&cat1=&cat2=&cat3=&aid=MSU&rf=&pn=
+  - session: 
+    date: 2022-10-18
+    time: 10:00am-11:00am CT
+    instructor: Adam Thrash
+    register: Register Here
+    register_url: https://reg.extension.msstate.edu/view/cal10a.aspx?ek=&ref=&aa=&sid1=&sid2=&as=81&wp=476&tz=&ms=&nav=&cc=&cat1=&cat2=&cat3=&aid=MSU&rf=&pn=
+  - session: 
+    date: 2022-08-18
+    time: 10:00am-11:00am CT
+    instructor: Adam Thrash
+    register: Register Here
     register_url: https://reg.extension.msstate.edu/view/cal10a.aspx?ek=&ref=&aa=&sid1=&sid2=&as=81&wp=476&tz=&ms=&nav=&cc=&cat1=&cat2=&cat3=&aid=MSU&rf=&pn=
 ---
 
