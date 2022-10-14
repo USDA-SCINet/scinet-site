@@ -1,0 +1,16 @@
+{% assign post_type = 'calendar' %}
+
+{% assign comp_events = site.events-recurring | where: 'future', 'show' %}
+
+{% if page.type == "future" %}
+  {% assign simple_events = site.events | where: 'future', 'show' %}
+  {% assign mysimple_events = simple_events | where_exp: "post", "post.date >= site.time or post.end_date >= timemin" %}
+
+{% elsif page.type == "archive" %}
+  {% assign mysimple_events = site.events | where_exp: "post", "post.date < site.time" %}
+
+{% else %}
+  {% assign mysimple_events = site.events %}
+{% endif %}
+
+{% include components/collection-event.html simple_events=mysimple_events comp_events=comp_events filter="true" %}

@@ -23,3 +23,14 @@ wg-icons:
       link: /research/uses/hydrology
     title: Plant Breeding.
     description: The USDA’s National Plant Germplasm System maintains the world’s foremost collection of crop diversity.
+
+alt_calendar:
+  title: "Training and Events"
+  text: "SCINet, the AI-COE, and other providers regularly host a variety of events and trainings.  There are no upcoming events currently in our calendar."
+  link: "Add your name to the waitlist for future events"
+  url: https://forms.office.com/g/tVtE8wEgAt
+  buttons:
+    - title: "View available online training resources"
+      url: training/free-online-training
+    - title: "Take a look at events we have hosted in the past"
+      url: /events/archive

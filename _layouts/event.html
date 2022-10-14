@@ -1,0 +1,23 @@
+---
+layout: nav
+main:
+  class: usa-layout-docs usa-layout-docs__main usa-prose 
+---
+
+<div class="section">
+
+  {{ content }}
+
+  {% if page.type == 'event' or page.type == 'training' %}
+  <br>
+    {% assign my_events = '' | split: '' %}
+    {% if page.recurring %}
+      {% assign my_events = my_events | push: page %}
+      {% include components/collection-event.html comp_events=my_events eventpage="true" %}
+    {% else %}
+      {% assign my_events = my_events | push: page %}
+      {% include components/collection-event.html simple_events=my_events eventpage="true" %}
+    {% endif %}
+  {% endif %}
+
+</div>

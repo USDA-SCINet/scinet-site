@@ -14,43 +14,7 @@ class:
         <div class="desktop:grid-col-fill" aria-label="Calendar">
             <div class="home-block">
 
-                {% assign featured_cal = site.events | where: 'future', 'show' %}
-                {% assign timeint = site.time | date: "%Y%m%d" | plus: 0 %}
-
-                {% assign filtered_posts = featured_cal | where_exp: "post", "post.date >= site.time or post.end_date >= timeint" %}
-
-                {% assign pnum = filtered_posts | size %}
-                {% if pnum == 0 %}
-                <div class="width-full padding-4 text-center">
-                    <h3 class="site-preview-heading">{{ page.alt_calendar.title }}</h3>
-                    <div><p>{{ page.alt_calendar.text }}</p>
-                        <a class="usa-button margin-y-2" href="{{ page.alt_calendar.url }}">
-                            {{ page.alt_calendar.link }}
-                        </a>
-                    </div>
-                    <ul class="usa-card-group margin-y-4 maxw-tablet margin-x-auto flex-align-center">
-                        {% assign alt_buttons = page.alt_calendar.buttons %}
-                        {% for _button in alt_buttons %}
-                            {% include components/details-card.html option= _button %}
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% else %}
-                <div class="width-full padding-2">
-                    <h3 class="site-preview-heading">{{ page.calendar.title }}</h3>
-                    <ul class="usa-list usa-list--unstyled">
-                        {% for post in filtered_posts limit:3 %}
-                        {% assign post_type = 'calendar' %}
-                        {% include components/collection.html %}
-                        {% endfor %}
-                    </ul>
-                </div>
-                <div class="right-button padding-x-2">
-                    <a class="usa-button margin-x-auto margin-y-2" href=" {{ page.calendar.url | relative_url }}">
-                        {{ page.calendar.button }}
-                    </a>
-                </div>
-                {% endif %}
+                {% include collection-cal.html %}
             </div>
         </div>
     </div>
