@@ -14,17 +14,21 @@
 {% assign posttags = post[5] %}
 {% assign posturl = post[6] %}
 {% assign postend_date = post[7] %}
-{% assign postdate = post[8] %}
+
+{% assign registration = post[8] %}
+{% capture regtext %}{% if registration.text %}{{ registration.text }}{% else %}Register Here{% endif %}{% endcapture %}
+
+{% assign postdate = post[9] %}
 
 {% assign postsessions = "false" %}
 {% assign postsession = "false" %}
 {% assign hassessions = "false" %}
-{% if post[9] %}
+{% if post[10] %}
     {% assign hassessions = "true" %}
-    {% if post[9].time %}
-        {% assign postsession = post[9] %}
+    {% if post[10].date %}
+        {% assign postsession = post[10] %}
     {% else %}
-        {% assign postsessions = post[9] %}
+        {% assign postsessions = post[10] %}
     {% endif %}
 {% endif %}
 
@@ -32,7 +36,7 @@
     tagged="{% for tag in posttags %}{{ tag }} {% endfor %}all" type="{% if posttype %}{{ posttype }} {% endif %}all"
     instructor="{% unless postprovider == 'false' %}{{ postprovider }} {% endunless %}all" year="{{ postdate | date: '%Y' }}"
     month="{{ postdate | date: '%m' }}" {% endif %}>
-    {% if post_type == 'calendar' or eventpage=='event' %}
+    {% if post_type == 'calendar' or pagetype=='future' %}
     {% assign m = postdate | date: "%B" %}
     <div class="usa-collection__calendar-date">
         <time datetime="{{ postdate | date_to_string }}">
@@ -49,13 +53,11 @@
     </div>
     {% endif %}
     <div class="usa-collection__body">
+        {% unless eventpage=='event' %}
         <h3 class="usa-collection__heading">
-            {% if eventpage=='event' %}
-            {{ postdate | date_to_string }} &middot {% unless postprovider == 'false' %}{{ postprovider }} &middot {% endunless %}{{ posttitle }}
-            {% else %}
             <a class="usa-link" href="{{ posturl | relative_url}}">
                 {% if post_type == 'calendar' %}
-                    {% if page.type == "archive" %}
+                    {% if pagetype == "archive" %}
                         {{ postdate | date: "%Y" }} &middot 
                     {% endif %}
                     {% if page.layout != 'workshop' and postprovider != 'false' %}
@@ -67,7 +69,6 @@
                 posttitle }}
                 {% endif %}
             </a>
-            {% endif %}
         </h3>
         {% unless page.type == 'itinerary' %}
         {% if excerpt_type == 'long' %}
@@ -80,7 +81,8 @@
         </p>
         {% endif %}
         {% endunless %}
-        <ul class="usa-collection__meta" aria-label="More information">
+        {% endunless %}
+        <ul class="usa-collection__meta" aria-label="Event details">
             {% if hassessions == "true" %}
                 {% if postsessions == "false" %}
                     {% include components/collection/collection-item.html session=postsession postdate=postdate %}
@@ -103,13 +105,20 @@
             {% unless no_date_below %}
             <li class="usa-collection__meta-item">
                 <b>{{ postdate | date: "%A, %B %-d"}}{% unless post_type == 'calendar' %} &middot {{ postdate | date: "%Y" }}{% endunless %}</b>
+                {% unless registration == 'false' or pagetype == "archive" %}
+                <ul class="unstyled-list">
+                    <li><b>Registration: </b>
+                        {% include components/link.html url=registration.url text=_material.text external=true %}
+                    </li>
+                </ul>
+                {% endunless %}
             </li>
             {% endunless %}
             {% endif %}
 
 
         </ul>
-        {% unless page.layout == 'workshop' or page.no-tags %}
+        {% unless page.layout == 'workshop' or page.no-tags or eventpage=='event' %}
         {% unless posttags == 'false' and posttype == 'false' %}
         <ul class="usa-collection__meta" aria-label="Tags">
             {% if posttype != 'false' %}

@@ -63,7 +63,7 @@
             {% if post.sessions %}
             {% for session in post.sessions %}
             <li class="usa-collection__meta-item">
-                <b>{% if session.date %}{{ session.date | date: "%A %B %-d"}}{% else %}{{ post.date | date: "%A %B %-d"}}{% endif %}{% if session.time %}, {{ session.time }} {% endif %}</b>
+                <b>{% if session.date %}{{ session.date | date: "%A, %B %-d"}}{% else %}{{ post.date | date: "%A, %B %-d"}}{% endif %}{% if session.time %}, {{ session.time }} {% endif %}</b>
                 <ul class="unstyled-list">
                     {% unless page.type == "archive" %}
                     {% if session.register %} <li><b>Registration: </b>

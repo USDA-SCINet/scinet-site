@@ -1,6 +1,6 @@
 {% assign session = include.session %}
 {% if include.fixdate %}
-{% assign fixdate = include.fixdate %}
+    {% assign fixdate = include.fixdate %}
 {% endif %}
 
 {% capture thisdate %}{% if fixdate %}{{ fixdate }}{% elsif session.date %}{{ session.date }}{% else %}{{ postdate }}{% endif %}{% endcapture %}
@@ -8,19 +8,18 @@
 {% assign timecheck = thisdate | date: '%s' | plus: 0 %}
 
 <li class="usa-collection__meta-item">
-    <b>{{ thisdate | date: "%A %B %-d" }}{% if session.time %}, {{ session.time }} {% endif %}</b>
+    <b>{{ thisdate | date: "%A, %B %-d" }}{% if pagetype == "archive" or eventpage=='event' %}, {{ thisdate | date: "%Y" }}{% endif %}{% if session.time %}, {{ session.time }} {% endif %}</b>
     <ul class="unstyled-list">
         {% unless timecheck <= timeout %}
-        {% if session.register %} <li><b>Registration: </b>
-            {% if session.register_url %}
-            <a href="{{ session.register_url }}">
-                {{ session.register }}
-            </a>
-            {% else %}
-            {{ session.register }}
+            {% if session.register or registration != "false" %}
+                {% if session.register %}
+                    {% assign registration = session.register %}
+                {% endif %}
+                {% capture sessregtext %}{% if registration.text %}{{ registration.text }}{% else %}{{ regtext }}{% endif %}{% endcapture %}
+                <li><b>Registration: </b>
+                    {% include components/link.html url=registration.url text=sessregtext external=true %}
+                </li>
             {% endif %}
-        </li>
-        {% endif %}
         {% endunless %}
         {% if session.instructor %} <li><b>Instructor: </b>{{ session.instructor }}</li>{% endif %}
         {% if session.location %} <li><b>Location: </b>{{ session.location }}</li>{% endif %}
@@ -46,5 +45,11 @@
             {% endif %}
         </li>
         {% endunless %}
+        {% if session.materials %}
+            {% for _material in session.materials %}
+            <li>{% include components/link.html url=_material.url text=_material.text external=true %}</li>
+            {% endfor %}
+        {% endif %}
+
     </ul>
 </li>

@@ -1,0 +1,15 @@
+{% if include.url %}
+    {% assign url = include.url %}
+{% endif %}
+{% assign text = include.text %}
+{% if include.external %}
+    {% assign external = include.external %}
+{% endif %}
+
+{% if url %}
+<a href="{% if external==true %}{{ url }}{% else %}{{ url | relative_url }}{% endif %}">
+{% endif %}
+{{ text }}
+{% if url %}
+</a>
+{% endif %}

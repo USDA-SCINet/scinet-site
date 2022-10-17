@@ -11,11 +11,13 @@ main:
   {% if page.type == 'event' or page.type == 'training' %}
   <br>
     {% assign my_events = '' | split: '' %}
+    {% assign my_events = my_events | push: page %}
+
+    
     {% if page.recurring %}
-      {% assign my_events = my_events | push: page %}
-      {% include components/collection-event.html comp_events=my_events eventpage="true" %}
+      {% include components/collection-event.html comp_events=my_events eventpage="true" pagetype="future" %}
+      {% include components/collection-event.html comp_events=my_events eventpage="true" pagetype="archive" %}
     {% else %}
-      {% assign my_events = my_events | push: page %}
       {% include components/collection-event.html simple_events=my_events eventpage="true" %}
     {% endif %}
   {% endif %}
