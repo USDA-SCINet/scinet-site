@@ -1,9 +1,15 @@
-{% if page.type == "future" %}
+{% if include.pagetype %}
+  {% assign pagetype=include.pagetype %}
+{% else %}
+{% assign pagetype = page.type %}
+{% endif %}
+
+{% if pagetype == "future" %}
   {% assign timemin = site.time | date: '%s' | plus: 0 %}
   {% assign timemax = 199999999999 %}
   {% assign flow = 'normal' %}
 
-{% elsif page.type == "archive" %}
+{% elsif pagetype == "archive" %}
   {% assign timemin = 0 %}
   {% assign timemax = site.time | date: '%s' | plus: 0 %}
   {% assign flow = 'reverse' %}
@@ -55,6 +61,11 @@
     {% endif %}
     {% assign _eventdetails = _eventdetails | push: eventurl %}
     {% assign _eventdetails = _eventdetails | push: eventend_date %}
+    {% if _event.register %}
+      {% assign _eventdetails = _eventdetails | push: _event.register %}
+    {% else %}
+      {% assign _eventdetails = _eventdetails | push: dummyvar %}
+    {% endif %}
     {% assign _eventdetails = _eventdetails | push: eventdate %}
 
 
@@ -72,7 +83,7 @@
     {% for _session in _event.sessions %}
       {% assign _sessiondate_int = _session.date | date: '%s' | plus: 0 %}
 
-      {% if _sessiondate_int >= timemin and _sessiondate_int <= timemax %}
+      {% if _sessiondate_int >= timemin and _sessiondate_int < timemax %}
 
         {% if include.filter == "true" %}
         {% assign gettags = gettags | push: _event %}
@@ -80,7 +91,7 @@
 
         {% assign _eventdetails = '' | split: '' %}
 
-        {% capture sessiondateint %}{% if _sessiondate_int %}{{ _session.date | date: '%s' | plus: 0 }}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
+        {% capture sessiondateint %}{% if _sessiondate_int %}{{ _session.date | date: '%s' | plus: 0 }}{% else %}{{ _event.date | date: '%s' | plus: 0 }}{% endif %}{% endcapture %}
         {% capture eventtitle %}{% if _event.title %}{{ _event.title }}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
         {% capture eventexcerpt %}{% if _event.excerpt %}{{ _event.excerpt }}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
         {% capture eventtype %}{% if _event.type %}{{ _event.type }}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
@@ -101,6 +112,11 @@
         {% endif %}
         {% assign _eventdetails = _eventdetails | push: eventurl %}
         {% assign _eventdetails = _eventdetails | push: eventend_date %}
+        {% if _event.register %}
+          {% assign _eventdetails = _eventdetails | push: _event.register %}
+        {% else %}
+          {% assign _eventdetails = _eventdetails | push: dummyvar %}
+        {% endif %}
         {% assign _eventdetails = _eventdetails | push: sessiondate %}
         
 
@@ -117,7 +133,9 @@
 
 {% assign pnum = myevents | size %}
 {% if pnum == 0 %}
-{% include components/collection/collection-noevent.html %}
+  {% if post_type == 'calendar' %}
+    {% include components/collection/collection-noevent.html %}
+  {% endif %}
 {% else %}
 
 {% if include.filter == "true" %}
@@ -153,6 +171,14 @@
 
 {% if include.filter == "true" %}
 {% include components/cal_filter.html %}
+{% endif %}
+
+{% if eventpage == "true" %}
+  {% if pagetype == "archive" %}
+    <h2>Past Sessions</h2>
+  {% elsif pagetype == "future" %}
+    <h2>Upcoming Sessions</h2>
+  {% endif %}
 {% endif %}
 
 <ul class="usa-list usa-list--unstyled">
