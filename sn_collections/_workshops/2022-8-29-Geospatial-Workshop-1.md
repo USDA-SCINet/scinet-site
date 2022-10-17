@@ -29,11 +29,11 @@ sessions:
 #    url: https://kerriegeil.github.io/SCINET-GEOSPATIAL-RESEARCH-WG/docs/2020-08-25_SCINet-Geospatial-WG_Workshop-Session1-Annual-Meeting_CHAT.txt
 
 subnav:
-  - text: What is the SCINet Geospatial Research Working Group?
+  - title: What is the SCINet Geospatial Research Working Group?
     url: '#what-is-the-scinet-geospatial-research-working-group'
-  - text: Review of previous workshops
+  - title: Review of previous workshops
     url: '#review-of-previous-workshops'
-  - text: Lightning talks
+  - title: Lightning talks
     url: '#lightning-talks'
 
 summarybox:

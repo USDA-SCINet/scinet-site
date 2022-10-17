@@ -30,11 +30,11 @@ alerts:
 
 
 subnav:
-  - text: Learning objectives
+  - title: Learning objectives
     url: '#learning-objectives'
-  - text: Agenda
+  - title: Agenda
     url: '#agenda'
-  - text: Tutorial material
+  - title: Tutorial material
     url: '#tutorial-material'
 
 summarybox:

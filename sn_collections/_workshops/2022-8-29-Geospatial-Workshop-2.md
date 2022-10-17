@@ -18,9 +18,9 @@ sessions:
  #   prerequisites:
 
 subnav:
-  - text: Learning objectives
+  - title: Learning objectives
     url: '#learning-objectives'
-  - text: Agenda
+  - title: Agenda
     url: '#agenda'
 
 summarybox:
