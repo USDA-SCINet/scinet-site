@@ -1,14 +1,11 @@
 ---
 
-title: Atlas Downtime
+title: SCINet Policy Changes
 
-excerpt: The SCINetPolicies document in your home directory on Ceres provides an updated SCINet policy.
+excerpt: The SCINet Policies document in your home directory on Ceres provides an updated SCINet policy.
 ---
 
-
-## SCINet Policy Changes
-
-The SCINetPolicies document in your home directory on Ceres provides an updated SCINet policy that addresses user accounts, storage space, job and quality of service queues, software, data management, networking, and Galaxy access. Please take the time to read over the document to make sure that you are compliant with all SCINet policies and regulations.  A few examples of the changes in SCINet policy include:
+The SCINet Policies document in your home directory on Ceres provides an updated SCINet policy that addresses user accounts, storage space, job and quality of service queues, software, data management, networking, and Galaxy access. Please take the time to read over the document to make sure that you are compliant with all SCINet policies and regulations.  A few examples of the changes in SCINet policy include:
 
 1) Accounts will be deactivated if there is one year of account inactivity.
 
