@@ -10,11 +10,11 @@ tags: Geospatial
 layout: nav
 
 subnav:
-  - text: Tutorials
+  - title: Tutorials
     url: '#tutorials'
-  - text: Access to the SCINet HPC Systems
+  - title: Access to the SCINet HPC Systems
     url: '#access-to-the-scinet-ceres-or-atlas-hpc-systems'
-  - text: Software + Hardware + Nomenclature Overview
+  - title: Software + Hardware + Nomenclature Overview
     url: '#software--hardware--nomenclature-overview'
 
 

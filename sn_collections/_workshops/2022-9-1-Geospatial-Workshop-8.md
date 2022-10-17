@@ -28,11 +28,11 @@ alerts:
     text: This session overlaps with Session 6 which covers the same content but in R instead of python.
 
 subnav:
-  - text: Learning objectives
+  - title: Learning objectives
     url: '#learning-objectives'
-  - text: Agenda
+  - title: Agenda
     url: '#agenda'
-  - text: Tutorial material
+  - title: Tutorial material
     url: '#tutorial-material'
 
 summarybox:

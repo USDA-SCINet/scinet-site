@@ -18,13 +18,13 @@ sessions:
  #   prerequisites:
 
 subnav:
-  - text: Agenda
+  - title: Agenda
     url: '#agenda'
-  - text: Feedback survey
+  - title: Feedback survey
     url: '#feedback-survey'
-  - text: Further trainings
+  - title: Further trainings
     url: '#further-trainings'
-  - text: Future needs
+  - title: Future needs
     url: '#future-needs'
 
 summarybox:

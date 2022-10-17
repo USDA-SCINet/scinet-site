@@ -22,7 +22,7 @@ sessions:
 
 
 subnav:
-  - text: Agenda
+  - title: Agenda
     url: '#agenda'
 
 

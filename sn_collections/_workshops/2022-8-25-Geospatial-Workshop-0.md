@@ -17,7 +17,7 @@ sessions:
  #   register_url: https://kerriegeil.github.io/SCINET-GEOSPATIAL-RESEARCH-WG/
 
 subnav:
-  - text: Login Support
+  - title: Login Support
     url: '#login-support'
 
 
