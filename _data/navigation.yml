@@ -97,9 +97,7 @@ primary:
 #     - title: Videos
 #       url: /training/video/
       - title: Upcoming Events
-        url: /events/upcoming
-      - title: Event Archive
-        url: /events/archive
+        url: /training/events
       - title: Bioinformatics Workbook
         url: /training/bioinformatics-workbook
 #     - title: Useful Links

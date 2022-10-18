@@ -91,7 +91,7 @@ defaults:
     values:
       future: "show"
       layout: "event"
-      sidenav_link: /events/upcoming
+      sidenav_link: /training/events
   - 
     scope:
       path: ""
@@ -99,7 +99,7 @@ defaults:
     values:
       future: "show"
       layout: "event"
-      sidenav_link: /events/upcoming
+      sidenav_link: /training/events
       recurring: true
   -
     scope:
