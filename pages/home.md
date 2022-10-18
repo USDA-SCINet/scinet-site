@@ -42,7 +42,7 @@ intro:
 calendar:
   title: "Upcoming Training and Events"
   button: "See the Full Calendar"
-  url: /events/upcoming
+  url: /training/events
 
 alt_calendar:
   title: "Training and Events"
@@ -53,7 +53,7 @@ alt_calendar:
     - title: "View available online training resources"
       url: training/free-online-training
     - title: "Take a look at events we have hosted in the past"
-      url: /events/archive
+      url: /training/events/archive
 
 no-tags: true
 
