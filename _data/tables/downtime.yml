@@ -24,59 +24,119 @@ downtime:
     reason: Maintenance
   - date: 2022-01-20
     systems: SCINet
+    time: 10:30-11:30 CST
     locations: Stoneville
     reason: Maintenance
+    text: "The maintenance window is one (1) hour in duration. This will impact service to the Stoneville site only."
   - date: 2021-12-08
     systems: Atlas
+    time: Beginning 8:00am CST
     locations: All (connections to Atlas)
     reason: Full cluster Maintenance
+    text: "<p>Wednesday, December 8, beginning at 8am CST, the HPC2 Computing Office has scheduled maintenance for the atlas compute cluster. During this maintenance window, the login, devel, dtn, ood, and compute nodes for atlas will be unavailable and all associated cron jobs will be disabled.</p>
+    <p>Downtime is expected to last most of the day.</p>
+    <p>For any associated problems, submit a help desk ticket:</p>
+    <p>help-usda@hpc.msstate.edu - specific atlas issues</p>
+    <p>scinet_vrsc@usda.gov - general operational issues</p>"
   - date: 2021-11-18
     systems: SCINet
+    time: 8:30 to 10:30 CST
     locations: All (connections to Ceres)
     reason: Network Maintenance in Ames
+    text: "SCINet network maintenance has been scheduled for Ames, IA. The maintenance window is from 8:30 to 10:30 Central Time (1430-1630 UTC) on 18 November 2021. Connectivity to SCINet will be sporadic during the maintenance window. "
   - date: 2021-11-16
     systems: SCINet
+    time: 8:30 to 10:30 CST
     locations: All (connections to Ceres)
     reason: Network Maintenance in Ames
+    text: "Connectivity to SCINet will be sporadic during the maintenance window."
   - date: 2021-11-15
     systems: SCINet
+    time: 8:30 to 10:30 PST
     locations: Albany
     reason: Network Maintenance in Albany
+    text: "Local connectivity to SCINet will be sporadic during the maintenance window."
   - date: 2021-11-11
     systems: Ceres
     locations: All (Ceres offline)
     reason: Maintenance
+    text: "<p>Ceres maintenance is scheduled for Thursday, November 11, 2021 to upgrade internal cluster network.</p>
+    <p>Queued jobs will not start if they cannot complete by 6AM November 11. These include jobs submitted to the long partition with the default 3-weeks long time limit. In the output of the squeue command the reason for those jobs will state (ReqNodeNotAvail, Reserved for maintenance). The jobs will start after the scheduled outage completes. </p>
+    <p>The Atlas cluster will stay up and running during Ceres downtime. All Ceres users can run jobs on Atlas and use /90daydata that has no quotas.</p>"
   - date: 2021-11-04
     end_date: 2021-11-05
     systems: Ceres
+    time: Daily 05:00 to 11:00 UTC
     locations: All (connections to Ceres)
     reason: Fiber relocation
+    text: The listed asset will be unavailable while Lumen engineers perform preventative fiber relocation work. Outage is expected to be two hours each day, but up to 5 hours is possible. The entire window is reserved 
   - date: 2021-10-28
     systems: Ceres, Juno
+    time: 1530 - 1730 UTC
     locations: All (connections to Ceres, Juno)
     reason: Network update
+    text: "<p>A maintenance window has been scheduled for 28 October 2021 from 1530 - 1730 UTC (10:30am to 12:30pm Central time) to stabilize router (Albany MX480 RE Downgrade). </p>
+    <p>Periodic outages will be experienced as equipment is rebooted. Connectivity to Ceres and Juno cannot be guaranteed during the maintenance window.</p>"
   - date: 2021-10-26
     systems: Ceres, Juno
+    time: 4:30pm to 8:30pm CST
     locations: All (connections to Ceres, Juno)
     reason: Network update
+    text: "A maintenance window has been scheduled for 26 October 2021 from 4:30pm to 8:30pm Central time to stabilize the SCINet Network. Periodic outages will be experienced as equipment is rebooted. Connectivity to Ceres and Juno cannot be guaranteed during the maintenance window."
   - date: 2021-10-19
     systems: Ceres
+    time: Beginning at 4:30 CST
     locations: All (connections to Ceres)
     reason: Router update
+    text: "The router at Ames will be rebooted on or about 4:30 CT. The reboot should be about 15 minutes. After that the router will be upgraded to the latest OS. Outages may occur during that process."
   - date: 2021-08-23
-    end_date: 2021-09-01
+    end_date: 2021-09-03
     systems: Ceres
+    time: 7am 8/23 - 5pm 9/3
     locations: All (connections to Ceres)
     reason: Maintenance
+    text: "<p>This maintenance window will be longer than normal as there are several important hardware upgrades occurring during this window to enhance the overall power and capacity of the CERES HPC cluster.  These upgrades include the remaining new priority nodes, sixty eight additional compute nodes, two additional high memory compute nodes, six management nodes, and faster Infiniband switching technology used by the HPC nodes to access storage. VRSC will re-rack and re-wire the whole cluster to accommodate additional hardware while adhering to power and cooling limits.  </p>
+    <p>Queued jobs will not start if they cannot complete by 7AM August 23. These include jobs submitted to the long partition with the default 3-weeks long time limit. In the output of the squeue command the reason for those jobs will state (ReqNodeNotAvail, Reserved for maintenance). The jobs will start after the scheduled outage completes. </p>
+    <p>The Atlas cluster will stay up and running during Ceres downtime. All Ceres users can run jobs on Atlas. If you don't have a large enough project quota on Atlas, remember that you can use /90daydata on Atlas that has no quotas</p>"
   - date: 2021-05-24
     end_date: 2021-05-27
     systems: Ceres
     locations: All (connections to Ceres)
     reason: Maintenance
+    text: "The listed assets will be unavailable while contractors perform testing on the elecrtical service switchgear, generators, and turbine. Outages throughout the window are expected. The entire window is reserved."
+    assets:
+      - asset: Site Service AMES
+      - asset: ARSS-AMES-AMES-10GE-01550
+      - asset: ARSS-AMES-AMES-10GE-01576
+      - asset: ARSS-AMES-AMES-10GE-01522
+      - asset: ARSS-AMES-NAL-VLAN-01508
+      - asset: ARSS-AMES-CSU-VLAN-01517
+      - asset: ARSS-AMES-AMES-VLAN-01525
+      - asset: ARSS-AMES-AMES-VLAN-01524
+      - asset: ARSS-AMES-AMES-10GE-01577
+      - asset: ARSS-AMES-AMES-40GE-01573
+      - asset: ARSS-AMES-AMES-10GE-01553
+      - asset: ARSS-AMES-STNVL-VLAN-01503
+      - asset: ARSS-AMES-AMES-10GE-1577
+      - asset: ARSS-AMES-AMES-10GE-01556
+      - asset: ARSS-AMES-AMES-10GE-ET-11
+      - asset: ARSS-AMES-AMES-10GE-01554
+      - asset: ARSS-AMES-AMES-10GE-01555
+      - asset: ARSS-ALB-AMES-VLAN-01520
+      - asset: ARSS-AMES-AMES-LAG-01526
+      - asset: ARSS-AMES-CLAY-VLAN-01507
+      - asset: ARSS-AMES-AMES-10GE-01557
+      - asset: ARSS-AMES-AMES-LAG-01552
+      - asset: ARSS-AMES-AMES-40GE-01575
+      - asset: sw.ames.scinet.science
+      - asset: rtrj.ames.scinet.science
+      - asset: fw.ames.scinet.science 
   - date: 2021-02-23
     systems: Atlas
+    time: 6:00am - 8:00am
     locations: All (connections to Atlas)
     reason: Maintenance
+    text: "The HPC2 Computing Office has scheduled a maintenance for its core networking services.  During this time all network connectivity both inside and outside the HPC2 will be unavailable including access to the atlas cluster systems."
   - date: 2021-02-16
     systems: Ceres
     locations: All (Ceres offline)
@@ -90,7 +150,7 @@ downtime:
     locations: All (Ceres offline)
     reason: Maintenance
   - date: 2020-08-25
-    time: Beginning 7:00am CST
+    time: 7:00 - 16:00 CST
     systems: SCINet
     locations: Stoneville
     reason: UPS Maintenance
@@ -106,12 +166,11 @@ downtime:
     systems: SCINet & AWS
     locations: Beltsville, Fargo, University Park, All AWS Users
     reason: Planned power outage
-    text: "<p>CINet equipment at the National Agricultural Library will be powered down in advance of a planned power outage to the NAL building. The outage is expected to last for 24 hrs or less. We expect that normal access to SCINet resources will be restored on or before Monday, April 20. Please check Basecamp during the outage period for updates. </p>
-    <p>The outage will affect:<br>
-    <ul>
-     <li>Beltsville, MD (NAL, BARC East, BARC West) SCINet connectivity and local data transfer nodes/cafe machines sn-barc-east-dtn-0.scinet.ars.usda.gov, sn-barc-west-dtn-0.scinet.ars.usda.gov, sn-nal-dtn-0.scinet.ars.usda.gov</li>
-     <li>SDWAN connected equipment at Fargo and University Park</li>
-     <li>AWS Authentication for all SCINet AWS users</li></ul></p>"
+    text: "SCINet equipment at the National Agricultural Library will be powered down in advance of a planned power outage to the NAL building. The outage is expected to last for 24 hrs or less. We expect that normal access to SCINet resources will be restored on or before Monday, April 20. Please check Basecamp during the outage period for updates."
+    assets:
+      - asset: Beltsville, MD (NAL, BARC East, BARC West) SCINet connectivity and local data transfer nodes/cafe machines sn-barc-east-dtn-0.scinet.ars.usda.gov, sn-barc-west-dtn-0.scinet.ars.usda.gov, sn-nal-dtn-0.scinet.ars.usda.gov
+      - asset: SDWAN connected equipment at Fargo and University Park
+      - asset: AWS Authentication for all SCINet AWS users
   - date: 2020-03-19
     time: 9:30 – 11:30am MST
     systems: SCINet

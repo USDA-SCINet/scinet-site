@@ -49,6 +49,16 @@
                 <b>Reason:</b> {{ _down.reason }}
             </li>
             {% endif %}
+            {% if _down.assets %}
+            <li class="usa-collection__meta-item">
+                <b>Affected Assets:</b>
+                <ul class="">
+                    {% for _asset in _down.assets %}
+                    <li>{{ _asset.asset }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endif %}
 
 
         </ul>
