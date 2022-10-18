@@ -1,0 +1,146 @@
+downtime:
+  - date: 2023-02-20
+    end_date: 2023-02-23
+    systems: Ceres
+    locations: All (Ceres offline)
+    reason: Maintenance
+  - date: 2022-10-10
+    end_date: 2022-10-11
+    systems: Ceres
+    locations: All (Ceres offline)
+    reason: Maintenance
+  - date: 2022-06-20
+    end_date: 2022-06-21
+    systems: Ceres
+    locations: All (Ceres offline)
+    reason: Maintenance
+  - date: 2022-05-17
+    systems: Atlas
+    locations: All (connections to Atlas)
+    reason: Maintenance
+  - date: 2022-02-21
+    systems: Ceres
+    locations: All (Ceres offline)
+    reason: Maintenance
+  - date: 2022-01-20
+    systems: SCINet
+    locations: Stoneville
+    reason: Maintenance
+  - date: 2021-12-08
+    systems: Atlas
+    locations: All (connections to Atlas)
+    reason: Full cluster Maintenance
+  - date: 2021-11-18
+    systems: SCINet
+    locations: All (connections to Ceres)
+    reason: Network Maintenance in Ames
+  - date: 2021-11-16
+    systems: SCINet
+    locations: All (connections to Ceres)
+    reason: Network Maintenance in Ames
+  - date: 2021-11-15
+    systems: SCINet
+    locations: Albany
+    reason: Network Maintenance in Albany
+  - date: 2021-11-11
+    systems: Ceres
+    locations: All (Ceres offline)
+    reason: Maintenance
+  - date: 2021-11-04
+    end_date: 2021-11-05
+    systems: Ceres
+    locations: All (connections to Ceres)
+    reason: Fiber relocation
+  - date: 2021-10-28
+    systems: Ceres, Juno
+    locations: All (connections to Ceres, Juno)
+    reason: Network update
+  - date: 2021-10-26
+    systems: Ceres, Juno
+    locations: All (connections to Ceres, Juno)
+    reason: Network update
+  - date: 2021-10-19
+    systems: Ceres
+    locations: All (connections to Ceres)
+    reason: Router update
+  - date: 2021-08-23
+    end_date: 2021-09-01
+    systems: Ceres
+    locations: All (connections to Ceres)
+    reason: Maintenance
+  - date: 2021-05-24
+    end_date: 2021-05-27
+    systems: Ceres
+    locations: All (connections to Ceres)
+    reason: Maintenance
+  - date: 2021-02-23
+    systems: Atlas
+    locations: All (connections to Atlas)
+    reason: Maintenance
+  - date: 2021-02-16
+    systems: Ceres
+    locations: All (Ceres offline)
+    reason: Maintenance
+  - date: 2021-02-15
+    systems: Ceres
+    locations: All (Ceres offline)
+    reason: Maintenance
+  - date: 2020-10-12
+    systems: Ceres
+    locations: All (Ceres offline)
+    reason: Maintenance
+  - date: 2020-08-25
+    time: Beginning 7:00am CST
+    systems: SCINet
+    locations: Stoneville
+    reason: UPS Maintenance
+    text: "SCINet equipment will be shutdown in order to perform Maintenance to the UPS. SCINet connectivity at the Stoneville location will be impacted. The Maintenance window is reserved from 0700 to 1600 Central Time."
+  - date: 2020-06-16
+    end_date: 2020-06-17
+    systems: Ceres
+    locations: All (Ceres offline)
+    reason: Maintenance
+  - date: 2020-04-17
+    end_date: 2020-04-19
+    time: Beginning 9:00pm EST
+    systems: SCINet & AWS
+    locations: Beltsville, Fargo, University Park, All AWS Users
+    reason: Planned power outage
+    text: "<p>CINet equipment at the National Agricultural Library will be powered down in advance of a planned power outage to the NAL building. The outage is expected to last for 24 hrs or less. We expect that normal access to SCINet resources will be restored on or before Monday, April 20. Please check Basecamp during the outage period for updates. </p>
+    <p>The outage will affect:<br>
+    <ul>
+     <li>Beltsville, MD (NAL, BARC East, BARC West) SCINet connectivity and local data transfer nodes/cafe machines sn-barc-east-dtn-0.scinet.ars.usda.gov, sn-barc-west-dtn-0.scinet.ars.usda.gov, sn-nal-dtn-0.scinet.ars.usda.gov</li>
+     <li>SDWAN connected equipment at Fargo and University Park</li>
+     <li>AWS Authentication for all SCINet AWS users</li></ul></p>"
+  - date: 2020-03-19
+    time: 9:30 – 11:30am MST
+    systems: SCINet
+    locations: Ft Collins
+    reason: Router migration
+  - date: 2020-03-12
+    time: 10am – noon MST
+    systems: SCINet
+    locations: Ft Collins
+    reason: Router replacement
+  - date: 2020-03-02
+    time: 10:30am – 1:00pm EST
+    systems: SCINet
+    locations: Clay Center
+    reason: Router replacement
+  - date: 2020-02-17
+    systems: Ceres
+    locations: All (Ceres offline)
+    reason: Maintenance
+  - date: 2019-12-02
+    end_date: 2019-12-06
+    systems: Ceres
+    locations: All (Ceres offline)
+    reason: Upgrades/expansion
+    text: "<p>Ceres downtime is scheduled for  Monday, December 2 – Friday, December 6. This downtime is to rewire both power and networking on Ceres for the addition of additional compute nodes and to ready it for storage expansion.  </p>
+    
+    <p>We do not anticipate any further extended downtimes for rewiring, as this should allow us to maximize the size of Ceres simply by adding additional compute nodes. </p>
+    
+    <p>Since this affects the Authentication for SCINet, this will also affect logins to Data Transfer nodes at Ames, StoneVille, Fort Collins, Clay Center, Albany CA, and Beltsville.</p>
+    
+    <p>GlobalNoc will also be upgrading software on the SCINet network infrastructure during this time.</p>"
+
