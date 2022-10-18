@@ -56,10 +56,6 @@ collections:
   announcements:
     output: true
     permalink: /:collection/:path
-  downtime:
-    output: true
-    future: true
-    permalink: /:collection/:path
   events-recurring:
     output: true
     future: true
@@ -105,15 +101,6 @@ defaults:
       layout: "event"
       sidenav_link: /events/upcoming
       recurring: true
-  -
-    scope:
-      path: ""
-      type: "downtime"
-    values:
-      future: "show"
-      layout: "nav"
-      categories: [Downtime]
-      sidenav_link: /news/downtime
   -
     scope:
       path: ""

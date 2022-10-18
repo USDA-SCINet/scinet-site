@@ -1,0 +1,67 @@
+{% assign postdate = _down.date | date: "%A, %B %-d" %}
+{% assign postyr = _down.date | date: "%Y" %}
+{% if _down.end_date %}
+    {% assign post_enddate = _down.end_date | date: "%A, %B %-d" %}
+    {% assign postdate = postdate | append: ' - ' | append: post_enddate %}
+
+    {% assign postyr = _down.end_date | date: "%Y" %}
+{% endif %}
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        <h3 class="usa-collection__heading text-primary-dark">
+            {% if _down.title %}{{ _down.title }}{% else %}
+            {% if _down.reason %}
+                {{ _down.reason }} &middot 
+            {% endif %}
+            {{ _down.systems }} - {{ _down.date | date: "%A, %B %-d"}}
+            {% unless post.type == 'archive' %} &middot {{ postyr }}{% endunless %}
+            {% endif %}
+        </h3>
+        <p class="usa-collection__description">
+            {% if _down.text %}
+            {{ _down.text }}
+            {% endif %}
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>{{ postdate }} &middot {{ postyr }}</b>
+            </li>
+            {% if _down.time %}
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> {{ _down.time }}
+            </li>
+            {% endif %}
+            {% if _down.systems %}
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> {{ _down.systems }}
+            </li>
+            {% endif %}
+
+            {% if _down.locations %}
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> {{ _down.locations }}
+            </li>
+            {% endif %}
+
+            {% if _down.reason %}
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> {{ _down.reason }}
+            </li>
+            {% endif %}
+            {% if _down.assets %}
+            <li class="usa-collection__meta-item">
+                <b>Affected Assets:</b>
+                <ul class="">
+                    {% for _asset in _down.assets %}
+                    <li>{{ _asset.asset }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endif %}
+
+
+        </ul>
+    </div>
+
+</li>
