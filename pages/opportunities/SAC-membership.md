@@ -3,7 +3,7 @@ title: Apply To Serve on the SCINet Scientific Advisory Committee
 description: Annual SAC call for new members
 permalink: /opportunities/SAC
 author: Kerrie Geil
-layout: nav
+layout: page
 
 
 

@@ -3,7 +3,7 @@ title: SCINet Website Developers
 description: summary of the working group
 permalink: /research/working-groups/webdev
 author: Kerrie Geil
-layout: nav
+layout: page
 
 
 ---

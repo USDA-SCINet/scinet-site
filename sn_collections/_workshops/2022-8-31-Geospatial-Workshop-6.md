@@ -7,7 +7,7 @@ categories: [2022 Geospatial Workshop]
 provider: Geospatial Working Group
 type: workshop
 tags: Geospatial R-project
-layout: nav
+layout: page
 
 sessions:
   - session: 

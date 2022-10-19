@@ -3,7 +3,7 @@ title: Coursera Training
 description: Coursera courses and specializations with ARS provisioned licenses
 permalink: /training/coursera
 author: SCINet SAC Education Committee.
-layout: nav
+layout: page
 
  
 

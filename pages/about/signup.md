@@ -5,7 +5,7 @@ redirect_from:
   - https://scinet.usda.gov/signup
 permalink: /about/signup
 author:
-layout: nav
+layout: page
 
 graphics:
   - image:

@@ -3,7 +3,7 @@ title: SCINet Pollinator Working Group
 description: summary of the working group
 permalink: /research/working-groups/pollinator
 author: Melanie Kammerer
-layout: nav
+layout: page
 
 subnav:
   - title: Workshops

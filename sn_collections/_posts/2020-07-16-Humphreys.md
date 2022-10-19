@@ -3,9 +3,12 @@
 title: "Spatial Disease Modelling on the Ceres HPC"
 categories: [Stories]
 excerpt: "A fundamental need to meet USDA ARS’s Grand Challenge initiative is to improve agricultural production while reducing the impact of the emerging pests, pathogens, and invasive species that threaten US livestock."
+
+author: John Humphreys
+affiliation: USDA-ARS, Range Management Research Unit, Las Cruces, NM
+
 ---
-### By:  John Humphreys
-### USDA-ARS, Range Management Research Unit, Las Cruces, NM
+
 
 ![Visualization of spatial data being used in a model to predict West Nile Disease Risk using Ceres]({{ site.baseurl }}/assets/img/posts/SCINETJULY_userstory2.png)
 

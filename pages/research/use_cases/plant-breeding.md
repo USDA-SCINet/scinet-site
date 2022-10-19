@@ -3,7 +3,7 @@ title: SCINet for plant breeding research
 description: SCINet plant breeding research use case
 permalink: /research/uses/plant-breeding
 author:
-layout: nav
+layout: page
 
  
 sidenav: Research

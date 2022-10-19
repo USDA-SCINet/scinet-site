@@ -111,15 +111,6 @@ main:
     <div class="usa-layout-docs__main desktop:grid-col-9">
         {% include breadcrumb.html %}
         <main class="{{ layout.main.class }}" id="main-content">
-        {% unless page.hide-title %}
-        {% if page.title %}
-            <h1 class="top-header">{{ page.title }}</h1>
-        {% endif %}
-        {% endunless %}
-
-        {% if page.summarybox %}
-          {% include components/summary.html summary=page.summarybox %}
-        {% endif %}
 
         {{ content }}
 

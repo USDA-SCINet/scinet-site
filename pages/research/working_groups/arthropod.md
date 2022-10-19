@@ -3,7 +3,7 @@ title: Arthropod Genomics Research (AGR) Working Group
 description: summary of the working group
 permalink: /research/working-groups/arthropods
 author: Brad Coates
-layout: nav
+layout: page
 
  
 subnav:

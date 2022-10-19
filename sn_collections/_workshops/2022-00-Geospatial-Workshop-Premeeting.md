@@ -7,7 +7,7 @@ categories: [2022 Geospatial Workshop]
 provider: Geospatial Working Group
 type: orientation
 tags: Geospatial
-layout: nav
+layout: page
 
 subnav:
   - title: Tutorials

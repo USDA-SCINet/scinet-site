@@ -3,7 +3,7 @@ title: SCINet-X
 description: Overview of the SCINet-X initiative
 permalink: /news/scinet-x
 author: Brian Stucky
-layout: nav
+layout: page
 
  
 

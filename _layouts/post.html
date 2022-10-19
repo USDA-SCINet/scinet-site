@@ -15,7 +15,8 @@ class: usa-grid usa-content usa-layout-docs maxw-tablet margin-x-auto
 {% if page.end_date %} - {{ page.end_date | date: "%m/%d/%Y" }}{% endif %}
 {% endcapture %}
 
-<h3>{{ header }}</h3>
+<p><b>{{ header }}</b>
+{% if page.affiliation %}</br><b>{{ page.affiliation }}</b>{% endif %}</p>
 
 
 {{ content }}

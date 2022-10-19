@@ -5,7 +5,7 @@ description: SCINet account sign up for ARS scientists and ARS collaborators # p
 #  - https://scinet.usda.gov/signup
 permalink: /about/signup # permalink for this page. Must exactly match _data/navigation
 author: # author name
-layout: nav # you will typically use this layout
+layout: page # you will typically use this layout
 # alternatives are:
 # layout: post
 # layout: categories # for pages that display one of the collection types
