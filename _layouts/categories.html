@@ -28,7 +28,6 @@ main:
         {% assign myposts = all_posts | where_exp: "post", "post.categories == page.categories and post.type == 'workshop' " %}
     {% else %}
       {% assign myposts = site.posts %}
-      {% assign no_date_below = true %}
   {% endcase %}
 
   {% if page.post_type %}

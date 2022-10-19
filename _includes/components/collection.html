@@ -116,8 +116,13 @@
             {% endfor %}
             {% else %}
             {% unless no_date_below %}
+            {% if post.author %}
             <li class="usa-collection__meta-item">
-                <b>{{ post.date | date: "%A, %B %-d"}}{% unless post_type == 'calendar' %} &middot {{ post.date | date: "%Y" }}{% endunless %}</b>
+                By {{ post.author }}
+            </li>
+            {% endif %}
+            <li class="usa-collection__meta-item">
+                {{ postdate }}, {{ postyr }}
             </li>
             {% endunless %}
             {% endif %}
