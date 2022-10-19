@@ -89,6 +89,27 @@ downtime:
     locations: All (connections to Ceres)
     reason: Router update
     text: "The router at Ames will be rebooted on or about 4:30 CT. The reboot should be about 15 minutes. After that the router will be upgraded to the latest OS. Outages may occur during that process."
+  - date: 2021-09-22
+    end_date: 2021-09-24
+    time: various
+    system: SCINet
+    locations: various
+    reason: Router update
+    text: "More SCINet network hardware OS updates.  Check the announcement page for more details"
+    url: /announcements/2021-09-21-scinet-hardware
+  - date: 2012-09-16
+    end_date: 2021-09-21
+    time: various
+    systems: SCINet
+    locations: various
+    reason: OS Upgrade
+    text: "<p>GNOC plans to upgrade the OS on the SCINet gear at the 6 locations. This will result in connectivity interruptions during the upgrade. The upgrade schedule is the following:</p>
+    <p>Albany - 9/16 8AM PST</p>
+    <p>Clay Center - 9/16 4PM CST</p>
+    <p>Ames - 9/17 8AM CST</p>
+    <p>Stoneville - 9/20 8AM CST</p>
+    <p>NAL - 9/20 3PM CST</p>
+    <p>CSU - 9/21 9AM CST</p>"
   - date: 2021-08-23
     end_date: 2021-09-03
     systems: Ceres
@@ -98,6 +119,12 @@ downtime:
     text: "<p>This maintenance window will be longer than normal as there are several important hardware upgrades occurring during this window to enhance the overall power and capacity of the CERES HPC cluster.  These upgrades include the remaining new priority nodes, sixty eight additional compute nodes, two additional high memory compute nodes, six management nodes, and faster Infiniband switching technology used by the HPC nodes to access storage. VRSC will re-rack and re-wire the whole cluster to accommodate additional hardware while adhering to power and cooling limits.  </p>
     <p>Queued jobs will not start if they cannot complete by 7AM August 23. These include jobs submitted to the long partition with the default 3-weeks long time limit. In the output of the squeue command the reason for those jobs will state (ReqNodeNotAvail, Reserved for maintenance). The jobs will start after the scheduled outage completes. </p>
     <p>The Atlas cluster will stay up and running during Ceres downtime. All Ceres users can run jobs on Atlas. If you don't have a large enough project quota on Atlas, remember that you can use /90daydata on Atlas that has no quotas</p>"
+  - date: 2021-07-07
+    end_date: 2021-07-21
+    systems: Ceres
+    reason: Outage
+    text: Connection Restored on 07-21-2021
+    url: /announcements/2021-07-06-scinet-down
   - date: 2021-05-24
     end_date: 2021-05-27
     systems: Ceres

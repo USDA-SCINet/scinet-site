@@ -9,15 +9,17 @@
 
 <li class="usa-collection__item width-full maxw-full" >
     <div class="usa-collection__body">
-        <h3 class="usa-collection__heading text-primary-dark">
-            {% if _down.title %}{{ _down.title }}{% else %}
-            {% if _down.reason %}
-                {{ _down.reason }} &middot 
-            {% endif %}
-            {{ _down.systems }} - {{ _down.date | date: "%A, %B %-d"}}
-            {% unless post.type == 'archive' %} &middot {{ postyr }}{% endunless %}
-            {% endif %}
-        </h3>
+        {% if _down.url %}<a href="{% if  _down.external %}{{  _down.url }}{% else %}{{  _down.url | relative_url }}{% endif %}">{% endif %}
+            <h3 class="usa-collection__heading {% unless _down.url %} text-primary-dark{% endunless %}">
+                {% if _down.title %}{{ _down.title }}{% else %}
+                {% if _down.reason %}
+                    {{ _down.reason }} &middot 
+                {% endif %}
+                {{ _down.systems }} - {{ _down.date | date: "%A, %B %-d"}}
+                {% unless post.type == 'archive' %} &middot {{ postyr }}{% endunless %}
+                {% endif %}
+            </h3>
+        {% if _down.url %}</a>{% endif %}
         <p class="usa-collection__description">
             {% if _down.text %}
             {{ _down.text }}
