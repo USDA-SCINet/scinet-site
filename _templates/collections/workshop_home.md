@@ -10,7 +10,7 @@ provider: Geospatial Working Group # workshop provider
 type: workshop # important
 tags: Geospatial # one-word tags for the filter, each separated by a space
 
-end_date: 20220902  # YYYYMMDD # if the end date is different than the start date
+end_date: 2022-09-02  # YYYY-MM-DD # if the end date is different than the start date
 # always have two numbers for month and day
 
 layout: workshop # a layout exclusively for workshop home pages
