@@ -3,7 +3,7 @@ title: SCINet Research Overview
 description: summary of current research
 permalink: /research/overview
 author: 
-layout: nav
+layout: page
 
 ---
 

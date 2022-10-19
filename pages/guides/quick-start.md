@@ -3,7 +3,7 @@ title: A Quick Guide to getting started with SCINet
 description: A Quick Guide to getting started with SCINet
 permalink: /guide/quickstart
 author:
-layout: nav
+layout: page
 
 alerts:
   - alert:

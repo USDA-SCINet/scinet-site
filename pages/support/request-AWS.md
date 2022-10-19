@@ -3,7 +3,7 @@ title: Request SCINet AWS
 description: link to request AWS for a SCINet project
 permalink: /support/request-AWS
 author: Kerrie Geil
-layout: nav
+layout: page
 
  
 

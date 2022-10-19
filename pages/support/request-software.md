@@ -3,7 +3,7 @@ title: Request Software Installation on SCINet
 description: software installation info and link to application form
 permalink: /support/request-software
 author:
-layout: nav
+layout: page
 
  
 

@@ -3,7 +3,7 @@ title: FAQs
 description: Frequently asked Questions
 permalink: /support/faq
 author: VRSC
-layout: nav
+layout: page
 
 subnav:
   - title: General Information

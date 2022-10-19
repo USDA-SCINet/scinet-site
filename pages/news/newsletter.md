@@ -1,6 +1,6 @@
 ---
 title: Quarterly Newsletter Archive
-layout: nav
+layout: page
 permalink: /news/newsletter
 
  

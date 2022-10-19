@@ -3,7 +3,7 @@ title: SCINet Contact Information
 description: contact information for website, newsletter, policy/development, and technical assistance
 permalink: /about/contact
 author: Kerrie Geil
-layout: nav
+layout: page
 
 ---
 

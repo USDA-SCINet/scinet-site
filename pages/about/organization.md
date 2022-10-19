@@ -3,7 +3,7 @@ title: Organization of the SCINet project
 description: Organization and Management of the SCINet project
 permalink: /about/organization
 author: 'Adam Rivers Kerrie Geil'
-layout: nav
+layout: page
 
 
 subnav:

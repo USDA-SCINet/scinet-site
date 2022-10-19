@@ -3,7 +3,7 @@ title: Bioinformatics Workbook
 description: Intro and link to the workbook
 permalink: /training/bioinformatics-workbook
 author: Andrew Severin/Kerrie Geil
-layout: nav
+layout: page
 
  
 

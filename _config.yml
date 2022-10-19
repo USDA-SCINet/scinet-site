@@ -107,7 +107,7 @@ defaults:
       type: "announcements"
     values:
       future: "show"
-      layout: "nav"
+      layout: "post"
       categories: [Announcements]
       sidenav_link: /news/announcements
   -
@@ -124,7 +124,7 @@ defaults:
       type: "workshops"
     values:
       future: "show"
-      layout: "nav"
+      layout: "page"
       layout_type: "workshop"
   - 
     scope:
@@ -140,7 +140,7 @@ defaults:
       path: ""
       type: "guidesection"
     values:
-      layout: "nav"
+      layout: "page"
       layout_type: "guides"
       sidenav_link: /guides
 

@@ -3,7 +3,7 @@ title: SCINet Policy Committee
 description: summary of the working group
 permalink: /research/working-groups/policy
 author: Kerrie Geil
-layout: nav
+layout: page
 
 
 # Info on this page to be moved to the About > Organization page eventually. Then this page should be deleted and all refs to this committee should be deleted from the working group pages.

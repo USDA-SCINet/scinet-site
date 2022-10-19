@@ -3,7 +3,7 @@ title: SCINet Use Cases
 description: summary of current use cases
 permalink: /research/uses
 author: 
-layout: nav
+layout: page
 
 subnav:
   - title: Genomics

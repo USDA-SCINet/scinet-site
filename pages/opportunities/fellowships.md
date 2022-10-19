@@ -3,7 +3,7 @@ title: USDA ARS Postdoctoral Fellowship Program in Big Data Science and AI Resea
 description: current listing of SCINet-funded postdocs, administered through ORISE and partner universities
 permalink: /opportunities/fellowships
 author: Kerrie Geil
-layout: nav
+layout: page
 
 
 subnav:

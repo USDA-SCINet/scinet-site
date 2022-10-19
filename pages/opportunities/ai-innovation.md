@@ -3,7 +3,7 @@ title: ARS AI Innovation Fund (FY2022)
 description: Internal USDA-ARS grants for artificial intelligence and machine learning projects
 permalink: /opportunities/ai-innovation
 author: Brian Stucky 
-layout: nav
+layout: page
 
 
 subnav:

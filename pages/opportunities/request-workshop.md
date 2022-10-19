@@ -3,7 +3,7 @@ title: Request a SCINet-funded Self-led or SCINet-led Workshop or Training
 description: Apply to SCINet to develop a training meeting
 permalink: /opportunities/request-workshop
 author:
-layout: nav
+layout: page
 
 
 subnav:

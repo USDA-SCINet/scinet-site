@@ -2,7 +2,7 @@
 title: SCINet Software, Tools, and Storage
 description: Navigation for SCINet tools
 permalink: /guides/tools
-layout: nav
+layout: page
 layout_type: guides
 
 guidegroup:

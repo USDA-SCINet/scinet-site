@@ -2,7 +2,7 @@
 title: SCINet Policy
 description: SCINet policies and procedures
 permalink: /about/policies
-layout: nav
+layout: page
 
 ---
 
