@@ -121,6 +121,11 @@
                 By {{ post.author }}
             </li>
             {% endif %}
+            {% if post.affiliation %}
+            <li class="usa-collection__meta-item">
+                {{ post.affiliation }}
+            </li>
+            {% endif %}
             <li class="usa-collection__meta-item">
                 {{ postdate }}, {{ postyr }}
             </li>

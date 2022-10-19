@@ -115,7 +115,7 @@ defaults:
       path: ""
       type: "posts"
     values:
-      layout: "nav"
+      layout: "post"
       sidenav_link: /news/stories
       breadcrumb_title: "Selected Story"
   - 
