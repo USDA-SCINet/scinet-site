@@ -7,7 +7,7 @@ categories: [2022 Geospatial Workshop]
 provider: Geospatial Working Group
 type: workshop
 tags: Geospatial
-end_date: 20220902  # always have two numbers for month and day  YYYYMMDD
+end_date: 2022-09-02  # always have two numbers for month and day  YYYY-MM-DD
 
 layout: workshop
 

@@ -6,7 +6,7 @@ provider: Provider Name # provider name
 type: training # is this an event or training?  If this is a workshop, see the workshop template
 tags: Unix Git Python R-Project # one-word tags for the filter, each separated by a space
 
-# end_date: 20220902  # YYYYMMDD # if the end date is different than the start date
+# end_date: 2022-09-2  # YYYY-MM-DD # if the end date is different than the start date
 # always have two numbers for month and day
 
 # if you want to include session information

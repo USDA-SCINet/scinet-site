@@ -11,7 +11,7 @@ sessions:
   - session: 
     instructor: Jonathan Shao - ARS, Amanda Hulse-Kemp - ARS, Jacob Deppen, and Preethy Nair
 
-end_date: 20220723
+end_date: 2022-07-23
 ---
 
 **07/22/2020 - 7/23/2020  &middot;   remotely on Zoom   &middot;   lead: Jonathan Shao, Amanda Hulse-Kemp**   
