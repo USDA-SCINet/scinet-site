@@ -15,7 +15,15 @@ main:
     {% include components/summary.html summary=page.summarybox %}
   {% endif %}
 
+  {% if page.table and page.table.position=="front" %}
+  {% include table.html table=page.table %}
+  {% endif %}
+
   {{ content }}
+
+  {% if page.table and page.table.position=="back" %}
+  {% include table.html table=page.table %}
+  {% endif %}
 
   <br>
 </main>
