@@ -67,6 +67,7 @@ User support at SCINet is provided by the  Virtual Support Research Core (VSRC) 
 
 # Senior Leadership
 
+{: .usa-table .usa-table--compact }
 Person | Position
 ---|---
 Dr. Steven Kappes | Associate Administrator for National Programs
@@ -76,6 +77,7 @@ Dr. Debra Peters | Acting Chief Scientific Information Officer, ARS
 
 The ARS Scientific Computing Initiative is led by an Executive Committee.
 
+{: .usa-table .usa-table--compact }
 Person | Position
 ---|---
 Dr. Steven Kappes | Associate Administrator for National Programs
@@ -97,6 +99,9 @@ Dr. Brian Scheffler | Former Acting Chief Scientific Information Officer
 
 The ARS Scientific Computing Initiative is in the domain of ARS researchers, thus the program is in a constant state of gathering information to meet users’ needs. The SAC is an effort to assure that users have input on the ARS HPC-storage system. Scientific Advisory Committee (SAC) members represent a broad range of scientific research at ARS, and membership includes two researchers from each of the five ARS geographic areas, a statistician, and an “at-large” member. The SAC divides its work over various subcommittees: communications, education, planning, and membership. In recent years, the SAC has assisted with a quarterly SCINet newsletter, designed a user needs survey, created the scinet.usda.gov website, and held multiple computational workshops and trainings. SAC progress and issues are elevated to the Executive Committee for review and approval. For more information, including how to participate (non-members welcome), please contact Adam Rivers (Chair).
 
+<div class="usa-table-container--scrollable" tabindex="0" markdown="block">
+
+{: .usa-table .usa-table--compact }
 Person | Area |Role | Sub-subcommittees | Term expires
 -------|------|-----|-------------------|-------------
 Adam Rivers | Southeast | Chair | Communications | 2023
@@ -116,7 +121,9 @@ Cyndy Parr | NAL | Ex Officio | - | -
 Bryan Kaphammer | Area Directors | Ex Officio | - | -
 Debra Peters | CSIO | Ex Officio | - | -
 Brian Scheffler | Former CSIO | Ex Officio | - | -
-Rob Butler | Acting SCINet Executive Director | Ex Officio | - | -
+Rob Butler | Acting SCINet<br>Executive Director | Ex Officio | - | -
+
+</div>
 
 # Scientific Points of Contact
 
@@ -128,6 +135,7 @@ The list of SPOC can be found on the [USDA Sharepoint Site](https://usdagcc.shar
 
 Formed in 2020, this committee makes recommendations to the Executive Committee on policies and procedures relevant to HPC operations. The committee is comprised of members from various technical backgrounds, and includes representation from different ARS geographic areas. Membership also includes representatives from Iowa State University and Mississippi State University (where two of the ARS HPC systems are housed) in order to get representation and perspective of the issues that need to be addressed. For more information, including how to participate, please contact Jonathan Shao (chair).
 
+{: .usa-table .usa-table--compact }
 Person | Area
 ---|---
 Jonathan Shao (Chair) | Northeast Representative
