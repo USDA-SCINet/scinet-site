@@ -10,7 +10,7 @@ subnav:
   - title: Postdoc and Masters Fellowships
     url: '#postdoc-and-masters-fellowships'
   - title: Other Opportunities
-    url: '#other-opportunities:'
+    url: '#other-opportunities'
 
 
 table:
