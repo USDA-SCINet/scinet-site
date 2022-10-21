@@ -10,12 +10,13 @@ subnav:
   - title: Postdoc and Masters Fellowships
     url: '#postdoc-and-masters-fellowships'
   - title: Other Opportunities
-    url: '#other-opportunities:'
+    url: '#other-opportunities'
 
 
 table:
     position: front
     source: fellowships
+    sort: true
     title: Postdoc and Masters Fellowships
     caption: Interested applicants are encouraged to visit the ORISE link for more information about a position and how to apply. To see the most up to date list of all SCINet and AI-COE opportunities, visit <a href="https://www.zintellect.com/Catalog">https://www.zintellect.com/Catalog</a> and enter keyword “SCINet”
     announcement: "<b>About the USDA ARS:</b> The ARS mission involves problem-solving research in the widely diverse food and agricultural areas encompassing plant production and protection; animal production and protection; natural resources and sustainable agricultural systems; and nutrition; food safety and quality. The programs are conducted in 46 of the 50 States, Puerto Rico, and the U.S. Virgin Islands. Programs are also carried out in cooperation with several foreign countries. For ARS to maintain its standing as a premier scientific organization, major investments in computing, networking, and storage infrastructure are required as well as trained scientific personnel. Training in data and information management are integral to the integrity, security, and accessibility of research findings, results, and outcomes within the ARS research enterprise. USDA ARS Chief Science Information Officer, Dr. Debra Peters (ARS-CSIO at usda dot gov) can be contacted for additional information."
