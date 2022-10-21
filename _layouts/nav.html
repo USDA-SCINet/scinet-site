@@ -72,14 +72,14 @@ main:
 
     {% assign alt_nav = page.categories %}
 
-    {% assign allguides = site.guides %}
-    {% assign allsections = site.guidesection %}
+    {% assign guidecategories = site.guidecategory %}
+    {% assign guidepages = site.guides %}
 
     {% if page.sorted %}
-      {% assign allsections = allsections | sort: 'order_number' %}
+      {% assign guidepages = guidepages | sort: 'order_number' %}
     {% endif %}
 
-    {% assign all_posts = allguides | concat: allsections %}
+    {% assign all_posts = guidecategories | concat: guidepages %}
 
     {% assign breadcrumb_set = all_posts | where_exp: "post", "post.categories == page.categories" %}
 

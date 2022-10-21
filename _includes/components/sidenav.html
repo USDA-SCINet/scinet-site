@@ -30,7 +30,7 @@
             {% include components/subnav.html links=page.subnav %}
         {% endif %}
         {% if page.guidegroup.all %}
-        {% assign allguides  = site.guides | sort: 'order_number' %}
+        {% assign allguides  = site.guidecategory | sort: 'order_number' %}
             {% include components/subnav.html links=allguides %}
         {% endif %}
     </ul>

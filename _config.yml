@@ -73,10 +73,10 @@ collections:
     permalink: /:collection/:path
   guides:
     output: true
-    permalink: /:collection/:categories
-  guidesection:
-    output: true
     permalink: /guides/:categories/:name
+  guidecategory:
+    output: true
+    permalink: /guides/:categories
 # collections:
 #   projects:
 #     output: true
@@ -129,7 +129,7 @@ defaults:
   - 
     scope:
       path: ""
-      type: "guides"
+      type: "guidecategory"
     values:
       layout: "guides"
       layout_type: "guides"
@@ -138,7 +138,7 @@ defaults:
   - 
     scope:
       path: ""
-      type: "guidesection"
+      type: "guides"
     values:
       layout: "page"
       layout_type: "guides"

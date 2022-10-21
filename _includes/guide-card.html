@@ -1,19 +1,19 @@
-{% assign allguides = site.guides | sort: 'order_number' %}
-{% assign allsections = site.guidesection %}
-{% assign all_posts = allguides | concat: allsections %}
+{% assign guidecategories = site.guidecategory | sort: 'order_number' %}
+{% assign guidepages = site.guides %}
+{% assign all_posts = guidecategories | concat: guidepages %}
 
 {% if page.guidegroup.all %}
 {% assign intlinks = true %}
 {% assign show_full = true %}
 {% assign show_list = true %}
-{% assign _navsections = allguides %}
+{% assign _navsections = guidecategories %}
 
 {% elsif page.guidegroup.subnav %}
 {% assign _navsections = page.subnav %}
 
 {% else %}
 {% assign intlinks = true %}
-{% assign _navsections = allsections | where_exp: "post", "post.categories == page.categories" %}
+{% assign _navsections = guidepages | where_exp: "post", "post.categories == page.categories" %}
 {% if page.sorted %}
 {% assign _navsections = _navsections | sort: 'order_number' %}
 {% endif %}
@@ -61,7 +61,7 @@
                 </div>
                 {% if show_list or _option.shows_list %}
                 <div class="usa-card__footer">
-                    {% assign guide = allsections | where_exp: "post", "post.categories == _option.categories" %}
+                    {% assign guide = guidepages | where_exp: "post", "post.categories == _option.categories" %}
                     {% assign pnum = guide | size %}
                     {% unless pnum == 0 %}
                     {% if _option.sorted %}
