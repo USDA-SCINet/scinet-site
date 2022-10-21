@@ -4,8 +4,8 @@ main:
 class: usa-layout-docs usa-layout-docs__main usa-prose
 ---
 
-{% assign allguides = site.guides | sort: 'order_number' %}
-{% assign allsections = site.guidesection %}
+{% assign guidecategories = site.guidecategory | sort: 'order_number' %}
+{% assign guidepages = site.guides %}
 
 <section class="padding-y-4">
     {{ content }}
