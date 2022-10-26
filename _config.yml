@@ -157,6 +157,7 @@ highlighter: rouge
 plugins:
   - jekyll-last-modified-at
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 # https://designsystem.digital.gov/documentation/developers/#sass-compilation-requirements
 autoprefixer:
