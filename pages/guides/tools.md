@@ -2,16 +2,22 @@
 title: SCINet Software, Tools, and Storage
 description: Navigation for SCINet tools
 permalink: /guides/tools
-layout: page
+layout: guides
 layout_type: guides
 
 guidegroup:
-  - category: Software
-  - getpage: /guides/data/storage
-  - getpage: /guides/data/transfer
-  - category: Software
-  - category: Use
-  - category: Analytics
+  compile: subnav
+
+subnav:
+  - title: Software
+    url: '#software'
+    category: [Software]
+  - title: Analysis
+    url: '#analysis'
+    category: [Analysis]
+  - title: Data
+    url: '#data'
+    category: [Data]
 
 
 alerts: 

@@ -23,7 +23,7 @@ subnav:
 
 
 ---
-
+Some software packages may not be available for the version of Linux running on the HPC cluster. In this case, users may want to run containers. Containers are self-contained application execution environments that contain all necessary software to run an application or workflow, so users don't need to worry about installing all the dependencies. There are many pre-built container images for scientific applications available for download and use.
 
 Singularity [https://sylabs.io/](https://sylabs.io/) is an application for running containers on an HPC cluster. Containers are self-contained application execution environments that contain all necessary software to run an application or workflow, so you don't need to worry about installing all the dependencies. There are many pre-built container images for scientific applications available for download and use, see section [Container Images](#3-container-images).
 <!--more-->

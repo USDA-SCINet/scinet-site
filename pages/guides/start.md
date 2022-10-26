@@ -16,7 +16,7 @@ alerts:
     text: This section is intended to replace the <a href="/scinet-site/guide/quickstart">old Quickstart guide</a>
 
 guidegroup:
-    subnav: true
+    section: subnav
 #  - category: Resources
 #  - getpage: /guides/access/mfa
 #  - category: Access
@@ -35,18 +35,20 @@ subnav:
   - title: Logging In
     url: /guides/access/login
     internal: true
+    shows_list: subnav
   - title: Data Storage
     url: /guides/data/storage
     internal: true
+    shows_list: subnav
   - title: Data Transfer
     url: /guides/data/datatransfer
     internal: true
+    shows_list: subnav
   - title: Software
     url: /guides/software
     internal: true
-  - title: SOP
-    url: /guides/sop
-    internal: true
+    shows_list: true
+    categories: [Software]
 
 
 ---

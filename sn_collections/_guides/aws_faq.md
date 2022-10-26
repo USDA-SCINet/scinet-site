@@ -12,10 +12,6 @@ subnav:
     url: '#how-do-i-log-in'
   - title: I'm logged in fine, but I don't see the Service Catalog that I expect. Where did it go?
     url: '#im-logged-in-fine-but-i-dont-see-the-service-catalog-that-i-expect-where-did-it-go'
-  - title: Creating AWS Resources
-    url: '/guide/AWS/createresource'
-  - title: Creating EC2 Resources
-    url: '/guide/AWS/ec2instance'
   - title: I'm trying to do something in the AWS Console, but I'm getting an error message saying I don't have enough permissions. What should I do?
     url: '#im-trying-to-do-something-in-the-aws-console-but-im-getting-an-error-message-saying-i-dont-have-enough-permissions-what-should-i-do'
   - title: I'd like to use a service that isn't covered in the Service Catalog. Can I have it added?
