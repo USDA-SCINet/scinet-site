@@ -2,7 +2,6 @@
 title: SCINet Storage
 description: Guide to storage options on SCINet HPC clusters
 # author: Marina Kraeva
-excerpt: This document provides detailed information about the storage options provided by SCINet and how to use them.
 categories: [Data]
 
 subnav:
@@ -25,10 +24,12 @@ subnav:
 
 
 
-This document provides detailed information about the storage options provided by SCINet and how to use them.  For a simpler overview of suggested procedures for managing data on SCINet, please see [Managing Data on ARS HPC and Storage Infrastructure]({{ site.baseurl }}/guide/data_management_sop/).<!--more-->
+This document provides detailed information about the storage options provided by SCINet and how to use them.  For a simpler overview of suggested procedures for managing data on SCINet, please see [Managing Data on ARS HPC and Storage Infrastructure]({{ site.baseurl }}/guide/data_management_sop/).
 
 
 There are multiple places to store data on the Ceres and Atlas clusters that all serve different purposes. 
+
+<!--more-->
 
 ## Quotas
 

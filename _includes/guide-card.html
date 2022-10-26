@@ -1,95 +1,44 @@
 {% assign guidecategories = site.guidecategory | sort: 'order_number' %}
-{% assign guidepages = site.guides %}
+{% assign guidepages = site.guides | sort: 'order_number' %}
 {% assign all_posts = guidecategories | concat: guidepages %}
 
-{% if page.guidegroup.all %}
-{% assign intlinks = true %}
-{% assign show_full = true %}
-{% assign show_list = true %}
-{% assign _navsections = guidecategories %}
 
-{% elsif page.guidegroup.subnav %}
-{% assign _navsections = page.subnav %}
-
+{% if page.guidegroup.compile %}
+    {% assign intlinks = true %}
+    {% assign compiled = "true" %}
+    {% assign show_list = true %}
+    {% for _category in page[page.guidegroup.compile] %}
+        <div class="margin-top-5">
+            <h2>{{ _category.category }}</h2>
+        {% assign _navsections = guidepages | where_exp: "item", "item.categories == _category.category" %}
+        {% assign listpnum = _navsections | size %}
+        {% unless listpnum == 0 %}
+            {% include components/guide-card.html %}
+        {% endunless %}
+        </div>
+    {% endfor %}
 {% else %}
-{% assign intlinks = true %}
-{% assign _navsections = guidepages | where_exp: "post", "post.categories == page.categories" %}
-{% if page.sorted %}
-{% assign _navsections = _navsections | sort: 'order_number' %}
+    {% if page.guidegroup.all %}
+    {% assign intlinks = true %}
+    {% assign show_full = true %}
+    {% assign show_list = true %}
+    {% assign _navsections = guidecategories %}
+    {% elsif page.guidegroup.section %}
+    {% assign _navsections = page[page.guidegroup.section] %}
+
+    {% else %}
+    {% assign intlinks = true %}
+    {% assign _navsections = guidepages | where_exp: "post", "post.categories == page.categories" %}
+    {% if page.sorted %}
+    {% assign _navsections = _navsections | sort: 'order_number' %}
+    {% endif %}
+
+    {% endif %}
+
+
+
+    {% assign listpnum = _navsections | size %}
+    {% unless listpnum == 0 %}
+            {% include components/guide-card.html %}
+    {% endunless %}
 {% endif %}
-
-{% endif %}
-
-
-
-{% assign listpnum = _navsections | size %}
-{% unless listpnum == 0 %}
-<div class="home-block">
-    <ul class="usa-card-group margin-bottom-2 tablet:margin-x-2">
-        {% for _option in _navsections %}
-        {% capture optionurl %}{% if _option.internal or intlinks %}{{ _option.url | relative_url }}{% else %}{{
-        _option.url }}{% endif %}{% endcapture %}
-        <li class="tablet:grid-col-12 margin-y-1">
-            <div class="usa-card__container">
-                <div class="usa-card__heading padding-2 bg-primary-lighter">
-                    <a href="{{ optionurl }}">
-                        <h3 class="arrow margin-0">{{ _option.title }}</h3>
-                    </a>
-                </div>
-                <div class="usa-card__body">
-                    {% if _option.internal %}
-                            {% for _post in all_posts %}
-                                {% if _post.url == _option.url %}
-                                    <p class=" padding-x-2">
-                                        {% if _post.excerpt %}{{ _post.excerpt }}
-                                        {% endif %}
-                                    </p>
-                                {% endif %}
-                            {% endfor %}
-                    {% else %}
-                        <p class=" padding-x-2">
-                            {% if _option.excerpt %}
-                            {{ _option.excerpt }}
-                            {% endif %}
-                        </p>
-                    {% endif %} 
-                    <div class="text-right">
-                        <a class="usa-button usa-button--outline margin-y-1" href="{{ optionurl }}">
-                            Read More
-                        </a>
-                    </div>
-                </div>
-                {% if show_list or _option.shows_list %}
-                <div class="usa-card__footer">
-                    {% assign guide = guidepages | where_exp: "post", "post.categories == _option.categories" %}
-                    {% assign pnum = guide | size %}
-                    {% unless pnum == 0 %}
-                    {% if _option.sorted %}
-                    {% assign guide = guide | sort: 'order_number' %}
-                    {% endif %}
-                    <div class="border-top-2px margin-3">
-                        <h3>Guide Sections</h3>
-                        <ul class="usa-card-group margin-y-4 maxw-tablet margin-x-auto flex-align-center">
-                            {% assign alt_buttons = page.alt_calendar.buttons %}
-                            {% for _section in guide %}
-                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
-                                <a href="{{ _section.url | relative_url }}">
-                                    <div class="usa-card__container display-flex flex-row padding-2">
-                                        <div class="overflow-hidden desktop:grid-col-fill">
-                                            <h4 class="arrow margin-0">{{ _section.title }}</h4>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    {% endunless %}
-                </div>
-                {% endif %}
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
-{% endunless %}

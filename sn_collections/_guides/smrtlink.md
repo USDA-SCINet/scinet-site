@@ -2,7 +2,7 @@
 title: SMRTLink/SMRTAnalysis using Command Line
 description: Guide to use SMRTLink via CLI
 # author: Yasasvy Nanyam
-
+excerpt: Guide to use SMRTLink via CLI
 categories: [Analysis]
 
 subnav:
@@ -40,7 +40,7 @@ subnav:
 
 
 ## Instructions for SMRTLink v7
-<!--more-->
+
 Although SMRTLink GUI is useful, it can be very limited. In particular, currently one can not use priority nodes or high memory nodes through SMRTLink GUI. GUI service may also be unavailable at times. This, however, does not affect SMRTLink command line which does not need the GUI service to be alive. 
 
 ### View the available pipelines
