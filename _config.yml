@@ -13,7 +13,7 @@ baseurl: /scinet-site
 url: "https://USDA-SCINet.github.io"
 
 # Configure a separator for post excerpts
-excerpt_separator: "<!--end-excerpt-->"
+excerpt_separator: <!--excerpt-->
 
 # Configuration for setting the site width to 100%
 # To enable, uncomment the following line
@@ -46,8 +46,6 @@ anchor_js_targets: [h1, h2, h3, h4, h5, h6]
 search_site_handle: scinet-usda
 
 # touchpoints_form_id:
-
-excerpt_separator: <!--more-->
 
 # Configuration for projects and team collections
 # See https://jekyllrb.com/docs/collections/ for more information about collections.

@@ -28,7 +28,7 @@ subnav:
 
 
 Rclone is already installed on the DTNS and all of the compute nodes. Please do not use rclone from the headnode. Attempting to do so will remind you to use the others.<br>
-The rclone home page is [https://rclone.org](https://rclone.org).<!--more-->
+The rclone home page is [https://rclone.org](https://rclone.org).<!--excerpt-->
 
 ### Getting Ready
 In order to use Rclone on Ceres its necessary to have it installed on your local machine as well.  This is needed to generate an authentication token.<br>

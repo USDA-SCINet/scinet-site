@@ -18,7 +18,7 @@ At login, current usage and quotas are displayed for all groups that a user belo
 $ my_quotas
 ```
 
-<!--more-->
+<!--excerpt-->
 
 If users need more storage than what is available in the home directory, they should visit the [Request a Project Storage]({{ site.baseurl }}/support/request-storage) page. Several users may work on the same project and share the same project directory.
 

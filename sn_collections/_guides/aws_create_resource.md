@@ -30,7 +30,7 @@ subnav:
 
 Guide to creating an AWS resource via the service catalog.
 
-<!--more-->
+<!--excerpt-->
 
 ## Log in
 

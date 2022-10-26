@@ -23,7 +23,7 @@ be of interest to SCINet users that require:
 * special computing hardware requirements (e.g., GPUs, Xeon Phi, extremely-large memory)
 * software that isn’t supported on Ceres (e.g., web apps, relational databases, VMs, Hadoop,
 Spark, certain commercial software)
-<!--more-->
+<!--excerpt-->
 A brief synopsis of some resources:
 
 ## Amazon Web Services

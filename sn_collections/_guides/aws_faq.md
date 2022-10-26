@@ -21,7 +21,7 @@ subnav:
 
 FAQ about AWS resources available to ARS scientists.
 
-<!--more-->
+<!--excerpt-->
 
 ### How do I get started?
 

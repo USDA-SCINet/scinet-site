@@ -22,7 +22,7 @@ subnav:
 
 The aws-saml tool can be used in conjunction with the Shibboleth SAML identity provider to retrieve time-limited API keys suitable for commandline use. It interactively prompts you for your password, and if you have multiple roles available, you are prompted if not otherwise specified on the command line. The resulting credentials are normally stored in your standard AWS credential file, but a command line flag can be provided tohave the credentials output to standard output in Bash format for scripting. These credentials normally expire after one hour; by providing therefresh flag to the tool, it will fork into the background and keep the credentials refreshed as long as your login cookie remains valid.
 
-<!--more-->
+<!--excerpt-->
 
 ## Installation
 
