@@ -29,7 +29,7 @@ This document provides detailed information about the storage options provided b
 
 There are multiple places to store data on the Ceres and Atlas clusters that all serve different purposes. 
 
-<!--more-->
+<!--excerpt-->
 
 ## Quotas
 

@@ -16,7 +16,7 @@ subnav:
 
 ---
 
-The software discussed and shown in these user guides is largely open source, can run on a desktop, HPC, or cloud environment, and can be installed with software management systems that support reproducibility (such as Conda, Singularity, and Docker). Below is a quick overview of some of the software, hardware, and confusing nomenclature that is used throughout this site.<!--more-->
+The software discussed and shown in these user guides is largely open source, can run on a desktop, HPC, or cloud environment, and can be installed with software management systems that support reproducibility (such as Conda, Singularity, and Docker). Below is a quick overview of some of the software, hardware, and confusing nomenclature that is used throughout this site.<!--excerpt-->
 
 ## SCINet vs. Ceres vs. Atlas
 
