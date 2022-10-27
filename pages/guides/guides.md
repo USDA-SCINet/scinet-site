@@ -17,6 +17,9 @@ alerts:
 
 guidegroup:
   all: true
+  compile: true
+  accordion: true
+  
 
 
 

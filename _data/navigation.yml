@@ -44,8 +44,6 @@ primary:
     links:
       - title: Quick Start
         url: /guides/start
-      - title: Software and Storage
-        url: /guides/tools
       - title: All User Guides
         url: /guides
   - title: Research

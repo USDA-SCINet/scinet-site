@@ -7,6 +7,7 @@ layout_type: guides
 
 guidegroup:
   compile: subnav
+  accordion: true
 
 subnav:
   - title: Software
