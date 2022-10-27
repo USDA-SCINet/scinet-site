@@ -8,8 +8,16 @@ main:
 {{content}}
 
 
+{% assign sitedate = site.time | date: "%Y%m%d" %}
 
-{% assign sitetime = site.time | date_to_xmlschema %}
+{% assign date_str = sitedate | append: "" %}
+{% assign yr = date_str | slice: 0, 4 %}
+{% assign mon = date_str | slice: 4, 2 %}
+{% assign day = date_str | slice: 6, 2 %}
+{% assign day = day | plus: -1 %}
+{% assign sitetime = yr | append: '-' | append: mon | append: '-' | append: day %}
+
+{% assign sitetime = sitetime | date_to_xmlschema %}
 
 
 {% assign all_downtime = site.data.tables.downtime.downtime %}
@@ -19,7 +27,7 @@ main:
 {% if page.type == "future" %}
 {% for _down in all_downtime %}
   {% assign datetime = _down.date | date_to_xmlschema %}
-  {% if datetime > sitetime %}
+  {% if datetime >= sitetime %}
   {% assign downtime = downtime | push: _down %}
   {% endif %}
 {% endfor %}
