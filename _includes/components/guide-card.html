@@ -16,18 +16,14 @@
                     {% if _option.internal %}
                             {% for _post in all_posts %}
                                 {% if _post.url == _option.url %}
-                                    <p class=" padding-x-2">
                                         {% if _post.excerpt %}{{ _post.excerpt }}
                                         {% endif %}
-                                    </p>
                                 {% endif %}
                             {% endfor %}
                     {% else %}
-                        <p class=" padding-x-2">
                             {% if _option.excerpt %}
                             {{ _option.excerpt }}
                             {% endif %}
-                        </p>
                     {% endif %} 
                     <div class="text-right">
                         <a class="usa-button usa-button--outline margin-y-1" href="{{ optionurl }}">
