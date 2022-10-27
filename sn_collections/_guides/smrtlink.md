@@ -124,13 +124,13 @@ The value next to the “Entry points“ indicates the number of entry points. I
 
 This template is used to talk to SLURM workload manager to divvy up tasks 
  
-```
+```bash
 pbsmrtpipe show-workflow-options -j workflow-template.json
 ```
 
 To submit jobs to a different partition replace the value for the pbsmrtpipe.options.cluster_manager KEY in the generated workflow template file with one of the provided options as shown below:
 
-```
+```bash
 "pbsmrtpipe.options.cluster_manager": "/system/smrtanalysis/7/slurm_template/short"
 "pbsmrtpipe.options.cluster_manager": "/system/smrtanalysis/7/slurm_template/medium"
 "pbsmrtpipe.options.cluster_manager": "/system/smrtanalysis/7/slurm_template/mem"
@@ -138,14 +138,14 @@ To submit jobs to a different partition replace the value for the pbsmrtpipe.opt
 
 Users can also copy the template directory and modify values to specify a different partition. For example, to submit jobs to priority partition, in your copy of the template directory make the following changes in file *jmsenv_00.ish* :
 
-```
+```bash
 JMSCONFIG_SLURM_PARTITION="priority";   # Partition 
 JMSCONFIG_SLURM_START_ARGS='--qos=gbru --timelimit=7-00:00:00';  # gbru is a example, choose relevant QOS
 ```
 
 in file *start.tmpl* :
 
-```
+```bash
 --jmsenv "<path_to_your_template_directory>/jmsenv_00.ish" # Change the path to your custom template file
 ```
 
@@ -156,14 +156,14 @@ After these changes, make sure *"pbsmrtpipe.options.cluster_manager":* in the wo
 ### Generating a dataset
 
 Raw BAM files are usually accompanied by several XML files. In case the users don’t have these XML files, they can use the following command:
-```
+```bash
 dataset create
 ```
 
 This command takes BAM, file of file names (fofn) or XML files as input. 
 
 For example, to analyze multiple XML SubreadSet files together, issue:
-```
+```bash
 dataset create xyz123-combined.subreadset.xml *.subreadset.xml
 ```
 
@@ -173,7 +173,7 @@ The following types are supported - *HdfSubreadSet, TranscriptAlignmentSet, Cont
 
 After creating datasets, generating templates and making necessary changes, submit a batch job using sbatch command. Below is a sample job script to submit HGAP4 assembly using smrklink v7 
 
-```
+```bash
 #!/bin/bash
 
 #SBATCH --job-name=HGAP4_assembly
@@ -219,7 +219,7 @@ There are two main steps involved - provide input parameters for your workflow a
 
 ### View the available workflows
 
-```
+```bash
 module load smrtlink/10.0.0
 $ pbcromwell show-workflows
 
@@ -253,7 +253,7 @@ cromwell.workflows.pb_trim_adapters: Trim gDNA Amplification Adapters
 
 Using *Genome Assembly* as an example - 
 
-```
+```bash
 $ pbcromwell show-workflow-details pb_assembly_hifi
 
 
@@ -316,7 +316,7 @@ Example Usage:
 ### Use cromwell config files for Ceres
 
 As shown above, the *pbcromwell run* command requires a cromwell config file for the jobs to be submitted via SLURM. On ceres, the config files are avaiable in a central location. Users can point to the files directly or can copy and modify based on their individual requirements. The config files are located at 
-```
+```bash
 /system/smrtanalysis/10/slurm_template/cromwell-slurm-short.conf
 /system/smrtanalysis/10/slurm_template/cromwell-slurm-medium.conf
 /system/smrtanalysis/10/slurm_template/cromwell-slurm-mem.conf
@@ -325,7 +325,7 @@ The file names correspond to the partitions the jobs will be submitted to.
 
 Priority users can copy those files to their work directory and modify the following (lines 130-131)
 
-```
+```bash
         runtime-attributes = """
         Int cpu = 8
         Int requested_memory_mb_per_core = 8000
@@ -336,7 +336,7 @@ Priority users can copy those files to their work directory and modify the follo
 
 to
 
-```
+```bash
         runtime-attributes = """
         Int cpu = 8
         Int requested_memory_mb_per_core = 8000
@@ -349,7 +349,7 @@ Users can also modify the CPU threads or memory per core values but these defaul
 
 ### Sample batch script
 
-```
+```bash
 #!/bin/bash
 
 #SBATCH -N 1 # No. of nodes used
