@@ -148,7 +148,7 @@ Tools and Libraries | tmux, Eigen, Boost, GDAL, HDF5, NetCDF, TBB, Metis, PROJ4,
 MPI libraries | MPICH, OpenMPI
 Profiling and debugging | PAPI
 
-For more information on available software and software installs refer to sections [Modules](#modules) and [Compiling Software, Installing R/Perl/Python Packages and Using Containers](#compiling-software-installing-rperlpython-packages-and-using-containers).
+For more information on available software and software installs refer to our guides on [Modules]({{ site.baseurl }}/guides/software/modules), [Singularity Containers]({{ site.baseurl }}/guides/software/singularity) and [Installing R, Python, and Perl Packages]({{ site.baseurl }}/guides/analysis/r-perl-python).
 
 
 ## Additional Guides for Ceres:
