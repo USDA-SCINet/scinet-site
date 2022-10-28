@@ -1,8 +1,14 @@
 {% for link in include.links %}
-{% if page.guidegroup.all and page.guidegroup.compile %}
-{% assign mylink = link.categories | join: ',' | append: " Guides" | slugify %}
-<li>
-  <a href="{{ mylink | prepend: '#' }}">{{ link.categories }}</a>
+{% if page.guidegroup and link.internal %}
+  {% if page.guidegroup.all and page.guidegroup.compile %}
+    {% assign mylink = link.categories | join: ',' | append: " Guides" | slugify %}
+    {% assign mytitle = link.categories %}
+  {% else %}
+    {% assign mylink = link.title | slugify %}
+    {% assign mytitle = link.title %}
+  {% endif %}
+  <li>
+  <a href="{{ mylink | prepend: '#' }}">{{ mytitle }}</a>
 </li>
 {% else %}
 {% if link.layout %}
@@ -11,7 +17,7 @@
 </li>
 {% elsif link.subnav %}
 <li>
-  <a href="{% if link.internal %}{{ link.url | slugify | prepend: '#' }}{% else %}{{ link.url }}{% endif %}" {% if link.class
+  <a href="{% if link.internal %}{{ link.url | relative_url }}{% else %}{{ link.url }}{% endif %}" {% if link.class
     %}class="{{ link.class }}" {% endif %}>
     {{ link.title }}
   </a>
@@ -21,7 +27,7 @@
 </li>
 {% else %}
 <li>
-  <a href="{% if link.internal %}{{ link.title | slugify | prepend: '#' }}{% else %}{{ link.url }}{% endif %}" {% if link.class %}
+  <a href="{% if link.internal %}{{ link.url | relative_url }}{% else %}{{ link.url }}{% endif %}" {% if link.class %}
     class="{{ link.class }}" {% endif %}>{{ link.title }}</a>
 </li>
 {% endif %}
