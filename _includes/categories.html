@@ -1,0 +1,35 @@
+{% if page.no-year or page.type == "itinerary" %}
+{% assign no-year = true %}
+{% endif %}
+
+{% assign myposts = site[page.collect] %}
+
+
+{% if page.collect == "announcements" %}
+  {% assign flow = 'reverse' %}
+  {% assign post_type = 'calendar' %}
+  {% assign no_date_below = true %}
+{% elsif page.collect == "workshops" %}
+    {% assign all_posts = site.workshops | where: 'future', 'show' %}
+    {% assign myposts = all_posts | where_exp: "post", "post.categories == page.categories and post.type == 'workshop' " %}
+{% endif %}
+
+{% if page.post_type %}
+{% assign post_type = page.post_type %}
+{% endif %}
+
+<ul class="usa-list usa-list--unstyled">
+{% if flow == 'reverse' %}
+{% for _post in myposts reversed %} 
+  {% include collection.html post=_post %}
+{% endfor %}
+{% else %}
+{% for _post in myposts %} 
+
+<script>console.log("{{ _post.title }}")</script>
+  {% include collection.html post=_post %}
+{% endfor %}
+{% endif %}
+</ul>
+
+<br>
