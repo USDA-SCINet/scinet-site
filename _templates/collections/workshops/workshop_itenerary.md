@@ -10,7 +10,7 @@ categories: [2022 Geospatial Workshop]  # MUST match category from the Workshop 
 provider: Geospatial Working Group # event provider
 type: itinerary # important
 
-layout: categories 
+layout: page 
 collect: workshops 
 
 no-tags: true # use if you do not want your itenerary page to show tags

@@ -7,13 +7,12 @@ permalink: /about/signup # permalink for this page. Must exactly match _data/nav
 author: # author name
 layout: page # you will typically use this layout
 # alternatives are:
-# layout: post
-# layout: categories # for pages that display one of the collection types
+# layout: post # this is used for posts where you want an author and date displayed - as in a collection
 
-# collect: announcements # for if you use the collections layout - specify what you are collecting by using the collection name
+# collect: announcements # for pages that display one of the collection types - specify what you are collecting by using the collection name
 
 # sidenav_other: if NOT pulling from the original primary list - name of new link list in navigation.yml
-# sidenav_link: /news/downtime # if your page is not listed in the primary nav, but you want to use it, include a link from the desired dropdown
+# sidenav_link: /news/downtime # if your page is not listed in the primary nav, but you want to use it, include a link from the desired dropdown.  The listed link will be used in the breadcrumb
 
 subnav: # match navigation in page or add external links
   - text: ARS Employees

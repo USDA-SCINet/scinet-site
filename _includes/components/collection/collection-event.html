@@ -96,7 +96,7 @@
             {% assign yr = date_str | slice: 0, 4 %}
             {% assign mon = date_str | slice: 4, 2 %}
             {% assign day = date_str | slice: 6, 2 %}
-            {% assign end_date = yr | append: '-' | append: mon | append: '-' | append: day %}
+            {% assign end_date = postend_date %}
             
             <li class="usa-collection__meta-item">
                 <b>{{ postdate | date: "%A, %B %-d"}} - {{ end_date | date: "%A, %B %-d"}}{% unless post_type == 'calendar' %} &middot {{ postdate | date: "%Y" }}{% endunless %}</b>
