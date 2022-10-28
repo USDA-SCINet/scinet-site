@@ -14,8 +14,28 @@
     {% assign myposts = all_posts | where_exp: "post", "post.categories == page.categories and post.type == 'workshop' " %}
 {% endif %}
 
+{% if page.filter %}
+  {% if page.filter.tag %}
+    {% assign myposts = myposts | where_exp: "post", "post.tags contains page.filter.tag" %}
+  {% endif %}
+  {% if page.filter.provider %}
+    {% assign myposts = myposts | where_exp: "post", "post.provider == page.filter.provider" %}
+  {% endif %}
+{% endif %}
+
+{% if page.reverse_collection %}
+  {% assign flow = 'reverse' %}
+{% endif %}
+
 {% if page.post_type %}
 {% assign post_type = page.post_type %}
+{% endif %}
+
+{% assign pnum = myposts | size %}
+{% if pnum > 0 %}
+
+{% if page.collect_title %}
+<h2>{{ page.collect_title }}</h2>
 {% endif %}
 
 <ul class="usa-list usa-list--unstyled">
@@ -33,3 +53,5 @@
 </ul>
 
 <br>
+
+{% endif %}
