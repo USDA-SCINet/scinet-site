@@ -1,6 +1,6 @@
 ---
 title: Announcements
-layout: categories
+layout: page
 permalink: /news/announcements
 
 collect: announcements

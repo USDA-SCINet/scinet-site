@@ -1,6 +1,6 @@
 ---
 title: User Stories
-layout: categories
+layout: page
 permalink: /news/stories
 categories: [Stories]
  

@@ -8,7 +8,7 @@ provider: Geospatial Working Group
 type: itinerary
 tags: Geospatial
 
-layout: categories
+layout: page
 collect: workshops
 
 no-tags: true
