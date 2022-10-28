@@ -5,7 +5,7 @@ permalink: /news/stories
 categories: [Stories]
  
 
-
+collect: posts
 
 
 ---

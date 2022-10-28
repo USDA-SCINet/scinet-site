@@ -8,44 +8,4 @@ main:
 
   {{ content }}
 
-  {% if page.no-year or page.type == "itinerary" %}
-    {% assign no-year = true %}
-  {% endif %}
-
-  {% assign myfilter = page.collect %}
-  {% case myfilter %}
-    {% when "announcements" %}
-      {% assign myposts = site.announcements %}
-      {% assign flow = 'reverse' %}
-      {% assign post_type = 'calendar' %}
-      {% assign no_date_below = true %}
-    {% when "downtime" %}
-      {% assign myposts = site.downtime %}
-    {% when "events" %}
-      {% assign myposts = site.events %}
-    {% when "workshops" %}
-        {% assign all_posts = site.workshops | where: 'future', 'show' %}
-        {% assign myposts = all_posts | where_exp: "post", "post.categories == page.categories and post.type == 'workshop' " %}
-    {% else %}
-      {% assign myposts = site.posts %}
-  {% endcase %}
-
-  {% if page.post_type %}
-  {% assign post_type = page.post_type %}
-  {% endif %}
-  
-  <ul class="usa-list usa-list--unstyled">
-{% if flow == 'reverse' %}
-  {% for _post in myposts reversed %} 
-      {% include collection.html post=_post %}
-  {% endfor %}
-{% else %}
-  {% for _post in myposts %} 
-  
-  <script>console.log("{{ _post.title }}")</script>
-      {% include collection.html post=_post %}
-  {% endfor %}
-{% endif %}
-</ul>
-
-<br>
+      {% include categories.html %}
