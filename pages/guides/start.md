@@ -9,7 +9,7 @@ alerts:
   - alert:
     title: Currently in Development
     type: info
-    text: "If you have feedback on the organization of the User Guides sections, please email us at <a href='mailto:scinet@usda.gov'>scinet@usda.gov.</a>  These sections are currently in development and may have broken links or missing images."
+    text: "If you have feedback on the organization of the User Guides sections, please email us at <a href='mailto:moe.richert@usda.gov'>moe.richert@usda.gov.</a>  These sections are currently in development and may have broken links or missing images."
   - alert: 
     type: warning
     slim: true 
