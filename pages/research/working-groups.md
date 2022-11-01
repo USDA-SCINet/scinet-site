@@ -23,15 +23,6 @@ subnav:
   - title: LTAR Phenology
     url: /research/working-groups/LTARphenology
     internal: link
-  - title: SCINet Policy Committee
-    url: /research/working-groups/policy
-    internal: link
-  - title: SCINet Website Developers
-    url: /research/working-groups/webdev
-    internal: link
-  - title: Workbook Developers
-    url: /research/working-groups/workbooks
-    internal: link
   - title: Pollinator
     url: /research/working-groups/pollinator
     internal: link
@@ -47,9 +38,6 @@ The current working groups are:
 * [Microbiome Working Group]({{ site.baseurl }}/research/working-groups/microbiome)
 * [Pollinator Working Group]({{ site.baseurl }}/research/working-groups/pollinator)
 * [SCINet-Longterm Agroecosystem Research (LTAR) Phenology Working Group]({{ site.baseurl }}/research/working-groups/LTARphenology)
-* [SCINet Policy Committee]({{ site.baseurl }}/research/working-groups/policy)
-* [SCINet Website Developers]({{ site.baseurl }}/research/working-groups/webdev)
-* [Workbook Developers]({{ site.baseurl }}/research/working-groups/workbooks)
 
 <br>
 
