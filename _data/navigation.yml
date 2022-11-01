@@ -62,12 +62,6 @@ primary:
           url: /research/working-groups/microbiome
         - title: LTAR Phenology
           url: /research/working-groups/LTARphenology
-        - title: SCINet Policy Committee
-          url: /research/working-groups/policy
-        - title: SCINet Website Developers
-          url: /research/working-groups/webdev
-        - title: Workbook Developers
-          url: /research/working-groups/workbooks
         - title: Pollinator
           url: /research/working-groups/pollinator
       - title: Use Cases
