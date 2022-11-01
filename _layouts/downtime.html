@@ -8,14 +8,9 @@ main:
 {{content}}
 
 
-{% assign sitedate = site.time | date: "%Y%m%d" %}
+{% assign sitedate = site.time | date: "%s" %}
 
-{% assign date_str = sitedate | append: "" %}
-{% assign yr = date_str | slice: 0, 4 %}
-{% assign mon = date_str | slice: 4, 2 %}
-{% assign day = date_str | slice: 6, 2 %}
-{% assign day = day | plus: -1 %}
-{% assign sitetime = yr | append: '-' | append: mon | append: '-' | append: day %}
+{% assign sitetime = sitedate | minus: 86400 %}
 
 {% assign sitetime = sitetime | date_to_xmlschema %}
 
