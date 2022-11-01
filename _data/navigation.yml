@@ -104,12 +104,8 @@ primary:
         url: /support/faq
       - title: USDA-ARS SCINet Forum
         url: https://forum.scinet.usda.gov
-      - title: Request Project Storage
-        url: /support/request-storage
-      - title: Request Software
-        url: /support/request-software
-      - title: Request AWS
-        url: /support/request-AWS
+      - title: Request Resources
+        url: /support/request
       - title: Ceres Job Script Generator
         url: /support/ceres-job-script
   - title: Opportunities
