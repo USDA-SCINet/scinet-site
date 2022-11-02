@@ -38,6 +38,7 @@ The current working groups are:
 * [Microbiome Working Group]({{ site.baseurl }}/research/working-groups/microbiome)
 * [Pollinator Working Group]({{ site.baseurl }}/research/working-groups/pollinator)
 * [SCINet-Longterm Agroecosystem Research (LTAR) Phenology Working Group]({{ site.baseurl }}/research/working-groups/LTARphenology)
+* [Protein Function and Phenotype Prediction Working Group]({{ site.baseurl }}/research/working-groups/proteinfunction)
 
 <br>
 
