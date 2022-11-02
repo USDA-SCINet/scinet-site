@@ -12,6 +12,9 @@
 {% elsif page.collect == "workshops" %}
     {% assign all_posts = site.workshops | where: 'future', 'show' %}
     {% assign myposts = all_posts | where_exp: "post", "post.categories == page.categories and post.type == 'workshop' " %}
+{% elsif page.collect == "collect_list" %}
+  {% assign myposts = page.collect_list %}
+  {% assign no-year = true %}
 {% endif %}
 
 {% if page.filter %}

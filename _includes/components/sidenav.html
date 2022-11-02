@@ -24,14 +24,17 @@
         {{ _title }}
     </a>
     {% if _current %}
-    {% if page.guidegroup.all or page.subnav %}
+    {% if page.guidegroup.all or page.subnav or page.fetch_subnav %}
     <ul class="usa-sidenav__sublist">
         {% if page.subnav %}
             {% include components/subnav.html links=page.subnav %}
         {% endif %}
         {% if page.guidegroup.all %}
-        {% assign allguides  = site.guidecategory | sort: 'order_number' %}
+            {% assign allguides  = site.guidecategory | sort: 'order_number' %}
             {% include components/subnav.html links=allguides %}
+        {% elsif page.fetch_subnav %}
+            {% assign sidepages = site.guides | where_exp: "post", "post.categories == page.categories" %}
+            {% include components/subnav.html links=sidepages %}
         {% endif %}
     </ul>
     {% endif %}
