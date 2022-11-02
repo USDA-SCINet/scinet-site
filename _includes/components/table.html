@@ -1,0 +1,65 @@
+{% if include.split %}
+    {% assign split = include.split %}
+{% endif %}
+
+<div class="usa-table-container{% if table.scroll %}--scrollable{% endif %}" tabindex="0">
+    <table class="usa-table usa-table--striped">
+        {% if table.caption %}
+        <caption>
+            {{ table.caption }}
+        </caption>
+        {% endif %}
+        <thead>
+            <tr>
+            {% for pair in tabledata[0] %}
+                {% unless pair[0]=="url" or pair[0]==table.split %}
+                <th {% if table.sort %}data-sortable scope="col"{% endif %} role="columnheader">{{ pair[0] }}</th>
+                {% endunless %}
+            {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in tabledata %}
+                {% unless forloop.first %}
+                {% if split %}
+                    {% assign filtercheck = "false" %}
+                    {% for pair in row %}
+                        {% if pair[0]==table.split and pair[1]==split %}
+                        {% assign filtercheck = "true" %}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                {% unless split and filtercheck=="false" %}
+                <tr>
+                    {% for pair in row %}
+                    {% unless pair[0]=="url" or pair[0]==table.split %}
+                    {% if forloop.first %}
+                    <th scope="row">
+                        {% assign urlcheck = "false" %}
+                        {% for _pair in row %}
+                            {% if _pair[0]=="url" %}
+                            <a href="{{ _pair[1] }}">
+                                {{ pair[1] }}
+                                {% assign urlcheck = "true" %}
+                            </a>
+                            {% endif %}
+                        {% endfor %}
+                        {% if urlcheck=="false" %}{{ pair[1] }}{% endif %}
+                    </th>  
+                    {% else %}
+                    <td data-sort-value="{{ pair[1] }}">{{ pair[1] }}</td>
+                    {% endif %}
+                    {% endunless %}
+                    {% endfor %}
+                </tr>
+                {% endunless %}
+                {% endunless %}
+            {% endfor %}
+        </tbody>
+    </table>
+    {% if table.announcement %}
+    <div class="usa-table__announcement-region" aria-live="polite">
+       {{ table.announcement }}
+    </div>
+    {% endif %}
+    </div>
