@@ -1,35 +1,49 @@
 {% for link in include.links %}
-{% if page.guidegroup and link.internal %}
+
+{% if link.title %}
+  {% assign mytitle = link.title %}
+{% endif %}
+{% if link.class %}
+  {% assign myclass = link.class %}
+{% else %}
+  {% assign myclass = "" %}
+{% endif %}
+{% if link.url %}
+  {% capture mylink %}
+    {% if link.internal or link.layout %}{{ link.url | relative_url }}{% else %}{{ link.url }}{% endif %}
+  {% endcapture %}
+{% endif %}
+
+{% if page.guidegroup or page.fetch_subnav %}
+
   {% if page.guidegroup.all and page.guidegroup.compile %}
     {% assign mylink = link.categories | join: ',' | append: " Guides" | slugify %}
+    {% assign mylink = mylink | prepend: '#' %}
+    {% assign myclass = "" %}
     {% assign mytitle = link.categories %}
-  {% else %}
-    {% assign mylink = link.title | slugify %}
-    {% assign mytitle = link.title %}
+
+  {% elsif page.guidegroup and link.internal %}
+      {% assign mylink = link.title | slugify %}
+      {% assign mylink = mylink | prepend: '#' %}
+
   {% endif %}
-  <li>
-  <a href="{{ mylink | prepend: '#' }}">{{ mytitle }}</a>
-</li>
-{% else %}
-{% if link.layout %}
+
+  {% assign nobreakdown = "true" %}
+
+{% elsif link.layout %}
+  {% assign mylink = link.url | relative_url %}
+{% endif %}
+
+
 <li>
-  <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
-</li>
-{% elsif link.subnav %}
-<li>
-  <a href="{% if link.internal %}{{ link.url | relative_url }}{% else %}{{ link.url }}{% endif %}" {% if link.class
-    %}class="{{ link.class }}" {% endif %}>
-    {{ link.title }}
-  </a>
+  <a href="{{ mylink }}" class="{{ myclass }}">{{ mytitle }}</a>
+  {% unless nobreakdown %}
+  {% if link.subnav %}
   <ul class="usa-sidenav__sublist">
     {% include components/subnav.html links=link.subnav %}
   </ul>
+  {% endif %}
+  {% endunless %}
 </li>
-{% else %}
-<li>
-  <a href="{% if link.internal %}{{ link.url | relative_url }}{% else %}{{ link.url }}{% endif %}" {% if link.class %}
-    class="{{ link.class }}" {% endif %}>{{ link.title }}</a>
-</li>
-{% endif %}
-{% endif %}
+
 {% endfor %}
