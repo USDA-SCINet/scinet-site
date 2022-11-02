@@ -64,6 +64,8 @@ primary:
           url: /research/working-groups/LTARphenology
         - title: Pollinator
           url: /research/working-groups/pollinator
+        - title: Protein Function and Phenotype Prediction
+          url: /research/working-groups/proteinfunction
       - title: Use Cases
         url: /research/uses
         sublinks:
