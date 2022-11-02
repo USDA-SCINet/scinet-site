@@ -2,8 +2,6 @@
 {% assign table=include.table %}
 {% endif %}
 
-
-
 {% for _table in site.data.tables %}
 {% if _table[0] == table.source %}
     {% assign tabledata = _table[1] %}
@@ -14,57 +12,42 @@
 <h2>{{ table.title }}</h2>
 {% endif %}
 
-<div class="usa-table-container{% if table.scroll %}--scrollable{% endif %}" tabindex="0">
-<table class="usa-table usa-table--striped">
-    {% if table.caption %}
-    <caption>
-        {{ table.caption }}
-    </caption>
-    {% endif %}
-    <thead>
-        <tr>
-        {% for pair in tabledata[0] %}
-            {% unless pair[0]=="url" %}
-            <th {% if table.sort %}data-sortable scope="col"{% endif %} role="columnheader">{{ pair[0] }}</th>
-            {% endunless %}
-        {% endfor %}
-        </tr>
-    </thead>
-    <tbody>
-        {% for row in tabledata %}
-            {% unless forloop.first %}
-            <tr>
-                {% for pair in row %}
-                {% unless pair[0]=="url" %}
-                {% if forloop.first %}
-                <th scope="row">
-                    {% assign urlcheck = "false" %}
-                    {% for _pair in row %}
-                        {% if _pair[0]=="url" %}
-                        <a href="{{ _pair[1] }}">
-                            {{ pair[1] }}
-                            {% assign urlcheck = "true" %}
-                        </a>
-                        {% endif %}
-                    {% endfor %}
-                    {% if urlcheck=="false" %}{{ pair[1] }}{% endif %}
-                </th>  
-                {% else %}
-                <td data-sort-value="{{ pair[1] }}">{{ pair[1] }}</td>
-                {% endif %}
-                {% endunless %}
-                {% endfor %}
-            </tr>
-            {% endunless %}
-        {% endfor %}
-    </tbody>
-</table>
-{% if table.announcement %}
-<div class="usa-table__announcement-region" aria-live="polite">
-   {{ table.announcement }}
-</div>
+{% if table.split=="subnav" %}
+    {% for _listing in page.subnav %}
+        {% if _listing.table %}
+        <h2>{{ _listing.title }}</h2>
+
+        {% include components/table.html split=_listing.title %}
+        {% endif %}
+    {% endfor %}
+{% elsif table.split %}
+    {% assign dividelist = "" | split: "" %}
+    {% for row in tabledata %}
+    {% for pair in row %}
+        {% if pair[0] == table.split %}
+            {% assign dividelist = dividelist | push: pair[1] %}
+        {% endif %}
+    {% endfor %}
+    {% endfor %}
+
+    {% assign dividelist = dividelist | uniq %}
+
+    {% for _div in dividelist %}
+        {% assign words = _div | split: ' ' %}
+        {% capture titlecase %}
+        {% for word in words %}
+            {{ word | capitalize }}
+        {% endfor %}{% endcapture %}
+        <h2>{{ titlecase }}</h2>
+
+        {% include components/table.html split=_div %}
+    {% endfor %}
+
+{% else %}
+
+    {% include components/table.html %}
+
 {% endif %}
-</div>
 
 {% if table.elaborate %}
 <div>{{ table.elaborate }}</div>

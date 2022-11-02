@@ -2,7 +2,7 @@
 title: Cite SCINet
 description: SCINet Citation/Acknowledgment in Publications
 
-categories: [Resources]
+categories: [HPC Resources]
 
 ---
 
