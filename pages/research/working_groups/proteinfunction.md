@@ -5,16 +5,6 @@ permalink: /research/working-groups/proteinfunction
 author: Ryan Lucas
 layout: page
 
-filter:
-  provider: Protein Function and Phenotype Preditction Working Group
-
-collect: events
-collect_title: Workshops
-reverse_collection: true
-
-subnav:
-  - title: Workshops
-    url: '#workshops'
 ---
 
 
