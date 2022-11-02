@@ -2,7 +2,7 @@
 title: SCINet Atlas
 description: Guide to Atlas
 excerpt: External link to the Mississippi State Atlas Guide
-categories: [Resources]
+categories: [HPC Resources]
 redirect_to: https://www.hpc.msstate.edu/computing/atlas
 class: usa-link--external
 

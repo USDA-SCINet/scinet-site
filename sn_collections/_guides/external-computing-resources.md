@@ -3,7 +3,7 @@ title: External computing resources
 description: External computing resources
 #author: VRSC
 
-categories: [Resources]
+categories: [HPC Resources]
 
 subnav:
   - title: Amazon Web Services
