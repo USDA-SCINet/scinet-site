@@ -21,7 +21,7 @@ subnav:
     - title: Software Environment
       url: '#software-environment'
   - title: Additional Guides
-    url: '#additional-guides-to-ceres'
+    url: '#additional-guides-for-ceres'
   - title: Logging In
     url: /guides/access/login
     internal: true
