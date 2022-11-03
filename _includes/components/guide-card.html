@@ -6,12 +6,13 @@
         {% assign testurl = optionurl | slice: 0 %}
         {% unless testurl=="#" %}
         <li class="tablet:grid-col-12 margin-y-1">
-            <div class="usa-card__container">
-                <div class="usa-card__heading padding-2 bg-primary-lighter">
-                    <a href="{{ optionurl }}">
+            <div class="usa-card__container sharp-card">
+                <a class="sharp" href="{{ optionurl }}">
+                    <div class="heading">
                         <h3 class="arrow margin-0">{{ _option.title }}</h3>
-                    </a>
-                </div>
+                    </div>
+                </a>
+                <div id="{{ _option.title | slugify }}">
                 <div class="usa-card__body">
                     {% if _option.excerpt %}
                         {{ _option.excerpt }}
@@ -22,7 +23,7 @@
                                         {% endif %}
                                 {% endif %}
                             {% endfor %}
-                    {% endif %} 
+                    {% endif %}
                     <div class="text-right">
                         <a class="usa-button usa-button--outline margin-y-1" href="{{ optionurl }}">
                             Read More
@@ -71,6 +72,7 @@
                     {% endunless %}
                 </div>
                 {% endif %}
+            </div>
             </div>
         </li>
         {% endunless %}

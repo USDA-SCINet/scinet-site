@@ -9,8 +9,10 @@
 
 .home-block {
    @include u-margin-y(2);
+
    .right-button {
       @include u-text('center');
+
       @include at-media("mobile-lg") {
          @include u-text('right');
       }
@@ -27,6 +29,33 @@
    @include u-padding(1);
    @include u-circle(7);
    @include u-bg('primary-lighter');
+}
+
+.sharp-card {
+   @include u-radius(0);
+   @include u-border('base-lightest');
+   a.sharp:link {
+      text-decoration: none;
+      @include u-text('primary-dark');
+   }
+
+   a.sharp:visited {
+      text-decoration: none;
+      color:  #551A8B;
+   }
+
+   a.sharp:hover, a.sharp:active {
+      text-decoration: underline;
+      @include u-text('accent-cool-darker')
+   }
+
+   .heading {
+      @include u-padding-x(2);
+      @include u-padding-y(1);
+      @include u-bg('base-lightest');
+      @include u-border-bottom('2px');
+   }
+   
 }
 
 //intro card

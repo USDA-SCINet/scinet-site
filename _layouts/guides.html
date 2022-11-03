@@ -4,11 +4,7 @@ main:
 class: usa-layout-docs usa-layout-docs__main usa-prose
 ---
 
-{% assign guidecategories = site.guidecategory | sort: 'order_number' %}
-{% assign guidepages = site.guides %}
-
 <section class="padding-y-4">
     {{ content }}
-    <br>
     {% include guide-card.html %}
 </section>
