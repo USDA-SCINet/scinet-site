@@ -1,4 +1,4 @@
-<div class="usa-accordion usa-accordion--bordered">
+<div class="usa-accordion usa-accordion--bordered tablet:margin-x-2">
     {% for _option in _navsections %}
     {% capture optionurl %}{% if _option.internal or intlinks %}{{ _option.url | relative_url }}{% else %}{{
     _option.url }}{% endif %}{% endcapture %}
