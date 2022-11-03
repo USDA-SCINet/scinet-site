@@ -12,7 +12,7 @@
                         <h3 class="arrow margin-0">{{ _option.title }}</h3>
                     </div>
                 </a>
-                <div id="{{ _option.title | slugify }}">
+                <div id="{{ _option.title | slugify | append: '-guide' }}">
                 <div class="usa-card__body">
                     {% if _option.excerpt %}
                         {{ _option.excerpt }}
