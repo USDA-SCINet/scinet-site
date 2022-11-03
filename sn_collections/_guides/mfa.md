@@ -2,7 +2,7 @@
 title: Multifactor Authentication
 description: A guide to setting up multifactor authentication for SCINet
 order_number: 10
-excerpt: For security, SCINet requires multifactor authentication. Use these instructions to get set up.
+excerpt: "<p>For security, SCINet requires multifactor authentication. Use these instructions to get set up.</p>"
 
 categories: [Access]
 

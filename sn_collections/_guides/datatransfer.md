@@ -1,7 +1,7 @@
 ---
 title: SCINet File Transfer
 description: Best practices for file transfer
-excerpt: Globus Online is the recommended method for transferring data to and from the HPC clusters.
+excerpt: "<p>Data Transfer best practices.</p><p>Globus Online is the recommended method for transferring data to and from the HPC clusters.</p>"
 categories: [Data]
 order_number: 60
 
