@@ -3,7 +3,7 @@ title: Differences between Ceres and Atlas
 description: A guide to the differences between the Ceres cluster and the Atlas cluster
 ### author: Marina Kraeva
 
-categories: [HPC Resources]
+categories: [Resources]
 
 subnav:
   - title: Quotas

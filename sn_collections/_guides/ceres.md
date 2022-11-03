@@ -3,7 +3,7 @@ title: SCINet Ceres
 description: Guide to Ceres
 excerpt: Guide to Ceres
 
-categories: [HPC Resources]
+categories: [Resources]
 
 guidegroup:
     section: subnav
