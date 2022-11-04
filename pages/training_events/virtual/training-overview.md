@@ -16,6 +16,7 @@ subnav:
   - title: Get Started
     excerpt: "Watch these videos to learn how to get started with SCINet, or visit the Quick Start Guide for written information"
     feature-img-src: /assets/img/events/Getting_Started1.png
+    internal: true
     shows_list: subnav
     subnav: 
       - title: SCINet Quick Start Guide
@@ -55,6 +56,7 @@ subnav:
   - title: Find Your Community
     excerpt: Find others in your community to work with, get answers, and explore ideas with
     feature-img-src: /assets/img/events/community1.png
+    internal: true
     shows_list: subnav
     subnav:
       - title: Working Groups
