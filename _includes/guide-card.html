@@ -40,21 +40,21 @@
     {% endif %}
 {% else %}
     {% if page.guidegroup.all %}
-    {% assign intlinks = true %}
-    {% assign show_full = true %}
-    {% assign show_list = true %}
-    {% assign _navsections = guidecategories %}
+        {% assign intlinks = true %}
+        {% assign show_full = true %}
+        {% assign show_list = true %}
+        {% assign _navsections = guidecategories %}
     {% elsif page.guidegroup.section %}
-    {% assign _navsections = page[page.guidegroup.section] %}
+        {% assign _navsections = page[page.guidegroup.section] %}
 
     {% else %}
-    {% assign intlinks = true %}
-    {% assign _navsections = guidepages | where_exp: "post", "post.categories == page.categories" %}
-    {% if page.sorted %}
-    {% assign _navsections = _navsections | sort: 'order_number' %}
+        {% assign intlinks = true %}
+        {% assign _navsections = guidepages | where_exp: "post", "post.categories == page.categories" %}
+        {% if page.sorted %}
+        {% assign _navsections = _navsections | sort: 'order_number' %}
     {% endif %}
 
-    {% endif %}
+{% endif %}
 
 
 

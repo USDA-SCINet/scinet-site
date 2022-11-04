@@ -38,7 +38,7 @@
         {% for word in words %}
             {{ word | capitalize }}
         {% endfor %}{% endcapture %}
-        <h2>{{ titlecase }}</h2>
+        <h3>{{ titlecase }}</h3>
 
         {% include components/table.html split=_div %}
     {% endfor %}

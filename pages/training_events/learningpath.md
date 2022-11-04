@@ -30,7 +30,7 @@ With the expansive list of free training available online, finding the right tra
 | Get Started |   Dive Deeper |  Find Your Community |
 |---|---|---|
 ![Getting Started]({{ site.baseurl }}/assets/img/events/Getting_Started.png)  | ![Dive Deeper]({{ site.baseurl }}/assets/img/events/Dive_Deeper.png)| ![Find Your Community]({{ site.baseurl }}/assets/img/events/community.png) |
-| Watch these videos to learn how to get started with SCINet |  Explore these training resources to find specific content to meet your research needs |  Find others in your community to work with, get answers, and explore ideas with |
+| Watch these videos to learn how to get started with SCINet, or visit the [Quick Start Guide]({{ site.baseurl }}/guides/start) for written infortmation |  Explore these training resources to find specific content to meet your research needs |  Find others in your community to work with, get answers, and explore ideas with |
 | [Intro to SCINet](https://web.microsoftstream.com/video/9a2b95a3-79e6-4176-b5e6-cfd674c034aa)  | [Coursera](https://scinet.usda.gov/training/coursera) | [Working Group](https://scinet.usda.gov/working-groups) |
 | [SCINet Onboarding](https://web.microsoftstream.com/video/bed89bf6-99fc-44f0-9f4a-3e16cd2f2d49) | [Carpentries: UNIX, GIT, Python, R, OpenRefine, SQL](https://scinet.usda.gov/training/carpentries) | [SCINet Forum](https://forum.scinet.usda.gov/) |
 | [Atlas Overview](https://scinet.usda.gov/training-archive/2021-10-28-Intro-To-Atlas/)  | [AgLearn: LinkedIn Learn, Precipio](https://scinet.usda.gov/training/free-online-training#aglearn-and-linkedin-learning)| [SCINet Corner](https://forms.gle/7DcBoBvbGcjQDBP38) |
