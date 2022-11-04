@@ -1,7 +1,7 @@
 <div class="home-block">
     <ul class="usa-card-group margin-bottom-2 tablet:margin-x-2">
         {% for _option in _navsections %}
-        {% capture optionurl %}{% if _option.internal or intlinks %}{{ _option.url | relative_url }}{% else %}{{
+        {% capture optionurl %}{% if _option.internal and page.guidegroup.base_links %}{{ site.baseurl }}{{ _option.url }}{% elsif _option.internal or intlinks %}{{ _option.url | relative_url }}{% else %}{{
         _option.url }}{% endif %}{% endcapture %}
         {% assign testurl = optionurl | slice: 0 %}
         {% unless testurl=="#" %}

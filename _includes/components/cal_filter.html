@@ -41,7 +41,7 @@
                     <select class="usa-select" name="{{ topicsid }}" id="{{ topicsid }}">
                         <option value>Filter Events by Topics</option>
                         {% for tag in tags %}
-                        <option value="{{ tag }}">{{ tag | upcase }}</option>
+                        <option value="{{ tag }}">{{ tag | upcase | replace: "-", " " }}</option>
                         {% endfor %}
                     </select>
                 </div>

@@ -4,7 +4,7 @@ title: "Data Carpentries"
 # author: Heather Jones
 excerpt: Data Carpentries
 type: training
-provider: Data Carpentry
+provider: Carpentries
 lead: Kathleen Yeater
 ---
 

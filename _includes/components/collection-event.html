@@ -61,8 +61,8 @@
     {% endif %}
     {% assign _eventdetails = _eventdetails | push: eventurl %}
     {% assign _eventdetails = _eventdetails | push: eventend_date %}
-    {% if _event.register %}
-      {% assign _eventdetails = _eventdetails | push: _event.register %}
+    {% if _event.registration %}
+      {% assign _eventdetails = _eventdetails | push: _event.registration %}
     {% else %}
       {% assign _eventdetails = _eventdetails | push: dummyvar %}
     {% endif %}
@@ -112,8 +112,8 @@
         {% endif %}
         {% assign _eventdetails = _eventdetails | push: eventurl %}
         {% assign _eventdetails = _eventdetails | push: eventend_date %}
-        {% if _event.register %}
-          {% assign _eventdetails = _eventdetails | push: _event.register %}
+        {% if _event.registration %}
+          {% assign _eventdetails = _eventdetails | push: _event.registration %}
         {% else %}
           {% assign _eventdetails = _eventdetails | push: dummyvar %}
         {% endif %}
