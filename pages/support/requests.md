@@ -52,7 +52,7 @@ If you've done the above but need new software installed as a module, use the so
 ## Storage Request
 ---
 
-When a user applies for a SCINet account, they are allocated space on Ceres in a /home directory. Each user is allowed 5GB of data in the home directory. 
+When a user applies for a SCINet account, they are allocated space on Ceres in a /home directory. Each user is allowed 10GB of data in the home directory. 
 
 Users are advised to request additional space in the /project directory. Project directory storage is large, fast, not backed up, and can be requested up to 1TB or larger if justified. Project directory storage is good for fast I/O to large data files from compute nodes. The new project requests and request for changes must be submitted by the ARS project’s Principal Investigator (PI). 
 
