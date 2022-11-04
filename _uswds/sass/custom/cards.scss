@@ -58,6 +58,16 @@
    
 }
 
+//style links
+.ext-nested.usa-link--external::after{
+   content: none;
+   box-sizing: inherit;
+}
+
+.ext-nested.usa-link--external{
+   padding-right: 0;
+}
+
 //intro card
 
 .rounded-box {

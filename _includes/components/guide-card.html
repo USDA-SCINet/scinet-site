@@ -7,13 +7,20 @@
         {% unless testurl=="#" %}
         <li class="tablet:grid-col-12 margin-y-1">
             <div class="usa-card__container sharp-card">
-                <a class="sharp" href="{{ optionurl }}">
+                {% if _option.url %}<a class="sharp" href="{{ optionurl }}">{% endif %}
                     <div class="heading">
-                        <h3 class="arrow margin-0">{{ _option.title }}</h3>
+                        <h3 class="margin-0 {% if _option.url %} arrow{% endif %}{% if _option.class %} {{ _option.class }}{% endif %}">{{ _option.title }}</h3>
                     </div>
-                </a>
+                {% if _option.url %}</a>{% endif %}
                 <div id="{{ _option.title | slugify | append: '-guide' }}">
                 <div class="usa-card__body">
+                    {% if  _option.feature-img-src %}
+                    <div class="grid-row display-flex flex-row flex-align-center">
+                    <div class="tablet:grid-col-3 display-flex flex-row flex-align-center">
+                      <img class="maxh-card margin-x-auto" src="{{  _option.feature-img-src | relative_url }}" {% if  _option.feature-img-alt %} alt="{{  _option.feature-img-alt }}"{% endif %} />
+                    </div>
+                    <div class="tablet:grid-col tablet:margin-left-2">
+                  {% endif %}
                     {% if _option.excerpt %}
                         {{ _option.excerpt }}
                     {% elsif _option.internal %}
@@ -24,17 +31,20 @@
                                 {% endif %}
                             {% endfor %}
                     {% endif %}
+                    {% if  _option.feature-img-src %}</div></div>{% endif %}
+                    {% if _option.url %}
                     <div class="text-right">
                         <a class="usa-button usa-button--outline margin-y-1" href="{{ optionurl }}">
-                            Read More
+                            {% if _option.buttontxt %}{{ _option.buttontxt }}{% else %}Read More{% endif %}
                         </a>
                     </div>
+                    {% endif %}
                 </div>
                 {% if show_list or _option.shows_list %}
                 <div class="usa-card__footer">
                     {% if _option.shows_list == "subnav" or compiled %}
                         {% assign sectiontitle = "Guide Sections" %}
-                        {% if compiled %}
+                        {% if compiled or _option.subnav %}
                             {% assign guide = _option.subnav %}
                         {% else %}
                         {% for _chkguide in all_posts %}
@@ -47,6 +57,9 @@
                         {% assign sectiontitle = "Guide Pages" %}
                         {% assign guide = guidepages | where_exp: "post", "post.categories == _option.categories" %}
                     {% endif %}
+                    {% if page.guidegroup.sectiontitle %}
+                        {% assign sectiontitle=page.guidegroup.sectiontitle %}
+                    {% endif %}
                     {% assign pnum = guide | size %}
                     {% unless pnum == 0 %}
                     {% if _option.sorted %}
@@ -58,10 +71,10 @@
                             {% assign alt_buttons = page.alt_calendar.buttons %}
                             {% for _section in guide %}
                             <li class="tablet:grid-col-12 featured_posts margin-y-1">
-                                <a href="{% if _option.shows_list == 'subnav' or compiled %}{{ optionurl | append: _section.url }}{% else %}{{ _section.url | relative_url }}{% endif %}">
+                                <a {% if _section.class=="usa-link--external" %}class="ext-nested tablet:grid-col-12"{% endif %} href="{% if _option.shows_list == 'subnav' or compiled %}{{ optionurl | append: _section.url }}{% else %}{{ _section.url | relative_url }}{% endif %}">
                                     <div class="usa-card__container display-flex flex-row padding-2">
                                         <div class="overflow-hidden desktop:grid-col-fill">
-                                            <h4 class="arrow margin-0">{{ _section.title }}</h4>
+                                            <h4 class="margin-0{% if _section.class %} {{ _section.class }}{% else %} arrow{% endif %}">{{ _section.title }}</h4>
                                         </div>
                                     </div>
                                 </a>

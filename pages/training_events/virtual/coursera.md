@@ -5,7 +5,10 @@ permalink: /training/coursera
 author: SCINet SAC Education Committee.
 layout: page
 
- 
+sidenav_link: /training/resources
+sidenav_append: 
+  - title: Coursera Training
+    url: /training/coursera
 
 subnav:
   - title: Programs of Study
@@ -17,7 +20,7 @@ subnav:
 ---
 
 SCINet and the AI Center of Excellence are excited to provide training opportunities through [Coursera](https://www.coursera.org/). While many Coursera courses can be [audited for free](https://scinet.usda.gov/training/free-online-training#coursera-and-edx), ARS scientists and support staff can gain free access to a wider range of courses by applying for a 3-month SCINet-sponsored license. Successful completion of courses and specializations may result in **widely recognized certificates and credentials**. 
-
+<!--excerpt-->
 ## Programs of Study
 
 The ARS-Coursera portal includes Programs of Study related to scientific computing and artificial intelligence from top-tier institutions. The ARS Programs of Study are actively growing catalogues, and Coursera continues to add classes on a regular basis. ARS employees are *encouraged to request additional courses/specializations* to be added to our portal by sending an email to scinet-training@usda.gov. Note that you should expect to spend 2-3 hours per week on many of these classes, especially for the more advanced courses. 

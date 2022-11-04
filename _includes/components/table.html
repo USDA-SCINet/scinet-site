@@ -3,7 +3,7 @@
 {% endif %}
 
 <div class="usa-table-container{% if table.scroll %}--scrollable{% endif %}" tabindex="0">
-    <table class="usa-table usa-table--striped">
+    <table class="usa-table {% if table.class %}{{ table.class }}{% else %}usa-table--striped{% endif %}">
         {% if table.caption %}
         <caption>
             {{ table.caption }}

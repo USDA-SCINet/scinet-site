@@ -78,24 +78,12 @@ primary:
       
   - title: Training and Events
     links:
-#     - title: Overview
-#       url: /training/overview
-#     - title: ARS Science Tutorials
-#       url: /training/tutorials/
-      - title: Learning Pathway
-        url: /training/learningpath
-      - title: Free Online Training
-        url: /training/free-online-training
-#     - title: Videos
-#       url: /training/video/
+      - title: Overview
+        url: /training/overview
       - title: Upcoming Events
         url: /training/events
-      - title: Bioinformatics Workbook
-        url: /training/bioinformatics-workbook
-#     - title: Useful Links
-#       url: /training/useful-links
-      - title: Coursera
-        url: /training/coursera
+      - title: Training Resources
+        url: /training/resources
   - title: Support
     links:
       - title: Virtual Research Support Core (VSRC)
