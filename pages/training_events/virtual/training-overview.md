@@ -28,7 +28,7 @@ subnav:
       - title: SCINet Onboarding - Video
         url: https://web.microsoftstream.com/video/bed89bf6-99fc-44f0-9f4a-3e16cd2f2d49
         class: usa-link--external
-      - title: Atlas Overview
+      - title: Intro to Atlas
         url: /events/intro-to-atlas
         internal: true
       - title: Intro to Command Line
@@ -52,6 +52,9 @@ subnav:
         internal: true
       - title: Event Calendar
         url: /training/events
+        internal: true
+      - title: Carpentries (UNIX, GIT, Python, R, OpenRefine, SQL)
+        url: /training/carpentries
         internal: true
   - title: Find Your Community
     excerpt: Find others in your community to work with, get answers, and explore ideas with

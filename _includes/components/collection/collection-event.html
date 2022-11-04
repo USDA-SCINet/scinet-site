@@ -91,19 +91,17 @@
                         {% include components/collection/collection-item.html session=_session postdate=postdate %}
                     {% endfor %}
                 {% endif %}
-            {% elsif postend_date != 'false' %}
-            
-            <li class="usa-collection__meta-item">
-                <b>{{ postdate | date: "%A, %B %-d"}} - {{ postend_date | date: "%A, %B %-d"}}{% unless post_type == 'calendar' %} &middot {{ postdate | date: "%Y" }}{% endunless %}</b>
-            </li>
             {% else %}
             {% unless no_date_below %}
             <li class="usa-collection__meta-item">
-                <b>{{ postdate | date: "%A, %B %-d"}}{% unless post_type == 'calendar' %} &middot {{ postdate | date: "%Y" }}{% endunless %}</b>
+                <b>{{ postdate | date: "%A, %B %-d"}}
+                    {% unless postend_date == 'false' %} - {{ postend_date | date: "%A, %B %-d"}}{% endunless %}
+                    {% unless post_type == 'calendar' %} &middot {{ postdate | date: "%Y" }}{% endunless %}
+                </b>
                 {% unless registration == 'false' or pagetype == "archive" %}
                 <ul class="unstyled-list">
                     <li><b>Registration: </b>
-                        {% include components/link.html url=registration.url text=_material.text external=true %}
+                        {% include components/link.html url=registration.url text=regtext external=true %}
                     </li>
                 </ul>
                 {% endunless %}
@@ -121,7 +119,7 @@
             {% endif %}
             {% if posttags != 'false' %}
             {% for tag in posttags %}
-            <li class="usa-collection__meta-item usa-tag">{{ tag }}</li>
+            <li class="usa-collection__meta-item usa-tag">{{ tag | replace: "-", " " }}</li>
             {% endfor %}
             {% endif %}
         </ul>
