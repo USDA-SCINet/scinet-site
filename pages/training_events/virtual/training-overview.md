@@ -7,6 +7,7 @@ layout: guides
 guidegroup:
     section: subnav
     sectiontitle: Sections
+    base_links: true
  
 subnav:
   - title: Get Started with SCINet Learning Pathway
@@ -36,7 +37,6 @@ subnav:
         internal: true
   - title: Dive Deeper
     excerpt: "Explore these training resources to find specific content to meet your research needs."
-    url: /training/resources
     internal: true
     feature-img-src: /assets/img/events/Getting_Started1.png
     shows_list: subnav
