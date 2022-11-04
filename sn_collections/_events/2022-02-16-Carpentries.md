@@ -5,7 +5,7 @@ title: "Data Carpentries"
 lead: Kathleen Yeater
 excerpt: Data Carpentries
 type: training
-provider: Data Carpentry
+provider: Carpentries
 ---
 
 **Remote**   

@@ -4,7 +4,7 @@ title: "Software Carpentries"
 # author: Heather Jones
 excerpt: Software Carpentries
 type: training
-provider: Data Carpentry
+provider: Carpentries
 tags: Unix Git Python
 Lead: Steven Schroeder
 ---
