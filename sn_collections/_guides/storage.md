@@ -33,7 +33,7 @@ There are multiple places to store data on the Ceres and Atlas clusters that all
 
 ## Quotas
 
-Home directories, project directories in `/project` and on [Juno Archive Storage](#juno-archive-storage) have quotas. Home directories have 5GB quota. The default project directory quota in /project is set to 1TB. Note that quotas for project directories on Ceres and Atlas may differ.
+Home directories, project directories in `/project` and on [Juno Archive Storage](#juno-archive-storage) have quotas. Home directories have 10GB quota. The default project directory quota in /project is set to 1TB. Note that quotas for project directories on Ceres and Atlas may differ.
 To see the current usage and quotas for your home and project directories on Ceres, as well as on Juno, issue the `my_quotas` command on the Ceres login node. On Atlas, issue "`/apps/bin/reportFSUsage -p proj1,proj2,proj3`", substituting proj# with project name(s).
 
 Quotas on Ceres are based off file group ownership/association. By default files in a home directory are associated with the user's
@@ -54,7 +54,7 @@ find /project/<project_name>/<dir> -exec chgrp proj-<project_name> {} + -a -type
 Home directories are private, they are only accessible to the user and the system administrators. When a user logs 
 into Ceres or Atlas, they are automatically logged into their home directory `/home/firstname.lastname`. 
 
-Home directories have 5GB quotas and are intended to be mainly used for configuration and login files. Computations 
+Home directories have 10GB quotas and are intended to be mainly used for configuration and login files. Computations 
 should be run from project directories in `/90daydata` or in `/project`. Software installs that require a lot of space, 
 such as conda virtual environments, should be done in [`/project`](#project-directories).
 
