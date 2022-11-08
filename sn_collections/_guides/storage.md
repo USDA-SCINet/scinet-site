@@ -73,7 +73,7 @@ To request a new project directory see [Request Project Storage]({{ site.baseurl
 Default quota for `/project/<project_name>` is set to 1TB. Historically, before [Juno Archive Storage](#juno-archive-storage) has been deployed, large space had routinely been allocated in /project, but going forward, additional space in /project will only be allocated on an as-needed basis. Most users should use /90daydata to run analysis, and the results should be copied to [Juno Archive Storage](#juno-archive-storage).
 
 
-Many software applications are available on the clusters as [modules](https://scinet.usda.gov/guide/ceres/#modules), however sometimes 
+Many software applications are available on the clusters as [modules]({{ site.baseurl }}/guides/software/modules), however sometimes 
 users need to install software by themselves. Since home directories have a small quota, it is recommended to install software, 
 such as Python, Perl, R packages and conda virtual environments in `/project/<project_name>`. 
 The [Conda Guide](https://scinet.usda.gov/guide/conda/#example-2-installing-tensorflow-into-a-keep-directory) provides instructions 
