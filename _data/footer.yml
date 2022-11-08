@@ -14,8 +14,8 @@ top:
 # Configuration for "Edit this page" link in the footer.
 # Customize with 'title' property.
 # Uncomment the following lines to show.
-#edit_page:
-#  text: Edit this page
+edit_page:
+  text: Edit this page
 
 # Configuration for "Last updated" date and time.
 # Uncomment the following line to show.
@@ -32,6 +32,10 @@ big_footer_signup_form: false
 
 # Configuration for footer heading. (optional)
 heading: USDA Agricultural Research Service
+blurb: 
+  title: ABOUT
+  text: SCINet is a USDA Agricultural Research Service initiative.
+  url: /about/organization
 
 # Configuration for agency logo(s) (shown side by side).
 # If the logo is external add external: true
