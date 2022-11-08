@@ -150,7 +150,7 @@ Additional storage can be provided on Ceres and/or Atlas in /project directories
 
 When requesting additional data storage you will be asked for a project summary, a project end date, and to detail your long-term plan for data in your project/keep directories after your project end date.
 
-Besides /project data can be store in the short-term storage /90daydata which has no quotas. For more information refer to the [SCINet Storage Guide](https://scinet.usda.gov/guide/storage/).
+Besides /project data can be store in the short-term storage /90daydata which has no quotas. For more information refer to the [SCINet Storage Guide](https://scinet.usda.gov/guides/data/storage/).
 
 ### How do I request an increase in storage space?
 Please fill out an application form at [Request Project Storage]({{ site.baseurl }}/support/request-storage) (eAuthentication required, non-ARS users should contact their sponsor) to request more storage.

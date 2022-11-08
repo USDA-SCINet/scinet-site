@@ -54,7 +54,7 @@ Users who are new to the HPC environment may benefit from the following Ceres on
 
 [Ceres Onboarding (Intro to SCINet Ceres HPC) (length 42:13)](https://www.youtube.com/watch?v=FspDMlHaJUY)
 
-Note: /KEEP storage discussed in the video at 16:20 is no longer available. Instead data that cannot be easily reproduced should be manually backed up to [Juno](https://scinet.usda.gov/guide/storage/#juno-archive-storage). The instructional video at [https://www.youtube.com/watch?v=I3lnsCAfx3Q](https://www.youtube.com/watch?v=I3lnsCAfx3Q) demonstrates how to transfer files between local computer, Ceres, Atlas and Juno using Globus.
+Note: /KEEP storage discussed in the video at 16:20 is no longer available. Instead data that cannot be easily reproduced should be manually backed up to [Juno]({{ site.baseurl }}/guides/data/storage/#juno-archive-storage). The instructional video at [https://www.youtube.com/watch?v=I3lnsCAfx3Q](https://www.youtube.com/watch?v=I3lnsCAfx3Q) demonstrates how to transfer files between local computer, Ceres, Atlas and Juno using Globus.
 
 The video includes:
 - logging on to Ceres

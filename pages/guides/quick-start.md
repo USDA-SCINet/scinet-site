@@ -97,11 +97,11 @@ SCINet is the USDA-ARS's initiative for scientific computing. It consists of:
 3. Support for computing through the Virtual Research Support Core (VRSC). See [VRSC Support]({{ site.baseurl }}/support/vrsc/) for more detail.
 4. Training and workshop opportunities in multiple areas of scientific computing. See [upcoming]({{ site.baseurl }}/training/training_event) and [past]({{ site.baseurl }}/training-archive/) trainings and [upcoming]({{ site.baseurl }}/training/events_events) and [past]({{ site.baseurl }}/events-archive) events for more information.
 
-Users who are new to the HPC environment may benefit from the [SCINet/Ceres onboarding video](https://www.youtube.com/watch?v=FspDMlHaJUY) which covers most of the material contained in this guide. Note that /KEEP storage discussed in the video at 16:20 is no longer available. Instead data that cannot be easily reproduced should be manually backed up to [Juno](https://scinet.usda.gov/guide/storage/#juno-archive-storage). The instructional video at [https://www.youtube.com/watch?v=I3lnsCAfx3Q](https://www.youtube.com/watch?v=I3lnsCAfx3Q) demonstrates how to transfer files between local computer, Ceres, Atlas and Juno using Globus.
+Users who are new to the HPC environment may benefit from the [SCINet/Ceres onboarding video](https://www.youtube.com/watch?v=FspDMlHaJUY) which covers most of the material contained in this guide. Note that /KEEP storage discussed in the video at 16:20 is no longer available. Instead data that cannot be easily reproduced should be manually backed up to [Juno](https://scinet.usda.gov/guides/data/storage/#juno-archive-storage). The instructional video at [https://www.youtube.com/watch?v=I3lnsCAfx3Q](https://www.youtube.com/watch?v=I3lnsCAfx3Q) demonstrates how to transfer files between local computer, Ceres, Atlas and Juno using Globus.
 
 # Set Up Multi-Factor Authentication
 
-For security, SCINet requires multifactor authentication. See the setup instructions in the [Multi-Factor Authentication User Guide]({{ site.baseurl }}/guide/multifactor/).
+For security, SCINet requires multifactor authentication. See the setup instructions in the [Multi-Factor Authentication User Guide]({{ site.baseurl }}/guides/access/mfa/).
 
 
 # HPC Clusters on SCINet
@@ -293,7 +293,7 @@ SCINet HPC resources can be used via GUI tools such as Geneious, CLC Workbench, 
 
 # Data Storage
 
-There are multiple places to store data persistently on SCINet clusters. For more information about storage options, refer to [SCINet Storage Guide]({{ site.baseurl }}/guide/storage).
+There are multiple places to store data persistently on SCINet clusters. For more information about storage options, refer to [SCINet Storage Guide]({{ site.baseurl }}/guides/data/storage).
 
 Storage | Path
 --------|-----
