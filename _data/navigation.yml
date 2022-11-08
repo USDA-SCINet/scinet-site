@@ -75,15 +75,14 @@ primary:
           url: /research/uses/geospatial
         - title: Hydrology
           url: /research/uses/hydrology
-      
   - title: Training and Events
     links:
-      - title: Overview
-        url: /training/overview
-      - title: Upcoming Events
-        url: /training/events
       - title: Training Resources
         url: /training/resources
+      - title: Upcoming Events
+        url: /training/events
+      - title: Learning Pathway
+        url: /training/learningpath
   - title: Support
     links:
       - title: Virtual Research Support Core (VSRC)
