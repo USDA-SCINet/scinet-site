@@ -31,7 +31,7 @@ All Ceres users (ARS and formal collaborators) receive 5GB of storage in their /
 
 Additional technical information about the Ceres HPC cluster can be found in the [Ceres User Manual]({{ site.baseurl }}/guides/resources/ceres/).
 
-New users may also want to reference the [Ceres Quick Start Guide]({{ site.baseurl }}/guide/quickstart).
+New users may also want to reference the [Quick Start Guide]({{ site.baseurl }}/guides/start).
 
 Many additional user guides are available under the "User Guides" dropdown list.
 

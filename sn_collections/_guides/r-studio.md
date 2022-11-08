@@ -100,7 +100,7 @@ If you wish to use a different version, replace 3.6.0 below with the version num
 [VPN Using the OpenConnect Client]({{ site.baseurl }}/guide/openconnect)<br>
 [VPN Using the Cisco AnyConnect Client]({{ site.baseurl }}/guide/anyconnect)
 
-2. Log into Ceres via SSH (see the [Quick Start Guide]({{ site.baseurl }}/guide/quickstart#accessing-scinet) for instructions).
+2. Log into Ceres via SSH (see the [Quick Start Guide]({{ site.baseurl }}/guides/start) for instructions).
 
 3. Submit the RStudio SLURM job script with the following command:
 ```
