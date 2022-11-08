@@ -2,10 +2,4 @@
 
 {% if footer.type == 'usda' %}
     {% include components/footer--usda.html %}
-{% elsif footer.type == 'slim' %}
-  {% include components/footer--slim.html %}
-{% elsif footer.type == 'default' or footer.type == 'medium' %}
-  {% include components/footer--default.html %}
-{% elsif footer.type == 'big' %}
-  {% include components/footer--big.html %}
 {% endif %}

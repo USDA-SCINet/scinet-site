@@ -1,7 +1,7 @@
 {% assign signature = include.signature %}
 <div class="usa-logo">
     {% if signature.logos %}
-    <span class="agency-logo display-flex flex-align-center margin-right-1">
+    <span class="agency-logo display-flex flex-align-center mobile-lg:margin-right-1">
         {% for logo in signature.logos %}
         <a href="{% if logo.url %}{{ logo.url }}{% else %}{{ site.baseurl }}/{% endif %}">
             <img class="usa-logo-img"

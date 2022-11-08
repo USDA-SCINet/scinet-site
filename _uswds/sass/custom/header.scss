@@ -55,6 +55,11 @@
 
    .usa-logo {
       display: flex;
+      
+      font-size: font-size($theme-header-font-family, "2xs");
+      @include at-media('mobile-lg'){
+         font-size: font-size($theme-header-font-family, "xs");
+      }
 
       @include at-media($theme-header-min-width) {
          font-size: font-size($theme-header-font-family, "lg");
@@ -62,17 +67,16 @@
       }
 
       @include at-media-max($theme-header-min-width) {
-         font-size: font-size($theme-header-font-family, "xs");
          line-height: line-height($theme-header-font-family, 1);
+         @include u-margin-left(1);
+         @include at-media('mobile-lg') {
          margin-left: units($theme-site-margins-mobile-width);
-
-
+         }
       }
-
       a.agency-logo-text {
          text-decoration: none;
          color: $theme-color-base-darker;
-
+      
          &:hover {
             color: $theme-color-base-darker;
             text-shadow: none;
