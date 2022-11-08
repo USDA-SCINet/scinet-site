@@ -1,7 +1,7 @@
 ---
-title: Overview of SCINet Training Opportunities
-description: One of SCINet's missions is training scientists in computational methods to empower agricultural research.
-permalink: /training/overview
+title: SCINet Learning Pathway
+description: With the expansive list of free training available online, finding the right training to meet your learning needs can be daunting.
+permalink: /training/learningpath
 layout: guides
 
 guidegroup:
@@ -10,10 +10,6 @@ guidegroup:
     base_links: true
  
 subnav:
-  - title: Get Started with SCINet Learning Pathway
-    url: '#get-started-with-scinet-learning-pathway'
-  - title: Additional Training Resources
-    url: '#additional-training-resources'
   - title: Get Started
     excerpt: "Watch these videos to learn how to get started with SCINet, or visit the Quick Start Guide for written information"
     feature-img-src: /assets/img/events/Getting_Started1.png
@@ -48,7 +44,7 @@ subnav:
         url: /training/coursera
         internal: true
       - title: List of Free Trainings
-        url: /training/bytopic
+        url: /training/free-online-training
         internal: true
       - title: Event Calendar
         url: /training/events
@@ -74,8 +70,5 @@ subnav:
 
 ---
 
-One of SCINet's main objectives is training scientists in computational methods to empower agricultural research. We are doing this in several ways. We offer online and in person trainings, support topic-specific working groups, and provide help, training, and tutorials for scientists.
-
-## Get Started with SCINet Learning Pathway
-
 With the expansive list of free training available online, finding the right training to meet your learning needs can be daunting. Take the first steps in getting started with your introductory learning path to help you get started with SCINet. Learn about SCINet, how to sign up for an account, and what is possible when supported by SCINet infrastructure. Then dive in with hands-on tutorials available across multiple searchable platforms to find the information you need for just-in-time learning.
+<!--excerpt-->

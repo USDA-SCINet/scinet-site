@@ -1,13 +1,13 @@
 ---
 title: Free Online Computational Training Resources
 description: course links for common training needs
-permalink: /training/bytopic
+permalink: /training/free-online-training
 layout: page
 
 sidenav_link: /training/resources
 sidenav_append: 
   - title: Free Online Training
-    url: /training/bytopic
+    url: /training/free-online-training
 
 table:
     position: back
@@ -60,3 +60,5 @@ subnav:
 ---
 
 A list of free trainings available to SCINet users sorted by topic.  This is not an exhaustive list, but may help you get started.
+
+We also have [instructions on how to access the various learning platforms]({{ site.baseurl }}/training/access).
