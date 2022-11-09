@@ -26,7 +26,7 @@ summarybox:
 
 ## AnyConnect VPN
 
-The SCINet OpenConnect VPN server is compatible with the Cisco Anyconnect client if you already have that installed. We have tested this with OSX, Windows, Linux, and Android. Use of the SCINet VPN does require 2 factor authentication. If you have not set that up yet please read [these instructions](guide/multifactor/) and do so before continuing.
+The SCINet OpenConnect VPN server is compatible with the Cisco Anyconnect client if you already have that installed. We have tested this with OSX, Windows, Linux, and Android. Use of the SCINet VPN does require 2 factor authentication. If you have not set that up yet please read [these instructions]({{ base.url }}/guides/access/mfa) and do so before continuing.
 
 First open AnyConnect and enter **ocvpn.scinet.usda.gov** in the box and click \[Connect\]
 

@@ -29,15 +29,15 @@ Members of the SCINet Virtual Research Support Core (VRSC) in Ames, IA are the o
 
 All Ceres users (ARS and formal collaborators) receive 5GB of storage in their /home directory and can request additional storage in a /project directory.
 
-Additional technical information about the Ceres HPC cluster can be found in the [Ceres User Manual]({{ site.baseurl }}/guides/resources/ceres/).
+Additional technical information about the Ceres HPC cluster can be found in the [Ceres User Manual]({{ site.baseurl }}/guides/resources/ceres).
 
 New users may also want to reference the [Quick Start Guide]({{ site.baseurl }}/guides/start).
 
 Many additional user guides are available under the "User Guides" dropdown list.
 
 Other helpful links:<br>
-[Apply for a SCINet Account]({{ site.baseurl }}/about/signup/) to access Ceres<br>
-[SCINet/Ceres FAQs]({{ site.baseurl }}/support/faq/)<br>
+[Apply for a SCINet Account]({{ site.baseurl }}/about/signup) to access Ceres<br>
+[SCINet/Ceres FAQs]({{ site.baseurl }}/support/faq)<br>
 [Request Project Storage]({{ site.baseurl }}/support/request#storage-request)<br>
 [Request Software]({{ site.baseurl }}/support/request#software-request)<br>
 

@@ -52,7 +52,7 @@ Single user operational questions should be emailed to the VRSC scinet_vrsc@usda
 
 Discussion that is relevant to other SCINet users such as questions about the best practices for research computations should be posted on the SCINet VRSC Forum. Access to [SCINet Forum](https://forum.scinet.usda.gov) is provided during the SCINet account application process.
 
-Policy and development questions should be directed to the SCINet program manager, Rob Butler, or to your area representatives on the SCINet Scientific Advisory Committee (SAC), see the [SCINet Organization]({{ site.baseurl }}/about/organization/) page.
+Policy and development questions should be directed to the SCINet program manager, Rob Butler, or to your area representatives on the SCINet Scientific Advisory Committee (SAC), see the [SCINet Organization]({{ site.baseurl }}/about/organization) page.
 
 ### How do I use Basecamp?
 Basecamp  has been replaced by [SCINet Forum](https://forum.scinet.usda.gov). SCINet documentation previously available on Basecamp can now be found in the User Guides section of the [SCINet website]({{ site.baseurl }})/guides.
@@ -106,7 +106,7 @@ Older passwords CAN NOT be reused.
 Command line access is available via Secure Shell (SSH) and Virtual Private Network (VPN). For more info, see the [Quick Start Guide]({{ site.baseurl }}/guides/start).
 
 ### I took my onboarding a long time ago, how do I get a refresher course?
-Email the VRSC scinet_vrsc@usda.gov for a time and day. You can also read the [Quick Start Guide]({{ site.baseurl }}/guides/start) or [Ceres User Guide]({{ site.baseurl }}/guides/resources/ceres/).
+Email the VRSC scinet_vrsc@usda.gov for a time and day. You can also read the [Quick Start Guide]({{ site.baseurl }}/guides/start) or [Ceres User Guide]({{ site.baseurl }}/guides/resources/ceres).
 
 
 ## Software
@@ -150,7 +150,7 @@ Additional storage can be provided on Ceres and/or Atlas in /project directories
 
 When requesting additional data storage you will be asked for a project summary, a project end date, and to detail your long-term plan for data in your project/keep directories after your project end date.
 
-Besides /project data can be store in the short-term storage /90daydata which has no quotas. For more information refer to the [SCINet Storage Guide]({{ site.baseurl }}/guides/data/storage/).
+Besides /project data can be store in the short-term storage /90daydata which has no quotas. For more information refer to the [SCINet Storage Guide]({{ site.baseurl }}/guides/data/storage).
 
 ### How do I request an increase in storage space?
 Please fill out an application form at [Request Project Storage]({{ site.baseurl }}/support/request#storage-request) (eAuthentication required, non-ARS users should contact their sponsor) to request more storage.
@@ -192,7 +192,7 @@ The current acting SCINet program manager is Rob Butler.
 ### What is the Scientific Advisory Committee (SAC)?
 The Scientific Advisory Committee is composed of ARS scientists across all the five physical Areas, NAL, and a representative from the Area Statisticians. These scientists serve 3-year terms on the committee and represent a broad spectrum of the computational research efforts within ARS. The SAC, which is also referred to as the executive SAC (eSAC), interacts directly with the SCINet Executive Committee on SCINet policy, development, and training.
 
-There is a call for new SAC members every spring. If you would like serve on the SAC, please discuss your interest with your supervisor and email the SAC Chair. Current SAC members can be found on the [SCINet Organization page]({{ site.baseurl }}/about/organization/).
+There is a call for new SAC members every spring. If you would like serve on the SAC, please discuss your interest with your supervisor and email the SAC Chair. Current SAC members can be found on the [SCINet Organization page]({{ site.baseurl }}/about/organization).
 
 
 ## Parallel Computing

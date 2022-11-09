@@ -12,11 +12,11 @@ subnav:
 
 ---
 
-The Virtual Research Support Core (VRSC) is a team of Iowa State University and ARS personnel who manage the maintenance and operation of the Ceres HPC system and provide user support. See the [Virtual Research Support Core page]({{ site.baseurl }}/about/vrsc/) for more details.
+The Virtual Research Support Core (VRSC) is a team of Iowa State University and ARS personnel who manage the maintenance and operation of the Ceres HPC system and provide user support. See the [Virtual Research Support Core page]({{ site.baseurl }}/about/vrsc) for more details.
 
 ## How and When to Contact the VRSC
 
-Discussion that is relevant to other SCINet users such as questions about the best practices for research computations should be posted on the [SCINet Forum](https://forum.scinet.usda.gov/) message board. Access to the Forum is provided during the SCINet account application process ([Apply for an Account]({{ site.baseurl }}/about/signup/)).
+Discussion that is relevant to other SCINet users such as questions about the best practices for research computations should be posted on the [SCINet Forum](https://forum.scinet.usda.gov/) message board. Access to the Forum is provided during the SCINet account application process ([Apply for an Account]({{ site.baseurl }}/about/signup)).
 
 If your question is related to SCINet policy or development, contact the acting SCINet Program Manager, Stan Kosecki.
 
