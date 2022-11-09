@@ -59,7 +59,7 @@ layout: page
 
 :  Queue policies are subject to periodic change.
 
-   *  [Ceres User Guide]({{ site.baseurl }}/guide/ceres/#partitions-or-queues)
+   *  [Ceres User Guide]({{ site.baseurl }}/guides/use/running-jobs#partitions-or-queues)
    *  [Atlas User Guide](https://www.hpc.msstate.edu/computing/atlas/)
 
 

@@ -69,7 +69,7 @@ The ``mv`` and ``chgrp`` commands may take longer time depending on how much dat
 
 ## RStudio Server in Open OnDemand
 
-In your browser go to [https://ceres-ood.scinet.usda.gov/](https://ceres-ood.scinet.usda.gov/), enter your SCINet user name and SCINet password, followed by the GA code. See [MFA Guide](https://scinet.usda.gov/guide/multifactor/) for more information about GA codes.
+In your browser go to [https://ceres-ood.scinet.usda.gov/](https://ceres-ood.scinet.usda.gov/), enter your SCINet user name and SCINet password, followed by the GA code. See [MFA Guide]({{ site.baseurl }}/guides/access/mfa/) for more information about GA codes.
 
 After logging into Open OnDemand, click on "Interactive Apps" in the menu on the top and select "RStudio Server: Ceres". 
 
@@ -100,7 +100,7 @@ If you wish to use a different version, replace 3.6.0 below with the version num
 [VPN Using the OpenConnect Client]({{ site.baseurl }}/guide/openconnect)<br>
 [VPN Using the Cisco AnyConnect Client]({{ site.baseurl }}/guide/anyconnect)
 
-2. Log into Ceres via SSH (see the [Quick Start Guide]({{ site.baseurl }}/guide/quickstart#accessing-scinet) for instructions).
+2. Log into Ceres via SSH (see the [Quick Start Guide]({{ site.baseurl }}/guides/start) for instructions).
 
 3. Submit the RStudio SLURM job script with the following command:
 ```

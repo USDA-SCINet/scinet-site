@@ -66,7 +66,7 @@ In general, these tutorials assume some level of knowledge in scientific program
 
 You must apply for a SCINet account to get access to the Ceres or Atlas HPC systems. After your account is approved, there are a couple more steps to complete before you will be able to successfully login to your account. You will receive instructions by email on how to access your account for the first time upon account approval. Please make sure you can login to your account before joining our tutorial sessions.
 
-Visit the [Ceres](https://scinet.usda.gov/guide/ceres/) and [Atlas](https://www.hpc.msstate.edu/computing/atlas/) user guides for more information about how to login and brief information about the HPC systems.
+Visit the [Ceres]({{ site.baseurl }}/guides/resources/ceres) and [Atlas](https://www.hpc.msstate.edu/computing/atlas/) user guides for more information about how to login and brief information about the HPC systems.
 
 **If you have issues accessing Ceres or Atlas, please attend Session 0: Pre-meeting SCINet Account Login Assistance on 8/25/2022 at 10am MDT. We cannot provide individual assistance for login issues in any other session.**
 
@@ -78,7 +78,7 @@ The software discussed and shown in the workshop is largely open source, can run
 
 **SCINet vs. Ceres vs. Atlas**
 
-SCINet is the USDA ARS Scientific Computing INitiative that aims to improve access to high performance and cloud computing, improve networking to facilitate high speed data transfer, and facilitate scientific computational training. A part of SCINet is its computing infrastructure, including the Ceres and Atlas high-performance computing (HPC) clusters. For most of the tutorials, we will default to running them on Ceres but session material will provide information about both clusters. For more information on computing systems that SCINet offers, see the [Computer Systems page of the SCINet website.](https://scinet.usda.gov/about/compute).
+SCINet is the USDA ARS Scientific Computing INitiative that aims to improve access to high performance and cloud computing, improve networking to facilitate high speed data transfer, and facilitate scientific computational training. A part of SCINet is its computing infrastructure, including the Ceres and Atlas high-performance computing (HPC) clusters. For most of the tutorials, we will default to running them on Ceres but session material will provide information about both clusters. For more information on computing systems that SCINet offers, see the [Computer Systems page of the SCINet website.]({{ site.baseurl }}/about/compute).
 
 **Open OnDemand**
 

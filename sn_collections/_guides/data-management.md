@@ -16,7 +16,7 @@ subnav:
 
 ---
 
-This document describes recommended procedures (SOP) for managing data on ARS HPC and storage infrastructure.<!--excerpt--> The key concept is to only use “Tier 1 storage” (that is, storage that is local to a given HPC cluster) as required for actively running compute jobs. Tier 1 storage is not backed up and should not be used for archival purposes. Juno, on the other hand, is periodically backed up to tape and can be used for long-term storage of data and results.  We recommend immediate adoption of the procedures described here for new projects. These procedures should also be followed for “old” projects after first moving extant project data in Tier 1 storage to Juno using one of the procedures described below.  If you would like more detailed information about the data storage options provided by SCINet and how to use them, please see the [SCINet Storage Guide]({{ site.baseurl }}/guide/storage/).
+This document describes recommended procedures (SOP) for managing data on ARS HPC and storage infrastructure.<!--excerpt--> The key concept is to only use “Tier 1 storage” (that is, storage that is local to a given HPC cluster) as required for actively running compute jobs. Tier 1 storage is not backed up and should not be used for archival purposes. Juno, on the other hand, is periodically backed up to tape and can be used for long-term storage of data and results.  We recommend immediate adoption of the procedures described here for new projects. These procedures should also be followed for “old” projects after first moving extant project data in Tier 1 storage to Juno using one of the procedures described below.  If you would like more detailed information about the data storage options provided by SCINet and how to use them, please see the [SCINet Storage Guide]({{ site.baseurl }}/guides/data/storage/).
 
 
 ![Schematic diagram of recommended data management workflow using Globus.]({{ site.baseurl }}/assets/img/guides/data/data_management_sop-fig_1.png)
@@ -41,11 +41,11 @@ This document describes recommended procedures (SOP) for managing data on ARS HP
 
 Using Globus is recommended for file transfer performance and reliability. The recommended data management workflow using Globus is illustrated in Figure 1, above.
 
-See the SCINet [Globus Data Transfer guide](https://scinet.usda.gov/guide/file-transfer/#globus-data-transfer) for instructions on how to use Globus.
+See the SCINet [Globus Data Transfer guide]({{ site.baseurl }}/guide/file-transfer/#globus-data-transfer) for instructions on how to use Globus.
 
 1. Copy raw data and custom software (e.g., custom scripts, ideally also versioned in Git repositories; conda environments/environment.yml, Singularity image/definition files) from a local workstation or other data source to a project directory on Juno using Globus (search for Globus collection “NAL DTN 0”) (Figure 1.1).  On Juno, the data should be copied to `/LTS/project/PROJNAME/`.
 1. If not already there, copy data to Tier 1 storage on the cluster you will run on, either Ceres or Atlas, using Globus.  For most projects, you should use `/90dayadata` for routine, short-term storage (Figure 1.2).  There are no storage quotas on `/90daydata`, so it is ideal for data-intensive work.  For projects that require longer-term use of Tier 1 storage, space can be requested in `/project`.  However, please note that _no_ data on Tier 1 storage is backed up.
-1. Use ssh to log in to your chosen HPC cluster (Ceres or Atlas; see [Logging in to SCINet](https://scinet.usda.gov/guide/ceres/#logging-in-to-scinet)); (e.g.:
+1. Use ssh to log in to your chosen HPC cluster (Ceres or Atlas; see [Logging in to SCINet]({{ site.baseurl }}/guides/access/login)); (e.g.:
 ```
 ssh FIRST.LAST@ceres.scinet.usda.gov
 ```
@@ -57,7 +57,7 @@ Note that step 1 might not be necessary for all data used for a project. For exa
 
 ## Alternative instructions, not using Globus
 
-It is also possible to move data on SCINet infrastructure using traditional command-line tools like `scp` and `rsync`.  See the [SCINet File Transfer guide](https://scinet.usda.gov/guide/file-transfer/#small-data-transfer-using-scp-and-rsync) for instructions on how to use these commands to transfer data to/from Ceres and Atlas cluster. 
+It is also possible to move data on SCINet infrastructure using traditional command-line tools like `scp` and `rsync`.  See the [SCINet File Transfer guide]({{ site.baseurl }}/guide/file-transfer/#small-data-transfer-using-scp-and-rsync) for instructions on how to use these commands to transfer data to/from Ceres and Atlas cluster. 
 
 To move data to/from Juno, login to ceres-dtn and issue scp or rsync command to nal-dtn, e.g.:
 
