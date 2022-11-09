@@ -1,5 +1,5 @@
 ---
-title: Available AWS Resources
+title: AWS Resource FAQ
 description: AWS resourses availble to ARS scientists
 # author: Jordan Hoosman
 categories: [AWS]
