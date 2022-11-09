@@ -78,7 +78,7 @@ The software discussed and shown in the workshop is largely open source, can run
 
 **SCINet vs. Ceres vs. Atlas**
 
-SCINet is the USDA ARS Scientific Computing INitiative that aims to improve access to high performance and cloud computing, improve networking to facilitate high speed data transfer, and facilitate scientific computational training. A part of SCINet is its computing infrastructure, including the Ceres and Atlas high-performance computing (HPC) clusters. For most of the tutorials, we will default to running them on Ceres but session material will provide information about both clusters. For more information on computing systems that SCINet offers, see the [Computer Systems page of the SCINet website.](https://scinet.usda.gov/about/compute).
+SCINet is the USDA ARS Scientific Computing INitiative that aims to improve access to high performance and cloud computing, improve networking to facilitate high speed data transfer, and facilitate scientific computational training. A part of SCINet is its computing infrastructure, including the Ceres and Atlas high-performance computing (HPC) clusters. For most of the tutorials, we will default to running them on Ceres but session material will provide information about both clusters. For more information on computing systems that SCINet offers, see the [Computer Systems page of the SCINet website.]({{ site.baseurl }}/about/compute).
 
 **Open OnDemand**
 

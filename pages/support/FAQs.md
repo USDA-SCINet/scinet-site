@@ -55,7 +55,7 @@ Discussion that is relevant to other SCINet users such as questions about the be
 Policy and development questions should be directed to the SCINet program manager, Rob Butler, or to your area representatives on the SCINet Scientific Advisory Committee (SAC), see the [SCINet Organization]({{ site.baseurl }}/about/organization/) page.
 
 ### How do I use Basecamp?
-Basecamp  has been replaced by [SCINet Forum](https://forum.scinet.usda.gov). SCINet documentation previously available on Basecamp can now be found in the User Guides section of the [SCINet website](https://scinet.usda.gov).
+Basecamp  has been replaced by [SCINet Forum](https://forum.scinet.usda.gov). SCINet documentation previously available on Basecamp can now be found in the User Guides section of the [SCINet website]({{ site.baseurl }})/guides.
 
 ### How do I acknowledge SCINet in my publications?
 
@@ -67,17 +67,17 @@ Add the following sentence as an acknowledgment for using SCINet/Ceres as a reso
 ## Accounts & Login
 ---
 ### How do I get an account (I am an ARS employee)?
-Please fill out the [SCINet Account Request Form](https://scinet.usda.gov/about/signup). The request will be forwarded to your supervisor for approval. You may want to notify your supervisor so they are aware of the incoming email that requires a response. Once your supervisor has granted approval, an account will be created for you and you will receive an email from the Virtual Research Support Core (VRSC) with logon information.
+Please fill out the [SCINet Account Request Form]({{ site.baseurl }}/about/signup). The request will be forwarded to your supervisor for approval. You may want to notify your supervisor so they are aware of the incoming email that requires a response. Once your supervisor has granted approval, an account will be created for you and you will receive an email from the Virtual Research Support Core (VRSC) with logon information.
 
 ### How do I get an account for non-ARS collaborators, students, or postdocs?
 All students, postdocs, visiting scientists, and collaborators must have an ARS sponsor. All requests must also be approved by the Research Leader.
 
-Please fill out the [Non-ARS SCINet Account Request Form](https://scinet.usda.gov/about/signup). The request will be forwarded to the sponsor’s supervisor for approval. You may want to notify your supervisor so they are aware of the incoming email that requires a response.
+Please fill out the [Non-ARS SCINet Account Request Form]({{ site.baseurl }}/about/signup). The request will be forwarded to the sponsor’s supervisor for approval. You may want to notify your supervisor so they are aware of the incoming email that requires a response.
 
 Collaborators also have access to this website for user guides and upon account approval, access to the VRSC for operational assistance and the [SCINet VRSC Forum](https://forum.scinet.usda.gov) user forum for user discussion. 
 
 ### How do I reactivate my account?
-Users whose accounts have been deactivated for inactivity will need to submit a new [SCINet account request form](https://scinet.usda.gov/about/signup).
+Users whose accounts have been deactivated for inactivity will need to submit a new [SCINet account request form]({{ site.baseurl }}/about/signup).
 
 If you have questions, please email the VRSC: scinet_vrsc@usda.gov
 
@@ -150,7 +150,7 @@ Additional storage can be provided on Ceres and/or Atlas in /project directories
 
 When requesting additional data storage you will be asked for a project summary, a project end date, and to detail your long-term plan for data in your project/keep directories after your project end date.
 
-Besides /project data can be store in the short-term storage /90daydata which has no quotas. For more information refer to the [SCINet Storage Guide](https://scinet.usda.gov/guides/data/storage/).
+Besides /project data can be store in the short-term storage /90daydata which has no quotas. For more information refer to the [SCINet Storage Guide]({{ site.baseurl }}/guides/data/storage/).
 
 ### How do I request an increase in storage space?
 Please fill out an application form at [Request Project Storage]({{ site.baseurl }}/support/request-storage) (eAuthentication required, non-ARS users should contact their sponsor) to request more storage.
@@ -198,7 +198,7 @@ There is a call for new SAC members every spring. If you would like serve on the
 ## Parallel Computing
 ---
 ### How do I write a batch script to submit a compute job?
-Please use the [Ceres job script generator](https://scinet.usda.gov/support/ceres-job-script). The [Atlas user guide](https://www.hpc.msstate.edu/computing/atlas/) provides similar generator for the Atlas cluster.
+Please use the [Ceres job script generator]({{ site.baseurl }}/support/ceres-job-script). The [Atlas user guide](https://www.hpc.msstate.edu/computing/atlas/) provides similar generator for the Atlas cluster.
 
 ### How do I compile MPI codes?
 Load the module for the MPI library you wish to use, generally open openmpi, but mpich is available as well. MPI is included by default with the intel compiler.

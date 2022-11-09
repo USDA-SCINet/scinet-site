@@ -20,7 +20,7 @@ The software discussed and shown in these user guides is largely open source, ca
 
 ## SCINet vs. Ceres vs. Atlas
 
-SCINet is the USDA ARS Scientific Computing INitiative that aims to improve access to high performance and cloud computing, improve networking to facilitate high speed data transfer, and facilitate scientific computational training. The [Virtual Research Support Core (VRSC)](https://scinet.usda.gov/support/vrsc/) 
+SCINet is the USDA ARS Scientific Computing INitiative that aims to improve access to high performance and cloud computing, improve networking to facilitate high speed data transfer, and facilitate scientific computational training. The [Virtual Research Support Core (VRSC)]({{ site.baseurl }}/support/vrsc/) 
 
 Ceres is one of the HPC systems (located in Iowa) connected to the SCINet infrastucture. The system is largely maintained by staff at Iowa State University. 
 

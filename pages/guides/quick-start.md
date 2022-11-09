@@ -97,7 +97,7 @@ SCINet is the USDA-ARS's initiative for scientific computing. It consists of:
 3. Support for computing through the Virtual Research Support Core (VRSC). See [VRSC Support]({{ site.baseurl }}/support/vrsc/) for more detail.
 4. Training and workshop opportunities in multiple areas of scientific computing. See [upcoming]({{ site.baseurl }}/training/training_event) and [past]({{ site.baseurl }}/training-archive/) trainings and [upcoming]({{ site.baseurl }}/training/events_events) and [past]({{ site.baseurl }}/events-archive) events for more information.
 
-Users who are new to the HPC environment may benefit from the [SCINet/Ceres onboarding video](https://www.youtube.com/watch?v=FspDMlHaJUY) which covers most of the material contained in this guide. Note that /KEEP storage discussed in the video at 16:20 is no longer available. Instead data that cannot be easily reproduced should be manually backed up to [Juno](https://scinet.usda.gov/guides/data/storage/#juno-archive-storage). The instructional video at [https://www.youtube.com/watch?v=I3lnsCAfx3Q](https://www.youtube.com/watch?v=I3lnsCAfx3Q) demonstrates how to transfer files between local computer, Ceres, Atlas and Juno using Globus.
+Users who are new to the HPC environment may benefit from the [SCINet/Ceres onboarding video](https://www.youtube.com/watch?v=FspDMlHaJUY) which covers most of the material contained in this guide. Note that /KEEP storage discussed in the video at 16:20 is no longer available. Instead data that cannot be easily reproduced should be manually backed up to [Juno]({{ site.baseurl }}/guides/data/storage/#juno-archive-storage). The instructional video at [https://www.youtube.com/watch?v=I3lnsCAfx3Q](https://www.youtube.com/watch?v=I3lnsCAfx3Q) demonstrates how to transfer files between local computer, Ceres, Atlas and Juno using Globus.
 
 # Set Up Multi-Factor Authentication
 
@@ -495,7 +495,7 @@ Command	|Description	|Examples
 
 Users can build and use their own tools. It is recommended to compile on compute nodes, and not on the login node.
 
-The[Guide to Installing R, Python, and Perl Packages](https://scinet.usda.gov/guide/packageinstall/) has examples of
+The[Guide to Installing R, Python, and Perl Packages]({{ site.baseurl }}/guide/packageinstall/) has examples of
 installing packages in a project directory.
 
 # SCINet Citation/Acknowledgment in Publications

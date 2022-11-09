@@ -156,7 +156,7 @@ Rob Butler | Acting SCINet Project Manager
 
 # SCINet Software Committee
 
-The software committee evaluates requests by users to add or delete software to/from one of the HPCs. This committee is composed of scientific experts in the use of HPCs from across agricultural disciplines, and that represent our two HPCs. Users can make software requests by completing the [Software Request Form](https://scinet.usda.gov/support/request-software). 
+The software committee evaluates requests by users to add or delete software to/from one of the HPCs. This committee is composed of scientific experts in the use of HPCs from across agricultural disciplines, and that represent our two HPCs. Users can make software requests by completing the [Software Request Form]({{ site.baseurl }}/support/request-software). 
 
 
 <!---------------------------------------------------------------------------------------
