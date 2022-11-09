@@ -53,7 +53,7 @@ summarybox:
 <br>
 {:.border-bottom}
 
-This session will include tutorials exploring examples of handling geospatial data, performing geospatial calculations, and applying parallel processing approaches to geospatial processing workflows in R. RStudio via Open OnDemand (see [Session 4](events/2022-8-30-Geospatial-Workshop-4/)) will be used for a portion of the tutorials. 
+This session will include tutorials exploring examples of handling geospatial data, performing geospatial calculations, and applying parallel processing approaches to geospatial processing workflows in R. RStudio via Open OnDemand (see [Session 4]({{ site.baseurl }}/workshops/2022-8-30-Geospatial-Workshop-4)) will be used for a portion of the tutorials. 
 
 * Read in and manipulate raster data with the *terra* and *stars* packages
 * Read in and manipulate vector data with the *sf* package

@@ -90,7 +90,7 @@ The workshop is split over 6 separate Zoom sessions (as well as a pre-meeting as
 * Hands-on tutorials to assist researchers in utilizing the Ceres HPC system.
 * Research presentations from successful efforts using machine learning to address agricultural issues.
 
-**To follow along with the tutorials you need to already have or [apply for a SCINet account]({{ site.baseurl }}/signup/) and be able to successfully login to your account.**  We recommend applying for an account by 8/12/2020 at the latest, as the process can take 1-2 weeks for final approval. Please note, if you need help accessing your SCINet account you should plan on attending the pre-meeting login assistance session on 8/19/2020 (Session 0), but make sure you have applied for an account well in advance of this session.
+**To follow along with the tutorials you need to already have or [apply for a SCINet account]({{ site.baseurl }}/about/signup) and be able to successfully login to your account.**  We recommend applying for an account by 8/12/2020 at the latest, as the process can take 1-2 weeks for final approval. Please note, if you need help accessing your SCINet account you should plan on attending the pre-meeting login assistance session on 8/19/2020 (Session 0), but make sure you have applied for an account well in advance of this session.
 
 **To follow along with the Session 4 Tutorial: Computational Reproducibility Tools make sure you [create a free personal Github account for yourself](https://github.com/join)** and remember your Github username and password. You will also, of course, need a SCINet account as described above.
 

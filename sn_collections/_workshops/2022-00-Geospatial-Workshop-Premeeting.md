@@ -34,7 +34,7 @@ Please complete this pre-meeting checklist ahead of time if you plan to particip
       <div class="usa-card__body">
             <ol>
           <li>Have a SCINet account and be able to login. If you don't have one, <a href="../about/signup">apply for one</a> ASAP.</li>
-          <li>If you need help accessing your SCINet account, attend <a href="../events/2022-8-25-Geospatial-Workshop-0/">Session 0: Pre-meeting Technical Support on 8/25/2020 at 10am MDT</a>.</li>
+          <li>If you need help accessing your SCINet account, attend <a href="../workshops/2022-8-25-Geospatial-Workshop-0/">Session 0: Pre-meeting Technical Support on 8/25/2020 at 10am MDT</a>.</li>
           <li>Register for the sessions you wish to attend before 8/25/2022.</li>
           <li>Familiarize yourself with the background information on this page.</li>
           <li>Optional but suggested: If using your laptop for these tutorials you may want to connect to a larger monitor so that you will have enough monitor space to see the zoom demonstration while also having your browser or terminal workspace open at the same time.</li>
@@ -47,11 +47,6 @@ Please complete this pre-meeting checklist ahead of time if you plan to particip
 <br>
 {:.border-bottom}
 
-
-# Background Information
-
-<br>
-{:.border-bottom}
 
 ## Tutorials
 
