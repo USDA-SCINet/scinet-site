@@ -1,7 +1,6 @@
 ---
 title: Available AWS Resources
 description: AWS resourses availble to ARS scientists
-# permalink: /guide/AWS/faq
 # author: Jordan Hoosman
 categories: [AWS]
 
