@@ -126,7 +126,7 @@ Another resource for installing your own software programs is the Conda package 
 
 Experienced command-line users can also install open-source software locally in their project. We recommend installing packages in the project directories since collaborators on the same project most probably would need the same packages. In addition, home quotas are much lower than project directories quotas.
 
-Alternatively, one can use Singularity to run software container images (including Docker images). For more information, see the [Singularity on Ceres guide]({{ site.baseurl }}/guide/singularity).
+Alternatively, one can use Singularity to run software container images (including Docker images). For more information, see the [Singularity on Ceres guide]({{ site.baseurl }}/guides/software/singularity).
 
 ### How do I compile software?
 Ceres has development libraries available on all nodes. There is a system version of gcc which is well maintained by CentOS. The VRSC also makes available modules with newer versions of gcc and the intel compilers. See the [Software Overview]({{ site.baseurl }}/guide/software) for available versions or use  ```module avail intel```  or  ```module avail gcc```  at the command line to see all of the versions that are available at any given time to make use of them. To access the software use  ```module load gcc```  or  ```module load intel``` . Note that after using these compilers you will probably need to load the modules again in the future to run the code you compiled as well.
