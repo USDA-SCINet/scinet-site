@@ -1,7 +1,7 @@
 ---
 
 title: "Itinerary"
-# # author: Moe Richert
+# 
 excerpt: Itinerary for the 2022 Geospatial Workshop.
 categories: [2022 Geospatial Workshop]  
 provider: Geospatial Working Group

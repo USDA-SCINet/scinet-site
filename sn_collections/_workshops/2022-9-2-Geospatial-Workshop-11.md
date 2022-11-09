@@ -1,7 +1,7 @@
 ---
 
 title: "Session 11: Closing discussion and future planning"
-# author: Moe Richert
+
 excerpt: Summarize content from previous sessions, provide feedback on workshop, and discuss future needs of working group
 categories: [2022 Geospatial Workshop]  
 provider: Geospatial Working Group
@@ -12,9 +12,7 @@ layout: page
 sessions:
   - session: 
     time: 12:30pm-1:30pm MDT
- #   instructor: placeholder
- #   register: No registration required
- #   register_url: https://kerriegeil.github.io/SCINET-GEOSPATIAL-RESEARCH-WG/
+
  #   prerequisites:
 
 subnav:

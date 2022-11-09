@@ -1,7 +1,7 @@
 ---
 
 title: "Session 2: Fundamentals of geospatial data"
-# author: Moe Richert
+
 excerpt: A presentation on raster and vector data types and when geospatial analyses become computationally expensive 
 categories: [2022 Geospatial Workshop]  
 provider: Geospatial Working Group
@@ -12,10 +12,6 @@ layout: page
 sessions:
   - session: 
     time: 11:00am-12:00pm MDT
- #   instructor: Heather Savoy
- #   register: No registration required
- #   register_url: https://kerriegeil.github.io/SCINET-GEOSPATIAL-RESEARCH-WG/
- #   prerequisites:
 
 subnav:
   - title: Learning objectives

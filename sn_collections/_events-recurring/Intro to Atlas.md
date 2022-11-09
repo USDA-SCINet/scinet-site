@@ -7,7 +7,7 @@ type: training
 tags: Atlas
 provider: MSU
 lead: Adam Thrash
-register: 
+registration: 
   url: https://reg.extension.msstate.edu/view/cal10a.aspx?ek=&ref=&aa=&sid1=&sid2=&as=81&wp=476&tz=&ms=&nav=&cc=&cat1=&cat2=&cat3=&aid=MSU&rf=&pn=
 
 sessions:

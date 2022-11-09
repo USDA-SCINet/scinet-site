@@ -1,7 +1,7 @@
 ---
 
 title: "2022 Geospatial Workshop"
-# author: Moe Richert
+
 excerpt: Provides hands-on tutorials on workflows to access the SCINet HPC systems and conduct geospatial research at scale and fosters geospatial research efforts.
 categories: [2022 Geospatial Workshop]  
 provider: Geospatial Working Group

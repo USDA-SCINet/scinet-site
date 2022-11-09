@@ -9,7 +9,7 @@ sessions:
   - session: # remove or comment out any unused fields.
     time: 10:00 - 11:00 AM CT
     
-register: 
+registration: 
   url: https://reg.extension.msstate.edu/reg/event_page.aspx?ek=0081-0004-90dad60091e94ea383f8f38b08f9fc94
 ---
 

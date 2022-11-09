@@ -1,7 +1,7 @@
 ---
 
 title: "Session 10: Interactive BYOP session + TBD special topic based on previous sessions' discussions"
-# author: Moe Richert
+
 excerpt: Attendees are encouraged to Bring Your Own Problem (BYOP) for discussion and troubleshooting. A TBD special topic inspired by discussion earlier in the week will also be explored.
 categories: [2022 Geospatial Workshop]  
 provider: Geospatial Working Group
@@ -12,9 +12,7 @@ layout: page
 sessions:
   - session: 
     time: 10:00am-12:00pm MDT
- #   instructor: placeholder
- #   register: No registration required
- #   register_url: https://kerriegeil.github.io/SCINET-GEOSPATIAL-RESEARCH-WG/
+
     prerequisites:
       - text: Have a SCINet account and be able to login 
         url: /about/signup
