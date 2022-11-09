@@ -25,7 +25,7 @@ All nodes run on Linux Centos and compute jobs are managed by the SLURM schedule
 
 Compute jobs are run on functional groups of nodes called partitions or queues. Each partition has different capabilities (e.g. regular memory versus high memory nodes) and resource restrictions (e.g. time limits on jobs). There are 10+ different partitions on Ceres to which users can submit compute jobs. For details on the current partitions/queues, see ['Partitions or Queues' in the User Guides]({{ site.baseurl }}/guides/use/running-jobs#partitions-or-queues).
 
-Members of the SCINet Virtual Research Support Core (VRSC) in Ames, IA are the operational administrators of the Ceres HPC cluster. The VRSC maintains the system hardware, software, and provides user support. To learn more about the VRSC, visit the [VRSC page]({{ site.baseurl }}/support/vrsc/). For a current list of command-line software managed by the VRSC through the module system, see the [Software Overview]({{ site.baseurl }}/guide/software).
+Members of the SCINet Virtual Research Support Core (VRSC) in Ames, IA are the operational administrators of the Ceres HPC cluster. The VRSC maintains the system hardware, software, and provides user support. To learn more about the VRSC, visit the [VRSC page]({{ site.baseurl }}/support/vrsc/). For a current list of command-line software managed by the VRSC through the module system, see the [Preinstalled Software List]({{ site.baseurl }}/guides/software/preinstalled).
 
 All Ceres users (ARS and formal collaborators) receive 5GB of storage in their /home directory and can request additional storage in a /project directory.
 
@@ -38,8 +38,8 @@ Many additional user guides are available under the "User Guides" dropdown list.
 Other helpful links:<br>
 [Apply for a SCINet Account]({{ site.baseurl }}/about/signup/) to access Ceres<br>
 [SCINet/Ceres FAQs]({{ site.baseurl }}/support/faq/)<br>
-[Request Project Storage]({{ site.baseurl }}/support/request-storage)<br>
-[Request Software]({{ site.baseurl }}/support/request-software)<br>
+[Request Project Storage]({{ site.baseurl }}/support/request#storage-request)<br>
+[Request Software]({{ site.baseurl }}/support/request#software-request)<br>
 
 
 ## Atlas HPC Cluster | Starkville, MS 
@@ -50,7 +50,7 @@ Atlas cluster consists of 228 standard compute nodes, 8 high memory compute node
 
 ## SCINet Cloud Computing Services
 In addition to the ARS in-house compute infrastructure, cloud computing services are available to augment the HPC capability of Ceres with cloud resources.<br>
-[Request SCINet Cloud Computing]({{ site.baseurl }}/support/request-AWS)
+[Request SCINet Cloud Computing]({{ site.baseurl }}/support/request#aws-request)
 
 <!--
 ## Page specific instructions

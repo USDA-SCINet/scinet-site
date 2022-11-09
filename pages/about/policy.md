@@ -49,7 +49,7 @@ layout: page
 
 :  Home directory quota on all HPC clusters is automatically granted to all SCINet user accounts.  You have space by default as a user, but you can request Project Allocation.
 
-   * Project Allocation Request: A [SCINet Project Allocation Request]({{ site.baseurl }}/support/request-storage#to-request-a-quota-increase-for-an-existing-scinet-project-allocation) form must be submitted by the project's Principal Investigator (PI).
+   * Project Allocation Request: A [SCINet Project Allocation Request]({{ site.baseurl }}/support/request#storage-request#to-request-a-quota-increase-for-an-existing-scinet-project-allocation) form must be submitted by the project's Principal Investigator (PI).
 
 
 ## Job Queues 

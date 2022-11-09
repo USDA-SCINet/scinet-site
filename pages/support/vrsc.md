@@ -81,6 +81,6 @@ Single user operational questions should be emailed to the VRSC at [Ceres](mailt
 
 Again, please note that support requests for login issues on _either_ Ceres or Atlas should be sent to [scinet_vrsc@usda.gov](mailto:scinet_vrsc@usda.gov).
 
-For new software installation requests, see [Request Software Installation on SCINet]({{ site.baseurl }}/support/request-software).
+For new software installation requests, see [Request Software Installation on SCINet]({{ site.baseurl }}/support/request#software-request).
 
-For new SCINet AWS project requests, see [Request SCINet AWS]({{ site.baseurl }}/support/request-AWS).
+For new SCINet AWS project requests, see [Request SCINet AWS]({{ site.baseurl }}/support/request#aws-request).

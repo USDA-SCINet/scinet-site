@@ -55,7 +55,7 @@ Additional considerations are:
 
 ## Tools and Software
 ---
-The following tools/software are currently available on SCINet. (See the [Software Overview]({{ site.baseurl }}/guide/software) for a full list of currently available software.)
+The following tools/software are currently available on SCINet. (See the [Preinstalled Software List]({{ site.baseurl }}/guides/software/preinstalled) for a full list of currently available software.)
 
 ### Geospatial Specific Software
 * [**ENVI**](https://www.harrisgeospatial.com/Software-Technology/ENVI) (5.5): Image analysis software (1 license available)

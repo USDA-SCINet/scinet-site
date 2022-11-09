@@ -140,6 +140,6 @@ After you have gone through these steps, the person you have shared your history
 
 We have loaded a core subset of all tools that are available on the public Galaxy server ([https://usegalaxy.org](https://usegalaxy.org)). If you do not see a tool you need and cannot use a good alternative, you should search in the Toolshed ([https://toolshed.g2.bx.psu.edu](https://toolshed.g2.bx.psu.edu)). After identifying the relevant tool, email a Ceres Galaxy administrator: scinet_vrsc@usda.gov. If there are multiple options, we encourage the use of tools developed by either “devteam” or “iuc”. Depending on the nature of the tool you are requesting, we may ask you to supply a sample dataset for testing purposes, so anticipate having that data available.
 
-Additionally, there is an option for galaxy install as well on the application to [request software]({{ site.baseurl }}/support/request-software) installation by the VRSC. Select the Galaxy checkbox in the "Type of Application" section:
+Additionally, there is an option for galaxy install as well on the application to [request software]({{ site.baseurl }}/support/request#software-request) installation by the VRSC. Select the Galaxy checkbox in the "Type of Application" section:
 
 ![screen shot of the software request form section type of application]({{ site.baseurl }}/assets/img/guides/analysis/galaxy/galaxy-cant-find-a-tool-1_640.jpg)

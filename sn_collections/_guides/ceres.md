@@ -140,7 +140,7 @@ Domain | Software
 --- | ---
 Operating System	| CentOS
 Scheduler	| SLURM
-Software | For the full list of installed scientific software refer to the [Software Overview]({{ site.baseurl }}/guide/software) page or issue the  `module spider`  command on the Ceres login node.  
+Software | For the full list of installed scientific software refer to the [Preinstalled Software List]({{ site.baseurl }}/guides/software/preinstalled) page or issue the  `module spider`  command on the Ceres login node.  
 Modeling	| BeoPEST, EPIC, KINEROS2, MED-FOES, SWAT, h2o
 Compilers | GNU (C, C++, Fortran), clang, llvm, Intel Parallel Studio
 Languages | Java 6, Java 7, Java 8, Python, Python 3, R, Perl 5, Julia, Node
