@@ -120,22 +120,22 @@ For new software requests, go to the [Request Software page]({{ site.baseurl }}/
 ### How do I install my own software programs?
 You may install your own software in your own directories, however, we strongly encourage users to contact the VRSC team to ensure that their required tool(s) might not be better distributed as a shared package within the official software modules tree.
 
-The popular R, Perl and Python languages have many packages/modules available. Some of the programming-language-specific packages are installed on Ceres and are available with the r/perl/python_2/python_3 modules. See the list of installed packages on the [Software Overview page]({{ site.baseurl }}/guide/software) or use “module avail” at the command line. To see more information on a specific module, issue the "module help <module_name>" command. Also see the [Installing R/Python/Perl Packages guide]({{ site.baseurl }}/guide/packageinstall).
+The popular R, Perl and Python languages have many packages/modules available. Some of the programming-language-specific packages are installed on Ceres and are available with the r/perl/python_2/python_3 modules. See the list of installed packages on the [Software Overview page]({{ site.baseurl }}/guide/software) or use “module avail” at the command line. To see more information on a specific module, issue the "module help <module_name>" command. Also see the [Installing R/Python/Perl Packages guide]({{ site.baseurl }}/guides/analysis/r-perl-python).
 
-Another resource for installing your own software programs is the Conda package manager. See the [User-Installed Software on Ceres Using Conda guide]({{ site.baseurl }}/guide/conda)
+Another resource for installing your own software programs is the Conda package manager. See the [User-Installed Software on Ceres Using Conda guide]({{ site.baseurl }}/guides/software/conda)
 
 Experienced command-line users can also install open-source software locally in their project. We recommend installing packages in the project directories since collaborators on the same project most probably would need the same packages. In addition, home quotas are much lower than project directories quotas.
 
-Alternatively, one can use Singularity to run software container images (including Docker images). For more information, see the [Singularity on Ceres guide]({{ site.baseurl }}/guide/singularity).
+Alternatively, one can use Singularity to run software container images (including Docker images). For more information, see the [Singularity on Ceres guide]({{ site.baseurl }}/guides/software/singularity).
 
 ### How do I compile software?
 Ceres has development libraries available on all nodes. There is a system version of gcc which is well maintained by CentOS. The VRSC also makes available modules with newer versions of gcc and the intel compilers. See the [Software Overview]({{ site.baseurl }}/guide/software) for available versions or use  ```module avail intel```  or  ```module avail gcc```  at the command line to see all of the versions that are available at any given time to make use of them. To access the software use  ```module load gcc```  or  ```module load intel``` . Note that after using these compilers you will probably need to load the modules again in the future to run the code you compiled as well.
 
 ### What is Galaxy?
-Galaxy is a web-based interface to software on Ceres in which users can build analysis workflows. See [Getting Started with Galaxy on SCINet]({{ site.baseurl }}/guide/galaxy/). General information about Galaxy as well as training guides can be found at [galaxyproject.org](https://galaxyproject.org/).
+Galaxy is a web-based interface to software on Ceres in which users can build analysis workflows. See [Getting Started with Galaxy on SCINet]({{ site.baseurl }}/guides/analysis/galaxy). General information about Galaxy as well as training guides can be found at [galaxyproject.org](https://galaxyproject.org/).
 
 ### How do I login to SCINet Galaxy?
-Go to [galaxy.scinet.usda.gov](https://galaxy.scinet.usda.gov/). Enter your email address and SCINet password followed by Verification code. See [Getting Started with Galaxy on SCINet]({{ site.baseurl }}/guide/galaxy/) for more details.
+Go to [galaxy.scinet.usda.gov](https://galaxy.scinet.usda.gov/). Enter your email address and SCINet password followed by Verification code. See [Getting Started with Galaxy on SCINet]({{ site.baseurl }}/guides/analysis/galaxy) for more details.
 
 ### How do I request software to be loaded onto SCINet Galaxy?
 Please submit software install request at https://e.arsnet.usda.gov/sites/OCIO/scinet/Pages/SCINet-New-Application.aspx and check next to Galaxy Application.
@@ -165,7 +165,7 @@ Only project directory managers can request access to their project space for ot
 SCP, SFTP, lftp (to/from Box accounts) Globus, and hard drive shipment are supported. This is described in the [File Transfers section of the User Guides]({{ site.baseurl }}/guides/data/datatransfer). If you work near Beltsville, you may also use the SCINet lab located at the National Agricultural Library (NAL). Two computers with 10GB Internet2 SCINet connections are available.
 
 ### How do I get my data onto Ceres via SCINet Galaxy?
-See [Getting Started with Galaxy on Ceres]({{ site.baseurl }}/guide/galaxy).
+See [Getting Started with Galaxy on Ceres]({{ site.baseurl }}/guides/analysis/galaxy).
 
 
 ## Support, Policy, O&M

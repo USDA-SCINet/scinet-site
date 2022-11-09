@@ -103,7 +103,7 @@ To exit this environment, run deactivate:
 
 This virtual environment can be activated again anytime.
 
-For instructions on how to manage Python packages using Conda, see [User-installed Software on Ceres with Conda]({{ site.baseurl }}/guide/conda).
+For instructions on how to manage Python packages using Conda, see [User-installed Software on Ceres with Conda]({{ site.baseurl }}/guides/software/conda).
 
 ## Perl
 
