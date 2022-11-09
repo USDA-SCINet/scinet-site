@@ -19,7 +19,7 @@ subnav:
 
 ---
 
-SCINet and the AI Center of Excellence are excited to provide training opportunities through [Coursera](https://www.coursera.org/). While many Coursera courses can be [audited for free]({{ site.baseurl }}/training/free-online-training#coursera-and-edx), ARS scientists and support staff can gain free access to a wider range of courses by applying for a 3-month SCINet-sponsored license. Successful completion of courses and specializations may result in **widely recognized certificates and credentials**. 
+SCINet and the AI Center of Excellence are excited to provide training opportunities through [Coursera](https://www.coursera.org/). While many Coursera courses can be [audited for free]({{ site.baseurl }}/training/access#coursera-and-edx), ARS scientists and support staff can gain free access to a wider range of courses by applying for a 3-month SCINet-sponsored license. Successful completion of courses and specializations may result in **widely recognized certificates and credentials**. 
 <!--excerpt-->
 ## Programs of Study
 
