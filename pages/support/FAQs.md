@@ -112,7 +112,7 @@ Email the VRSC scinet_vrsc@usda.gov for a time and day. You can also read the [Q
 ## Software
 ---
 ### What software is available on SCINet?
-See the Ceres [Software Overview]({{ site.baseurl }}/guide/software) for a list of available software. You can also login to Ceres or Atlas and issue the command “module avail” to see the same list of available software modules.
+See the Ceres [Preinstalled Software List]({{ site.baseurl }}/guides/software/preinstalled) for a list of available software. You can also login to Ceres or Atlas and issue the command “module avail” to see the same list of available software modules.
 
 ### How do I request software to be loaded onto Ceres?
 For new software requests, go to the [Request Software page]({{ site.baseurl }}/support/request-software) and follow the instructions which include 1) checking if the software is already installed, 2) considering whether to install software yourself, and 3) requesting new software to be installed as a module by the VRSC. Software requests sent to the VRSC require USDA Security Operations Center (SOC) review and approval which takes a few weeks.
@@ -129,7 +129,7 @@ Experienced command-line users can also install open-source software locally in 
 Alternatively, one can use Singularity to run software container images (including Docker images). For more information, see the [Singularity on Ceres guide]({{ site.baseurl }}/guides/software/singularity).
 
 ### How do I compile software?
-Ceres has development libraries available on all nodes. There is a system version of gcc which is well maintained by CentOS. The VRSC also makes available modules with newer versions of gcc and the intel compilers. See the [Software Overview]({{ site.baseurl }}/guide/software) for available versions or use  ```module avail intel```  or  ```module avail gcc```  at the command line to see all of the versions that are available at any given time to make use of them. To access the software use  ```module load gcc```  or  ```module load intel``` . Note that after using these compilers you will probably need to load the modules again in the future to run the code you compiled as well.
+Ceres has development libraries available on all nodes. There is a system version of gcc which is well maintained by CentOS. The VRSC also makes available modules with newer versions of gcc and the intel compilers. See the [Preinstalled Software List]({{ site.baseurl }}/guides/software/preinstalled) for available versions or use  ```module avail intel```  or  ```module avail gcc```  at the command line to see all of the versions that are available at any given time to make use of them. To access the software use  ```module load gcc```  or  ```module load intel``` . Note that after using these compilers you will probably need to load the modules again in the future to run the code you compiled as well.
 
 ### What is Galaxy?
 Galaxy is a web-based interface to software on Ceres in which users can build analysis workflows. See [Getting Started with Galaxy on SCINet]({{ site.baseurl }}/guides/analysis/galaxy). General information about Galaxy as well as training guides can be found at [galaxyproject.org](https://galaxyproject.org/).

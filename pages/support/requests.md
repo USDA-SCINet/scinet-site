@@ -24,16 +24,17 @@ subnav:
 
 ---
 
+Below are instructions for how to make a request for Software, Storage, or AWS resources.
 
 ## Software Request
 ---
 ### Before sending VRSC a software request do the following:
 
-1. Make sure the software isn't already available as a module by checking the lists of module software on the [Software Overview]({{ site.baseurl }}/guide/software) page.
+1. Make sure the software isn't already available as a module by checking the lists of module software on the [Preinstalled Software List]({{ site.baseurl }}/guides/software/preinstalled) page.
 
    If you only need a different version of a software package that is already installed on CERES please email [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=software%20request%20-%20add%20different%20version).
 
-2. Consider whether you should install the software yourself in your home or project directory - see the [Software Overview]({{ site.baseurl }}/guide/software) for more details.
+2. Consider whether you should install the software yourself in your home or project directory - see the [Preinstalled Software List]({{ site.baseurl }}/guides/software/preinstalled) for more details.
 
    You may want to use Conda for package, dependency, and environment management- see this [guide about how to use conda on SCINet]({{ site.baseurl }}/guides/software/conda).
 
