@@ -8,6 +8,10 @@
    opacity: 0;
 }
 
+.nav-width-2{
+   width: 30rem;
+}
+
 .usa-nav__submenu{
    @include at-media($theme-header-min-width) {
       padding: units(2);
