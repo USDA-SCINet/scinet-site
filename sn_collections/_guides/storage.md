@@ -65,7 +65,7 @@ after deleting files in home directories, becomes available only after 6 days.
 
 Project directories are usually associated with ARS Research Projects. While it's possible to run simulations on Ceres or Atlas using only home directories and [Large Short-term Storage](#large-short-term-storage) in `/90daydata/shared`, it is recommended to request a project directory. Having a project directory will allow to install software packages in /project and keep important data on [Juno Archive Storage](#juno-archive-storage).
 
-To request a new project directory see [Request Project Storage]({{ site.baseurl }}/support/request-storage). Here is a direct link to the form (eAuthentication required) which includes submitting a Data Management Plan:
+To request a new project directory see [Request Project Storage]({{ site.baseurl }}/support/request#storage-request). Here is a direct link to the form (eAuthentication required) which includes submitting a Data Management Plan:
 
 [Request a project directory](https://e.arsnet.usda.gov/sites/OCIO/scinet/accounts/SitePages/Project_Allocation_Request.aspx){: .usa-button }
 

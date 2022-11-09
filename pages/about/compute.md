@@ -38,8 +38,8 @@ Many additional user guides are available under the "User Guides" dropdown list.
 Other helpful links:<br>
 [Apply for a SCINet Account]({{ site.baseurl }}/about/signup/) to access Ceres<br>
 [SCINet/Ceres FAQs]({{ site.baseurl }}/support/faq/)<br>
-[Request Project Storage]({{ site.baseurl }}/support/request-storage)<br>
-[Request Software]({{ site.baseurl }}/support/request-software)<br>
+[Request Project Storage]({{ site.baseurl }}/support/request#storage-request)<br>
+[Request Software]({{ site.baseurl }}/support/request#software-request)<br>
 
 
 ## Atlas HPC Cluster | Starkville, MS 
@@ -50,7 +50,7 @@ Atlas cluster consists of 228 standard compute nodes, 8 high memory compute node
 
 ## SCINet Cloud Computing Services
 In addition to the ARS in-house compute infrastructure, cloud computing services are available to augment the HPC capability of Ceres with cloud resources.<br>
-[Request SCINet Cloud Computing]({{ site.baseurl }}/support/request-AWS)
+[Request SCINet Cloud Computing]({{ site.baseurl }}/support/request#aws-request)
 
 <!--
 ## Page specific instructions

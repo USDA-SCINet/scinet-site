@@ -20,7 +20,7 @@ $ my_quotas
 
 <!--excerpt-->
 
-If users need more storage than what is available in the home directory, they should visit the [Request a Project Storage]({{ site.baseurl }}/support/request-storage) page. Several users may work on the same project and share the same project directory.
+If users need more storage than what is available in the home directory, they should visit the [Request a Project Storage]({{ site.baseurl }}/support/request#storage-request) page. Several users may work on the same project and share the same project directory.
 
 Project directories are located in the 2.3PB Lustre space that is mounted on all nodes as /lustre/project and is also accessible as /project. Directories in /project are not backed up. **It is not recommended to run jobs from a directory in /KEEP.**
 

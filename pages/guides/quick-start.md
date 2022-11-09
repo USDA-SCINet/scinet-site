@@ -312,7 +312,7 @@ Home directories are private, they are only accessible to you and the system adm
 
 Project directories are intended as high-level workspaces. This is where large datasets would reside, sub-projects can be created, and collaborative analysis results stored. Project directories are usually associated with ARS Research Projects.
 
-To request a new project directory see [Request Project Storage]({{ site.baseurl }}/support/request-storage). A direct link to the form (eAuthentication required) which includes submitting a Data Management Plan:
+To request a new project directory see [Request Project Storage]({{ site.baseurl }}/support/request#storage-request). A direct link to the form (eAuthentication required) which includes submitting a Data Management Plan:
 
 [Request a project directory](https://e.arsnet.usda.gov/sites/OCIO/scinet/accounts/SitePages/Project_Allocation_Request.aspx){: .usa-button }
 
