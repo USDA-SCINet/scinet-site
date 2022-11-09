@@ -76,7 +76,7 @@ Default quota for `/project/<project_name>` is set to 1TB. Historically, before 
 Many software applications are available on the clusters as [modules]({{ site.baseurl }}/guides/software/modules), however sometimes 
 users need to install software by themselves. Since home directories have a small quota, it is recommended to install software, 
 such as Python, Perl, R packages and conda virtual environments in `/project/<project_name>`. 
-The [Conda Guide]({{ site.baseurl }}/guide/conda/#example-2-installing-tensorflow-into-a-keep-directory) provides instructions 
+The [Conda Guide]({{ site.baseurl }}/guides/software/conda#example-2-installing-tensorflow-into-a-project-directory) provides instructions 
 on how to install conda virtual environments in `/project`, while 
 [Guide to Installing R, Python, and Perl Packages]({{ site.baseurl }}/guides/analysis/r-perl-python/) has examples of
 installing packages in a project directory.

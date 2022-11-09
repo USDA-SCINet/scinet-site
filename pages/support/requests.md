@@ -35,7 +35,7 @@ subnav:
 
 2. Consider whether you should install the software yourself in your home or project directory - see the [Software Overview]({{ site.baseurl }}/guide/software) for more details.
 
-   You may want to use Conda for package, dependency, and environment management- see this [guide about how to use conda on SCINet]({{ site.baseurl }}/guide/conda).
+   You may want to use Conda for package, dependency, and environment management- see this [guide about how to use conda on SCINet]({{ site.baseurl }}/guides/software/conda).
 
    If you're not sure whether you should install software yourself or if you need help, email [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=help%20with%20software). Software that will be useful to many SCINet users should be installed as a module by the VRSC.
 
