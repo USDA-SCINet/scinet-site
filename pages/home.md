@@ -91,7 +91,7 @@ support:
     - title: Contact Us
       text: "Find who you need to contact for specific issues or requests"
       image: mail
-      url: /support/vrsc#how-and-when-to-contact-the-vrsc
+      url: /support/contact
     
 
 usecases:

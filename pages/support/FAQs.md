@@ -171,7 +171,7 @@ See [Getting Started with Galaxy on Ceres]({{ site.baseurl }}/guides/analysis/ga
 ## Support, Policy, O&M
 ---
 ### What is the Virtual Research Support Core (VRSC)?
-The Virtual Research Support Core is a team of Iowa State University and ARS personnel who manage the maintenance and operation of the Ceres HPC system and provide user support. See the [Virtual Research Support Core page]({{ site.baseurl }}/support/vrsc/) and [How do I contact the VRSC for assistance?](#how-do-i-contact-the-vrsc-for-assistance) for more details.
+The Virtual Research Support Core is a team of Iowa State University and ARS personnel who manage the maintenance and operation of the Ceres HPC system and provide user support. See the [Virtual Research Support Core page]({{ site.baseurl }}/about/vrsc) and [How do I contact the VRSC for assistance?](#how-do-i-contact-the-vrsc-for-assistance) for more details.
 
 ### How do I contact the VRSC for assistance?
 Contact scinet_vrsc@usda.gov for operational issues affecting a single user such as:
