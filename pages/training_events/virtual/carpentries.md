@@ -4,6 +4,11 @@ description: Carpentries courses
 permalink: /training/carpentries
 layout: page
 
+sidenav_link: /training/resources
+sidenav_append: 
+  - title: Carpentries Training
+    url: /training/carpentries
+
 filter:
   provider: Carpentries
 
@@ -12,7 +17,7 @@ collect_title: Offered Trainings
 reverse_collection: true
 
 subnav:
-  - title: Workshops
+  - title: Offered Trainings
     url: '#offered-trainings'
 
 ---
