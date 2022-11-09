@@ -22,10 +22,10 @@ primary:
         url: /about/signup
       - title: Computer Systems
         url: /about/compute
-#     - title: Networking
-#       url: /about/networking
       - title: Organization
         url: /about/organization
+      - title: Virtual Research Support Core (VSRC)
+        url: /about/vrsc
       - title: Contact
         url: /about/contact
   - title: News
@@ -87,8 +87,8 @@ primary:
         url: /training/learningpath
   - title: Support
     links:
-      - title: Virtual Research Support Core (VSRC)
-        url: /support/vrsc
+      - title: Contact the VRSC
+        url: /support/contact
       - title: FAQs
         url: /support/faq
       - title: USDA-ARS SCINet Forum
