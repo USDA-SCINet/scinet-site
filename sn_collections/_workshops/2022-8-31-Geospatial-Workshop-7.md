@@ -1,7 +1,6 @@
 ---
 
 title: "Session 7: Interactive BYOP session + Open Drone Map demo"
-# author: Moe Richert
 excerpt: Attendees are encouraged to Bring Your Own Problem (BYOP) for discussion and troubleshooting. A demonstation of using Open Drone Map on Atlas will be presented.   
 categories: [2022 Geospatial Workshop]  
 provider: Geospatial Working Group
@@ -12,9 +11,6 @@ layout: page
 sessions:
   - session: 
     time: 2:00pm-3:00pm MDT
- #   instructor: placeholder
- #  register: No registration required
- #   register_url: https://kerriegeil.github.io/SCINET-GEOSPATIAL-RESEARCH-WG/
     prerequisites:
       - text: Have a SCINet account and be able to login 
         url: /about/signup

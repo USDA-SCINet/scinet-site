@@ -1,7 +1,7 @@
 ---
 
 title: "Pre-meeting Tech Support"
-# # author: Moe Richert
+# 
 excerpt: Please complete this pre-meeting checklist ahead of any workshop sessions you plan to attend.
 categories: [2022 Geospatial Workshop]  
 provider: Geospatial Working Group

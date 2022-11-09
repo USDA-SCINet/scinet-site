@@ -15,8 +15,8 @@ sessions:
   - session: # remove or comment out any unused fields.
     time: 11:00am-1:00pm MDT
     instructor: Instructor Name
-    register: No registration required
-    # register_url: # registration link
+    registration: No registration required
+    #   url: # registration link
     prerequisites:
       - text: Have a SCINet account and be able to login 
         url: /about/signup # if you want the prerequisite to link elsewhere

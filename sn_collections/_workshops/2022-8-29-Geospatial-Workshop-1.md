@@ -1,7 +1,7 @@
 ---
 
 title: "Session 1: Introduction to SCINet with lightning presentations"
-# author: Moe Richert
+
 excerpt: Introduction to the workshop objectives plus lightning presentations on geospatial workflows
 categories: [2022 Geospatial Workshop]  
 provider: Geospatial Working Group
@@ -12,9 +12,7 @@ layout: page
 sessions:
   - session: 
     time: 10:00am-11:00am MDT
- #   instructor: placeholder
- #   register: No registration required
- #   register_url: https://kerriegeil.github.io/SCINET-GEOSPATIAL-RESEARCH-WG/
+
 
 # alerts: 
 #   - alert: 

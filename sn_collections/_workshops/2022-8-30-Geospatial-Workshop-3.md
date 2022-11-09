@@ -1,7 +1,7 @@
 ---
 
 title: "Session 3: Fundamentals of parallel processing"
-# author: Moe Richert
+
 excerpt: How to approach parallelization of workflows with a geospatial example
 categories: [2022 Geospatial Workshop]  
 provider: Geospatial Working Group

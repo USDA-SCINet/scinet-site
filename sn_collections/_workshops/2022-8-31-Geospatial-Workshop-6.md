@@ -1,7 +1,7 @@
 ---
 
 title: "Session 6: Geospatial analyses and how to parallelize them in R"
-# author: Moe Richert
+
 excerpt: R packages for geospatial analyses and parallel processing with multiple tutorials 
 categories: [2022 Geospatial Workshop]  
 provider: Geospatial Working Group
@@ -12,9 +12,7 @@ layout: page
 sessions:
   - session: 
     time: 11:00am-1:30pm MDT
- #   instructor: placeholder
- #   register: No registration required
- #   register_url: https://kerriegeil.github.io/SCINET-GEOSPATIAL-RESEARCH-WG/
+
     prerequisites:
       - text: Have a SCINet account and be able to login 
         url: /about/signup

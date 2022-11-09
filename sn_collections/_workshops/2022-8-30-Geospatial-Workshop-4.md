@@ -1,7 +1,7 @@
 ---
 
 title: "Session 4: SCINet interactive environments"
-# author: Moe Richert
+
 excerpt: An overview of interactive environments available on SCINet - RStudio, Jupyter, etc.
 categories: [2022 Geospatial Workshop]  
 provider: Geospatial Working Group
@@ -12,9 +12,7 @@ layout: page
 sessions:
   - session: 
     time: 10:00am-12:00pm MDT
- #   instructor: placeholder
- #   register: No registration required
- #   register_url: https://kerriegeil.github.io/SCINET-GEOSPATIAL-RESEARCH-WG/
+
     prerequisites:
       - text: Have a SCINet account and be able to login 
         url: /about/signup

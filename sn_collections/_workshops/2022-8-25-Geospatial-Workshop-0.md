@@ -1,7 +1,7 @@
 ---
 
 title: "Session 0: Pre-meeting technical support for account logins and data uploads"
-# author: Moe Richert
+
 excerpt: Please complete this pre-meeting checklist ahead of time if you plan to participate in any of the interactive follow-along tutorials (Sessions 4-10). Pre-meeting SCINet Account Login Assistance.
 categories: [2022 Geospatial Workshop]  
 provider: Geospatial Working Group
@@ -12,9 +12,7 @@ layout: page
 sessions:
   - session: 
     time: 10:00am-11:00am MDT
- #   instructor: placeholder
- #   register: No registration required
- #   register_url: https://kerriegeil.github.io/SCINET-GEOSPATIAL-RESEARCH-WG/
+
 
 subnav:
   - title: Login Support
