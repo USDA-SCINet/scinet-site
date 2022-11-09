@@ -1,15 +1,13 @@
-<ul id="{{ _section_id }}" class="usa-nav__submenu usa-megamenu" hidden="">
+{% assign num = section_links | size %}
+{% capture navclass %}{% if num < 3 %}usa-nav__submenu-item desktop:grid-col-{{ 12 | divided_by: num }}{% else %}usa-nav__submenu-item desktop:grid-col-3{% endif %}{% endcapture %}
+<ul id="{{ _section_id }}" class="{% if num < 3 %}usa-nav__submenu nav-width-{{ num }}{% else %}usa-nav__submenu usa-megamenu{% endif %}" hidden="">
     <div class="grid-row grid-gap-4">
-        {% assign num = section_links | size %}
-        {% if num < 3 %}
-        <li class="desktop:grid-col-3"></li>
-        {% endif %}
         {% for _link in section_links %}
             {% assign next_i = forloop.index0 | plus: 1 %}
             {% assign prev_i = forloop.index0 | minus: 1 %}
             {% if _link.sublinks %}
-                <li class="usa-nav__submenu-item desktop:grid-col-3 m-top-0">
-                    {% assign link_sublinks = site.data.navigation[_link.sublinks] | default: _link.sublinks %}
+        <li class="{{ navclass }} m-top-0">
+            {% assign link_sublinks = site.data.navigation[_link.sublinks] | default: _link.sublinks %}
 
                     {% assign _link_handle = _link.title | handleize %}
                     {% assign _link_id = _link_handle | prepend: _section_id %}
@@ -35,7 +33,7 @@
                 </li>
             {% else %}
             {% if forloop.first or section_links[prev_i].sublinks %}
-                <li class="usa-nav__submenu-item desktop:grid-col-3">
+                <li class="{{ navclass }} ">
                     <ul class="usa-nav__submenu-list">
             {% endif %}
                         <li class="usa-nav__submenu-item">
@@ -50,6 +48,4 @@
             {% endif %}
         {% endfor %}
     </div>
-
-
 </ul>
