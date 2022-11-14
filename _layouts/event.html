@@ -5,8 +5,18 @@ main:
 ---
 
 <div class="section">
+  {% if page.provider %}
+  {% assign _provider = site.data.tables.providers.providers | where:"tag", page.provider | first %}
+  <b>Provided by:</b> 
+  {% if _provider.size > 0 %}
+  <a href="{% if _provider.external %}{{ _provider.url }}{% else %}{{ _provider.url | relative_url }}{% endif %}">{% if _provider.title %}{{ _provider.title }}{% else %}{{ page.provider }}{% endif %}</a>
+  {% else %}
+  {{ page.provider }}
+  {% endif %}
+  {% endif %}
 
   {{ content }}
+
 
   {% if page.type == 'event' or page.type == 'training' %}
   <br>

@@ -1,0 +1,17 @@
+providers:
+  - title: Carpentries
+    tag: Carpentries
+    url: /training/carpentries
+  - title: Geospatial Research Working Group
+    tag: Geospatial Working Group
+    url: /research/working-groups/geospatial
+  - title: Mississippi State University
+    tag: MSU
+    url: https://reg.extension.msstate.edu/view/cal10a.aspx?aid=MSU
+    external: true
+  - title: Arthropod Genomics Research Working Group
+    tag: AGR Working Group
+    url: /research/working-groups/arthropods
+  - title: LTAR Phenology Working Group
+    tag: LTAR Phenology Working Group
+    url: /research/working-groups/LTARphenology
