@@ -34,7 +34,7 @@ big_footer_signup_form: false
 heading: USDA Agricultural Research Service
 blurb: 
   title: ABOUT
-  text: SCINet is a USDA Agricultural Research Service initiative.
+  text: SCINet is a USDA <a href='https://www.ars.usda.gov/'>Agricultural Research Service</a> initiative.
   url: /about/organization
 
 # Configuration for agency logo(s) (shown side by side).
