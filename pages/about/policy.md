@@ -4,9 +4,22 @@ description: SCINet policies and procedures
 permalink: /about/policies
 layout: page
 
+subnav:
+  - title: Accounts 
+    url: '#accounts'
+  - title: Storage
+    url: '#storage'
+  - title: Job Queues 
+    url: '#job-queues'
+  - title: Software 
+    url: '#software'
+  - title: Data Management
+    url: '#data-management'
+
+
 ---
 
-## Accounts 
+## Accounts
 
 **Account Request:**  
 
@@ -49,10 +62,10 @@ layout: page
 
 :  Home directory quota on all HPC clusters is automatically granted to all SCINet user accounts.  You have space by default as a user, but you can request Project Allocation.
 
-   * Project Allocation Request: A [SCINet Project Allocation Request]({{ site.baseurl }}/support/request#storage-request#to-request-a-quota-increase-for-an-existing-scinet-project-allocation) form must be submitted by the project's Principal Investigator (PI).
+   * Project Allocation Request: A [SCINet Project Allocation Request]({{ site.baseurl }}/support/request#to-request-a-quota-increase-for-an-existing-scinet-project-allocation) form must be submitted by the project's Principal Investigator (PI).
 
 
-## Job Queues 
+## Job Queues
 
 
 **Job queue policies are described in the User Guide for each of the clusters.**
@@ -64,7 +77,7 @@ layout: page
 
 
 
-## Software 
+## Software
 
 
 **SCINet is a community resource.** 
@@ -82,3 +95,9 @@ layout: page
    *  A [Galaxy](https://galaxyproject.org/) web-based graphical workflow management system is available to all SCINet users. This is accessible via SCINet login credentials at [https://galaxy.scinet.usda.gov](https://galaxy.scinet.usda.gov).
    *  Public-facing websites are currently not available from SCINet.
 
+**Data Retention:** Upon SCINet account deactivation (see Accounts section), the following data retention policies go into effect for files owned by the deactivated SCINet user:
+- Home directory: supervisor (non-ARS: ARS sponsor) will be given access by the VRSC and required to take action within 90 days to preserve any files
+- Project directories:
+	- If there are no other active users on the project, the supervisor will be required to take action within 90 days
+	- If there are active users on the project, and the deactivated user was the project PI (requestor), then the supervisor must select another PI
+	- If there are active users on the project, and the deactivated user was not the project PI, then no further action need be taken
