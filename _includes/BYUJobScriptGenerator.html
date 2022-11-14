@@ -1,8 +1,3 @@
-<html>
-<head>
-<title></title>
-</head>
-<body>
 <div id="BYUJobScriptGenerator"></div>
 <script>
 /*****************************************************************\
@@ -216,14 +211,14 @@ BYUScriptGen.prototype.createForm = function(doc) {
 
 //	this.inputs.single_node = this.newCheckbox({checked:1});
   	this.inputs.job_script_template = this.newSelect({options:[["standard","standard"], ["rstudio-server", "RStudio Server"]]});
-  	this.inputs.node_type = this.newSelect({options:[["standard","standard"], ["large-memory", "large-memory"]]});
+  	this.inputs.node_type = this.newSelect({options:[["standard","standard"], ["large-memory", "large-memory"], ["gpu","gpu"]]});
   	this.inputs.nodes = this.newInput({value:1, size:2, maxLength:2});
 	this.inputs.ncores_per_node = this.newInput({value:1, size:3, maxLength:3});
 	this.inputs.num_gpus = this.newInput({value:0, size:4});
 	this.inputs.mem_per_node = this.newInput({size:7, maxLength:7});
 	this.inputs.mem_units = this.newSelect({options:[["GB", "GB"],["MB", "MB"]]});
 	var memGr = this.newGroup("mem-group", this.inputs.mem_per_node, this.inputs.mem_units);
-	this.inputs.wallhours = this.newInput({value:"00", size:2, maxLength:2, id:"wall-hours"});
+	this.inputs.wallhours = this.newInput({value:"00", size:4, maxLength:4, id:"wall-hours"});
 	this.inputs.wallmins = this.newInput({value:"00", size:2, maxLength:2, id:"wall-mins"});
 	this.inputs.wallsecs = this.newInput({value:"00", size:2, maxLength:2, id:"wall-secs"});
 	var wallhoursGr = this.newGroup(null, this.newLabel({for:"wall-hours", inner:"Hours"}), this.inputs.wallhours);
@@ -368,7 +363,8 @@ BYUScriptGen.prototype.retrieveValues = function() {
         short:   381000,
         medium:  381000,
         long:    381000,
-        debug:   381000
+        debug:   381000,
+		"gpu-low": 379000
     };
     var max_proc_per_node = {
         mem:     48,
@@ -376,7 +372,8 @@ BYUScriptGen.prototype.retrieveValues = function() {
         short:   48,
         medium:  48,
         long:    48,
-        debug:   36
+        debug:   36,
+		"gpu-low": 36
     };
     var max_nodes = {
         mem:     5,
@@ -384,15 +381,17 @@ BYUScriptGen.prototype.retrieveValues = function() {
         short:   57,
         medium:  20,
         long:    10,
-        debug:   1
+        debug:   1,
+		"gpu-low": 1
     }
     var max_walltime_in_seconds = {
-        mem:     21*24*60*60,         // 21 days
+        mem:     21*24*60*60,          // 21 days
         longmem: 41*24*60*60+16*60*60, // 1000 hours
         short:   2*24*60*60,           // 48 hours
         medium:  7*24*60*60,           // 7 days
         long:    21*24*60*60,          // 21 days
-        debug:   60*60                 // 1 hour
+        debug:   60*60,                // 1 hour
+		"gpu-low": 2 * 60 * 60
 
     }
 	var partition, jobnotes = [];
@@ -436,6 +435,11 @@ BYUScriptGen.prototype.retrieveValues = function() {
             partition = "longmem";
         else
             partition = "mem";
+	} else if (this.values.node_type == "gpu"){
+		if (this.values.walltime_in_seconds > max_walltime_in_seconds["gpu-low"])
+			jobnotes.push("ERROR: wall time exceeds maximum (" + max_walltime_in_seconds["gpu-low"]/(60*60) + " hours) for \"gpu-low\" partition");
+		else
+			partition = "gpu-low";
     } else {
         if (this.values.walltime_in_seconds <= max_walltime_in_seconds["short"])
             partition = "short";
@@ -779,5 +783,3 @@ BYUScriptGen.prototype.toJobScript = function() {
 var byu_script_gen = new BYUScriptGen(document.getElementById("BYUJobScriptGenerator"));
 byu_script_gen.init();
 </script>
-</body>
-</html>
