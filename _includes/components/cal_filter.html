@@ -58,7 +58,7 @@
 
     const sub = document.getElementById("{{ buttonid }}");
     sub.onclick = function () {
-        console.log("clicked");
+        
         var types = document.getElementById("{{ typeid }}");
         var providers = document.getElementById("{{ providerid }}");
         var topics = document.getElementById("{{ topicsid }}");
@@ -88,7 +88,7 @@
         }
 
 
-        console.log(type, provider, topic);
+        
 
         var mylist = formatText(type, provider, topic);
         document.getElementById("current-filters").innerHTML = mylist;
@@ -136,7 +136,7 @@
             load_prov = format(urlParams.get('provider')),
             load_topic = format(urlParams.get('topic'));
 
-        console.log(load_type, load_prov, load_topic);
+        
         filterList(load_type, load_prov, load_topic);
     }
 </script>
