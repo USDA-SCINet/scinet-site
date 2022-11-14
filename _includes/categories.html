@@ -49,7 +49,6 @@
 {% else %}
 {% for _post in myposts %} 
 
-<script>console.log("{{ _post.title }}")</script>
   {% include collection.html post=_post %}
 {% endfor %}
 {% endif %}
