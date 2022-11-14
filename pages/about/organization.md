@@ -13,14 +13,16 @@ subnav:
     url: '#senior-leadership'
   - title: Executive Committee
     url: '#executive-committee'
+  - title: SCINet Office
+    url: '#scinet-office'
   - title: Scientific Advisory Committee
     url: '#scientific-advisory-committee'
-  - text: Scientific Points of Contact
-    href: '#scientific-points-of-contact'
-  - text: SCINet Policy Committee
-    href: '#scinet-policy-committee'
-  - text: SCINet Software Committee
-    href: '#scinet-software-committee'
+  - title: Scientific Points of Contact
+    url: '#scientific-points-of-contact'
+  - title: SCINet Policy Committee
+    url: '#scinet-policy-committee'
+  - title: SCINet Software Committee
+    url: '#scinet-software-committee'
 
 
 ---
@@ -95,7 +97,15 @@ Mr. Jay Joiner | Project Consultant
 Mr. Andy Liberman | Information Technology Specialist (Networking)
 Dr. Brian Scheffler | Former Acting Chief Scientific Information Officer
 
+## SCINet Office
 
+Person | Position
+---|---
+Brian Stucky | SCINet Computational Biologist and acting CSIO
+Heather Savoy | SCINet Computational Biologist
+Haitao Huang | SCINet Computational Biologist
+Ryan Lucas | SCINet Data Science Coordinator
+Moe Richert | SCINet Web Developer
 
 ## Scientific Advisory Committee
 
