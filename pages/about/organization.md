@@ -15,10 +15,12 @@ subnav:
     url: '#executive-committee'
   - title: Scientific Advisory Committee
     url: '#scientific-advisory-committee'
-  - title: SCINet Policy Committee
-    url: '#scinet-policy-committee'
-  - title: Scientific points of contact
-    url: '#scientific-points-of-contact'
+  - text: Scientific Points of Contact
+    href: '#scientific-points-of-contact'
+  - text: SCINet Policy Committee
+    href: '#scinet-policy-committee'
+  - text: SCINet Software Committee
+    href: '#scinet-software-committee'
 
 
 ---
