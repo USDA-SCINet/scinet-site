@@ -44,8 +44,7 @@ Below are instructions for how to make a request for Software, Storage, or AWS r
 ### How to send a software request
 If you've done the above but need new software installed as a module, use the software request form (eAuthentication required, non-ARS users should contact their sponsor):
 
-<!--[Software Request Form](https://e.arsnet.usda.gov/sites/OCIO/scinet/Pages/SCINet-New-Application.aspx){: .usa-button .usa-button-big }-->
-[Software Request Form]({{ site.baseurl }}/announcements/2022-11-16-forms){: .usa-button  .usa-button-big }
+[Software Request Form](https://e.arsnet.usda.gov/sites/OCIO/scinet/Pages/SCINet-New-Application.aspx){: .usa-button .usa-button-big }
 
 **Note: doing this requires an agency-level security review and takes a few weeks.**
 
@@ -82,8 +81,7 @@ When requesting additional data storage you will be asked for:
 
 To request a new project directory, fill out an application form (eAuthentication required, non-ARS users should contact their sponsor):
 
-<!--[Request Project Storage](https://e.arsnet.usda.gov/sites/OCIO/scinet/accounts/SitePages/Project_Allocation_Request.aspx){: .usa-button .usa-button-big }-->
-[Request Project Storage]({{ site.baseurl }}/announcements/2022-11-16-forms){: .usa-button  .usa-button-big }
+[Request Project Storage](https://e.arsnet.usda.gov/sites/OCIO/scinet/accounts/SitePages/Project_Allocation_Request.aspx){: .usa-button .usa-button-big }
 
 
 <br>
