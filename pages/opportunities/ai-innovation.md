@@ -29,7 +29,7 @@ subnav:
 
 The goal of the ARS Artificial Intelligence Center of Excellence (AI-COE) is to enable ARS science by promoting the adoption and use of AI and machine learning (ML) tools and methods in agricultural research. As part of the AI-COE, we expect to fund 4 to 6 proposals up to $100,000 each for activities to encourage and promote AI-related research in agriculture.  For examples of successful proposal topics, please see the [abstracts of the AI Innovation Fund proposals funded in FY2021]({{ site.baseurl }}/opportunities/ai-innovation-fy21-awards).
  
-Proposals must be submitted using the [online submission form](https://forms.office.com/g/99WpknFwLd) and are due **by 5:00 PM PST on December 17, 2021**. All submitted proposals must be approved by a relevant RL or supervisor. Funds will be available in early 2022 and will need to be spent or placed in collaborative agreements by August 1, 2022. We expect to fund additional proposals each of the subsequent years. For questions, contact Dr. Brian Stucky, AI Computational Biologist in the SCINet Office, or Dr. Debra Peters, ARS Chief Science Information Officer.
+Proposals must be submitted using the [online submission form](https://forms.office.com/g/99WpknFwLd) and are due **by 5:00 PM PST on December 17, 2021**. All submitted proposals must be approved by a relevant RL or supervisor. Funds will be available in early 2022 and will need to be spent or placed in collaborative agreements by August 1, 2022. We expect to fund additional proposals each of the subsequent years. For questions, contact Dr. Brian Stucky, AI Computational Biologist in the SCINet Office, or the ARS Chief Science Information Officer.
 
 ## Proposal guidelines
 
