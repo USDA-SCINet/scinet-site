@@ -23,7 +23,7 @@ An 8-member panel composed of ARS scientists and National Program Leaders recent
 
 The goal of the fellowship program is to develop the next generation of ARS scientists with expertise in conducting and leading individual and collaborative research using computationally-intensive approaches. 
 
-Each fellow is expected to participate in four types of activities: (1) individual computationally-intensive research with the mentor, (2) collaborative research with multiple ARS units, (3) co-leadership of a SCINet or AI COE working group, and (4) coordination of the Fellows Program. In addition, each fellow will have the opportunity to take advantage of training courses that build computational literacy, such as in data science, AI, bioinformatics, and geospatial analyses on our high performance computing clusters (Ceres, Atlas).
+Each fellow should: (1) be involved in individual and collaborative, multi-unit research, (2) have training and leadership opportunities, and (3) contribute to the overall success of SCNet or the AI-COE and the Fellows Program. In addition, each fellow will have the opportunity to take advantage of training courses that build computational literacy, such as in data science, AI, bioinformatics, and geospatial analyses on our high performance computing clusters (Ceres, Atlas).
 
 We congratulate the 19 ARS scientists who submitted successful proposals, and look forward to the exciting and impactful research to be conducted by the fellows, their mentors, and the collaborative working groups. 
 
