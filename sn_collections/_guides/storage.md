@@ -24,7 +24,7 @@ subnav:
 
 
 
-This document provides detailed information about the storage options provided by SCINet and how to use them.  For a simpler overview of suggested procedures for managing data on SCINet, please see [Managing Data on ARS HPC and Storage Infrastructure]({{ site.baseurl }}/guide/data_management_sop/).
+This document provides detailed information about the storage options provided by SCINet and how to use them.  For a simpler overview of suggested procedures for managing data on SCINet, please see [Managing Data on ARS HPC and Storage Infrastructure]({{ site.baseurl }}/guides/data/data-management).
 
 
 There are multiple places to store data on the Ceres and Atlas clusters that all serve different purposes. 
@@ -142,4 +142,4 @@ This storage is useful for workflows that extensively use disk space reading and
 
 # Juno Archive Storage
 
-Project directories are not meant to be used as a data archive. Data that cannot be easily reproduced should be manually backed up to Juno. Juno is a large, multi-petabyte ARS storage device at the National Agricultural Library in Maryland. For instructions on how to transfer data to and from Juno, see [Managing Data on ARS HPC and Storage Infrastructure]({{ site.baseurl }}/guide/data_management_sop/)
+Project directories are not meant to be used as a data archive. Data that cannot be easily reproduced should be manually backed up to Juno. Juno is a large, multi-petabyte ARS storage device at the National Agricultural Library in Maryland. For instructions on how to transfer data to and from Juno, see [Managing Data on ARS HPC and Storage Infrastructure]({{ site.baseurl }}/guides/data/data-management)
