@@ -3,7 +3,7 @@ title: A Quick Guide to getting started with SCINet
 description: A Quick Guide to getting started with SCINet
 permalink: /guides/start
 redirect_from: 
-  - /guide/quickstart
+  - /guide/quickstart/
 layout: guides
 layout_type: guides
 
