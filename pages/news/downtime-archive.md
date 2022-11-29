@@ -5,7 +5,7 @@ permalink: /news/downtime/archive
 
 type: archive
 
-sidenav_link: /news/downtime
+sidenav_link: /news/downtime/
 
 ---
 

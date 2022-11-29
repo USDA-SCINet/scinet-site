@@ -1,7 +1,7 @@
 ---
 title: Upcoming Events 
 description: Advertise upcoming events
-permalink: /training/events
+permalink: /training/events/
 author: Moe Richert
 layout: eventcalendar
 

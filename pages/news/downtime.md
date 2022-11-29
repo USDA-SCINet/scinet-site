@@ -1,7 +1,7 @@
 ---
 title: Downtime
 layout: downtime
-permalink: /news/downtime
+permalink: /news/downtime/
 
 type: future
 show_table: true
