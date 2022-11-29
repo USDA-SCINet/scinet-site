@@ -25,7 +25,7 @@ alerts:
   - alert: 
     type: warning
     slim: true # include if you want a slim alert
-    text: If you are new to SCINet, visit  <a href="/guide/start">our Quickstart Guide</a>
+    text: If you are new to SCINet, visit  <a href="/guides/start">our Quickstart Guide</a>
   - alert:
     title: Currently in Development
     type: info
