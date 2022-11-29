@@ -1,7 +1,7 @@
 ---
 title: ARS AI Innovation Fund (FY23)
 description: Internal USDA-ARS grants for artificial intelligence and machine learning projects
-permalink: /opportunities/ai-innovation
+permalink: /opportunities/ai-innovation/
 author: Brian Stucky 
 layout: page
 
@@ -27,7 +27,7 @@ subnav:
 
 ## Overview
 
-The goal of the ARS Artificial Intelligence Center of Excellence (AI-COE) is to enable ARS science by promoting the adoption and use of AI and machine learning (ML) tools and methods in agricultural research. For FY23, the AI-COE expects to fund 4 to 6 proposals at up to $100,000 each for activities to encourage and promote AI-related research in agriculture.  For examples of successful proposal topics, please see the abstracts of the AI Innovation Fund proposals [funded in FY2022](/opportunities/ai-innovation-fy22-awards) and [in FY2021](/opportunities/ai-innovation-fy21-awards).
+The goal of the ARS Artificial Intelligence Center of Excellence (AI-COE) is to enable ARS science by promoting the adoption and use of AI and machine learning (ML) tools and methods in agricultural research. For FY23, the AI-COE expects to fund 4 to 6 proposals at up to $100,000 each for activities to encourage and promote AI-related research in agriculture.  For examples of successful proposal topics, please see the abstracts of the AI Innovation Fund proposals [funded in FY2022]({{ site.baseurl }}/opportunities/ai-innovation/fy22-awards) and [in FY2021]({{ site.baseurl }}/opportunities/ai-innovation/fy21-awards).
  
 Proposals must be submitted using the [online submission form](https://forms.office.com/g/c6s4AR7BnG) and are due **by close of business on Friday, December 23, 2022**. All submitted proposals must be approved by a relevant RL or supervisor. We expect that funds will be available for use some time in early 2023 and will need to be spent or placed in collaborative agreements by the end of FY2023. We expect to fund additional proposals each of the subsequent years. For questions, contact Dr. Brian Stucky, Computational Biologist in the SCINet Office and Acting ARS CSIO.
 
@@ -39,7 +39,7 @@ Projects of high priority for funding are those that:
 1. Develop or adapt an AI/ML method that empowers ARS scientists to answer a specific question/problem or test a hypothesis of agricultural importance.
 2. Develop or adapt AI/ML technologies to create a prototype digital product that solves a need for producers or agricultural researchers.
 
-Proposals should be primarily focused on developing, adapting, or applying methods that fall into the category of AI or ML (see definitions below).  Please refer to the abstracts of the AI Innovation Fund proposals [funded in FY2022](/opportunities/ai-innovation-fy22-awards) and [in FY2021](/opportunities/ai-innovation-fy21-awards) for examples of successful proposal topics.
+Proposals should be primarily focused on developing, adapting, or applying methods that fall into the category of AI or ML (see definitions below).  Please refer to the abstracts of the AI Innovation Fund proposals [funded in FY2022]({{ site.baseurl }}/opportunities/ai-innovation/fy22-awards) and [in FY2021]({{ site.baseurl }}/opportunities/ai-innovation/fy21-awards) for examples of successful proposal topics.
 
 Researchers developing a method or digital product are encouraged to define a minimum viable product as a deliverable.
  
