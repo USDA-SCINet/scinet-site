@@ -1,7 +1,7 @@
 ---
 title: SCINet Guides List
 description: A guide to the SCINet guides
-permalink: /guides
+permalink: /guides/
 layout: guides
 layout_type: guides
 

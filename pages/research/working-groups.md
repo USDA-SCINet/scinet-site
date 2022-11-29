@@ -1,7 +1,7 @@
 ---
 title: SCINet Working Groups Overview
 description: summary of current working groups
-permalink: /research/working-groups
+permalink: /research/working-groups/
 author: 
 layout: page
 

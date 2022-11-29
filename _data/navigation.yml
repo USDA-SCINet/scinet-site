@@ -33,7 +33,7 @@ primary:
   - title: News
     links:
       - title: System Downtime
-        url: /news/downtime
+        url: /news/downtime/
       - title: Announcements
         url: /news/announcements
       - title: User Stories
@@ -47,12 +47,12 @@ primary:
       - title: Quick Start
         url: /guides/start
       - title: All User Guides
-        url: /guides
+        url: /guides/
   - title: Research
     sublinks: true
     links:
       - title: Working Groups
-        url: /research/working-groups
+        url: /research/working-groups/
         sublinks:
         - title: Ag100Pest
           url: /research/working-groups/ag100pest
@@ -69,7 +69,7 @@ primary:
         - title: Protein Function and Phenotype Prediction
           url: /research/working-groups/proteinfunction
       - title: Use Cases
-        url: /research/uses
+        url: /research/uses/
         sublinks:
         - title: Genomics
           url: /research/uses/genomics
@@ -84,7 +84,7 @@ primary:
       - title: Learning Resources
         url: /training/resources
       - title: Upcoming Events
-        url: /training/events
+        url: /training/events/
       - title: Learning Pathway
         url: /training/learningpath
   - title: Support

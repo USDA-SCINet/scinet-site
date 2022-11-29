@@ -5,7 +5,7 @@ layout: eventcalendar
 type: archive
  
 
-sidenav_link: /training/events
+sidenav_link: /training/events/
 
 ---
 

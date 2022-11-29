@@ -131,7 +131,7 @@ defaults:
     values:
       layout: "guides"
       layout_type: "guides"
-      sidenav_link: /guides
+      sidenav_link: /guides/
       class: "guide-nav"
   - 
     scope:
@@ -140,7 +140,7 @@ defaults:
     values:
       layout: "page"
       layout_type: "guides"
-      sidenav_link: /guides
+      sidenav_link: /guides/
 
 # allow posts with dates in the future to be published now
 future: true

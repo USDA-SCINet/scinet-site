@@ -1,7 +1,7 @@
 ---
 title: SCINet Use Cases
 description: summary of current use cases
-permalink: /research/uses
+permalink: /research/uses/
 author: 
 layout: page
 
