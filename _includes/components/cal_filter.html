@@ -5,11 +5,19 @@
 {% assign yearid = formid | prepend: "year-" %}
 {% assign monthid = formid | prepend: "month-" %}
 {% assign buttonid = formid | prepend: "button-" %}
+<div class="usa-accordion usa-accordion--bordered padding-y-2">
+    <button
+        type="button"
+        class="usa-accordion__button"
+        aria-expanded="false" 
+        aria-controls="{{ formid }}"
+    >
+    Filter Events
+    </button>
+    <div id="{{ formid }}" class="usa-accordion__content usa-prose bg-base-lighter allow-overflow">
+
 <div class="usa-card">
-    <div class="usa-card__container bg-base-lighter maxw-tablet" id="{{ formid }}">
-        <div class="usa-card__header">
-            <h2 class="usa-card__heading">Filter Events</h2>
-        </div>
+
         <div class="usa-card__body grid-row tablet-lg:grid-gap-2">
             <div class="tablet-lg:grid-col-6 ">
                 <label class="usa-label" for="{{ typeid }}">Event Type:</label>
@@ -52,6 +60,7 @@
             <div id="current-filters" class="current-filters grid-col margin-x-2 text-right"></div>
         </div>
     </div>
+</div>
 </div>
 
 <script>
