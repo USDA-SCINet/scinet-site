@@ -83,8 +83,8 @@ class:
     <div class="grid-container sci-container">
         <section class="padding-y-4">
             <h2>{{ page.usecases.title }}</h2>
-            <div class="home-block {% if page.icons %} graphic-links {% endif %} grid-container">
-                {% include graphic-links.html graphics=page.usecases.icons %}
+            <div class="home-block {% if page.icons %} graphic-links {% endif %} grid-container">{% assign _graphics = site.data.display[page.usecases.icons] %}
+                {% include graphic-links.html graphics=_graphics %}
             </div>
         </section>
         <!--SCINet funded Research fellowship opportunities-->

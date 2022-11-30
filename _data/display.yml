@@ -1,28 +1,32 @@
-wg-icons:
+usecases:
   - image:
       src: /genomics.svg
       alt: ""
-      link: /research/uses/genomics
+      svg: true
+    url: /research/uses/genomics
     title: Genomics
-    description: Explore the Ag100Pest Initiative
+    text: Explore the Ag100Pest Initiative
   - image:
       src: /geospatial.svg
       alt: ""
-      link: /research/uses/plant-breeding
+      svg: true
+    url: /research/uses/geospatial
     title: Geospatial
-    description: SCINet for geospatial research
+    text: SCINet for geospatial research
   - image:
       src: /hydrology.svg
       alt: ""
-      link: /research/uses/geospatial
+      svg: true
+    url: /research/uses/hydrology
     title: Hydrology
-    description: Advanced computing capabilities to run watershed, erosion, and hydrodyanmic simulation models.
+    text: Advanced computing capabilities to run watershed, erosion, and hydrodyanmic simulation models.
   - image:
       src: /plant.svg
       alt: ""
-      link: /research/uses/hydrology
-    title: Plant Breeding.
-    description: The USDA’s National Plant Germplasm System maintains the world’s foremost collection of crop diversity.
+      svg: true
+    url: /research/uses/plant-breeding
+    title: Plant Breeding
+    text: The USDA’s National Plant Germplasm System maintains the world’s foremost collection of crop diversity.
 
 alt_calendar:
   title: "Training and Events"

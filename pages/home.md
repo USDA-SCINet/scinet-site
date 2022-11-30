@@ -96,32 +96,7 @@ support:
 
 usecases:
   title: "Explore Use Cases"
-  icons:
-    - image:
-        src: /genomics.svg
-        alt: ""
-        link: /research/uses/genomics
-      title: Genomics
-      description: Explore the Ag100Pest Initiative
-    - image:
-        src: /geospatial.svg
-        alt: ""
-        link: /research/uses/geospatial
-      title: Geospatial
-      description: SCINet for geospatial research
-    - image:
-        src: /hydrology.svg
-        alt: ""
-        link: /research/uses/hydrology
-      title: Hydrology
-      description: Advanced computing capabilities to run watershed, erosion, and hydrodyanmic simulation models.
-    - image:
-        src: /plant.svg
-        alt: ""
-        link: /research/uses/plant-breeding
-      title: Plant Breeding
-      description: The USDA’s National Plant Germplasm System maintains the world’s foremost collection of crop diversity.
-
+  icons: usecases
 ---
 
 
