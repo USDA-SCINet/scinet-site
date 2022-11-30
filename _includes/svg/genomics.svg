@@ -1,4 +1,4 @@
-<svg id="b8385900-5d7c-4655-9f68-dff0e498ccad" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<svg class="{{ include.class }}" id="b8385900-5d7c-4655-9f68-dff0e498ccad" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <circle class="icon-dark" cx="50" cy="50" r="50" />
   <path class="icon-light" d="M47.8,34.67c.05-.38.08-.77.11-1.16-1.53,1.41-3,2.83-4.56,4.25l.79.33C45.37,37,46.58,35.82,47.8,34.67Z" />
   <path class="icon-light" d="M38.22,20.28h0L32,27.78c.14.24.28.48.43.72q3.38-4,6.69-8.11C38.8,20.35,38.52,20.3,38.22,20.28Z" />

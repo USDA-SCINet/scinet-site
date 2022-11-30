@@ -5,6 +5,8 @@ permalink: /research/uses/
 author: 
 layout: page
 
+display-graphics: usecases
+
 subnav:
   - title: Genomics
     url: /research/uses/genomics
@@ -20,8 +22,4 @@ subnav:
     internal: link
     
 ---
-
-## This is a placeholder page for the summary of this section
-
-<br>
 

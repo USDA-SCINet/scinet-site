@@ -25,6 +25,15 @@ main:
   {% include table.html table=page.table %}
   {% endif %}
 
+  {% if page.display-graphics %}
+  {% assign _graphics = site.data.display[page.display-graphics] %}
+  <ul class="usa-card-group margin-bottom-2">
+    {% for _graphic in _graphics %}
+  {% include components/details-card.html option=_graphic %}
+  {% endfor %}
+  </ul>
+  {% endif %}
+
   <br>
 
   {% if page.collect %}
