@@ -26,10 +26,10 @@ alerts:
     type: warning
     slim: true # include if you want a slim alert
     text: If you are new to SCINet, visit  <a href="/guides/start">our Quickstart Guide</a>
-  - alert:
-    title: Currently in Development
-    type: info
-    text: "If you have feedback on the organization of the User Guides sections, or notice broken links or missing images, please email us at <a href='mailto:moe.richert@usda.gov?subject=SCINet Website Feedback'>moe.richert@usda.gov.</a>"
+#  - alert:
+#    title: Currently in Development
+#    type: info
+#    text: "If you have feedback on the organization of the User Guides sections, or notice broken links or missing images, please email us at <a href='mailto:moe.richert@usda.gov?subject=SCINet Website Feedback'>moe.richert@usda.gov.</a>"
 
 ---
 
