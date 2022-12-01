@@ -1,0 +1,106 @@
+---
+layout: default
+main:
+class: usa-layout-docs usa-layout-docs__main usa-prose
+scripts:
+  - src: /assets/js/lib/jquery-3.4.1.min.js
+  - src: /assets/js/search.js
+---
+<div class="grid-container">
+    <div class="grid-row grid-gap flex-align-center">
+
+            <main class="usa-layout-docs usa-layout-docs__main usa-prose width-full maxw-tablet margin-x-auto usa-section" id="main-content">
+                <!--<div class="form-container margin-right-0 margin-left-auto margin-top-2 maxw-mobile">
+                    {% include components/search.html searchid="search_page" %}
+    
+                </div> -->
+
+                {% if page.title %}
+            <h1 class="top-header"></span>{{ page.title }}</h1>
+            {% endif %}
+            <span class="font-code-md" id="res_num"></span>
+            <div class="width-full display-flex flex-column flex-align-end"><div class="maxw-mobile">{% include components/search.html searchid='searchemb' %}</div></div>
+
+            <div class="usa-accordion usa-accordion--bordered padding-y-2">
+                <button
+                    type="button"
+                    class="usa-accordion__button"
+                    aria-expanded="false" 
+                    aria-controls="filter-search"
+                >
+                Filter Results
+                </button>
+                <div id="filter-search" class="usa-accordion__content usa-prose allow-overflow">
+                    <form onsubmit='filterList(this);return false;' id="filterform">
+                    <div class="usa-card__body grid-row grid-gap-2">
+                        <div class="tablet:grid-col-6">
+                            <label class="usa-label" for="category">Filter by Category</label>
+                            <div class="usa-combo-box">
+                                <select class="usa-select" name="category" id="category" onchange="filterDropdowns(this.value)">
+                                    <option value>Filter Results by Topic</option>
+                                    {% for option in site.data.navigation.primary %}{% if option.links %}
+                                            <option value="{{ option.title }}!">{{ option.title | upcase }}</option>{% endif %}{% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tablet:grid-col-6 no-display subfilter" id="Newsfilter">
+                            <label class="usa-label" for="news-subcategory">News Subcategories</label>
+                            <div class="usa-combo-box">
+                                <select class="usa-select subcat" name="news-sub" id="news-subcategory">
+                                    <option value>Filter Results by Subcategory</option>
+                                    <option value="Announcements!">ANNOUNCEMENTS</option>
+                                    <option value="Stories!">STORIES</option>
+                                    <option value="Downtime!">DOWNTIME</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tablet:grid-col-6 no-display subfilter" id="UserGuidesfilter">
+                            <label class="usa-label" for="userguides-subcategory">Guide Subcategories</label>
+                            <div class="usa-combo-box">
+                                <select class="usa-select subcat" name="guides-sub" id="userguides-subcategory">
+                                    <option value>Filter Results by Subcategory</option>
+                                    {% assign guidecategories = site.guidecategory | sort: 'order_number' %}{% for option in guidecategories %}
+                                    <option value="{{ option.categories | first }}!">{{ option.categories | first | upcase }}</option>{% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tablet:grid-col-6 no-display subfilter" id="TrainingandEventsfilter">
+                            <label class="usa-label" for="trainingandevents-subcategory">Training Subcategories</label>
+                            <div class="usa-combo-box">
+                                <select class="usa-select subcat" name="events-sub" id="trainingandevents-subcategory">
+                                    <option value>Filter Results by Subcategory</option>
+                                    <option value="learning resources!">LEARNING RESOURCES</option>
+                                    <option value="events!">EVENTS</option>
+                                    <option value="workshops!">WORKSHOPS</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tablet:grid-col-6 no-display subfilter" id="Researchfilter">
+                            <label class="usa-label" for="research-subcategory">Research Subcategories</label>
+                            <div class="usa-combo-box">
+                                <select class="usa-select subcat" name="research-sub" id="research-subcategory">
+                                    <option value>Filter Results by Subcategory</option>
+                                    <option value="working groups!">WORKING GROUPS</option>
+                                    <option value="use cases!">USE CASES</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="usa-card__footer grid-row">
+                        <button type="submit" class="usa-button tablet:grid-col-3 tablet:grid-offset-9" id="filter-results">Filter</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+
+            {{ content }}
+
+            <div class="width-full padding-2" aria-label="Search Results" id="search_results">
+
+            </div>
+
+            <br>
+        
+        </main>
+    </div>
+</div>
