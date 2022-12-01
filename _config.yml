@@ -147,7 +147,7 @@ defaults:
   - 
     scope:
       path: ""
-      type: "tutorial"
+      type: "tutorials"
     values:
       layout: "page"
       sidenav_link: /guides/

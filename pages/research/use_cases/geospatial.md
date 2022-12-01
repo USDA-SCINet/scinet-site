@@ -24,7 +24,7 @@ By: Pat Clark and Rowan Gaffney
 ---
 ### **Machine Learning**
 * Classification
-* Clustering: [Python Notebook Example]({{ site.baseurl }}/tutorials/geospatial-analysis-NEON-hyperspectral)
+* Clustering: [Python Notebook Example]({{ site.baseurl }}/tutorials/geospatial-analysis-neon-hyperspectral)
 * Regression
 
 ### **Modeling**
