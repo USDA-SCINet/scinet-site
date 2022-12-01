@@ -75,6 +75,9 @@ collections:
   guidecategory:
     output: true
     permalink: /guides/:categories
+  tutorials:
+    output: true
+    permalink: /tutorials/:name
 # collections:
 #   projects:
 #     output: true
@@ -140,6 +143,13 @@ defaults:
     values:
       layout: "page"
       layout_type: "guides"
+      sidenav_link: /guides/
+  - 
+    scope:
+      path: ""
+      type: "tutorial"
+    values:
+      layout: "page"
       sidenav_link: /guides/
 
 # allow posts with dates in the future to be published now
