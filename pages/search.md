@@ -7,7 +7,7 @@ alerts:
   - alert: 
     type: warning # warning, error, success, info
     slim: true 
-    text: This is a temporary search page while the official one compiles. 
+    text: This is a temporary search page while the full search index rebuilds following the new SCINet website launch
   - alert:
     type: info
     slim: true
