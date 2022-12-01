@@ -40,7 +40,7 @@ intro:
     url: /guides/start
 
 calendar:
-  title: "Upcoming Training and Events"
+  title: "Upcoming Trainings and Events"
   button: "See the Full Calendar"
   url: /training/events
 
