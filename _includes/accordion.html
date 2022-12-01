@@ -15,7 +15,7 @@
       {{ _option.title }}
       </button>
     </div>
-    <div id="{{ ariacontrol }}" class="usa-accordion__content usa-prose">
+    <div id="{{ ariacontrol }}" class="usa-accordion__content usa-prose" hidden="">
         <div class="usa-card__body">
             {% if _option.internal %}
                     {% for _post in all_posts %}
