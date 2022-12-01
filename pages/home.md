@@ -21,9 +21,9 @@ featured:
 hero:
   image: /assets/img/hero.png
   callout:
-    text: "High Performance Computing. </br> 
+    text: "High-Performance Computing. </br> 
     Training. </br>
-    Network Improvements."
+    High-Speed Networking."
   button:
     url: /about/compute
     text: Learn More
@@ -32,7 +32,7 @@ hero:
 intro:
   blurb:
     title: "What is SCINet?"
-    text: "The SCINet initiative is an effort by the USDA <a href='https://www.ars.usda.gov/'>Agricultural Research Service (ARS)</a> to improve the USDA’s research capacity by providing scientists with access to high-performance computing clusters, cloud computing, improved networking for data transfer, and training in scientific computing."
+    text: "The SCINet initiative is an effort by the USDA <a href='https://www.ars.usda.gov/'>Agricultural Research Service (ARS)</a> to grow USDA’s research capacity by providing scientists with access to high-performance computing clusters, high-speed networking for data transfer, and training in scientific computing."
   card: 
     title: "Get Started with SCINet"
     text: "ARS scientists/collaborators: </br> Register for an account"
