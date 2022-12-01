@@ -31,7 +31,7 @@ A brief synopsis of some resources:
 * **How much**: Budget (paid for by SCINet) determined at time of request
 * **Support**: SCINet VRSC; Basecamp group for SCINet AWS users
 * **How to request**: Submit a [SCINet AWS Project Request](https://e.arsnet.usda.gov/sites/OCIO/scinet/accounts/SitePages/SCINet-AWS-Project-Request.aspx)
-* **More Information**: Find more information about AWS in our [AWS Resources]({{ site.baseurl }}/scinet-site/guides/aws).
+* **More Information**: Find more information about AWS in our [AWS Resources]({{ site.baseurl }}/guides/aws).
 
 ## XSEDE
 * **What**: HPC compute, storage, cloud, and support from several large academic computing

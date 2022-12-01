@@ -25,7 +25,7 @@ subnav:
   - title: Event Calendar
     url: /training/events
     internal: true
-    excerpt: SCINet, the AI-COE, and other providers regularly host a variety of events and trainings. Information on how to attend these events will be posted on this page closer to the event date. You might want to <a href="/scinet-site/training/events/archive">take a look at events we’ve hosted in the past</a>, too.
+    excerpt: SCINet, the AI-COE, and other providers regularly host a variety of events and trainings. Information on how to attend these events will be posted on this page closer to the event date. You might want to <a href="/training/events/archive">take a look at events we’ve hosted in the past</a>, too.
   - title: SCINet Tutorial Workbooks
     url: /training/workbooks
     internal: true
@@ -37,7 +37,7 @@ subnav:
   - title: List of Free Virtual Trainings
     url: /training/free-online-training
     internal: true
-    excerpt: "<p>A list of free trainings available to SCINet users sorted by topic.  This is not an exhaustive list, but may help you get started.</p><p>We also have <a href='/scinet-site/training/access'>instructions on how to access the various learning platforms.</a></p>"
+    excerpt: "<p>A list of free trainings available to SCINet users sorted by topic.  This is not an exhaustive list, but may help you get started.</p><p>We also have <a href='/training/access'>instructions on how to access the various learning platforms.</a></p>"
 
 ---
 
