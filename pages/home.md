@@ -45,7 +45,7 @@ calendar:
   url: /training/events
 
 alt_calendar:
-  title: "Training and Events"
+  title: "Trainings and Events"
   text: "SCINet, the AI-COE, and other providers regularly host a variety of events and trainings.  There are no upcoming events currently in our calendar."
   link: "Add your name to the waitlist for future events"
   url: https://forms.office.com/g/tVtE8wEgAt
