@@ -67,7 +67,7 @@ Project directories are usually associated with ARS Research Projects. While it'
 
 To request a new project directory see [Request Project Storage]({{ site.baseurl }}/support/request#storage-request). Here is a direct link to the form (eAuthentication required) which includes submitting a Data Management Plan:
 
-[Request a project directory](https://e.arsnet.usda.gov/sites/OCIO/scinet/accounts/SitePages/Project_Allocation_Request.aspx){: .usa-button }
+[Request a project directory](https://forms.office.com/g/wD9rYarVyn){: .usa-button }
 
 
 Default quota for `/project/<project_name>` is set to 1TB. Historically, before [Juno Archive Storage](#juno-archive-storage) has been deployed, large space had routinely been allocated in /project, but going forward, additional space in /project will only be allocated on an as-needed basis. Most users should use /90daydata to run analysis, and the results should be copied to [Juno Archive Storage](#juno-archive-storage).
