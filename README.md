@@ -6,9 +6,9 @@ There are a few ways to do this.
 
 1. Using Github pull requests (preferred).
 2. Edit online in github.
-3. Send your markdown file to [Moe Richert](moe.richert@usda.gov)
+3. Send your markdown file to [Moe Richert](mailto:moe.richert@usda.gov)
 
-If you are unsure where the information you are trying to edit is located, navigate to the page on the [SCINet website](https://scinet.usda.gov) and scroll to the bottom of the page.  There is an "Edit this page" link in the footer that will take you to the corresponding file in the github repository.  If you are still unable to find the information you are trying to update, check _data/tables or email [Moe Richert](moe.richert@usda.gov).
+If you are unsure where the information you are trying to edit is located, navigate to the page on the [SCINet website](https://scinet.usda.gov) and scroll to the bottom of the page.  There is an "Edit this page" link in the footer that will take you to the corresponding file in the github repository.  If you are still unable to find the information you are trying to update, check _data/tables or email [Moe Richert](mailto:moe.richert@usda.gov).
 
 ## The github command line
 
@@ -68,4 +68,4 @@ If an additional category is needed, a new folder should be made and its informa
 Other information (downtime, fellowships, etc) can be updated from the _data/tables files.  Ensure you maintain the file formatting when you add to these files.
 
 Templates for new pages are in _templates.
-Please contact [Moe Richert](moe.richert@usda.gov) with any questions or development needs.
+Please contact [Moe Richert](mailto:moe.richert@usda.gov) with any questions or development needs.
