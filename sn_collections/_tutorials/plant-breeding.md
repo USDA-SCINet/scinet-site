@@ -4,6 +4,11 @@ description: Quantitative Trait Locus Analysis for Breeding research
 author: Justin Vaughn
 excerpt: Using QTL-surge and RStudio on Ceres
 
+sidenav_link: /research/uses/
+sidenav_append: 
+  - title: QTL Analysis for Breeding
+    url: /tutorials/plant-breeding
+
 subnav:
   - title: Performing QTL-seq data processing on Ceres
     url: '#performing-qtl-seq-data-processing-on-ceres'
