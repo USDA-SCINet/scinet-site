@@ -130,7 +130,7 @@ You can send hard drives containing data to the VRSC if you have very large amou
    * Target project directory.
    * Type of filesystem the data is coming from (Window, Mac, Linux)
 
-   If you don't already have a project directory please request one first: [Request Project Storage](https://e.arsnet.usda.gov/sites/OCIO/scinet/accounts/SitePages/Project_Allocation_Request.aspx) (eAuthentication required)
+   If you don't already have a project directory please request one first: [Request Project Storage](https://forms.office.com/g/wD9rYarVyn) (eAuthentication required)
 
 2. Copy the data onto a SATA hard drive or SSD
 

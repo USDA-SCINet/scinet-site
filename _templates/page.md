@@ -34,13 +34,13 @@ ARS employees can request a SCINet account by filling out a form on the ARS Shar
 
 Note: if you have a usda.gov email address but can’t access the ARS Employees form (e.g. if you are a summer intern), then your sponsor at ARS will need to complete the non-ARS Employee form.
 
-<a href="https://e.arsnet.usda.gov/sites/OCIO/scinet/accounts/SitePages/SCINetAccountRequest.aspx" class="usa-button">Request ARS employee account</a>
+<a href="https://forms.office.com/g/D3gZC00p8V" class="usa-button">Request ARS employee account</a>
 
 ## Non-ARS Employees
 
 Non-ARS Employees require an ARS employee sponsor to obtain a SCINet account.  Please contact your sponsor and request that they complete a form on your behalf on the ARS Sharepoint site (eAuthentication required). It may take up to ten business days to create an account after the request is approved by the sponsor's supervisor.
 
-<a href="https://e.arsnet.usda.gov/sites/OCIO/scinet/accounts/SitePages/Non-ARS_SCINet_Account_Request.aspx" class="usa-button">Request non-ARS account</a>
+<a href="https://forms.office.com/g/LQk05GG4YV" class="usa-button">Request non-ARS account</a>
 
 ###  The ARS sponsor will need your:
 
