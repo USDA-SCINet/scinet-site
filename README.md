@@ -1,10 +1,10 @@
-## Site Contributions
+# Site Contributions
 
 These are the instructions for how to contribute to the SCINet USDA webpage if you have been contacted to contribute.
 
 There are a few ways to do this.
 
-1. Using Github pull requests (preferred). Must have USDA SSO.
+1. Using Github pull requests (preferred).
 2. Edit online in github.
 3. Send your markdown file to [Moe Richert](moe.richert@usda.gov)
 
@@ -12,9 +12,9 @@ If you are unsure where the information you are trying to edit is located, navig
 
 ## The github command line
 
-1. get a GitHub account if you don't have one
-2. clone the repository to your computer
-3. create a new brach for your work
+1. Get a GitHub account if you don't have one
+2. Clone the repository to your computer
+3. Create a new branch for your work
 4. Edit your assigned page, photos go in `/assets/img/` in their respective subfolder, and docs go in the location you were assigned
 5. When you are done commit your changes:
 
@@ -27,16 +27,9 @@ If you are unsure where the information you are trying to edit is located, navig
 6. Then go the main scinet repository and create a pull request
 
 ## Edit online in Github
-1. get a GitHub account if you don't have one
-2. go to the scinet repository: https://github.com/USDA-SCINet/scinet-site and navigate to your file and click the pencil. this will "fork the archive for you".
-3. Edit it, say what you did in the comment box, and click "propose file change" or "Create a new branch for this commit and start a pull request."
-
-## Edit online in Github without USDA SSO
-1. Get a Github account if you don't have one
-2. Go to the scinet repository: https://github.com/USDA-SCINet/scinet-site and click Fork in the top right corner of the page.  Create a fork on your account.
-3. From here, create a new branch - you can do so by clicking the pencils on the page you want to edit or by clicking Branch and then New Branch.  Make your changes on this new branch.
-4. If you are unable to create a pull request to the upstream repository, contact [Moe Richert](moe.richert@usda.gov) when you are finished with your edits.  Include your Github username and the name of the branch with your changes in the email.  Once the changes have been committed to the upstream repository, you can delete the branch.
-5. You do not need to recreate this fork every time you make changes, but click **Sync fork** before creating a new branch for your edits.
+1. Get a GitHub account if you don't have one
+2. Go to the [SCINet repository](https://github.com/USDA-SCINet/scinet-site), navigate to your file, and click the pencil. This will fork the archive for you.
+3. Edit the file, say what you did in the comment box, and click "Propose changes" or "Create a new branch for this commit and start a pull request."
 
 
 # Using this repository locally
@@ -62,6 +55,10 @@ All other sass can be added into the jekyll _sass file, and the file name added 
 
 USWDS location settings are in gulpfile.js
 
+# Where to find files
+
+If you are unsure where the information you are trying to edit is located, navigate to the page on the [SCINet website](https://scinet.usda.gov) and scroll to the bottom of the page.  There is an "Edit this page" link in the footer that will take you to the corresponding file in the github repository.
+
 ## Collections
 
 Collections are now stored in sn_collections and sorted by type.
@@ -72,4 +69,3 @@ Other information (downtime, fellowships, etc) can be updated from the _data/tab
 
 Templates for new pages are in _templates.
 Please contact [Moe Richert](moe.richert@usda.gov) with any questions or development needs.
-
