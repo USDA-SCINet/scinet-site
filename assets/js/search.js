@@ -53,7 +53,10 @@ function setList(results, value) {
         var count = matchy.length;
         var matchtxt = "";
         if (count > 0) {
-            matchtxt = '<li class="usa-collection__meta-item"> ...' + boldmatch(matchy[0], value) + '...</li>'
+            var itnum = Math.min(count, 2);
+            for (var i = 0; i < itnum; i++) {
+                matchtxt += '<li class="usa-collection__meta-item"> ...' + boldmatch(matchy[i], value) + '...</li>';
+            }
         }
 
         let resultsHtml1 = '<li class="usa-collection__item width-full margin-x-auto search-result" type="'+res.category+'! '+res.subcategory+'!" count="'+count+'">' +
