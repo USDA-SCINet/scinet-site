@@ -1,24 +1,11 @@
 ---
 title: NEON High Resolution Hyperspectral Data Exercise
-description: tutorial1 example2 from LTAR webinar series HPC for geospatial analysis
+description: Tutorial example from LTAR webinar series HPC for geospatial analysis
 author: Rowan Gaffney
 redirect_to: /assets/html/Tutorial1_Example2_Hyperspectral.html
 class: usa-link--external
 excerpt: Explore NEON AOP hyperspectral data, calculate/visualize spectral indices, unsupervised ML (clustering)
----
-
-[link to tutorial](/assets/html/Tutorial1_Example2_Hyperspectral.html)
-
-<div style="display: none;">
-
-Exercise 2 - High Resolution Airborne Hyperspectral Data
-
-Objective:
-
-        Explore NEON AOP Hyperspectral Data
-        Calculate/Visualize Spectral Indices
-        Unserpervised Machine Learning (Clustering)
-
+search_redirect: "Explore NEON AOP hyperspectral data, calculate/visualize spectral indices, unsupervised ML (clustering)
 Data: NEON AOP hyperspectral data from LTAR CPER
 
 Strategy:
@@ -77,8 +64,8 @@ clust = jq.SLURMCluster(queue=partition,
                         walltime='00:30:00')
 cl=Client(clust)
 
-dash_board = cl.scheduler.address.split('//')[1].split(':')[0]+":"+str(cl.scheduler_info()['services']['dashboard'])
-ssh_command = 'ssh -N -L 8787:'+dash_board+' '+os.environ["USER"]+'@login.scinet.science'
+dash_board = cl.scheduler.address.split('//')[1].split(':')[0]+:+str(cl.scheduler_info()['services']['dashboard'])
+ssh_command = 'ssh -N -L 8787:'+dash_board+' '+os.environ[USER]+'@login.scinet.science'
 print('To port forward diagnostics use:\n'+ssh_command)
 cl
 
@@ -148,7 +135,7 @@ plt.grid()
 
 Calculate and visualize spectral indices
 
-#Calculate the spectral indices and add to the "d_all" variable
+#Calculate the spectral indices and add to the d_all variable
 d_all['indices'] = xr.concat([((d_all.reflectance.sel(wl=858.6,method='nearest')-d_all.reflectance.sel(wl=648.2,method='nearest'))/(d_all.reflectance.sel(wl=858.6,method='nearest')+d_all.reflectance.sel(wl=648.2,method='nearest'))).assign_coords(index='ndvi').expand_dims('index'),
                             ((0.5*(d_all.reflectance.sel(wl=2000,method='nearest')/10000.+d_all.reflectance.sel(wl=2200,method='nearest')/10000.))-d_all.reflectance.sel(wl=2100.,method='nearest')/10000.).drop('wl').assign_coords(index='cai').expand_dims('index'),
                             ((xr.ufuncs.log(1./(d_all.reflectance.sel(wl=1754.,method='nearest')/10000.))-xr.ufuncs.log(1./(d_all.reflectance.sel(wl=1680.,method='nearest')/10000.)))/(xr.ufuncs.log(d_all.reflectance.sel(wl=1754.,method='nearest')/10000.)+xr.ufuncs.log(d_all.reflectance.sel(wl=1680,method='nearest')/10000.))).assign_coords(index='ndli').expand_dims('index'),
@@ -216,13 +203,13 @@ There are NaNs in the data: False
 #Scale the Data with a standard scaler
 scaler = StandardScaler().fit(d_sl)
 d_train = scaler.transform(d_sl).rechunk(('auto',-1)).persist()
-print('There are '+str(d_train.shape[0])+' records in the "fit" data spread over '+str(d_train.npartitions)+' partitions.')
+print('There are '+str(d_train.shape[0])+' records in the fit data spread over '+str(d_train.npartitions)+' partitions.')
 
-There are 7365717 records in the "fit" data spread over 158 partitions.
+There are 7365717 records in the fit data spread over 158 partitions.
 
 Fit a Kmeans model
 
-Here we will fit two different implimentations of the KMeans cluster. The first version (est1) uses a parallel implimentation of the KMEANS algorithm. It is an iterative method, so time to convergence is quite variable. The second method (est2) uses a "minibatch" approach. Each partition fits the model sequentially, and then models results are combined. This approach uses the scikit-learn package, and then is wrapped with dask_ml "ParallelPostFit" so the resulting model can be applied to the entire dataset (prediction) in a distributed manner. The same methods can apply to any scikit-learn model that impliments a "partial fit" method.
+Here we will fit two different implimentations of the KMeans cluster. The first version (est1) uses a parallel implimentation of the KMEANS algorithm. It is an iterative method, so time to convergence is quite variable. The second method (est2) uses a minibatch approach. Each partition fits the model sequentially, and then models results are combined. This approach uses the scikit-learn package, and then is wrapped with dask_ml ParallelPostFit so the resulting model can be applied to the entire dataset (prediction) in a distributed manner. The same methods can apply to any scikit-learn model that impliments a partial fit method.
 
 #Define the estimator (from dask-learn library - iterative method)
 est1 = KMeans()
@@ -250,7 +237,7 @@ We can use either model (k1 or k2) to predict on the entire dataset.
 
 #Reshape ALL the data from 3d (x,y,wavelength) to 2d (x*y,wavelength)
 d_final = d_all.reflectance.data.reshape((-1,len(band_list()[0]))).rechunk(('auto',-1))
-#Transform the data with the same scaler as used with the "fitting"
+#Transform the data with the same scaler as used with the fitting
 d_final = scaler.transform(d_final)
 
 #Predict the cluster for the entire domain, and then transform back to a 3d dataarray (x,y,wavelength)
@@ -276,7 +263,7 @@ d_final2.isel(x=slice(None,None,10),y=slice(None,None,10)).kmean_clust.plot()
 plt.figure(figsize=(16,12))
 d_final2.isel(x=slice(5000,6000,1),y=slice(5000,6000,1)).kmean_clust.plot()
 
-<matplotlib.collections.QuadMesh at 0x2ad73d753198>
+<matplotlib.collections.QuadMesh at 0x2ad73d753198>"
+---
 
-
-</div>
+[link to tutorial](/assets/html/Tutorial1_Example2_Hyperspectral.html)
