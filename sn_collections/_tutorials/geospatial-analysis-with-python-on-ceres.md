@@ -1,45 +1,11 @@
 ---
 title: Geospatial Analysis with Python on Ceres
-description: tutorial from LTAR webinar series HPC for geospatial analysis
+description: Tutorial from LTAR webinar series HPC for geospatial analysis
 author: Rowan Gaffney
 redirect_to: /assets/html/Tutorial1-JHub.html
 class: usa-link--external
 excerpt: Efficient data practices, using JupyterHub and Lab on Ceres, using Dask for parallel computing
----
-
-[link to tutorial](/assets/html/Tutorial1-JHub.html)
-
-<div style="display: none;">
-
-Outline
-
-    Efficient Data Practices on Ceres
-    1.1 Transferring Data
-    1.2 Reducing Size
-
-    Python Setup
-    2.1 Overall Setup - Background
-    2.2 Step by Step Instructions
-
-    Cluster Setup
-    3.1 Overall Setup - Background
-    3.2 Step by Step Instructions
-
-1. Data on Ceres
-
-Transferring Data
-
-    I2 Connection (at select locations)
-        For very large data transfers
-        Secure Copy (SCP) to transfer data
-        Additional documentation on Scinet Basecamp
-    Globus
-        Specifically designed for HPC data transfer. Intuitive web based GUI. Globus Link
-        Additional documentation on Scinet Basecamp
-    JupyterLab
-        Upload files (from local storage to Ceres) by using the upload icon within the files tab
-        Download files (from Ceres to local storage) by right clicking file/folder and choosing "Download" or "Download Current Folder as Archive"
-
+search_redirect: "Efficient data practices, using JupyterHub and Lab on Ceres, using Dask for parallel computing
 Reducing Data Size
 Data Type
 
@@ -137,7 +103,7 @@ Below are the steps/commands to setup the Python/JupyterLab environment followed
     Please be cognizant of the compute resources you are requesting (see best practices below).
 
     Best Practices
-        For short sessions (2hrs or less) please choose the brief-low partition in the "Node Type" drop down, if available.
+        For short sessions (2hrs or less) please choose the brief-low partition in the Node Type drop down, if available.
         For serial computing (non-parallel code) enter 2 or 4 for number of cores.
         For parallel computing choose a reasonable number of cores to meet your needs.
         Choose a reasonable job duration (e.g. Do not choose 48hr job duration so you can leave your session open overnight).
@@ -149,14 +115,14 @@ Below are the steps/commands to setup the Python/JupyterLab environment followed
     ► r_geo (R geospatial - click to see all packages)
     Furthermore, you can launch the RStudio (which uses the r_geo environment), a terminal, a help window, markdown, text file, and IDL kernel. To access the IDL library, you need to check-out the license from SCINet license server and bind-mounted properly (this is not shown in this example).
 
-The following silent video is a media alternative for the text in steps 1-3 in the "Python Setup" Section above.
+The following silent video is a media alternative for the text in steps 1-3 in the Python Setup Section above.
 Link To Video
 
 3. Cluster Setup
 
 Overall Setup - Background
 
-    Uses the Dask Jobqueue Library to submit jobs to SLURM. Each "Slurm job" has X number of "Python workers".
+    Uses the Dask Jobqueue Library to submit jobs to SLURM. Each Slurm job has X number of Python workers.
 
     Scales across nodes and partitions.
 
@@ -213,9 +179,9 @@ clust = jq.SLURMCluster(queue=partition,
                         local_directory='$TMPDIR',
                         tmpdir_ssh='/project/cper_neon_aop/neon_2017/analysis/prepocessing/',
                         death_timeout=30,
-                        python="singularity -vv exec --bind /usr/lib64 --bind /scinet01 --bind /software/7/apps/envi/bin/ {} /opt/conda/envs/{}/bin/python".format(container_url,conda_env),
+                        python=singularity -vv exec --bind /usr/lib64 --bind /scinet01 --bind /software/7/apps/envi/bin/ {} /opt/conda/envs/{}/bin/python.format(container_url,conda_env),
                         walltime='02:00:00',
-                        job_extra=["--output=/dev/null","--error=/dev/null"])
+                        job_extra=[--output=/dev/null,--error=/dev/null])
 cl=Client(clust)
 dash_addr = '''/user/{}/proxy/{}/status'''.format(os.environ['USER'],cl.scheduler_info()['services']['dashboard'])
 print('Dask Lab Extention Address (paste into the dask search box): '+dash_addr)
@@ -237,7 +203,7 @@ Cluster
 
 num_jobs=12
 clust.scale(n=num_jobs*num_processes)
-while (((cl.status == "running") and (len(cl.scheduler_info()["workers"]) < num_jobs*num_processes))):
+while (((cl.status == running) and (len(cl.scheduler_info()[workers]) < num_jobs*num_processes))):
     time.sleep(.1)
 cl
 
@@ -313,7 +279,7 @@ t2.compute()
 
 0.5000005197202411
 
-Alternatively, we can load the data to the cluster with the "persist" option
+Alternatively, we can load the data to the cluster with the persist option
 
 t = da.random.random((10000,7500,100),chunks=(400,400,-1)).persist()
 wait(t)
@@ -331,7 +297,12 @@ t.mean().compute()
 
 0.4999999739855532
 
-The following silent video is a media alternative for the text in the "Cluster Setup" Section above.
-Link To Video
+The following silent video is a media alternative for the text in the Cluster Setup Section above.
+Link To Video"
+---
 
-</div>
+[link to tutorial](/assets/html/Tutorial1-JHub.html)
+
+
+
+
