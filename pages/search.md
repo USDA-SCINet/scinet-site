@@ -11,5 +11,5 @@ alerts:
   - alert:
     type: info
     slim: true
-    text: If you have feedback about the website redesign, please email <a href="Moe.Richert@usda.gov">Moe Richert</a>
+    text: If you have feedback about the website redesign, please email <a href="mailto:Moe.Richert@usda.gov">Moe Richert</a>
 ---
