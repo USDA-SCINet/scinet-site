@@ -51,6 +51,9 @@ subnav:
     internal: true
     shows_list: true
     categories: [Software]
+  - title: Open OnDemand Interface
+    url: /guides/access/open-ondemand
+    internal: true
 
 
 ---
