@@ -1,7 +1,7 @@
 ---
 title: Software preinstalled on Ceres
 description: Software preinstalled on Ceres
-excerpt: Each SCINet cluster has software preinstalled on it. Some general software is available in the global environment but most specialized scientific software is managed by the Module system.
+excerpt: Each SCINet cluster has software preinstalled on it. Some general software is available in the global environment but most specialized scientific software is managed by the Module system.<br /> <br />This guide includes information about command-line software, as well as information on graphical software such as Galaxy, CLC, Geneious, RStudio, and Juptyer.
 order_number: 10
 categories: [Software]
 
