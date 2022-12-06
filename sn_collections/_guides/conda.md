@@ -2,7 +2,7 @@
 title: User-Installed Software on Ceres with Conda
 description: Using Conda
 ## author: Nathan Weeks
-
+order_number: 20
 categories: [Software]
 
 subnav:

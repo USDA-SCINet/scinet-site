@@ -4,7 +4,7 @@ description: Guide to installing Software on SCINet
 
 categories: [Software]
 order_number: 40
-
+sorted: true
 ---
 
 The login node provides access to a wide variety of scientific software tools that users can access and use via the module system. These software tools were compiled and optimized for use on SCINet by members of the Virtual Research Support Core (VRSC) team. Most users will find the software tools they need for their research among the provided packages and thus will not need to compile their own software packages.
