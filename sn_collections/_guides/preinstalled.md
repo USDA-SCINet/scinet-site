@@ -2,6 +2,7 @@
 title: Software preinstalled on Ceres
 description: Software preinstalled on Ceres
 excerpt: Each SCINet cluster has software preinstalled on it. Some general software is available in the global environment but most specialized scientific software is managed by the Module system.
+order_number: 10
 categories: [Software]
 
 sidenav:
