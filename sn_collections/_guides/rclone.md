@@ -1,5 +1,5 @@
 ---
-title: Rclone: Moving Data To and From Cloud Resources
+title: Rclone - Moving Data To and From Cloud Resources
 description: Using rclone
 # author: Jordan Hoosman
 
