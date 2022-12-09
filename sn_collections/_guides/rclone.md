@@ -3,7 +3,7 @@ title: "Rclone: Moving Data To and From Cloud Resources"
 description: Using rclone
 # author: Jordan Hoosman
 
-categories: [Analysis]
+categories: [Data]
 
 subnav:
   - title: Getting Ready
