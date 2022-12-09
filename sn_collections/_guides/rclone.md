@@ -4,6 +4,7 @@ description: Using rclone
 # author: Jordan Hoosman
 
 categories: [Data]
+order_number: 70
 
 subnav:
   - title: Getting Ready
