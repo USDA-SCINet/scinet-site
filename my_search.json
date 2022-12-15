@@ -1,0 +1,108 @@
+---
+layout: null
+---
+
+[
+  {% for file in site.pages %}{% assign ext = file.path | slice: -2,2 %}{% if ext == "md" %}{% assign my_section = "false" %}{% assign nested_link = "false" %}
+  {% if file.sidenav_link %}{% assign pagelink = file.sidenav_link %}
+  {% else %}{% assign pagelink = file.permalink %}
+  {% endif %}
+  {% assign header = site.data.header %}{% assign _primary = header.primary.links %}{% assign primary_links = site.data.navigation[_primary] | default: _primary %}
+    {% if primary_links %}
+      {% for _section in primary_links %}
+        {% unless _section.url == pagelink %} 
+          {% if _section.links %}
+              {% assign section_links = site.data.navigation[_section.links] | default: _section.links %}
+              {% for _link in section_links %}
+                  {% if _link.url == pagelink %} 
+                      {% assign my_section = _section.title %}
+                      {% if file.sidenav_link %}{% assign nested_link = _link.title %}{% endif %}
+                  {% else %}
+                      {% if _section.sublinks %}
+                      {% assign link_sublinks = site.data.navigation[_link.sublinks] | default: _link.sublinks %}
+                        {% for _sublink in link_sublinks %}
+                          {% if _sublink.url == pagelink %} 
+                              {% assign my_section = _section.title %}
+                              {% if file.sidenav_link %}{% assign nested_link =  _sublink.title %}{% else %}{% assign nested_link = _link.title %}{% endif %}
+                          {% endif %}
+                        {% endfor %}
+                      {% endif %}
+                  {% endif %}
+              {% endfor %}
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+    {% endif %}
+    {% unless my_section == "false" or pagelink=="/support/ceres-job-script" %}
+    {% capture postdate %}{{ file.date | date: '%b %d, %Y' }}{% endcapture %}
+    {% assign paragraphs = file.content | newline_to_br | split: '<br />' %}
+    {% capture contents %}{% for paragraph in paragraphs %}{{ paragraph }} {% endfor %}{% endcapture %}
+    {% capture mysubcategory %}{% if file.categories %}{{ file.categories }}{% elsif nested_link != "false" %}{{ nested_link }}{% elsif my_section == 'Trainings and Events' %}Learning Resources{% endif %}{% endcapture %}
+  {
+      "title" : "{{ file.title }}",
+      "category" : "{{ my_section }}",
+      "subcategory" : "{{ mysubcategory }}",
+      "set" : "",
+      "url" : "{{ file.url }}",
+      "description" : "{{ file.description }}",
+      "date" : "{{ postdate }}",
+      "content" : "{{ contents | markdownify | strip | strip_html | strip_newlines | replace: '"', '' | replace: '\', '/' | replace: "	", "" }}"
+  },
+  {% endunless %}
+  {% endif %}
+  {% endfor %}
+  {% for collection in site.collections %}
+  {% for post in site[collection.label] %}
+    {% capture postdate %}{{ post.date | date: '%b %d, %Y' }}{% endcapture %}
+      {% case collection.label %}
+      {% when "guidecategory" or "guides" %}
+      {% assign mycategory = "User Guides" %}
+      {% when "events" or "events-recurring" or "workshops" %}
+      {% assign mycategory = "Trainings and Events" %}
+      {% when "announcements" or "posts" %}
+      {% assign mycategory = "News" %}
+      {% when "tutorials" %}
+      {% assign mycategory = "Trainings and Events" %}
+      {% else %}
+      {% assign mycategory = collection.label %}
+      {% endcase %}
+      {% capture rawcontent %}{% if post.search_redirect %}{{ post.search_redirect }}{% else %}{{ post.content }}{% endif %}{% endcapture %}
+      {% assign paragraphs = rawcontent | newline_to_br | split: '<br />' %}
+      {% capture contents %}{% for paragraph in paragraphs %}{{ paragraph }} {% endfor %}{% endcapture %}
+      {% capture mysubcategory %}{% if collection.label == "events" or collection.label == "events-recurring" %}Events{% elsif collection.label == "workshops" %}Workshops{% elsif collection.label == "tutorials" %}Tutorials{% else %}{{ post.categories }}{% endif %}{% endcapture %}
+    
+{
+  "title" : "{{ post.title }}",
+  "category" : "{{ mycategory }}",
+  "subcategory" : "{{ mysubcategory }}",
+  "set" : "{% if mysubcategory == "Workshops" %}{{ post.categories }}{% endif %}",
+  "url" : "{{ post.url }}",
+  "description" : "{{ post.description }}",
+  "date" : "{{ postdate }}",
+  "content" : "{{ contents | markdownify | strip | strip_html | strip_newlines | replace: '"', '' | replace: '\', '/' | replace: "	", "" }}"
+},
+{% endfor %}
+{% endfor %}
+{% for _down in site.data.tables.downtime.downtime %}
+{
+  "title" : "{% if _down.title %}{{ _down.title }}{% else %}{% if _down.reason %}{{ _down.reason }} - {% endif %}{{ _down.systems }} - {{ _down.date | date: "%A, %B %-d %Y"}}{% endif %}",
+  "category" : "News",
+  "subcategory" : "Downtime",
+  "set" : "",
+  "url" : "{% if _down.url %}{% if  _down.external %}{{  _down.url }}{% else %}{{  _down.url | relative_url }}{% endif %}{% else %}/news/downtime/archive{% endif %}",
+  "description" : "{% if _down.reason %}{{ _down.reason }}{% endif %}",
+  "date" : "{{ _down.date | date: "%A, %B %-d %Y"}}",
+  "content" : "{{ _down.text | strip | strip_html | strip_newlines | replace: '"', '' | replace: '\', '/' | replace: "	", "" }}"
+},
+{% endfor %}
+    {
+      "title" : "",
+      "category" : "",
+      "subcategory" : "",
+      "set" : "",
+      "url" : "",
+      "description" : "",
+      "date" : "",
+      "content" : ""
+  }
+]
