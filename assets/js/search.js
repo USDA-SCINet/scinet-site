@@ -5,7 +5,7 @@ function fetchResults(value) {
     if (value.length > 1) {
         value = value.toLowerCase()
 
-        fetch("https://raw.githubusercontent.com/MoeRichert-USDA/scinet-site/gh-pages/my_search.json")
+        fetch("{{ site.baseurl }}/my_search.json")
             .then(res => res.json())
             .then(out => setList(out.filter(page => { return ((new RegExp(value, 'i').test(page.content)) || (new RegExp(value, 'i').test(page.title))) }), value))
             .catch(err => error_print(err));
