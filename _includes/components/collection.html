@@ -42,7 +42,7 @@
             {% if eventpage=='event' %}
             {{ post.date | date_to_string }} &middot {% if post.provider %}{{ post.provider }} &middot {% endif %}{{ post.title }}
             {% else %}
-            <a class="usa-link" href="{% if post.external %}{{ post.url }}{% else %}{{ post.url | relative_url}}{% endif %}">
+            <a class="usa-link" href="{% if post.external or all_external == 'true' %}{{ post.url }}{% else %}{{ post.url | relative_url}}{% endif %}">
                 {% if post_type == 'calendar' %}
                     {% if page.type == "archive" %}
                         {{ post.date | date: "%Y" }} &middot 
@@ -121,6 +121,13 @@
             <li class="usa-collection__meta-item">
                 {{ post.affiliation }}
             </li>
+            {% endif %}
+            {% if post.details %}
+            {% for detail in post.details %}
+            <li class="usa-collection__meta-item">
+                {{ detail.text }}
+            </li>
+            {% endfor %}
             {% endif %}
             {% if post.date %}
             <li class="usa-collection__meta-item">
