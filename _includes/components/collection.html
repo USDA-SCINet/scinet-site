@@ -125,7 +125,15 @@
             {% if post.details %}
             {% for detail in post.details %}
             <li class="usa-collection__meta-item">
+                {% if detail.url %}
+                <a href="{% if detail.external %}{{ detail.url }}{% else %}{{ detail.url | relative_url}}{% endif %}" 
+                {% if detail.new_tab %} target="_blank" rel="noopener noreferrer"{% endif %}
+                {% if detail.download %} download{% endif %}
+                >{% endif %}
                 {{ detail.text }}
+                {% if detail.url %}
+                </a>
+                {% endif %}
             </li>
             {% endfor %}
             {% endif %}
