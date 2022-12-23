@@ -20,25 +20,17 @@ filter:
   external: true
 
 collect_list: 
-  - title: SCINet Corner Demo Video title
-    url: https://forms.gle/7DcBoBvbGcjQDBP38 #video link
-    date: 2022-11-17
-    author: Ryan Lucas # this adds 'By ' in front of the name automatically
-    excerpt: "This is where the video content description would go."
-  - title: SCINet Corner Video 2 title
-    date: 2022-10-21
-    # author: Ryan Lucas # this adds 'By ' in front of the name automatically.  Delete if not needed
-    url: https://forms.gle/7DcBoBvbGcjQDBP38 #main link to video
-    details: # additional listed information.
-      - text: Add a url if you want a link
-        url: https://forms.gle/7DcBoBvbGcjQDBP38
-        external: true # needed if it's an external link
-      - text: "<b>Downloads:</b> this is set to download your file"
-        url: /assets/pdf/newsletters/SCINET-Newsletter-April-2020.pdf
-        download: true #for if you want to download a file
-      - text: This is an internal link
-        url: /guides/start
-    excerpt: "Here are a couple ways to include links on the page. You can have as many as you want, or remove the details section entirely as needed." 
+  - title: Continues Exploration of R and Intro to dplyr
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINet-Media/EcpxmQiQ25NCm5iux13L0TMBsnB4eP_2ezm1QhnqDpQVXw?e=iDMU0s #main link to video
+    date: 2022-12-1
+    author: Viswanathan Satheesh
+    excerpt: "Viswanathan Satheesh continues exploration of R after the previous SCINet Corner (Novemebr 3, 2023) and provides an introduction to dplyr." 
+  
+  - title: Intorduction to ggplot2
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINet-Media/EQmMPubhMcJJguV5uHC-LeIBN8htSt13GW8iXagZ-bBy9Q?e=KSObRR #video link
+    date: 2022-11-3
+    author: Viswanathan Satheesh
+    excerpt: "Viswanathan Satheesh provides and introduction to programming in R with emphasis on ggplot2."
 
 ---
 
