@@ -9,12 +9,6 @@ type: future
 #     type: warning
 #     text: This is a demo alert </br> See <a href="https://forum.scinet.usda.gov/c/announcements/6">the SCINet Forum Announcements page</a> for more information.
 
-alerts:
-  - alert:
-    title: Atlas is currently unavailable due to an unplanned power outage
-    type: warning
-    text: See <a href="https://forum.scinet.usda.gov/t/atlas-inaccessible-due-to-power-outage">the SCINet Forum topic</a> for more information.
-
 layout: scinet_home
 
 post_type: calendar
