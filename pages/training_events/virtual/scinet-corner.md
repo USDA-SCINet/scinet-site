@@ -24,13 +24,13 @@ collect_list:
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINet-Media/EcpxmQiQ25NCm5iux13L0TMBsnB4eP_2ezm1QhnqDpQVXw?e=iDMU0s #main link to video
     date: 2022-12-1
     author: Viswanathan Satheesh
-    excerpt: "Viswanathan Satheesh continues exploration of R after the previous SCINet Corner (Novemebr 3, 2023) and provides an introduction to dplyr." 
+    excerpt: "Viswanathan Satheesh continues exploration of R after the previous SCINet Corner (November 3, 2022) and provides an introduction to dplyr." 
   
   - title: Intorduction to ggplot2
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINet-Media/EQmMPubhMcJJguV5uHC-LeIBN8htSt13GW8iXagZ-bBy9Q?e=KSObRR #video link
     date: 2022-11-3
     author: Viswanathan Satheesh
-    excerpt: "Viswanathan Satheesh provides and introduction to programming in R with emphasis on ggplot2."
+    excerpt: "Viswanathan Satheesh provides an introduction to programming in R with emphasis on ggplot2."
 
 ---
 
