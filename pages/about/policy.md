@@ -35,7 +35,7 @@ subnav:
 
 **Password Expiration:**  
 
-:  SCINet passwords expire
+:  SCINet passwords do not expire. 
 
 **Multi-factor authentication (MFA)**  
 
