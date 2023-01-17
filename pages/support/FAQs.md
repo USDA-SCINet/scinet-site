@@ -101,10 +101,9 @@ passwd: all authentication tokens updated successfully.
 If you have forgotten your login password, please email the VRSC: scinet_vrsc@usda.gov
 
 ### What are the SCINet password requirements?
-* AT LEAST 12 characters long and have AT LEAST 3 different character classes: lower case letters, upper case letters, digits and special symbols (?^\[ etc.)
-* different from the expired password: at least 5 character changes (inserts, removals, or replacements) are required
-* difficult to guess or brute force. Palindromes, passwords containing your username, and other patterns will be denied.
-Older passwords CAN NOT be reused.
+
+1. AT LEAST 14 characters long
+2. Your last 24 passwords cannot be reused.
 
 ### How do I login to Ceres?
 Command line access is available via Secure Shell (SSH) and Virtual Private Network (VPN). For more info, see the [Quick Start Guide]({{ site.baseurl }}/guides/start).
