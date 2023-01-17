@@ -175,11 +175,8 @@ After updating your password, you will be prompted to answer Yes or No to enteri
 
 ## Password Requirements
 
-1. AT LEAST 12 characters long
-2. AT LEAST 3 different character classes: lower case letters, upper case letters, digits, symbols
-3. Different from the expired password: at least 5 character changes (inserts, removals, or replacements) are required
-4. Difficult to guess or brute force. Palindromes, passwords containing your username, and other patterns will be denied.
-5. Older passwords CAN NOT be reused.
+1. AT LEAST 14 characters long
+2. Your last 24 passwords cannot be reused.
 
 ## Frequently Asked Questions
 
