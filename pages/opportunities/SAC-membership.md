@@ -11,9 +11,6 @@ layout: page
 
 ---
 
- 
-
-## Apply to Serve on the Scientific Advisory Committee!
 
 The SCINet Scientific Advisory Committee (SAC) is seeking a representative from the Southeast Area for a 3-year term.
 
