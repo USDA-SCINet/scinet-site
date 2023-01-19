@@ -53,7 +53,7 @@ The instructional video at [https://www.youtube.com/watch?v=I3lnsCAfx3Q](https:/
   4. Google account login. Click on “Sign in with Google” at the bottom of the page if you want to use your google account.
 * You should now be on the Globus ‘File Manager’ page. You should see two panels. If you don't, click on the 2-panels icon at the top right of the screen. You should now see two panels:
 
-![Globus online homescreen showing two panels]({{ site.baseurl }}/assets/img/file-transfer/globus-homescreen.png)
+![Globus online homescreen showing two panels]({{ site.baseurl }}/assets/img/guides/data/globus-homescreen.png)
 
 ### Copying Data
 * The two panes represent the two systems that you want to copy data between. You will need to select a Collection (an Endpoint) for each pane and most likely, authenticate.
