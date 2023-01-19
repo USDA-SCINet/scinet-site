@@ -186,7 +186,7 @@ Once in ‘Site Manager’, do the following:
 
 If successful, you should be able to drag and drop files and folders between systems, if permissions and quota allow. You may also right click a file or directory and select Upload or Download depending on which pane you are in.
 
-Note for Linux users, external drives are mounted under **/run/media/firstname.lastname .**
+Note for Linux users, external drives are mounted under */run/media/firstname.lastname .*
 
 ## Data Transfer to NCBI
 
