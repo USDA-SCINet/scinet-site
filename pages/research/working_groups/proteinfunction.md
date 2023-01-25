@@ -17,3 +17,10 @@ If you would like to join the group, please contact Hye-Seon Kim ([hyeseon.kim@u
 Hye-Seon Kim | Computational Biologist 
 Cason Andorf | Computational Biologist
 
+Presention recordins and slides from previous meetings are available to USDA employees in the table below.
+
+**Meeting** | **Title** | **Author** | **Recording** | **Slides**
+---|---
+January 2023 Quarterly Meeting |  | Dr. Carson Andorf | [https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetProteinScienceWG/EdB0tKnLNeFPgDEN1ib6uWIBNAPB_SLxp_wCtGKLa2omkQ?e=MlZiVp](recording) | [https://usdagcc.sharepoint.com/:p:/r/sites/REE-ARS-SCINetProteinScienceWG/Shared%20Documents/Presentations/Protein_presentation_PSGroup_version2.pptx?d=w57d0be3bee714712bbf4d91ffec96b2f&csf=1&web=1&e=PkQR2j](slides)
+September 2022 Quarterly Meeting | | Dr. Carson Andorf | [https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetProteinScienceWG/EZYiRS633BFOqjPoezf27kgBfXfkzRHLnEd14FkQU2UmGw?e=fQZXbE](resording) | [https://usdagcc.sharepoint.com/:p:/s/REE-ARS-SCINetProteinScienceWG/ES1_rIGW2q5GmVDPkL-kl1EBx4sqLhamsW75fT6VjwDhaQ?e=QFSHtk](slides)
+September 2022 Quarterly Meeting | | Dr. Hye-Seon Kim | [https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetProteinScienceWG/EQNhlQmzeeNLp89a_oUFb1QBDkT5ri_AeEw-pukrcMxrdQ?e=6kBLCb](recording) | [https://usdagcc.sharepoint.com/:p:/s/REE-ARS-SCINetProteinScienceWG/EYoWtaLwQLhMtbzmmIOiDmABZOkBEDyBYCbF2vMIt8YnVg?e=vbvEiG](slides)
