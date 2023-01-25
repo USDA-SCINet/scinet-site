@@ -17,7 +17,7 @@ If you would like to join the group, please contact Hye-Seon Kim ([hyeseon.kim@u
 Hye-Seon Kim | Computational Biologist 
 Cason Andorf | Computational Biologist
 
-Presention recordins and slides from previous meetings are available to USDA employees in the table below.
+Presentation recordings and slides from previous meetings are available to USDA employees in the table below.
 
 **Meeting** | **Title** | **Author** | **Recording** | **Slides**
 ---|---|---|---|---
