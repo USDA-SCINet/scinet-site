@@ -14,6 +14,9 @@ subnav:
   - title: Arthropod Genomics
     url: /research/working-groups/arthropods
     internal: link
+  - title: Fungal Bioinformatics
+    url: /research/working-groups/fungalbioinformatics
+    internal: link
   - title: Geospatial Research
     url: /research/working-groups/geospatial
     internal: link
@@ -26,6 +29,9 @@ subnav:
   - title: Pollinator
     url: /research/working-groups/pollinator
     internal: link
+  - title: Protein Function and Phenotype Prediction
+    url: /research/working-groups/proteinfunction
+    internal: link
 ---
 
 The SCINet initiative contributes funding to various working groups that use SCINet computational resources for research. The funding is generally used to convene in-person group workshops. There are also two working groups that develop SCINet learning/training materials.
@@ -34,6 +40,7 @@ The SCINet initiative contributes funding to various working groups that use SCI
 The current working groups are:
 * [Ag100Pest Initiative (subgroup of AGR)]({{ site.baseurl }}/research/working-groups/ag100pest)
 * [Arthropod Genomics Research (AGR) Working Group]({{ site.baseurl }}/research/working-groups/arthropods)
+* [Fungal Bioinformatics Working Group](/research/working-groups/fungalbioinformatics)
 * [Geospatial Research Working Group]({{ site.baseurl }}/research/working-groups/geospatial)
 * [Microbiome Working Group]({{ site.baseurl }}/research/working-groups/microbiome)
 * [Pollinator Working Group]({{ site.baseurl }}/research/working-groups/pollinator)

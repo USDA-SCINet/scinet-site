@@ -1,5 +1,5 @@
 ---
-title: Funbgal Bioinformatics Working Group
+title: Fungal Bioinformatics Working Group
 description: summary of the working group
 permalink: /research/working-groups/fungalbioinformatics
 author: Ryan Lucas
@@ -12,7 +12,7 @@ As technology advances in the field of molecular biology, so does the need for a
 
 Additionally, the working group hosts a bi-weekly journal club where participants take turns choosing research papers to read and discuss as a group. We also hope to host a Fungal Bioinformatics Workshop virtually in Spring 2023.
 
-If you are interested in joining this group, please contact Kayla Pennerman ([kayla.pennerman@usda.gov]kayla.pennerman@usda.gov) or Olive Stanley ([olive.stanley@usda.gov]olive.stanley@usda.gov).
+If you are interested in joining this group, please contact Kayla Pennerman ([kayla.pennerman@usda.gov](mailto:kayla.pennerman@usda.gov)) or Olive Stanley ([olive.stanley@usda.gov](mailto:olive.stanley@usda.gov).
 
 **Working Group Leadership Team** | **Title** 
 ---|---
