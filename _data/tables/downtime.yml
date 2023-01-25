@@ -4,6 +4,7 @@ downtime:
     systems: Ceres
     locations: All (Ceres offline)
     reason: Maintenance
+    url: /announcements/2023-01-24-Ceres
   - date: 2022-10-27
     systems: Ceres
     locations: All (/project)
