@@ -33,12 +33,11 @@ The following locations are actively working on establishing high-bandwidth SCIN
 | Wenatchee, WA |  Akron, CO | Bushland, TX | College Station, TX |
 | Fort Keogh, MT | Las Cruces, NM | Lincoln, NE | Lubbock, TX |
 | Mandan, ND | Manhattan, KS | Peoria, IL | Urbana, IL |
-| West Lafayette, IN | Burlington, VT | Kearneysville, WV | Leetown, WV |
-| Orono, ME | Auburn, AL | Baton Rouge, LA | Booneville, AR |
-| Byron, GA | Canal Point, FL | Charleston, SC | Dawson, GA |
-| Fayetteville, AR | Gainesville, FL | Houma, LA | Jonesboro, AR |
-| Mayaguez, PR | Miami, FL | Oxford, MS | Poplarville, AR |
-| Raleigh, NC | Starkville, MS |||
+| West Lafayette, IN | Burlington, VT | Leetown, WV | Orono, ME |
+| Auburn, AL | Baton Rouge, LA | Booneville, AR | Byron, GA |
+| Canal Point, FL | Charleston, SC | Dawson, GA | Fayetteville, AR |
+| Gainesville, FL | Houma, LA | Jonesboro, AR | Mayaguez, PR |
+| Miami, FL | Oxford, MS | Poplarville, AR | Raleigh, NC |
 
 
 
@@ -46,7 +45,7 @@ The following locations have completed implementation of their high-bandwidth SC
 
 Pacific West Area 
 
-| Hilo, HI | Logan, UT | Maricopa, AZ |
+| Hilo, HI | Logan, UT | Maricopa, AZ | Burns, OR |
 
 Plains Area
 
@@ -58,11 +57,11 @@ Midwest Area
 
 Northeast Area
 
-| Boston, MA | Wyndmoor, PA |
+| Boston, MA | Wyndmoor, PA | Kearneysville, WV |
 
 Southeast Area
 
-| Athens, GA | Florence, SC | New Orleans, LA | Tifton, GA |
+| Athens, GA | Florence, SC | New Orleans, LA | Tifton, GA | Starkville, MS |
 
 
 We are eager to work with the remaining ARS locations to ensure they are ready when network equipment is available for installation. Please see the steps (milestones) below to be followed in getting a location on our list. The SCINet Team is available to answer questions at any step along the way. 
