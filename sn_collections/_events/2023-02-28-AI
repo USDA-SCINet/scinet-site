@@ -7,6 +7,8 @@ sessions:
 type: training
 provider: AICOE
 tags: Artificial-Intelligence
+registration:
+  url: https://forms.office.com/g/a7XH90hQsb
 ---
 
 Are you interested in AI-based image analysis methods for scientific research?  If so, please join us for an AI training images workshop at the end of February!  <!--excerpt-->
@@ -18,4 +20,4 @@ We will:
 * Identify training image requirements and use cases.
 * Begin to develop an inventory of extant training image datasets.  
 
-At the beginning of the workshop, we will host a lightning talk session for attendees to share their work using AI-based image analyses.  If you would like to attend the workshop, please fill out this form. 
+At the beginning of the workshop, we will host a lightning talk session for attendees to share their work using AI-based image analyses.  If you would like to attend the workshop, please fill out [this form](https://forms.office.com/g/a7XH90hQsb). 
