@@ -2,22 +2,22 @@
 
 - rel: shortcut icon
   type: image/ico
-  url: /assets/uswds/img/favicons/favicon.ico
+  url: /assets/img/site/favicons/favicon.ico
 - rel: icon
   type: image/png
-  url: /assets/uswds/img/favicons/favicon.png
+  url: /assets/img/site/favicons/favicon.png
 - rel: icon
   type: image/png
   sizes: 192x192
-  url: /assets/uswds/img/favicons/favicon-192.png
+  url: /assets/img/site/favicons/favicon-192.png
 - rel: apple-touch-icon-precomposed
-  url: /assets/uswds/img/favicons/favicon-57.png
+  url: /assets/img/site/favicons/favicon-57.png
 - rel: apple-touch-icon-precomposed
   sizes: 72x72
-  url: /assets/uswds/img/favicons/favicon-72.png
+  url: /assets/img/site/favicons/favicon-72.png
 - rel: apple-touch-icon-precomposed
   sizes: 114x114
-  url: /assets/uswds/img/favicons/favicon-114.png
+  url: /assets/img/site/favicons/favicon-114.png
 - rel: apple-touch-icon-precomposed
   sizes: 144x144
-  url: /assets/uswds/img/favicons/favicon-144.png
+  url: /assets/img/site/favicons/favicon-144.png
