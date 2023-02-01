@@ -84,14 +84,10 @@ pre {
    }
 }
 
-//temp footer test
+// footer
 
 .usa-footer__secondary-link {
    text-align: left;
-}
-
-.footer-mr {
-   @include u-padding-y(3);
 }
 
 .usa-footer__secondary-link a {
@@ -99,5 +95,13 @@ pre {
 
    &:hover {
       text-decoration: underline;
+   }
+}
+
+.footer-flex {
+   @include at-media-max('mobile-lg') {
+      display:flex;
+      @include u-flex('column');
+      @include u-flex('align-center') 
    }
 }
