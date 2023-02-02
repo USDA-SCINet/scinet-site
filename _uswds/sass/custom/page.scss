@@ -15,3 +15,14 @@
 .allow-overflow {
     overflow:visible
 }
+
+.hero-img {
+    @supports not (background-image: url("/assets/img/hero.webp")) {
+            background-image: url("/assets/img/hero.png")
+    }
+    background-image: url("/assets/img/hero.webp");
+}
+
+.no-hero-img {
+    background-image: none
+}
