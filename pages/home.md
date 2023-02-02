@@ -1,5 +1,5 @@
 ---
-title: Home
+title: SCINet Home
 permalink: /
 type: future
 
