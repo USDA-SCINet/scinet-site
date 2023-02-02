@@ -10,14 +10,25 @@
   type: image/png
   sizes: 192x192
   url: /assets/img/site/favicons/favicon-192.png
-- rel: apple-touch-icon-precomposed
-  url: /assets/img/site/favicons/favicon-57.png
-- rel: apple-touch-icon-precomposed
-  sizes: 72x72
-  url: /assets/img/site/favicons/favicon-72.png
-- rel: apple-touch-icon-precomposed
-  sizes: 114x114
-  url: /assets/img/site/favicons/favicon-114.png
-- rel: apple-touch-icon-precomposed
-  sizes: 144x144
-  url: /assets/img/site/favicons/favicon-144.png
+- rel: icon
+  type: image/png
+  sizes: 32x32
+  url: /assets/img/site/favicons/favicon-32x32.png
+- rel: icon
+  type: image/png
+  sizes: 16x16
+  url: /assets/img/site/favicons/favicon-16x16.png
+- rel: manifest
+  url: /assets/img/site/favicons/site.webmanifest
+- rel: mask-icon
+  url: /assets/img/site/favicons/safari-pinned-tab.svg
+  color: "#005ea2"
+- rel: apple-touch-icon
+  sizes: 180x180
+  url: /assets/img/site/favicons/apple-touch-icon.png
+- meta-name: msapplication-TileColor
+  content: "#2b5797"
+- meta-name: msapplication-config
+  content: /assets/img/site/favicons/browserconfig.xml
+- meta-name: theme-color
+  content: "#ffffff"
