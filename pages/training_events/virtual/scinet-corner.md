@@ -25,15 +25,16 @@ collect_list:
     date: 2022-12-1
     author: Viswanathan Satheesh
     excerpt: "Viswanathan Satheesh continues exploration of R after the previous SCINet Corner (November 3, 2022) and provides an introduction to dplyr." 
+    details_title: "Tutorial Materials:"
     details:
       - url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EcPtk_SbA7xKjlsIzxecfbsB5AvetG3y3sW0NiYGhtfVzA?e=znCTP0
-        text: PDF for this tutorial
+        text: dplyr tutorial pdf
         external: true
       - url: https://usdagcc.sharepoint.com/:u:/s/REE-ARS-SCINetOffice/ETk0Y29bbbdHgr-aLRDKNugB6xW8CGraRtjgHlCoiCmkrg?e=VxN4vy
-        text: R markdown script (Rmd) for this tutorial
+        text: R markdown script (Rmd)
         external: true
       - url: https://usdagcc.sharepoint.com/:x:/r/sites/REE-ARS-SCINetOffice/_layouts/15/Doc.aspx?sourcedoc=%7B64296B68-4D44-4CD3-A104-6DFB8888AA5B%7D&file=up_down_gene_numbers.csv&action=default&mobileredirect=true
-        text: CSV file for this tutorial
+        text: up_down_gene_numbers.csv
         external: true
   
   - title: Introduction to ggplot2
