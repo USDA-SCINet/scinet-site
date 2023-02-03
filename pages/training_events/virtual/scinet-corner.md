@@ -25,21 +25,22 @@ collect_list:
     date: 2022-12-1
     author: Viswanathan Satheesh
     excerpt: "Viswanathan Satheesh continues exploration of R after the previous SCINet Corner (November 3, 2022) and provides an introduction to dplyr." 
-  
-  - title: Intorduction to ggplot2
-    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINet-Media/EQmMPubhMcJJguV5uHC-LeIBN8htSt13GW8iXagZ-bBy9Q?e=KSObRR #video link
-    date: 2022-11-3
-    author: Viswanathan Satheesh
-    excerpt: "Viswanathan Satheesh provides an introduction to programming in R with emphasis on ggplot2."
     details:
       - url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EcPtk_SbA7xKjlsIzxecfbsB5AvetG3y3sW0NiYGhtfVzA?e=znCTP0
         text: PDF for this tutorial
         external: true
-        new_tab: true
       - url: https://usdagcc.sharepoint.com/:u:/s/REE-ARS-SCINetOffice/ETk0Y29bbbdHgr-aLRDKNugB6xW8CGraRtjgHlCoiCmkrg?e=VxN4vy
         text: R markdown script (Rmd) for this tutorial
         external: true
-        new_tab: true
+      - url: https://usdagcc.sharepoint.com/:x:/r/sites/REE-ARS-SCINetOffice/_layouts/15/Doc.aspx?sourcedoc=%7B64296B68-4D44-4CD3-A104-6DFB8888AA5B%7D&file=up_down_gene_numbers.csv&action=default&mobileredirect=true
+        text: CSV file for this tutorial
+        external: true
+  
+  - title: Introduction to ggplot2
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINet-Media/EQmMPubhMcJJguV5uHC-LeIBN8htSt13GW8iXagZ-bBy9Q?e=KSObRR #video link
+    date: 2022-11-3
+    author: Viswanathan Satheesh
+    excerpt: "Viswanathan Satheesh provides an introduction to programming in R with emphasis on ggplot2."
 
 ---
 
