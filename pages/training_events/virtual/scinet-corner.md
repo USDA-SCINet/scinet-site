@@ -31,6 +31,15 @@ collect_list:
     date: 2022-11-3
     author: Viswanathan Satheesh
     excerpt: "Viswanathan Satheesh provides an introduction to programming in R with emphasis on ggplot2."
+    details:
+      - url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EcPtk_SbA7xKjlsIzxecfbsB5AvetG3y3sW0NiYGhtfVzA?e=znCTP0
+        text: PDF for this tutorial
+        external: true
+        new_tab: true
+      - url: https://usdagcc.sharepoint.com/:u:/s/REE-ARS-SCINetOffice/ETk0Y29bbbdHgr-aLRDKNugB6xW8CGraRtjgHlCoiCmkrg?e=VxN4vy
+        text: R markdown script (Rmd) for this tutorial
+        external: true
+        new_tab: true
 
 ---
 
