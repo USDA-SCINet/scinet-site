@@ -123,8 +123,13 @@
             </li>
             {% endif %}
             {% if post.details %}
-            {% for detail in post.details %}
+            {% if post.details_title %}
             <li class="usa-collection__meta-item">
+                <b>{{ post. details_title }}</b>
+            <ul class="unstyled-list">
+            {% endif %}
+            {% for detail in post.details %}
+            <li {% unless post.details_title %}class="usa-collection__meta-item"{% endunless %}>
                 {% if detail.url %}
                 <a href="{% if detail.external %}{{ detail.url }}{% else %}{{ detail.url | relative_url}}{% endif %}" 
                 {% if detail.new_tab %} target="_blank" rel="noopener noreferrer"{% endif %}
@@ -136,6 +141,10 @@
                 {% endif %}
             </li>
             {% endfor %}
+            {% if post.details_title %}
+            </ul>
+            </li>
+            {% endif %}
             {% endif %}
             {% if post.date %}
             <li class="usa-collection__meta-item">
