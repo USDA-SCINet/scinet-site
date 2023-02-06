@@ -1,5 +1,5 @@
 ---
-title: Protein Function and Phenotype Preditction Working Group
+title: Protein Function and Phenotype Prediction Working Group
 description: summary of the working group
 permalink: /research/working-groups/proteinfunction
 author: Ryan Lucas
