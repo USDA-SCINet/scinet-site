@@ -25,7 +25,7 @@ If you would like to join the group, please contact Heather Savoy to be added to
 **Working Group Leadership Team** | **Title** 
 ---|---
 Heather Savoy | SCINet Computational Biologist (Data Scientist) 
-John Humphreys | Research Ecologist
+Amy Hudson | Research Ecologist
 
 ## Geospatial Workbook
 This working group contributes content to the 
