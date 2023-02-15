@@ -127,7 +127,7 @@ When submitting interactive or batch job users can specify time limit by using t
 
 ## Slurm accounts
 
-To provide better Ceres usage report all Ceres users have been assigned Slurm accounts based on their project groups. If you don't have a project, then your default and only Slurm account is sandbox. If you have more than one project, then your default Slurm account is one of the project names. You can specify a different Slurm account when submitting a job by using “-A <account_name>” option on salloc/srun/sbatch command or adding “#SBATCH -A <account_name>” to the job script.
+To provide better Ceres usage report all Ceres users have been assigned Slurm accounts based on their project groups. If you don't have a project, then your default and only Slurm account is sandbox. **Note:** Please be advised that /project/sandbox as well as Juno will have a very small quota and is not recommended for use. Instead, you should be using /90daydata/sandbox. If you have more than one project, then your default Slurm account is one of the project names. You can specify a different Slurm account when submitting a job by using “-A <account_name>” option on salloc/srun/sbatch command or adding “#SBATCH -A <account_name>” to the job script.
   
  To see all your Slurm accounts and your default account at any time, use “sacctmgr -Pns show user format=account,defaultaccount”
   
