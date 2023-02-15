@@ -1,4 +1,10 @@
 downtime:
+  - date: 2023-03-02
+    system: SCINet
+    locations: Albany
+    time: 4:00-6:00pm EST
+    reason: Maintenance
+    text: "The Albany site location will experience loss of connectivity to SCINet intermittently during the hours of 4:00 pm to 6:00 pm EST on March 2, 2023."
   - date: 2023-02-20
     end_date: 2023-02-23
     systems: Ceres
