@@ -36,7 +36,7 @@ The following locations are actively working on establishing high-bandwidth SCIN
 | Burlington, VT | Leetown, WV | Orono, ME | Auburn, AL |
 | Baton Rouge, LA | Booneville, AR | Byron, GA | Canal Point, FL |
 | Charleston, SC | Dawson, GA | Fayetteville, AR | Gainesville, FL |
-| Houma, LA | Jonesboro, AR |Miami, FL | Oxford, MS |
+| Houma, LA | Jonesboro, AR | Miami, FL | Oxford, MS |
 | Poplarville, AR | Raleigh, NC |
 
 
@@ -49,7 +49,8 @@ Pacific West Area
 
 Plains Area
 
-| Akron, CO | Fargo, ND | Grand Forks, ND | Kerrville, TX | Lubbock, TX | Manhattan, KS |
+| Akron, CO | Fargo, ND | Grand Forks, ND |
+| Kerrville, TX | Lubbock, TX | Manhattan, KS |
 
 Midwest Area
 
@@ -61,7 +62,8 @@ Northeast Area
 
 Southeast Area
 
-| Athens, GA | Florence, SC | New Orleans, LA | Starkville, MS | Tifton, GA | 
+| Athens, GA | Florence, SC | New Orleans, LA |
+| Starkville, MS | Tifton, GA | 
 
 
 We are eager to work with the remaining ARS locations to ensure they are ready when network equipment is available for installation. Please see the steps (milestones) below to be followed in getting a location on our list. The SCINet Team is available to answer questions at any step along the way. 
