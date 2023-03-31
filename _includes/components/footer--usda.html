@@ -88,6 +88,11 @@
             {% endif %}
           </div>
           {% endfor %}
+          {% else %}
+          {% assign header = site.data.header %}
+          <div class="mobile-lg:grid-col-auto footer-flex">
+          {% include components/header/logo.html signature=header %}
+          </div>
           {% endif %}
 
 
