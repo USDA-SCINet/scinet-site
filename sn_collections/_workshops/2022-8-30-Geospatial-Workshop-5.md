@@ -15,7 +15,7 @@ sessions:
     materials: 
       - text: You must have a USDA account to access this workshop's recordings.
       - text: Session recording
-        url: https://web.microsoftstream.com/video/
+        url: https://web.microsoftstream.com/video/387605cf-8531-41c0-9da1-1456a65fef39
       - text: Written tutortials
         url: https://geospatial.101workbook.org/ExampleGeoWorkflows/GRWG22_GeoCDL_R
 
@@ -72,7 +72,7 @@ The Geospatial Common Data Library (GeoCDL) is a community-driven product inspir
 <br>
 {:.border-bottom}
 
-A recording of this tutorial is coming soon. 
+[Watch a recording of this tutorial](https://web.microsoftstream.com/video/387605cf-8531-41c0-9da1-1456a65fef39)
 
 A written version of this tutorial, modified to be accessible to any SCINet user,
 is available on the [Geospatial Workbook](https://geospatial.101workbook.org/ExampleGeoWorkflows/GRWG22_GeoCDL_R).
