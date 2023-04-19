@@ -12,9 +12,10 @@ layout: page
 sessions:
   - session: 
     time: 2:00pm-3:00pm MDT
- #   instructor: Heather Savoy
- #   prerequisites:
-
+    materials: 
+      - text: You must have a USDA account to access this workshop's recordings.
+      - text: Session recording
+        url: https://web.microsoftstream.com/video/f12c8fd7-7459-402e-9e1b-8513bd011bcb
 
 subnav:
   - title: Learning objectives

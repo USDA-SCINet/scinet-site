@@ -12,6 +12,10 @@ layout: page
 sessions:
   - session: 
     time: 10:00am-11:00am MDT
+    materials: 
+      - text: You must have a USDA account to access this workshop's recordings.
+      - text: Session recording
+        url: https://web.microsoftstream.com/video/d4cac1a5-bafc-409d-b8fd-fd7127a262a8
 
 
 # alerts: 

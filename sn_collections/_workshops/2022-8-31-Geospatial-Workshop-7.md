@@ -14,8 +14,10 @@ sessions:
     prerequisites:
       - text: Have a SCINet account and be able to login 
         url: /about/signup
-
-
+    materials: 
+      - text: You must have a USDA account to access this workshop's recordings.
+      - text: Session recording
+        url: https://web.microsoftstream.com/video/6c6c9efd-2a01-43d0-9736-23670d1e564a
 subnav:
   - title: Agenda
     url: '#agenda'
