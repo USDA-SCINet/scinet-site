@@ -12,6 +12,9 @@ layout: page
 sessions:
   - session: 
     time: 10:00am-12:00pm MDT
+    materials:
+      - text: Written tutortials
+        url: https://geospatial.101workbook.org/ExampleGeoWorkflows/GRWGWorkshop
 
     prerequisites:
       - text: Have a SCINet account and be able to login 

@@ -107,6 +107,12 @@
                         {% endif %}
                     </li>
                     {% endunless %}
+                    {% if session.materials %}
+                    </br>
+                    {% for _material in session.materials %}
+                    <li>{% if _material.url %}{% include components/link.html url=_material.url text=_material.text external=true %}{% else %}{{ _material.text }}{% endif %}</li>
+                    {% endfor %}
+                    {% endif %}
                 </ul>
             </li>
             {% endfor %}

@@ -12,6 +12,10 @@ layout: page
 sessions:
   - session: 
     time: 11:00am-12:00pm MDT
+    materials: 
+      - text: You must have a USDA account to access this workshop's recordings.
+      - text: Session recording
+        url: https://web.microsoftstream.com/video/125dba00-b307-4675-8575-c3fe0771d914
 
 subnav:
   - title: Learning objectives
