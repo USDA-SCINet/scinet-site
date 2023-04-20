@@ -68,12 +68,12 @@ On Ceres, suitable locations for conda environments housing conda packages inclu
 
 1. Home directory (default; subdirectory of $HOME/.conda/envs/)
 
-  NOTE: some Conda packages (with dependencies) can take gigabytes of storage space. Use the Ceres command  `my_quota`  to check the available space in your home directory. 
+    * NOTE: some Conda packages (with dependencies) can take gigabytes of storage space. Use the Ceres command  `my_quota`  to check the available space in your home directory. 
 
-2. A user-specified directory within one's project directory, e.g.,
-/project/\<MY_PROJECT>/\<MY_ENVIRONMENT_DIRECTORY>
+2. A user-specified directory within one's project directory, e.g.,  
+  /project/\<MY_PROJECT>/\<MY_ENVIRONMENT_DIRECTORY>
 
-  This environment is then usable by others in the project.
+    * This environment is then usable by others in the project.
 
 ### Best Practices
 
