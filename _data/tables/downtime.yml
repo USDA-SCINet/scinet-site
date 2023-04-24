@@ -1,4 +1,10 @@
 downtime:
+  - date: 2023-04-27
+    systems: SCINet
+    time: 4-11 UTC
+    reason: Maintenance
+    locations: Site Service at Ames
+    text: "Site Service at Ames will be impacted while Lumen performs maintenance. The entire window is reserved. Outages are expected and the entire window is reserved."
   - date: 2023-04-12
     end_date: 2023-04-18
     systems: Ceres
