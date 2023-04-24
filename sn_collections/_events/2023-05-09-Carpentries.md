@@ -7,6 +7,10 @@ end_date: 2023-05-16
 provider: Carpentries
 tags: R-Project Git
 
+sessions: 
+  - session:
+    time: 11:00 AM - 6:00 PM EDT
+
 registration: 
   url: https://forms.office.com/g/5CVRK4m4Xz
 ---
