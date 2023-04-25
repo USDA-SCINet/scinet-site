@@ -1,5 +1,6 @@
 downtime:
-  - date: 2023-04-27
+  - date: 2023-04-27 12:00:00
+    duration: PT7H
     systems: SCINet
     time: 4-11 UTC
     reason: Maintenance
@@ -18,7 +19,8 @@ downtime:
     The login and DTN nodes, as well as storage are scheduled to stay up.</p><p></p><p>
     More nodes may be turned back on and be available for jobs on Thursday and Friday.</br>
     The Ceres cluster is expected to run at full capacity starting Monday, April 18.</p>"
-  - date: 2023-04-04
+  - date: 2023-04-04 9:00:00
+    duration: PT9H
     systems: Atlas
     locations: All (Atlas offline)
     time: 8am-5pm CST
@@ -26,7 +28,8 @@ downtime:
     text: "<p>The Mississippi State University High Performance Computing Collaboratory's (MSU/HPC2) Computing Office has scheduled maintenance for the Atlas cluster.</p>
     <p>During this maintenance window, the compute nodes and all support nodes including the login, devel, dtn, ood, etc... and those services including cron, globus, login, will be shutdown and unavailable.</p>
     <p>Helpdesk tickets should be submitted for any associated problems.</p>"
-  - date: 2023-03-02
+  - date: 2023-03-02 16:00:00
+    end_date: 2023-03-02 18:00:00
     systems: SCINet
     locations: Albany
     time: 4:00-6:00pm EST
@@ -64,7 +67,8 @@ downtime:
     systems: Ceres
     locations: All (Ceres offline)
     reason: Maintenance
-  - date: 2022-01-20
+  - date: 2022-01-20 11:30:00
+    end_date: 2022-01-20 12:30:00
     systems: SCINet
     time: 10:30-11:30 CST
     locations: Stoneville
