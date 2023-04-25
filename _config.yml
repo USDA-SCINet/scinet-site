@@ -3,6 +3,7 @@ description: SCINet is a USDA initiative to provide agricultural scientists acce
 short_name: "SCINet"
 language: "en"
 lang_direction: "ltr"
+timezone: America/New_York
 
 # GitHub information
 # This is used for adding an edit this page link to the footer
