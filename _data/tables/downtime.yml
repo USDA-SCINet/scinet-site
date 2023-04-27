@@ -6,15 +6,6 @@ downtime:
     locations: Fort Collins
     reason: Maintenance
     text: "Site service Fort Collins will be unavailable while BISON engineers performs maintenance. Outages are expected. The entire maintenance window is reserved."
-  - date: 2023-05-01 4:00:00
-    duration: PT4H
-    systems: Atlas
-    locations: All
-    reason: Maintenance
-    time: Beginning 3:00 am CST
-    text: "<p>In order to replace a valve in the cooling loop supply for the atlas cluster system, a reservation has been made for Monday, May 1 beginning at 3:00am CST.</p>
-    <li>No running jubs will be killed.</li>
-    <li>All jobs that can not complete before the maintenance start time will be held and started once the system has returned to operation.</li>"
   - date: 2023-04-27 12:00:00
     duration: PT7H
     systems: Site Service
