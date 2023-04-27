@@ -26,3 +26,12 @@
 .no-hero-img {
     background-image: none
 }
+
+.inline-svg {
+    position: relative;
+    top: .25em;
+    flex-shrink: 0;
+    height: 1em;
+    width: 1em;
+    fill: currentColor;
+}

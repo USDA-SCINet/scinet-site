@@ -61,6 +61,15 @@ main:
     {% endfor %}
 </table>
 </div>
+{% if downtime.size > 0 %}
+<div class="">
+  <a class="usa-button tablet:margin-2" href="{{ page.calendar-link }}">
+      Add to your calendar <svg class="usa-icon inline-svg" aria-hidden="true" focusable="false" role="img">
+        <use xlink:href="/assets/uswds/img/sprite.svg#file_download"></use></svg>
+  </a>
+</div>
+{% endif %}
+
 
 <br>
 
