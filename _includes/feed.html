@@ -1,0 +1,20 @@
+
+{%- assign mytext = include.content  %}
+{%- assign mytextChars = mytext.size %}{%- capture newlined -%}
+  {%- endcapture -%}{%- assign mytextTotalRows = mytextChars | divided_by: 60.00 | ceil %}
+{%- assign mytextChars = mytextChars | plus: mytextTotalRows %}
+{%- assign mytextTotalRows = mytextChars | divided_by: 60.00 | ceil %}
+{%- assign mytextChars = mytextChars | minus: mytextTotalRows %}
+{%- assign start = 0 %}
+{%- assign mytextArray = '' | split: '' %}
+{%- for eachRow in (1..mytextTotalRows) %}
+{%- if mytextChars <= 60  %}
+{%- assign mytextArray = mytext %}
+{%- break %}
+{%- else %}
+{%- assign mytextRow = mytext | slice: start, 59 %}
+{%- assign mytextArray = mytextArray | push: mytextRow %}
+{%- assign start = start | plus: 59 %}
+{%- endif %}
+{%- endfor %}{% for mytextLine in mytextArray %}{{ mytextLine | replace: "<", " <" }}{% unless forloop.last %}{{newlined}}
+ {% endunless %}{% endfor %}
