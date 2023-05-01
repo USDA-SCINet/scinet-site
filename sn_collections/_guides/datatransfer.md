@@ -36,7 +36,7 @@ subnav:
 ## Best Practices
 
 * Globus Online is the recommended method for transferring data to and from the Ceres cluster. It provides faster data transfer speeds compared to scp, has a graphical interface, and does not require a GA verification code for every file transfer.
-* Given the space and access limitations of a home directory, large amounts of data or data that will be used collaboratively should be transferred to a project directory. See the User Manual section [Quotas on Home and Project Directories]({{ site.baseurl }}/data/quotas) for more information on home and project directory quotas.
+* Given the space and access limitations of a home directory, large amounts of data or data that will be used collaboratively should be transferred to a project directory. See the User Manual section [Quotas on Home and Project Directories]({{ site.baseurl }}/guides/data/quotas) for more information on home and project directory quotas.
 * If you have to transfer very large amounts of data or if network speed at your location is slow, please submit a request to the Virtual Research Support Core (VRSC) to ingress data from a hard drive as described below (section [Large Data Transfer by Shipping Hard Drives](#large-data-transfer-by-shipping-hard-drives)).
 * If you have issues with transferring data, please contact the VRSC at [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=help%20with%20transferring%20data).
 
