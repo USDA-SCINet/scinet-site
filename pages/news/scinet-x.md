@@ -32,12 +32,12 @@ The following locations are actively working on establishing high-bandwidth SCIN
 | Parlier, WA | Salinas, CA | Wenatchee, WA |  Bushland, TX |
 | College Station, TX | Fort Keogh, MT | Las Cruces, NM | Lincoln, NE |
 | Mandan, ND | Peoria, IL | Urbana, IL | West Lafayette, IN |
-| Griffin, GA | Mandan, ND | Charleston, SC | El Reno, OK |
-| Burlington, VT | Leetown, WV | Orono, ME | Auburn, AL |
-| Baton Rouge, LA | Booneville, AR | Byron, GA | Canal Point, FL |
-| Charleston, SC | Dawson, GA | Fayetteville, AR | Gainesville, FL |
-| Houma, LA | Jonesboro, AR | Miami, FL | Oxford, MS |
-| Poplarville, AR | Raleigh, NC |
+| Griffin, GA | El Reno, OK | Burlington, VT | Orono, ME |
+| Newark, DE | Geneva, NY | Auburn, AL | Baton Rouge, LA |
+| Booneville, AR | Byron, GA | Canal Point, FL | Dawson, GA | 
+| Fayetteville, AR | Fort Lauderdale, FL | Gainesville, FL | Houma, LA |
+| Jonesboro, AR | Little Rock , AR | Miami, FL | Oxford, MS |
+| Poplarville, AR | Raleigh, NC | Schriever, LA |
 
 
 
@@ -58,13 +58,18 @@ Midwest Area
 
 Northeast Area
 
-| Boston, MA | Kearneysville, WV | Wyndmoor, PA |
+| Boston, MA | Kearneysville, WV | Leetown, WV | 
+| Wyndmoor, PA |
 
 Southeast Area
 
-| Athens, GA | Florence, SC | New Orleans, LA |
+| Athens, GA | Auburn, AL | Charleston, SC | 
+| Florence, SC | Griffin, GA | New Orleans, LA |
 | Starkville, MS | Tifton, GA | 
 
+Partner Agency - Forest Service
+
+| Missoula, MT |
 
 We are eager to work with the remaining ARS locations to ensure they are ready when network equipment is available for installation. Please see the steps (milestones) below to be followed in getting a location on our list. The SCINet Team is available to answer questions at any step along the way. 
 
