@@ -1,4 +1,11 @@
 downtime:
+  - date: 2023-05-19 1:00:00
+    duration: PT6H
+    systems: Site Service
+    locations: Ames
+    time: 5-11 UTC
+    reason: Maintenance
+    text: "Site Service at Ames will be impacted while Lumen performs maintenance.</br>Outages are expected and the entire window is reserved."
   - date: 2023-05-02 8:00:00
     duration: PT2H
     systems: Site Service
