@@ -6,6 +6,15 @@ downtime:
     time: 5-11 UTC
     reason: Maintenance
     text: "Site Service at Ames will be impacted while Lumen performs maintenance.</br>Outages are expected and the entire window is reserved."
+  - date: 2023-05-10 18:00:00
+    duration: PT8H
+    systems: Juno
+    locations: all
+    time: 6 PM EDT
+    reason: Maintenance
+    text: "At 6:00 PM Eastern on May 10th, the Juno long term storage system at Beltsville will be unmounted from SCINet DTNs and become inaccessible.</br>
+    This is being done in preparation for network maintenance to be performed after hours.</br></br>
+    The storage will be remounted, and access restored, the following morning."
   - date: 2023-05-02 8:00:00
     duration: PT2H
     systems: Site Service
