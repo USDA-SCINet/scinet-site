@@ -60,7 +60,7 @@ cd
 mkdir /project/<your_project_dir>/<account_name>
 mv R /project/<your_project_dir>/<account_name>/
 chgrp -R proj-<your_project_dir> /project/<your_project_dir>/<account_name>/R
-chmod -R g+s /project/<your_project_dir>/<account_name>/R"
+chmod -R g+s /project/<your_project_dir>/<account_name>/R
 ln -s /project/<your_project_dir>/<account_name>/R R
 ```
 
