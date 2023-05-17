@@ -12,7 +12,7 @@ downtime:
     locations: Stoneville
     time: 11pm-6am EST
     reason: Maintenance
-    text: "The following assets will be unavailable while Internet2 engineers perform Core Node maintenance. Outage are expected. The entire window is reserved."
+    text: "The listed assets will be unavailable while Internet2 engineers perform Core Node maintenance. Outage are expected. The entire window is reserved."
   - date: 2023-05-19 1:00:00
     duration: PT6H
     systems: Site Service
