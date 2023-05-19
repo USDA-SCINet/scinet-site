@@ -5,25 +5,23 @@ on:
     branches: [ main ]
 
 jobs:
-  build_and_deploy:
+  # Build job
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      # Use GitHub Actions' cache to cache dependencies on servers
-      - uses: actions/cache@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Create CNAME file
+        run: echo "scinet.usda.gov" > CNAME
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
         with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
+          ruby-version: '2.7.2' # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          cache-version: 0 # Increment this number if you need to re-download cached gems
       # Use GitHub Deploy Action to build and deploy to Github
-      - uses: jeffreytse/jekyll-deploy-action@v0.4.0
+      - uses: helaili/jekyll-action@v2
         with:
-          provider: 'github'
-          token: ${{ secrets.GITHUB_TOKEN }} 
-          branch: 'gh-pages'         
-          jekyll_src: './'           
-          jekyll_cfg: '_config.yml'  
-          bundler_ver: '>=0'         
-          cname: 'scinet.usda.gov'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target_branch: 'gh-pages'
+          pre_build_commands: git config --global http.version HTTP/1.1; apk fetch git-lfs;
