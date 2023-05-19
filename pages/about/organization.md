@@ -33,7 +33,7 @@ The SCINet initiative is an effort by the USDA Agricultural Research Service to 
 
 SCINet supports a growing community of nearly 2,000 USDA research scientists and university partners to accelerate agricultural discovery through advanced computational infrastructure and scientific computing. 
 
-Current uses of SCINet span multiple disciplines, including genomics, plant breeding, hydrology, crop production, plant and animal disease modeling, and natural resource management. SCINet users include ARS and other federal scientists, as well as prtners external to the federal government.
+Current uses of SCINet span multiple disciplines, including genomics, plant breeding, hydrology, crop production, plant and animal disease modeling, and natural resource management. SCINet users include ARS and other federal scientists, as well as partners external to the federal government.
 
 SCINet supports a broad range of computational tools, including R (and RStudio), Python (and Jupyter notebooks), and software for bioinformatics, geospatial analyses, machine learning and deep learning, and image processing.
 
