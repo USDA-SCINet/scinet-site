@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>SCINet for genomics research | SCINet | USDA Scientific Computing Initiative</title>
+
+
+
+<meta name="description" content="SCINet has a number of tools available for genomics research">
+
+
+
+
+<link rel="shortcut icon"type="image/ico"
+  href="/assets/img/site/favicons/favicon.ico">
+
+
+
+<link rel="icon"type="image/png"
+  href="/assets/img/site/favicons/favicon.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="192x192"
+  href="/assets/img/site/favicons/favicon-192.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="32x32"
+  href="/assets/img/site/favicons/favicon-32x32.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="16x16"
+  href="/assets/img/site/favicons/favicon-16x16.png">
+
+
+
+<link rel="manifest"
+  href="/assets/img/site/favicons/site.webmanifest">
+
+
+
+<link rel="mask-icon"
+  href="/assets/img/site/favicons/safari-pinned-tab.svg">
+
+
+
+<link rel="apple-touch-icon"
+  sizes="180x180"
+  href="/assets/img/site/favicons/apple-touch-icon.png">
+
+
+
+<meta name="msapplication-TileColor" content="#2b5797">
+
+
+
+<meta name="msapplication-config" content="/assets/img/site/favicons/browserconfig.xml">
+
+
+
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+  
+
+
+
+<link rel="stylesheet"
+  href="/assets/css/style.css"
+  media="screen">
+
+  
+  
+
+
+<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
+<script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=USDA&subagency=ARS"></script>
+
+
+  
+  <script>0</script>
+</head>
+
+<body class="site-90%">
+
+  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+  
+
+
+  <section class="usa-banner" aria-label="Official government website">
+  <div class="usa-accordion">
+    <header class="usa-banner__header">
+      <div class="usa-banner__inner">
+        <div class="grid-col-auto">
+          <img class="usa-banner__header-flag" src="/assets/uswds/img/us_flag_small.png" alt="U.S. flag">
+        </div>
+        <div class="grid-col-fill tablet:grid-col-auto">
+          <p class="usa-banner__header-text">An official website of the United States government</p>
+          <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
+        </div>
+        <button type="button" class="usa-accordion__button usa-banner__button"
+          aria-expanded="false" aria-controls="gov-banner">
+          <span class="usa-banner__button-text">Here’s how you know</span>
+        </button>
+      </div>
+    </header>
+    <div class="usa-banner__content usa-accordion__content" id="gov-banner" hidden="">
+      <div class="grid-row grid-gap-lg">
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/uswds/img/icon-dot-gov.svg" role="img" alt="Dot gov">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Official websites use .gov</strong>
+              <br/>
+              A <strong>.gov</strong> website belongs to an official government organization in the United States.
+            </p>
+          </div>
+        </div>
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/uswds/img/icon-https.svg" role="img" alt="Https">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Secure .gov websites use HTTPS</strong>
+              <br/>
+              A <strong>lock</strong> (
+<span class="icon-lock"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64" class="usa-banner__lock-image" role="img" aria-labelledby="banner-lock-title banner-lock-description"><title id="banner-lock-title">Lock</title><desc id="banner-lock-description">A locked padlock</desc><path fill="#000000" fill-rule="evenodd" d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"/></svg></span>
+) or <strong>https://</strong> means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<div class="usa-overlay"></div>
+<header class="usa-header usa-header--extended sci-heading" role="banner">
+
+  <div class="usa-navbar">
+      
+<div class="usa-logo">
+    
+    <span class="agency-logo display-flex flex-align-center mobile-lg:margin-right-1">
+        
+        <a href="/">
+            <img class="usa-logo-img"
+                src="/assets/img/site/usda-logo-color.svg"
+                alt="USDA">
+        </a>
+        
+    </span>
+    
+    <a class="agency-logo-text"
+        href="/"
+        aria-label="SCINet Scientific Computing">
+        <div class="agency-identity">
+            <div class="agency-name usa-logo__text">SCINet Scientific Computing</div>
+            
+            <div class="tagline">U.S. Department of Agriculture</div>
+            
+        </div>
+    </a>
+</div>
+    <button type="button" class="usa-menu-btn">Menu</button>
+  </div>
+
+  <nav aria-label="Primary navigation" class="usa-nav border-bottom-2px">
+    <div class="usa-nav__inner">
+      <button type="button" class="usa-nav__close">
+        <img src="/assets/uswds/img/usa-icons/close.svg" alt="close">
+      </button>
+      
+      
+      
+      <ul class="usa-nav__primary usa-accordion">
+        
+        <li class="usa-nav__primary-item">
+          
+          <a class=" usa-nav__link  "
+            href="/">
+            <span>Home</span>
+          </a>
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-About">
+            <span>About</span>
+          </button>
+
+          
+          
+
+<ul id="nav-About" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/signup"><span>Sign up for an account</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/compute"><span>Computer Systems</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/organization"><span>Organization</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/vrsc"><span>Virtual Research Support Core (VSRC)</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/policies"><span>Policies</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/contact"><span>Contact</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-News">
+            <span>News</span>
+          </button>
+
+          
+          
+
+<ul id="nav-News" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/downtime/"><span>System Downtime</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/announcements"><span>Announcements</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/stories"><span>User Stories</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/newsletter"><span>Newsletter</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/scinet-x"><span>SCINet-X</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-User Guides">
+            <span>User Guides</span>
+          </button>
+
+          
+          
+
+<ul id="nav-User Guides" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/guides/start"><span>Quick Start</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/guides/"><span>All User Guides</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Research">
+            <span>Research</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Research" class="usa-nav__submenu nav-width-2" hidden="">
+    <div class="grid-row grid-gap-4">
+        
+            
+            
+            
+        <li class="usa-nav__submenu-item desktop:grid-col-6 m-top-0">
+            
+
+                    
+                    
+                    <div class="">
+                        <a href="/research/working-groups/">
+                            Working Groups
+                        </a>
+                    </div>
+
+                    <ul id="nav-ResearchWorking Groups" class="sublist">
+
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/ag100pest">
+                                    Ag100Pest
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/arthropods">
+                                    Arthropod Genomics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/fungalbioinformatics">
+                                    Fungal Bioinformatics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/geospatial">
+                                    Geospatial Research
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/microbiome">
+                                    Microbiome
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/LTARphenology">
+                                    LTAR Phenology
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/pollinator">
+                                    Pollinator
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/proteinfunction">
+                                    Protein Function and Phenotype Prediction
+                                </a>
+                            </li>
+
+                        
+                    </ul>
+                </li>
+            
+        
+            
+            
+            
+        <li class="usa-nav__submenu-item desktop:grid-col-6 m-top-0">
+            
+
+                    
+                    
+                    <div class="">
+                        <a href="/research/uses/">
+                            Use Cases
+                        </a>
+                    </div>
+
+                    <ul id="nav-ResearchUse Cases" class="sublist">
+
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/genomics">
+                                    Genomics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/plant-breeding">
+                                    Plant breeding
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/geospatial">
+                                    Geospatial
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/hydrology">
+                                    Hydrology
+                                </a>
+                            </li>
+
+                        
+                    </ul>
+                </li>
+            
+        
+    </div>
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Trainings and Events">
+            <span>Trainings and Events</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Trainings and Events" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/resources"><span>Learning Resources</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/events/"><span>Upcoming Events</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/learningpath"><span>Learning Pathway</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Support">
+            <span>Support</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Support" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/contact"><span>Contact the VRSC</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/faq"><span>FAQs</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="https://forum.scinet.usda.gov"><span>USDA-ARS SCINet Forum</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/request"><span>Request Resources</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/ceres-job-script"><span>Ceres Job Script Generator</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Opportunities">
+            <span>Opportunities</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Opportunities" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/SAC"><span>SAC Membership</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/request-workshop"><span>Request a Workshop</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/fellowships"><span>Fellowships (PhD & MS)</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/ai-innovation/"><span>AI Innovation Fund</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/scinet-aicoe-fellowships"><span>SCINet and AI-COE fellowship proposals</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+
+
+      </ul>
+      
+
+    </div>
+
+    
+    <div class="usa-nav__secondary">
+      
+      
+        <form accept-charset="UTF-8" action="https://search.usa.gov/search" id="search_form" method="get"
+class="usa-search usa-search--small js-search-form">
+<input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="affiliate" id="affiliate" value="scinet-usda" />
+<div role="search">
+  <label for="query" class="usa-sr-only">Enter search terms</label>
+  <input autocomplete="off" class="usa-input usagov-search-autocomplete" id="query" name="query"
+    type="search" />
+  <button class="usa-button" type="submit" name="commit">
+    <img src="/assets/uswds/img/usa-icons-bg/search--white.svg"
+      class="usa-search__submit-icon" alt="Search" />
+  </button>
+</div>
+</form>
+
+      
+    </div>
+
+
+    </div>
+    </div>
+  </nav>
+
+</header>
+
+
+
+  
+
+    
+    
+
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+
+
+
+    
+    
+
+
+    <div class="grid-container main-side">
+
+
+  
+
+
+  
+
+  
+
+
+
+
+
+
+
+<div class="grid-row grid-gap flex-align-start">
+    <div class="usa-layout-docs__sidenav desktop:grid-col-3 desktop:padding-y-10 usa-sticky-sidenav">
+        <nav aria-label="Secondary navigation">
+  <ul class="usa-sidenav">
+
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/research/uses/genomics" 
+         
+        class="usa-current " 
+        >
+        Genomics
+    </a>
+    
+    
+    <ul class="usa-sidenav__sublist">
+        
+            
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #use-case
+  " class="">Use Case</a>
+  
+  
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #tools-and-software
+  " class="">Tools and Software</a>
+  
+  
+  
+</li>
+
+
+        
+        
+    </ul>
+    
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/research/uses/plant-breeding" 
+        >
+        Plant breeding
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/research/uses/geospatial" 
+        >
+        Geospatial
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/research/uses/hydrology" 
+        >
+        Hydrology
+    </a>
+    
+</li>
+    
+
+  </ul>
+</nav>
+    </div>
+    
+    <div class="usa-layout-docs__main desktop:grid-col-9">
+        <nav class="usa-breadcrumb usa-breadcrumb--wrap" aria-label="Breadcrumbs">
+  <ol class="usa-breadcrumb__list">
+    
+    
+
+
+<li class="usa-breadcrumb__list-item">
+  <a href="/" class="usa-breadcrumb__link">
+    <span>Home</span>
+  </a>
+</li>
+
+    
+
+    
+
+    
+    
+      
+
+
+<li class="usa-breadcrumb__list-item">
+  <a href="/research/uses/" class="usa-breadcrumb__link">
+    <span>Use Cases</span>
+  </a>
+</li>
+    
+    
+
+
+    <li class="usa-breadcrumb__list-item usa-current" aria-current="page">
+      <span>SCINet for genomics research</span>
+    </li>
+  </ol>
+</nav>
+        <main class="usa-layout-docs usa-layout-docs__main usa-prose" id="main-content">
+
+          
+  
+      <h1 class="top-header">SCINet for genomics research</h1>
+  
+  
+
+  
+
+  
+
+  <p><br />
+By: Erin Scully</p>
+
+<h2 id="use-case">Use Case</h2>
+
+<p>ARS scientists in several locations throughout the United States are combining forces to provide high quality genome assemblies, gene models, and functional annotations for the 100 most dangerous and damaging arthropod pests of US agriculture in an effort called the <a href="http://i5k.github.io/ag100pest">Ag100Pest Initiative</a>. Insect genomes are surprisingly complex and variable, ranging from slightly over 100 Mb to over 2 Gb in size. Furthermore, their structural complexities vary as many arthropod genomes contain multicopy gene families arranged in large tandem arrays and large repetitive regions. Using new methods for generating long-read sequencing libraries from low DNA inputs typically obtained from single small-bodied insects, genome assemblies of several arthropods have been generated using PacBio Sequel II instrument and assembled using tools deployed on the SCINet Ceres HPC system, including the spotted lanternfly (<em>Lycorma delicatula</em>) quarantine pest (<a href="https://doi.org/10.1093/gigascience/giz122">see Kingan et al. 2019</a>).</p>
+
+<p>As part of this initiative, <a href="https://agbase-docs.readthedocs.io/en/latest/agbase/workflow.html"><strong>a functional annotation pipeline</strong></a> was developed to facilitate the addition of Gene Ontology (GO) terms, Kyoto Encyclopedia of Genes and Genomes (KEGG) pathway annotations, and IntePproScan results to gene models generated for <em>de novo</em> genome and transcriptome projects. Unlike other GO tools, this pipeline allows the user to customize criteria for adding GO and KEGG terms to gene models, such as the degree of functional validation, minimum bit scores, raw scores, e-values, and percent identities. This tool is now deployed on the SCINet Ceres HPC system.</p>
+
+<p>The <a href="https://www.nal.usda.gov/main/">National Agricultural Library (NAL)</a> maintains all Ag100Pest genome assemblies and annotations at the <a href="https://i5k.nal.usda.gov/">i5k workspace</a>. Integration with <a href="https://genomearchitect.readthedocs.io/en/latest/">WebApollo</a> facilitates manual curation and sharing of gene sets of interest with collaborators.</p>
+
+<h2 id="tools-and-software">Tools and Software</h2>
+
+<p>ARS is among the world’s leading producer and user of genomic, transcriptomic, proteomic, and other -omics data for non-model organisms of agricultural importance, including pathogens, insects, animals, and plants. On-going projects in the agency related to these efforts include <em>de novo</em> genome and transcriptome assembly and annotation, whole genome resequencing for population, strain, and biotype analyses, and comparative genomics and gene family evolution.</p>
+
+<p>SCINet hosts the following tools to facilitate these studies (see the <a href="/guides/software/preinstalled">Preinstalled Software List</a> for a full list of software currently available on Ceres):</p>
+
+<p><strong>GOanna</strong> Gene Ontology tool (<a href="https://agbase-docs.readthedocs.io/en/latest/goanna/using_goanna_ceres.html">see instructions for using on Ceres</a>)</p>
+
+<h3 id="genome-assemblers">Genome assemblers</h3>
+<p>for long-reads, short-reads, and hybrid approaches and tools for generating Hi-C maps:<br />
+ALLPATHS, Canu, DISCOVAR, FALCON, Juicer, MECAT, SALSA, SOAPdenovo, SPAdes, and Supernova</p>
+
+<h3 id="transcriptome-assemblers">Transcriptome assemblers</h3>
+<p>ABySS, Trinity, and Velvet</p>
+
+<h3 id="gene-prediction-and-annotation-tools">Gene prediction and annotation tools</h3>
+<p>Augustus, BUSCO, GeneMark, Glimmer, InterProScan, MAKER, Prokka, RepeatMasker , RepeatModeler, TransDecoder, Trinotate, and tRNAScan</p>
+
+<h3 id="rna-seq-analysis">RNA-Seq analysis</h3>
+<p>Ballgown, Bowtie, Cufflinks, HISAT2, kallisto, PASA, Salmon, and Stringtie</p>
+
+<h3 id="comparative-genomics">Comparative Genomics</h3>
+<p>BLAST, Circos, DIAMOND, MCScanX, and OrthoFinder</p>
+
+<h3 id="phylogenetics">Phylogenetics</h3>
+<p>GARLI, PhyML, and RAxML</p>
+
+<h3 id="gui-tools-for-working-with-genomic-data">GUI tools for working with genomic data</h3>
+<p>Floating licenses for <a href="/guides/analysis/geneious">Geneious Prime</a> GUI (graphic user interface) tools are available through SCINet.</p>
+
+<p>Additionally, GUI server licenses for <a href="/guides/analysis/clc-workbench">CLC Workbench</a> are also available.</p>
+
+<p>A <a href="/guides/analysis/galaxy">Galaxy</a> instance is also available on Ceres, allowing users to run popular command line tools through a GUI.
+<br /><br /><br /></p>
+
+<p><strong>SCINet users can also install other freely-available software to suit their research needs or request system-wide installation by contacting the <a href="/support/contact">Virtual Research Support Core</a>.</strong></p>
+
+
+  
+
+  
+
+  <br>
+
+  
+
+
+        <br>
+    </main>
+  </div>
+</div>
+</div>
+
+
+    <br>
+
+    
+
+  
+
+  
+
+
+    
+<footer class="usa-footer usa-footer--big">
+
+  
+  <div class="grid-container">
+    <p>Last updated: May 19, 2023 at 11:18 AM</p>
+  </div>
+  
+
+  
+  <div class="grid-container usa-footer__return-to-top">
+    <a href="#">Return to top</a>
+  </div>
+  
+
+  
+  
+
+  <div class="usa-footer__primary-section">
+    <div class="grid-container">
+          <nav class="usa-footer__nav" aria-label="Footer navigation">
+            <div class="grid-row grid-gap-4">
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                <section class="
+                usa-footer__primary-content
+                usa-footer__primary-content--collapsible
+              ">
+              <h4 class="usa-footer__primary-link">ABOUT</h4>
+              <ul class="usa-list usa-list--unstyled">
+                <li>
+                <p>SCINet is a USDA <a href='https://www.ars.usda.gov/'>Agricultural Research Service</a> initiative.</p>
+                <a class="usa-button" href="/about/organization">Learn More</a>
+                </li>
+              </ul>
+                </section>
+                </div>
+              
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">RESOURCES</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="mailto:scinet_vrsc@usda.gov">
+                        Feedback
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/about/signup">
+                        Sign Up
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/about/contact">
+                        Contact
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/opportunities/fellowships">
+                        Fellowships
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">USDA</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://ask.usda.gov/">
+                        AskUSDA
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/">
+                        USDA.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.usa.gov">
+                        USA.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.whitehouse.gov">
+                        WhiteHouse.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/plain-writing">
+                        Plain Writing
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">LEGAL</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/accessibility-statement">
+                        Accessibility Statement
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/non-discrimination-statement">
+                        Non-Discrimination Statement
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/privacy-policy">
+                        Privacy Policy
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.dm.usda.gov/foia/">
+                        FOIA
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.ocio.usda.gov/policy-directives-records-forms/information-quality-activities">
+                        Information Quality
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+            </div>
+          </nav>
+    </div>
+  </div>
+
+  
+  <div class="usa-footer__secondary-section">
+    <div class="grid-container sci-heading">
+      <div class="grid-row grid-gap">
+        <div class="usa-footer__logo grid-row mobile-lg:grid-col-6 tablet:grid-gap-2">
+          
+          
+          <div class="mobile-lg:grid-col-auto footer-flex">
+          
+<div class="usa-logo">
+    
+    <span class="agency-logo display-flex flex-align-center mobile-lg:margin-right-1">
+        
+        <a href="/">
+            <img class="usa-logo-img"
+                src="/assets/img/site/usda-logo-color.svg"
+                alt="USDA">
+        </a>
+        
+    </span>
+    
+    <a class="agency-logo-text"
+        href="/"
+        aria-label="SCINet Scientific Computing">
+        <div class="agency-identity">
+            <div class="agency-name usa-logo__text">SCINet Scientific Computing</div>
+            
+            <div class="tagline">U.S. Department of Agriculture</div>
+            
+        </div>
+    </a>
+</div>
+          </div>
+          
+
+
+        </div>
+
+        
+        <div class="margin-y-auto mobile-lg:grid-col-4 footer-flex">
+          
+          <div class="usa-footer__social-links grid-row grid-gap-1">
+            <div class="grid-col-auto">
+              
+              <a class="usa-social-link ext-nested" style="padding-right: .25rem;" href="https://twitter.com/USDA_ARS"
+              ><img
+                class="usa-social-link__icon"
+                src="/assets/uswds/img/usa-icons/twitter.svg"
+                alt="Twitter"
+            /></a>
+              
+              <a class="usa-social-link ext-nested" style="padding-right: .25rem;" href="mailto:scinet_vrsc@usda.gov"
+              ><img
+                class="usa-social-link__icon"
+                src="/assets/uswds/img/usa-icons/mail.svg"
+                alt="Contact VRSC"
+            /></a>
+              
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="grid-row mobile-lg:grid-col-2 footer-flex">
+        
+
+<small class="flex-align-self-center"><a href="https://github.com/USDA-SCINet/scinet-site/edit/main/pages/research/use_cases/genomics.md" class="usa-sidenav-edit" target="_blank">Edit this page</a></small>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+
+</footer>
+
+
+
+  <!-- dynamically determine scripts needed for this config -->
+
+
+
+
+
+
+
+  
+    
+      <script src="/assets/uswds/js/uswds.min.js" async></script>
+    
+
+  
+    
+      <script src="/assets/js/vendor/anchor.min.js"></script>
+    
+
+  
+    
+      <script src="/assets/js/main.js"></script>
+    
+
+  
+    
+      <script src="/assets/js/external.js"></script>
+    
+
+  
+    
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+      var usasearch_config = { siteHandle:"scinet-usda" };
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "https://search.usa.gov/javascripts/remote.loader.js";
+      document.getElementsByTagName("head")[0].appendChild(script);
+
+//]]>
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

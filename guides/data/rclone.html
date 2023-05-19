@@ -1,0 +1,1914 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Rclone: Moving Data To and From Cloud Resources | SCINet | USDA Scientific Computing Initiative</title>
+
+
+
+<meta name="description" content="Using rclone">
+
+
+
+
+<link rel="shortcut icon"type="image/ico"
+  href="/assets/img/site/favicons/favicon.ico">
+
+
+
+<link rel="icon"type="image/png"
+  href="/assets/img/site/favicons/favicon.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="192x192"
+  href="/assets/img/site/favicons/favicon-192.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="32x32"
+  href="/assets/img/site/favicons/favicon-32x32.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="16x16"
+  href="/assets/img/site/favicons/favicon-16x16.png">
+
+
+
+<link rel="manifest"
+  href="/assets/img/site/favicons/site.webmanifest">
+
+
+
+<link rel="mask-icon"
+  href="/assets/img/site/favicons/safari-pinned-tab.svg">
+
+
+
+<link rel="apple-touch-icon"
+  sizes="180x180"
+  href="/assets/img/site/favicons/apple-touch-icon.png">
+
+
+
+<meta name="msapplication-TileColor" content="#2b5797">
+
+
+
+<meta name="msapplication-config" content="/assets/img/site/favicons/browserconfig.xml">
+
+
+
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+  
+
+
+
+<link rel="stylesheet"
+  href="/assets/css/style.css"
+  media="screen">
+
+  
+  
+
+
+<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
+<script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=USDA&subagency=ARS"></script>
+
+
+  
+  <script>0</script>
+</head>
+
+<body class="site-90%">
+
+  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+  
+
+
+  <section class="usa-banner" aria-label="Official government website">
+  <div class="usa-accordion">
+    <header class="usa-banner__header">
+      <div class="usa-banner__inner">
+        <div class="grid-col-auto">
+          <img class="usa-banner__header-flag" src="/assets/uswds/img/us_flag_small.png" alt="U.S. flag">
+        </div>
+        <div class="grid-col-fill tablet:grid-col-auto">
+          <p class="usa-banner__header-text">An official website of the United States government</p>
+          <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
+        </div>
+        <button type="button" class="usa-accordion__button usa-banner__button"
+          aria-expanded="false" aria-controls="gov-banner">
+          <span class="usa-banner__button-text">Here’s how you know</span>
+        </button>
+      </div>
+    </header>
+    <div class="usa-banner__content usa-accordion__content" id="gov-banner" hidden="">
+      <div class="grid-row grid-gap-lg">
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/uswds/img/icon-dot-gov.svg" role="img" alt="Dot gov">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Official websites use .gov</strong>
+              <br/>
+              A <strong>.gov</strong> website belongs to an official government organization in the United States.
+            </p>
+          </div>
+        </div>
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/uswds/img/icon-https.svg" role="img" alt="Https">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Secure .gov websites use HTTPS</strong>
+              <br/>
+              A <strong>lock</strong> (
+<span class="icon-lock"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64" class="usa-banner__lock-image" role="img" aria-labelledby="banner-lock-title banner-lock-description"><title id="banner-lock-title">Lock</title><desc id="banner-lock-description">A locked padlock</desc><path fill="#000000" fill-rule="evenodd" d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"/></svg></span>
+) or <strong>https://</strong> means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<div class="usa-overlay"></div>
+<header class="usa-header usa-header--extended sci-heading" role="banner">
+
+  <div class="usa-navbar">
+      
+<div class="usa-logo">
+    
+    <span class="agency-logo display-flex flex-align-center mobile-lg:margin-right-1">
+        
+        <a href="/">
+            <img class="usa-logo-img"
+                src="/assets/img/site/usda-logo-color.svg"
+                alt="USDA">
+        </a>
+        
+    </span>
+    
+    <a class="agency-logo-text"
+        href="/"
+        aria-label="SCINet Scientific Computing">
+        <div class="agency-identity">
+            <div class="agency-name usa-logo__text">SCINet Scientific Computing</div>
+            
+            <div class="tagline">U.S. Department of Agriculture</div>
+            
+        </div>
+    </a>
+</div>
+    <button type="button" class="usa-menu-btn">Menu</button>
+  </div>
+
+  <nav aria-label="Primary navigation" class="usa-nav border-bottom-2px">
+    <div class="usa-nav__inner">
+      <button type="button" class="usa-nav__close">
+        <img src="/assets/uswds/img/usa-icons/close.svg" alt="close">
+      </button>
+      
+      
+      
+      <ul class="usa-nav__primary usa-accordion">
+        
+        <li class="usa-nav__primary-item">
+          
+          <a class=" usa-nav__link  "
+            href="/">
+            <span>Home</span>
+          </a>
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-About">
+            <span>About</span>
+          </button>
+
+          
+          
+
+<ul id="nav-About" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/signup"><span>Sign up for an account</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/compute"><span>Computer Systems</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/organization"><span>Organization</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/vrsc"><span>Virtual Research Support Core (VSRC)</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/policies"><span>Policies</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/contact"><span>Contact</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-News">
+            <span>News</span>
+          </button>
+
+          
+          
+
+<ul id="nav-News" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/downtime/"><span>System Downtime</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/announcements"><span>Announcements</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/stories"><span>User Stories</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/newsletter"><span>Newsletter</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/scinet-x"><span>SCINet-X</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-User Guides">
+            <span>User Guides</span>
+          </button>
+
+          
+          
+
+<ul id="nav-User Guides" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/guides/start"><span>Quick Start</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/guides/"><span>All User Guides</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Research">
+            <span>Research</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Research" class="usa-nav__submenu nav-width-2" hidden="">
+    <div class="grid-row grid-gap-4">
+        
+            
+            
+            
+        <li class="usa-nav__submenu-item desktop:grid-col-6 m-top-0">
+            
+
+                    
+                    
+                    <div class="">
+                        <a href="/research/working-groups/">
+                            Working Groups
+                        </a>
+                    </div>
+
+                    <ul id="nav-ResearchWorking Groups" class="sublist">
+
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/ag100pest">
+                                    Ag100Pest
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/arthropods">
+                                    Arthropod Genomics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/fungalbioinformatics">
+                                    Fungal Bioinformatics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/geospatial">
+                                    Geospatial Research
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/microbiome">
+                                    Microbiome
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/LTARphenology">
+                                    LTAR Phenology
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/pollinator">
+                                    Pollinator
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/proteinfunction">
+                                    Protein Function and Phenotype Prediction
+                                </a>
+                            </li>
+
+                        
+                    </ul>
+                </li>
+            
+        
+            
+            
+            
+        <li class="usa-nav__submenu-item desktop:grid-col-6 m-top-0">
+            
+
+                    
+                    
+                    <div class="">
+                        <a href="/research/uses/">
+                            Use Cases
+                        </a>
+                    </div>
+
+                    <ul id="nav-ResearchUse Cases" class="sublist">
+
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/genomics">
+                                    Genomics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/plant-breeding">
+                                    Plant breeding
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/geospatial">
+                                    Geospatial
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/hydrology">
+                                    Hydrology
+                                </a>
+                            </li>
+
+                        
+                    </ul>
+                </li>
+            
+        
+    </div>
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Trainings and Events">
+            <span>Trainings and Events</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Trainings and Events" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/resources"><span>Learning Resources</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/events/"><span>Upcoming Events</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/learningpath"><span>Learning Pathway</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Support">
+            <span>Support</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Support" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/contact"><span>Contact the VRSC</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/faq"><span>FAQs</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="https://forum.scinet.usda.gov"><span>USDA-ARS SCINet Forum</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/request"><span>Request Resources</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/ceres-job-script"><span>Ceres Job Script Generator</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Opportunities">
+            <span>Opportunities</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Opportunities" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/SAC"><span>SAC Membership</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/request-workshop"><span>Request a Workshop</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/fellowships"><span>Fellowships (PhD & MS)</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/ai-innovation/"><span>AI Innovation Fund</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/scinet-aicoe-fellowships"><span>SCINet and AI-COE fellowship proposals</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+
+
+      </ul>
+      
+
+    </div>
+
+    
+    <div class="usa-nav__secondary">
+      
+      
+        <form accept-charset="UTF-8" action="https://search.usa.gov/search" id="search_form" method="get"
+class="usa-search usa-search--small js-search-form">
+<input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="affiliate" id="affiliate" value="scinet-usda" />
+<div role="search">
+  <label for="query" class="usa-sr-only">Enter search terms</label>
+  <input autocomplete="off" class="usa-input usagov-search-autocomplete" id="query" name="query"
+    type="search" />
+  <button class="usa-button" type="submit" name="commit">
+    <img src="/assets/uswds/img/usa-icons-bg/search--white.svg"
+      class="usa-search__submit-icon" alt="Search" />
+  </button>
+</div>
+</form>
+
+      
+    </div>
+
+
+    </div>
+    </div>
+  </nav>
+
+</header>
+
+
+
+  
+
+    
+    
+
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+
+
+
+    
+    
+
+
+    <div class="grid-container main-side">
+
+
+  
+
+
+  
+
+  
+
+
+
+
+
+
+
+<div class="grid-row grid-gap flex-align-start">
+    <div class="usa-layout-docs__sidenav desktop:grid-col-3 desktop:padding-y-10 usa-sticky-sidenav">
+        <nav aria-label="Secondary navigation">
+  <ul class="usa-sidenav">
+
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/guides/start" 
+        >
+        Quick Start
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/guides/" 
+        >
+        All User Guides
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/guides/data" 
+         
+        class=" guide-nav " 
+        >
+        Storage and Data Management
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/guides/data/data-management" 
+        >
+        Data and Storage SOP
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/guides/data/datatransfer" 
+        >
+        SCINet File Transfer
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/guides/data/quotas" 
+        >
+        Storage Quotas
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/guides/data/rclone" 
+         
+        class="usa-current " 
+        >
+        Rclone: Moving Data To and From Cloud Resources
+    </a>
+    
+    
+    <ul class="usa-sidenav__sublist">
+        
+            
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #getting-ready
+  " class="">Getting Ready</a>
+  
+  
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #rclone-installation-on-windows
+  " class="">rclone installation on Windows</a>
+  
+  
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #macos-installation-
+  " class="">macOS installation</a>
+  
+  
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #configuration-of-rclone-on-windows-or-osx
+  " class="">Configuration of rclone on windows or osX</a>
+  
+  
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #rclone-configuration-on-scinet
+  " class="">rclone configuration on SciNet</a>
+  
+  
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #test
+  " class="">Test</a>
+  
+  
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #commands
+  " class="">Commands</a>
+  
+  
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #advanced-commands
+  " class="">Advanced commands</a>
+  
+  
+  
+</li>
+
+
+        
+        
+    </ul>
+    
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/guides/data/storage" 
+        >
+        SCINet Storage
+    </a>
+    
+</li>
+    
+
+  </ul>
+</nav>
+    </div>
+    
+    <div class="usa-layout-docs__main desktop:grid-col-9">
+        <nav class="usa-breadcrumb usa-breadcrumb--wrap" aria-label="Breadcrumbs">
+  <ol class="usa-breadcrumb__list">
+    
+    
+
+
+<li class="usa-breadcrumb__list-item">
+  <a href="/" class="usa-breadcrumb__link">
+    <span>SCINet Home</span>
+  </a>
+</li>
+
+    
+      
+
+
+<li class="usa-breadcrumb__list-item">
+  <a href="/guides" class="usa-breadcrumb__link">
+    <span>All User Guides</span>
+  </a>
+</li>
+    
+
+    
+      
+      
+        
+          
+          
+
+
+<li class="usa-breadcrumb__list-item">
+  <a href="/guides/data" class="usa-breadcrumb__link">
+    <span>Storage and Data Management</span>
+  </a>
+</li>
+        
+      
+    
+
+
+    <li class="usa-breadcrumb__list-item usa-current" aria-current="page">
+      <span>Rclone: Moving Data To and From Cloud Resources</span>
+    </li>
+  </ol>
+</nav>
+        <main class="usa-layout-docs usa-layout-docs__main usa-prose" id="main-content">
+
+          
+  
+      <h1 class="top-header">Rclone: Moving Data To and From Cloud Resources</h1>
+  
+  
+
+  
+
+  
+
+  <p>Rclone is already installed on the DTNS and all of the compute nodes. Please do not use rclone from the headnode. Attempting to do so will remind you to use the others.<br />
+The rclone home page is <a href="https://rclone.org">https://rclone.org</a>.<!--excerpt--></p>
+
+<h3 id="getting-ready">Getting Ready</h3>
+<p>In order to use Rclone on Ceres its necessary to have it installed on your local machine as well.  This is needed to generate an authentication token.<br /></p>
+
+<h3 id="rclone-installation-on-windows">rclone installation on Windows</h3>
+
+<p>Go to the web page at <a href="https://rclone.org/downloads/">https://rclone.org/downloads/</a> and find the Windows installer. Download it and install rclone. Once installed, proceed to the configuration section below.</p>
+
+<h3 id="macos-installation">macOS installation</h3>
+
+<p>Download the latest version of rclone.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="o">&amp;&amp;</span> curl <span class="nt">-O</span> https://downloads.rclone.org/rclone-current-osx-amd64.zip
+</code></pre></div></div>
+
+<p>Unzip the download and cd to the extracted folder.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unzip <span class="nt">-a</span> rclone-current-osx-amd64.zip <span class="o">&amp;&amp;</span> <span class="nb">cd </span>rclone-<span class="k">*</span><span class="nt">-osx-amd64</span>
+</code></pre></div></div>
+
+<p>Move rclone to your $PATH. You will be prompted for your password.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo mkdir</span> <span class="nt">-p</span> /usr/local/bin
+<span class="nb">sudo mv </span>rclone /usr/local/bin/
+</code></pre></div></div>
+
+<p>(the mkdir command is safe to run, even if the directory already exists)
+Remove the leftover files.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> .. <span class="o">&amp;&amp;</span> <span class="nb">rm</span> <span class="nt">-rf</span> rclone-<span class="k">*</span><span class="nt">-osx-amd64</span> rclone-current-osx-amd64.zip
+</code></pre></div></div>
+
+<h3 id="configuration-of-rclone-on-windows-or-osx">Configuration of rclone on windows or osX</h3>
+
+<ol>
+  <li>Open a Windows command prompt (cmd) or macOS Terminal</li>
+  <li>Type
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rclone authorize <span class="s2">"box"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>On the web page that shows up, click on <strong>Use Single Sign On (SSO)</strong></li>
+  <li>Enter your USDA email address</li>
+  <li>Do the eAuthentication thing</li>
+  <li>Click on the <strong>Grant access to Box</strong> button</li>
+  <li>Go back to the command prompt window, an authentication token should be there. Copy this including the braces {“access_token”:“ABCDEF…}</li>
+</ol>
+
+<h3 id="rclone-configuration-on-scinet">rclone configuration on SciNet</h3>
+
+<ol>
+  <li>Type
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rclone config
+</code></pre></div>    </div>
+  </li>
+  <li>Type <strong>n</strong> for <strong>n) New remote</strong></li>
+  <li>For **<name>** enter any name <i>e.g.</i> **usdabox**</name></li>
+  <li>For <strong>Storage&gt;</strong> you can find the number, but it is easier to just type <strong>box</strong></li>
+  <li>For <strong>client_id&gt;</strong>, <strong>client_secret&gt;</strong>, <strong>box_config_file</strong>, and <strong>access_token</strong> leave blank, just hit enter</li>
+  <li>For <strong>box_sub_type&gt;</strong> enter <strong>enterprise</strong></li>
+  <li>For <strong>Edit advanced config</strong> enter <strong>n</strong></li>
+  <li>For <strong>Remote config, Use auto config?</strong> enter <strong>n</strong></li>
+  <li>For <strong>result</strong> Paste the text from the last step of the above rclone guide section “Configuration of rclone on windows and osX” and hit enter</li>
+  <li>Type <strong>y</strong> for <strong>y) Yes this is OK</strong></li>
+  <li>Type <strong>q</strong> to quit</li>
+</ol>
+
+<h3 id="test">Test</h3>
+
+<ol>
+  <li>Test directory listing using the <strong>name&gt;</strong> you selected earlier:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rclone lsd usdabox:
+</code></pre></div>    </div>
+  </li>
+  <li>Test file listing
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rclone lsl usdabox: | <span class="nb">head</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="commands">Commands</h3>
+
+<ol>
+  <li>For description of commands available see <a href="https://rclone.org/docs/#subcommands">https://rclone.org/docs/#subcommands</a></li>
+  <li>You installed the rclone manual page earlier, so you can also do
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>man rclone
+</code></pre></div>    </div>
+  </li>
+  <li>Acommon case might be to backup your SciNet project directory to box. You could do this with:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rclone copy /project/bogus_genome usdabox:/scinetbackup/bogus_genome <span class="nt">--verbose</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="advanced-commands">Advanced commands</h3>
+
+<p>This advanced guide assumes you have read the previous page and have some familiarity with rclone already.</p>
+
+<p>Rclone supports “overlay” filesystems which can be then be overlayed in multiple layers.</p>
+
+<p>In this guide we will discuss the “crypt” and “chunk” overlays.  Using these 2 in combination can overcome virtually all of the limitations of any of the remote services.  i.e.. no 5, 10, or 15GB limit per file, no restrictions on special characters in filenames, etc. The overlays also provide some data protection by doing md5 checksums on the files transferred, if desired.  You should very much desire this.</p>
+
+<p>The process here is:</p>
+
+<ul>
+  <li>Create a basic store</li>
+  <li>Apply a crypt overlay.  This gets you encryption and works around filename limitations.</li>
+  <li>Apply a chunk overlay.  This gets around file size limitations.</li>
+</ul>
+
+<p>We are going to assume you have  already created a basic functional remote, In this case mine is called “google:”</p>
+
+<p>First we create a folder in the remote to hold our encrypted data.  I called mine “crypt”</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rclone <span class="nb">mkdir </span>google:crypt
+</code></pre></div></div>
+
+<p>Next run rclone config choosing crypt as the remote type and then use the name of your new folder as the path.  You will want to encrypt the directory names to avoid character limitation issues in the path.</p>
+
+<p>You must remember the password(s) you chose here. Your data will not be recoverable by anyone if your forget or lose it. There is no “password recovery.”</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rclone config
+
+Current remotes:
+
+ 
+
+Name                 Type
+<span class="o">====</span>                 <span class="o">====</span>
+boxsecret            crypt
+boxsecretchunked     chunker
+cybox                box
+google               drive
+onedrive             onedrive
+onedrivechunker      chunker
+onedrivecrypt        crypt
+
+e<span class="o">)</span> Edit existing remote
+n<span class="o">)</span> New remote
+d<span class="o">)</span> Delete remote
+r<span class="o">)</span> Rename remote
+c<span class="o">)</span> Copy remote
+s<span class="o">)</span> Set configuration password
+q<span class="o">)</span> Quit config
+e/n/d/r/c/s/q&gt; n
+name&gt; googlecrypt
+
+Type of storage to configure.
+Enter a string value. Press Enter <span class="k">for </span>the default <span class="o">(</span><span class="s2">""</span><span class="o">)</span><span class="nb">.</span>
+Choose a number from below, or <span class="nb">type </span><span class="k">in </span>your own value
+
+ 1 / 1Fichier
+   <span class="se">\ </span><span class="s2">"fichier"</span>
+ 2 / Alias <span class="k">for </span>an existing remote
+   <span class="se">\ </span><span class="s2">"alias"</span>
+ 3 / Amazon Drive
+   <span class="se">\ </span><span class="s2">"amazon cloud drive"</span>
+ 4 / Amazon S3 Compliant Storage Provider <span class="o">(</span>AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Minio, etc<span class="o">)</span>
+   <span class="se">\ </span><span class="s2">"s3"</span>
+ 5 / Backblaze B2
+   <span class="se">\ </span><span class="s2">"b2"</span>
+ 6 / Box
+   <span class="se">\ </span><span class="s2">"box"</span>
+ 7 / Cache a remote
+   <span class="se">\ </span><span class="s2">"cache"</span>
+ 8 / Citrix Sharefile
+   <span class="se">\ </span><span class="s2">"sharefile"</span>
+ 9 / Dropbox
+   <span class="se">\ </span><span class="s2">"dropbox"</span>
+10 / Encrypt/Decrypt a remote
+   <span class="se">\ </span><span class="s2">"crypt"</span>
+11 / FTP Connection
+   <span class="se">\ </span><span class="s2">"ftp"</span>
+12 / Google Cloud Storage <span class="o">(</span>this is not Google Drive<span class="o">)</span>
+   <span class="se">\ </span><span class="s2">"google cloud storage"</span>
+13 / Google Drive
+   <span class="se">\ </span><span class="s2">"drive"</span>
+14 / Google Photos
+   <span class="se">\ </span><span class="s2">"google photos"</span>
+15 / Hubic
+   <span class="se">\ </span><span class="s2">"hubic"</span>
+16 / JottaCloud
+   <span class="se">\ </span><span class="s2">"jottacloud"</span>
+17 / Koofr
+   <span class="se">\ </span><span class="s2">"koofr"</span>
+18 / Local Disk
+   <span class="se">\ </span><span class="s2">"local"</span>
+19 / Mail.ru Cloud
+   <span class="se">\ </span><span class="s2">"mailru"</span>
+20 / Mega
+   <span class="se">\ </span><span class="s2">"mega"</span>
+21 / Microsoft Azure Blob Storage
+   <span class="se">\ </span><span class="s2">"azureblob"</span>
+22 / Microsoft OneDrive
+   <span class="se">\ </span><span class="s2">"onedrive"</span>
+23 / OpenDrive
+   <span class="se">\ </span><span class="s2">"opendrive"</span>
+24 / Openstack Swift <span class="o">(</span>Rackspace Cloud Files, Memset Memstore, OVH<span class="o">)</span>
+   <span class="se">\ </span><span class="s2">"swift"</span>
+25 / Pcloud
+   <span class="se">\ </span><span class="s2">"pcloud"</span>
+26 / Put.io
+   <span class="se">\ </span><span class="s2">"putio"</span>
+27 / QingCloud Object Storage
+   <span class="se">\ </span><span class="s2">"qingstor"</span>
+28 / SSH/SFTP Connection
+   <span class="se">\ </span><span class="s2">"sftp"</span>
+29 / Transparently chunk/split large files
+   <span class="se">\ </span><span class="s2">"chunker"</span>
+30 / Union merges the contents of several remotes
+   <span class="se">\ </span><span class="s2">"union"</span>
+31 / Webdav
+   <span class="se">\ </span><span class="s2">"webdav"</span>
+32 / Yandex Disk
+   <span class="se">\ </span><span class="s2">"yandex"</span>
+33 / http Connection
+   <span class="se">\ </span><span class="s2">"http"</span>
+34 / premiumize.me
+   <span class="se">\ </span><span class="s2">"premiumizeme"</span>
+Storage&gt; crypt
+
+<span class="k">**</span> See <span class="nb">help </span><span class="k">for </span>crypt backend at: https://rclone.org/crypt/ <span class="k">**</span>
+
+Remote to encrypt/decrypt.
+Normally should contain a <span class="s1">':'</span> and a path, eg <span class="s2">"myremote:path/to/dir"</span>,
+<span class="s2">"myremote:bucket"</span> or maybe <span class="s2">"myremote:"</span> <span class="o">(</span>not recommended<span class="o">)</span><span class="nb">.</span>
+Enter a string value. Press Enter <span class="k">for </span>the default <span class="o">(</span><span class="s2">""</span><span class="o">)</span><span class="nb">.</span>
+remote&gt; google:crypt
+How to encrypt the filenames.
+Enter a string value. Press Enter <span class="k">for </span>the default <span class="o">(</span><span class="s2">"standard"</span><span class="o">)</span><span class="nb">.</span>
+Choose a number from below, or <span class="nb">type </span><span class="k">in </span>your own value
+ 1 / Don<span class="s1">'t encrypt the file names.  Adds a ".bin" extension only.
+   \ "off"
+ 2 / Encrypt the filenames see the docs for the details.
+   \ "standard"
+ 3 / Very simple filename obfuscation.
+   \ "obfuscate"
+filename_encryption&gt; 
+Option to either encrypt directory names or leave them intact.
+Enter a boolean value (true or false). Press Enter for the default ("true").
+Choose a number from below, or type in your own value
+ 1 / Encrypt directory names.
+   \ "true"
+ 2 / Don'</span>t encrypt directory names, leave them intact.
+   <span class="se">\ </span><span class="s2">"false"</span>
+directory_name_encryption&gt; 1
+Password or pass phrase <span class="k">for </span>encryption.
+y<span class="o">)</span> Yes <span class="nb">type </span><span class="k">in </span>my own password
+g<span class="o">)</span> Generate random password
+n<span class="o">)</span> No leave this optional password blank
+y/g/n&gt; y
+Enter the password:
+password:
+Confirm the password:
+password:
+Password or pass phrase <span class="k">for </span>salt. Optional but recommended.
+Should be different to the previous password.
+y<span class="o">)</span> Yes <span class="nb">type </span><span class="k">in </span>my own password
+g<span class="o">)</span> Generate random password
+n<span class="o">)</span> No leave this optional password blank
+y/g/n&gt; n
+Remote config
+<span class="nt">--------------------</span>
+<span class="o">[</span>googlecrypt]
+<span class="nb">type</span> <span class="o">=</span> crypt
+remote <span class="o">=</span> google:crypt
+directory_name_encryption <span class="o">=</span> <span class="nb">true
+</span>password <span class="o">=</span> <span class="k">***</span> ENCRYPTED <span class="k">***</span>
+<span class="nt">--------------------</span>
+y<span class="o">)</span> Yes this is OK
+e<span class="o">)</span> Edit this remote
+d<span class="o">)</span> Delete this remote
+y/e/d&gt; y
+Current remotes:
+ 
+Name                 Type
+<span class="o">====</span>                 <span class="o">====</span>
+boxsecret            crypt
+boxsecretchunked     chunker
+cybox                box
+google               drive
+googlecrypt          crypt
+onedrive             onedrive
+onedrivechunker      chunker
+onedrivecrypt        crypt
+ 
+e<span class="o">)</span> Edit existing remote
+n<span class="o">)</span> New remote
+d<span class="o">)</span> Delete remote
+r<span class="o">)</span> Rename remote
+c<span class="o">)</span> Copy remote
+s<span class="o">)</span> Set configuration password
+q<span class="o">)</span> Quit config
+e/n/d/r/c/s/q&gt; q
+<span class="nv">$ </span>rclone <span class="nb">ls </span>googlecrypt:
+<span class="err">$</span>
+</code></pre></div></div>
+
+<p>At this point you have a working encryption overlay.  You will want to add a “chunking” overlay on top on that.
+As before first create a folder in the encrypted overlay to hold your chunked overlay.  In this case I called mine “chunk”</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rclone <span class="nb">mkdir </span>googlecrypt:chunk 
+</code></pre></div></div>
+
+<p>Now create a chunk overlay, the defaults should be fine.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rclone config
+Current remotes:
+ 
+Name                 Type
+<span class="o">====</span>                 <span class="o">====</span>
+boxsecret            crypt
+boxsecretchunked     chunker
+cybox                box
+google               drive
+googlecrypt          crypt
+onedrive             onedrive
+onedrivechunker      chunker
+onedrivecrypt        crypt
+ 
+e<span class="o">)</span> Edit existing remote
+n<span class="o">)</span> New remote
+d<span class="o">)</span> Delete remote
+r<span class="o">)</span> Rename remote
+c<span class="o">)</span> Copy remote
+s<span class="o">)</span> Set configuration password
+q<span class="o">)</span> Quit config
+e/n/d/r/c/s/q&gt; n
+name&gt; googlechunk
+Type of storage to configure.
+Enter a string value. Press Enter <span class="k">for </span>the default <span class="o">(</span><span class="s2">""</span><span class="o">)</span><span class="nb">.</span>
+Choose a number from below, or <span class="nb">type </span><span class="k">in </span>your own value
+ 1 / 1Fichier
+   <span class="se">\ </span><span class="s2">"fichier"</span>
+ 2 / Alias <span class="k">for </span>an existing remote
+   <span class="se">\ </span><span class="s2">"alias"</span>
+ 3 / Amazon Drive
+   <span class="se">\ </span><span class="s2">"amazon cloud drive"</span>
+ 4 / Amazon S3 Compliant Storage Provider <span class="o">(</span>AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Minio, etc<span class="o">)</span>
+   <span class="se">\ </span><span class="s2">"s3"</span>
+ 5 / Backblaze B2
+   <span class="se">\ </span><span class="s2">"b2"</span>
+ 6 / Box
+   <span class="se">\ </span><span class="s2">"box"</span>
+ 7 / Cache a remote
+   <span class="se">\ </span><span class="s2">"cache"</span>
+ 8 / Citrix Sharefile
+   <span class="se">\ </span><span class="s2">"sharefile"</span>
+ 9 / Dropbox
+   <span class="se">\ </span><span class="s2">"dropbox"</span>
+10 / Encrypt/Decrypt a remote
+   <span class="se">\ </span><span class="s2">"crypt"</span>
+11 / FTP Connection
+   <span class="se">\ </span><span class="s2">"ftp"</span>
+12 / Google Cloud Storage <span class="o">(</span>this is not Google Drive<span class="o">)</span>
+   <span class="se">\ </span><span class="s2">"google cloud storage"</span>
+13 / Google Drive
+   <span class="se">\ </span><span class="s2">"drive"</span>
+14 / Google Photos
+   <span class="se">\ </span><span class="s2">"google photos"</span>
+15 / Hubic
+   <span class="se">\ </span><span class="s2">"hubic"</span>
+16 / JottaCloud
+   <span class="se">\ </span><span class="s2">"jottacloud"</span>
+17 / Koofr
+   <span class="se">\ </span><span class="s2">"koofr"</span>
+18 / Local Disk
+   <span class="se">\ </span><span class="s2">"local"</span>
+19 / Mail.ru Cloud
+   <span class="se">\ </span><span class="s2">"mailru"</span>
+20 / Mega
+   <span class="se">\ </span><span class="s2">"mega"</span>
+21 / Microsoft Azure Blob Storage
+   <span class="se">\ </span><span class="s2">"azureblob"</span>
+22 / Microsoft OneDrive
+   <span class="se">\ </span><span class="s2">"onedrive"</span>
+23 / OpenDrive
+   <span class="se">\ </span><span class="s2">"opendrive"</span>
+24 / Openstack Swift <span class="o">(</span>Rackspace Cloud Files, Memset Memstore, OVH<span class="o">)</span>
+   <span class="se">\ </span><span class="s2">"swift"</span>
+25 / Pcloud
+   <span class="se">\ </span><span class="s2">"pcloud"</span>
+26 / Put.io
+   <span class="se">\ </span><span class="s2">"putio"</span>
+27 / QingCloud Object Storage
+   <span class="se">\ </span><span class="s2">"qingstor"</span>
+28 / SSH/SFTP Connection
+   <span class="se">\ </span><span class="s2">"sftp"</span>
+29 / Transparently chunk/split large files
+   <span class="se">\ </span><span class="s2">"chunker"</span>
+30 / Union merges the contents of several remotes
+   <span class="se">\ </span><span class="s2">"union"</span>
+31 / Webdav
+   <span class="se">\ </span><span class="s2">"webdav"</span>
+32 / Yandex Disk
+   <span class="se">\ </span><span class="s2">"yandex"</span>
+33 / http Connection
+   <span class="se">\ </span><span class="s2">"http"</span>
+34 / premiumize.me
+   <span class="se">\ </span><span class="s2">"premiumizeme"</span>
+Storage&gt; chunker
+<span class="k">**</span> See <span class="nb">help </span><span class="k">for </span>chunker backend at: https://rclone.org/chunker/ <span class="k">**</span>
+ 
+Remote to chunk/unchunk.
+Normally should contain a <span class="s1">':'</span> and a path, eg <span class="s2">"myremote:path/to/dir"</span>,
+<span class="s2">"myremote:bucket"</span> or maybe <span class="s2">"myremote:"</span> <span class="o">(</span>not recommended<span class="o">)</span><span class="nb">.</span>
+Enter a string value. Press Enter <span class="k">for </span>the default <span class="o">(</span><span class="s2">""</span><span class="o">)</span><span class="nb">.</span>
+remote&gt; googlecrypt:chunk
+Files larger than chunk size will be <span class="nb">split </span><span class="k">in </span>chunks.
+Enter a size with suffix k,M,G,T. Press Enter <span class="k">for </span>the default <span class="o">(</span><span class="s2">"2G"</span><span class="o">)</span><span class="nb">.</span>
+chunk_size&gt; 
+Choose how chunker handles <span class="nb">hash </span>sums. All modes but <span class="s2">"none"</span> require metadata.
+Enter a string value. Press Enter <span class="k">for </span>the default <span class="o">(</span><span class="s2">"md5"</span><span class="o">)</span><span class="nb">.</span>
+Choose a number from below, or <span class="nb">type </span><span class="k">in </span>your own value
+ 1 / Pass any <span class="nb">hash </span>supported by wrapped remote <span class="k">for </span>non-chunked files, <span class="k">return </span>nothing otherwise
+   <span class="se">\ </span><span class="s2">"none"</span>
+ 2 / MD5 <span class="k">for </span>composite files
+   <span class="se">\ </span><span class="s2">"md5"</span>
+ 3 / SHA1 <span class="k">for </span>composite files
+   <span class="se">\ </span><span class="s2">"sha1"</span>
+ 4 / MD5 <span class="k">for </span>all files
+   <span class="se">\ </span><span class="s2">"md5all"</span>
+ 5 / SHA1 <span class="k">for </span>all files
+   <span class="se">\ </span><span class="s2">"sha1all"</span>
+ 6 / Copying a file to chunker will request MD5 from the <span class="nb">source </span>falling back to SHA1 <span class="k">if </span>unsupported
+   <span class="se">\ </span><span class="s2">"md5quick"</span>
+ 7 / Similar to <span class="s2">"md5quick"</span> but prefers SHA1 over MD5
+   <span class="se">\ </span><span class="s2">"sha1quick"</span>
+hash_type&gt; 
+Edit advanced config? <span class="o">(</span>y/n<span class="o">)</span>
+y<span class="o">)</span> Yes
+n<span class="o">)</span> No
+y/n&gt; 
+y/n&gt; n
+Remote config
+<span class="nt">--------------------</span>
+<span class="o">[</span>googlechunk]
+<span class="nb">type</span> <span class="o">=</span> chunker
+remote <span class="o">=</span> googlecrypt:chunk
+<span class="nt">--------------------</span>
+y<span class="o">)</span> Yes this is OK
+e<span class="o">)</span> Edit this remote
+d<span class="o">)</span> Delete this remote
+y/e/d&gt; y
+Current remotes:
+ 
+Name                 Type
+<span class="o">====</span>                 <span class="o">====</span>
+boxsecret            crypt
+boxsecretchunked     chunker
+cybox                box
+google               drive
+googlechunk          chunker
+googlecrypt          crypt
+onedrive             onedrive
+onedrivechunker      chunker
+onedrivecrypt        crypt
+ 
+e<span class="o">)</span> Edit existing remote
+n<span class="o">)</span> New remote
+d<span class="o">)</span> Delete remote
+r<span class="o">)</span> Rename remote
+c<span class="o">)</span> Copy remote
+s<span class="o">)</span> Set configuration password
+q<span class="o">)</span> Quit config
+e/n/d/r/c/s/q&gt; q 
+<span class="nv">$ </span>rclone <span class="nb">ls </span>googlechunk:
+
+</code></pre></div></div>
+
+<p>You now have an encrypted chunked storage remote, that is fully md5 checksummed.</p>
+
+
+  
+
+  
+
+  <br>
+
+  
+
+
+        <br>
+    </main>
+  </div>
+</div>
+</div>
+
+
+    <br>
+
+    
+
+  
+
+  
+
+
+    
+<footer class="usa-footer usa-footer--big">
+
+  
+  <div class="grid-container">
+    <p>Last updated: May 19, 2023 at 11:18 AM</p>
+  </div>
+  
+
+  
+  <div class="grid-container usa-footer__return-to-top">
+    <a href="#">Return to top</a>
+  </div>
+  
+
+  
+  
+
+  <div class="usa-footer__primary-section">
+    <div class="grid-container">
+          <nav class="usa-footer__nav" aria-label="Footer navigation">
+            <div class="grid-row grid-gap-4">
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                <section class="
+                usa-footer__primary-content
+                usa-footer__primary-content--collapsible
+              ">
+              <h4 class="usa-footer__primary-link">ABOUT</h4>
+              <ul class="usa-list usa-list--unstyled">
+                <li>
+                <p>SCINet is a USDA <a href='https://www.ars.usda.gov/'>Agricultural Research Service</a> initiative.</p>
+                <a class="usa-button" href="/about/organization">Learn More</a>
+                </li>
+              </ul>
+                </section>
+                </div>
+              
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">RESOURCES</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="mailto:scinet_vrsc@usda.gov">
+                        Feedback
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/about/signup">
+                        Sign Up
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/about/contact">
+                        Contact
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/opportunities/fellowships">
+                        Fellowships
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">USDA</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://ask.usda.gov/">
+                        AskUSDA
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/">
+                        USDA.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.usa.gov">
+                        USA.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.whitehouse.gov">
+                        WhiteHouse.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/plain-writing">
+                        Plain Writing
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">LEGAL</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/accessibility-statement">
+                        Accessibility Statement
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/non-discrimination-statement">
+                        Non-Discrimination Statement
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/privacy-policy">
+                        Privacy Policy
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.dm.usda.gov/foia/">
+                        FOIA
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.ocio.usda.gov/policy-directives-records-forms/information-quality-activities">
+                        Information Quality
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+            </div>
+          </nav>
+    </div>
+  </div>
+
+  
+  <div class="usa-footer__secondary-section">
+    <div class="grid-container sci-heading">
+      <div class="grid-row grid-gap">
+        <div class="usa-footer__logo grid-row mobile-lg:grid-col-6 tablet:grid-gap-2">
+          
+          
+          <div class="mobile-lg:grid-col-auto footer-flex">
+          
+<div class="usa-logo">
+    
+    <span class="agency-logo display-flex flex-align-center mobile-lg:margin-right-1">
+        
+        <a href="/">
+            <img class="usa-logo-img"
+                src="/assets/img/site/usda-logo-color.svg"
+                alt="USDA">
+        </a>
+        
+    </span>
+    
+    <a class="agency-logo-text"
+        href="/"
+        aria-label="SCINet Scientific Computing">
+        <div class="agency-identity">
+            <div class="agency-name usa-logo__text">SCINet Scientific Computing</div>
+            
+            <div class="tagline">U.S. Department of Agriculture</div>
+            
+        </div>
+    </a>
+</div>
+          </div>
+          
+
+
+        </div>
+
+        
+        <div class="margin-y-auto mobile-lg:grid-col-4 footer-flex">
+          
+          <div class="usa-footer__social-links grid-row grid-gap-1">
+            <div class="grid-col-auto">
+              
+              <a class="usa-social-link ext-nested" style="padding-right: .25rem;" href="https://twitter.com/USDA_ARS"
+              ><img
+                class="usa-social-link__icon"
+                src="/assets/uswds/img/usa-icons/twitter.svg"
+                alt="Twitter"
+            /></a>
+              
+              <a class="usa-social-link ext-nested" style="padding-right: .25rem;" href="mailto:scinet_vrsc@usda.gov"
+              ><img
+                class="usa-social-link__icon"
+                src="/assets/uswds/img/usa-icons/mail.svg"
+                alt="Contact VRSC"
+            /></a>
+              
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="grid-row mobile-lg:grid-col-2 footer-flex">
+        
+
+<small class="flex-align-self-center"><a href="https://github.com/USDA-SCINet/scinet-site/edit/main/sn_collections/_guides/rclone.md" class="usa-sidenav-edit" target="_blank">Edit this page</a></small>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+
+</footer>
+
+
+
+  <!-- dynamically determine scripts needed for this config -->
+
+
+
+
+
+
+
+  
+    
+      <script src="/assets/uswds/js/uswds.min.js" async></script>
+    
+
+  
+    
+      <script src="/assets/js/vendor/anchor.min.js"></script>
+    
+
+  
+    
+      <script src="/assets/js/main.js"></script>
+    
+
+  
+    
+      <script src="/assets/js/external.js"></script>
+    
+
+  
+    
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+      var usasearch_config = { siteHandle:"scinet-usda" };
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "https://search.usa.gov/javascripts/remote.loader.js";
+      document.getElementsByTagName("head")[0].appendChild(script);
+
+//]]>
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

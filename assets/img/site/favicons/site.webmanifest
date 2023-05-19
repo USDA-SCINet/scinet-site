@@ -1,0 +1,24 @@
+{
+    "lang": "en",
+    "dir": "ltr",
+    "name": "SCINet | USDA Scientific Computing Initiative",
+    "short_name": "SCINet",
+    "icons": [
+        {
+            "src": "/assets/img/site/favicons/maskable_icon_x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/assets/img/site/favicons/maskable_icon_x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "start_url": "https://scinet.usda.gov",
+    "display": "standalone"
+}

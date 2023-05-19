@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Multifactor Authentication | SCINet | USDA Scientific Computing Initiative</title>
+
+
+
+<meta name="description" content="A guide to setting up multifactor authentication for SCINet">
+
+
+
+
+<link rel="shortcut icon"type="image/ico"
+  href="/assets/img/site/favicons/favicon.ico">
+
+
+
+<link rel="icon"type="image/png"
+  href="/assets/img/site/favicons/favicon.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="192x192"
+  href="/assets/img/site/favicons/favicon-192.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="32x32"
+  href="/assets/img/site/favicons/favicon-32x32.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="16x16"
+  href="/assets/img/site/favicons/favicon-16x16.png">
+
+
+
+<link rel="manifest"
+  href="/assets/img/site/favicons/site.webmanifest">
+
+
+
+<link rel="mask-icon"
+  href="/assets/img/site/favicons/safari-pinned-tab.svg">
+
+
+
+<link rel="apple-touch-icon"
+  sizes="180x180"
+  href="/assets/img/site/favicons/apple-touch-icon.png">
+
+
+
+<meta name="msapplication-TileColor" content="#2b5797">
+
+
+
+<meta name="msapplication-config" content="/assets/img/site/favicons/browserconfig.xml">
+
+
+
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+  
+
+
+
+<link rel="stylesheet"
+  href="/assets/css/style.css"
+  media="screen">
+
+  
+  
+
+
+<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
+<script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=USDA&subagency=ARS"></script>
+
+
+  
+  <script>0</script>
+</head>
+
+<body class="site-90%">
+
+  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+  
+
+
+  <section class="usa-banner" aria-label="Official government website">
+  <div class="usa-accordion">
+    <header class="usa-banner__header">
+      <div class="usa-banner__inner">
+        <div class="grid-col-auto">
+          <img class="usa-banner__header-flag" src="/assets/uswds/img/us_flag_small.png" alt="U.S. flag">
+        </div>
+        <div class="grid-col-fill tablet:grid-col-auto">
+          <p class="usa-banner__header-text">An official website of the United States government</p>
+          <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
+        </div>
+        <button type="button" class="usa-accordion__button usa-banner__button"
+          aria-expanded="false" aria-controls="gov-banner">
+          <span class="usa-banner__button-text">Here’s how you know</span>
+        </button>
+      </div>
+    </header>
+    <div class="usa-banner__content usa-accordion__content" id="gov-banner" hidden="">
+      <div class="grid-row grid-gap-lg">
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/uswds/img/icon-dot-gov.svg" role="img" alt="Dot gov">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Official websites use .gov</strong>
+              <br/>
+              A <strong>.gov</strong> website belongs to an official government organization in the United States.
+            </p>
+          </div>
+        </div>
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/uswds/img/icon-https.svg" role="img" alt="Https">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Secure .gov websites use HTTPS</strong>
+              <br/>
+              A <strong>lock</strong> (
+<span class="icon-lock"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64" class="usa-banner__lock-image" role="img" aria-labelledby="banner-lock-title banner-lock-description"><title id="banner-lock-title">Lock</title><desc id="banner-lock-description">A locked padlock</desc><path fill="#000000" fill-rule="evenodd" d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"/></svg></span>
+) or <strong>https://</strong> means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<div class="usa-overlay"></div>
+<header class="usa-header usa-header--extended sci-heading" role="banner">
+
+  <div class="usa-navbar">
+      
+<div class="usa-logo">
+    
+    <span class="agency-logo display-flex flex-align-center mobile-lg:margin-right-1">
+        
+        <a href="/">
+            <img class="usa-logo-img"
+                src="/assets/img/site/usda-logo-color.svg"
+                alt="USDA">
+        </a>
+        
+    </span>
+    
+    <a class="agency-logo-text"
+        href="/"
+        aria-label="SCINet Scientific Computing">
+        <div class="agency-identity">
+            <div class="agency-name usa-logo__text">SCINet Scientific Computing</div>
+            
+            <div class="tagline">U.S. Department of Agriculture</div>
+            
+        </div>
+    </a>
+</div>
+    <button type="button" class="usa-menu-btn">Menu</button>
+  </div>
+
+  <nav aria-label="Primary navigation" class="usa-nav border-bottom-2px">
+    <div class="usa-nav__inner">
+      <button type="button" class="usa-nav__close">
+        <img src="/assets/uswds/img/usa-icons/close.svg" alt="close">
+      </button>
+      
+      
+      
+      <ul class="usa-nav__primary usa-accordion">
+        
+        <li class="usa-nav__primary-item">
+          
+          <a class=" usa-nav__link  "
+            href="/">
+            <span>Home</span>
+          </a>
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-About">
+            <span>About</span>
+          </button>
+
+          
+          
+
+<ul id="nav-About" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/signup"><span>Sign up for an account</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/compute"><span>Computer Systems</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/organization"><span>Organization</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/vrsc"><span>Virtual Research Support Core (VSRC)</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/policies"><span>Policies</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/contact"><span>Contact</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-News">
+            <span>News</span>
+          </button>
+
+          
+          
+
+<ul id="nav-News" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/downtime/"><span>System Downtime</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/announcements"><span>Announcements</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/stories"><span>User Stories</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/newsletter"><span>Newsletter</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/scinet-x"><span>SCINet-X</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-User Guides">
+            <span>User Guides</span>
+          </button>
+
+          
+          
+
+<ul id="nav-User Guides" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/guides/start"><span>Quick Start</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/guides/"><span>All User Guides</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Research">
+            <span>Research</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Research" class="usa-nav__submenu nav-width-2" hidden="">
+    <div class="grid-row grid-gap-4">
+        
+            
+            
+            
+        <li class="usa-nav__submenu-item desktop:grid-col-6 m-top-0">
+            
+
+                    
+                    
+                    <div class="">
+                        <a href="/research/working-groups/">
+                            Working Groups
+                        </a>
+                    </div>
+
+                    <ul id="nav-ResearchWorking Groups" class="sublist">
+
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/ag100pest">
+                                    Ag100Pest
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/arthropods">
+                                    Arthropod Genomics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/fungalbioinformatics">
+                                    Fungal Bioinformatics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/geospatial">
+                                    Geospatial Research
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/microbiome">
+                                    Microbiome
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/LTARphenology">
+                                    LTAR Phenology
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/pollinator">
+                                    Pollinator
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/proteinfunction">
+                                    Protein Function and Phenotype Prediction
+                                </a>
+                            </li>
+
+                        
+                    </ul>
+                </li>
+            
+        
+            
+            
+            
+        <li class="usa-nav__submenu-item desktop:grid-col-6 m-top-0">
+            
+
+                    
+                    
+                    <div class="">
+                        <a href="/research/uses/">
+                            Use Cases
+                        </a>
+                    </div>
+
+                    <ul id="nav-ResearchUse Cases" class="sublist">
+
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/genomics">
+                                    Genomics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/plant-breeding">
+                                    Plant breeding
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/geospatial">
+                                    Geospatial
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/hydrology">
+                                    Hydrology
+                                </a>
+                            </li>
+
+                        
+                    </ul>
+                </li>
+            
+        
+    </div>
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Trainings and Events">
+            <span>Trainings and Events</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Trainings and Events" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/resources"><span>Learning Resources</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/events/"><span>Upcoming Events</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/learningpath"><span>Learning Pathway</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Support">
+            <span>Support</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Support" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/contact"><span>Contact the VRSC</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/faq"><span>FAQs</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="https://forum.scinet.usda.gov"><span>USDA-ARS SCINet Forum</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/request"><span>Request Resources</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/ceres-job-script"><span>Ceres Job Script Generator</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Opportunities">
+            <span>Opportunities</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Opportunities" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/SAC"><span>SAC Membership</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/request-workshop"><span>Request a Workshop</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/fellowships"><span>Fellowships (PhD & MS)</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/ai-innovation/"><span>AI Innovation Fund</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/scinet-aicoe-fellowships"><span>SCINet and AI-COE fellowship proposals</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+
+
+      </ul>
+      
+
+    </div>
+
+    
+    <div class="usa-nav__secondary">
+      
+      
+        <form accept-charset="UTF-8" action="https://search.usa.gov/search" id="search_form" method="get"
+class="usa-search usa-search--small js-search-form">
+<input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="affiliate" id="affiliate" value="scinet-usda" />
+<div role="search">
+  <label for="query" class="usa-sr-only">Enter search terms</label>
+  <input autocomplete="off" class="usa-input usagov-search-autocomplete" id="query" name="query"
+    type="search" />
+  <button class="usa-button" type="submit" name="commit">
+    <img src="/assets/uswds/img/usa-icons-bg/search--white.svg"
+      class="usa-search__submit-icon" alt="Search" />
+  </button>
+</div>
+</form>
+
+      
+    </div>
+
+
+    </div>
+    </div>
+  </nav>
+
+</header>
+
+
+
+  
+
+    
+    
+
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+
+
+
+    
+    
+
+
+    <div class="grid-container main-side">
+
+
+  
+
+
+  
+
+  
+
+
+
+
+
+
+
+<div class="grid-row grid-gap flex-align-start">
+    <div class="usa-layout-docs__sidenav desktop:grid-col-3 desktop:padding-y-10 usa-sticky-sidenav">
+        <nav aria-label="Secondary navigation">
+  <ul class="usa-sidenav">
+
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/guides/start" 
+        >
+        Quick Start
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/guides/" 
+        >
+        All User Guides
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/guides/access" 
+         
+        class=" guide-nav " 
+        >
+        Accessing SCINet
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/guides/access/cli" 
+        >
+        Using Linux Command Line Interface
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/guides/access/glossary" 
+        >
+        SCINet Nomenclature
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/guides/access/login" 
+        >
+        Logging in to SCINet
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/guides/access/mfa" 
+         
+        class="usa-current " 
+        >
+        Multifactor Authentication
+    </a>
+    
+    
+    <ul class="usa-sidenav__sublist">
+        
+            
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #what-is-multifactor-authentication
+  " class="">What is Multifactor Authentication</a>
+  
+  
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #google-authenticator-ga-on-android
+  " class="">Google Authenticator on Android</a>
+  
+  
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #google-authenticator-ga-on-apple-ios-iphones-and-ipads
+  " class="">Google Authenticator on Apple iOS iPhones and iPads</a>
+  
+  
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #authentication-on-your-computer-using-authy
+  " class="">Authentication on Your Computer Using Authy</a>
+  
+  
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #ga-account-reset
+  " class="">GA account reset</a>
+  
+  
+  
+</li>
+
+
+        
+        
+    </ul>
+    
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/guides/access/open-ondemand" 
+        >
+        Open OnDemand Interface Guide
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/guides/access/vpn" 
+        >
+        SCINet VPN
+    </a>
+    
+</li>
+    
+
+  </ul>
+</nav>
+    </div>
+    
+    <div class="usa-layout-docs__main desktop:grid-col-9">
+        <nav class="usa-breadcrumb usa-breadcrumb--wrap" aria-label="Breadcrumbs">
+  <ol class="usa-breadcrumb__list">
+    
+    
+
+
+<li class="usa-breadcrumb__list-item">
+  <a href="/" class="usa-breadcrumb__link">
+    <span>SCINet Home</span>
+  </a>
+</li>
+
+    
+      
+
+
+<li class="usa-breadcrumb__list-item">
+  <a href="/guides" class="usa-breadcrumb__link">
+    <span>All User Guides</span>
+  </a>
+</li>
+    
+
+    
+      
+      
+        
+          
+          
+
+
+<li class="usa-breadcrumb__list-item">
+  <a href="/guides/access" class="usa-breadcrumb__link">
+    <span>Accessing SCINet</span>
+  </a>
+</li>
+        
+      
+    
+
+
+    <li class="usa-breadcrumb__list-item usa-current" aria-current="page">
+      <span>Multifactor Authentication</span>
+    </li>
+  </ol>
+</nav>
+        <main class="usa-layout-docs usa-layout-docs__main usa-prose" id="main-content">
+
+          
+  
+      <h1 class="top-header">Multifactor Authentication</h1>
+  
+  
+
+  
+
+  
+
+  <h2 id="what-is-multifactor-authentication">What is Multifactor Authentication</h2>
+
+<p>Federal computer systems are required to use multifactor authentication for site security. This means that a code is required in addition to a password to login to SCINet.<!--excerpt--> If you’re ssh-ing to Ceres cluster from a connected site (where you already had to use second factor such as PIV/CAC), you probably won’t be prompted for a verification code. However the code is always required to ssh to the <a href="https://www.hpc.msstate.edu/computing/atlas">Atlas cluster</a> and to use other SCINet resources, such as <a href="/guides/analysis/galaxy">SCINet Galaxy</a> or <a href="https://forum.scinet.usda.gov/">SCINet Forum</a>. It’s also needed to connect to <a href="/guides/access/vpn">SCINet VPN</a>.</p>
+
+<p>You will need to install an app on a mobile device or a small program on your computer that will generate your verification codes. The app is initialized with your SCINet Google Authentication (GA) account, that is normally created along with your SCINet account.</p>
+
+<p>To add your SCINet GA account to the app, you will need a key or a QR code, that you can find in your “Welcome to SCINet” email.</p>
+
+<p>Note: If your SCINet account was created <strong>before January 2020</strong>, and a GA account was never created, attempt to login to the Ceres DTN node:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh &lt;your SCINet username&gt;@ceres-dtn-0.scinet.usda.gov
+</code></pre></div></div>
+<p>At the first attempt a GA account will be created for you and you will receive an email containing a key/code that should be used to initialize GA on your mobile device.</p>
+
+<p>If you have already had GA installed and initialized but now need to either re-install GA or install it on a new device, and if you saved your SMS phone number in the system, you can reset GA account by going to <a href="https://ga.scinet.usda.gov/reset">https://ga.scinet.usda.gov/reset</a>. After resetting your GA account you will receive an email containing a key/code that should be used to initialize GA on your mobile device.</p>
+
+<p>Follow the instructions below to set up multifactor authentication on either your mobile <a href="#google-authenticator-ga-on-android">Android device</a> (recommended), <a href="#google-authenticator-ga-on-apple-ios-iphones-and-ipads">Apple device</a> (recommended), or <a href="#authentication-on-your-computer-using-authy">on your computer</a>.</p>
+
+<h3 id="google-authenticator-ga-on-android">Google Authenticator (GA) on Android</h3>
+
+<h4 id="requirements">Requirements</h4>
+<p>To use Google Authenticator on your Android device, it must be running Android version 2.1 or later (other TOTP authenticators can be used if you prefer).</p>
+
+<h4 id="downloading-the-app">Downloading the app</h4>
+
+<ol>
+  <li>Visit Google Play.</li>
+  <li>Search for Google Authenticator.</li>
+  <li>Download and install the application.</li>
+</ol>
+
+<h4 id="setting-up-the-app">Setting up the app</h4>
+
+<p>Open the Google authenticator app on your mobile device.</p>
+
+<p><img src="/assets/img/guides/access/mfa-setup.png" alt="screenshot of Google Authenticator Android app setup screen" /></p>
+
+<p>If this is the first time you have used Authenticator, click the <strong>Add an account</strong> button. If you already use the app and are adding a new account, choose “Add an account” from the app’s menu.</p>
+
+<p><img src="/assets/img/guides/access/mfa-add-account.png" alt="screenshot of Google Authenticator Android app Add an Account screen" /></p>
+
+<p>There are two ways to link your device to your account. Using QR code is easier but requires a barcode scanner which you can install if you don’t have it yet (Google Authenticator app will prompt you to install it). An alternative would be to use a Google Authenticator key as mentioned on the above screenshot.</p>
+
+<h4 id="link-phone-using-qr-code">Link phone using QR code</h4>
+
+<p>Select Scan a barcode. If the Authenticator app cannot locate a barcode scanner app on your phone, you might be prompted to download and install one. If you want to install a barcode scanner app so you can complete the setup process, press Install then go through the installation process. Once the app is installed, reopen Google Authenticator, display QR code on your computer by clicking on the link in the “Welcome to SCINet” email and point your camera at the QR code.</p>
+
+<p><img src="/assets/img/guides/access/mfa-barcode-scanner.png" alt="screenshot of barcode scanner app" /></p>
+
+<h4 id="link-phone-manually-with-a-ga-key">Link phone manually with a GA key</h4>
+
+<p>Select Enter a provided key, then Enter account name, which is &lt;your SCINet username&gt;@ceres. Next, enter the Google Authenticator key from the “Welcome to SCINet” email into the box under Enter Key. Make sure you’ve chosen to make the key time-based and press “Save.”</p>
+
+<p><img src="/assets/img/guides/access/mfa-account-details.png" alt="screenshot of Google Authenticator Android app Enter Account Details screen" /></p>
+
+<h4 id="verify">Verify</h4>
+
+<p>To verify the application is working correctly,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh &lt;your SCINet username&gt;@ceres-dtn-0.scinet.usda.gov
+</code></pre></div></div>
+<p>Enter the verification code currently displayed in Google Authenticator, then enter your SCINet password.</p>
+
+<p>If your code is correct, you will be connected to Ceres’ data transfer node. If your code is incorrect and you’re prompted for a verification code again, wait for a new code to be generated on your phone, then enter it on your computer. If you’re still having trouble, verify that the time on your phone is correct.</p>
+
+<p>After logging in the first time you will be prompted to save an SMS phone number in the system so an SMS message can be sent to you when a GA account reset is requested.</p>
+
+<p>Contact <a href="mailto:scinet_vrsc@USDA.GOV?subject=help%20with%20multifactor%20authentication">scinet_vrsc@usda.gov</a> if you need assistance.</p>
+
+<h3 id="google-authenticator-ga-on-apple-ios-iphones-and-ipads">Google Authenticator (GA) on Apple iOS iPhones and iPads</h3>
+
+<h4 id="requirements-1">Requirements</h4>
+
+<p>To use Google Authenticator on your iPhone, iPod Touch, or iPad, you must have iOS 5.0 or later. In addition, in order to set up the app on your iPhone using a QR code, you must have a 3G model or later.</p>
+
+<h4 id="downloading-the-app-1">Downloading the app</h4>
+
+<ol>
+  <li>Visit the App Store.</li>
+  <li>Search for Google Authenticator.</li>
+  <li>Download and install the application.</li>
+</ol>
+
+<h4 id="setting-up-the-app-1">Setting up the app</h4>
+
+<p>On your iOS device, open the Google Authenticator application. Tap the plus icon. Tap “Time Based” (label 1).</p>
+
+<p><img src="/assets/img/guides/access/mfa-ios.png" alt="screenshot of Google Authenticator iOS app Add Token screen with added labels" /></p>
+
+<p>There are two ways to link your device to your account. Using a QR code is easier but requires a camera. An alternative would be to use a Google Authenticator key in the Key field (label 2c in above screenshot).</p>
+
+<h4 id="link-phone-using-qr-code-1">Link phone using QR code</h4>
+
+<p>Tap “Scan Barcode” (label 2a above) and then point your camera at the QR code on your computer screen (click on the link in the “Welcome to SCINet” email to access QR code).</p>
+
+<h4 id="link-phone-manually-with-a-ga-key-1">Link phone manually with a GA key</h4>
+
+<p>In the box next to Account (label 2b above), enter your account name, which is &lt;your SCINet username&gt;@ceres . Then, enter the Google Authenticator key from the “Welcome to SCINet” email into the box next to “Key” (label 2c above) and tap “Done” (label 2d above).</p>
+
+<h4 id="verify-1">Verify</h4>
+
+<p>To verify the application is working correctly,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh &lt;your SCINet username&gt;@ceres-dtn-0.scinet.usda.gov
+</code></pre></div></div>
+<p>Enter the verification code currently displayed in google authenticator and then enter your password.</p>
+
+<p>If your code is correct, you will be connected to Ceres’ data transfer node. If your code is incorrect and you’re prompted for a verification code again, wait for a new code to be generated on your phone, then enter it on your computer. If you’re still having trouble, verify that the time on your phone is correct.</p>
+
+<p>After logging in the first time you will be prompted to save an SMS phone number in the system so an SMS message can be sent to you when a GA account reset is requested.</p>
+
+<p>Contact <a href="mailto:scinet_vrsc@USDA.GOV?subject=help%20with%20multifactor%20authentication">scinet_vrsc@usda.gov</a> if you need assistance.</p>
+
+<h3 id="authentication-on-your-computer-using-authy">Authentication on your computer using Authy</h3>
+
+<p>If you are unable to use a smart device for multifactor authentication you may use Authy on your PC for a second factor.</p>
+
+<p>Authy can be downloaded from <a href="https://authy.com">https://authy.com</a>.</p>
+
+<p>Click the download button then scroll down to the “Desktop” section and download the binary for your platform. (Windows or macOS)</p>
+
+<p>Run the installer. This won’t require administrator privileges, but it will need to be run by each user of the machine.</p>
+
+<p>The installer will need to tie your login to a phone number and an email address. The phone number can be either a land line or a cell phone.</p>
+
+<p>The systems will want to send you a verification number. If you are not using a cell phone please select “voice call” (not SMS) for the verification.</p>
+
+<p>After making your choice a code will be shown and you should receive a call or a text which you should respond to with the code on your screen.</p>
+
+<p>You are now setup and can add your SCINet GA key to Authy.</p>
+
+<p>To do so click the red “+” in the Authy app and enter the key from the email you received titled “Welcome to SCINet”.</p>
+
+<p>You will need to enter the key from the email since Authy cannot use QR codes.</p>
+
+<p>Now name the account and pick an icon.</p>
+
+<p>Authy should now be displaying codes for use with Ceres. Each code is shown for 30 seconds and then a new code in generated automatically. Codes are only valid for a few seconds after they are displayed and cannot be reused.</p>
+
+<p>Contact <a href="mailto:scinet_vrsc@USDA.GOV?subject=help%20with%20multifactor%20authentication">scinet_vrsc@usda.gov</a> if you need assistance.</p>
+
+<h2 id="ga-account-reset">GA account reset</h2>
+
+<p>Users may need to reset GA accounts when switching or reinstalling their mobile devices that have GA application installed. To be able to perform GA reset by yourself, save an SMS phone number in the system by issuing phone-collect.sh command on Ceres. This is the same process that is run automatically the first time you login. After doing that you will be able to do a self-service reset of your GA at <a href="https://ga.scinet.usda.gov/reset">https://ga.scinet.usda.gov/reset/</a>.</p>
+
+<p>If you are unable to or do not wish to save an SMS phone number, GA account reset request will have to go though your supervisor or sponsor as we have no way of directly verifying your identity.</p>
+
+
+  
+
+  
+
+  <br>
+
+  
+
+
+        <br>
+    </main>
+  </div>
+</div>
+</div>
+
+
+    <br>
+
+    
+
+  
+
+  
+
+
+    
+<footer class="usa-footer usa-footer--big">
+
+  
+  <div class="grid-container">
+    <p>Last updated: May 19, 2023 at 11:18 AM</p>
+  </div>
+  
+
+  
+  <div class="grid-container usa-footer__return-to-top">
+    <a href="#">Return to top</a>
+  </div>
+  
+
+  
+  
+
+  <div class="usa-footer__primary-section">
+    <div class="grid-container">
+          <nav class="usa-footer__nav" aria-label="Footer navigation">
+            <div class="grid-row grid-gap-4">
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                <section class="
+                usa-footer__primary-content
+                usa-footer__primary-content--collapsible
+              ">
+              <h4 class="usa-footer__primary-link">ABOUT</h4>
+              <ul class="usa-list usa-list--unstyled">
+                <li>
+                <p>SCINet is a USDA <a href='https://www.ars.usda.gov/'>Agricultural Research Service</a> initiative.</p>
+                <a class="usa-button" href="/about/organization">Learn More</a>
+                </li>
+              </ul>
+                </section>
+                </div>
+              
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">RESOURCES</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="mailto:scinet_vrsc@usda.gov">
+                        Feedback
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/about/signup">
+                        Sign Up
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/about/contact">
+                        Contact
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/opportunities/fellowships">
+                        Fellowships
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">USDA</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://ask.usda.gov/">
+                        AskUSDA
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/">
+                        USDA.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.usa.gov">
+                        USA.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.whitehouse.gov">
+                        WhiteHouse.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/plain-writing">
+                        Plain Writing
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">LEGAL</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/accessibility-statement">
+                        Accessibility Statement
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/non-discrimination-statement">
+                        Non-Discrimination Statement
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/privacy-policy">
+                        Privacy Policy
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.dm.usda.gov/foia/">
+                        FOIA
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.ocio.usda.gov/policy-directives-records-forms/information-quality-activities">
+                        Information Quality
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+            </div>
+          </nav>
+    </div>
+  </div>
+
+  
+  <div class="usa-footer__secondary-section">
+    <div class="grid-container sci-heading">
+      <div class="grid-row grid-gap">
+        <div class="usa-footer__logo grid-row mobile-lg:grid-col-6 tablet:grid-gap-2">
+          
+          
+          <div class="mobile-lg:grid-col-auto footer-flex">
+          
+<div class="usa-logo">
+    
+    <span class="agency-logo display-flex flex-align-center mobile-lg:margin-right-1">
+        
+        <a href="/">
+            <img class="usa-logo-img"
+                src="/assets/img/site/usda-logo-color.svg"
+                alt="USDA">
+        </a>
+        
+    </span>
+    
+    <a class="agency-logo-text"
+        href="/"
+        aria-label="SCINet Scientific Computing">
+        <div class="agency-identity">
+            <div class="agency-name usa-logo__text">SCINet Scientific Computing</div>
+            
+            <div class="tagline">U.S. Department of Agriculture</div>
+            
+        </div>
+    </a>
+</div>
+          </div>
+          
+
+
+        </div>
+
+        
+        <div class="margin-y-auto mobile-lg:grid-col-4 footer-flex">
+          
+          <div class="usa-footer__social-links grid-row grid-gap-1">
+            <div class="grid-col-auto">
+              
+              <a class="usa-social-link ext-nested" style="padding-right: .25rem;" href="https://twitter.com/USDA_ARS"
+              ><img
+                class="usa-social-link__icon"
+                src="/assets/uswds/img/usa-icons/twitter.svg"
+                alt="Twitter"
+            /></a>
+              
+              <a class="usa-social-link ext-nested" style="padding-right: .25rem;" href="mailto:scinet_vrsc@usda.gov"
+              ><img
+                class="usa-social-link__icon"
+                src="/assets/uswds/img/usa-icons/mail.svg"
+                alt="Contact VRSC"
+            /></a>
+              
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="grid-row mobile-lg:grid-col-2 footer-flex">
+        
+
+<small class="flex-align-self-center"><a href="https://github.com/USDA-SCINet/scinet-site/edit/main/sn_collections/_guides/mfa.md" class="usa-sidenav-edit" target="_blank">Edit this page</a></small>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+
+</footer>
+
+
+
+  <!-- dynamically determine scripts needed for this config -->
+
+
+
+
+
+
+
+  
+    
+      <script src="/assets/uswds/js/uswds.min.js" async></script>
+    
+
+  
+    
+      <script src="/assets/js/vendor/anchor.min.js"></script>
+    
+
+  
+    
+      <script src="/assets/js/main.js"></script>
+    
+
+  
+    
+      <script src="/assets/js/external.js"></script>
+    
+
+  
+    
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+      var usasearch_config = { siteHandle:"scinet-usda" };
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "https://search.usa.gov/javascripts/remote.loader.js";
+      document.getElementsByTagName("head")[0].appendChild(script);
+
+//]]>
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

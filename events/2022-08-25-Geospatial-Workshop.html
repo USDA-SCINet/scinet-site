@@ -1,0 +1,2459 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>2022 Geospatial Workshop | SCINet | USDA Scientific Computing Initiative</title>
+
+
+
+<meta name="description" content="SCINet is a USDA initiative to provide agricultural scientists access to high performance computing, networking and training">
+
+
+
+
+<link rel="shortcut icon"type="image/ico"
+  href="/assets/img/site/favicons/favicon.ico">
+
+
+
+<link rel="icon"type="image/png"
+  href="/assets/img/site/favicons/favicon.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="192x192"
+  href="/assets/img/site/favicons/favicon-192.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="32x32"
+  href="/assets/img/site/favicons/favicon-32x32.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="16x16"
+  href="/assets/img/site/favicons/favicon-16x16.png">
+
+
+
+<link rel="manifest"
+  href="/assets/img/site/favicons/site.webmanifest">
+
+
+
+<link rel="mask-icon"
+  href="/assets/img/site/favicons/safari-pinned-tab.svg">
+
+
+
+<link rel="apple-touch-icon"
+  sizes="180x180"
+  href="/assets/img/site/favicons/apple-touch-icon.png">
+
+
+
+<meta name="msapplication-TileColor" content="#2b5797">
+
+
+
+<meta name="msapplication-config" content="/assets/img/site/favicons/browserconfig.xml">
+
+
+
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+  
+
+
+
+<link rel="stylesheet"
+  href="/assets/css/style.css"
+  media="screen">
+
+  
+  
+
+
+<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
+<script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=USDA&subagency=ARS"></script>
+
+
+  
+  <script>0</script>
+</head>
+
+<body class="site-90%">
+
+  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+  
+
+
+  <section class="usa-banner" aria-label="Official government website">
+  <div class="usa-accordion">
+    <header class="usa-banner__header">
+      <div class="usa-banner__inner">
+        <div class="grid-col-auto">
+          <img class="usa-banner__header-flag" src="/assets/uswds/img/us_flag_small.png" alt="U.S. flag">
+        </div>
+        <div class="grid-col-fill tablet:grid-col-auto">
+          <p class="usa-banner__header-text">An official website of the United States government</p>
+          <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
+        </div>
+        <button type="button" class="usa-accordion__button usa-banner__button"
+          aria-expanded="false" aria-controls="gov-banner">
+          <span class="usa-banner__button-text">Here’s how you know</span>
+        </button>
+      </div>
+    </header>
+    <div class="usa-banner__content usa-accordion__content" id="gov-banner" hidden="">
+      <div class="grid-row grid-gap-lg">
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/uswds/img/icon-dot-gov.svg" role="img" alt="Dot gov">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Official websites use .gov</strong>
+              <br/>
+              A <strong>.gov</strong> website belongs to an official government organization in the United States.
+            </p>
+          </div>
+        </div>
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/uswds/img/icon-https.svg" role="img" alt="Https">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Secure .gov websites use HTTPS</strong>
+              <br/>
+              A <strong>lock</strong> (
+<span class="icon-lock"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64" class="usa-banner__lock-image" role="img" aria-labelledby="banner-lock-title banner-lock-description"><title id="banner-lock-title">Lock</title><desc id="banner-lock-description">A locked padlock</desc><path fill="#000000" fill-rule="evenodd" d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"/></svg></span>
+) or <strong>https://</strong> means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<div class="usa-overlay"></div>
+<header class="usa-header usa-header--extended sci-heading" role="banner">
+
+  <div class="usa-navbar">
+      
+<div class="usa-logo">
+    
+    <span class="agency-logo display-flex flex-align-center mobile-lg:margin-right-1">
+        
+        <a href="/">
+            <img class="usa-logo-img"
+                src="/assets/img/site/usda-logo-color.svg"
+                alt="USDA">
+        </a>
+        
+    </span>
+    
+    <a class="agency-logo-text"
+        href="/"
+        aria-label="SCINet Scientific Computing">
+        <div class="agency-identity">
+            <div class="agency-name usa-logo__text">SCINet Scientific Computing</div>
+            
+            <div class="tagline">U.S. Department of Agriculture</div>
+            
+        </div>
+    </a>
+</div>
+    <button type="button" class="usa-menu-btn">Menu</button>
+  </div>
+
+  <nav aria-label="Primary navigation" class="usa-nav border-bottom-2px">
+    <div class="usa-nav__inner">
+      <button type="button" class="usa-nav__close">
+        <img src="/assets/uswds/img/usa-icons/close.svg" alt="close">
+      </button>
+      
+      
+      
+      <ul class="usa-nav__primary usa-accordion">
+        
+        <li class="usa-nav__primary-item">
+          
+          <a class=" usa-nav__link  "
+            href="/">
+            <span>Home</span>
+          </a>
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-About">
+            <span>About</span>
+          </button>
+
+          
+          
+
+<ul id="nav-About" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/signup"><span>Sign up for an account</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/compute"><span>Computer Systems</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/organization"><span>Organization</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/vrsc"><span>Virtual Research Support Core (VSRC)</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/policies"><span>Policies</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/contact"><span>Contact</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-News">
+            <span>News</span>
+          </button>
+
+          
+          
+
+<ul id="nav-News" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/downtime/"><span>System Downtime</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/announcements"><span>Announcements</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/stories"><span>User Stories</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/newsletter"><span>Newsletter</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/scinet-x"><span>SCINet-X</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-User Guides">
+            <span>User Guides</span>
+          </button>
+
+          
+          
+
+<ul id="nav-User Guides" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/guides/start"><span>Quick Start</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/guides/"><span>All User Guides</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Research">
+            <span>Research</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Research" class="usa-nav__submenu nav-width-2" hidden="">
+    <div class="grid-row grid-gap-4">
+        
+            
+            
+            
+        <li class="usa-nav__submenu-item desktop:grid-col-6 m-top-0">
+            
+
+                    
+                    
+                    <div class="">
+                        <a href="/research/working-groups/">
+                            Working Groups
+                        </a>
+                    </div>
+
+                    <ul id="nav-ResearchWorking Groups" class="sublist">
+
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/ag100pest">
+                                    Ag100Pest
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/arthropods">
+                                    Arthropod Genomics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/fungalbioinformatics">
+                                    Fungal Bioinformatics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/geospatial">
+                                    Geospatial Research
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/microbiome">
+                                    Microbiome
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/LTARphenology">
+                                    LTAR Phenology
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/pollinator">
+                                    Pollinator
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/proteinfunction">
+                                    Protein Function and Phenotype Prediction
+                                </a>
+                            </li>
+
+                        
+                    </ul>
+                </li>
+            
+        
+            
+            
+            
+        <li class="usa-nav__submenu-item desktop:grid-col-6 m-top-0">
+            
+
+                    
+                    
+                    <div class="">
+                        <a href="/research/uses/">
+                            Use Cases
+                        </a>
+                    </div>
+
+                    <ul id="nav-ResearchUse Cases" class="sublist">
+
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/genomics">
+                                    Genomics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/plant-breeding">
+                                    Plant breeding
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/geospatial">
+                                    Geospatial
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/hydrology">
+                                    Hydrology
+                                </a>
+                            </li>
+
+                        
+                    </ul>
+                </li>
+            
+        
+    </div>
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Trainings and Events">
+            <span>Trainings and Events</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Trainings and Events" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/resources"><span>Learning Resources</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/events/"><span>Upcoming Events</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/learningpath"><span>Learning Pathway</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Support">
+            <span>Support</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Support" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/contact"><span>Contact the VRSC</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/faq"><span>FAQs</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="https://forum.scinet.usda.gov"><span>USDA-ARS SCINet Forum</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/request"><span>Request Resources</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/ceres-job-script"><span>Ceres Job Script Generator</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Opportunities">
+            <span>Opportunities</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Opportunities" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/SAC"><span>SAC Membership</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/request-workshop"><span>Request a Workshop</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/fellowships"><span>Fellowships (PhD & MS)</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/ai-innovation/"><span>AI Innovation Fund</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/scinet-aicoe-fellowships"><span>SCINet and AI-COE fellowship proposals</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+
+
+      </ul>
+      
+
+    </div>
+
+    
+    <div class="usa-nav__secondary">
+      
+      
+        <form accept-charset="UTF-8" action="https://search.usa.gov/search" id="search_form" method="get"
+class="usa-search usa-search--small js-search-form">
+<input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="affiliate" id="affiliate" value="scinet-usda" />
+<div role="search">
+  <label for="query" class="usa-sr-only">Enter search terms</label>
+  <input autocomplete="off" class="usa-input usagov-search-autocomplete" id="query" name="query"
+    type="search" />
+  <button class="usa-button" type="submit" name="commit">
+    <img src="/assets/uswds/img/usa-icons-bg/search--white.svg"
+      class="usa-search__submit-icon" alt="Search" />
+  </button>
+</div>
+</form>
+
+      
+    </div>
+
+
+    </div>
+    </div>
+  </nav>
+
+</header>
+
+
+
+  
+  <main id="main-content"  ="" >
+    
+
+    
+    
+<section class="usa-hero no-hero-img"
+  aria-label="Introduction" ;>
+  <div class="grid-container  full">
+    <div class="usa-hero__callout">
+      
+      
+      <div class="grid-row">
+        <div class="desktop:grid-col-3 padding-2 hero-graphic">
+          
+            <svg class="" id="ebba00a7-8bdf-478d-8c94-b42e7fb17218" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle class="icon-dark" cx="50" cy="50" r="50" />
+  <path class="icon-light" d="M84.73,50.18A32,32,0,0,0,59.24,24.43,31.45,31.45,0,0,0,39,27l-.88,1.45A29.61,29.61,0,0,1,52.39,25,29.89,29.89,0,1,1,28.15,36.87c-.16-.23-.31-.47-.47-.71a31.36,31.36,0,0,0-6.62,16.32c-.08.74-.17,1.47-.26,2.21v2.67c.13,1.11.25,2.22.4,3.32A32.06,32.06,0,0,0,45.44,87.3c11.56,2.6,21.77-.21,30.31-8.44A30.9,30.9,0,0,0,85,60.2c.08-.62.18-1.23.27-1.85V53.7C85.09,52.53,85,51.35,84.73,50.18Z" />
+  <path class="icon-light" d="M65.89,39.6a.27.27,0,0,1-.22-.1l-.8-.3a4,4,0,0,0-.09-.46c-.07-.28-.13-.3-.4-.18l-.18.08-.09-.32c-.36.18-.39.2-.22.53a6.07,6.07,0,0,0,.55.87.32.32,0,0,0,.24,0c.25,0,.48-.14.57.22,0,.1.16.17.24.25a.5.5,0,0,1,.1.73,1.27,1.27,0,0,0-.06.28l.07,0,.22-.16c.4.16.18.49.2.78a.85.85,0,0,0,.6-.43c.06-.14.22-.24.36-.37l0,.06a.2.2,0,0,1,.12-.08l.1-.11L67,40.26a1.1,1.1,0,0,1-.26,0c-.07,0-.16,0-.19-.05l-.5-.66-.07,0,0,0-.06,0Z" />
+  <path class="icon-light" d="M63,29a1.21,1.21,0,0,1-.71-.09.35.35,0,0,1-.17-.06l-.2-.09h.13a.34.34,0,0,1,0-.14h0a1.32,1.32,0,0,1-.71-.19l-.09,0a1,1,0,0,1-.5-.1l0,.08a1.46,1.46,0,0,1,.45.27l.32.08a.37.37,0,0,1,.18.14l1.12.51s.09.06.13.05l.59-.19A.48.48,0,0,0,63,29Z" />
+  <path class="icon-light" d="M83.44,52.47A33.65,33.65,0,0,0,83,49l0,.06,0,0,.14.7-.09,0c-.06-.12-.11-.25-.18-.37l-.17-.31a.26.26,0,0,1-.1-.07c-.18-.22-.38-.43-.56-.66a.29.29,0,0,1-.08-.13v-.08s0,0,0-.07a5.64,5.64,0,0,1-.31-.53c-.14-.3-.2-.63-.49-.79H81l-.05,0-.12,0v-.06l-.07-.07,0,0-.11-.15-.06,0a.29.29,0,0,1-.13-.18s0,0,0,0l-1.2-1.49,0-.05c.45.23.9.46,1.34.71a.71.71,0,0,1,.31.56L81,46l0,0,0,.07s0,0,0,0a1.62,1.62,0,0,1,.18.19.35.35,0,0,1,.08.13v.11l.46.7a3.08,3.08,0,0,0,.3.41.93.93,0,0,1,.24.38c.16.2.34.38.5.58a29.36,29.36,0,0,0-4.18-10.32A29.75,29.75,0,0,0,67,27.72,28.73,28.73,0,0,0,58.41,25c-1.16-.19-2.35-.24-3.53-.35l-.35-.05H52.85l-1.35.1a27.44,27.44,0,0,0-6.66,1.28s0,0,0,0a.46.46,0,0,1-.07.14h0a.43.43,0,0,0,0,.05l.1,0a1.27,1.27,0,0,1-.1.12.22.22,0,0,1,0,.11.42.42,0,0,1-.1.2.5.5,0,0,1-.13.12,4.26,4.26,0,0,1,.62,0l-1.63.56c.2.16.35.09.52.06l.13,0a4,4,0,0,0,1.24-.4,1.55,1.55,0,0,1,.74-.2l.23-.18a.58.58,0,0,1,.23-.08c.59-.2,1.17-.4,1.76-.58h0a1.47,1.47,0,0,1,.81-.21l.44.05a.93.93,0,0,0,.34-.05.91.91,0,0,1,.42-.09,3.86,3.86,0,0,1,1.47-.17l2.44-.14a.43.43,0,0,1,.18.06l1,.37s0,0,0,0a1.15,1.15,0,0,1,.57,0l1.25.2V26l-1-.2a1,1,0,0,1,.13.09l.06.06.12,0c-.07.17.18.57.34.52.62-.16,1.15.17,1.72.26a2.91,2.91,0,0,1,.74.23.3.3,0,0,1,.27-.06.85.85,0,0,1,.22.09c.43.05.79.36,1.21,0a.36.36,0,0,0,.26.35l.06,0a.29.29,0,0,1,.29.08l0,0v.07l0,0a.2.2,0,0,1,0,.11,1.74,1.74,0,0,1,.22.05,2.67,2.67,0,0,0,.85,0,.24.24,0,0,1,0-.12.35.35,0,0,1,0-.08l-.13,0a.51.51,0,0,1,.26-.09h0l.05,0h.19l.07,0,.06.05h0l0,.06a.08.08,0,0,1,0,0s0,0,0,0l0,0h0v.07h0s0,0,0,.05a1.62,1.62,0,0,1,.73.24.28.28,0,0,1,.09.1.57.57,0,0,1,.06.17l-2.66-.45a.38.38,0,0,1-.13.09,2.38,2.38,0,0,0,.45.15,2.16,2.16,0,0,1,.67.25l.2.06a.3.3,0,0,1,.18.13.27.27,0,0,1,0,.17l0,.06h-.05a.34.34,0,0,1-.06.12,2.68,2.68,0,0,1,1,.5c.29.24.56.51.84.76a1.87,1.87,0,0,0,.28.16.82.82,0,0,1,.27.22l-.67-.19a.32.32,0,0,1-.1.35l1.2.32c-.28.19-.23.29-.07.42.31.24.6.5.93.78-.59.27-1.08-.17-1.62-.15V32l.38-.19c.13-.06.14-.14.07-.26-.32-.52-.42-.56-1-.39l-.58.16c-.09,0-.16.1-.25.14s-.12,0-.16,0l-.34-.14c0,.28,0,.56,0,.84a1.46,1.46,0,0,0,.06.51,4,4,0,0,0,.2.35,3.66,3.66,0,0,1,.25.68,2,2,0,0,1,.59,1.14,5.57,5.57,0,0,0,.31,1.2,4.49,4.49,0,0,0,.38.71h0l.19.06a.27.27,0,0,1,.21.25.77.77,0,0,0,.18.18,1.33,1.33,0,0,0,.52.17c.16,0,.14-.11.11-.23a3.38,3.38,0,0,1-.11-.73,3.58,3.58,0,0,1,1.81,1.49l.06,0,.15-.47.07.07a.29.29,0,0,1,.08-.07l.07,0h0a.82.82,0,0,1-.18-.33c0-.07-.1-.13-.16-.19l-.47-.41a.52.52,0,0,1-.21-.58c0-.15-.06-.33-.11-.55h0a.27.27,0,0,1-.06-.1.31.31,0,0,1-.31.11.76.76,0,0,1-.29-.13c-.13-.1-.25-.24-.38-.35a1.23,1.23,0,0,1-.46-.73c0-.18-.22-.33-.34-.49s-.1-.07-.15-.11-.33-.25-.18-.4.36,0,.51.05a.78.78,0,0,1,.25.37,3.6,3.6,0,0,0,1.13,1.23,1.18,1.18,0,0,0,.28.12c.09-.17.2-.33.28-.51a1.52,1.52,0,0,0,.06-.2A.25.25,0,0,1,67.7,34v0H68l0,.09,0,.06,0,0v0c.11.19.12.23,0,.34l-.07.08a2.69,2.69,0,0,1-.19.38c0,.13.1.25.3.35l.59.32.07.07-.55.06a2.13,2.13,0,0,0,.38.37,1.22,1.22,0,0,1,.63,1.2c-.47,0-.35.33-.45.61a.6.6,0,0,0-.08-.08h0a.47.47,0,0,1-.06.09v0h0l0,0,.16.15a.86.86,0,0,0-.23-.06,1,1,0,0,0-.44,0c-.54.27-.73.16-.75-.37l-.57-.5c-.16.28-.14.46.15.61.56.3.63.86.8,1.39a.46.46,0,0,0-.21.6,1.3,1.3,0,0,1-.1,1c0,.07,0,.17,0,.26v0a.29.29,0,0,1,0,.27l0,.14-.09,0,0,0a.19.19,0,0,1-.08,0l0,.06-.42.13.35.41a3,3,0,0,0-.48.2c-.09.06-.13.19-.19.29a1.33,1.33,0,0,0,.35.19,4.36,4.36,0,0,0,.62,0l0,.09a2,2,0,0,1,.38.24,4.32,4.32,0,0,1,.35.5.24.24,0,0,1,.06.11.25.25,0,0,1,0,.17l.24.63-1.65.55a.46.46,0,0,0-.21.79,1.46,1.46,0,0,1,.22.43c.09.31.17.61.23.92s0,.43.32.45c0,0,.11.13.14.21a4,4,0,0,1,.14.46,1.85,1.85,0,0,1,.7-.23c.22,0,.42.22.61.34l.08,0c.06-.35.31-.49.62-.58s.37-.35.42-.62a1,1,0,0,1,0-.25,1,1,0,0,1,.1-.35l0,0a1.11,1.11,0,0,0-.07-.16.71.71,0,0,0-.12-.18,1,1,0,0,1-.14-1A1,1,0,0,0,69.91,44c.23-.12.42-.21.59-.32a.56.56,0,0,0,.21-.25,5.09,5.09,0,0,0,.14-.56.3.3,0,0,1,.49-.17,1.49,1.49,0,0,1,.2.15,2.12,2.12,0,0,0,1.39.48,1,1,0,0,1,.2.07h.16a.31.31,0,0,1,.16.06c.46.09.49.58.79.83a1.12,1.12,0,0,0-.58-1.17l.07-.06h.38l0-.08a.84.84,0,0,0-.2-.08c-.34-.07-.67-.13-1-.21a.34.34,0,0,1-.18-.11,1.18,1.18,0,0,1-.36-.12,2.67,2.67,0,0,1-.48-.15.27.27,0,0,1-.22-.12.78.78,0,0,1-.22-.25l.42-.33.09.11a1.06,1.06,0,0,1,.25,0,1.17,1.17,0,0,1,.26.1l1.11.23a.4.4,0,0,1,.22.17A3,3,0,0,0,75,43.1c.06,0,.15,0,.24,0,0,.49.44.41.68.67,0-.48-.1-.6-.6-.77l.33-.14c-.05-.25-.06-.26-.51-.23.16-.33,0-.57-.18-.82s-.13-.46.24-.51l.23,0a.31.31,0,0,0,.07.42c.3.33.48.78,1,.89a.79.79,0,0,1,.08-.16c.11-.12.23-.16.33-.06h0a.23.23,0,0,1,.14,0v-.05l.53-1a5.65,5.65,0,0,1,.38.58c.24.5.46,1,.68,1.51a.49.49,0,0,1,0,.31c-.07.14-.15.27-.23.4a.43.43,0,0,1,0,.23.3.3,0,0,1-.09.1c.12.21,0,.39-.17.54a2,2,0,0,1-1.07.4c-.39,0-.59.49-.41,1a2.85,2.85,0,0,0,.25.45c.13.2.08.35-.15.4a1.62,1.62,0,0,1-.71.11,1,1,0,0,1-.53-.39l-.11,0,.07.12c-.3.11-.54.2-.8.27a1.35,1.35,0,0,1-.45,0,.25.25,0,0,1-.26-.3,1.4,1.4,0,0,0,0-.41c0-.11,0-.25-.13-.3a.67.67,0,0,1-.34-.59c-.35-.06-.48.21-.67.41a6,6,0,0,1-.56.37c-.48.38-1,.78-1.44,1.19h0a.35.35,0,0,1-.11.1l0,.08s0,.12,0,.18a1.23,1.23,0,0,1-1.3.77c-.2,0-.3,0-.33.23a2.37,2.37,0,0,0,0,.46,1.18,1.18,0,0,1-.29.82,1.11,1.11,0,0,0-.22.55c0,.33,0,.67,0,1,0,0,0,0,0,.05a.51.51,0,0,1,.08.47s0,0,0,0l0,.07a.08.08,0,0,0,0,0l0,0a2.38,2.38,0,0,1-.3.49l-.12.16-.41.61a3.9,3.9,0,0,0-.31.8,2,2,0,0,1,0,.84A14,14,0,0,0,66.9,57l0,.46a.47.47,0,0,0,.06.15,7.83,7.83,0,0,1,.45.92.48.48,0,0,1,0,.24c0,.31,0,.62,0,.92a.88.88,0,0,1-.12.55h0a.25.25,0,0,1,0,.07l0,.22v.15a.47.47,0,0,1,0,.17.53.53,0,0,1,.2.58.24.24,0,0,0,.19.33l.2.1a.89.89,0,0,1,.46.39.54.54,0,0,1,.34.24,1.8,1.8,0,0,1,.39.27c.14.11.2.31.31.46a.71.71,0,0,0,.25.24,4.63,4.63,0,0,1,1.3.64c.17.15.5.1.76.15a.63.63,0,0,0,.64-.29,1.81,1.81,0,0,1,.41-.23c.23-.14.46-.28.68-.43a.51.51,0,0,1,.5-.14.31.31,0,0,0,.23-.08c.15-.14.28-.3.45-.48l0,.2a.05.05,0,0,1,0,0,1.49,1.49,0,0,1,.17-.43,3.51,3.51,0,0,1,1.24-1,.3.3,0,0,1,.26,0c.2.14.38.3.61.49a2.75,2.75,0,0,0,.37-.39.45.45,0,0,1,.51-.22c.06,0,.16.1.16.15,0,.5,0,1,0,1.49a.15.15,0,0,1,0,.07v0a2.48,2.48,0,0,1,0,.27h0l0,.22c0,.05,0,.1-.05.15a.9.9,0,0,0,.22.42c.21.25.41.51.6.77a.6.6,0,0,1,.07.27c0,.3,0,.61,0,.91a2.32,2.32,0,0,0,0,1.08,5,5,0,0,0-.51,1.47c0,.09-.12.17-.21.24a3.11,3.11,0,0,1-.45,1c0,.12-.07.23-.09.34s0,.41,0,.61a3.08,3.08,0,0,1-.08.53,1,1,0,0,1,0,.35l-.06.21a.29.29,0,0,1,0,.09,4.6,4.6,0,0,1-.62,1.28c-.17.26-.32.53-.47.8A29.45,29.45,0,0,0,83.3,57.89,29.74,29.74,0,0,0,83.44,52.47ZM80.09,40.69c.17.47.34,1,.5,1.43l-.06,0a6.33,6.33,0,0,0-.62-.75,1.44,1.44,0,0,1-.44-.85C79.71,40.51,79.81,40.87,80.09,40.69Zm-4.58.07c0,.16-.05.32-.08.48l-.15-.69C75.48,40.49,75.54,40.58,75.51,40.76Zm0-1.69V40a.61.61,0,0,0,.05.12.31.31,0,0,1-.21.37h0v0c-.64-.12-.76-.72-1.07-1.15a.74.74,0,0,1-.08-.38h0a1,1,0,0,1,0-.17l0,0a.24.24,0,0,1-.12-.14c-.18-.17-.4-.31-.34-.64l.44,0,.11.2a.39.39,0,0,1,.21,0l.13.08.06,0,0-.42c-.38,0-.6-.26-.65-.72,0-.2,0-.4,0-.68a3.47,3.47,0,0,1,.68,1.32.26.26,0,0,1,.31-.21,3.54,3.54,0,0,0,.46,0,.53.53,0,0,1,.66.57,3.13,3.13,0,0,0,0,.43C76.06,39,75.93,39.16,75.49,39.07Z" />
+  <path class="icon-light" d="M60.33,36.56a.25.25,0,0,0-.17-.36.87.87,0,0,1-.38-.33h0l0,0c-.35.18-.62.34-.9.47a.4.4,0,0,1-.32,0c-.35-.24-.4-.11-.47.23a.37.37,0,0,0,0,.11l.66.34c-.07.3.12.34.34.28a2.86,2.86,0,0,0,.58-.21c.2-.09.38-.21.6-.33l0,.1a.24.24,0,0,1,.06-.08A.46.46,0,0,1,60.33,36.56Z" />
+  <path class="icon-light" d="M51.21,32.77a.74.74,0,0,1,.79.43h-.06a.37.37,0,0,1,.05.11h0c.11.33.31.64.18,1s-.11.43.3.45h.13l.09.37c.11.46.11.46-.3.7A1.07,1.07,0,0,0,52,36.88a4.54,4.54,0,0,0,.11.66,3.63,3.63,0,0,0,.8,1.45,3,3,0,0,0,.49.32h0a7,7,0,0,0,.92-.1.67.67,0,0,0,0-.68.43.43,0,0,1,.1-.31c.19-.26.41-.49.62-.74,0,0,0-.08.07-.11l1.21-1.08a.6.6,0,0,1,.24-.28.43.43,0,0,1,.17-.06.21.21,0,0,1,0-.06c.27-.31.52-.64.78-1l-.06-.08a2.15,2.15,0,0,0-.36.11c-.39.14-.45.11-.55-.28,0-.09,0-.17-.08-.29l1.06.31c-.08-.37-.1-.37-.38-.51s-.3-.2-.5-.33l.54-.28-.07-.17a.48.48,0,0,1-.1-.17A.36.36,0,0,1,57,33a.33.33,0,0,1,0-.21l-.11-.06c-.11-.06-.2-.15-.31-.21a.74.74,0,0,1-.43-.68A8,8,0,0,0,56,30.67a4.55,4.55,0,0,0-.71.26.54.54,0,0,1-.65,0l.46-.21c-.56-.33-.58-.33-1.46,0v.54A1.63,1.63,0,0,1,53.3,31a.59.59,0,0,0-.69,0,8.48,8.48,0,0,0-.77.36l.2.1a1.1,1.1,0,0,1-.86.39c-.36,0-.44.12-.43.51A.42.42,0,0,0,51.21,32.77Z" />
+  <path class="icon-light" d="M58.87,71.89c-.09-.38-.29-.51-.71-.48a1,1,0,0,1-.49-.09c-.32-.16-.62-.37-.93-.55a1,1,0,0,0-.32-.14c-.56-.07-1.13-.09-1.68-.2a6.11,6.11,0,0,1-1-.37v0l-.08,0h-.06L53,69.81c-.13,0-.25-.1-.39-.13a.73.73,0,0,0-.88.33.43.43,0,0,1-.61.25,1.64,1.64,0,0,1-.24-.19c.64-.1.76-.15,1-.48h0a.52.52,0,0,1-.27-.17l-.1,0v0h0l0,0a.29.29,0,0,1-.05-.13h-.75c.2-.23.32-.4.47-.55s.11-.19,0-.31a1.29,1.29,0,0,1-.31-.46.89.89,0,0,0-.41-.48c-.27-.16-.5-.38-.78-.52a3.9,3.9,0,0,0-1-.44,5.71,5.71,0,0,0-1.1-.06.62.62,0,0,1-.52-.44,1.82,1.82,0,0,0-.31-.47,1.75,1.75,0,0,0-.32-.29,1.36,1.36,0,0,0-.44-.24c-.37-.11-.38-.11-.29-.51a4.74,4.74,0,0,0-.85-.58,5.05,5.05,0,0,0-1-.14.49.49,0,0,1-.25-.07,2.68,2.68,0,0,0-1.13-.39,2.64,2.64,0,0,1-.7-.44c-.12-.08-.23-.18-.41-.33A.46.46,0,0,1,41,63c-.12,0-.3,0-.37,0s-.09-.26-.06-.36a7.75,7.75,0,0,1,.35-.78,6.27,6.27,0,0,0-.89.33,1.23,1.23,0,0,1-.94.13l0-.28-.24.35s0,.07,0,.09c.1.32-.17.45-.35.52a.63.63,0,0,1-.71-.11,1.45,1.45,0,0,1-.29-.32.39.39,0,0,0-.49-.25c-.1,0-.21,0-.3,0-.35.1-.54-.09-.7-.36s-.26-.39-.39-.59c-.23-.37,0-.75,0-1.12a9.3,9.3,0,0,1,.26-1,.05.05,0,0,1,0,0l0,0a.69.69,0,0,1-.09-.25.52.52,0,0,1-.25-.32.35.35,0,0,0-.2-.21c-.28-.12-.58-.21-.87-.33s-.37-.17-.49-.22l.35-1.18.19.15s.05-.05.05-.08a1.65,1.65,0,0,1,.52-1.07c.17-.16-.06-.56-.34-.61a4,4,0,0,1-.48-.08s-.07-.11-.11-.17a2.67,2.67,0,0,0-.55.93c-.13.28-.28.29-.49.08a.41.41,0,0,0-.27-.08c-.54,0-.65-.07-.84-.57-.11-.28-.28-.55-.14-.88,0-.08,0-.21,0-.32a1.61,1.61,0,0,1,.09-1,.7.7,0,0,1,.08-.23l0,0a.22.22,0,0,1-.07-.1c.07-.25.09-.57.26-.73a2.29,2.29,0,0,0,.6-1.19c.05-.26.14-.39.45-.34a1.16,1.16,0,0,0,.61-.1.44.44,0,0,1,.37,0c.13.05.27.06.4.1a.44.44,0,0,1,.2.13c.12.17.23.35.34.53l.13-.12v.26l.23-.33L36,51l.13-.07h0v0c.16,0,.35-.1.48-.05s.17.24.3.44h0a.61.61,0,0,1,0,.13l.56.25a.61.61,0,0,1,.23.69,1.81,1.81,0,0,0-.07,1c0,.25,0,.5,0,.75s0,.38.2.42.3-.13.4-.32a3.26,3.26,0,0,0,.17-1.45V52h0a.49.49,0,0,1,0-.12h0c.08-.18.14-.33.21-.48a1.5,1.5,0,0,1,1.24-.82,2.76,2.76,0,0,0,1.38-.65.67.67,0,0,0,.08-.9.63.63,0,0,0,0-.74l.17.1c.14-.14,0-.46.31-.46q-.15.43-.27.87s0,.05.09.08l0,0,.11-.08.08,0,.08-.1,0,0v0h0l.08-.05s0-.11.07-.17a3.21,3.21,0,0,1,.39-.52,1.14,1.14,0,0,0,.15-.17c.05-.1.05-.27.11-.3a2,2,0,0,1,.62-.16,7.63,7.63,0,0,1,.95,0L44.12,47a4.48,4.48,0,0,1,.26-.49.37.37,0,0,1,.19-.16c.26-.07.53-.1.79-.17a2.62,2.62,0,0,0,.39-.15.24.24,0,0,1,.06-.09l.12-.1.07,0a.42.42,0,0,1,.14-.06l.08,0h.16l.07,0a.29.29,0,0,1,.11.11v0l.36.07,0,.1L46.59,46s0,0,0,.06a.2.2,0,0,1,0,.11.2.2,0,0,1-.08.08.21.21,0,0,1-.1.06h-.05l-.09,0h0l-.07,0a1.28,1.28,0,0,0,0,.43l.08,0a3.27,3.27,0,0,0,.3-.35.58.58,0,0,1,.55-.28c.27,0,.53.06.8.1a.42.42,0,0,1,.11-.17.65.65,0,0,0-.15-.1,4.84,4.84,0,0,0-.72-.36.58.58,0,0,1-.37-.74c.12-.26.05-.36-.19-.42l-.15-.09a1.58,1.58,0,0,1,.45,0c.2,0,.23-.09.24-.24S47.05,44,46.9,44l-.42.09a5.94,5.94,0,0,1-.86.12c.28-.38.92-.2,1-.72h.77a.85.85,0,0,1,.16,0c.35.09.7.17,1,.27,0,0,.08.12.11.18l.2-.2a1.79,1.79,0,0,0,.44-.3.44.44,0,0,1,.57-.15c.17.08.27,0,.34-.15.2-.44.17-.74-.1-1a.5.5,0,0,0-.6,0c-.13.07-.27.12-.42.19,0-.29.28-.45.82-.49l-.62-.71L48.91,41l.09,0c0-.21,0-.42-.06-.63a1.65,1.65,0,0,1,0-.36l-.18-.11.2-.55a.53.53,0,0,1,0-.22L48.66,39a.57.57,0,0,1-.08.13h0a1.17,1.17,0,0,1-1.46.26l.49-.36a.64.64,0,0,1,0-.6.76.76,0,0,0-.16-.06.38.38,0,0,1-.33-.43c0-.24,0-.36-.25-.33a.6.6,0,0,1-.56.39h-.14c.13,0,0,0,0,0h0l-.08,0s-.12.1,0,0l-.06.06,0,.06a.58.58,0,0,1-.27.36c-.13.19-.39.12-.57.23.37.4.09.83,0,1.24,0,.05-.09.09-.14.11-.34.15-.69.28-1,.45a.46.46,0,0,0-.22.29,7.16,7.16,0,0,0,0,.84l-.23.19a.29.29,0,0,1-.49-.1A1.09,1.09,0,0,1,43,41c0-.09,0-.23.06-.34s.18-.39.28-.63c-.09-.06-.25-.14-.39-.25a1.06,1.06,0,0,1-.28-.32,6.44,6.44,0,0,1-.3-.72.33.33,0,0,1,0-.24s-.05,0-.07-.06v0l-.51-.17c.07-.1.15-.2.22-.31s.18-.22.12-.43.14-.32.23-.51l.07,0a.64.64,0,0,1,.18-.1c.15-.3.31-.56.71-.52a.65.65,0,0,0,.22-.08l.39-.2a.67.67,0,0,1,.48-.23.52.52,0,0,1,.18,0,.16.16,0,0,1,.12,0c.26.12.34,0,.4-.24a.65.65,0,0,1,1.12-.27.29.29,0,0,0,.43.05l.48-.35a.67.67,0,0,0,0-1,.64.64,0,0,1-.64.14.3.3,0,0,1-.11.06h-.08a.29.29,0,0,1-.21-.09A.3.3,0,0,1,46,34a.14.14,0,0,1,0-.11.21.21,0,0,1,.06-.1l.21-.19.22-.16A.63.63,0,0,0,46.6,33l.87-.32a.3.3,0,0,1,.05-.34c-.14-.11-.25-.09-.38.07s-.36.39-.54.58a1.24,1.24,0,0,0-.33.09,5.18,5.18,0,0,0-.49.35l.09.38-1,.57a.64.64,0,0,0-.59-.73c-.19,0-.19-.2-.14-.34a.53.53,0,0,1,.58-.22l.21.07h.17a4.32,4.32,0,0,1,.32-.69c.07-.12.24-.18.37-.26l.78-.45s0,0,0,0v-.08s0,0,0,0a.37.37,0,0,1-.32-.08l-.06.29c-.25-.14-.35-.51-.74-.38a.67.67,0,0,1-.31,0,.79.79,0,0,0-.43,0l0,.05a2.43,2.43,0,0,1-.32.24l-.07.07h0s0,0,0,0v0a.38.38,0,0,1,0,.1l0,.06A.36.36,0,0,1,44,32l-.37.52.94.27c-.1,0-.18.14-.22.13-.39-.16-.9.08-1.19-.37,0,0,0-.08,0-.08.37,0,.42-.29.43-.61a.31.31,0,0,1,.07-.16h0a1,1,0,0,1,.06-.25l0,0c0-.22.08-.4.11-.59a.25.25,0,0,0,0-.09,2.21,2.21,0,0,1-.37,0,.55.55,0,0,1-.38-.35L43,30.37l.1,0a.8.8,0,0,1,0-.15.63.63,0,0,1,.44-.58h0c.15-.19.3-.38.46-.56h0a.56.56,0,0,1,.26-.34l0,0c.14-.07.28-.13.41-.21s.26-.1.26-.16a.43.43,0,0,0-.13-.35.55.55,0,0,0-.43-.08c-.37.11-.72.27-1.08.41a.85.85,0,0,1-.2,0,1.59,1.59,0,0,1,.57-.48.25.25,0,0,1,0-.15,3.69,3.69,0,0,0-.82.13.57.57,0,0,1-.2.21.69.69,0,0,1-.55.44c-.11,0-.23-.11-.34-.16v0a1.69,1.69,0,0,1-.55-.06H41l0,0h0l-.25.07-.08.06a1.82,1.82,0,0,1-.28.11,2.62,2.62,0,0,0-.34.24l0,0a5.44,5.44,0,0,1-.37.56.56.56,0,0,1-.6.26,1.91,1.91,0,0,0-.66.09v.11c.17.08.34.16.51.26a.27.27,0,0,1,.13.18s0,.07-.08.11a.72.72,0,0,1,.12.23c.08-.09.23-.11.55-.13l-.57.47a.52.52,0,0,1-.25.28h0l-.13.46s-.08.09-.12.13a1.36,1.36,0,0,1-.13.64l.1,0-.13.09a1.74,1.74,0,0,1-.15.26,4,4,0,0,1-1.56,1.42c-.45.41-.9.81-1.34,1.23a.86.86,0,0,0-.23.43,1.94,1.94,0,0,1-.57,1.2,1.37,1.37,0,0,0-.19.22,2.44,2.44,0,0,1-.75,1,10.63,10.63,0,0,1-1.13.76,3.31,3.31,0,0,0-.5.41,2.62,2.62,0,0,0-.28.3,4.37,4.37,0,0,0-.89,1.4c-.11.41-.41.67-.53,1a4.75,4.75,0,0,1-.25.56.47.47,0,0,1,.06.46L30,43.3a.61.61,0,0,1,0,.3c-.19.73-.4,1.45-.61,2.18h-.09l0,0a.36.36,0,0,1,0,.1v0a.45.45,0,0,1,0,.23c0,.21,0,.42,0,.63a.33.33,0,0,1-.15.21c-.15.08-.2.16-.14.32a1.55,1.55,0,0,1,0,1.06,1.66,1.66,0,0,0-.12,1.1,1,1,0,0,1,0,.42.65.65,0,0,1,.05.41s0,0,0,0l.05,0a1.06,1.06,0,0,1,.15-.15h0a2.38,2.38,0,0,0,0-.36,3.24,3.24,0,0,1,.13-1.38,5.11,5.11,0,0,0,.19-1.17c.05-.33.1-.66.16-1,.06,0,.08-.25.17-.4a6.22,6.22,0,0,0,.29-.7,1.4,1.4,0,0,1-.14,1.27c-.08-.06-.07.26-.09.44-.06.43,0,.86-.05,1.29a2.94,2.94,0,0,1-.15,1.05,2.21,2.21,0,0,0,0,.88,4.73,4.73,0,0,1,0,.76.3.3,0,0,1,.05.15s0,.09,0,.14a.45.45,0,0,1,0,.4c-.13.38-.24.76-.36,1.15a1.16,1.16,0,0,1,.08.32l.16.42a4.19,4.19,0,0,0,.34.85,11.84,11.84,0,0,0,1.36,2.13.5.5,0,0,0,.22.13c.12,0,.29,0,.37,0a1,1,0,0,1,.48.74h0a.61.61,0,0,1,0,.19,4.46,4.46,0,0,1,.59.7,6.85,6.85,0,0,0,.81.89c.06.06.19,0,.31.06.19.47.39,1,.58,1.46a1,1,0,0,1,0,.3c0,.28,0,.28.2.47l.1-.17c.07.11.14.19.19.28s.23.46.36.69a.51.51,0,0,0,.2.21,1.68,1.68,0,0,1,.74.68.64.64,0,0,0,.22.14,2.66,2.66,0,0,0,0-.28.38.38,0,0,0,0-.1c.39-.28.58-.27.86.08a.85.85,0,0,1,0,.25.66.66,0,0,0,.05.28,1.63,1.63,0,0,1,.14,1.28c-.09.31-.05.6.34.72-.17.19-.26.46-.59.29,0,0-.22.1-.25.18-.1.26-.3.32-.52.44a.83.83,0,0,1-.28.09.82.82,0,0,1-.09.19h0a6.93,6.93,0,0,0-.07.76.51.51,0,0,0,.1.29q.32.44-.18.63c-.06,0-.15.13-.14.17.1.28.08.59.34.83a6.08,6.08,0,0,1,.77.91,3.83,3.83,0,0,1,.27.58,2.59,2.59,0,0,0,.14.29,1.76,1.76,0,0,1,.42.84c0,.11.13.21.2.31a6,6,0,0,0,.34.61c.1.16.22.32.34.48l.25.12a.53.53,0,0,1,.24.25l.94.67.56.41a3.16,3.16,0,0,1,.44.38,2.45,2.45,0,0,1,.61,1.21,2.15,2.15,0,0,1,0,.44.49.49,0,0,1,0,.24s0,.07,0,.11c0,.3.09.61.12.92a.06.06,0,0,0,0,0c0,.11.07.21.11.32a2.79,2.79,0,0,1,.13.7.36.36,0,0,0,0,.09,1,1,0,0,1,0,1.21c.2.3.36.56.54.8a.48.48,0,0,0,.31.19c.25,0,.39.15.44.46h0a.78.78,0,0,1,.1.15,1.68,1.68,0,0,1,.83.64h0a1.54,1.54,0,0,1,.19.17c.46.15.94.29,1.41.42l0,0,.25-.15a.54.54,0,0,1-.08-.36.58.58,0,0,1,.08-.22h-.07l0-.1.61-.24-.12-.38a2.51,2.51,0,0,0,.31,0,.63.63,0,0,1,.49.11l.12-.06a.57.57,0,0,1,.42,0c.26,0,.51.07.71-.19L48,80.91l0,0c.36.11.73.21,1.09.33a.73.73,0,0,0,.69,0c.51-.31,1-.6,1.56-.89a.38.38,0,0,1,.1,0s0,0,0,0l0,0a.69.69,0,0,1,.13-.11l.08,0a1.47,1.47,0,0,0,.26-.2.28.28,0,0,0,.1-.22c-.08-.51-.1-.54.32-.75s.84-.34,1.28-.52v0a1.49,1.49,0,0,1,.55-.1l.41,0a.54.54,0,0,0,.18,0l.07,0a2.29,2.29,0,0,0,.29-.18s.05-.07.08-.08c.41-.15.55-.54.77-.85a2.67,2.67,0,0,0,.36-.54,9.62,9.62,0,0,0,.32-1,.64.64,0,0,1,0-.41s0,0,0-.05a.13.13,0,0,1,0-.06.84.84,0,0,1,.33-.5,3,3,0,0,0,.38-.41,5.41,5.41,0,0,1,.72-.64A1.7,1.7,0,0,0,58.87,71.89ZM50.62,69.8l-.17-.49.46,0-.2.54Z" />
+  <path class="icon-light" d="M49,34a.27.27,0,0,1,0-.16c-.24-.19-.54-.36-.25-.7-.31-.36-.72-.09-1.12-.23l0,0-.11-.05-.71.65a.26.26,0,0,1,.14.11.19.19,0,0,1,0,.12.17.17,0,0,1,0,.12s0,.05,0,.08,0,0,0,.06c.05.23.24.14.38.18l.72.2a.39.39,0,0,1,.2.35h0a.35.35,0,0,1,.08.22.91.91,0,0,1,0,.4c0,.14.06.28.08.42a.2.2,0,0,1-.08.17A1.51,1.51,0,0,1,48,36l-.12.05-.07.06c0,.05,0,.12,0,.23h-.44l0-.05a.3.3,0,0,1-.26-.07l-.12,0-.31.26.1.14h0a.21.21,0,0,1,.11,0,.18.18,0,0,1,.09.08.23.23,0,0,1,0,.1v0a.78.78,0,0,1,.53.41,2.85,2.85,0,0,0,.54.61c.06.06.14.09.2.15s.22.26.38.14a1.54,1.54,0,0,0,.36-.4c0-.07,0-.18.07-.25s.14-.38-.13-.49a.18.18,0,0,1-.08-.15c0-.17,0-.35.06-.54.24-.11.3.09.38.24s.15.31.22.46a5.86,5.86,0,0,0,.61-.4s0-.24,0-.26c-.45-.22-.38-.64-.4-1a1.82,1.82,0,0,0-.57-1.29A.31.31,0,0,1,49,34Z" />
+  <path class="icon-light" d="M36.33,55.47a1.28,1.28,0,0,1,.35.07c.19.08.35.19.53.28a1,1,0,0,1,.49.34c.09.15.33.2.49.31s.2.1.21.15a.73.73,0,0,0,.51.63l-.39.3,0,.06h1.17l-.06.29.31-.26-.14-.36c-.07,0-.16,0-.19,0l-1.7-1.63h0a.51.51,0,0,1-.25-.25l-1-.37-.1,0-.12,0h0l-.44.28,0,.05A1.31,1.31,0,0,1,36.33,55.47Z" />
+  <path class="icon-light" d="M52.5,30.78c-.19.11-.38.23-.58.33-.52.27-1.05.52-1.56.81a.33.33,0,0,1-.49-.11,1.4,1.4,0,0,1-.13.18c-.08.09-.18.27-.24.26a1.78,1.78,0,0,1-.45-.24c.06-.06.09-.16.16-.19.33-.13.66-.23,1-.36.07,0,.16-.19.13-.24s0-.28.09-.42c.14-.31.29-.53.69-.4.1,0,.25-.06.37,0a2.17,2.17,0,0,1,.5.13A4.69,4.69,0,0,1,52.5,30.78Z" />
+  <path class="icon-light" d="M50.41,30.53l-.27.68-.85.15A1.06,1.06,0,0,1,50.41,30.53Z" />
+  <path class="icon-light" d="M59.66,30.88c-.31.13-.39.11-.45-.13-.32,0-.72.13-.94-.3C58.77,30.18,59.21,30.32,59.66,30.88Z" />
+  <path class="icon-light" d="M58.84,30.1l-.64.11-.05-.09c.11-.09.22-.24.35-.26s.25.1.38.16Z" />
+  <path class="icon-light" d="M46.69,30.35c.05-.27.42-.28.81,0Z" />
+  <path class="icon-light" d="M48.67,31l-.16-.34.38-.16C49,30.82,49,30.82,48.67,31Z" />
+  <path class="icon-light" d="M56.64,26.56l.62.35c-.38.23-.43-.21-.66-.27Z" />
+  <path class="icon-light" d="M40,58.6l.73.18L40.33,58a9.92,9.92,0,0,1,1.56.47c.26.12.41.46.64.73-.33,0-.59,0-.85.06s-.61.16-.88-.18c-.1-.12-.4-.07-.59-.14a1.18,1.18,0,0,1-.31-.24Z" />
+  <path class="icon-light" d="M43.67,59.55c-.18.24-.38.08-.56.08s-.06-.13-.08-.19l0-.06Z" />
+  <path class="icon-light" d="M50.63,45.82c-.39-.18-.79-.39-1.21-.57a4.89,4.89,0,0,0-.61-.17.47.47,0,0,1,.31-.5.56.56,0,0,0,.31-.33c.06-.47.37-.65.78-.8l-.32.7.54.1c.4.1.49.46.61.78a.42.42,0,0,1-.07.29A5,5,0,0,1,50.63,45.82Z" />
+  <path class="icon-light" d="M64,40.08l.19,0c.1,0,.23-.15.3-.12s.27.1.28.33a1.62,1.62,0,0,0,.27.66c.12.21.18.35-.1.48s-.26.24-.41.35a.24.24,0,0,1-.23,0,.33.33,0,0,1-.07-.24,2.18,2.18,0,0,1,.07-.38,4.56,4.56,0,0,1-.39-.25.23.23,0,0,1,0-.16c.33-.14.18-.35.11-.56A.17.17,0,0,1,64,40.08Z" />
+  <path class="icon-light" d="M38.17,58.13c.33.09.65.1.75.45C38.53,58.71,38.43,58.35,38.17,58.13Z" />
+  <path class="icon-light" d="M72.44,45.14c-.24-.29-.46-.53-.65-.8-.06-.09,0-.25,0-.45.28.33.53.6.74.9C72.57,44.86,72.46,45,72.44,45.14Z" />
+  <path class="icon-light" d="M71.47,43.26l.29.51C71.51,43.7,71.34,43.58,71.47,43.26Z" />
+  <path class="icon-light" d="M47.87,45.44c-.24.23-.44.26-.62.12s-.16-.33,0-.5C47.46,45.14,47.37,45.71,47.87,45.44Z" />
+  <path class="icon-light" d="M45,33.54l.56-.21-.07.49C45.19,33.93,45.08,33.74,45,33.54Z" />
+  <path class="icon-light icon-h" d="M40.43,20.17c0-5.79-4.4-10.49-9.82-10.49s-9.83,4.7-9.83,10.49a11,11,0,0,0,1,4.56c2,4.54,5.15,8.45,7.64,12.71a1.36,1.36,0,0,0,2.36,0c2.39-3.87,4.61-7.86,7.08-11.67A10.41,10.41,0,0,0,40.43,20.17Zm-9.82-4.36a4.22,4.22,0,0,1,4.07,4.36,4.08,4.08,0,1,1-8.15,0A4.22,4.22,0,0,1,30.61,15.81Z" />
+</svg>
+            
+        </div>
+        <div class="desktop:grid-col-9">
+      
+          <h1 class="usa-hero__heading">
+            
+            <span class="usa-hero__heading--alt">Geospatial Research Working Group</span>
+            <h3 class="text-primary-light">
+              
+              Harnessing SCINet computational resources in geospatial data science to further sustainable and intensified agriculture
+              
+            </h3>
+            
+          </h1>
+          
+
+          
+
+
+          
+          <a class="usa-button" href="/research/working-groups/geospatial">
+            Visit the Working Group
+          </a>
+
+      
+      
+    </div>
+  </div>
+</section>
+
+
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+
+
+
+    
+    
+
+
+    
+<div class="grid-row sci-container alt-sci-card" aria-label="Getting Started">
+    
+
+<div class="sci-card usa-section--light2">
+    <div class="sci-flex" aria-label="About">
+        <div class="text-center" >
+            <h1 class="sn-page-title">How to Participate</h1>
+            <p class="sn-text-intro"><b>All members of the working group are welcome to participate!</b> We also welcome anyone interested in learning about the working group, SCINet, or geospatial research to attend the introductory Session 1. </br></br> Please register before 8/25/2022 to ensure you will receive event updates and be added to the workshop project space on SCINet.</p>
+        </div>
+    </div>
+    
+    <div class="sci-flex" aria-label="Get Started">
+        
+
+<div class="sci-select usa-section--light">
+    <h3 class="card-title margin-top-0">Get Started with SCINet</h3>
+    <p class="card-text">
+        For this workshop, you will need to have a SCINet account and be able to successfully log in. We recommend applying for an account as soon as possible.
+    </p>
+    <a class="usa-button" href="/about/signup">
+        Register for SCINet
+    </a>
+</div>
+
+    </div>
+    
+
+</div>
+
+</div>
+<div class="grid-row sci-container" aria-label="Workshop Itinerary">
+
+    <div class="grid-container">
+        <div class="grid-row grid-gap">
+
+        
+        
+
+
+        <div class="width-full margin-4">
+            <h1 class="site-preview-heading">Workshop Itinerary</h1>
+            
+            <div class=" featured_posts">
+                
+                <a
+                    href="/workshops/2022-00-Geospatial-Workshop-Itinerary">
+                    
+                    <div class="usa-card__container padding-2">
+                        <b>Please click on the session names below to learn more about each session.</b> </br> The Zoom join details are different for each session and sent after registration. If you are unable to join a session, you will still be able to access and work through all the tutorials on your own using the session pages. We will make the Zoom recordings available after the meeting as well.
+                    </div>
+                    
+                </a>
+                
+            </div>
+            
+            <ul class="usa-list usa-list--unstyled">
+                
+                
+                
+
+
+
+
+
+<li class=" usa-collection__item width-full maxw-full" >
+    
+    
+    <div class="usa-collection__calendar-date">
+        <time datetime="25 Aug 2022">
+            <span class="usa-collection__calendar-date-month">
+
+                Aug
+                
+            </span>
+            <span class="usa-collection__calendar-date-day">25</span>
+        </time>
+    </div>
+    
+    
+    <div class="usa-collection__body">
+        <h3 class="usa-collection__heading">
+            
+            <a class="usa-link" href="/workshops/2022-8-25-Geospatial-Workshop-0">
+                
+                    
+                    
+                    Session 0: Pre-meeting technical support for account logins and data uploads
+                
+            </a>
+            
+        </h3>
+        
+        
+        <p class="usa-collection__description">
+            Please complete this pre-meeting checklist ahead of time if you plan to participate in any of the interactive follow-along tutorials (Sessions 4-10). Pre-meeting SCINet Account Login Assistance.
+        </p>
+        
+        
+        <ul class="usa-collection__meta" aria-label="More information">
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Thursday, August 25, 10:00am-11:00am MDT </b>
+                <ul class="unstyled-list">
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><b>Prerequisites: </b>
+                        
+                        None
+                        
+                    </li>
+                    
+                    
+                </ul>
+            </li>
+            
+            
+
+            
+
+
+        </ul>
+        
+    </div>
+
+</li>
+                
+                
+                
+
+
+
+
+
+<li class=" usa-collection__item width-full maxw-full" >
+    
+    
+    <div class="usa-collection__calendar-date">
+        <time datetime="29 Aug 2022">
+            <span class="usa-collection__calendar-date-month">
+
+                Aug
+                
+            </span>
+            <span class="usa-collection__calendar-date-day">29</span>
+        </time>
+    </div>
+    
+    
+    <div class="usa-collection__body">
+        <h3 class="usa-collection__heading">
+            
+            <a class="usa-link" href="/workshops/2022-8-29-Geospatial-Workshop-1">
+                
+                    
+                    
+                    Session 1: Introduction to SCINet with lightning presentations
+                
+            </a>
+            
+        </h3>
+        
+        
+        <p class="usa-collection__description">
+            Introduction to the workshop objectives plus lightning presentations on geospatial workflows
+        </p>
+        
+        
+        <ul class="usa-collection__meta" aria-label="More information">
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Monday, August 29, 10:00am-11:00am MDT </b>
+                <ul class="unstyled-list">
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><b>Prerequisites: </b>
+                        
+                        None
+                        
+                    </li>
+                    
+                    
+                    </br>
+                    
+                    <li>You must have a USDA account to access this workshop's recordings.</li>
+                    
+                    <li>
+
+
+
+
+<a href="https://web.microsoftstream.com/video/d4cac1a5-bafc-409d-b8fd-fd7127a262a8">
+
+Session recording
+
+</a>
+</li>
+                    
+                    
+                </ul>
+            </li>
+            
+            
+
+            
+
+
+        </ul>
+        
+    </div>
+
+</li>
+                
+                
+                
+
+
+
+
+
+<li class=" usa-collection__item width-full maxw-full" >
+    
+    
+    <div class="usa-collection__calendar-date">
+        <time datetime="29 Aug 2022">
+            <span class="usa-collection__calendar-date-month">
+
+                Aug
+                
+            </span>
+            <span class="usa-collection__calendar-date-day">29</span>
+        </time>
+    </div>
+    
+    
+    <div class="usa-collection__body">
+        <h3 class="usa-collection__heading">
+            
+            <a class="usa-link" href="/workshops/2022-8-29-Geospatial-Workshop-2">
+                
+                    
+                    
+                    Session 2: Fundamentals of geospatial data
+                
+            </a>
+            
+        </h3>
+        
+        
+        <p class="usa-collection__description">
+            A presentation on raster and vector data types and when geospatial analyses become computationally expensive
+        </p>
+        
+        
+        <ul class="usa-collection__meta" aria-label="More information">
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Monday, August 29, 11:00am-12:00pm MDT </b>
+                <ul class="unstyled-list">
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><b>Prerequisites: </b>
+                        
+                        None
+                        
+                    </li>
+                    
+                    
+                    </br>
+                    
+                    <li>You must have a USDA account to access this workshop's recordings.</li>
+                    
+                    <li>
+
+
+
+
+<a href="https://web.microsoftstream.com/video/125dba00-b307-4675-8575-c3fe0771d914">
+
+Session recording
+
+</a>
+</li>
+                    
+                    
+                </ul>
+            </li>
+            
+            
+
+            
+
+
+        </ul>
+        
+    </div>
+
+</li>
+                
+                
+                
+
+
+
+
+
+<li class=" usa-collection__item width-full maxw-full" >
+    
+    
+    <div class="usa-collection__calendar-date">
+        <time datetime="30 Aug 2022">
+            <span class="usa-collection__calendar-date-month">
+
+                Aug
+                
+            </span>
+            <span class="usa-collection__calendar-date-day">30</span>
+        </time>
+    </div>
+    
+    
+    <div class="usa-collection__body">
+        <h3 class="usa-collection__heading">
+            
+            <a class="usa-link" href="/workshops/2022-8-30-Geospatial-Workshop-3">
+                
+                    
+                    
+                    Session 3: Fundamentals of parallel processing
+                
+            </a>
+            
+        </h3>
+        
+        
+        <p class="usa-collection__description">
+            How to approach parallelization of workflows with a geospatial example
+        </p>
+        
+        
+        <ul class="usa-collection__meta" aria-label="More information">
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Tuesday, August 30, 2:00pm-3:00pm MDT </b>
+                <ul class="unstyled-list">
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><b>Prerequisites: </b>
+                        
+                        None
+                        
+                    </li>
+                    
+                    
+                    </br>
+                    
+                    <li>You must have a USDA account to access this workshop's recordings.</li>
+                    
+                    <li>
+
+
+
+
+<a href="https://web.microsoftstream.com/video/f12c8fd7-7459-402e-9e1b-8513bd011bcb">
+
+Session recording
+
+</a>
+</li>
+                    
+                    
+                </ul>
+            </li>
+            
+            
+
+            
+
+
+        </ul>
+        
+    </div>
+
+</li>
+                
+                
+                
+
+
+
+
+
+<li class=" usa-collection__item width-full maxw-full" >
+    
+    
+    <div class="usa-collection__calendar-date">
+        <time datetime="30 Aug 2022">
+            <span class="usa-collection__calendar-date-month">
+
+                Aug
+                
+            </span>
+            <span class="usa-collection__calendar-date-day">30</span>
+        </time>
+    </div>
+    
+    
+    <div class="usa-collection__body">
+        <h3 class="usa-collection__heading">
+            
+            <a class="usa-link" href="/workshops/2022-8-30-Geospatial-Workshop-4">
+                
+                    
+                    
+                    Session 4: SCINet interactive environments
+                
+            </a>
+            
+        </h3>
+        
+        
+        <p class="usa-collection__description">
+            An overview of interactive environments available on SCINet - RStudio, Jupyter, etc.
+        </p>
+        
+        
+        <ul class="usa-collection__meta" aria-label="More information">
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Tuesday, August 30, 10:00am-12:00pm MDT </b>
+                <ul class="unstyled-list">
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><b>Prerequisites: </b>
+                        
+                        <ul class="unstyled-list">
+                            
+                            <li>
+                                
+                                <a
+                                    href="/about/signup">
+                                    Have a SCINet account and be able to login
+                                </a>
+                                
+                            </li>
+                            
+                            <li>
+                                
+                                Basic understanding of partitions and requesting cores. If you are unfamiliar with these topics, please attend Session 3 on parallel processing fundamentals.
+                                
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    
+                    </br>
+                    
+                    <li>You must have a USDA account to access this workshop's recordings.</li>
+                    
+                    <li>
+
+
+
+
+<a href="https://web.microsoftstream.com/video/c9e1642b-6624-4c2d-9583-800d84469ad3">
+
+Session recording
+
+</a>
+</li>
+                    
+                    
+                </ul>
+            </li>
+            
+            
+
+            
+
+
+        </ul>
+        
+    </div>
+
+</li>
+                
+                
+                
+
+
+
+
+
+<li class=" usa-collection__item width-full maxw-full" >
+    
+    
+    <div class="usa-collection__calendar-date">
+        <time datetime="30 Aug 2022">
+            <span class="usa-collection__calendar-date-month">
+
+                Aug
+                
+            </span>
+            <span class="usa-collection__calendar-date-day">30</span>
+        </time>
+    </div>
+    
+    
+    <div class="usa-collection__body">
+        <h3 class="usa-collection__heading">
+            
+            <a class="usa-link" href="/workshops/2022-8-30-Geospatial-Workshop-5">
+                
+                    
+                    
+                    Session 5: SCINet Geospatial Common Data Library
+                
+            </a>
+            
+        </h3>
+        
+        
+        <p class="usa-collection__description">
+            An overview of the status of the GeoCDL project and hands-on tutorials showcasing its features
+        </p>
+        
+        
+        <ul class="usa-collection__meta" aria-label="More information">
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Tuesday, August 30, 12:30pm-1:30pm MDT </b>
+                <ul class="unstyled-list">
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><b>Prerequisites: </b>
+                        
+                        <ul class="unstyled-list">
+                            
+                            <li>
+                                
+                                <a
+                                    href="/about/signup">
+                                    Have a SCINet account and be able to login
+                                </a>
+                                
+                            </li>
+                            
+                            <li>
+                                
+                                Basic R or other basic programming skill helpful (expertise not required).
+                                
+                            </li>
+                            
+                            <li>
+                                
+                                Interactive environments will be used, so attending Session 4 may be helpful.
+                                
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    
+                    </br>
+                    
+                    <li>You must have a USDA account to access this workshop's recordings.</li>
+                    
+                    <li>
+
+
+
+
+<a href="https://web.microsoftstream.com/video/387605cf-8531-41c0-9da1-1456a65fef39">
+
+Session recording
+
+</a>
+</li>
+                    
+                    <li>
+
+
+
+
+<a href="https://geospatial.101workbook.org/ExampleGeoWorkflows/GRWG22_GeoCDL_R">
+
+Written tutortials
+
+</a>
+</li>
+                    
+                    
+                </ul>
+            </li>
+            
+            
+
+            
+
+
+        </ul>
+        
+    </div>
+
+</li>
+                
+                
+                
+
+
+
+
+
+<li class=" usa-collection__item width-full maxw-full" >
+    
+    
+    <div class="usa-collection__calendar-date">
+        <time datetime="31 Aug 2022">
+            <span class="usa-collection__calendar-date-month">
+
+                Aug
+                
+            </span>
+            <span class="usa-collection__calendar-date-day">31</span>
+        </time>
+    </div>
+    
+    
+    <div class="usa-collection__body">
+        <h3 class="usa-collection__heading">
+            
+            <a class="usa-link" href="/workshops/2022-8-31-Geospatial-Workshop-6">
+                
+                    
+                    
+                    Session 6: Geospatial analyses and how to parallelize them in R
+                
+            </a>
+            
+        </h3>
+        
+        
+        <p class="usa-collection__description">
+            R packages for geospatial analyses and parallel processing with multiple tutorials
+        </p>
+        
+        
+        <ul class="usa-collection__meta" aria-label="More information">
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Wednesday, August 31, 11:00am-1:30pm MDT </b>
+                <ul class="unstyled-list">
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><b>Prerequisites: </b>
+                        
+                        <ul class="unstyled-list">
+                            
+                            <li>
+                                
+                                <a
+                                    href="/about/signup">
+                                    Have a SCINet account and be able to login
+                                </a>
+                                
+                            </li>
+                            
+                            <li>
+                                
+                                Basic R or other basic programming skill helpful (expertise not required)
+                                
+                            </li>
+                            
+                            <li>
+                                
+                                RStudio on Ceres via Open OnDemand will be used, so attending Session 4 may be helpful
+                                
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    
+                    </br>
+                    
+                    <li>You must have a USDA account to access this workshop's recordings.</li>
+                    
+                    <li>
+
+
+
+
+<a href="https://web.microsoftstream.com/video/595889e4-78f1-48ad-a8bc-4c731c294d4f">
+
+Session recording
+
+</a>
+</li>
+                    
+                    <li>
+
+
+
+
+<a href="https://geospatial.101workbook.org/ExampleGeoWorkflows/GRWGWorkshop">
+
+Written tutortials
+
+</a>
+</li>
+                    
+                    
+                </ul>
+            </li>
+            
+            
+
+            
+
+
+        </ul>
+        
+    </div>
+
+</li>
+                
+                
+                
+
+
+
+
+
+<li class=" usa-collection__item width-full maxw-full" >
+    
+    
+    <div class="usa-collection__calendar-date">
+        <time datetime="31 Aug 2022">
+            <span class="usa-collection__calendar-date-month">
+
+                Aug
+                
+            </span>
+            <span class="usa-collection__calendar-date-day">31</span>
+        </time>
+    </div>
+    
+    
+    <div class="usa-collection__body">
+        <h3 class="usa-collection__heading">
+            
+            <a class="usa-link" href="/workshops/2022-8-31-Geospatial-Workshop-7">
+                
+                    
+                    
+                    Session 7: Interactive BYOP session + Open Drone Map demo
+                
+            </a>
+            
+        </h3>
+        
+        
+        <p class="usa-collection__description">
+            Attendees are encouraged to Bring Your Own Problem (BYOP) for discussion and troubleshooting. A demonstation of using Open Drone Map on Atlas will be presented.
+        </p>
+        
+        
+        <ul class="usa-collection__meta" aria-label="More information">
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Wednesday, August 31, 2:00pm-3:00pm MDT </b>
+                <ul class="unstyled-list">
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><b>Prerequisites: </b>
+                        
+                        <ul class="unstyled-list">
+                            
+                            <li>
+                                
+                                <a
+                                    href="/about/signup">
+                                    Have a SCINet account and be able to login
+                                </a>
+                                
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    
+                    </br>
+                    
+                    <li>You must have a USDA account to access this workshop's recordings.</li>
+                    
+                    <li>
+
+
+
+
+<a href="https://web.microsoftstream.com/video/6c6c9efd-2a01-43d0-9736-23670d1e564a">
+
+Session recording
+
+</a>
+</li>
+                    
+                    
+                </ul>
+            </li>
+            
+            
+
+            
+
+
+        </ul>
+        
+    </div>
+
+</li>
+                
+                
+                
+
+
+
+
+
+<li class=" usa-collection__item width-full maxw-full" >
+    
+    
+    <div class="usa-collection__calendar-date">
+        <time datetime="01 Sep 2022">
+            <span class="usa-collection__calendar-date-month">
+
+                Sept
+                
+            </span>
+            <span class="usa-collection__calendar-date-day">1</span>
+        </time>
+    </div>
+    
+    
+    <div class="usa-collection__body">
+        <h3 class="usa-collection__heading">
+            
+            <a class="usa-link" href="/workshops/2022-9-1-Geospatial-Workshop-8">
+                
+                    
+                    
+                    Session 8: Geospatial analyses and how to parallelize them in python
+                
+            </a>
+            
+        </h3>
+        
+        
+        <p class="usa-collection__description">
+            Python packages for geospatial analyses and parallel processing with multiple tutorials
+        </p>
+        
+        
+        <ul class="usa-collection__meta" aria-label="More information">
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Thursday, September 1, 10:00am-12:00pm MDT </b>
+                <ul class="unstyled-list">
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><b>Prerequisites: </b>
+                        
+                        <ul class="unstyled-list">
+                            
+                            <li>
+                                
+                                <a
+                                    href="/about/signup">
+                                    Have a SCINet account and be able to login
+                                </a>
+                                
+                            </li>
+                            
+                            <li>
+                                
+                                Basic python or other basic programming skill helpful (expertise not required)
+                                
+                            </li>
+                            
+                            <li>
+                                
+                                JupyterLab on Ceres via Open OnDemand will be used, so attending Session 4 may be helpful
+                                
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    
+                    </br>
+                    
+                    <li>You must have a USDA account to access this workshop's recordings.</li>
+                    
+                    <li>
+
+
+
+
+<a href="https://web.microsoftstream.com/video/c1bb4347-8375-4188-baa9-24d72f0a4fa6">
+
+Session recording
+
+</a>
+</li>
+                    
+                    <li>
+
+
+
+
+<a href="https://geospatial.101workbook.org/ExampleGeoWorkflows/GRWGWorkshop">
+
+Written tutortials
+
+</a>
+</li>
+                    
+                    
+                </ul>
+            </li>
+            
+            
+
+            
+
+
+        </ul>
+        
+    </div>
+
+</li>
+                
+                
+                
+
+
+
+
+
+<li class=" usa-collection__item width-full maxw-full" >
+    
+    
+    <div class="usa-collection__calendar-date">
+        <time datetime="01 Sep 2022">
+            <span class="usa-collection__calendar-date-month">
+
+                Sept
+                
+            </span>
+            <span class="usa-collection__calendar-date-day">1</span>
+        </time>
+    </div>
+    
+    
+    <div class="usa-collection__body">
+        <h3 class="usa-collection__heading">
+            
+            <a class="usa-link" href="/workshops/2022-9-1-Geospatial-Workshop-9">
+                
+                    
+                    
+                    Session 9: Interactive BYOP session
+                
+            </a>
+            
+        </h3>
+        
+        
+        <p class="usa-collection__description">
+            Attendees are encouraged to Bring Your Own Problem (BYOP) for discussion and troubleshooting.
+        </p>
+        
+        
+        <ul class="usa-collection__meta" aria-label="More information">
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Thursday, September 1, 2:00pm-3:00pm MDT </b>
+                <ul class="unstyled-list">
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><b>Prerequisites: </b>
+                        
+                        <ul class="unstyled-list">
+                            
+                            <li>
+                                
+                                <a
+                                    href="/about/signup">
+                                    Have a SCINet account and be able to login
+                                </a>
+                                
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    
+                </ul>
+            </li>
+            
+            
+
+            
+
+
+        </ul>
+        
+    </div>
+
+</li>
+                
+                
+                
+
+
+
+
+
+<li class=" usa-collection__item width-full maxw-full" >
+    
+    
+    <div class="usa-collection__calendar-date">
+        <time datetime="02 Sep 2022">
+            <span class="usa-collection__calendar-date-month">
+
+                Sept
+                
+            </span>
+            <span class="usa-collection__calendar-date-day">2</span>
+        </time>
+    </div>
+    
+    
+    <div class="usa-collection__body">
+        <h3 class="usa-collection__heading">
+            
+            <a class="usa-link" href="/workshops/2022-9-2-Geospatial-Workshop-10">
+                
+                    
+                    
+                    Session 10: Interactive BYOP session + TBD special topic based on previous sessions' discussions
+                
+            </a>
+            
+        </h3>
+        
+        
+        <p class="usa-collection__description">
+            Attendees are encouraged to Bring Your Own Problem (BYOP) for discussion and troubleshooting. A TBD special topic inspired by discussion earlier in the week will also be explored.
+        </p>
+        
+        
+        <ul class="usa-collection__meta" aria-label="More information">
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Friday, September 2, 10:00am-12:00pm MDT </b>
+                <ul class="unstyled-list">
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><b>Prerequisites: </b>
+                        
+                        <ul class="unstyled-list">
+                            
+                            <li>
+                                
+                                <a
+                                    href="/about/signup">
+                                    Have a SCINet account and be able to login
+                                </a>
+                                
+                            </li>
+                            
+                        </ul>
+                        
+                    </li>
+                    
+                    
+                    </br>
+                    
+                    <li>
+
+
+
+
+<a href="https://geospatial.101workbook.org/ExampleGeoWorkflows/GRWGWorkshop">
+
+Written tutortials
+
+</a>
+</li>
+                    
+                    
+                </ul>
+            </li>
+            
+            
+
+            
+
+
+        </ul>
+        
+    </div>
+
+</li>
+                
+                
+                
+
+
+
+
+
+<li class=" usa-collection__item width-full maxw-full" >
+    
+    
+    <div class="usa-collection__calendar-date">
+        <time datetime="02 Sep 2022">
+            <span class="usa-collection__calendar-date-month">
+
+                Sept
+                
+            </span>
+            <span class="usa-collection__calendar-date-day">2</span>
+        </time>
+    </div>
+    
+    
+    <div class="usa-collection__body">
+        <h3 class="usa-collection__heading">
+            
+            <a class="usa-link" href="/workshops/2022-9-2-Geospatial-Workshop-11">
+                
+                    
+                    
+                    Session 11: Closing discussion and future planning
+                
+            </a>
+            
+        </h3>
+        
+        
+        <p class="usa-collection__description">
+            Summarize content from previous sessions, provide feedback on workshop, and discuss future needs of working group
+        </p>
+        
+        
+        <ul class="usa-collection__meta" aria-label="More information">
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Friday, September 2, 12:30pm-1:30pm MDT </b>
+                <ul class="unstyled-list">
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li><b>Prerequisites: </b>
+                        
+                        None
+                        
+                    </li>
+                    
+                    
+                </ul>
+            </li>
+            
+            
+
+            
+
+
+        </ul>
+        
+    </div>
+
+</li>
+                
+            </ul>
+        </div>
+        <a class="usa-button margin-x-auto margin-y-2" href=" /workshops/2022-00-Geospatial-Workshop-Itinerary">
+            Go to the Itinerary Page
+        </a>
+    </div>
+    </div>
+</div>
+
+
+
+<div class="grid-row sci-container">
+    <!--Support-->
+</div>
+
+<div class="grid-row sci-container" aria-label="2022 Geospatial Workshop">
+    <div class="grid-container">
+        <div class="usa-layout-docs usa-layout-docs__main usa-prose ">
+            <p><br /></p>
+
+<h1 id="workshop-goals">Workshop Goals</h1>
+
+<p>The 2022 SCINet Geospatial Workshop continues the efforts outlined from the 2020 virtual workshop and the 2019 workshop held in Las Cruces, NM. The two overarching goals of this workshop are to:</p>
+
+<ol>
+  <li>Provide hands-on tutorials on workflows to access the SCINet high-performance computing (HPC) systems and conduct geospatial research at scale.</li>
+  <li>Foster research efforts that had previously been un-attainable due to computational limitations or technical bottlenecks.</li>
+</ol>
+
+<h1 id="organizing-committee">Organizing Committee</h1>
+
+<ul>
+  <li>Heather Savoy, SCINet Computational Biologist, Las Cruces, NM</li>
+  <li>John Humphreys, Research Ecologist, Sidney, MT</li>
+  <li>Pat Clark, Rangeland Scientist, Boise, ID</li>
+  <li>Amy Hudson, SCINet Postdoc, Las Cruces, NM</li>
+  <li>Ryan Lucas, SCINet Data Science Coordinator, Ft Collins, CO</li>
+  <li>Brian Stucky, SCINet Computational Biologist and acting CSIO, Gainesville, FL</li>
+</ul>
+
+<h1 id="how-to-participate">How to Participate</h1>
+
+<p class="border-bottom"><br /></p>
+
+<p>Working group members can register <a href="https://forms.office.com/g/CXEZAtZYDF">here</a> for all workshop events. We also welcome anyone interested in learning about the working group, SCINet, or geospatial research to attend <a href="/workshops/2022-8-29-Geospatial-Workshop-1">Session 1</a>.</p>
+
+<p>The workshop is split over 11 separate Zoom sessions (as well as a pre-meeting assistance session) that will include:</p>
+
+<ul>
+  <li>Lightning presentations of geospatial workflow to address agricultural issues</li>
+  <li>Lectures on fundamental material related to geospatial data and parallel processing</li>
+  <li>Hands-on tutorials to assist researchers in utilizing the SCINet HPC systems</li>
+  <li>Collaborative Bring-Your-Own-Problem sessions to discuss your research needs</li>
+</ul>
+
+<p><strong>To follow along with the tutorials you need to already have or <a href="/about/signup">apply for a SCINet account</a> and be able to successfully login to your account.</strong>  We recommend applying for an account by 8/22/2022 at the latest, as the process can take time for final approval. Please note, if you need help accessing your SCINet account you should plan on attending the pre-meeting login assistance session on 8/25/2022 (Session 0), but make sure you have applied for an account in advance of this session.</p>
+
+<p><strong>Please register for the sessions so we can have an idea of how many people will be present at each event.</strong> Note, each session will have a separate Zoom link and password so you must register for each session you would like to attend. Calendar events with zoom links will be sent out based on registrations.</p>
+
+<p><strong>Lastly, review the pre-meeting checklist and background information on the <a href="//workshops/2022-00-Geospatial-Workshop-Premeeting">Pre-Meeting page</a> to ensure you are prepared for the workshop sessions.</strong></p>
+
+<p><br /></p>
+
+        </div>
+    </div>
+</div>
+    <br>
+
+    
+
+  
+  </main>
+  
+
+  
+
+
+    
+<footer class="usa-footer usa-footer--big">
+
+  
+  <div class="grid-container">
+    <p>Last updated: May 19, 2023 at 11:18 AM</p>
+  </div>
+  
+
+  
+  <div class="grid-container usa-footer__return-to-top">
+    <a href="#">Return to top</a>
+  </div>
+  
+
+  
+  
+
+  <div class="usa-footer__primary-section">
+    <div class="grid-container">
+          <nav class="usa-footer__nav" aria-label="Footer navigation">
+            <div class="grid-row grid-gap-4">
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                <section class="
+                usa-footer__primary-content
+                usa-footer__primary-content--collapsible
+              ">
+              <h4 class="usa-footer__primary-link">ABOUT</h4>
+              <ul class="usa-list usa-list--unstyled">
+                <li>
+                <p>SCINet is a USDA <a href='https://www.ars.usda.gov/'>Agricultural Research Service</a> initiative.</p>
+                <a class="usa-button" href="/about/organization">Learn More</a>
+                </li>
+              </ul>
+                </section>
+                </div>
+              
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">RESOURCES</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="mailto:scinet_vrsc@usda.gov">
+                        Feedback
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/about/signup">
+                        Sign Up
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/about/contact">
+                        Contact
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/opportunities/fellowships">
+                        Fellowships
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">USDA</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://ask.usda.gov/">
+                        AskUSDA
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/">
+                        USDA.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.usa.gov">
+                        USA.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.whitehouse.gov">
+                        WhiteHouse.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/plain-writing">
+                        Plain Writing
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">LEGAL</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/accessibility-statement">
+                        Accessibility Statement
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/non-discrimination-statement">
+                        Non-Discrimination Statement
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/privacy-policy">
+                        Privacy Policy
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.dm.usda.gov/foia/">
+                        FOIA
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.ocio.usda.gov/policy-directives-records-forms/information-quality-activities">
+                        Information Quality
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+            </div>
+          </nav>
+    </div>
+  </div>
+
+  
+  <div class="usa-footer__secondary-section">
+    <div class="grid-container sci-heading">
+      <div class="grid-row grid-gap">
+        <div class="usa-footer__logo grid-row mobile-lg:grid-col-6 tablet:grid-gap-2">
+          
+          
+          <div class="mobile-lg:grid-col-auto footer-flex">
+          
+<div class="usa-logo">
+    
+    <span class="agency-logo display-flex flex-align-center mobile-lg:margin-right-1">
+        
+        <a href="/">
+            <img class="usa-logo-img"
+                src="/assets/img/site/usda-logo-color.svg"
+                alt="USDA">
+        </a>
+        
+    </span>
+    
+    <a class="agency-logo-text"
+        href="/"
+        aria-label="SCINet Scientific Computing">
+        <div class="agency-identity">
+            <div class="agency-name usa-logo__text">SCINet Scientific Computing</div>
+            
+            <div class="tagline">U.S. Department of Agriculture</div>
+            
+        </div>
+    </a>
+</div>
+          </div>
+          
+
+
+        </div>
+
+        
+        <div class="margin-y-auto mobile-lg:grid-col-4 footer-flex">
+          
+          <div class="usa-footer__social-links grid-row grid-gap-1">
+            <div class="grid-col-auto">
+              
+              <a class="usa-social-link ext-nested" style="padding-right: .25rem;" href="https://twitter.com/USDA_ARS"
+              ><img
+                class="usa-social-link__icon"
+                src="/assets/uswds/img/usa-icons/twitter.svg"
+                alt="Twitter"
+            /></a>
+              
+              <a class="usa-social-link ext-nested" style="padding-right: .25rem;" href="mailto:scinet_vrsc@usda.gov"
+              ><img
+                class="usa-social-link__icon"
+                src="/assets/uswds/img/usa-icons/mail.svg"
+                alt="Contact VRSC"
+            /></a>
+              
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="grid-row mobile-lg:grid-col-2 footer-flex">
+        
+
+<small class="flex-align-self-center"><a href="https://github.com/USDA-SCINet/scinet-site/edit/main/sn_collections/_events/2022-08-25-Geospatial-Workshop.md" class="usa-sidenav-edit" target="_blank">Edit this page</a></small>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+
+</footer>
+
+
+
+  <!-- dynamically determine scripts needed for this config -->
+
+
+
+
+
+
+
+  
+    
+      <script src="/assets/uswds/js/uswds.min.js" async></script>
+    
+
+  
+    
+      <script src="/assets/js/vendor/anchor.min.js"></script>
+    
+
+  
+    
+      <script src="/assets/js/main.js"></script>
+    
+
+  
+    
+      <script src="/assets/js/external.js"></script>
+    
+
+  
+    
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+      var usasearch_config = { siteHandle:"scinet-usda" };
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "https://search.usa.gov/javascripts/remote.loader.js";
+      document.getElementsByTagName("head")[0].appendChild(script);
+
+//]]>
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

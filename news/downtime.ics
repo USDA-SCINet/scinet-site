@@ -1,0 +1,139 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SCINet | USDA Scientific Computing Initiative//https://s
+ cinet.usda.gov//Downtime Calendar//EN
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:STANDARD
+DTSTART:16011104T020000
+RRULE:FREQ=YEARLY;BYDAY=1SU;BYMONTH=11
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010311T020000
+RRULE:FREQ=YEARLY;BYDAY=2SU;BYMONTH=3
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+END:DAYLIGHT
+END:VTIMEZONE
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:https://scinet.usda.gov/news/downtime/archive#scinet-mainte
+ nance-site-service-tuesday-may-23-2023
+DTSTAMP:20230523T000000Z
+DTSTART;TZID=America/New_York:20230523T010000
+DURATION:PT6H
+SUMMARY:SCINet: Maintenance - Site Service - Tuesday, May 23 - 2023
+DESCRIPTION: <p>The listed assets may become unavailable due to schedule
+ d maintenance being preformed by Internet2 vendor Lumen. Ou
+ tages are expected. The entire window is reserved. </p>
+ <ul>
+ 
+ <li> <b>Outage time: </b> 5-11 UTC </li>
+ <li> <b>Affected Syst
+ ems: </b> Site Service </li>
+ <li> <b>Affected Locations: </b> A
+ mes </li>
+ <li> <b>Reason: </b> Maintenance </li>
+ </ul>
+X-ALT-DESC;FMTTYPE=TEXT/HTML:
+  <p>The listed assets may become unavailable due to schedule
+ d maintenance being preformed by Internet2 vendor Lumen. Ou
+ tages are expected. The entire window is reserved. </p>
+ <ul>
+ 
+ <li> <b>Outage time: </b> 5-11 UTC </li>
+ <li> <b>Affected Syst
+ ems: </b> Site Service </li>
+ <li> <b>Affected Locations: </b> A
+ mes </li>
+ <li> <b>Reason: </b> Maintenance </li>
+ </ul>
+CLASS:PUBLIC
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+URL:https://scinet.usda.gov/news/downtime/archive
+CATEGORIES:SCINet,
+ SCINet | USDA Scientific Computing Initiative,
+ Downtime Calendar
+END:VEVENT
+BEGIN:VEVENT
+UID:https://scinet.usda.gov/news/downtime/archive#scinet-mainte
+ nance-site-service-thursday-may-18-2023
+DTSTAMP:20230518T000000Z
+DTSTART;TZID=America/New_York:20230518T230000
+DURATION:PT7H
+SUMMARY:SCINet: Maintenance - Site Service - Thursday, May 18 - 2023
+DESCRIPTION: <p>The listed assets will be unavailable while Internet2 en
+ gineers perform Core Node maintenance. Outage are expected.
+  The entire window is reserved. </p>
+ <ul>
+ <li> <b>Outage time
+ : </b> 11pm-6am EST </li>
+ <li> <b>Affected Systems: </b> Site S
+ ervice </li>
+ <li> <b>Affected Locations: </b> Stoneville </li>
+
+  <li> <b>Reason: </b> Maintenance </li>
+ </ul>
+X-ALT-DESC;FMTTYPE=TEXT/HTML:
+  <p>The listed assets will be unavailable while Internet2 en
+ gineers perform Core Node maintenance. Outage are expected.
+  The entire window is reserved. </p>
+ <ul>
+ <li> <b>Outage time
+ : </b> 11pm-6am EST </li>
+ <li> <b>Affected Systems: </b> Site S
+ ervice </li>
+ <li> <b>Affected Locations: </b> Stoneville </li>
+
+  <li> <b>Reason: </b> Maintenance </li>
+ </ul>
+CLASS:PUBLIC
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+URL:https://scinet.usda.gov/news/downtime/archive
+CATEGORIES:SCINet,
+ SCINet | USDA Scientific Computing Initiative,
+ Downtime Calendar
+END:VEVENT
+BEGIN:VEVENT
+UID:https://scinet.usda.gov/news/downtime/archive#scinet-mainte
+ nance-site-service-friday-may-19-2023
+DTSTAMP:20230519T000000Z
+DTSTART;TZID=America/New_York:20230519T010000
+DURATION:PT6H
+SUMMARY:SCINet: Maintenance - Site Service - Friday, May 19 - 2023
+DESCRIPTION: <p>Site Service at Ames will be impacted while Lumen perfor
+ ms maintenance. </br>Outages are expected and the entire win
+ dow is reserved. </p>
+ <ul>
+ <li> <b>Outage time: </b> 5-11 UTC <
+ /li>
+ <li> <b>Affected Systems: </b> Site Service </li>
+ <li> <b>
+ Affected Locations: </b> Ames </li>
+ <li> <b>Reason: </b> Mainte
+ nance </li>
+ </ul>
+X-ALT-DESC;FMTTYPE=TEXT/HTML:
+  <p>Site Service at Ames will be impacted while Lumen perfor
+ ms maintenance. </br>Outages are expected and the entire win
+ dow is reserved. </p>
+ <ul>
+ <li> <b>Outage time: </b> 5-11 UTC <
+ /li>
+ <li> <b>Affected Systems: </b> Site Service </li>
+ <li> <b>
+ Affected Locations: </b> Ames </li>
+ <li> <b>Reason: </b> Mainte
+ nance </li>
+ </ul>
+CLASS:PUBLIC
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+URL:https://scinet.usda.gov/news/downtime/archive
+CATEGORIES:SCINet,
+ SCINet | USDA Scientific Computing Initiative,
+ Downtime Calendar
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Organization of the SCINet project | SCINet | USDA Scientific Computing Initiative</title>
+
+
+
+<meta name="description" content="Organization and Management of the SCINet project">
+
+
+
+
+<link rel="shortcut icon"type="image/ico"
+  href="/assets/img/site/favicons/favicon.ico">
+
+
+
+<link rel="icon"type="image/png"
+  href="/assets/img/site/favicons/favicon.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="192x192"
+  href="/assets/img/site/favicons/favicon-192.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="32x32"
+  href="/assets/img/site/favicons/favicon-32x32.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="16x16"
+  href="/assets/img/site/favicons/favicon-16x16.png">
+
+
+
+<link rel="manifest"
+  href="/assets/img/site/favicons/site.webmanifest">
+
+
+
+<link rel="mask-icon"
+  href="/assets/img/site/favicons/safari-pinned-tab.svg">
+
+
+
+<link rel="apple-touch-icon"
+  sizes="180x180"
+  href="/assets/img/site/favicons/apple-touch-icon.png">
+
+
+
+<meta name="msapplication-TileColor" content="#2b5797">
+
+
+
+<meta name="msapplication-config" content="/assets/img/site/favicons/browserconfig.xml">
+
+
+
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+  
+
+
+
+<link rel="stylesheet"
+  href="/assets/css/style.css"
+  media="screen">
+
+  
+  
+
+
+<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
+<script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=USDA&subagency=ARS"></script>
+
+
+  
+  <script>0</script>
+</head>
+
+<body class="site-90%">
+
+  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+  
+
+
+  <section class="usa-banner" aria-label="Official government website">
+  <div class="usa-accordion">
+    <header class="usa-banner__header">
+      <div class="usa-banner__inner">
+        <div class="grid-col-auto">
+          <img class="usa-banner__header-flag" src="/assets/uswds/img/us_flag_small.png" alt="U.S. flag">
+        </div>
+        <div class="grid-col-fill tablet:grid-col-auto">
+          <p class="usa-banner__header-text">An official website of the United States government</p>
+          <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
+        </div>
+        <button type="button" class="usa-accordion__button usa-banner__button"
+          aria-expanded="false" aria-controls="gov-banner">
+          <span class="usa-banner__button-text">Here’s how you know</span>
+        </button>
+      </div>
+    </header>
+    <div class="usa-banner__content usa-accordion__content" id="gov-banner" hidden="">
+      <div class="grid-row grid-gap-lg">
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/uswds/img/icon-dot-gov.svg" role="img" alt="Dot gov">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Official websites use .gov</strong>
+              <br/>
+              A <strong>.gov</strong> website belongs to an official government organization in the United States.
+            </p>
+          </div>
+        </div>
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/uswds/img/icon-https.svg" role="img" alt="Https">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Secure .gov websites use HTTPS</strong>
+              <br/>
+              A <strong>lock</strong> (
+<span class="icon-lock"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64" class="usa-banner__lock-image" role="img" aria-labelledby="banner-lock-title banner-lock-description"><title id="banner-lock-title">Lock</title><desc id="banner-lock-description">A locked padlock</desc><path fill="#000000" fill-rule="evenodd" d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"/></svg></span>
+) or <strong>https://</strong> means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<div class="usa-overlay"></div>
+<header class="usa-header usa-header--extended sci-heading" role="banner">
+
+  <div class="usa-navbar">
+      
+<div class="usa-logo">
+    
+    <span class="agency-logo display-flex flex-align-center mobile-lg:margin-right-1">
+        
+        <a href="/">
+            <img class="usa-logo-img"
+                src="/assets/img/site/usda-logo-color.svg"
+                alt="USDA">
+        </a>
+        
+    </span>
+    
+    <a class="agency-logo-text"
+        href="/"
+        aria-label="SCINet Scientific Computing">
+        <div class="agency-identity">
+            <div class="agency-name usa-logo__text">SCINet Scientific Computing</div>
+            
+            <div class="tagline">U.S. Department of Agriculture</div>
+            
+        </div>
+    </a>
+</div>
+    <button type="button" class="usa-menu-btn">Menu</button>
+  </div>
+
+  <nav aria-label="Primary navigation" class="usa-nav border-bottom-2px">
+    <div class="usa-nav__inner">
+      <button type="button" class="usa-nav__close">
+        <img src="/assets/uswds/img/usa-icons/close.svg" alt="close">
+      </button>
+      
+      
+      
+      <ul class="usa-nav__primary usa-accordion">
+        
+        <li class="usa-nav__primary-item">
+          
+          <a class=" usa-nav__link  "
+            href="/">
+            <span>Home</span>
+          </a>
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-About">
+            <span>About</span>
+          </button>
+
+          
+          
+
+<ul id="nav-About" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/signup"><span>Sign up for an account</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/compute"><span>Computer Systems</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/organization"><span>Organization</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/vrsc"><span>Virtual Research Support Core (VSRC)</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/policies"><span>Policies</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/contact"><span>Contact</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-News">
+            <span>News</span>
+          </button>
+
+          
+          
+
+<ul id="nav-News" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/downtime/"><span>System Downtime</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/announcements"><span>Announcements</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/stories"><span>User Stories</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/newsletter"><span>Newsletter</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/scinet-x"><span>SCINet-X</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-User Guides">
+            <span>User Guides</span>
+          </button>
+
+          
+          
+
+<ul id="nav-User Guides" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/guides/start"><span>Quick Start</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/guides/"><span>All User Guides</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Research">
+            <span>Research</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Research" class="usa-nav__submenu nav-width-2" hidden="">
+    <div class="grid-row grid-gap-4">
+        
+            
+            
+            
+        <li class="usa-nav__submenu-item desktop:grid-col-6 m-top-0">
+            
+
+                    
+                    
+                    <div class="">
+                        <a href="/research/working-groups/">
+                            Working Groups
+                        </a>
+                    </div>
+
+                    <ul id="nav-ResearchWorking Groups" class="sublist">
+
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/ag100pest">
+                                    Ag100Pest
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/arthropods">
+                                    Arthropod Genomics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/fungalbioinformatics">
+                                    Fungal Bioinformatics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/geospatial">
+                                    Geospatial Research
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/microbiome">
+                                    Microbiome
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/LTARphenology">
+                                    LTAR Phenology
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/pollinator">
+                                    Pollinator
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/proteinfunction">
+                                    Protein Function and Phenotype Prediction
+                                </a>
+                            </li>
+
+                        
+                    </ul>
+                </li>
+            
+        
+            
+            
+            
+        <li class="usa-nav__submenu-item desktop:grid-col-6 m-top-0">
+            
+
+                    
+                    
+                    <div class="">
+                        <a href="/research/uses/">
+                            Use Cases
+                        </a>
+                    </div>
+
+                    <ul id="nav-ResearchUse Cases" class="sublist">
+
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/genomics">
+                                    Genomics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/plant-breeding">
+                                    Plant breeding
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/geospatial">
+                                    Geospatial
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/hydrology">
+                                    Hydrology
+                                </a>
+                            </li>
+
+                        
+                    </ul>
+                </li>
+            
+        
+    </div>
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Trainings and Events">
+            <span>Trainings and Events</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Trainings and Events" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/resources"><span>Learning Resources</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/events/"><span>Upcoming Events</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/learningpath"><span>Learning Pathway</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Support">
+            <span>Support</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Support" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/contact"><span>Contact the VRSC</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/faq"><span>FAQs</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="https://forum.scinet.usda.gov"><span>USDA-ARS SCINet Forum</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/request"><span>Request Resources</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/ceres-job-script"><span>Ceres Job Script Generator</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Opportunities">
+            <span>Opportunities</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Opportunities" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/SAC"><span>SAC Membership</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/request-workshop"><span>Request a Workshop</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/fellowships"><span>Fellowships (PhD & MS)</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/ai-innovation/"><span>AI Innovation Fund</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/scinet-aicoe-fellowships"><span>SCINet and AI-COE fellowship proposals</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+
+
+      </ul>
+      
+
+    </div>
+
+    
+    <div class="usa-nav__secondary">
+      
+      
+        <form accept-charset="UTF-8" action="https://search.usa.gov/search" id="search_form" method="get"
+class="usa-search usa-search--small js-search-form">
+<input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="affiliate" id="affiliate" value="scinet-usda" />
+<div role="search">
+  <label for="query" class="usa-sr-only">Enter search terms</label>
+  <input autocomplete="off" class="usa-input usagov-search-autocomplete" id="query" name="query"
+    type="search" />
+  <button class="usa-button" type="submit" name="commit">
+    <img src="/assets/uswds/img/usa-icons-bg/search--white.svg"
+      class="usa-search__submit-icon" alt="Search" />
+  </button>
+</div>
+</form>
+
+      
+    </div>
+
+
+    </div>
+    </div>
+  </nav>
+
+</header>
+
+
+
+  
+
+    
+    
+
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+
+
+
+    
+    
+
+
+    <div class="grid-container main-side">
+
+
+  
+
+
+  
+
+  
+
+
+
+
+
+
+
+<div class="grid-row grid-gap flex-align-start">
+    <div class="usa-layout-docs__sidenav desktop:grid-col-3 desktop:padding-y-10 usa-sticky-sidenav">
+        <nav aria-label="Secondary navigation">
+  <ul class="usa-sidenav">
+
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/about/signup" 
+        >
+        Sign up for an account
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/about/compute" 
+        >
+        Computer Systems
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/about/organization" 
+         
+        class="usa-current " 
+        >
+        Organization
+    </a>
+    
+    
+    <ul class="usa-sidenav__sublist">
+        
+            
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #about-scinet
+  " class="">About</a>
+  
+  
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #senior-leadership
+  " class="">Senior Leadership</a>
+  
+  
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #executive-committee
+  " class="">Executive Committee</a>
+  
+  
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #scinet-office
+  " class="">SCINet Office</a>
+  
+  
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #scientific-advisory-committee
+  " class="">Scientific Advisory Committee</a>
+  
+  
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #scientific-points-of-contact
+  " class="">Scientific Points of Contact</a>
+  
+  
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #scinet-policy-committee
+  " class="">SCINet Policy Committee</a>
+  
+  
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #scinet-software-committee
+  " class="">SCINet Software Committee</a>
+  
+  
+  
+</li>
+
+
+        
+        
+    </ul>
+    
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/about/vrsc" 
+        >
+        Virtual Research Support Core (VSRC)
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/about/policies" 
+        >
+        Policies
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/about/contact" 
+        >
+        Contact
+    </a>
+    
+</li>
+    
+
+  </ul>
+</nav>
+    </div>
+    
+    <div class="usa-layout-docs__main desktop:grid-col-9">
+        <nav class="usa-breadcrumb usa-breadcrumb--wrap" aria-label="Breadcrumbs">
+  <ol class="usa-breadcrumb__list">
+    
+    
+
+
+<li class="usa-breadcrumb__list-item">
+  <a href="/" class="usa-breadcrumb__link">
+    <span>Home</span>
+  </a>
+</li>
+
+    
+
+    
+
+    
+    
+    
+
+
+    <li class="usa-breadcrumb__list-item usa-current" aria-current="page">
+      <span>Organization of the SCINet project</span>
+    </li>
+  </ol>
+</nav>
+        <main class="usa-layout-docs usa-layout-docs__main usa-prose" id="main-content">
+
+          
+  
+      <h1 class="top-header">Organization of the SCINet project</h1>
+  
+  
+
+  
+
+  
+
+  <h2 id="about-scinet">About SCINet</h2>
+<p>The SCINet initiative is an effort by the USDA Agricultural Research Service to improve the USDA’s research capacity by providing scientists with access to high-performance computing (HPC) clusters, high-speed networking for data transfer, and training in scientific computing.</p>
+
+<p>SCINet supports a growing community of nearly 2,000 USDA research scientists and university partners to accelerate agricultural discovery through advanced computational infrastructure and scientific computing.</p>
+
+<p>Current uses of SCINet span multiple disciplines, including genomics, plant breeding, hydrology, crop production, plant and animal disease modeling, and natural resource management. SCINet users include ARS and other federal scientists, as well as partners external to the federal government.</p>
+
+<p>SCINet supports a broad range of computational tools, including R (and RStudio), Python (and Jupyter notebooks), and software for bioinformatics, geospatial analyses, machine learning and deep learning, and image processing.</p>
+
+<div class="grid-row grid-gap">
+<div class="desktop:grid-col-auto">
+<h3>Training and Support</h3>
+<ul>
+  <li>​Computational skills​</li>
+  <li>Data management​</li>
+  <li>Scientific algorithms for HPC​</li>
+  <li>Computational workflow design</li>
+  <li>Software installation and support​</li>
+  <li>AI and machine learning</li>
+</ul>
+</div>
+<div class="desktop:grid-col">
+<h3>Computing Resources</h3>
+<ul>
+  <li>2 High-Performance Computing Clusters
+    <ul>
+      <li>320 Standard Compute Nodes</li>
+      <li>41 High-Memory Compute Nodes</li>
+      <li>9 GPU Nodes (more on the way)</li>
+    </ul>
+  </li>
+</ul>
+</div>
+</div>
+
+<p>The ARS Scientific Computing Initiative is led by an Executive Committee comprised of ARS leadership including Dr. Steven Kappes – Associate Administrator for National Programs,  Dr. Brian Stucky – Acting Chief Scientific Information Officer, Rob Butler – Acting SCINet Project Manager, ARS scientists representing IT and security, and users of the HPC systems. SCINet committees report to the Executive Committee, including the Scientific Advisory Committee (SAC), an HPC Policy Committee, and an HPC Software Committee.</p>
+
+<p>The program runs two high performance computer clusters and a storage unit.  The Ceres cluster is housed at the National Animal Disease Center in Ames, IA and operated by Iowa State University. The Atlas cluster is located and ran by Mississippi State University in Starkville, MS, and the Juno storage unit is located at the National Agricultural Library in Beltsville, MD.</p>
+
+<p>User support at SCINet is provided by the  Virtual Support Research Core (VSRC) operated by Iowas State University for Ceres, and by Mississippi State University for Atlas.</p>
+
+<h2 id="senior-leadership">Senior Leadership</h2>
+
+<table class="usa-table usa-table--compact">
+  <thead>
+    <tr>
+      <th>Person</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Dr. Steven Kappes</td>
+      <td>Associate Administrator for National Programs</td>
+    </tr>
+    <tr>
+      <td>Dr. Brian Stucky</td>
+      <td>Acting Chief Scientific Information Officer, ARS</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="executive-committee">Executive Committee</h2>
+
+<p>The ARS Scientific Computing Initiative is led by an Executive Committee.</p>
+
+<table class="usa-table usa-table--compact">
+  <thead>
+    <tr>
+      <th>Person</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Dr. Steven Kappes</td>
+      <td>Associate Administrator for National Programs</td>
+    </tr>
+    <tr>
+      <td>Dr. Brian Stucky</td>
+      <td>Acting Chief Scientific Information Officer, ARS</td>
+    </tr>
+    <tr>
+      <td>Ms. Lorna Drennen</td>
+      <td>Assistant Chief Information officer</td>
+    </tr>
+    <tr>
+      <td>Mr. Stan Kosecki</td>
+      <td>Deputy Assistant Chief Information Officer</td>
+    </tr>
+    <tr>
+      <td>Mr. Rob Butler</td>
+      <td>Acting SCINet Project Manager</td>
+    </tr>
+    <tr>
+      <td>Dr. Adam Rivers</td>
+      <td>Chair, SCINet Scientific Advisory Committee</td>
+    </tr>
+    <tr>
+      <td>Mr. Renaoti Chan</td>
+      <td>Policy and Information Assurance Branch Chief Information Security Officer</td>
+    </tr>
+    <tr>
+      <td>Mr. Ming Chan</td>
+      <td>Branch Chief, Scientific Data Engineering Branch, National Agricultural Library</td>
+    </tr>
+    <tr>
+      <td>Mr. Nathan Weeks</td>
+      <td>Information Technology Specialist</td>
+    </tr>
+    <tr>
+      <td>Mr. Jay Joiner</td>
+      <td>Project Consultant</td>
+    </tr>
+    <tr>
+      <td>Mr. Andy Liberman</td>
+      <td>Information Technology Specialist (Networking)</td>
+    </tr>
+    <tr>
+      <td>Dr. Brian Scheffler</td>
+      <td>Former Acting Chief Scientific Information Officer</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="scinet-office">SCINet Office</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Person</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Brian Stucky</td>
+      <td>SCINet Computational Biologist and acting CSIO</td>
+    </tr>
+    <tr>
+      <td>Heather Savoy</td>
+      <td>SCINet Computational Biologist</td>
+    </tr>
+    <tr>
+      <td>Haitao Huang</td>
+      <td>SCINet Computational Biologist</td>
+    </tr>
+    <tr>
+      <td>Ryan Lucas</td>
+      <td>SCINet Data Science Coordinator</td>
+    </tr>
+    <tr>
+      <td>Moe Richert</td>
+      <td>SCINet Web Developer</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="scientific-advisory-committee">Scientific Advisory Committee</h2>
+
+<p>The ARS Scientific Computing Initiative is in the domain of ARS researchers, thus the program is in a constant state of gathering information to meet users’ needs. The SAC is an effort to assure that users have input on the ARS HPC-storage system. Scientific Advisory Committee (SAC) members represent a broad range of scientific research at ARS, and membership includes two researchers from each of the five ARS geographic areas, a statistician, and an “at-large” member. The SAC divides its work over various subcommittees: communications, education, planning, and membership. In recent years, the SAC has assisted with a quarterly SCINet newsletter, designed a user needs survey, created the scinet.usda.gov website, and held multiple computational workshops and trainings. SAC progress and issues are elevated to the Executive Committee for review and approval. For more information, including how to participate (non-members welcome), please contact Adam Rivers (Chair).</p>
+
+<div class="usa-table-container--scrollable" tabindex="0">
+
+  <table class="usa-table usa-table--compact">
+    <thead>
+      <tr>
+        <th>Person</th>
+        <th>Area</th>
+        <th>Role</th>
+        <th>Sub-subcommittees</th>
+        <th>Term expires</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Adam Rivers</td>
+        <td>Southeast</td>
+        <td>Chair</td>
+        <td>Communications</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td>Steve Schroeder</td>
+        <td>Northeast</td>
+        <td>Vice-Chair</td>
+        <td>Planning, Software</td>
+        <td>2024</td>
+      </tr>
+      <tr>
+        <td>Erin Scully</td>
+        <td>Plains</td>
+        <td>Secretary</td>
+        <td>Education, Membership</td>
+        <td>2025</td>
+      </tr>
+      <tr>
+        <td>Jeremy Edwards</td>
+        <td>Southeast</td>
+        <td>Representative</td>
+        <td>Communications</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td>Feng Guo</td>
+        <td>Northeast</td>
+        <td>Representative</td>
+        <td>Planning</td>
+        <td>2024</td>
+      </tr>
+      <tr>
+        <td>Hye-Seon Kim</td>
+        <td>Midwest</td>
+        <td>Representative</td>
+        <td> </td>
+        <td>2025</td>
+      </tr>
+      <tr>
+        <td>Margaret Woodhouse</td>
+        <td>Midwest</td>
+        <td>Representative</td>
+        <td>Communications</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td>Jason Fiedler</td>
+        <td>Plains</td>
+        <td>Representative</td>
+        <td>Planning</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td>Pat Clark</td>
+        <td>Pacific West</td>
+        <td>Representative</td>
+        <td>Education</td>
+        <td>2025</td>
+      </tr>
+      <tr>
+        <td>Alison Thompson</td>
+        <td>Pacific West</td>
+        <td>Representative</td>
+        <td>Education</td>
+        <td>2024</td>
+      </tr>
+      <tr>
+        <td>Kathy Yeater</td>
+        <td>Statistician</td>
+        <td>Representative</td>
+        <td>Membership</td>
+        <td>2024</td>
+      </tr>
+      <tr>
+        <td>Chris Owen</td>
+        <td>At-Large</td>
+        <td>Representative</td>
+        <td>TBD</td>
+        <td>2025</td>
+      </tr>
+      <tr>
+        <td>Jack Okamoro</td>
+        <td>ONP</td>
+        <td>Ex Officio</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Cyndy Parr</td>
+        <td>NAL</td>
+        <td>Ex Officio</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Bryan Kaphammer</td>
+        <td>Area Directors</td>
+        <td>Ex Officio</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Brian Stucky</td>
+        <td>Acting CSIO</td>
+        <td>Ex Officio</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Brian Scheffler</td>
+        <td>Former CSIO</td>
+        <td>Ex Officio</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Rob Butler</td>
+        <td>Acting SCINet<br />Executive Director</td>
+        <td>Ex Officio</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h2 id="scientific-points-of-contact">Scientific Points of Contact</h2>
+
+<p>The Scientific Point of Contact (SPOC) is the Scientific Computing Infrastructure Network (SCINet) champion for the location. Working with the SCINet Operations Team, the Scientific Advisory Committee (SAC) and the SAC subcommittees to ensure location personnel are familiar with SCINet and the services that are offered, the SPOC should be familiar with the scientific needs of the unit(s) at their location, especially with respect to complex data and computational needs. When the SCINet Operations Team needs information about the science requirements and needs at a location, they will contact the SPOC who is expected to interact with other scientists within the location to provide the information and recommendations to the requesting party.</p>
+
+<p>The list of SPOC can be found on the <a href="https://usdagcc.sharepoint.com/:x:/r/sites/REE-ARS-SCINet-Scientific-Advisory-Committee/Shared%20Documents/Membership/SPOC_SCINetOrg_23Sept2021.xlsx?d=w7df900cb464e4864aa4a514b3abdbb2b&amp;csf=1&amp;web=1&amp;e=ilTRb2">USDA Sharepoint Site</a>.</p>
+
+<h2 id="scinet-policy-committee">SCINet Policy Committee</h2>
+
+<p>Formed in 2020, this committee makes recommendations to the Executive Committee on policies and procedures relevant to HPC operations. The committee is comprised of members from various technical backgrounds, and includes representation from different ARS geographic areas. Membership also includes representatives from Iowa State University and Mississippi State University (where two of the ARS HPC systems are housed) in order to get representation and perspective of the issues that need to be addressed. For more information, including how to participate, please contact Jonathan Shao (chair).</p>
+
+<table class="usa-table usa-table--compact">
+  <thead>
+    <tr>
+      <th>Person</th>
+      <th>Area</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Jonathan Shao (Chair)</td>
+      <td>Northeast Representative</td>
+    </tr>
+    <tr>
+      <td>Steven Schroeder</td>
+      <td>Northeast Representative</td>
+    </tr>
+    <tr>
+      <td>Dereck Bickhart</td>
+      <td>Midwest Representative</td>
+    </tr>
+    <tr>
+      <td>Corey Moffet</td>
+      <td>Plains Representative</td>
+    </tr>
+    <tr>
+      <td>Erin Scully</td>
+      <td>Plains Representative</td>
+    </tr>
+    <tr>
+      <td>Joshua Udall</td>
+      <td>Plains Representative</td>
+    </tr>
+    <tr>
+      <td>Loren Honaas</td>
+      <td>Pacific West Representative</td>
+    </tr>
+    <tr>
+      <td>Stan Kosecki</td>
+      <td>NAL Representative</td>
+    </tr>
+    <tr>
+      <td>Curtis Brooks</td>
+      <td>GWCC Representative</td>
+    </tr>
+    <tr>
+      <td>Jim Coyle</td>
+      <td>ISU Representative</td>
+    </tr>
+    <tr>
+      <td>Vincent Sanders</td>
+      <td>MSU-HPCC Representative</td>
+    </tr>
+    <tr>
+      <td>Angela Pompey</td>
+      <td>Information Security</td>
+    </tr>
+    <tr>
+      <td>Chris Lowe</td>
+      <td>Information Security</td>
+    </tr>
+    <tr>
+      <td>Brian Stucky</td>
+      <td>Acting Chief Scientific Information Officer, ARS</td>
+    </tr>
+    <tr>
+      <td>Rob Butler</td>
+      <td>Acting SCINet Project Manager</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="scinet-software-committee">SCINet Software Committee</h2>
+
+<p>The software committee evaluates requests by users to add or delete software to/from one of the HPCs. This committee is composed of scientific experts in the use of HPCs from across agricultural disciplines, and that represent our two HPCs. Users can make software requests by completing the <a href="/support/request#software-request">Software Request Form</a>.</p>
+
+<!---------------------------------------------------------------------------------------
+WAITING FOR A FEW DEVELOPMENTS IN THE SCINET PROGRAM TO OCCUR, THEN NEED TO EDIT THE title BELOW AND REPLACE THE INFORMATION ON THIS PAGE ENTIRELY
+## Executive Committee
+The ARS Scientific Computing Initiative is led by an Executive Committee comprised of ARS leadership including Dr. Steven Kappes – Associate Administrator for National Programs, Dr. Simon Liu – Associate Administrator for Research Management and Operations, Dr. Brian Stucky – Acting Chief Scientific Information Officer, and Stan Kosecki – Acting SCINet Program Manager. The Executive Committee is guided by security professionals, system administrators, a team of computational ARS scientists called the Scientific Advisory Committee, an HPC Policy Standing Committee, and an HPC Software Standing Committee.
+#Scientific Advisory Committee (SAC)
+The ARS Scientific Computing Initiative is in the dominion of ARS researchers, thus the program is in a constant state of gathering and meeting their research needs. The SAC is an effort to assure that happens.  SAC members represent a broad breadth of scientific research at ARS and membership includes two researchers from each of the five ARS geographic areas, a statistician member, and an “at-large” member. The SAC divides its work over various subcommittees: communications, education, planning, software and membership. In recent years, the SAC has created a quarterly SCINet newsletter, designed a user needs survey, created the scinet.usda.gov website, and held multiple computational workshops and trainings. SAC progress and issues are elevated to the Executive Committee for review and approval. For more information, including how to participate (non-members welcome), please contact Adam Rivers (chair).
+**Membership**
+Adam Rivers (Chair), Southeast Representative
+Jeremy Edwards, Southeast Representative
+Steve Schroeder, Northeast Representative
+Jude Maul, Northeast Representative
+Julian Trachsel, Midwest Representative
+Margaret Woodhouse, Midwest Representative
+Erin Scully, Plains Representative
+Jason Fiedler, Plains Representative
+Pat Clark, Pacific West Representative
+Alison Thompson, Pacific West Representative
+Kathy Yeater, Statistician Representative
+Chris Owen, At-Large Representative
+#HPC Policy Standing Committee
+Formed in 2020, this committee makes recommendations to the Executive Committee on policies and procedures that are relevant to HPC operations. The committee is comprised of members from various technical backgrounds and includes representation from different ARS geographic areas. Membership also includes representatives from Iowa State University and Mississippi State University (where two of the ARS HPC systems are housed) in order to get proper representation and perspective of the issues that need to be addressed. Policy Committee progress and issues are elevated to the Executive Committee for review and approval. For more information, including how to participate, please contact Jonathan Shao (chair).
+**Membership**
+Jonathan Shao (Chair), Northeast Representative
+Steven Schroeder, Northeast Representative
+Dereck Bickhart, Midwest Representative
+Corey Moffet, Plains Representative
+Erin Scully, Plains Representative
+Joshua Udall, Plains Representative
+Loren Honaas, Pacificwest Representative
+Stan Kosecki, NAL Representative
+Curtis Brooks, GWCC Representative
+Jim Coyle, ISU Representative
+Vincent Sanders, MSU-HPCC Representative
+Angela Pompey, Information Security
+Chris Lowe, Information Security
+Brian Stucky, Acting CSIO
+#HPC Software Standing Committee
+This committee is currently forming and is in search of members. The committee will look into the feasibility of new HPC software requests and elevate any issues with recommendations to the Executive Committee. For more information, including how to participate, please contact Deb Peters.
+**Membership**
+Steven Schroeder
+***********who else?*************
+#Scientific Points of Contact (SPOCs)
+Each ARS location also has at least one designated point of contact for the ARS Scientific Computing Initiative. These representatives are occasionally contacted by the various committees when information from many locations is required for decision making. For more information, including how to participate, please contact Stan Kosecki.
+-->
+
+
+  
+
+  
+
+  <br>
+
+  
+
+
+        <br>
+    </main>
+  </div>
+</div>
+</div>
+
+
+    <br>
+
+    
+
+  
+
+  
+
+
+    
+<footer class="usa-footer usa-footer--big">
+
+  
+  <div class="grid-container">
+    <p>Last updated: May 19, 2023 at 11:18 AM</p>
+  </div>
+  
+
+  
+  <div class="grid-container usa-footer__return-to-top">
+    <a href="#">Return to top</a>
+  </div>
+  
+
+  
+  
+
+  <div class="usa-footer__primary-section">
+    <div class="grid-container">
+          <nav class="usa-footer__nav" aria-label="Footer navigation">
+            <div class="grid-row grid-gap-4">
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                <section class="
+                usa-footer__primary-content
+                usa-footer__primary-content--collapsible
+              ">
+              <h4 class="usa-footer__primary-link">ABOUT</h4>
+              <ul class="usa-list usa-list--unstyled">
+                <li>
+                <p>SCINet is a USDA <a href='https://www.ars.usda.gov/'>Agricultural Research Service</a> initiative.</p>
+                <a class="usa-button" href="/about/organization">Learn More</a>
+                </li>
+              </ul>
+                </section>
+                </div>
+              
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">RESOURCES</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="mailto:scinet_vrsc@usda.gov">
+                        Feedback
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/about/signup">
+                        Sign Up
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/about/contact">
+                        Contact
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/opportunities/fellowships">
+                        Fellowships
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">USDA</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://ask.usda.gov/">
+                        AskUSDA
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/">
+                        USDA.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.usa.gov">
+                        USA.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.whitehouse.gov">
+                        WhiteHouse.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/plain-writing">
+                        Plain Writing
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">LEGAL</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/accessibility-statement">
+                        Accessibility Statement
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/non-discrimination-statement">
+                        Non-Discrimination Statement
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/privacy-policy">
+                        Privacy Policy
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.dm.usda.gov/foia/">
+                        FOIA
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.ocio.usda.gov/policy-directives-records-forms/information-quality-activities">
+                        Information Quality
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+            </div>
+          </nav>
+    </div>
+  </div>
+
+  
+  <div class="usa-footer__secondary-section">
+    <div class="grid-container sci-heading">
+      <div class="grid-row grid-gap">
+        <div class="usa-footer__logo grid-row mobile-lg:grid-col-6 tablet:grid-gap-2">
+          
+          
+          <div class="mobile-lg:grid-col-auto footer-flex">
+          
+<div class="usa-logo">
+    
+    <span class="agency-logo display-flex flex-align-center mobile-lg:margin-right-1">
+        
+        <a href="/">
+            <img class="usa-logo-img"
+                src="/assets/img/site/usda-logo-color.svg"
+                alt="USDA">
+        </a>
+        
+    </span>
+    
+    <a class="agency-logo-text"
+        href="/"
+        aria-label="SCINet Scientific Computing">
+        <div class="agency-identity">
+            <div class="agency-name usa-logo__text">SCINet Scientific Computing</div>
+            
+            <div class="tagline">U.S. Department of Agriculture</div>
+            
+        </div>
+    </a>
+</div>
+          </div>
+          
+
+
+        </div>
+
+        
+        <div class="margin-y-auto mobile-lg:grid-col-4 footer-flex">
+          
+          <div class="usa-footer__social-links grid-row grid-gap-1">
+            <div class="grid-col-auto">
+              
+              <a class="usa-social-link ext-nested" style="padding-right: .25rem;" href="https://twitter.com/USDA_ARS"
+              ><img
+                class="usa-social-link__icon"
+                src="/assets/uswds/img/usa-icons/twitter.svg"
+                alt="Twitter"
+            /></a>
+              
+              <a class="usa-social-link ext-nested" style="padding-right: .25rem;" href="mailto:scinet_vrsc@usda.gov"
+              ><img
+                class="usa-social-link__icon"
+                src="/assets/uswds/img/usa-icons/mail.svg"
+                alt="Contact VRSC"
+            /></a>
+              
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="grid-row mobile-lg:grid-col-2 footer-flex">
+        
+
+<small class="flex-align-self-center"><a href="https://github.com/USDA-SCINet/scinet-site/edit/main/pages/about/organization.md" class="usa-sidenav-edit" target="_blank">Edit this page</a></small>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+
+</footer>
+
+
+
+  <!-- dynamically determine scripts needed for this config -->
+
+
+
+
+
+
+
+  
+    
+      <script src="/assets/uswds/js/uswds.min.js" async></script>
+    
+
+  
+    
+      <script src="/assets/js/vendor/anchor.min.js"></script>
+    
+
+  
+    
+      <script src="/assets/js/main.js"></script>
+    
+
+  
+    
+      <script src="/assets/js/external.js"></script>
+    
+
+  
+    
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+      var usasearch_config = { siteHandle:"scinet-usda" };
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "https://search.usa.gov/javascripts/remote.loader.js";
+      document.getElementsByTagName("head")[0].appendChild(script);
+
+//]]>
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

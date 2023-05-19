@@ -1,0 +1,2452 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>A Quick Guide to getting started with SCINet | SCINet | USDA Scientific Computing Initiative</title>
+
+
+
+<meta name="description" content="A Quick Guide to getting started with SCINet">
+
+
+
+
+<link rel="shortcut icon"type="image/ico"
+  href="/assets/img/site/favicons/favicon.ico">
+
+
+
+<link rel="icon"type="image/png"
+  href="/assets/img/site/favicons/favicon.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="192x192"
+  href="/assets/img/site/favicons/favicon-192.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="32x32"
+  href="/assets/img/site/favicons/favicon-32x32.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="16x16"
+  href="/assets/img/site/favicons/favicon-16x16.png">
+
+
+
+<link rel="manifest"
+  href="/assets/img/site/favicons/site.webmanifest">
+
+
+
+<link rel="mask-icon"
+  href="/assets/img/site/favicons/safari-pinned-tab.svg">
+
+
+
+<link rel="apple-touch-icon"
+  sizes="180x180"
+  href="/assets/img/site/favicons/apple-touch-icon.png">
+
+
+
+<meta name="msapplication-TileColor" content="#2b5797">
+
+
+
+<meta name="msapplication-config" content="/assets/img/site/favicons/browserconfig.xml">
+
+
+
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+  
+
+
+
+<link rel="stylesheet"
+  href="/assets/css/style.css"
+  media="screen">
+
+  
+  
+
+
+<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
+<script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=USDA&subagency=ARS"></script>
+
+
+  
+  <script>0</script>
+</head>
+
+<body class="site-90%">
+
+  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+  
+
+
+  <section class="usa-banner" aria-label="Official government website">
+  <div class="usa-accordion">
+    <header class="usa-banner__header">
+      <div class="usa-banner__inner">
+        <div class="grid-col-auto">
+          <img class="usa-banner__header-flag" src="/assets/uswds/img/us_flag_small.png" alt="U.S. flag">
+        </div>
+        <div class="grid-col-fill tablet:grid-col-auto">
+          <p class="usa-banner__header-text">An official website of the United States government</p>
+          <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
+        </div>
+        <button type="button" class="usa-accordion__button usa-banner__button"
+          aria-expanded="false" aria-controls="gov-banner">
+          <span class="usa-banner__button-text">Here’s how you know</span>
+        </button>
+      </div>
+    </header>
+    <div class="usa-banner__content usa-accordion__content" id="gov-banner" hidden="">
+      <div class="grid-row grid-gap-lg">
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/uswds/img/icon-dot-gov.svg" role="img" alt="Dot gov">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Official websites use .gov</strong>
+              <br/>
+              A <strong>.gov</strong> website belongs to an official government organization in the United States.
+            </p>
+          </div>
+        </div>
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/uswds/img/icon-https.svg" role="img" alt="Https">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Secure .gov websites use HTTPS</strong>
+              <br/>
+              A <strong>lock</strong> (
+<span class="icon-lock"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64" class="usa-banner__lock-image" role="img" aria-labelledby="banner-lock-title banner-lock-description"><title id="banner-lock-title">Lock</title><desc id="banner-lock-description">A locked padlock</desc><path fill="#000000" fill-rule="evenodd" d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"/></svg></span>
+) or <strong>https://</strong> means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<div class="usa-overlay"></div>
+<header class="usa-header usa-header--extended sci-heading" role="banner">
+
+  <div class="usa-navbar">
+      
+<div class="usa-logo">
+    
+    <span class="agency-logo display-flex flex-align-center mobile-lg:margin-right-1">
+        
+        <a href="/">
+            <img class="usa-logo-img"
+                src="/assets/img/site/usda-logo-color.svg"
+                alt="USDA">
+        </a>
+        
+    </span>
+    
+    <a class="agency-logo-text"
+        href="/"
+        aria-label="SCINet Scientific Computing">
+        <div class="agency-identity">
+            <div class="agency-name usa-logo__text">SCINet Scientific Computing</div>
+            
+            <div class="tagline">U.S. Department of Agriculture</div>
+            
+        </div>
+    </a>
+</div>
+    <button type="button" class="usa-menu-btn">Menu</button>
+  </div>
+
+  <nav aria-label="Primary navigation" class="usa-nav border-bottom-2px">
+    <div class="usa-nav__inner">
+      <button type="button" class="usa-nav__close">
+        <img src="/assets/uswds/img/usa-icons/close.svg" alt="close">
+      </button>
+      
+      
+      
+      <ul class="usa-nav__primary usa-accordion">
+        
+        <li class="usa-nav__primary-item">
+          
+          <a class=" usa-nav__link  "
+            href="/">
+            <span>Home</span>
+          </a>
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-About">
+            <span>About</span>
+          </button>
+
+          
+          
+
+<ul id="nav-About" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/signup"><span>Sign up for an account</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/compute"><span>Computer Systems</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/organization"><span>Organization</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/vrsc"><span>Virtual Research Support Core (VSRC)</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/policies"><span>Policies</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/contact"><span>Contact</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-News">
+            <span>News</span>
+          </button>
+
+          
+          
+
+<ul id="nav-News" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/downtime/"><span>System Downtime</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/announcements"><span>Announcements</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/stories"><span>User Stories</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/newsletter"><span>Newsletter</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/scinet-x"><span>SCINet-X</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-User Guides">
+            <span>User Guides</span>
+          </button>
+
+          
+          
+
+<ul id="nav-User Guides" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/guides/start"><span>Quick Start</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/guides/"><span>All User Guides</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Research">
+            <span>Research</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Research" class="usa-nav__submenu nav-width-2" hidden="">
+    <div class="grid-row grid-gap-4">
+        
+            
+            
+            
+        <li class="usa-nav__submenu-item desktop:grid-col-6 m-top-0">
+            
+
+                    
+                    
+                    <div class="">
+                        <a href="/research/working-groups/">
+                            Working Groups
+                        </a>
+                    </div>
+
+                    <ul id="nav-ResearchWorking Groups" class="sublist">
+
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/ag100pest">
+                                    Ag100Pest
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/arthropods">
+                                    Arthropod Genomics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/fungalbioinformatics">
+                                    Fungal Bioinformatics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/geospatial">
+                                    Geospatial Research
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/microbiome">
+                                    Microbiome
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/LTARphenology">
+                                    LTAR Phenology
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/pollinator">
+                                    Pollinator
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/proteinfunction">
+                                    Protein Function and Phenotype Prediction
+                                </a>
+                            </li>
+
+                        
+                    </ul>
+                </li>
+            
+        
+            
+            
+            
+        <li class="usa-nav__submenu-item desktop:grid-col-6 m-top-0">
+            
+
+                    
+                    
+                    <div class="">
+                        <a href="/research/uses/">
+                            Use Cases
+                        </a>
+                    </div>
+
+                    <ul id="nav-ResearchUse Cases" class="sublist">
+
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/genomics">
+                                    Genomics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/plant-breeding">
+                                    Plant breeding
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/geospatial">
+                                    Geospatial
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/hydrology">
+                                    Hydrology
+                                </a>
+                            </li>
+
+                        
+                    </ul>
+                </li>
+            
+        
+    </div>
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Trainings and Events">
+            <span>Trainings and Events</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Trainings and Events" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/resources"><span>Learning Resources</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/events/"><span>Upcoming Events</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/learningpath"><span>Learning Pathway</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Support">
+            <span>Support</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Support" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/contact"><span>Contact the VRSC</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/faq"><span>FAQs</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="https://forum.scinet.usda.gov"><span>USDA-ARS SCINet Forum</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/request"><span>Request Resources</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/ceres-job-script"><span>Ceres Job Script Generator</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Opportunities">
+            <span>Opportunities</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Opportunities" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/SAC"><span>SAC Membership</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/request-workshop"><span>Request a Workshop</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/fellowships"><span>Fellowships (PhD & MS)</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/ai-innovation/"><span>AI Innovation Fund</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/scinet-aicoe-fellowships"><span>SCINet and AI-COE fellowship proposals</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+
+
+      </ul>
+      
+
+    </div>
+
+    
+    <div class="usa-nav__secondary">
+      
+      
+        <form accept-charset="UTF-8" action="https://search.usa.gov/search" id="search_form" method="get"
+class="usa-search usa-search--small js-search-form">
+<input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="affiliate" id="affiliate" value="scinet-usda" />
+<div role="search">
+  <label for="query" class="usa-sr-only">Enter search terms</label>
+  <input autocomplete="off" class="usa-input usagov-search-autocomplete" id="query" name="query"
+    type="search" />
+  <button class="usa-button" type="submit" name="commit">
+    <img src="/assets/uswds/img/usa-icons-bg/search--white.svg"
+      class="usa-search__submit-icon" alt="Search" />
+  </button>
+</div>
+</form>
+
+      
+    </div>
+
+
+    </div>
+    </div>
+  </nav>
+
+</header>
+
+
+
+  
+
+    
+    
+
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+
+
+
+    
+    
+
+
+    <div class="grid-container main-side">
+
+
+  
+
+
+  
+
+  
+
+
+
+
+
+
+
+<div class="grid-row grid-gap flex-align-start">
+    <div class="usa-layout-docs__sidenav desktop:grid-col-3 desktop:padding-y-10 usa-sticky-sidenav">
+        <nav aria-label="Secondary navigation">
+  <ul class="usa-sidenav">
+
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/guides/start" 
+         
+        class="usa-current " 
+        >
+        Quick Start
+    </a>
+    
+    
+    <ul class="usa-sidenav__sublist">
+        
+            
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #what-is-scinet
+  " class="">What is SCINet?</a>
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="
+    #user-guides
+  " class="">User Guides</a>
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="#scinet-hpc-resources" class="">SCINet HPC Resources</a>
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="#multi-factor-authentication" class="">Multi-Factor Authentication</a>
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="#logging-in" class="">Logging In</a>
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="#data-storage" class="">Data Storage</a>
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="#data-transfer" class="">Data Transfer</a>
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="#software" class="">Software</a>
+  
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="#open-ondemand-interface" class="">Open OnDemand Interface</a>
+  
+</li>
+
+
+        
+        
+    </ul>
+    
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/guides/" 
+        >
+        All User Guides
+    </a>
+    
+</li>
+    
+
+  </ul>
+</nav>
+    </div>
+    
+    <div class="usa-layout-docs__main desktop:grid-col-9">
+        <nav class="usa-breadcrumb usa-breadcrumb--wrap" aria-label="Breadcrumbs">
+  <ol class="usa-breadcrumb__list">
+    
+    
+
+
+<li class="usa-breadcrumb__list-item">
+  <a href="/" class="usa-breadcrumb__link">
+    <span>Home</span>
+  </a>
+</li>
+
+    
+      
+
+
+<li class="usa-breadcrumb__list-item">
+  <a href="/guides" class="usa-breadcrumb__link">
+    <span>All User Guides</span>
+  </a>
+</li>
+    
+
+    
+
+    
+    
+    
+
+
+    <li class="usa-breadcrumb__list-item usa-current" aria-current="page">
+      <span>A Quick Guide to getting started with SCINet</span>
+    </li>
+  </ol>
+</nav>
+        <main class="usa-layout-docs usa-layout-docs__main usa-prose" id="main-content">
+
+          
+  
+      <h1 class="top-header">A Quick Guide to getting started with SCINet</h1>
+  
+  
+
+  
+
+  
+
+  <section class="padding-y-4">
+    <p><a href="/about/signup" class="usa-button usa-button-big">No account? Signup here.</a></p>
+
+<h2 id="what-is-scinet">What is SCINet?</h2>
+
+<p>SCINet is the USDA-ARS’s initiative for scientific computing. It consists of:</p>
+
+<ol>
+  <li>High performance computer clusters for running command-line and graphical programs. There are currently two clusters: Ceres cluster in Ames IA and Atlas cluster in Starkville MS. SCINet also offers AWS cloud computing. See <a href="/about/compute">SCINet HPC Systems</a> for more detail.</li>
+  <li>Network improvements across ARS.</li>
+  <li>Support for computing through the Virtual Research Support Core (VRSC). See <a href="/about/vrsc">VRSC Support</a> for more detail.</li>
+  <li>Training and workshop opportunities in multiple areas of scientific computing. See <a href="/training/events">our event calendar</a> for more information.</li>
+</ol>
+
+<p>Users who are new to the HPC environment may benefit from the <a href="https://www.youtube.com/watch?v=d7oKSL4aitw">SCINet/Ceres onboarding video</a> which covers most of the material contained in this guide. Note that /KEEP storage discussed in the video at 16:20 is no longer available. Instead data that cannot be easily reproduced should be manually backed up to <a href="/guides/data/storage/#juno-archive-storage">Juno</a>. The instructional video at <a href="https://www.youtube.com/watch?v=I3lnsCAfx3Q">https://www.youtube.com/watch?v=I3lnsCAfx3Q</a> demonstrates how to transfer files between local computer, Ceres, Atlas and Juno using Globus.</p>
+
+<h2 id="user-guides">User Guides</h2>
+
+<p><strong>Use the navgation options or select one of the guides below to get started with SCINet</strong></p>
+
+    
+
+
+
+
+
+    
+
+
+
+    
+    
+        
+            <div class="home-block">
+    <ul class="usa-card-group margin-bottom-2 tablet:margin-x-2">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="tablet:grid-col-12 margin-y-1">
+            <div class="usa-card__container sharp-card">
+                <a class="sharp" href="/guides/resources">
+                    <div class="heading">
+                        <h3 class="margin-0  arrow">SCINet HPC Resources</h3>
+                    </div>
+                </a>
+                <div id="scinet-hpc-resources-guide">
+                <div class="usa-card__body">
+                    
+                    
+                            
+                                
+                            
+                                
+                                        <h2 id="hpc-clusters-on-scinet">HPC Clusters on SCINet</h2>
+
+<div class="usa-table-container--scrollable" tabindex="0">
+
+  <table class="usa-table usa-table--striped">
+    <thead>
+      <tr>
+        <th>Cluster name</th>
+        <th>Location</th>
+        <th>Login Nodes</th>
+        <th>Transfer Nodes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ceres</td>
+        <td>Ames, IA</td>
+        <td>ceres.scinet.usda.gov</td>
+        <td>ceres-dtn.scinet.usda.gov</td>
+      </tr>
+      <tr>
+        <td>Atlas</td>
+        <td>Starkville, MS</td>
+        <td>atlas-login.hpc.msstate.edu</td>
+        <td>atlas-dtn.hpc.msstate.edu</td>
+      </tr>
+      <tr>
+        <td>TBD</td>
+        <td>Beltsville, MD</td>
+        <td>TBD</td>
+        <td>TBD</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+                                        
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                    
+                    
+                    
+                    <div class="text-right">
+                        <a class="usa-button usa-button--outline margin-y-1" href="/guides/resources">
+                            Read More
+                        </a>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            </div>
+        </li>
+        
+        
+        
+        
+        
+        <li class="tablet:grid-col-12 margin-y-1">
+            <div class="usa-card__container sharp-card">
+                <a class="sharp" href="/guides/access/mfa">
+                    <div class="heading">
+                        <h3 class="margin-0  arrow">Multi-Factor Authentication</h3>
+                    </div>
+                </a>
+                <div id="multi-factor-authentication-guide">
+                <div class="usa-card__body">
+                    
+                    
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                        <p>For security, SCINet requires multifactor authentication. Use these instructions to get set up.</p>
+                                        
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                    
+                    
+                    
+                    <div class="text-right">
+                        <a class="usa-button usa-button--outline margin-y-1" href="/guides/access/mfa">
+                            Read More
+                        </a>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            </div>
+        </li>
+        
+        
+        
+        
+        
+        <li class="tablet:grid-col-12 margin-y-1">
+            <div class="usa-card__container sharp-card">
+                <a class="sharp" href="/guides/access/login">
+                    <div class="heading">
+                        <h3 class="margin-0  arrow">Logging In</h3>
+                    </div>
+                </a>
+                <div id="logging-in-guide">
+                <div class="usa-card__body">
+                    
+                    
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                        <p><a href="/about/signup" class="usa-button usa-button-big">No account? Signup here.</a></p>
+
+<p>All users should have received their login credentials in an email.  If you have not, please email the Virtual Research Support Core at <a href="mailto:scinet_vrsc@USDA.GOV?subject=account%20access">scinet_vrsc@USDA.GOV</a>.</p>
+
+<p>Before accessing various SCINet resources, new users need to ssh either to Ceres or Atlas cluster and change the temporary password. Note that home directories on Atlas are not created right away, so it is recommended to wait a day after receiving email with the credentials before logging to Atlas cluster.</p>
+
+
+                                        
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                    
+                    
+                    
+                    <div class="text-right">
+                        <a class="usa-button usa-button--outline margin-y-1" href="/guides/access/login">
+                            Read More
+                        </a>
+                    </div>
+                    
+                </div>
+                
+                <div class="usa-card__footer">
+                    
+                    
+                    
+                    
+                    
+                    <div class="border-top-2px margin-3">
+                        <h3>Guide Sections</h3>
+                        <ul class="usa-card-group margin-y-4 maxw-tablet margin-x-auto flex-align-center">
+                            
+                            
+                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                                <a  href="/guides/access/login#using-ssh-to-connect">
+                                    <div class="usa-card__container display-flex flex-row padding-2">
+                                        <div class="overflow-hidden desktop:grid-col-fill">
+                                            <h4 class="margin-0 arrow">Using ssh to Connect</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                                <a  href="/guides/access/login#password-requirements">
+                                    <div class="usa-card__container display-flex flex-row padding-2">
+                                        <div class="overflow-hidden desktop:grid-col-fill">
+                                            <h4 class="margin-0 arrow">Password Requirements</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                                <a  href="/guides/access/login#frequently-asked-questions">
+                                    <div class="usa-card__container display-flex flex-row padding-2">
+                                        <div class="overflow-hidden desktop:grid-col-fill">
+                                            <h4 class="margin-0 arrow">Frequently Asked Questions</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            </div>
+        </li>
+        
+        
+        
+        
+        
+        <li class="tablet:grid-col-12 margin-y-1">
+            <div class="usa-card__container sharp-card">
+                <a class="sharp" href="/guides/data/storage">
+                    <div class="heading">
+                        <h3 class="margin-0  arrow">Data Storage</h3>
+                    </div>
+                </a>
+                <div id="data-storage-guide">
+                <div class="usa-card__body">
+                    
+                    
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                        <p>This document provides detailed information about the storage options provided by SCINet and how to use them.  For a simpler overview of suggested procedures for managing data on SCINet, please see <a href="/guides/data/data-management">Managing Data on ARS HPC and Storage Infrastructure</a>.</p>
+
+<p>There are multiple places to store data on the Ceres and Atlas clusters that all serve different purposes.</p>
+
+
+                                        
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                    
+                    
+                    
+                    <div class="text-right">
+                        <a class="usa-button usa-button--outline margin-y-1" href="/guides/data/storage">
+                            Read More
+                        </a>
+                    </div>
+                    
+                </div>
+                
+                <div class="usa-card__footer">
+                    
+                    
+                    
+                    
+                    
+                    <div class="border-top-2px margin-3">
+                        <h3>Guide Sections</h3>
+                        <ul class="usa-card-group margin-y-4 maxw-tablet margin-x-auto flex-align-center">
+                            
+                            
+                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                                <a  href="/guides/data/storage#quotas">
+                                    <div class="usa-card__container display-flex flex-row padding-2">
+                                        <div class="overflow-hidden desktop:grid-col-fill">
+                                            <h4 class="margin-0 arrow">Quotas</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                                <a  href="/guides/data/storage#home-directories">
+                                    <div class="usa-card__container display-flex flex-row padding-2">
+                                        <div class="overflow-hidden desktop:grid-col-fill">
+                                            <h4 class="margin-0 arrow">Home Directories</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                                <a  href="/guides/data/storage#project-directories">
+                                    <div class="usa-card__container display-flex flex-row padding-2">
+                                        <div class="overflow-hidden desktop:grid-col-fill">
+                                            <h4 class="margin-0 arrow">Project Directories</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                                <a  href="/guides/data/storage#large-short-term-storage">
+                                    <div class="usa-card__container display-flex flex-row padding-2">
+                                        <div class="overflow-hidden desktop:grid-col-fill">
+                                            <h4 class="margin-0 arrow">Large Short-term Storage</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                                <a  href="/guides/data/storage#temporary-local-node-storage">
+                                    <div class="usa-card__container display-flex flex-row padding-2">
+                                        <div class="overflow-hidden desktop:grid-col-fill">
+                                            <h4 class="margin-0 arrow">Temporary Local Node Storage</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                                <a  href="/guides/data/storage#juno-archive-storage">
+                                    <div class="usa-card__container display-flex flex-row padding-2">
+                                        <div class="overflow-hidden desktop:grid-col-fill">
+                                            <h4 class="margin-0 arrow">Juno Archive Storage</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            </div>
+        </li>
+        
+        
+        
+        
+        
+        <li class="tablet:grid-col-12 margin-y-1">
+            <div class="usa-card__container sharp-card">
+                <a class="sharp" href="/guides/data/datatransfer">
+                    <div class="heading">
+                        <h3 class="margin-0  arrow">Data Transfer</h3>
+                    </div>
+                </a>
+                <div id="data-transfer-guide">
+                <div class="usa-card__body">
+                    
+                    
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                        <p>Data Transfer best practices.</p><p>Globus Online is the recommended method for transferring data to and from the HPC clusters.</p>
+                                        
+                                
+                            
+                                
+                            
+                    
+                    
+                    
+                    <div class="text-right">
+                        <a class="usa-button usa-button--outline margin-y-1" href="/guides/data/datatransfer">
+                            Read More
+                        </a>
+                    </div>
+                    
+                </div>
+                
+                <div class="usa-card__footer">
+                    
+                    
+                    
+                    
+                    
+                    <div class="border-top-2px margin-3">
+                        <h3>Guide Sections</h3>
+                        <ul class="usa-card-group margin-y-4 maxw-tablet margin-x-auto flex-align-center">
+                            
+                            
+                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                                <a  href="/guides/data/datatransfer#best-practices">
+                                    <div class="usa-card__container display-flex flex-row padding-2">
+                                        <div class="overflow-hidden desktop:grid-col-fill">
+                                            <h4 class="margin-0 arrow">Best Practices</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                                <a  href="/guides/data/datatransfer#globus-data-transfer">
+                                    <div class="usa-card__container display-flex flex-row padding-2">
+                                        <div class="overflow-hidden desktop:grid-col-fill">
+                                            <h4 class="margin-0 arrow">Globus</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                                <a  href="/guides/data/datatransfer#small-data-transfer-using-scp-and-rsync">
+                                    <div class="usa-card__container display-flex flex-row padding-2">
+                                        <div class="overflow-hidden desktop:grid-col-fill">
+                                            <h4 class="margin-0 arrow">Small Data Transfer Using scp and rsync</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                                <a  href="/guides/data/datatransfer#large-data-transfer-by-shipping-hard-drives">
+                                    <div class="usa-card__container display-flex flex-row padding-2">
+                                        <div class="overflow-hidden desktop:grid-col-fill">
+                                            <h4 class="margin-0 arrow">Large Data Transfer by Shipping Hard Drives</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                                <a  href="/guides/data/datatransfer#other-ways-to-transfer-data">
+                                    <div class="usa-card__container display-flex flex-row padding-2">
+                                        <div class="overflow-hidden desktop:grid-col-fill">
+                                            <h4 class="margin-0 arrow">Other Ways to Transfer Data</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                                <a  href="/guides/data/datatransfer#data-transfer-to-ncbi">
+                                    <div class="usa-card__container display-flex flex-row padding-2">
+                                        <div class="overflow-hidden desktop:grid-col-fill">
+                                            <h4 class="margin-0 arrow">Data Transfer to NCBI</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            </div>
+        </li>
+        
+        
+        
+        
+        
+        <li class="tablet:grid-col-12 margin-y-1">
+            <div class="usa-card__container sharp-card">
+                <a class="sharp" href="/guides/software">
+                    <div class="heading">
+                        <h3 class="margin-0  arrow">Software</h3>
+                    </div>
+                </a>
+                <div id="software-guide">
+                <div class="usa-card__body">
+                    
+                    
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                        The login node provides access to a wide variety of scientific software tools that users can access and use via the module system. These software tools were compiled and optimized for use on SCINet by members of the Virtual Research Support Core (VRSC) team. Most users will find the software tools they need for their research among the provided packages and thus will not need to compile their own software packages. <br /> <br />To learn more about graphical software such as Galaxy, CSC, Geneious, RStudio, and Juptyer, please select the <a href='/guides/software/preinstalled'>Software Preinstalled on Ceres</a> guide
+                                        
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                    
+                    
+                    
+                    <div class="text-right">
+                        <a class="usa-button usa-button--outline margin-y-1" href="/guides/software">
+                            Read More
+                        </a>
+                    </div>
+                    
+                </div>
+                
+                <div class="usa-card__footer">
+                    
+                    
+                    
+                    
+                    
+                    <div class="border-top-2px margin-3">
+                        <h3>Guide Pages</h3>
+                        <ul class="usa-card-group margin-y-4 maxw-tablet margin-x-auto flex-align-center">
+                            
+                            
+                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                                <a  href="/guides/software/preinstalled">
+                                    <div class="usa-card__container display-flex flex-row padding-2">
+                                        <div class="overflow-hidden desktop:grid-col-fill">
+                                            <h4 class="margin-0 arrow">Software preinstalled on Ceres</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                                <a  href="/guides/software/conda">
+                                    <div class="usa-card__container display-flex flex-row padding-2">
+                                        <div class="overflow-hidden desktop:grid-col-fill">
+                                            <h4 class="margin-0 arrow">User-Installed Software on Ceres with Conda</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                                <a  href="/guides/software/modules">
+                                    <div class="usa-card__container display-flex flex-row padding-2">
+                                        <div class="overflow-hidden desktop:grid-col-fill">
+                                            <h4 class="margin-0 arrow">Environment Modules</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li class="tablet:grid-col-12 featured_posts margin-y-1">
+                                <a  href="/guides/software/singularity">
+                                    <div class="usa-card__container display-flex flex-row padding-2">
+                                        <div class="overflow-hidden desktop:grid-col-fill">
+                                            <h4 class="margin-0 arrow">Singularity Containers</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            </div>
+        </li>
+        
+        
+        
+        
+        
+        <li class="tablet:grid-col-12 margin-y-1">
+            <div class="usa-card__container sharp-card">
+                <a class="sharp" href="/guides/access/open-ondemand">
+                    <div class="heading">
+                        <h3 class="margin-0  arrow">Open OnDemand Interface</h3>
+                    </div>
+                </a>
+                <div id="open-ondemand-interface-guide">
+                <div class="usa-card__body">
+                    
+                    
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                        <p><a href="https://openondemand.org/">Open OnDemand</a> is an intuitive, innovative, and interactive interface to remote computing resources. The key benefit for SCINet users is that they can use any web browser, including browsers on a mobile phone, to access Ceres.</p>
+
+                                        
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                    
+                    
+                    
+                    <div class="text-right">
+                        <a class="usa-button usa-button--outline margin-y-1" href="/guides/access/open-ondemand">
+                            Read More
+                        </a>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            </div>
+        </li>
+        
+        
+    </ul>
+</div>
+        
+    
+
+</section>
+
+  
+
+  
+
+  <br>
+
+  
+
+
+        <br>
+    </main>
+  </div>
+</div>
+</div>
+
+
+    <br>
+
+    
+
+  
+
+  
+
+
+    
+<footer class="usa-footer usa-footer--big">
+
+  
+  <div class="grid-container">
+    <p>Last updated: May 19, 2023 at 11:18 AM</p>
+  </div>
+  
+
+  
+  <div class="grid-container usa-footer__return-to-top">
+    <a href="#">Return to top</a>
+  </div>
+  
+
+  
+  
+
+  <div class="usa-footer__primary-section">
+    <div class="grid-container">
+          <nav class="usa-footer__nav" aria-label="Footer navigation">
+            <div class="grid-row grid-gap-4">
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                <section class="
+                usa-footer__primary-content
+                usa-footer__primary-content--collapsible
+              ">
+              <h4 class="usa-footer__primary-link">ABOUT</h4>
+              <ul class="usa-list usa-list--unstyled">
+                <li>
+                <p>SCINet is a USDA <a href='https://www.ars.usda.gov/'>Agricultural Research Service</a> initiative.</p>
+                <a class="usa-button" href="/about/organization">Learn More</a>
+                </li>
+              </ul>
+                </section>
+                </div>
+              
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">RESOURCES</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="mailto:scinet_vrsc@usda.gov">
+                        Feedback
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/about/signup">
+                        Sign Up
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/about/contact">
+                        Contact
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/opportunities/fellowships">
+                        Fellowships
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">USDA</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://ask.usda.gov/">
+                        AskUSDA
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/">
+                        USDA.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.usa.gov">
+                        USA.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.whitehouse.gov">
+                        WhiteHouse.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/plain-writing">
+                        Plain Writing
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">LEGAL</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/accessibility-statement">
+                        Accessibility Statement
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/non-discrimination-statement">
+                        Non-Discrimination Statement
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/privacy-policy">
+                        Privacy Policy
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.dm.usda.gov/foia/">
+                        FOIA
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.ocio.usda.gov/policy-directives-records-forms/information-quality-activities">
+                        Information Quality
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+            </div>
+          </nav>
+    </div>
+  </div>
+
+  
+  <div class="usa-footer__secondary-section">
+    <div class="grid-container sci-heading">
+      <div class="grid-row grid-gap">
+        <div class="usa-footer__logo grid-row mobile-lg:grid-col-6 tablet:grid-gap-2">
+          
+          
+          <div class="mobile-lg:grid-col-auto footer-flex">
+          
+<div class="usa-logo">
+    
+    <span class="agency-logo display-flex flex-align-center mobile-lg:margin-right-1">
+        
+        <a href="/">
+            <img class="usa-logo-img"
+                src="/assets/img/site/usda-logo-color.svg"
+                alt="USDA">
+        </a>
+        
+    </span>
+    
+    <a class="agency-logo-text"
+        href="/"
+        aria-label="SCINet Scientific Computing">
+        <div class="agency-identity">
+            <div class="agency-name usa-logo__text">SCINet Scientific Computing</div>
+            
+            <div class="tagline">U.S. Department of Agriculture</div>
+            
+        </div>
+    </a>
+</div>
+          </div>
+          
+
+
+        </div>
+
+        
+        <div class="margin-y-auto mobile-lg:grid-col-4 footer-flex">
+          
+          <div class="usa-footer__social-links grid-row grid-gap-1">
+            <div class="grid-col-auto">
+              
+              <a class="usa-social-link ext-nested" style="padding-right: .25rem;" href="https://twitter.com/USDA_ARS"
+              ><img
+                class="usa-social-link__icon"
+                src="/assets/uswds/img/usa-icons/twitter.svg"
+                alt="Twitter"
+            /></a>
+              
+              <a class="usa-social-link ext-nested" style="padding-right: .25rem;" href="mailto:scinet_vrsc@usda.gov"
+              ><img
+                class="usa-social-link__icon"
+                src="/assets/uswds/img/usa-icons/mail.svg"
+                alt="Contact VRSC"
+            /></a>
+              
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="grid-row mobile-lg:grid-col-2 footer-flex">
+        
+
+<small class="flex-align-self-center"><a href="https://github.com/USDA-SCINet/scinet-site/edit/main/pages/guides/start.md" class="usa-sidenav-edit" target="_blank">Edit this page</a></small>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+
+</footer>
+
+
+
+  <!-- dynamically determine scripts needed for this config -->
+
+
+
+
+
+
+
+  
+    
+      <script src="/assets/uswds/js/uswds.min.js" async></script>
+    
+
+  
+    
+      <script src="/assets/js/vendor/anchor.min.js"></script>
+    
+
+  
+    
+      <script src="/assets/js/main.js"></script>
+    
+
+  
+    
+      <script src="/assets/js/external.js"></script>
+    
+
+  
+    
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+      var usasearch_config = { siteHandle:"scinet-usda" };
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "https://search.usa.gov/javascripts/remote.loader.js";
+      document.getElementsByTagName("head")[0].appendChild(script);
+
+//]]>
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,3639 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Downtime Archive | SCINet | USDA Scientific Computing Initiative</title>
+
+
+
+<meta name="description" content="SCINet is a USDA initiative to provide agricultural scientists access to high performance computing, networking and training">
+
+
+
+
+<link rel="shortcut icon"type="image/ico"
+  href="/assets/img/site/favicons/favicon.ico">
+
+
+
+<link rel="icon"type="image/png"
+  href="/assets/img/site/favicons/favicon.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="192x192"
+  href="/assets/img/site/favicons/favicon-192.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="32x32"
+  href="/assets/img/site/favicons/favicon-32x32.png">
+
+
+
+<link rel="icon"type="image/png"
+  sizes="16x16"
+  href="/assets/img/site/favicons/favicon-16x16.png">
+
+
+
+<link rel="manifest"
+  href="/assets/img/site/favicons/site.webmanifest">
+
+
+
+<link rel="mask-icon"
+  href="/assets/img/site/favicons/safari-pinned-tab.svg">
+
+
+
+<link rel="apple-touch-icon"
+  sizes="180x180"
+  href="/assets/img/site/favicons/apple-touch-icon.png">
+
+
+
+<meta name="msapplication-TileColor" content="#2b5797">
+
+
+
+<meta name="msapplication-config" content="/assets/img/site/favicons/browserconfig.xml">
+
+
+
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+  
+
+
+
+<link rel="stylesheet"
+  href="/assets/css/style.css"
+  media="screen">
+
+  
+  
+
+
+<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
+<script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=USDA&subagency=ARS"></script>
+
+
+  
+  <script>0</script>
+</head>
+
+<body class="site-90%">
+
+  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+  
+
+
+  <section class="usa-banner" aria-label="Official government website">
+  <div class="usa-accordion">
+    <header class="usa-banner__header">
+      <div class="usa-banner__inner">
+        <div class="grid-col-auto">
+          <img class="usa-banner__header-flag" src="/assets/uswds/img/us_flag_small.png" alt="U.S. flag">
+        </div>
+        <div class="grid-col-fill tablet:grid-col-auto">
+          <p class="usa-banner__header-text">An official website of the United States government</p>
+          <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
+        </div>
+        <button type="button" class="usa-accordion__button usa-banner__button"
+          aria-expanded="false" aria-controls="gov-banner">
+          <span class="usa-banner__button-text">Here’s how you know</span>
+        </button>
+      </div>
+    </header>
+    <div class="usa-banner__content usa-accordion__content" id="gov-banner" hidden="">
+      <div class="grid-row grid-gap-lg">
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/uswds/img/icon-dot-gov.svg" role="img" alt="Dot gov">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Official websites use .gov</strong>
+              <br/>
+              A <strong>.gov</strong> website belongs to an official government organization in the United States.
+            </p>
+          </div>
+        </div>
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/uswds/img/icon-https.svg" role="img" alt="Https">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Secure .gov websites use HTTPS</strong>
+              <br/>
+              A <strong>lock</strong> (
+<span class="icon-lock"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64" class="usa-banner__lock-image" role="img" aria-labelledby="banner-lock-title banner-lock-description"><title id="banner-lock-title">Lock</title><desc id="banner-lock-description">A locked padlock</desc><path fill="#000000" fill-rule="evenodd" d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"/></svg></span>
+) or <strong>https://</strong> means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<div class="usa-overlay"></div>
+<header class="usa-header usa-header--extended sci-heading" role="banner">
+
+  <div class="usa-navbar">
+      
+<div class="usa-logo">
+    
+    <span class="agency-logo display-flex flex-align-center mobile-lg:margin-right-1">
+        
+        <a href="/">
+            <img class="usa-logo-img"
+                src="/assets/img/site/usda-logo-color.svg"
+                alt="USDA">
+        </a>
+        
+    </span>
+    
+    <a class="agency-logo-text"
+        href="/"
+        aria-label="SCINet Scientific Computing">
+        <div class="agency-identity">
+            <div class="agency-name usa-logo__text">SCINet Scientific Computing</div>
+            
+            <div class="tagline">U.S. Department of Agriculture</div>
+            
+        </div>
+    </a>
+</div>
+    <button type="button" class="usa-menu-btn">Menu</button>
+  </div>
+
+  <nav aria-label="Primary navigation" class="usa-nav border-bottom-2px">
+    <div class="usa-nav__inner">
+      <button type="button" class="usa-nav__close">
+        <img src="/assets/uswds/img/usa-icons/close.svg" alt="close">
+      </button>
+      
+      
+      
+      <ul class="usa-nav__primary usa-accordion">
+        
+        <li class="usa-nav__primary-item">
+          
+          <a class=" usa-nav__link  "
+            href="/">
+            <span>Home</span>
+          </a>
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-About">
+            <span>About</span>
+          </button>
+
+          
+          
+
+<ul id="nav-About" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/signup"><span>Sign up for an account</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/compute"><span>Computer Systems</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/organization"><span>Organization</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/vrsc"><span>Virtual Research Support Core (VSRC)</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/policies"><span>Policies</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/about/contact"><span>Contact</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-News">
+            <span>News</span>
+          </button>
+
+          
+          
+
+<ul id="nav-News" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/downtime/"><span>System Downtime</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/announcements"><span>Announcements</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/stories"><span>User Stories</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/newsletter"><span>Newsletter</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/news/scinet-x"><span>SCINet-X</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-User Guides">
+            <span>User Guides</span>
+          </button>
+
+          
+          
+
+<ul id="nav-User Guides" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/guides/start"><span>Quick Start</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/guides/"><span>All User Guides</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Research">
+            <span>Research</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Research" class="usa-nav__submenu nav-width-2" hidden="">
+    <div class="grid-row grid-gap-4">
+        
+            
+            
+            
+        <li class="usa-nav__submenu-item desktop:grid-col-6 m-top-0">
+            
+
+                    
+                    
+                    <div class="">
+                        <a href="/research/working-groups/">
+                            Working Groups
+                        </a>
+                    </div>
+
+                    <ul id="nav-ResearchWorking Groups" class="sublist">
+
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/ag100pest">
+                                    Ag100Pest
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/arthropods">
+                                    Arthropod Genomics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/fungalbioinformatics">
+                                    Fungal Bioinformatics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/geospatial">
+                                    Geospatial Research
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/microbiome">
+                                    Microbiome
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/LTARphenology">
+                                    LTAR Phenology
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/pollinator">
+                                    Pollinator
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/working-groups/proteinfunction">
+                                    Protein Function and Phenotype Prediction
+                                </a>
+                            </li>
+
+                        
+                    </ul>
+                </li>
+            
+        
+            
+            
+            
+        <li class="usa-nav__submenu-item desktop:grid-col-6 m-top-0">
+            
+
+                    
+                    
+                    <div class="">
+                        <a href="/research/uses/">
+                            Use Cases
+                        </a>
+                    </div>
+
+                    <ul id="nav-ResearchUse Cases" class="sublist">
+
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/genomics">
+                                    Genomics
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/plant-breeding">
+                                    Plant breeding
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/geospatial">
+                                    Geospatial
+                                </a>
+                            </li>
+
+                        
+
+                            <li>
+                                <a class="sublinks" href="/research/uses/hydrology">
+                                    Hydrology
+                                </a>
+                            </li>
+
+                        
+                    </ul>
+                </li>
+            
+        
+    </div>
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Trainings and Events">
+            <span>Trainings and Events</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Trainings and Events" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/resources"><span>Learning Resources</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/events/"><span>Upcoming Events</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/training/learningpath"><span>Learning Pathway</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Support">
+            <span>Support</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Support" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/contact"><span>Contact the VRSC</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/faq"><span>FAQs</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="https://forum.scinet.usda.gov"><span>USDA-ARS SCINet Forum</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/request"><span>Request Resources</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/support/ceres-job-script"><span>Ceres Job Script Generator</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+        <li class="usa-nav__primary-item">
+          
+
+          
+          
+          
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-Opportunities">
+            <span>Opportunities</span>
+          </button>
+
+          
+          
+
+<ul id="nav-Opportunities" class="usa-nav__submenu" hidden="">
+
+  
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/SAC"><span>SAC Membership</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/request-workshop"><span>Request a Workshop</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/fellowships"><span>Fellowships (PhD & MS)</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/ai-innovation/"><span>AI Innovation Fund</span></a>
+          </li>
+          
+      
+      
+          <li class="usa-nav__submenu-item">
+            <a
+              href="/opportunities/scinet-aicoe-fellowships"><span>SCINet and AI-COE fellowship proposals</span></a>
+          </li>
+          
+      
+</ul>
+          
+
+          
+        </li>
+        
+
+
+      </ul>
+      
+
+    </div>
+
+    
+    <div class="usa-nav__secondary">
+      
+      
+        <form accept-charset="UTF-8" action="https://search.usa.gov/search" id="search_form" method="get"
+class="usa-search usa-search--small js-search-form">
+<input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="affiliate" id="affiliate" value="scinet-usda" />
+<div role="search">
+  <label for="query" class="usa-sr-only">Enter search terms</label>
+  <input autocomplete="off" class="usa-input usagov-search-autocomplete" id="query" name="query"
+    type="search" />
+  <button class="usa-button" type="submit" name="commit">
+    <img src="/assets/uswds/img/usa-icons-bg/search--white.svg"
+      class="usa-search__submit-icon" alt="Search" />
+  </button>
+</div>
+</form>
+
+      
+    </div>
+
+
+    </div>
+    </div>
+  </nav>
+
+</header>
+
+
+
+  
+
+    
+    
+
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+
+
+
+    
+    
+
+
+    <div class="grid-container main-side">
+
+
+  
+
+
+  
+
+  
+
+
+
+
+
+
+
+<div class="grid-row grid-gap flex-align-start">
+    <div class="usa-layout-docs__sidenav desktop:grid-col-3 desktop:padding-y-10 usa-sticky-sidenav">
+        <nav aria-label="Secondary navigation">
+  <ul class="usa-sidenav">
+
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/news/downtime/" 
+        >
+        System Downtime
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/news/announcements" 
+        >
+        Announcements
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/news/stories" 
+        >
+        User Stories
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/news/newsletter" 
+        >
+        Newsletter
+    </a>
+    
+</li>
+    
+    
+
+
+
+
+
+<li class="usa-sidenav__item">
+    <a href="/news/scinet-x" 
+        >
+        SCINet-X
+    </a>
+    
+</li>
+    
+
+  </ul>
+</nav>
+    </div>
+    
+    <div class="usa-layout-docs__main desktop:grid-col-9">
+        <nav class="usa-breadcrumb usa-breadcrumb--wrap" aria-label="Breadcrumbs">
+  <ol class="usa-breadcrumb__list">
+    
+    
+
+
+<li class="usa-breadcrumb__list-item">
+  <a href="/" class="usa-breadcrumb__link">
+    <span>Home</span>
+  </a>
+</li>
+
+    
+      
+
+
+<li class="usa-breadcrumb__list-item">
+  <a href="/news/downtime/" class="usa-breadcrumb__link">
+    <span>System Downtime</span>
+  </a>
+</li>
+    
+
+    
+
+    
+    
+    
+
+
+    <li class="usa-breadcrumb__list-item usa-current" aria-current="page">
+      <span>Downtime Archive</span>
+    </li>
+  </ol>
+</nav>
+        <main class="usa-layout-docs usa-layout-docs__main usa-prose" id="main-content">
+
+          
+  
+      <h1 class="top-header">Downtime Archive</h1>
+  
+  
+
+  
+
+  
+
+  <h2 id="scinet-past-scheduled-outages">SCINet Past Scheduled Outages</h2>
+
+<p>The table below lists information about past SCINet outages. See <a href="https://forum.scinet.usda.gov/c/announcements/6">SCINet Forum Announcements page</a> (must have a SCINet account to access) for communications about emergency outages.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Site Service - Tuesday, May 23
+                 &middot 2023
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            The listed assets may become unavailable due to scheduled maintenance being preformed by Internet2 vendor Lumen. Outages are expected. The entire window is reserved.
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Tuesday, May 23 &middot 2023</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 5-11 UTC
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Site Service
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> Ames
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Site Service - Thursday, May 18
+                 &middot 2023
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            The listed assets will be unavailable while Internet2 engineers perform Core Node maintenance. Outage are expected. The entire window is reserved.
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Thursday, May 18 &middot 2023</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 11pm-6am EST
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Site Service
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> Stoneville
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Site Service - Friday, May 19
+                 &middot 2023
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            Site Service at Ames will be impacted while Lumen performs maintenance.</br>Outages are expected and the entire window is reserved.
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Friday, May 19 &middot 2023</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 5-11 UTC
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Site Service
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> Ames
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Juno - Wednesday, May 10
+                 &middot 2023
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            At 6:00 PM Eastern on May 10th, the Juno long term storage system at Beltsville will be unmounted from SCINet DTNs and become inaccessible.</br> This is being done in preparation for network maintenance to be performed after hours.</br></br> The storage will be remounted, and access restored, the following morning.
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Wednesday, May 10 &middot 2023</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 6 PM EDT
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Juno
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> all
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Site Service - Tuesday, May 2
+                 &middot 2023
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            Site service Fort Collins will be unavailable while BISON engineers performs maintenance. Outages are expected. The entire maintenance window is reserved.
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Tuesday, May 2 &middot 2023</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 12:00-14:00 UTC
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Site Service
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> Fort Collins
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Atlas - Monday, May 1
+                 &middot 2023
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            <p>In order to replace a valve in the cooling loop supply for the atlas cluster system, a reservation has been made for Monday, May 1 beginning at 3:00am CST.</p> <ul><li>No running jobs will be killed.</li> <li>All jobs that can not complete before the maintenance start time will be held and started once the system has returned to operation.</li></ul>
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Monday, May 1 &middot 2023</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> Beginning 3:00 am CST
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Atlas
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> all
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Site Service - Thursday, April 27
+                 &middot 2023
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            Site Service at Ames will be impacted while Lumen performs maintenance. The entire window is reserved. Outages are expected and the entire window is reserved.
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Thursday, April 27 &middot 2023</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 4-11 UTC
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Site Service
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> Ames
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Ceres - Wednesday, April 12
+                 &middot 2023
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            <p>The data center that hosts Ceres cluster will have reduced cooling capacity starting the morning of April 12 and lasting through the end of the week. </p><p> To lessen heat production generated by Ceres compute nodes during this maintenance a reservation has been created. New jobs will not start if they cannot complete by 6:00AM on April 12, 2023.</p><p></p><p> In the output of the squeue command, the reason for those jobs will state <i>(ReqNodeNotAvail, Reserved for maintenance)</i>.</br> The jobs will start after the scheduled outage completes.</p><p></p><p> Idle nodes will be turned off. Running jobs that had started prior to reservation will be allowed to continue running as long as the temperature in the data center does not exceed the set threshold.  </p><p></p><p> The login and DTN nodes, as well as storage are scheduled to stay up.</p><p></p><p> More nodes may be turned back on and be available for jobs on Thursday and Friday.</br> The Ceres cluster is expected to run at full capacity starting Monday, April 18.</p>
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Wednesday, April 12 - Tuesday, April 18 &middot 2023</b>
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Atlas - Tuesday, April 4
+                 &middot 2023
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            <p>The Mississippi State University High Performance Computing Collaboratory's (MSU/HPC2) Computing Office has scheduled maintenance for the Atlas cluster.</p> <p>During this maintenance window, the compute nodes and all support nodes including the login, devel, dtn, ood, etc... and those services including cron, globus, login, will be shutdown and unavailable.</p> <p>Helpdesk tickets should be submitted for any associated problems.</p>
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Tuesday, April 4 &middot 2023</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 8am-5pm CST
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Atlas
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (Atlas offline)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                SCINet - Thursday, March 2
+                 &middot 2023
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            The Albany site location will experience loss of connectivity to SCINet intermittently during the hours of 4:00 pm to 6:00 pm EST on March 2, 2023.
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Thursday, March 2 &middot 2023</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 4:00-6:00pm EST
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> SCINet
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> Albany
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        <a href="/announcements/2023-01-24-Ceres">
+            <h3 class="usa-collection__heading ">
+                
+                
+                    Maintenance &middot 
+                
+                Ceres - Monday, February 20
+                 &middot 2023
+                
+            </h3>
+        </a>
+        <p class="usa-collection__description">
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Monday, February 20 - Thursday, February 23 &middot 2023</b>
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (Ceres offline)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Ceres - Thursday, October 27
+                 &middot 2022
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            <p>Due to recent issues with Ceres' /project storage hardware, it needs to be replaced. The replacement hardware is expected to be delivered by end of the day on 10/26/2022 and the works will probably be done on 10/27/2022.</p> <p>Before replacing the hardware, we will post on the SCINet Forum and update the message of the day displayed at login to Ceres.</p> <p>While replacing the hardware, Ceres' /project will not be accessible. We plan to suspend all running jobs before unmounting /project and resume the jobs once the maintenance completes.</p> <p>While we expect this will not affect running jobs, we recommend submitting new jobs to run on /90daydata to minimize the risk of the job dying due to this maintenance.</p>
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Thursday, October 27 &middot 2022</b>
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (/project)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Ceres - Monday, October 10
+                 &middot 2022
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Monday, October 10 - Tuesday, October 11 &middot 2022</b>
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (Ceres offline)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Ceres - Monday, June 20
+                 &middot 2022
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Monday, June 20 - Tuesday, June 21 &middot 2022</b>
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (Ceres offline)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Atlas - Tuesday, May 17
+                 &middot 2022
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Tuesday, May 17 &middot 2022</b>
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Atlas
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (connections to Atlas)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Ceres - Monday, February 21
+                 &middot 2022
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Monday, February 21 &middot 2022</b>
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (Ceres offline)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                SCINet - Thursday, January 20
+                 &middot 2022
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            The maintenance window is one (1) hour in duration. This will impact service to the Stoneville site only.
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Thursday, January 20 &middot 2022</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 10:30-11:30 CST
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> SCINet
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> Stoneville
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Full cluster Maintenance &middot 
+                
+                Atlas - Wednesday, December 8
+                 &middot 2021
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            <p>Wednesday, December 8, beginning at 8am CST, the HPC2 Computing Office has scheduled maintenance for the atlas compute cluster. During this maintenance window, the login, devel, dtn, ood, and compute nodes for atlas will be unavailable and all associated cron jobs will be disabled.</p> <p>Downtime is expected to last most of the day.</p> <p>For any associated problems, submit a help desk ticket:</p> <p>help-usda@hpc.msstate.edu - specific atlas issues</p> <p>scinet_vrsc@usda.gov - general operational issues</p>
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Wednesday, December 8 &middot 2021</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> Beginning 8:00am CST
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Atlas
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (connections to Atlas)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Full cluster Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Network Maintenance in Ames &middot 
+                
+                SCINet - Thursday, November 18
+                 &middot 2021
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            SCINet network maintenance has been scheduled for Ames, IA. The maintenance window is from 8:30 to 10:30 Central Time (1430-1630 UTC) on 18 November 2021. Connectivity to SCINet will be sporadic during the maintenance window. 
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Thursday, November 18 &middot 2021</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 8:30 to 10:30 CST
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> SCINet
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (connections to Ceres)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Network Maintenance in Ames
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Network Maintenance in Ames &middot 
+                
+                SCINet - Tuesday, November 16
+                 &middot 2021
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            Connectivity to SCINet will be sporadic during the maintenance window.
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Tuesday, November 16 &middot 2021</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 8:30 to 10:30 CST
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> SCINet
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (connections to Ceres)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Network Maintenance in Ames
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Network Maintenance in Albany &middot 
+                
+                SCINet - Monday, November 15
+                 &middot 2021
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            Local connectivity to SCINet will be sporadic during the maintenance window.
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Monday, November 15 &middot 2021</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 8:30 to 10:30 PST
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> SCINet
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> Albany
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Network Maintenance in Albany
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Ceres - Thursday, November 11
+                 &middot 2021
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            <p>Ceres maintenance is scheduled for Thursday, November 11, 2021 to upgrade internal cluster network.</p> <p>Queued jobs will not start if they cannot complete by 6AM November 11. These include jobs submitted to the long partition with the default 3-weeks long time limit. In the output of the squeue command the reason for those jobs will state (ReqNodeNotAvail, Reserved for maintenance). The jobs will start after the scheduled outage completes. </p> <p>The Atlas cluster will stay up and running during Ceres downtime. All Ceres users can run jobs on Atlas and use /90daydata that has no quotas.</p>
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Thursday, November 11 &middot 2021</b>
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (Ceres offline)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Fiber relocation &middot 
+                
+                Ceres - Thursday, November 4
+                 &middot 2021
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            The listed asset will be unavailable while Lumen engineers perform preventative fiber relocation work. Outage is expected to be two hours each day, but up to 5 hours is possible. The entire window is reserved
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Thursday, November 4 - Friday, November 5 &middot 2021</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> Daily 05:00 to 11:00 UTC
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (connections to Ceres)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Fiber relocation
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Network update &middot 
+                
+                Ceres, Juno - Thursday, October 28
+                 &middot 2021
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            <p>A maintenance window has been scheduled for 28 October 2021 from 1530 - 1730 UTC (10:30am to 12:30pm Central time) to stabilize router (Albany MX480 RE Downgrade). </p> <p>Periodic outages will be experienced as equipment is rebooted. Connectivity to Ceres and Juno cannot be guaranteed during the maintenance window.</p>
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Thursday, October 28 &middot 2021</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 1530 - 1730 UTC
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres, Juno
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (connections to Ceres, Juno)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Network update
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Network update &middot 
+                
+                Ceres, Juno - Tuesday, October 26
+                 &middot 2021
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            A maintenance window has been scheduled for 26 October 2021 from 4:30pm to 8:30pm Central time to stabilize the SCINet Network. Periodic outages will be experienced as equipment is rebooted. Connectivity to Ceres and Juno cannot be guaranteed during the maintenance window.
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Tuesday, October 26 &middot 2021</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 4:30pm to 8:30pm CST
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres, Juno
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (connections to Ceres, Juno)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Network update
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Router update &middot 
+                
+                Ceres - Tuesday, October 19
+                 &middot 2021
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            The router at Ames will be rebooted on or about 4:30 CT. The reboot should be about 15 minutes. After that the router will be upgraded to the latest OS. Outages may occur during that process.
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Tuesday, October 19 &middot 2021</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> Beginning at 4:30 CST
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (connections to Ceres)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Router update
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        <a href="/announcements/2021-09-21-scinet-hardware">
+            <h3 class="usa-collection__heading ">
+                
+                
+                    Router update &middot 
+                
+                 - Wednesday, September 22
+                 &middot 2021
+                
+            </h3>
+        </a>
+        <p class="usa-collection__description">
+            
+            More SCINet network hardware OS updates.  Check the announcement page for more details
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Wednesday, September 22 - Friday, September 24 &middot 2021</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> various
+            </li>
+            
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> various
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Router update
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    OS Upgrade &middot 
+                
+                SCINet - Sunday, September 16
+                 &middot 2021
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            <p>GNOC plans to upgrade the OS on the SCINet gear at the 6 locations. This will result in connectivity interruptions during the upgrade. The upgrade schedule is the following:</p> <p>Albany - 9/16 8AM PST</p> <p>Clay Center - 9/16 4PM CST</p> <p>Ames - 9/17 8AM CST</p> <p>Stoneville - 9/20 8AM CST</p> <p>NAL - 9/20 3PM CST</p> <p>CSU - 9/21 9AM CST</p>
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Sunday, September 16 - Tuesday, September 21 &middot 2021</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> various
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> SCINet
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> various
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> OS Upgrade
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Ceres - Monday, August 23
+                 &middot 2021
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            <p>This maintenance window will be longer than normal as there are several important hardware upgrades occurring during this window to enhance the overall power and capacity of the CERES HPC cluster.  These upgrades include the remaining new priority nodes, sixty eight additional compute nodes, two additional high memory compute nodes, six management nodes, and faster Infiniband switching technology used by the HPC nodes to access storage. VRSC will re-rack and re-wire the whole cluster to accommodate additional hardware while adhering to power and cooling limits.  </p> <p>Queued jobs will not start if they cannot complete by 7AM August 23. These include jobs submitted to the long partition with the default 3-weeks long time limit. In the output of the squeue command the reason for those jobs will state (ReqNodeNotAvail, Reserved for maintenance). The jobs will start after the scheduled outage completes. </p> <p>The Atlas cluster will stay up and running during Ceres downtime. All Ceres users can run jobs on Atlas. If you don't have a large enough project quota on Atlas, remember that you can use /90daydata on Atlas that has no quotas</p>
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Monday, August 23 - Friday, September 3 &middot 2021</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 7am 8/23 - 5pm 9/3
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (connections to Ceres)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        <a href="/announcements/2021-07-06-scinet-down">
+            <h3 class="usa-collection__heading ">
+                
+                
+                    Outage &middot 
+                
+                Ceres - Wednesday, July 7
+                 &middot 2021
+                
+            </h3>
+        </a>
+        <p class="usa-collection__description">
+            
+            Connection Restored on 07-21-2021
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Wednesday, July 7 - Wednesday, July 21 &middot 2021</b>
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres
+            </li>
+            
+
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Outage
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Ceres - Monday, May 24
+                 &middot 2021
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            The listed assets will be unavailable while contractors perform testing on the elecrtical service switchgear, generators, and turbine. Outages throughout the window are expected. The entire window is reserved.
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Monday, May 24 - Thursday, May 27 &middot 2021</b>
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (connections to Ceres)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Assets:</b>
+                <ul class="">
+                    
+                    <li>Site Service AMES</li>
+                    
+                    <li>ARSS-AMES-AMES-10GE-01550</li>
+                    
+                    <li>ARSS-AMES-AMES-10GE-01576</li>
+                    
+                    <li>ARSS-AMES-AMES-10GE-01522</li>
+                    
+                    <li>ARSS-AMES-NAL-VLAN-01508</li>
+                    
+                    <li>ARSS-AMES-CSU-VLAN-01517</li>
+                    
+                    <li>ARSS-AMES-AMES-VLAN-01525</li>
+                    
+                    <li>ARSS-AMES-AMES-VLAN-01524</li>
+                    
+                    <li>ARSS-AMES-AMES-10GE-01577</li>
+                    
+                    <li>ARSS-AMES-AMES-40GE-01573</li>
+                    
+                    <li>ARSS-AMES-AMES-10GE-01553</li>
+                    
+                    <li>ARSS-AMES-STNVL-VLAN-01503</li>
+                    
+                    <li>ARSS-AMES-AMES-10GE-1577</li>
+                    
+                    <li>ARSS-AMES-AMES-10GE-01556</li>
+                    
+                    <li>ARSS-AMES-AMES-10GE-ET-11</li>
+                    
+                    <li>ARSS-AMES-AMES-10GE-01554</li>
+                    
+                    <li>ARSS-AMES-AMES-10GE-01555</li>
+                    
+                    <li>ARSS-ALB-AMES-VLAN-01520</li>
+                    
+                    <li>ARSS-AMES-AMES-LAG-01526</li>
+                    
+                    <li>ARSS-AMES-CLAY-VLAN-01507</li>
+                    
+                    <li>ARSS-AMES-AMES-10GE-01557</li>
+                    
+                    <li>ARSS-AMES-AMES-LAG-01552</li>
+                    
+                    <li>ARSS-AMES-AMES-40GE-01575</li>
+                    
+                    <li>sw.ames.scinet.science</li>
+                    
+                    <li>rtrj.ames.scinet.science</li>
+                    
+                    <li>fw.ames.scinet.science</li>
+                    
+                </ul>
+            </li>
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Atlas - Tuesday, February 23
+                 &middot 2021
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            The HPC2 Computing Office has scheduled a maintenance for its core networking services.  During this time all network connectivity both inside and outside the HPC2 will be unavailable including access to the atlas cluster systems.
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Tuesday, February 23 &middot 2021</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 6:00am - 8:00am
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Atlas
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (connections to Atlas)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Ceres - Tuesday, February 16
+                 &middot 2021
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Tuesday, February 16 &middot 2021</b>
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (Ceres offline)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Ceres - Monday, February 15
+                 &middot 2021
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Monday, February 15 &middot 2021</b>
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (Ceres offline)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Ceres - Monday, October 12
+                 &middot 2020
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Monday, October 12 &middot 2020</b>
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (Ceres offline)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    UPS Maintenance &middot 
+                
+                SCINet - Tuesday, August 25
+                 &middot 2020
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            SCINet equipment will be shutdown in order to perform Maintenance to the UPS. SCINet connectivity at the Stoneville location will be impacted. The Maintenance window is reserved from 0700 to 1600 Central Time.
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Tuesday, August 25 &middot 2020</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 7:00 - 16:00 CST
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> SCINet
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> Stoneville
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> UPS Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Ceres - Tuesday, June 16
+                 &middot 2020
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Tuesday, June 16 - Wednesday, June 17 &middot 2020</b>
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (Ceres offline)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Planned power outage &middot 
+                
+                SCINet & AWS - Friday, April 17
+                 &middot 2020
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            SCINet equipment at the National Agricultural Library will be powered down in advance of a planned power outage to the NAL building. The outage is expected to last for 24 hrs or less. We expect that normal access to SCINet resources will be restored on or before Monday, April 20. Please check Basecamp during the outage period for updates.
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Friday, April 17 - Sunday, April 19 &middot 2020</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> Beginning 9:00pm EST
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> SCINet & AWS
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> Beltsville, Fargo, University Park, All AWS Users
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Planned power outage
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Assets:</b>
+                <ul class="">
+                    
+                    <li>Beltsville, MD (NAL, BARC East, BARC West) SCINet connectivity and local data transfer nodes/cafe machines sn-barc-east-dtn-0.scinet.ars.usda.gov, sn-barc-west-dtn-0.scinet.ars.usda.gov, sn-nal-dtn-0.scinet.ars.usda.gov</li>
+                    
+                    <li>SDWAN connected equipment at Fargo and University Park</li>
+                    
+                    <li>AWS Authentication for all SCINet AWS users</li>
+                    
+                </ul>
+            </li>
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Router migration &middot 
+                
+                SCINet - Thursday, March 19
+                 &middot 2020
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Thursday, March 19 &middot 2020</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 9:30 – 11:30am MST
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> SCINet
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> Ft Collins
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Router migration
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Router replacement &middot 
+                
+                SCINet - Thursday, March 12
+                 &middot 2020
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Thursday, March 12 &middot 2020</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 10am – noon MST
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> SCINet
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> Ft Collins
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Router replacement
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Router replacement &middot 
+                
+                SCINet - Monday, March 2
+                 &middot 2020
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Monday, March 2 &middot 2020</b>
+            </li>
+            
+            <li class="usa-collection__meta-item">
+                <b>Outage time:</b> 10:30am – 1:00pm EST
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> SCINet
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> Clay Center
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Router replacement
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Maintenance &middot 
+                
+                Ceres - Monday, February 17
+                 &middot 2020
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Monday, February 17 &middot 2020</b>
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (Ceres offline)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Maintenance
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+  
+
+
+
+<li class="usa-collection__item width-full maxw-full" >
+    <div class="usa-collection__body">
+        
+            <h3 class="usa-collection__heading  text-primary-dark">
+                
+                
+                    Upgrades/expansion &middot 
+                
+                Ceres - Monday, December 2
+                 &middot 2019
+                
+            </h3>
+        
+        <p class="usa-collection__description">
+            
+            <p>Ceres downtime is scheduled for  Monday, December 2 – Friday, December 6. This downtime is to rewire both power and networking on Ceres for the addition of additional compute nodes and to ready it for storage expansion.  </p>
+<p>We do not anticipate any further extended downtimes for rewiring, as this should allow us to maximize the size of Ceres simply by adding additional compute nodes. </p>
+<p>Since this affects the Authentication for SCINet, this will also affect logins to Data Transfer nodes at Ames, StoneVille, Fort Collins, Clay Center, Albany CA, and Beltsville.</p>
+<p>GlobalNoc will also be upgrading software on the SCINet network infrastructure during this time.</p>
+            
+        </p>
+        <ul class="usa-collection__meta " aria-label="More information">            
+            <li class="usa-collection__meta-item">
+                <b>Monday, December 2 - Friday, December 6 &middot 2019</b>
+            </li>
+            
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Systems:</b> Ceres
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Affected Locations:</b> All (Ceres offline)
+            </li>
+            
+
+            
+            <li class="usa-collection__meta-item">
+                <b>Reason:</b> Upgrades/expansion
+            </li>
+            
+            
+
+
+        </ul>
+    </div>
+
+</li>
+  
+
+
+
+  
+
+  
+
+  <br>
+
+  
+
+
+        <br>
+    </main>
+  </div>
+</div>
+</div>
+
+
+    <br>
+
+    
+
+  
+
+  
+
+
+    
+<footer class="usa-footer usa-footer--big">
+
+  
+  <div class="grid-container">
+    <p>Last updated: May 19, 2023 at 11:18 AM</p>
+  </div>
+  
+
+  
+  <div class="grid-container usa-footer__return-to-top">
+    <a href="#">Return to top</a>
+  </div>
+  
+
+  
+  
+
+  <div class="usa-footer__primary-section">
+    <div class="grid-container">
+          <nav class="usa-footer__nav" aria-label="Footer navigation">
+            <div class="grid-row grid-gap-4">
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                <section class="
+                usa-footer__primary-content
+                usa-footer__primary-content--collapsible
+              ">
+              <h4 class="usa-footer__primary-link">ABOUT</h4>
+              <ul class="usa-list usa-list--unstyled">
+                <li>
+                <p>SCINet is a USDA <a href='https://www.ars.usda.gov/'>Agricultural Research Service</a> initiative.</p>
+                <a class="usa-button" href="/about/organization">Learn More</a>
+                </li>
+              </ul>
+                </section>
+                </div>
+              
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">RESOURCES</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="mailto:scinet_vrsc@usda.gov">
+                        Feedback
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/about/signup">
+                        Sign Up
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/about/contact">
+                        Contact
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="/opportunities/fellowships">
+                        Fellowships
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">USDA</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://ask.usda.gov/">
+                        AskUSDA
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/">
+                        USDA.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.usa.gov">
+                        USA.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.whitehouse.gov">
+                        WhiteHouse.gov
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/plain-writing">
+                        Plain Writing
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">LEGAL</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/accessibility-statement">
+                        Accessibility Statement
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/non-discrimination-statement">
+                        Non-Discrimination Statement
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://usda.gov/privacy-policy">
+                        Privacy Policy
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.dm.usda.gov/foia/">
+                        FOIA
+                      </a>
+                    </li>
+                    
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="https://www.ocio.usda.gov/policy-directives-records-forms/information-quality-activities">
+                        Information Quality
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  
+              </div>
+              
+            </div>
+          </nav>
+    </div>
+  </div>
+
+  
+  <div class="usa-footer__secondary-section">
+    <div class="grid-container sci-heading">
+      <div class="grid-row grid-gap">
+        <div class="usa-footer__logo grid-row mobile-lg:grid-col-6 tablet:grid-gap-2">
+          
+          
+          <div class="mobile-lg:grid-col-auto footer-flex">
+          
+<div class="usa-logo">
+    
+    <span class="agency-logo display-flex flex-align-center mobile-lg:margin-right-1">
+        
+        <a href="/">
+            <img class="usa-logo-img"
+                src="/assets/img/site/usda-logo-color.svg"
+                alt="USDA">
+        </a>
+        
+    </span>
+    
+    <a class="agency-logo-text"
+        href="/"
+        aria-label="SCINet Scientific Computing">
+        <div class="agency-identity">
+            <div class="agency-name usa-logo__text">SCINet Scientific Computing</div>
+            
+            <div class="tagline">U.S. Department of Agriculture</div>
+            
+        </div>
+    </a>
+</div>
+          </div>
+          
+
+
+        </div>
+
+        
+        <div class="margin-y-auto mobile-lg:grid-col-4 footer-flex">
+          
+          <div class="usa-footer__social-links grid-row grid-gap-1">
+            <div class="grid-col-auto">
+              
+              <a class="usa-social-link ext-nested" style="padding-right: .25rem;" href="https://twitter.com/USDA_ARS"
+              ><img
+                class="usa-social-link__icon"
+                src="/assets/uswds/img/usa-icons/twitter.svg"
+                alt="Twitter"
+            /></a>
+              
+              <a class="usa-social-link ext-nested" style="padding-right: .25rem;" href="mailto:scinet_vrsc@usda.gov"
+              ><img
+                class="usa-social-link__icon"
+                src="/assets/uswds/img/usa-icons/mail.svg"
+                alt="Contact VRSC"
+            /></a>
+              
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="grid-row mobile-lg:grid-col-2 footer-flex">
+        
+
+<small class="flex-align-self-center"><a href="https://github.com/USDA-SCINet/scinet-site/edit/main/pages/news/downtime-archive.md" class="usa-sidenav-edit" target="_blank">Edit this page</a></small>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+
+</footer>
+
+
+
+  <!-- dynamically determine scripts needed for this config -->
+
+
+
+
+
+
+
+  
+    
+      <script src="/assets/uswds/js/uswds.min.js" async></script>
+    
+
+  
+    
+      <script src="/assets/js/vendor/anchor.min.js"></script>
+    
+
+  
+    
+      <script src="/assets/js/main.js"></script>
+    
+
+  
+    
+      <script src="/assets/js/external.js"></script>
+    
+
+  
+    
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+      var usasearch_config = { siteHandle:"scinet-usda" };
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "https://search.usa.gov/javascripts/remote.loader.js";
+      document.getElementsByTagName("head")[0].appendChild(script);
+
+//]]>
+</script>
+
+
+
+
+
+
+</body>
+
+</html>
