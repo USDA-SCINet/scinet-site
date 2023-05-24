@@ -55,12 +55,13 @@
                     </li>
                     {% endfor %}
                   </ul>
-                  {% else %}
-                  <a class="usa-footer__primary-link"
-                    href="{% if _item.external == true %}{{ _item.url }}{% else %}{{ _item.url | relative_url }}{% endif %}">
-                    {{ _item.title }}
-                  </a>
-                  {% endif %}
+                </section>
+                {% else %}
+                <a class="usa-footer__primary-link"
+                  href="{% if _item.external == true %}{{ _item.url }}{% else %}{{ _item.url | relative_url }}{% endif %}">
+                  {{ _item.title }}
+                </a>
+                {% endif %}
               </div>
               {% endfor %}
             </div>
