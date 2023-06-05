@@ -1,4 +1,16 @@
 downtime:
+  - date: 2023-06-13 6:00:00
+    duration: PT11H
+    systems: Juno
+    locations: All
+    time: 6am-5pm ET
+    reason: Maintenance
+    url: https://forum.scinet.usda.gov/t/access-to-juno-storage-disrupted-on-june-13-2023
+    external: true
+    text: "A planned maintenance evolution will occur on Tuesday, June 13th, 2023, between 6am and 5pm ET at the National Agricultural Library (NAL).
+    This maintenance is necessary to transfer core network equipment at NAL onto newer and more reliable backup power which will promote future stability and reliability for services at this site.</br></br>
+    During this time, access to Juno storage will be disrupted. We apologize in advance for any inconvenience this may cause.  </br></br>
+    We will be working closely with our partners to minimize the impact of this maintenance and hope to complete the work early. We will provide updates on the status of the maintenance <a href='https://forum.scinet.usda.gov/t/access-to-juno-storage-disrupted-on-june-13-2023'>on the SCINet Forum</a>."
   - date: 2023-05-23 1:00:00
     duration: PT6H
     systems: Site Service
@@ -10,7 +22,7 @@ downtime:
     duration: PT7H
     systems: Site Service
     locations: Stoneville
-    time: 11pm-6am EST
+    time: 11pm-6am ET
     reason: Maintenance
     text: "The listed assets will be unavailable while Internet2 engineers perform Core Node maintenance. Outage are expected. The entire window is reserved."
   - date: 2023-05-19 1:00:00
@@ -24,7 +36,7 @@ downtime:
     duration: PT12H
     systems: Juno
     locations: all
-    time: 6 PM EDT
+    time: 6 PM ET
     reason: Maintenance
     text: "At 6:00 PM Eastern on May 10th, the Juno long term storage system at Beltsville will be unmounted from SCINet DTNs and become inaccessible.</br>
     This is being done in preparation for network maintenance to be performed after hours.</br></br>
