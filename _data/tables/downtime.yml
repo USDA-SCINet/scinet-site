@@ -21,8 +21,7 @@ downtime:
     reason: Maintenance
     text: "Site Service at Ames & Beltsville will be impacted while Internet2 performs maintenance to upgrade core nodes. Outages are expected and the entire window is reserved."
   - date: 2023-06-19 6:00:00
-    end_date: 2023-02-23
-    duration: PT96H
+    end_date: 2023-02-23 20:00:00
     time: Beginning 6 AM
     systems: Ceres
     locations: All
