@@ -1,4 +1,34 @@
 downtime:
+  - date: 2023-06-22 0:00:00
+    duration: PT4H
+    time: 4-8 UTC
+    systems: Site Service
+    locations: Stoneville
+    reason: Maintenance
+    text: "Site Service at Stoneville will be impacted while Internet2 performs maintenance to upgrade core nodes. Outages are expected and the entire window is reserved."
+  - date: 2023-06-21 0:00:00
+    duration: PT4H
+    time: 4-8 UTC
+    systems: Site Service
+    locations: Fort Collins, Albany, Clay Center
+    reason: Maintenance
+    text: "Site Service at Fort Collins, Albany & Clay Center will be impacted while Internet2 performs maintenance to upgrade core nodes. Outages are expected and the entire window is reserved."
+  - date: 2023-06-20 0:00:00
+    duration: PT4H
+    time: 4-8 UTC
+    systems: Site Service
+    locations: Ames, Beltsville
+    reason: Maintenance
+    text: "Site Service at Ames & Beltsville will be impacted while Internet2 performs maintenance to upgrade core nodes. Outages are expected and the entire window is reserved."
+  - date: 2023-06-19 6:00:00
+    end_date: 2023-02-23
+    duration: PT96H
+    time: Beginning 6 AM
+    systems: Ceres
+    locations: All
+    reason: System Update
+    url: /announcements/2023-06-19-Ceres
+    text: "Ceres cluster maintenance is scheduled for the week of June 19, to update system software. The cluster will be down for several days."
   - date: 2023-06-13 6:00:00
     duration: PT11H
     systems: Juno
