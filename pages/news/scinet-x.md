@@ -55,17 +55,19 @@ Plains Area
 Midwest Area
 
 | Columbia, MO | Madison, WI | St. Paul, MN |
+| Peoria, IL |
 
 Northeast Area
 
 | Boston, MA | Kearneysville, WV | Leetown, WV | 
-| Wyndmoor, PA |
+| Wyndmoor, PA | Newark, DE |
 
 Southeast Area
 
 | Athens, GA | Auburn, AL | Charleston, SC | 
-| Florence, SC | Griffin, GA | New Orleans, LA |
-| Starkville, MS | Tifton, GA | 
+| Florence, SC | Griffin, GA | Jonesboro, AR |
+| Little Rock, AR | New Orleans, LA | Starkville, MS |
+| Schriever (Houma), LA | Tifton, GA | 
 
 Partner Agency - Forest Service
 
