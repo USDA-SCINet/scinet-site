@@ -28,7 +28,7 @@ scripts: /assets/js/external.js
     {% include components/hero.html %}
 
     {% if page.alerts %}
-    <div class="bg-base-lightest padding-bottom-2" aria-label="Alerts">
+    <div class="padding-bottom-2" aria-label="Alerts">
       <section class="grid-container">
       {% for _alert in page.alerts %}
       {% include alert.html alert=_alert %}
@@ -36,7 +36,7 @@ scripts: /assets/js/external.js
       </section>
     </div>
     {% endif %}
-
+    
     {% if page.tagline and page.intro %}
     <section class="grid-container usa-section">
       <div class="grid-row grid-gap">
