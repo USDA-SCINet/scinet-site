@@ -24,8 +24,11 @@ scripts: /assets/js/external.js
   <main id="main-content" {% for _attr in layout.main %} {{ _attr[0] }}="{{ _attr[1] }}" {% endfor %}>
     {% endif %}
 
+    {% assign hero = page.hero %}
+    {% include components/hero.html %}
+
     {% if page.alerts %}
-    <div class="bg-base-lightest padding-bottom-2" aria-label="Alerts">
+    <div class="padding-bottom-2" aria-label="Alerts">
       <section class="grid-container">
       {% for _alert in page.alerts %}
       {% include alert.html alert=_alert %}
@@ -33,10 +36,7 @@ scripts: /assets/js/external.js
       </section>
     </div>
     {% endif %}
-
-    {% assign hero = page.hero %}
-    {% include components/hero.html %}
-
+    
     {% if page.tagline and page.intro %}
     <section class="grid-container usa-section">
       <div class="grid-row grid-gap">
