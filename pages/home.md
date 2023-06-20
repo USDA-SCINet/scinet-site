@@ -5,9 +5,9 @@ type: future
 
  alerts:
   - alert:
-     title: Ceres Maintenance
-     type: info
-     text: Ceres cluster maintenance is scheduled for the week of June 19, to update system software. The cluster will be down for several days. </br> See <a href="https://forum.scinet.usda.gov/t/ceres-maintenance-the-week-of-june-19-20923/1053">the SCINet Forum Announcements page</a> for more information.
+    title: Ceres Maintenance
+    type: info
+    text: Ceres cluster maintenance is scheduled for the week of June 19, to update system software. The cluster will be down for several days. </br> See <a href="https://forum.scinet.usda.gov/t/ceres-maintenance-the-week-of-june-19-20923/1053">the SCINet Forum Announcements page</a> for more information.
 
 layout: scinet_home
 
