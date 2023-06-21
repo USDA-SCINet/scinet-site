@@ -22,7 +22,8 @@ main:
 {% if page.type == "future" %}
 {% for _down in all_downtime %}
   {% assign datetime = _down.date | date_to_xmlschema %}
-  {% if datetime >= sitetime %}
+  {% if _down.end_date %}{% assign enddate = _down.end_date | date_to_xmlschema %}{% else %}{% assign enddate = datetime %}{% endif %}
+  {% if datetime >= sitetime or enddate >= sitetime %}
   {% assign downtime = downtime | push: _down %}
   {% endif %}
 {% endfor %}
