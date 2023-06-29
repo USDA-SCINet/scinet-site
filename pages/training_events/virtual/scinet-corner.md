@@ -26,7 +26,7 @@ collect_list:
     excerpt: "Alex presented on the fundamentals of getting started with python programming." 
     details_title: "Tutorial Materials:"
     details:
-      - url: "https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EcPtk_SbA7xKjlsIzxecfbsB5AvetG3y3sW0NiYGhtfVzA?e=znCTP0](https://usdagcc.sharepoint.com/:p:/r/sites/REE-ARS-SCINetOffice/Shared%20Documents/Apps/webstie/scinet_corner/SCINet_Jun23-Python_getting_started-Alex.pptx?d=w4402eb4c193f46b696d6ec464745f060&csf=1&web=1&e=bYNEo7"
+      - url: "https://usdagcc.sharepoint.com/:p:/r/sites/REE-ARS-SCINetOffice/Shared%20Documents/Apps/webstie/scinet_corner/SCINet_Jun23-Python_getting_started-Alex.pptx?d=w4402eb4c193f46b696d6ec464745f060&csf=1&web=1&e=bYNEo7"
         text: Presentation slides
         external: true
       
