@@ -20,6 +20,16 @@ filter:
   external: true
 
 collect_list: 
+  - title: Getting started with Python programming
+    date: 2023-6-1
+    author: Aleksandra Badaczewska
+    excerpt: "Alex presented on teh fundamentals of getting started with python programming." 
+    details_title: "Tutorial Materials:"
+    details:
+      - url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EcPtk_SbA7xKjlsIzxecfbsB5AvetG3y3sW0NiYGhtfVzA?e=znCTP0](https://usdagcc.sharepoint.com/:p:/r/sites/REE-ARS-SCINetOffice/Shared%20Documents/Apps/webstie/scinet_corner/SCINet_Jun23-Python_getting_started-Alex.pptx?d=w4402eb4c193f46b696d6ec464745f060&csf=1&web=1&e=bYNEo7
+        text: Presentation slides
+        external: true
+      
   - title: Continues Exploration of R and Intro to dplyr
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINet-Media/EcpxmQiQ25NCm5iux13L0TMBsnB4eP_2ezm1QhnqDpQVXw?e=iDMU0s #main link to video
     date: 2022-12-1
