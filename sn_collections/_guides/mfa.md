@@ -10,9 +10,9 @@ subnav:
   - title: What is Multifactor Authentication
     url: '#what-is-multifactor-authentication'
   - title: Authentication With LincPass
-    url: '#lincpass-authentication'
+    url: '#authentication-with-lincpass'
   - title: Authentication With YubiKey
-    url: '#yubikey-authentication'
+    url: '#authentication-with-yubikey'
   - title: Google Authenticator on Android
     url: '#google-authenticator-ga-on-android'
   - title: Google Authenticator on Apple iOS iPhones and iPads
