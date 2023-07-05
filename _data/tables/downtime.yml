@@ -1,4 +1,11 @@
 downtime:
+  - date: 2023-07-07 01:00:00
+    duration: PT5H
+    time: 5-10 UTC
+    systems: Site Service
+    locations: Ames
+    reason: Emergency Maintenance
+    text: "The listed asset will be unavailable while vendor Internet2 performs a software maintenance and troubleshooting tasks on core1.eqch. Multiple 20 minute hard down events are expected. The entire window is reserved. </br></br> This will not affect the Ceres cluster and the jobs."
   - date: 2023-06-23 23:30:00
     duration: PT6H30M
     time: 11:30 pm ET
