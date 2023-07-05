@@ -9,6 +9,10 @@ categories: [Access]
 subnav:
   - title: What is Multifactor Authentication
     url: '#what-is-multifactor-authentication'
+  - title: Authentication With LincPass
+    url: '#lincpass-authentication'
+  - title: Authentication With YubiKey
+    url: '#yubikey-authentication'
   - title: Google Authenticator on Android
     url: '#google-authenticator-ga-on-android'
   - title: Google Authenticator on Apple iOS iPhones and iPads
@@ -20,6 +24,7 @@ subnav:
 
 
 ---
+**Google Authenticator one-time passcode will be disabled for multi-factor authentication (MFA) and all SCINet users will need either a LincPass card or a YubiKey device to log on to SCINet.**
 
 ## What is Multifactor Authentication
 
@@ -39,8 +44,17 @@ If you have already had GA installed and initialized but now need to either re-i
 
 Follow the instructions below to set up multifactor authentication on either your mobile [Android device](#google-authenticator-ga-on-android) (recommended), [Apple device](#google-authenticator-ga-on-apple-ios-iphones-and-ipads) (recommended), or [on your computer](#authentication-on-your-computer-using-authy).
 
+### Authentication With LincPass
 
+Phishing-resistant MFA is more secure than traditional MFA because it reduces the ability of attackers to trick users into providing all authentication factors. Phishing-resistant MFA requires a user to possess and present a specific physical device or token when logging into a system.  Without the token, the login cannot occur. 
 
+Most USDA staff are already familiar with using a form of phishing-resistant MFA; their USDA LincPass credential.  The LincPass will be adopted by SCINet for phishing-resistant MFA login.  All USDA SCINet users will soon use their LincPass card in combination with their SCINet password when logging into SCINet resources. The Google Auth code will no longer be acceptable and will be eliminated. 
+
+### Authentication With YubiKey
+
+#### What Is YubiKey?
+
+The YubiKey is a hardware authentication device which looks like a USB thumb drive.  This physical security key will function similarly to the LincPass card.
 
 ### Google Authenticator (GA) on Android
 
