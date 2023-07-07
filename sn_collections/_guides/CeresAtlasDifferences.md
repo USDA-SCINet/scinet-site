@@ -48,12 +48,20 @@ Not all software installed on Ceres is available on Atlas. However software pack
 
 ### Using Containers
 
-On Ceres, the "singularity" command is available in a user's PATH by default, and users may not even realize that some of the software listed in the output of the "`module avail`" command is installed as singularity containers. On Atlas one needs to load a singularity module ("`module load singularity`" or "`module load singularity/<version>`") to make the "singularity" command accessible:
+On both clusters some modules are installed as singularity containers. On Ceres, all modules, including container based, are displayed in the output of the "module avail" command. On Atlas one needs to load a singularity module ("`module load singularity`" or "`module load singularity/<version>`") to make the "singularity" command accessible and to see container based modules:
 
 ```
 module load singularity
+module avail
+```
+
+Furthermore, on Atlas one needs to explicitly issue singularity command to use a container based software:
+```
 singularity exec <container image>
 ```
+
+On Ceres, loading a container-based module will also load a singularity module, and one does not need to type the "`singularity exec ...`" command since it's already built in the module. One can use "`module help <module_name>`" command to get information on how to use the software package provided by the module.
+
 
 ### Seeing All Environment Modules
 
@@ -109,14 +117,14 @@ Job scripts from one cluster may not work on the other cluster. See below what n
 
 ### Slurm account
 
-To run jobs on compute nodes of either cluster, the jobs need to be associated with a slurm account. For users that have access to one or more project directories, their slurm accounts have same names as the project directories. The slurm account for users without project directories is called scinet. On Ceres cluster all users have a default slurm account, and thus when submitting a job, they don't need to specify a slurm account for the job unless they want to associate the job with a non-default slurm account (this concerns only users with multiple slurm accounts; see the [SCINet Ceres User Manual "Slurm Accounts" section]({{ site.baseurl }}/guides/use/running-jobs#slurm-accounts) for how to list and change the default Slurm account). On Atlas one needs to specify a slurm account when submitting a job. To specify slurm account, either use "`-A <slurm_account_name>`" on the slurm command (srun, salloc, sbatch) or add the following line to your job script:
+To run jobs on compute nodes of either cluster, the jobs need to be associated with a slurm account. For users that have access to one or more project directories, their slurm accounts have same names as the project directories. The slurm account for users without project directories is called sandbox. On Ceres cluster all users have a default slurm account, and thus when submitting a job, they don't need to specify a slurm account for the job unless they want to associate the job with a non-default slurm account (this concerns only users with multiple slurm accounts; see the [SCINet Ceres User Manual "Slurm Accounts" section]({{ site.baseurl }}/guides/use/slurm) for how to list and change the default Slurm account). On Atlas one needs to specify a slurm account when submitting a job. To specify slurm account, either use "`-A <slurm_account_name>`" on the slurm command (srun, salloc, sbatch) or add the following line to your job script:
 ```
 #SBATCH -A <slurm_account_name>
 ```
 
 ### Partitions
 
-One does not have to specify a partition when submitting a job to a default partition on either Ceres or Atlas. However scripts that have a partition specified will need to be updated when used on a different cluster. To see the list of available partitions on a cluster, either issue "`sinfo`" command or consult the appropriate user guide: [Ceres]({{ site.baseurl }}/guides/use/running-jobs#partitions-or-queues) or [Atlas](https://www.hpc.msstate.edu/computing/atlas).
+One does not have to specify a partition when submitting a job to a default partition on either Ceres or Atlas. However scripts that have a partition specified will need to be updated when used on a different cluster. To see the list of available partitions on a cluster, either issue "`sinfo`" command or consult the appropriate user guide: [Ceres]({{ site.baseurl }}/guides/use/partitions-queues) or [Atlas](https://www.hpc.msstate.edu/computing/atlas).
 
 ### Nodes
 

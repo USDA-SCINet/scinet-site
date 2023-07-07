@@ -33,7 +33,7 @@ The SCINet initiative is an effort by the USDA Agricultural Research Service to 
 
 SCINet supports a growing community of nearly 2,000 USDA research scientists and university partners to accelerate agricultural discovery through advanced computational infrastructure and scientific computing. 
 
-Current uses of SCINet span multiple disciplines, including genomics, plant breeding, hydrology, crop production, plant and animal disease modeling, and natural resource management. SCINet users include ARS and other federal scientists, as well as prtners external to the federal government.
+Current uses of SCINet span multiple disciplines, including genomics, plant breeding, hydrology, crop production, plant and animal disease modeling, and natural resource management. SCINet users include ARS and other federal scientists, as well as partners external to the federal government.
 
 SCINet supports a broad range of computational tools, including R (and RStudio), Python (and Jupyter notebooks), and software for bioinformatics, geospatial analyses, machine learning and deep learning, and image processing.
 
@@ -117,21 +117,21 @@ The ARS Scientific Computing Initiative is in the domain of ARS researchers, thu
 Person | Area |Role | Sub-subcommittees | Term expires
 -------|------|-----|-------------------|-------------
 Adam Rivers | Southeast | Chair | Communications | 2023
-Steve Schroeder | Northeast | Vice-Chair | Planning, Software | 2021
-Erin Scully |Plains | Secretary | Education, Membership | 2022
+Steve Schroeder | Northeast | Vice-Chair | Planning, Software | 2024
+Erin Scully |Plains | Secretary | Education, Membership | 2025
 Jeremy Edwards | Southeast | Representative | Communications | 2023
-Jude Maul | Northeast | Representative | Planning | 2021
-Julian Trachsel | Midwest | Representative | Membership, Software | 2022
+Feng Guo | Northeast | Representative | Planning | 2024
+Hye-Seon Kim | Midwest | Representative | | 2025
 Margaret Woodhouse | Midwest | Representative | Communications | 2023
 Jason Fiedler | Plains | Representative | Planning | 2023
-Pat Clark | Pacific West | Representative | Education | 2022
-Alison Thompson |Pacific West | Representative | Education | 2021
-Kathy Yeater | Statistician | Representative |Membership | 2021
-Chris Owen | At-Large | Representative | TBD | 2022
+Pat Clark | Pacific West | Representative | Education | 2025
+Alison Thompson |Pacific West | Representative | Education | 2024
+Kathy Yeater | Statistician | Representative |Membership | 2024
+Chris Owen | At-Large | Representative | TBD | 2025
 Jack Okamoro | ONP | Ex Officio | - | -
 Cyndy Parr | NAL | Ex Officio | - | -
 Bryan Kaphammer | Area Directors | Ex Officio | - | -
-Debra Peters | CSIO | Ex Officio | - | -
+Brian Stucky | Acting CSIO | Ex Officio | - | -
 Brian Scheffler | Former CSIO | Ex Officio | - | -
 Rob Butler | Acting SCINet<br>Executive Director | Ex Officio | - | -
 
@@ -163,7 +163,7 @@ Jim Coyle | ISU Representative
 Vincent Sanders |MSU-HPCC Representative
 Angela Pompey | Information Security
 Chris Lowe | Information Security
-Debra Peters | Acting Chief Scientific Information Officer, ARS
+Brian Stucky | Acting Chief Scientific Information Officer, ARS
 Rob Butler | Acting SCINet Project Manager
 
 ## SCINet Software Committee
@@ -206,7 +206,7 @@ Jim Coyle, ISU Representative
 Vincent Sanders, MSU-HPCC Representative
 Angela Pompey, Information Security
 Chris Lowe, Information Security
-Deb Peters, CSIO
+Brian Stucky, Acting CSIO
 #HPC Software Standing Committee
 This committee is currently forming and is in search of members. The committee will look into the feasibility of new HPC software requests and elevate any issues with recommendations to the Executive Committee. For more information, including how to participate, please contact Deb Peters.
 **Membership**

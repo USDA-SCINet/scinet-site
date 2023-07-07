@@ -2,9 +2,11 @@
 {% assign postyr = _down.date | date: "%Y" %}
 {% if _down.end_date %}
     {% assign post_enddate = _down.end_date | date: "%A, %B %-d" %}
+    {% unless post_enddate == postdate %}
     {% assign postdate = postdate | append: ' - ' | append: post_enddate %}
 
     {% assign postyr = _down.end_date | date: "%Y" %}
+    {% endunless %}
 {% endif %}
 
 <li class="usa-collection__item width-full maxw-full" >

@@ -75,7 +75,7 @@ main:
     {% assign guidecategories = site.guidecategory %}
     {% assign guidepages = site.guides %}
 
-    {% if page.sorted %}
+    {% if page.sorted or page.order_number %}
       {% assign guidepages = guidepages | sort: 'order_number' %}
     {% endif %}
 

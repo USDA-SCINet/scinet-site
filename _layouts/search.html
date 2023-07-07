@@ -10,16 +10,13 @@ scripts:
     <div class="grid-row grid-gap flex-align-center">
 
             <main class="usa-layout-docs usa-layout-docs__main usa-prose width-full maxw-tablet margin-x-auto usa-section" id="main-content">
-                <!--<div class="form-container margin-right-0 margin-left-auto margin-top-2 maxw-mobile">
-                    {% include components/search.html searchid="search_page" %}
-    
-                </div> -->
+
 
                 {% if page.title %}
             <h1 class="top-header"></span>{{ page.title }}</h1>
             {% endif %}
             <span class="font-code-md" id="res_num"></span>
-            <div class="width-full display-flex flex-column flex-align-end"><div class="maxw-mobile">{% include components/search.html searchid='searchemb' %}</div></div>
+            <div class="width-full display-flex flex-column flex-align-end"><div class="maxw-mobile">{% include components/search_alt.html searchid='searchemb' %}</div></div>
 
             <div class="usa-accordion usa-accordion--bordered padding-y-2">
                 <button

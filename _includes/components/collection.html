@@ -42,7 +42,7 @@
             {% if eventpage=='event' %}
             {{ post.date | date_to_string }} &middot {% if post.provider %}{{ post.provider }} &middot {% endif %}{{ post.title }}
             {% else %}
-            <a class="usa-link" href="{% if post.external %}{{ post.url }}{% else %}{{ post.url | relative_url}}{% endif %}">
+            <a class="usa-link" href="{% if post.external or all_external == 'true' %}{{ post.url }}{% else %}{{ post.url | relative_url}}{% endif %}">
                 {% if post_type == 'calendar' %}
                     {% if page.type == "archive" %}
                         {{ post.date | date: "%Y" }} &middot 
@@ -107,6 +107,12 @@
                         {% endif %}
                     </li>
                     {% endunless %}
+                    {% if session.materials %}
+                    </br>
+                    {% for _material in session.materials %}
+                    <li>{% if _material.url %}{% include components/link.html url=_material.url text=_material.text external=true %}{% else %}{{ _material.text }}{% endif %}</li>
+                    {% endfor %}
+                    {% endif %}
                 </ul>
             </li>
             {% endfor %}
@@ -121,6 +127,30 @@
             <li class="usa-collection__meta-item">
                 {{ post.affiliation }}
             </li>
+            {% endif %}
+            {% if post.details %}
+            {% if post.details_title %}
+            <li class="usa-collection__meta-item">
+                <b>{{ post. details_title }}</b>
+            <ul class="unstyled-list">
+            {% endif %}
+            {% for detail in post.details %}
+            <li {% unless post.details_title %}class="usa-collection__meta-item"{% endunless %}>
+                {% if detail.url %}
+                <a href="{% if detail.external %}{{ detail.url }}{% else %}{{ detail.url | relative_url}}{% endif %}" 
+                {% if detail.new_tab %} target="_blank" rel="noopener noreferrer"{% endif %}
+                {% if detail.download %} download{% endif %}
+                >{% endif %}
+                {{ detail.text }}
+                {% if detail.url %}
+                </a>
+                {% endif %}
+            </li>
+            {% endfor %}
+            {% if post.details_title %}
+            </ul>
+            </li>
+            {% endif %}
             {% endif %}
             {% if post.date %}
             <li class="usa-collection__meta-item">

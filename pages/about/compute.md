@@ -23,7 +23,7 @@ Ceres is an ARS-owned high-performance computing (HPC) cluster connected to SCIN
 
 All nodes run on Linux Centos and compute jobs are managed by the SLURM scheduler. The system is configured with a login node, which users access to submit compute jobs to the SLURM scheduler.
 
-Compute jobs are run on functional groups of nodes called partitions or queues. Each partition has different capabilities (e.g. regular memory versus high memory nodes) and resource restrictions (e.g. time limits on jobs). There are 10+ different partitions on Ceres to which users can submit compute jobs. For details on the current partitions/queues, see ['Partitions or Queues' in the User Guides]({{ site.baseurl }}/guides/use/running-jobs#partitions-or-queues).
+Compute jobs are run on functional groups of nodes called partitions or queues. Each partition has different capabilities (e.g. regular memory versus high memory nodes) and resource restrictions (e.g. time limits on jobs). There are 10+ different partitions on Ceres to which users can submit compute jobs. For details on the current partitions/queues, see ['Partitions or Queues' in the User Guides]({{ site.baseurl }}/guides/use/partitions-queues).
 
 Members of the SCINet Virtual Research Support Core (VRSC) in Ames, IA are the operational administrators of the Ceres HPC cluster. The VRSC maintains the system hardware, software, and provides user support. To learn more about the VRSC, visit the [VRSC page]({{ site.baseurl }}/about/vrsc). For a current list of command-line software managed by the VRSC through the module system, see the [Preinstalled Software List]({{ site.baseurl }}/guides/software/preinstalled).
 

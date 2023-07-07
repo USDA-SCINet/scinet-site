@@ -24,6 +24,9 @@
   {% if page.filter.provider %}
     {% assign myposts = myposts | where_exp: "post", "post.provider == page.filter.provider" %}
   {% endif %}
+  {% if page.filter.external %}
+    {% assign all_external = "true" %}
+  {% endif %}
 {% endif %}
 
 {% if page.reverse_collection %}

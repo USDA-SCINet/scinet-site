@@ -39,10 +39,12 @@ blurb:
 
 # Configuration for agency logo(s) (shown side by side).
 # If the logo is external add external: true
-logos: false
-  #- src: {{ site.baseurl }}/assets/img/usda-symbol-rgb-color.svg
-  #  alt: USDA-ARS
-  #  external: false
+#logos: 
+#  - src: /assets/img/site/SCINet_logo.svg
+#    alt: SCINet
+#    height: 75
+#    url: /
+#    external: false
 
 # Configuration for footer contact links
 contact:

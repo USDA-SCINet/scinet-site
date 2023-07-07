@@ -12,6 +12,12 @@ layout: page
 sessions:
   - session: 
     time: 11:00am-1:30pm MDT
+    materials: 
+      - text: You must have a USDA account to access this workshop's recordings.
+      - text: Session recording
+        url: https://web.microsoftstream.com/video/595889e4-78f1-48ad-a8bc-4c731c294d4f
+      - text: Written tutortials
+        url: https://geospatial.101workbook.org/ExampleGeoWorkflows/GRWGWorkshop
 
     prerequisites:
       - text: Have a SCINet account and be able to login 

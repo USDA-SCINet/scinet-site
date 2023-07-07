@@ -1,7 +1,7 @@
 ---
 title: Environment Modules
 description: The Environment Modules package provides dynamic modification of your shell environment. 
-
+order_number: 30
 categories: [Software]
 
 subnav:

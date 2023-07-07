@@ -1,7 +1,8 @@
 ---
 title: Software preinstalled on Ceres
 description: Software preinstalled on Ceres
-excerpt: Each SCINet cluster has software preinstalled on it. Some general software is available in the global environment but most specialized scientific software is managed by the Module system.
+excerpt: Each SCINet cluster has software preinstalled on it. Some general software is available in the global environment but most specialized scientific software is managed by the Module system.<br /> <br />This guide includes information about command-line software, as well as information on graphical software such as Galaxy, CLC, Geneious, RStudio, and Juptyer.
+order_number: 10
 categories: [Software]
 
 sidenav:
@@ -25,7 +26,7 @@ table:
 Software | information
 ---|---
 [Galaxy Server]({{ site.baseurl }}/guides/analysis/galaxy) | SCINet Runs its own [Galaxy Server](https://galaxy.scinet.usda.gov).  Galaxy is an open source, web-based platform for data intensive bioinformatic research.
-[CLC Server]({{ site.baseurl }}/guides/misc/clc-workbench) | SCINet has a license key to [CLC Server](https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/enterprise-ngs-solutions/qiagen-clc-genomics-server/)
+[CLC Server]({{ site.baseurl }}/guides/analysis/clc-workbench) | SCINet has a license key to [CLC Server](https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/enterprise-ngs-solutions/qiagen-clc-genomics-server/)
 [Geneious]({{ site.baseurl }}/guides/analysis/geneious) |SCINet has a license key to Geneious
 [Rstudio]({{ site.baseurl }}/guides/analysis/r-studio) | SCINet runs a R studio Server
 Jupyter |  [Project Jupyter](https://jupyter.org/) notebooks and Lab can be run on Ceres

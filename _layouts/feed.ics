@@ -1,0 +1,58 @@
+---
+layout: none
+---
+BEGIN:VCALENDAR{%- assign sitedate = site.time | date: "%s" %}{%- assign sitetime = sitedate | minus: 86400 %}{%- assign sitetime = sitetime | date_to_xmlschema %}{%- assign all_downtime = site.data.tables.downtime.downtime %}{%- assign feed_set = '' | split: '' %}{%- for _down in all_downtime %}{%- assign datetime = _down.date | date_to_xmlschema %}{%- if datetime >= sitetime %}{%- assign feed_set = feed_set | push: _down %}{%- endif %}{%- endfor %}
+VERSION:2.0
+PRODID:{%- capture proid -%}-//{{site.title}}//{{site.url}}//{{page.title}}//EN{%- endcapture -%}{% include feed.html content=proid %}
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:STANDARD
+DTSTART:16011104T020000
+RRULE:FREQ=YEARLY;BYDAY=1SU;BYMONTH=11
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010311T020000
+RRULE:FREQ=YEARLY;BYDAY=2SU;BYMONTH=3
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+END:DAYLIGHT
+END:VTIMEZONE
+METHOD:PUBLISH{% for post in feed_set %}
+BEGIN:VEVENT{% if post.title %}{% assign newtitle = post.title | prepend: "SCINet: " %}{% else %}{% capture newtitle %}SCINet: {% if post.reason %}{{ post.reason }} - {% endif %}{{ post.systems }} - {{ post.date | date: "%A, %B %-d" }}{% unless post.type == 'archive' %} - {{ post.date | date: "%Y" }}{% endunless %}{% endcapture %}{% endif %}
+UID:{%- capture uid -%}{{site.url}}{{site.baseurl}}{% if post.url %}{{post.url}}{% else %}{{ page.basepage }}#{{ newtitle | slugify }}{% endif %}{%- endcapture -%}{% include feed.html content=uid %}
+DTSTAMP:{{ post.date | date: "%Y%m%dT000000Z" }}{% if post.date-start %}
+DTSTART;TZID=America/New_York:{{ post.date-start | date: "%Y%m%dT%H%M00" }}{% elsif post.end_date or post.duration %}
+DTSTART;TZID=America/New_York:{{ post.date | date: "%Y%m%dT%H%M00" }}{% else %}
+DTSTART:{{ post.date | date: "%Y%m%d" }}{% endif %}{% if post.end_date %}
+DTEND;TZID=America/New_York:{{ post.end_date | date: "%Y%m%dT%H%M00" }}{% elsif post.duration %}
+DURATION:{{ post.duration }}{% else %}
+DTEND:{{ post.date | date: "%Y%m%d" }}{% endif %}{% if post.rrule %}
+RRULE:{{post.rrule}}{% endif %}
+SUMMARY:{% include feed.html content=newtitle %}
+DESCRIPTION:{%- capture mydescription -%}<p>{% if post.excerpt %}{{ post.excerpt }}{% else %}{{ post.text }}{% endif %}</p>
+<ul>{% if post.time %}
+<li><b>Outage time:</b> {{ post.time }}</li>{% endif %}{% if post.systems %}
+<li><b>Affected Systems:</b> {{ post.systems }}</li>{% endif %}{% if post.locations %}
+<li><b>Affected Locations:</b> {{ post.locations }}</li>{% endif %}{% if post.reason %}
+<li><b>Reason:</b> {{ post.reason }}</li>{% endif %}{% if post.assets %}
+<li><b>Affected Assets:</b>
+<ul>{% for _asset in post.assets %}
+<li>{{ _asset.asset }}</li>{% endfor %}
+</ul>
+</li>{% endif %}
+</ul>{%- endcapture -%}{%- capture description -%}{% include feed.html content=mydescription %}{%- endcapture -%}{{ description }}
+X-ALT-DESC;FMTTYPE=TEXT/HTML:
+ {{ description }}
+CLASS:PUBLIC
+X-MICROSOFT-CDO-BUSYSTATUS:FREE{% if post.location %}
+LOCATION:{{post.location}}{% endif %}{% if post.redirect %}
+URL:{{post.redirect}}{% else %}
+URL:{{site.url}}{{site.baseurl}}{{page.basepage}}{% endif %}
+CATEGORIES:{{site.short_name}},
+ {{site.title}},
+ {{page.title}}
+END:VEVENT{% endfor %}
+END:VCALENDAR

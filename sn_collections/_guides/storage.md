@@ -42,7 +42,7 @@ group (proj-<project_name>). Sometimes when users move files from one directory 
 options, files in the new location will retain group from the old location and setgid bit will not be set. (The setgid bit needs to be set so that new files and directories created in the directory in /project would be associated with the project group.) To avoid this, use "`cp`" and "`rm`" instead of "`mv`" 
 to move data between home and project directories, and use "`-rltoD`" rsync options instead  of "`-a`" or explicitly specify "`--no-p --no-g`" options. 
 
-The "`beegfs-ctl --getquota --gid <first.last> --cfgFile=/etc/beegfs/beegfs-client-project.conf`" command will report usage and quota for the user `<first.last>`'s primary group in `/project`. This quota is 
+The "`beegfs-ctl --getquota --gid $USER --cfgFile=/etc/beegfs/beegfs-client-project.conf`" command will report usage and quota for your primary group in `/project`. This quota is 
 intentionally set to a small value. The non-zero usage indicates that there are files associated with the user's primary group
 in /project . To set ownership of the files in a directory in /project to the project group and to set the setgid bit, the user can issue the following command:
 ```

@@ -11,6 +11,7 @@ subnav:
     url: /news/downtime/archive
     internal: link
 
+calendar-link: /news/downtime.ics
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-title: Protein Function and Phenotype Preditction Working Group
+title: Protein Function and Phenotype Prediction Working Group
 description: summary of the working group
 permalink: /research/working-groups/proteinfunction
 author: Ryan Lucas
@@ -17,3 +17,10 @@ If you would like to join the group, please contact Hye-Seon Kim ([hyeseon.kim@u
 Hye-Seon Kim | Computational Biologist 
 Cason Andorf | Computational Biologist
 
+Presentation recordings and slides from previous meetings are available to USDA employees in the table below.
+
+**Meeting** | **Title** | **Author** | **Recording** | **Slides**
+---|---|---|---|---
+January 2023 Quarterly Meeting | Protein structure and folding prediction on SCINet. | Dr. Carson Andorf | [recording](https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetProteinScienceWG/EdB0tKnLNeFPgDEN1ib6uWIBNAPB_SLxp_wCtGKLa2omkQ?e=MlZiVp) | [slides](https://usdagcc.sharepoint.com/:b:/r/sites/REE-ARS-SCINetProteinScienceWG/Shared%20Documents/Presentations/Protein_presentation_PSGroup_version2.pdf?csf=1&web=1&e=n80Yh0)
+September 2022 Quarterly Meeting | Integrating AlphaFold protein structures in a model organism database. | Dr. Carson Andorf | [recording](https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetProteinScienceWG/EZYiRS633BFOqjPoezf27kgBfXfkzRHLnEd14FkQU2UmGw?e=fQZXbE) | [slides](https://usdagcc.sharepoint.com/:b:/r/sites/REE-ARS-SCINetProteinScienceWG/Shared%20Documents/Presentations/Andorf_USDA_presentation_PSGroup.pdf?csf=1&web=1&e=jh8q1h)
+September 2022 Quarterly Meeting | Genome wide identification of Fusarium effector proteins and prediction of 3D protein structures with Alphafold | Dr. Hye-Seon Kim | [recording](https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetProteinScienceWG/EQNhlQmzeeNLp89a_oUFb1QBDkT5ri_AeEw-pukrcMxrdQ?e=6kBLCb) | [slides](https://usdagcc.sharepoint.com/:b:/r/sites/REE-ARS-SCINetProteinScienceWG/Shared%20Documents/Presentations/Alphafold_HyeSeon_Kim_USDA_Final.pdf?csf=1&web=1&e=0fnrSo)

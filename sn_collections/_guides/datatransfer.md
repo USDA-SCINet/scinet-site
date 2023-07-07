@@ -23,6 +23,9 @@ subnav:
     url: '#large-data-transfer-by-shipping-hard-drives'
   - title: Other Ways to Transfer Data
     url: '#other-ways-to-transfer-data'
+    subnav:
+      - title: FileZilla
+        url: '#filezilla'
   - title: Data Transfer to NCBI
     url: '#data-transfer-to-ncbi'
 
@@ -33,7 +36,7 @@ subnav:
 ## Best Practices
 
 * Globus Online is the recommended method for transferring data to and from the Ceres cluster. It provides faster data transfer speeds compared to scp, has a graphical interface, and does not require a GA verification code for every file transfer.
-* Given the space and access limitations of a home directory, large amounts of data or data that will be used collaboratively should be transferred to a project directory. See the User Manual section [Quotas on Home and Project Directories]({{ site.baseurl }}/data/quotas) for more information on home and project directory quotas.
+* Given the space and access limitations of a home directory, large amounts of data or data that will be used collaboratively should be transferred to a project directory. See the User Manual section [Quotas on Home and Project Directories]({{ site.baseurl }}/guides/data/quotas) for more information on home and project directory quotas.
 * If you have to transfer very large amounts of data or if network speed at your location is slow, please submit a request to the Virtual Research Support Core (VRSC) to ingress data from a hard drive as described below (section [Large Data Transfer by Shipping Hard Drives](#large-data-transfer-by-shipping-hard-drives)).
 * If you have issues with transferring data, please contact the VRSC at [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=help%20with%20transferring%20data).
 
@@ -53,7 +56,7 @@ The instructional video at [https://www.youtube.com/watch?v=I3lnsCAfx3Q](https:/
   4. Google account login. Click on “Sign in with Google” at the bottom of the page if you want to use your google account.
 * You should now be on the Globus ‘File Manager’ page. You should see two panels. If you don't, click on the 2-panels icon at the top right of the screen. You should now see two panels:
 
-![Globus online homescreen showing two panels]({{ site.baseurl }}/assets/img/file-transfer/globus-homescreen.png)
+![Globus online homescreen showing two panels]({{ site.baseurl }}/assets/img/guides/data/globus-homescreen.png)
 
 ### Copying Data
 * The two panes represent the two systems that you want to copy data between. You will need to select a Collection (an Endpoint) for each pane and most likely, authenticate.
@@ -69,7 +72,12 @@ The instructional video at [https://www.youtube.com/watch?v=I3lnsCAfx3Q](https:/
 * You may now click ‘Activity’ at the left to see a list of current and prior transfers. Click on "File Manager" at the top left of the page to get back to the main page.
 
 ### Globus Connect Personal
-To transfer files to your personal computer you may use Globus Connect Personal. A link “Install Globus Connect Personal” can be found in the Recent tab and in the "More Options" tab in the list of Collections. Click on "Collection" box to get to the list.  The install instructions are available at [https://docs.globus.org/how-to/globus-connect-personal-windows/](https://docs.globus.org/how-to/globus-connect-personal-windows/).
+To transfer files to your personal computer you may use Globus Connect Personal. A link “Install Globus Connect Personal” can be found in the Recent tab and in the "More Options" tab in the list of Collections. Click on "Collection" box to get to the list.  
+
+The installation instructions for Globus Connect Personal are available here:
+* [Windows Install Instructions](https://docs.globus.org/how-to/globus-connect-personal-windows/)
+* [Mac Install Instructions](https://docs.globus.org/how-to/globus-connect-personal-mac/)
+* [Linux Install Instructions](https://docs.globus.org/how-to/globus-connect-personal-linux/)
 
 By default, Globus Connect Personal prompts to be installed in C:\Program Files which requires administrator rights. However you don't need Administrator rights to install Globus Connect Personal on your local machine. If you do not have Administrator rights browse to a place you have write access to (e.g. your Desktop folder) or contact your local IT staff for assistance.
 
@@ -160,6 +168,25 @@ Other programs that have a GUI to transfer data and are suitable for smaller fil
 
 Cyberduck supports multiple protocols (including Amazon S3, iRODS, and Google Drive) and is more secure than FileZilla.
 
+### FileZilla
+
+[Filezilla](https://filezilla-project.org/) is being made available on SCINet cafe machines. FileZilla uses a dual pane approach to moving files with the left pane being the local system and the right pane being remote. Users will need to setup remote sites using the ‘Site Manager’ found under the File menu. 
+
+Once in ‘Site Manager’, do the following:
+
+1. click ‘New Site’
+2. give the site a name
+3. select SFTP protocol
+4. enter a hostname for one of the DTNs
+5. choose Interactive for Logon Type
+6. enter your SCINet username(not an email)
+7. click Connect to test your connection
+
+ ![Site Manager screenshot]({{ site.baseurl }}/assets/img/guides/data/filezilla.png)
+
+If successful, you should be able to drag and drop files and folders between systems, if permissions and quota allow. You may also right click a file or directory and select Upload or Download depending on which pane you are in.
+
+Note for Linux users, external drives are mounted under */run/media/firstname.lastname .*
 
 ## Data Transfer to NCBI
 

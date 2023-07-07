@@ -179,10 +179,16 @@
 
 .icon-light {
    fill: color("primary-lighter");
+   @media (forced-colors: active) {
+      fill: ButtonText;
+   }
 }
 
 .icon-dark {
    fill: color("primary-dark");
+   @media (forced-colors: active) {
+      fill: Canvas;
+   }
 }
 
 .graphic-link {

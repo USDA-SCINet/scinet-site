@@ -12,6 +12,10 @@ layout: page
 sessions:
   - session: 
     time: 10:00am-12:00pm MDT
+    materials: 
+      - text: You must have a USDA account to access this workshop's recordings.
+      - text: Session recording
+        url: https://web.microsoftstream.com/video/c9e1642b-6624-4c2d-9583-800d84469ad3
 
     prerequisites:
       - text: Have a SCINet account and be able to login 
@@ -71,7 +75,7 @@ A recording of this presentation and discussion summary notes will be made avail
 <br>
 {:.border-bottom}
 
-Coming soon
+[Watch a recording of this presentation](https://web.microsoftstream.com/video/c9e1642b-6624-4c2d-9583-800d84469ad3)
 
 
 <br>

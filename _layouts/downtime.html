@@ -22,7 +22,8 @@ main:
 {% if page.type == "future" %}
 {% for _down in all_downtime %}
   {% assign datetime = _down.date | date_to_xmlschema %}
-  {% if datetime >= sitetime %}
+  {% if _down.end_date %}{% assign enddate = _down.end_date | date_to_xmlschema %}{% else %}{% assign enddate = datetime %}{% endif %}
+  {% if datetime >= sitetime or enddate >= sitetime %}
   {% assign downtime = downtime | push: _down %}
   {% endif %}
 {% endfor %}
@@ -61,6 +62,15 @@ main:
     {% endfor %}
 </table>
 </div>
+{% if downtime.size > 0 %}
+<div class="">
+  <a class="usa-button tablet:margin-2" href="{{ page.calendar-link }}">
+      Add to your calendar <svg class="usa-icon inline-svg" aria-hidden="true" focusable="false" role="img">
+        <use xlink:href="/assets/uswds/img/sprite.svg#file_download"></use></svg>
+  </a>
+</div>
+{% endif %}
+
 
 <br>
 

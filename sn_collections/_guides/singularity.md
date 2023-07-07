@@ -2,7 +2,7 @@
 title: Singularity Containers
 description: A guide for building and running containers on Ceres
 #author: VRSC
-
+order_number: 40
 categories: [Software]
 
 subnav:
@@ -36,16 +36,15 @@ To run containers on Ceres, you'll need to execute the singularity command from 
 [user.name@ceres ~]$ salloc
 salloc: Granted job allocation 1695904
 salloc: Waiting for resource configuration
-salloc: Nodes ceres14-compute-36 are ready for job
+salloc: Nodes ceres20-compute-44 are ready for job
 export TMPDIR=/local/bgfs//1695904
 export TMOUT=5400
-[user.name@sn-cn-11-2 ~]$ type singularity
-singularity is hashed (/usr/bin/singularity)  
+[user.name@ceres20-compute-44 ]$ module load singularity
+[user.name@ceres20-compute-44 ]$
 ```
 
 NOTE: salloc by default runs on a single hyper-threaded core (2 logical cores) with 6000 MB of allocated memory on one of the compute nodes. The session will last for 2 days, but will timeout after 1.5 hours of inactivity (no commands runnning). See the [Running Jobs User Guide]({{ site.baseurl }}/guides/use/running-jobs) for more info on how to request resources for interactive jobs.
 
-NOTE: on Atlas singularity is available through environment module. Before issuing any singularity command, load the module by issuing "module load singularity" command.
 
 
 ## Container Images
@@ -65,7 +64,7 @@ For leveraging GPU using containers, Nvidia provides a container library NGC. [h
 While Singularity can only execute containers from Singularity images, it can easily import Docker images directly from Docker Hub to create a Singularity image. For example, to download a Docker image of the R programming language from Docker Hub [https://hub.docker.com/_/r-base/](https://hub.docker.com/_/r-base/) and import it into a Singularity image, change the docker pull rbase command listed at the aforementioned URL to the equivalent Singularity command  `singularity pull docker://r-base`  (where specifying "docker://" before the image name lets Singularity know the image is a Docker image, and by default fetch the image from Docker Hub):
 
 ```bash
-[user.name@sn-cn-11-2 ~]$ singularity pull docker://r-base
+[user.name@sceres20-compute-44 ~]$ singularity pull docker://r-base
 INFO:    Converting OCI blobs to SIF format
 INFO:    Starting build...
 Getting image source signatures
@@ -123,7 +122,7 @@ Note that applications executing within a container do not have access to applic
 Singularity images may have a run script (Docker: ENTRYPOINT) that is executed when the singularity run command is used. To see the run script defined by the container (if any), use the singularity inspect command:
 
 ```bash
-[user.name@sn-cn-11-2 ~]$ singularity inspect --runscript r-base.img
+[user.name@ceres20-compute-44 ~]$ singularity inspect --runscript r-base.img
 #!/bin/sh
 exec R "$@"
 ```
@@ -131,7 +130,7 @@ exec R "$@"
 The output above shows that in the aforementioned Docker image for the R programming language retrieved from Docker Hub,  `singularity run r-base.img`  will run R interactively in the container environment. Your home directory is automatically mounted in the container, so any files therein can be accessed (and R packages installed within the container, as illustrated in the example below):
 
 ```bash
-[user.name@sn-cn-11-2 ~]$ singularity run r-base.img
+[user.name@ceres20-compute-44 ~]$ singularity run r-base.img
 R version 3.4.0 (2017-04-21) -- "You Stupid Darkness"
 Copyright (C) 2017 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
@@ -163,9 +162,9 @@ The downloaded source packages are in
 A container image can contain many executables / scripts. The singularity exec command can be used to select which program to run in the container. For example, to run a simple R script using the Rscript command in the container, prefix the Rscript command with  `singularity exec r-base.img`:
 
 ```bash
-[user.name@sn-cn-11-2 ~]$ cat test.R
+[user.name@ceres20-compute-44 ~]$ cat test.R
 summary(c(1:10))
-[user.name@sn-cn-11-2 ~]$ singularity exec r-base.img Rscript test.R
+[user.name@ceres20-compute-44 ~]$ singularity exec r-base.img Rscript test.R
 Min. 1st Qu. Median Mean 3rd Qu. Max.
 1.00 3.25 5.50 5.50 7.75 10.00
 ```
@@ -175,9 +174,9 @@ Min. 1st Qu. Median Mean 3rd Qu. Max.
 singularity shell starts an interactive shell within the container image, allowing you to inspect files (and execute programs) within the container. For example, here we see that the r-base.img container image was created using Debian Linux as the base operating system:
 
 ```bash
-[user.name@sn-cn-11-2 ~]$ type R
+[user.name@ceres20-compute-44 ~]$ type R
 bash: type: R: not found
-[user.name@sn-cn-11-2 ~]$ singularity shell r-base.img
+[user.name@ceres20-compute-44 ~]$ singularity shell r-base.img
 Singularity: Invoking an interactive shell within container...
 Singularity r-base.img:~> type R
 R is /usr/bin/R
@@ -192,7 +191,7 @@ SUPPORT_URL="https://www.debian.org/support"
 BUG_REPORT_URL="https://bugs.debian.org/"
 Singularity r-base.img:~> exit
 exit
-[user.name@sn-cn-11-2 ~]$
+[user.name@ceres20-compute-44 ~]$
 ```
 
 ## Ceres Container Repository

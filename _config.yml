@@ -1,5 +1,9 @@
 title: "SCINet | USDA Scientific Computing Initiative"
 description: SCINet is a USDA initiative to provide agricultural scientists access to high performance computing, networking and training
+short_name: "SCINet"
+language: "en"
+lang_direction: "ltr"
+timezone: America/New_York
 
 # GitHub information
 # This is used for adding an edit this page link to the footer

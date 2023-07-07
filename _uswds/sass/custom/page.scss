@@ -15,3 +15,23 @@
 .allow-overflow {
     overflow:visible
 }
+
+.hero-img {
+    @supports not (background-image: url("/assets/img/hero.webp")) {
+            background-image: url("/assets/img/hero.jpg")
+    }
+    background-image: url("/assets/img/hero.webp");
+}
+
+.no-hero-img {
+    background-image: none
+}
+
+.inline-svg {
+    position: relative;
+    top: .25em;
+    flex-shrink: 0;
+    height: 1em;
+    width: 1em;
+    fill: currentColor;
+}
