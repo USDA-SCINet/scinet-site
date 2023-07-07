@@ -11,7 +11,7 @@ subnav:
   - title: Access Using LincPass  
     url: '#accessing-using-lincpass' 
   - title: Access Using YubiKey
-    url: '#accessing-using-yubikey
+    url: '#accessing-using-yubikey'
 ---
 
 This process will be the same for all GUI based SCINet Services. Please follow the instructions below.  If you have further questions or issues, please email [scinet_vrsc@usda.gov](scinet_vrsc@usda.gov). <!--excerpt-->
