@@ -19,7 +19,7 @@ This process will be the same for all GUI based SCINet Services. Please follow t
 ## Linking Your Accounts
 
 - Select the option to sign in with "SCINet Legacy Authentication"
-![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/linking-accounts/1.png)
+![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/sign-on.png)
 
 - You will then enter your SCINet username and your SCINet password followed by your GA code with no spaces. See the image below for examples.
 ![screenshot of Login Screen to Enter Username and Password]({{ site.baseurl }}/assets/img/guides/access/linking-accounts/2.png)
