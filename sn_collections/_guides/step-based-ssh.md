@@ -43,10 +43,10 @@ Delete your .ssh/known_hosts file OR run:
 - Each morning on your first attempt to ssh to Ceres, you will see something like this: 
 
 	- Your default web browser should open automatically to the SCINet authentication page.  Choose USDA LincPass as your sign-in option. 
-![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/step-ssh/LincPass.png)
+![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/lincpass.png)
 
 - You will then go through a typical eAuth based login. Select login with PIV/CAC and enter your pin, see the images below for example.
-![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/step-ssh/eAuth.png)
+![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/eAuth.png)
 
 - Now go through your usual eAuth based login. 
 	- Please Note: There could be complications here if its your first time.  If you need to link accounts, please see the instructions [here](https://scinet.usda.gov/guides/access/gui-systems)
