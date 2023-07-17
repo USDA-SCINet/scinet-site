@@ -9,6 +9,8 @@ categories: [Analysis]
 subnav:
   - title: Introduction
     url: '#introduction'
+  - title: Galaxy KeyCloak Instructions
+    url: '#galaxy-keycloak-instructions'
   - title: Logging On
     url: '#logging-on'
   - title: Import data to Ceres Galaxy
@@ -41,6 +43,30 @@ There are a few compelling reasons why we think you’re going to like using Gal
 In order to use SCINet Galaxy, you need an account on Ceres. [Sign up for a SCINet account]({{ site.baseurl }}/about/signup) to start that process. New accounts will automatically get a Galaxy user name and directory. The user name should match the email you used when registering for your Ceres account and the password will match your Ceres password.
 
 **NOTE:** All uploaded and output files are removed after ***90 Days*** so it is **recommended** users save their data outside of galaxy.
+
+## Galaxy KeyCloak Instructions
+
+### The following instructions will aid with migrating your Galaxy/SCINet Authenticator to KeyCloak
+
+1. Log in to Galaxy through your SCINet email and Password+GoogleAuthenticator
+(For example: Username: john.smith Password: FruitPunch789!123456)
+*Please wait patiently at this step as it may take about 20 seconds to login.*
+![]({{ site.baseurl }}/assets/img/guides/access/galaxy-keycloak/login1.png)
+1. Once Logged in, click on the “User” Tab on the top of your homepage
+![]({{ site.baseurl }}/assets/img/guides/access/galaxy-keycloak/menu1.png)
+1. Under the User tab banner click on Preferences
+![]({{ site.baseurl }}/assets/img/guides/access/galaxy-keycloak/menu2.png)
+1. Under the User preferences click on Manage Third Party Identities
+![]({{ site.baseurl }}/assets/img/guides/access/galaxy-keycloak/user-preferences1.png)
+1. In Manage Third Party Identities click on Sign in with keycloak
+![]({{ site.baseurl }}/assets/img/guides/access/galaxy-keycloak/user-preferences1.png)
+4.	You will then be prompted to sign in to your SCINet account.  Login using your preferred method
+![]({{ site.baseurl }}/assets/img/guides/access/galaxy-keycloak/scinet-signon.png)
+5.	After successful login, your galaxy account should be migrated. If you go to the Manage Third Party Identities again, you should see Keycloak under Connected External identities.
+![]({{ site.baseurl }}/assets/img/guides/access/galaxy-keycloak/manage-ident.png)
+6.	Further logins should only be done via keycloak. The legacy login will no longer work. 
+![]({{ site.baseurl }}/assets/img/guides/access/galaxy-keycloak/keycloak-login.png)
+
 
 ## Logging On
 
