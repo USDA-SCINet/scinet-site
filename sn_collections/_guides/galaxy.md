@@ -51,21 +51,21 @@ In order to use SCINet Galaxy, you need an account on Ceres. [Sign up for a SCIN
 1. Log in to Galaxy through your SCINet email and Password+GoogleAuthenticator
 (For example: Username: john.smith Password: FruitPunch789!123456)
 *Please wait patiently at this step as it may take about 20 seconds to login.*
-![]({{ site.baseurl }}/assets/img/guides/access/galaxy-keycloak/login1.png)
+![]({{ site.baseurl }}/assets/img/guides/analysis/galaxy/keycloak/login1.png)
 1. Once Logged in, click on the “User” Tab on the top of your homepage
-![]({{ site.baseurl }}/assets/img/guides/access/galaxy-keycloak/menu1.png)
+![]({{ site.baseurl }}/assets/img/guides/analysis/galaxy/keycloak/menu1.png)
 1. Under the User tab banner click on Preferences
-![]({{ site.baseurl }}/assets/img/guides/access/galaxy-keycloak/menu2.png)
+![]({{ site.baseurl }}/assets/img/guides/analysis/galaxy/keycloak/menu2.png)
 1. Under the User preferences click on Manage Third Party Identities
-![]({{ site.baseurl }}/assets/img/guides/access/galaxy-keycloak/user-preferences1.png)
+![]({{ site.baseurl }}/assets/img/guides/analysis/galaxy/keycloak/user-preferences1.png)
 1. In Manage Third Party Identities click on Sign in with keycloak
-![]({{ site.baseurl }}/assets/img/guides/access/galaxy-keycloak/user-preferences1.png)
+![]({{ site.baseurl }}/assets/img/guides/analysis/galaxy/keycloak/user-preferences1.png)
 4.	You will then be prompted to sign in to your SCINet account.  Login using your preferred method
-![]({{ site.baseurl }}/assets/img/guides/access/galaxy-keycloak/scinet-signon.png)
+![]({{ site.baseurl }}/assets/img/guides/sign-on.png)
 5.	After successful login, your galaxy account should be migrated. If you go to the Manage Third Party Identities again, you should see Keycloak under Connected External identities.
-![]({{ site.baseurl }}/assets/img/guides/access/galaxy-keycloak/manage-ident.png)
+![]({{ site.baseurl }}/assets/img/guides/analysis/galaxy/keycloak/manage-ident.png)
 6.	Further logins should only be done via keycloak. The legacy login will no longer work. 
-![]({{ site.baseurl }}/assets/img/guides/access/galaxy-keycloak/keycloak-login.png)
+![]({{ site.baseurl }}/assets/img/guides/analysis/galaxy/keycloak/keycloak-login.png)
 
 
 ## Logging On
