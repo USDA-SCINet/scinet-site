@@ -61,7 +61,7 @@ In order to use SCINet Galaxy, you need an account on Ceres. [Sign up for a SCIN
 1. In Manage Third Party Identities click on Sign in with keycloak
 ![]({{ site.baseurl }}/assets/img/guides/analysis/galaxy/keycloak/user-preferences1.png)
 4.	You will then be prompted to sign in to your SCINet account.  Login using your preferred method
-![]({{ site.baseurl }}/assets/img/guides/sign-on.png)
+![]({{ site.baseurl }}/assets/img/guides/access/sign-on.png)
 5.	After successful login, your galaxy account should be migrated. If you go to the Manage Third Party Identities again, you should see Keycloak under Connected External identities.
 ![]({{ site.baseurl }}/assets/img/guides/analysis/galaxy/keycloak/manage-ident.png)
 6.	Further logins should only be done via keycloak. The legacy login will no longer work. 
