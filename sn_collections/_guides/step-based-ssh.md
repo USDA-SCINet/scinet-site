@@ -40,7 +40,7 @@ Delete your .ssh/known_hosts file OR run:
 - The second command updates your .ssh/config file. If you already have a complicated structure in there you may wish to review it. The changes are fine for most, but particularly if you already have ceres entries in yours there could be conflicts. 
  
 ## Usage Instructions:
-- Please note, if you are using a YubiKey, please see the login instructions [here](https://scinet.usda.gov/guides/access/gui-systems#accessing-using-yubikey) 
+- Please note, if you are using a YubiKey, please see the [Yubikey login instructions](https://scinet.usda.gov/guides/access/gui-systems#accessing-using-yubikey) 
 - Each morning on your first attempt to ssh to Ceres, you will see something like this: 
 
 	- Your default web browser should open automatically to the SCINet authentication page.  Choose USDA LincPass as your sign-in option. 
