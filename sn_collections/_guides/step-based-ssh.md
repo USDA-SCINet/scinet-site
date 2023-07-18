@@ -40,18 +40,21 @@ Delete your .ssh/known_hosts file OR run:
 - The second command updates your .ssh/config file. If you already have a complicated structure in there you may wish to review it. The changes are fine for most, but particularly if you already have ceres entries in yours there could be conflicts. 
  
 ## Usage Instructions:
+- Please note, if you are using a YubiKey, please see the login instructions [here](https://scinet.usda.gov/guides/access/gui-systems#accessing-using-yubikey) 
 - Each morning on your first attempt to ssh to Ceres, you will see something like this: 
 
 	- Your default web browser should open automatically to the SCINet authentication page.  Choose USDA LincPass as your sign-in option. 
 ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/lincpass.png)
 
-- You will then go through a typical eAuth based login. Select login with PIV/CAC and enter your pin, see the images below for example.
+- You will then go through a typical eAuth based login. Select login with PIV/CAC and enter your pin, see the image below for example.
+  
 ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/eAuth.png)
 
 - Now go through your usual eAuth based login. 
 	- Please Note: There could be complications here if its your first time.  If you need to link accounts, please see the instructions [here](https://scinet.usda.gov/guides/access/gui-systems)
 
 - Go back to your shell and you should see something like "CA: https://step-ca.scinet.usda.gov" followed by your regular login.
+  
 ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/step-ssh/login-success.png)
 
 After these steps, command line ssh works normally. The only different is that it will not prompt you for a password for the day (18 hours). 
