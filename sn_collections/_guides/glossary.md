@@ -30,10 +30,9 @@ For more information on the HPC systems that SCINet offers, see the [Computer Sy
 
 ## Open OnDemand
 
-Jupyter is an open-source, non-profit project to support interactive data science and scientific computing. Jupyter is language agnostic with support for >130 different scientific programing language kernels. This workshop will use the following two applications from the Jupyter software stack:
+Open OnDemand is an intuitive, innovative, and interactive interface to remote computing resources. The key benefit for SCINet users is that it can be used on any web browser, including browsers on a mobile phone, to access Ceres. See the [Open OnDemand guide](https://scinet.usda.gov/guides/access/open-ondemand) for more information. 
 
-1. Open OnDemand: A software to serve JupyterLab to multiple users (this is how we will launch an instance of JupyterLab on Ceres without having to to SSH into the cluster). Documention at: [https://jupyterhub.readthedocs.io/en/stable/](https://jupyterhub.readthedocs.io/en/stable/)
-1. JupyterLab: A web-based interactive development environment. Documentation at: [https://jupyterlab.readthedocs.io/en/stable/](https://jupyterlab.readthedocs.io/en/stable/)
+There are several interactive apps that can be run in Open OnDemand including Jupyter, [RStudio Server](https://scinet.usda.gov/guides/analysis/r-studio), [Geneious](https://scinet.usda.gov/guides/analysis/geneious), [CLC Genomics Workbench](https://scinet.usda.gov/guides/analysis/clc-workbench), and more. The desktop app allows a user to run any GUI software.
 
 ## SLURM
 
