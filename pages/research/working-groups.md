@@ -32,6 +32,9 @@ subnav:
   - title: Protein Function and Phenotype Prediction
     url: /research/working-groups/proteinfunction
     internal: link
+  - title: Translational Omics
+    url: /research/working-groups/omics
+    internal: link
 ---
 
 The SCINet initiative contributes funding to various working groups that use SCINet computational resources for research. The funding is generally used to convene in-person group workshops. There are also two working groups that develop SCINet learning/training materials.
@@ -46,6 +49,7 @@ The current working groups are:
 * [Pollinator Working Group]({{ site.baseurl }}/research/working-groups/pollinator)
 * [SCINet-Longterm Agroecosystem Research (LTAR) Phenology Working Group]({{ site.baseurl }}/research/working-groups/LTARphenology)
 * [Protein Function and Phenotype Prediction Working Group]({{ site.baseurl }}/research/working-groups/proteinfunction)
+* [Translational Omics Working Group]({{ site.baseurl }}/research/working-groups/omics)
 
 <br>
 
