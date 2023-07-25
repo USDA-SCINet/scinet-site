@@ -70,6 +70,8 @@ primary:
           url: /research/working-groups/pollinator
         - title: Protein Function and Phenotype Prediction
           url: /research/working-groups/proteinfunction
+        - title: Translational Omics
+          url: /research/working-groups/omics
       - title: Use Cases
         url: /research/uses/
         sublinks:
