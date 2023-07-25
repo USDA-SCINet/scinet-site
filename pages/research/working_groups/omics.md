@@ -11,16 +11,16 @@ layout: page
 # collect_title: Events
 # reverse_collection: true
 
-subnav:
-  - title: Objectives
-    url: '#objectives'
+# subnav:
+#  - title: Events
+#    url: '#events'
 ---
 
 We are excited to introduce the SCINet Translational Omics Working Group, an interdisciplinary team of researchers and experts dedicated to advancing the field of translational omics and its applications in agriculture. As we venture into an era of a new agricultural revolution, omics technologies play a pivotal role in unraveling the complex molecular underpinnings of complex traits and guiding future farming. 
 
 The concept of "omics" refers to the comprehensive study of various biological molecules, including genomics (including structural genomics - sequence assembly and variation and functional genomics - gene function and annotation), epigenomics (changes in gene expression regulation without change in DNA sequence), transcriptomics (gene expression analysis), proteomics (proteins and their interactions), metabolomics (small molecule metabolites), and metagenomics (microbiota - a community of microorganisms). These approaches have already demonstrated immense potential in understanding molecular mechanisms, finding biomarkers, and developing effective selections and treatments. The primary goal of this Translational Omics Working Group is to foster collaboration, knowledge-sharing, and innovation among researchers and experts in diverse fields, including but not limited to genomics, bioinformatics, computational biology, and artificial intelligence (AI). Together, we aim to overcome challenges, explore novel techniques, and promote omics data integration in agriculture and food research.
 
-## Objectives 
+**Key objectives of the Translational Omics Working Group are:**
 * *Education and Outreach:* Organize seminars, workshops, and conferences to disseminate knowledge (tools and resources) and raise awareness about the potential of omics technologies in transforming agricultural research.
 * *Data Integration:* Facilitate discussions and methodologies for integrating multi-omics data to comprehensively understand biological processes and molecular mechanisms.
 
