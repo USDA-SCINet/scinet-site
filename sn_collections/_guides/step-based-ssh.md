@@ -29,8 +29,8 @@ Delete your .ssh/known_hosts file OR run:
 ## After Step Installation:
 - Open a Terminal, CMD shell, or PowerShell window and run the following:
 - `step ca bootstrap --ca-url https://step-ca.scinet.usda.gov --fingerprint adb703fd18f176937743b20228d52af7a705d63a0471cd67428660be5fd006bf `
-- `step ssh login –provisioner=keycloak` 
-- `step ssh config --set Provisioner=keycloak`
+- `step ssh config --set Provisioner=keycloak` 
+- `step ssh login`
 
 ### These commands will do the following:
 - Gets the initial cert from the certificate authority. 
