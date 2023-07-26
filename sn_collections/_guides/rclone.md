@@ -97,7 +97,7 @@ rclone config
 10. Type **y** for **y) Yes this is OK**
 11. Type **q** to quit
 
-**Please Note:** If your refresh token is expired, you will need to get a new one. This can be done using the same steps you used (above) to acquire the previous token. 
+**Please Note:** If your authentication token is expired, you will need to get a new one. This can be done using the same steps you used (above) to acquire the previous token. 
 
 
 ### Test
