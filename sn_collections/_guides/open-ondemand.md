@@ -1,6 +1,6 @@
 ---
 title: Open OnDemand Interface Guide
-description: Using Open OnDemand on Ceres
+description: Using Open OnDemand on the HPC
 # author: VRSC
 order_number: 40
 
@@ -20,6 +20,8 @@ subnav:
 
 ---
 ## Access
+If you are using Open OnDemand on the Atlas cluster, visit the [Atlas Open OnDemand Guide](https://www.hpc.msstate.edu/computing/atlas/ood.php).
+
 To access Open OnDemand on the Ceres cluster, go to [Ceres OpenOndemand](http://ceres-ood.scinet.usda.gov/)
 ![screenshot of Open OnDemand Ceres login page]({{ site.baseurl }}/assets/img/guides/access/ood/ceres-loginpage.png)
 The login page, titled SCINet Two Factor Login, prompts for your SCINet username and then your combined password and Google Authenticator code. If your password were `password` and your code were `123456`, your entry for this field would be:
