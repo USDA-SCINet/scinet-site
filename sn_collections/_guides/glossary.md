@@ -2,7 +2,7 @@
 title: SCINet Nomenclature
 description: A quick overview of some of the software, hardware, and confusing nomenclature
 categories: [Access]
-order_number: 50
+order_number: 30
 subnav:
   - title: SCINet vs. Ceres vs. Atlas
     url: '#scinet-vs-ceres-vs-atlas'
@@ -30,7 +30,7 @@ For more information on the HPC systems that SCINet offers, see the [Computer Sy
 
 ## Open OnDemand
 
-Open OnDemand is an intuitive, innovative, and interactive interface to remote computing resources. The key benefit for SCINet users is that it can be used on any web browser, including browsers on a mobile phone, to access Ceres. See the [Open OnDemand guide](https://scinet.usda.gov/guides/access/open-ondemand) for more information. 
+Open OnDemand is an intuitive, innovative, and interactive interface to remote computing resources. The key benefit for SCINet users is that it can be used on any web browser, including browsers on a mobile phone, to access Ceres. See the [Open OnDemand guide](https://scinet.usda.gov/guides/software/open-ondemand) for more information. 
 
 There are several interactive apps that can be run in Open OnDemand including Jupyter, [RStudio Server](https://scinet.usda.gov/guides/analysis/r-studio), [Geneious](https://scinet.usda.gov/guides/analysis/geneious), [CLC Genomics Workbench](https://scinet.usda.gov/guides/analysis/clc-workbench), and more. The desktop app allows a user to run any GUI software.
 

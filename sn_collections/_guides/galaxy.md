@@ -2,7 +2,8 @@
 title: Galaxy on SCINet
 description: Using Galaxy
 excerpt: Using Galaxy on SCINet
-categories: [Analysis]
+categories: [Software]
+order_number: 28
 
 #author: VRSC and Jordan Hoosman
 
