@@ -50,7 +50,8 @@ Delete your .ssh/known_hosts file OR run:
 `This process will remain the same for all GUI services.
  
 ### Installation Instructions:
- 
+
+- Step needs to be installed on your machine.
 - If you are on an ARS controlled laptop or workstation, this will need to be performed by CEC. They should be aware of the process. It may be in your software catalog. 
 - If you do need to perform the installation yourself, see: [https://smallstep.com/docs/step-cli/installation/](https://smallstep.com/docs/step-cli/installation/)
 
