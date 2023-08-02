@@ -6,7 +6,7 @@ order_number: 5
 categories: [Access]
 
 subnav:
-  - title: Step Based Access Via SSH
+  - title: Step-Based Access Via SSH
     url: '#step-based-access-via-ssh'
     subnav:
       - title: Installation Instructions
@@ -41,7 +41,7 @@ A video demonstration for changing your password can be found [here](https://www
 
 
 
-## Step Based Access Via SSH
+## Step-Based Access Via SSH
 
 **Please Note:** 
 If you previously manually created a ssh host key, you may need to delete it as the hosts will now have a new signed key.
