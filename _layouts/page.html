@@ -18,8 +18,9 @@ main:
   {% if page.table and page.table.position=="front" %}
   {% include table.html table=page.table %}
   {% endif %}
-
+  <div class="page-contents">
   {{ content }}
+  </div>
 
   {% if page.table and page.table.position=="back" %}
   {% include table.html table=page.table %}

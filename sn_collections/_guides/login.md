@@ -6,20 +6,22 @@ order_number: 5
 categories: [Access]
 
 subnav:
-  - title: Using ssh to Connect
-    url: '#using-ssh-to-connect'
+  - title: Step-Based Access Via SSH
+    url: '#step-based-access-via-ssh'
     subnav:
-      - title: From Windows 10
-        url: '#from-windows-10'
-      - title: From Older Windows Versions
-        url: '#from-older-windows-versions'
-      - title: From Mac and Linux
-        url: '#from-mac-and-linux'
-  - title: Password Requirements
-    url: '#password-requirements'
-  - title: Frequently Asked Questions
-    url: '#frequently-asked-questions'
-
+      - title: Installation Instructions
+        url: '#installation-instructions'
+      - title: After Step Installation  
+        url: '#after-step-installation' 
+      - title: Usage Instructions
+        url: '#usage-instructions'
+  - title:  Accessing GUI Based Services
+    url: '#accessing-gui-based-services'
+    subnav:
+      - title: Access Using LincPass  
+        url: '#accessing-using-lincpass' 
+      - title: Access Using YubiKey
+        url: '#accessing-using-yubikey'
 
 
 ---
@@ -28,152 +30,110 @@ subnav:
 
 All users should have received their login credentials in an email.  If you have not, please email the Virtual Research Support Core at [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=account%20access).
 
+**If you have not recieved a LincPass or YubiKey, please see the [Deprecated Login Procedures](/guides/access/legacy-login) page for instructions to access the HPC.**
+<!--excerpt--> 
+
 Before accessing various SCINet resources, new users need to ssh either to Ceres or Atlas cluster and change the temporary password. Note that home directories on Atlas are not created right away, so it is recommended to wait a day after receiving email with the credentials before logging to Atlas cluster.   
 
 A video demonstration for changing your password can be found [here](https://www.youtube.com/watch?v=Amhw2k5mftI). Please keep in mind that due to the recent password requirement change, the video is out of date. It will list more password requirements than necessary.  The current requirements are found below:
 1. AT LEAST 14 characters long
 2. Your last 24 passwords cannot be reused.
 
-<!--excerpt--> 
-
-## Using ssh to Connect
-
-### From Windows 10
-
-Windows 10 that is up to date has an ssh client in the Windows Power Shell. To use that client, click on the Start button and start typing "power". Select Windows PowerShell from the list.
-
-In the PowerShell window, you can type one of two options: 
-
-	1) ssh user.name@ceres.scinet.usda.gov (for Ceres Connections)
-	2) ssh user.name@atlas-login.hpc.msstate.edu (for Atlas Connections)
-
-NOTE: Be sure to replace “user.name” in both options above with your assigned username.
 
 
-It is also recommended to create a config file on your computer. You may do so using Notepad.  The file you create must be titled “config” with no extension for this method to work properly (i.e. “config” not “config.txt”). 
-	Note: Do not copy the code into the terminal itself, it must be in a separate file. 
+## Step-Based Access Via SSH
 
-Create a ~/.ssh/config file replacing USER.NAME with your actual username, all in lowercase.  To save this config file to your .ssh folder, you must save it to your user folder.  The path to the .ssh file is as follows: C>Users>(Your Account)>.ssh
+**Please Note:** 
+If you previously manually created a ssh host key, you may need to delete it as the hosts will now have a new signed key.
+Delete your .ssh/known_hosts file OR run:
+`ssh-keygen -R ceres.scinet.usda.gov 
+`This process will remain the same for all GUI services.
+ 
+### Installation Instructions:
 
-```bash
-Host ceres-login
-HostName ceres.scinet.usda.gov
-User USER.NAME
-TCPKeepAlive yes
-ServerAliveInterval 20
-ServerAliveCountMax 30
+- Step needs to be installed on your machine.
+- If you are on an ARS controlled laptop or workstation, this will need to be performed by CEC. They should be aware of the process. It may be in your software catalog. 
+- If you do need to perform the installation yourself, see: [https://smallstep.com/docs/step-cli/installation/](https://smallstep.com/docs/step-cli/installation/)
 
-Host atlas-login
-HostName atlas-login.hpc.msstate.edu
-User USER.NAME
-TCPKeepAlive yes
-ServerAliveInterval 20
-ServerAliveCountMax 30
+### After Step Installation:
+- Open a Terminal, CMD shell, or PowerShell window and run the following:
+- `step ca bootstrap --ca-url https://step-ca.scinet.usda.gov --fingerprint adb703fd18f176937743b20228d52af7a705d63a0471cd67428660be5fd006bf `
+- `step ssh config --set Provisioner=keycloak` 
+- `step ssh login`
+
+#### These commands will do the following:
+- Gets the initial cert from the certificate authority. 
+- Does an initial login to verify your credentials 
+- Sets up your ssh profile to simplify future logins 
+- This only needs to be done once. 
+- The second command updates your .ssh/config file. If you already have a complicated structure in there you may wish to review it. The changes are fine for most, but particularly if you already have ceres entries in yours there could be conflicts. 
+ 
+### Usage Instructions:
+- Please note, if you are using a YubiKey, please see the [Yubikey login instructions](#accessing-using-yubikey) 
+- Each morning on your first attempt to ssh to Ceres, you will see something like this: 
+
+	- Your default web browser should open automatically to the SCINet authentication page.  Choose USDA LincPass as your sign-in option. 
+![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/lincpass.png)
+
+- You will then go through a typical eAuth based login. Select login with PIV/CAC and enter your pin, see the image below for example.
+  
+![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/eAuth.png)
+
+- Now go through your usual eAuth based login. 
+	- Please Note: There could be complications here if its your first time.
+
+- Go back to your shell and you should see something like "CA: https://step-ca.scinet.usda.gov" followed by your regular login.
+  
+![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/step-ssh/login-success.png)
+
+After these steps, command line ssh works normally. The only different is that it will not prompt you for a password for the day (18 hours). 
+	Note: With the below examples, you will swap user.name for your own SCINet username.
 ```
-If you don’t want to use the config file method above, add the following title to the ssh command replacing USER.NAME with your actual username, all in lowercase.
-
-```bash
-ssh -o TCPKeepAlive=yes -o ServerAliveInterval=20 -o ServerAliveCountMax=30 USER.NAME@ceres.scinet.usda.gov
-```
-and
-
-```bash
-ssh -o TCPKeepAlive=yes -o ServerAliveInterval=20 -o ServerAliveCountMax=30 USER.NAME@atlas-login.hpc.msstate.edu
-```
-
-![screenshot of logging in]({{ site.baseurl }}/assets/img/guides/access/password.png)
-
-To paste from a clipboard into PowerShell, perform single right click with the mouse and then press Enter. Please see below for a detailed guide on changing your password. 
-
-_When Changing Your Temporary Password (Mandatory Prompt When First Connecting):_
-
-1. Enter either of the following:
-   * ssh user.name@ceres.scinet.usda.gov (preferrably you should attempt your login on Ceres first)
-   * ssh user.name@atlas-login.hpc.msstate.edu
-2. Enter the 6-digit verification code generated by the Google Authenticator app when prompted. 
-3. Enter your temporary password found in your welcome email when prompted for the password.
-4. When prompted for your “Current Password”, re-enter your **temporary password**. Do NOT enter a new password at this step.
-5. Enter your “new password” twice when prompted. 
-	Note: The new password requirements are listed below the Mac and Linux instructions. 
-
-After updating your password, you will be prompted to answer Yes or No to entering a cell phone. _It is strongly recommended to add a cell phone just in case you need to reset your Google Authenticator in the future._ Enter "y" and then enter your 10 digit cell phone number with no dashes or parenthesis, as shown in the image below. 
-
-![screenshot of cellphone entry]({{ site.baseurl }}/assets/img/guides/access/cellphone.png)
-
-### From Mac and Linux
-
-Open a terminal window. We recommend setting up a config file to make logging in easier and use settings to provide a more stable connection.  This can be done by creating a config file u sing the following code and then saving it to your .ssh file.  The file you create must be titled “config” for this method to work properly. 
-	Note: Do not copy the code into the terminal itself, it must be a separate file on your computer. 
-
-Create a ~/.ssh/config entry similar to this, replacing USER.NAME with your actual username, all in lowercase:
-```bash
-Host ceres-login
-HostName ceres.scinet.usda.gov
-User USER.NAME
-TCPKeepAlive yes
-ServerAliveInterval 20
-ServerAliveCountMax 30
-
-Host atlas-login
-HostName atlas-login.hpc.msstate.edu
-User USER.NAME
-TCPKeepAlive yes
-ServerAliveInterval 20
-ServerAliveCountMax 30
-```
-Note: To save this config file to your .ssh folder, you must save it to your user folder. However, the .ssh file is currently hidden to you. To reveal the hidden files, you will press and hold CMD + SHIFT + . (Period Key) when choosing a location to save your file. The .ssh file will now be visible for you to save the config file. 
-
-That will send a "keepalive" signal every 20 seconds and keep retrying for up to 30 failures. This also simplifies your login to just:
-
-`ssh ceres-login`
-or
-`ssh atlas-login`
-
-If you don’t want to use the config file method above, add the following title to the ssh command replacing USER.NAME with your actual username in lowercase.
-
-```bash
-ssh -o TCPKeepAlive=yes -o ServerAliveInterval=20 -o ServerAliveCountMax=30 USER.NAME@ceres.scinet.usda.gov
-```
-and
-
-```bash
-ssh -o TCPKeepAlive=yes -o ServerAliveInterval=20 -o ServerAliveCountMax=30 USER.NAME@atlas-login.hpc.msstate.edu
+ssh user.name@ceres.scinet.usda.gov 
+scp file1 file2 user.name@ceres.scinet.usda.gov:~ 
 ```
 
-After typing ssh command, enter the 6-digit code verification code generated by the Google Authenticator app when prompted for the Verification Code. __Note that when you type the code or the password, nothing will be shown on the screen.__ If system accepts the code it will prompt you for password. 
+### Notes and Limitations
 
-**Please Note:** If you are connected to the SCINet VPN, you will not be prompted to enter the Google Authenticator Code. If you make a mistake entering the code, you will be prompted to enter the verification code once more, but you must wait for a new code to be generated. 
+- If you use multiple profiles in Chrome, step will open a new window in whichever profile was used last.   If you end up in the wrong one just close it, do something in your work profile and rerun the ssh login command.  
+- Windows users will find most tools other than the built-in windows ssh command line tools no longer work. 
+- Mac and Linux users may have a bit more luck, but anything beyond command line tools probably won’t work anymore. 
+- For graphical file transfers globus is still the preferred method and will continue to work. 
+- After logging in via OIDC you will not have any automatic Kerberos tickets.  You will need to kinit if you need them. 
 
-![screenshot of logging in]({{ site.baseurl }}/assets/img/guides/access/password.png)
+If you have any questions or issues, please contact the VRSC at scinet_vrsc@usda.gov.
 
-_When Changing your Password (Mandatory Prompt when First Connecting):_
+## Accessing GUI Based Services
 
-1. Enter either of the following: $ ssh user.name@ceres.scinet.usda.gov OR ssh user.name@atlas-login.hpc.msstate.edu
-2. Enter the 6-digit verification code generated by the Google Authenticator app when prompted. 
-3. Enter your temporary password found in your welcome email when prompted for the password.
-4. When prompted for your “Current Password”, re-enter your temporary password.
-5. Enter your “new password” twice when prompted.    
-Note: The new password requirements are listed below. 
+This process will be the same for all GUI based SCINet Services. Please follow the instructions below.  If you have further questions or issues, please email [scinet_vrsc@usda.gov](scinet_vrsc@usda.gov). 
+ 
+### Accessing Using LincPass
 
-After updating your password, you will be prompted to answer Yes or No to entering a cell phone. _It is strongly recommended to add a cell phone just in case you need to reset your Google Authenticator in the future._ Enter "y" and then enter your cellphone number with no dashes or parenthesis, as shown in the image below. 
+If you are a LincPass holder, you will only select the option of "USDA LincPass" when logging into GUI services such as Open OnDemand, Galaxy, and the SCINet Forum. 
 
-![screenshot of cellphone entry]({{ site.baseurl }}/assets/img/guides/access/cellphone.png)
+After selcting this, you will be automatically directed to login using your usual eAuth based login.
 
-## Password Requirements
+![]({{ site.baseurl }}/assets/img/guides/access/sign-on.png)
+![]({{ site.baseurl }}/assets/img/guides/access/eAuth.png)
+ 
+### Accessing Using YubiKey
 
-1. AT LEAST 14 characters long
-2. Your last 24 passwords cannot be reused.
+- When logging in, you will enter your SCINet credentials (username and password) and click “Sign In”.
+![]({{ site.baseurl }}/assets/img/guides/access/yubikey-login/login1.png)
 
-## Frequently Asked Questions
+- You will be directed to a new screen showing your available security keys. You will select "Sign in with Security Key".
+![]({{ site.baseurl }}/assets/img/guides/access/yubikey-login/login2.png)
 
-**It didn’t ask me for the Verification Code from Google Authenticator. What do I do?**  
-If you are connected to the VPN, the code will be waived, no need to worry about entering it. 
+- A pop up will appear asking you if you would like to use your passkey. You will select "Use a different device" in the bottom left corner. 
+![]({{ site.baseurl }}/assets/img/guides/access/yubikey-login/login3.png)
 
-**I can’t find the .ssh folder when saving my config file. Where is it located?**   
-The .ssh file is usually hidden to you.  You must show all hidden files when saving your file before you will be able to save to the .ssh file. 
+- The next pop-up will have three options. You will select "USB security key".
+![]({{ site.baseurl }}/assets/img/guides/access/yubikey-login/login4.png)
 
-**My password/Google Authenticator Verification Code isn’t showing up when I type it. What is wrong?**   
-There is nothing wrong with your terminal, the password and GA Verification Code will never show when you type. That is why it is important to be careful when entering the information. For passwords, copy + paste are extremely helpful to avoid mistakes. 
+- The final pop up will instruct you to insert your security key and touch it.  You will now insert your USB YubiKey (if you haven't already) and then touch it. This will then automatically log you into the service you were attempting to access. 
+![]({{ site.baseurl }}/assets/img/guides/access/yubikey-login/login5.png)
 
-**After creating my account and changing my temporary password, I was prompted for my cell phone. Should I include this?**   
-It is highly recommended to include your cell phone when setting up your account.  This will be used if you need to perform a self-reset on your Google Authenticator code.  Without the cell phone in your account, you may need to reapply for a SCINet account. 
+- This step will remain the same for all GUI-based services such as Ceres OpenOnDemand, Galaxy, the SCINet Forum, and others. 
+
+If you need assistance with this login process, please email your questions to scinet_vrsc@usda.gov.
+

@@ -31,9 +31,6 @@ subnav:
   - title: SCINet HPC Resources
     url: /guides/resources
     internal: true
-  - title: Multi-Factor Authentication
-    url: /guides/access/mfa
-    internal: true
   - title: Logging In
     url: /guides/access/login
     internal: true
@@ -52,7 +49,7 @@ subnav:
     shows_list: true
     categories: [Software]
   - title: Open OnDemand Interface
-    url: /guides/access/open-ondemand
+    url: /guides/software/open-ondemand
     internal: true
 
 
