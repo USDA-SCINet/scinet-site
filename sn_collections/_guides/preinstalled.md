@@ -29,7 +29,7 @@ Software | information
 [CLC Server]({{ site.baseurl }}/guides/analysis/clc-workbench) | SCINet has a license key to [CLC Server](https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/enterprise-ngs-solutions/qiagen-clc-genomics-server/)
 [Geneious]({{ site.baseurl }}/guides/analysis/geneious) |SCINet has a license key to Geneious
 [Rstudio]({{ site.baseurl }}/guides/analysis/r-studio) | SCINet runs a R studio Server
-Jupyter |  [Project Jupyter](https://jupyter.org/) notebooks and Lab can be run on Ceres
+[Jupyter]({{ site.baseurl }}/guides/analysis/jupyter) |  [Project Jupyter](https://jupyter.org/) notebooks and Lab can be run on Ceres
 
 
 ## Command-line Software on SCINet Clusters
