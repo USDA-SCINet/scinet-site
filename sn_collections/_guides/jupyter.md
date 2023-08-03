@@ -414,9 +414,9 @@ Or numbered lists:
 
 ## Links and Images
 
-You can create links: [OpenAI](https://openai.com)
+You can create links: [SCINet](https://scinet.usda.gov)
 
-And display images: ![OpenAI Logo](https://openai.com/logo.png)
+And display images: ![SCINet logo](https://scinet.usda.gov/assets/img/site/usda-logo-color.svg)
 
 ## HTML
 
@@ -469,7 +469,7 @@ With the Terminal in JupyterLab, you have the ability to immediately execute and
 
 ![screenshot of working in a terminal]({{ site.baseurl }}/assets/img/guides/analysis/jupyter/terminal.png)
 
-**Use a Terminal in Jupyter like when you log in via SHH:**
+**Use a Terminal in Jupyter like when you log in via SSH:**
 * execute Bash commands:
 ```
 pwd
