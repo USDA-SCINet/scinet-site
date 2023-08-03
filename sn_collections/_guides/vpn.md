@@ -16,7 +16,7 @@ summarybox:
   header: Guide to the SCINet VPN
   text: 'SCINet provides a VPN to access resouces that require a direct connection or a graphical interface and cannot be made public. <br>  Software is usually required to access the VPN.  We recommend Cisco AnyConnect if that is availbible, and OpenConnect if it is not.'
   list:
-    - point: You need to setup two factor authentication before using SCINet VPN. <a href="guide/multifactor">Follow the instructions here.</a>
+    - point: You need to setup two factor authentication before using SCINet VPN. <a href="legacy-login#multifactor-authentication">Follow the instructions here.</a>
     - point: The address for SCINet VPN is now <b>ocvpn.scinet.usda.gov</b>
 
 ---
