@@ -21,7 +21,7 @@ subnav:
 apps:
   - title: Jupyter
     url: /guides/analysis/jupyter
-    internal:true
+    internal: true
   - title: RStudio Server
     url: /guides/analysis/r-studio
     internal: true
