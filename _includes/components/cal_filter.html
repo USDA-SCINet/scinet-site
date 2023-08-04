@@ -125,7 +125,7 @@
                 mylist.push(provider.toUpperCase())
             };
             if (topic != "") {
-                mylist.push(topic.toUpperCase())
+                mylist.push(topic.toUpperCase().replace("-", " "))
             };
 
             return current+mylist.join(", ");
