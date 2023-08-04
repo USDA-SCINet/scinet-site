@@ -74,7 +74,7 @@
 
         let type = types.value.toLowerCase(),
             provider = providers.value.toLowerCase(),
-            topic = topics.value.toLowerCase();
+            topic = topics.value.toLowerCase().replace(" ", "-");
 
         filterList(type, provider, topic);
     };
