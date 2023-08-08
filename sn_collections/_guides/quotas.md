@@ -22,7 +22,7 @@ $ my_quotas
 
 If users need more storage than what is available in the home directory, they should visit the [Request a Project Storage]({{ site.baseurl }}/support/request#storage-request) page. Several users may work on the same project and share the same project directory.
 
-If a project manager or PI requires more storage for an existing project, they should visit the [Request Quota Increase](https://scinet.usda.gov/support/request#to-request-a-quota-increase-for-an-existing-scinet-project-allocation) page, 
+If a project manager or PI requires more storage for an existing project, they should visit the [Request Quota Increase](https://scinet.usda.gov/support/request#to-request-a-quota-increase-for-an-existing-scinet-project-allocation) page. 
 
 Project directories are located in the 2.3PB Lustre space that is mounted on all nodes as /lustre/project and is also accessible as /project. Directories in /project are not backed up.
 
