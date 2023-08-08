@@ -13,24 +13,24 @@ end_date: 2022-09-29
 
 # post_type: calendar
 
-hero:
-  callout:
-    alt: "Geospatial Research Working Group"
-    text: "Harnessing SCINet computational resources in geospatial data science to further sustainable and intensified agriculture"
-    image:
-      src: /geospatial.svg
-      alt: "Globe Image"
-  button:
-    url: /research/working-groups/geospatial
-    text: Visit the Working Group
-  container: full
+# hero:
+#  callout:
+#    alt: "Geospatial Research Working Group"
+#    text: "Harnessing SCINet computational resources in geospatial data science to further sustainable and intensified agriculture"
+#    image:
+#      src: /geospatial.svg
+#      alt: "Globe Image"
+#  button:
+#    url: /research/working-groups/geospatial
+#    text: Visit the Working Group
+#  container: full
 
 
 
 
 ---
 
-The SCINet Geospatial Research Working Group’s Annual Workshop is set to take place September 25-29, 2023. This year’s theme is “Machine Learning and Deep Learning with Geospatial Data” and will feature lightning talks, interactive tutorials, and community discussions around research topics. If you’re interested in attending and joining our working group, please [fill out this quick survey](https://forms.office.com/g/L1aZmGdu0R) or reach out directly to leads [Heather Savoy and Amy Hudson](mailto:heather.savoy@usda.gov,amy.hudson@usda.gov?subject=SCINet%20Geospatial%20Working%20Group).<!--excerpt--> Recordings of previous trainings from the working group are available on the [SCINet/AI-COE Training & Workshops channel](https://web.microsoftstream.com/channel/850eebde-726c-4a15-aa76-73873f934a11), including last year’s Annual Workshop sessions and the [June 2023 presentation on the Geospatial Data Act of 2018](https://web.microsoftstream.com/video/63d80d1c-ba15-43f6-994b-40b09370e3f6).   
+The SCINet Geospatial Research Working Group’s Annual Workshop is set to take place September 25-29, 2023. This year’s theme is “Machine Learning and Deep Learning with Geospatial Data” and will feature lightning talks, interactive tutorials, and community discussions around research topics. If you’re interested in attending and joining our working group, please [fill out this quick survey](https://forms.office.com/g/L1aZmGdu0R) or reach out directly to leads [Heather Savoy and Amy Hudson](mailto:heather.savoy@usda.gov,amy.hudson@usda.gov?subject=SCINet%20Geospatial%20Working%20Group).<!--excerpt-->   
 
 ## Workshop Itenerary
 
