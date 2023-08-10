@@ -20,13 +20,24 @@ filter:
   external: true
 
 collect_list: 
+  - title: Python in Jupyter
+    url: https://web.microsoftstream.com/video/cf3179eb-eb91-4db8-b8aa-062db5a769b0
+    date: 2023-7-13
+    author: Aleksandra Badaczewska
+    excerpt: "Alex presented on how to use Jupyter as a Python coding environment"
+    details_title: "Tutorial Materials"
+    details:
+      - url: "https://usdagcc.sharepoint.com/:p:/s/REE-ARS-SCINetOffice/EYMy_7xmJ-ZNvGMu9CC1CVEBmlFvfLKLK3W8SrynTBvKvQ?e=Ij1T8k"
+        text: Presentation slides
+        external: true
+        
   - title: Getting started with Python programming
     date: 2023-6-1
     author: Aleksandra Badaczewska
     excerpt: "Alex presented on the fundamentals of getting started with python programming." 
     details_title: "Tutorial Materials:"
     details:
-      - url: "https://usdagcc.sharepoint.com/:p:/r/sites/REE-ARS-SCINetOffice/Shared%20Documents/Apps/webstie/scinet_corner/SCINet_Jun23-Python_getting_started-Alex.pptx?d=w4402eb4c193f46b696d6ec464745f060&csf=1&web=1&e=bYNEo7"
+      - url: "https://usdagcc.sharepoint.com/:p:/s/REE-ARS-SCINetOffice/EUzrAkQ_GbZGltbsRkdF8GABGxYSc_3maC18Uf01YKbj8Q?e=VA8StS"
         text: Presentation slides
         external: true
       
@@ -43,7 +54,7 @@ collect_list:
       - url: https://usdagcc.sharepoint.com/:u:/s/REE-ARS-SCINetOffice/ETk0Y29bbbdHgr-aLRDKNugB6xW8CGraRtjgHlCoiCmkrg?e=VxN4vy
         text: R markdown script (Rmd)
         external: true
-      - url: https://usdagcc.sharepoint.com/:x:/r/sites/REE-ARS-SCINetOffice/_layouts/15/Doc.aspx?sourcedoc=%7B64296B68-4D44-4CD3-A104-6DFB8888AA5B%7D&file=up_down_gene_numbers.csv&action=default&mobileredirect=true
+      - url: https://usdagcc.sharepoint.com/:x:/s/REE-ARS-SCINetOffice/EWhrKWRETdNMoQRt-4iIqlsBjJMvM-DYDCLIgoZkIuR34A?e=EHmfLl
         text: up_down_gene_numbers.csv
         external: true
   
