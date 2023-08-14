@@ -51,20 +51,34 @@ Delete your .ssh/known_hosts file OR run:
  
 ### Installation Instructions:
 
+- OpenSSH needs to be installed.  This is standard on recent Windows 10 and 11 installs. However your local adminmay have removed or restricted access to it.  Check by running "ssh" in a PS window.  You should get Usage instrctions.
+- ssh-agent needs to to running as a system service. This has to be doone as an administator:
+```
+# By default the ssh-agent service is disabled. Configure it to start automatically.
+# Make sure you're running as an Administrator.
+Get-Service ssh-agent | Set-Service -StartupType Automatic
+
+# Start the service
+Start-Service ssh-agent
+
+# This should return a status of Running
+Get-Service ssh-agent
+```
 - Step needs to be installed on your machine.
-- If you are on an ARS controlled laptop or workstation, this will need to be performed by CEC. They should be aware of the process. 
-- If you do need to perform the installation yourself, see: [https://smallstep.com/docs/step-cli/installation/](https://smallstep.com/docs/step-cli/installation/). We recommend the winget installer, we've had the best lusk with that. Please be aware that you will only be able to complete the installation yourself if you have admin rights (i.e. you will have admin rights on your home machine rather than an ARS controlled machine). 
+- If you are on an ARS controlled laptop or workstation, again this will need to be performed by CEC. They should be aware of the process. 
+- If you do need to perform the installation yourself, see: [https://smallstep.com/docs/step-cli/installation/](https://smallstep.com/docs/step-cli/installation/). We recommend the winget installer, we've had the best lusk with that. Again, please be aware that you will only be able to complete the installation yourself if you have admin rights (i.e. you will have admin rights on your home machine rather than an ARS controlled machine). 
 
 ### After Step Installation:
 - Open a Terminal, CMD shell, or PowerShell window and run the following:
 - `step ca bootstrap --ca-url https://step-ca.scinet.usda.gov --fingerprint adb703fd18f176937743b20228d52af7a705d63a0471cd67428660be5fd006bf `
-- `step ssh config --set Provisioner=keycloak --set User=scinetuser.name` 
+- `step ssh config --set Provisioner=keycloak --set User=scinetuser.name`
+  - If the step config command fails ssh-agent probably isnt running.  See instructions above. 
 
 #### These commands will do the following:
 - Gets the initial cert from the certificate authority. 
 - Sets up your ssh profile to simplify future logins
 
-This only needs to be done once. 
+These commands only need to be done once. 
 The second command updates your .ssh/config file. If you already have a complicated structure in there you may wish to review it. The changes are fine for most, but particularly if you already have ceres entries in yours there could be conflicts. 
  
 ### Usage Instructions:
