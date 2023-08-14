@@ -53,25 +53,23 @@ Delete your .ssh/known_hosts file OR run:
 
 - Step needs to be installed on your machine.
 - If you are on an ARS controlled laptop or workstation, this will need to be performed by CEC. They should be aware of the process. 
-- If you do need to perform the installation yourself, see: [https://smallstep.com/docs/step-cli/installation/](https://smallstep.com/docs/step-cli/installation/). Please be aware that you will only be able to complete the installation yourself if you have admin rights (i.e. you will have admin rights on your home machine rather than an ARS controlled machine). 
+- If you do need to perform the installation yourself, see: [https://smallstep.com/docs/step-cli/installation/](https://smallstep.com/docs/step-cli/installation/). We recommend the winget installer, we've had the best lusk with that. Please be aware that you will only be able to complete the installation yourself if you have admin rights (i.e. you will have admin rights on your home machine rather than an ARS controlled machine). 
 
 ### After Step Installation:
 - Open a Terminal, CMD shell, or PowerShell window and run the following:
 - `step ca bootstrap --ca-url https://step-ca.scinet.usda.gov --fingerprint adb703fd18f176937743b20228d52af7a705d63a0471cd67428660be5fd006bf `
 - `step ssh config --set Provisioner=keycloak --set User=scinetuser.name` 
-- `step ssh login`
-	- When asked "What provisioner key do you want to use?" you will use the arrow keys to navigate down and select "keycloak (OIDC) [client: step-ca]".
 
 #### These commands will do the following:
 - Gets the initial cert from the certificate authority. 
-- Does an initial login to verify your credentials 
-- Sets up your ssh profile to simplify future logins 
-- This only needs to be done once. 
-- The second command updates your .ssh/config file. If you already have a complicated structure in there you may wish to review it. The changes are fine for most, but particularly if you already have ceres entries in yours there could be conflicts. 
+- Sets up your ssh profile to simplify future logins
+
+This only needs to be done once. 
+The second command updates your .ssh/config file. If you already have a complicated structure in there you may wish to review it. The changes are fine for most, but particularly if you already have ceres entries in yours there could be conflicts. 
  
 ### Usage Instructions:
 - Please note, if you are using a YubiKey, please see the [Yubikey login instructions](#accessing-using-yubikey) 
-- Each morning on your first attempt to ssh to Ceres, you will see something like this: 
+- Each morning on your first attempt to ssh to Ceres with ```ssh ceres.scinet.usda.gov```, you will see something like this: 
 
 	- Your default web browser should open automatically to the SCINet authentication page.  Choose USDA LincPass as your sign-in option. 
 ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/lincpass.png)
@@ -81,13 +79,13 @@ Delete your .ssh/known_hosts file OR run:
 ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/eAuth.png)
 
 - Now go through your usual eAuth based login. 
-	- Please Note: There could be complications here if its your first time.
+	- Please Note: There could be complications here if its your first time using eAuth.
 
 - Go back to your shell and you should see something like "CA: https://step-ca.scinet.usda.gov" followed by your regular login.
   
 ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/step-ssh/login-success.png)
 
-After these steps, command line ssh works normally. The only different is that it will not prompt you for a password for the day (18 hours). 
+After these steps, command line ssh works normally. The only different is that it will not prompt you for a password for the day (16 hours). 
 	Note: With the below examples, you will swap user.name for your own SCINet username.
 ```
 ssh user.name@ceres.scinet.usda.gov 
