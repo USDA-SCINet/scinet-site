@@ -30,7 +30,7 @@ subnav:
 
 All users should have received their login credentials in an email.  If you have not, please email the Virtual Research Support Core at [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=account%20access).
 
-**If you have not recieved a LincPass or YubiKey, please see the [Deprecated Login Procedures](/guides/access/legacy-login) page for instructions to access the HPC.**
+**Until Further Notice: please see the [Deprecated Login Procedures](/guides/access/legacy-login) page for instructions to access the HPC.**
 <!--excerpt--> 
 
 Before accessing various SCINet resources, new users need to ssh either to Ceres or Atlas cluster and change the temporary password. Note that home directories on Atlas are not created right away, so it is recommended to wait a day after receiving email with the credentials before logging to Atlas cluster.   
@@ -60,6 +60,7 @@ Delete your .ssh/known_hosts file OR run:
 - `step ca bootstrap --ca-url https://step-ca.scinet.usda.gov --fingerprint adb703fd18f176937743b20228d52af7a705d63a0471cd67428660be5fd006bf `
 - `step ssh config --set Provisioner=keycloak` 
 - `step ssh login`
+	- When asked "What provisioner key do you want to use?" you will use the arrow keys to navigate down and select "keycloak (OIDC) [client: step-ca]".
 
 #### These commands will do the following:
 - Gets the initial cert from the certificate authority. 
