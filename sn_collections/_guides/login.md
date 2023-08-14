@@ -30,7 +30,7 @@ subnav:
 
 All users should have received their login credentials in an email.  If you have not, please email the Virtual Research Support Core at [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=account%20access).
 
-**Until Further Notice: please see the [Deprecated Login Procedures](/guides/access/legacy-login) page for instructions to access the HPC.**
+**If you have not recieved a LincPass or YubiKey, please see the [Deprecated Login Procedures](/guides/access/legacy-login) page for instructions to access the HPC.**
 <!--excerpt--> 
 
 Before accessing various SCINet resources, new users need to ssh either to Ceres or Atlas cluster and change the temporary password. Note that home directories on Atlas are not created right away, so it is recommended to wait a day after receiving email with the credentials before logging to Atlas cluster.   
