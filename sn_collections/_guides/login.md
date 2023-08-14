@@ -60,6 +60,7 @@ Delete your .ssh/known_hosts file OR run:
 - `step ca bootstrap --ca-url https://step-ca.scinet.usda.gov --fingerprint adb703fd18f176937743b20228d52af7a705d63a0471cd67428660be5fd006bf `
 - `step ssh config --set Provisioner=keycloak --set User=scinetuser.name` 
 - `step ssh login`
+	- When asked "What provisioner key do you want to use?" you will use the arrow keys to navigate down and select "keycloak (OIDC) [client: step-ca]".
 
 #### These commands will do the following:
 - Gets the initial cert from the certificate authority. 
