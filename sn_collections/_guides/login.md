@@ -51,7 +51,7 @@ Delete your .ssh/known_hosts file OR run:
  
 ### Installation Instructions:
 
-- OpenSSH needs to be installed.  This is standard on recent Windows 10 and 11 installs. However your local adminmay have removed or restricted access to it.  Check by running "ssh" in a PS window.  You should get Usage instrctions.
+- OpenSSH needs to be installed.  This is standard on recent Windows 10 and 11 installs. However your local admin may have removed or restricted access to it.  Check by running "ssh" in a PS window.  You should get Usage instrctions.
 - ssh-agent needs to to running as a system service. This has to be doone as an administator:
 ```
 # By default the ssh-agent service is disabled. Configure it to start automatically.
