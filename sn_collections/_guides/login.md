@@ -51,8 +51,10 @@ Delete your .ssh/known_hosts file OR run:
  
 ### Installation Instructions:
 
-- OpenSSH needs to be installed.  This is standard on recent Windows 10 and 11 installs. However your local adminmay have removed or restricted access to it.  Check by running "ssh" in a PS window.  You should get Usage instrctions.
-- ssh-agent needs to to running as a system service. This has to be done as an administator:
+- OpenSSH needs to be installed.  This is standard on recent Windows 10 and 11, MacOS, and Linux installs. However your local admin may have removed it or restricted access to it.  Check by running "ssh" in a PSor terminal  window.  You should get Usage instrctions.
+- ssh-agent needs to to running as a system service.
+  - For Linux and MacOS this is probably already running.
+  - For Windows this has to be enabled by an administator, it is not on by default even if openssh is installed.  To enable it an administor must:
 
 ```
 # By default the ssh-agent service is disabled. Configure it to start automatically.
@@ -66,9 +68,12 @@ Start-Service ssh-agent
 Get-Service ssh-agent
 ```
 
-- Step needs to be installed on your machine.
-- If you are on an ARS controlled laptop or workstation, again this will need to be performed by CEC. They should be aware of the process. 
-- If you do need to perform the installation yourself, see: [https://smallstep.com/docs/step-cli/installation/](https://smallstep.com/docs/step-cli/installation/). We recommend the winget installer, we've had the best lusk with that. Again, please be aware that you will only be able to complete the installation yourself if you have admin rights (i.e. you will have admin rights on your home machine rather than an ARS controlled machine). 
+#### Step needs to be installed on your machine.
+- If you are on a USDA controlled Windows laptop or workstation, again this will need to be performed by CEC. They should be aware of the process. 
+- If you do need to perform the installation yourself, see: [https://smallstep.com/docs/step-cli/installation/](https://smallstep.com/docs/step-cli/installation/).
+  - For windows we recommend the winget installer, we've had the best lusk with that. Again, please be aware that you will only be able to complete the installation yourself if you have admin rights (i.e. you will have admin rights on your home machine rather than an USDA controlled machine.)
+  - For MacOS the instrcutions are more straightforward and can be done by the user without admin access.
+  - Linux will require root/sudo if you want to use the system packager rpm,deb,pacman. But can be done in userspace it you just download the binary directly.
 
 ### After Step Installation:
 - Open a Terminal, CMD shell, or PowerShell window and run the following:
