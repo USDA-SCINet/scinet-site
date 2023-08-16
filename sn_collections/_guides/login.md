@@ -51,8 +51,9 @@ Delete your .ssh/known_hosts file OR run:
  
 ### Installation Instructions:
 
-- OpenSSH needs to be installed.  This is standard on recent Windows 10 and 11 installs. However your local admin may have removed or restricted access to it.  Check by running "ssh" in a PS window.  You should get Usage instrctions.
-- ssh-agent needs to to running as a system service. This has to be doone as an administator:
+- OpenSSH needs to be installed.  This is standard on recent Windows 10 and 11 installs. However your local adminmay have removed or restricted access to it.  Check by running "ssh" in a PS window.  You should get Usage instrctions.
+- ssh-agent needs to to running as a system service. This has to be done as an administator:
+
 ```
 # By default the ssh-agent service is disabled. Configure it to start automatically.
 # Make sure you're running as an Administrator.
@@ -64,6 +65,7 @@ Start-Service ssh-agent
 # This should return a status of Running
 Get-Service ssh-agent
 ```
+
 - Step needs to be installed on your machine.
 - If you are on an ARS controlled laptop or workstation, again this will need to be performed by CEC. They should be aware of the process. 
 - If you do need to perform the installation yourself, see: [https://smallstep.com/docs/step-cli/installation/](https://smallstep.com/docs/step-cli/installation/). We recommend the winget installer, we've had the best lusk with that. Again, please be aware that you will only be able to complete the installation yourself if you have admin rights (i.e. you will have admin rights on your home machine rather than an ARS controlled machine). 
@@ -101,6 +103,7 @@ The second command updates your .ssh/config file. If you already have a complica
 
 After these steps, command line ssh works normally. The only different is that it will not prompt you for a password for the day (16 hours). 
 	Note: With the below examples, you will swap user.name for your own SCINet username.
+
 ```
 ssh user.name@ceres.scinet.usda.gov 
 scp file1 file2 user.name@ceres.scinet.usda.gov:~ 
