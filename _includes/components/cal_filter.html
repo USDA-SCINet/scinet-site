@@ -103,12 +103,21 @@
         document.getElementById("current-filters").innerHTML = mylist;
     };
 
+    function isAlphanumeric(str) {
+        return /^[a-zA-Z0-9]+$/.test(str);
+    }
+
     function format(val) {
-        if (val == null) {
-            return ""
+        if(isAlphanumeric(val)){
+            if (val == null) {
+                return ""
+            } else {
+                return encodeURIComponent(val.toString().toLowerCase())
+            }
         } else {
-            return val.toString().toLowerCase()
+            return "SEARCH VALUE FAILED"
         }
+
     };
 
     function formatText(type, provider, topic) {
