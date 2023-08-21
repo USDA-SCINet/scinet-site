@@ -77,8 +77,13 @@ main:
 <h5>Further detail for each outage is posted in the announcements below if availible.</h5>
 {% endif %}
 
-{% endif %}
+{% for _down in downtime reversed %}
+  {% include components/collection-downtime.html post=_down %}
+{% endfor %}
+
+{% else %}
 
 {% for _down in all_downtime reversed %}
   {% include components/collection-downtime.html post=_down %}
-{% endfor %}
+  {% endfor %}
+{% endif %}
