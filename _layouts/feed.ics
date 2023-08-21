@@ -81,8 +81,7 @@ METHOD:PUBLISH{% for post in feed_set %}
 BEGIN:VEVENT{% capture newtitle %}{% if post.alt-title == "TRUE" %}{% if post.reason %}{{ post.reason }} - {% endif %}{{ post.systems }}{% if post.locations %} - {{ post.locations }}{% endif %}{% unless post.end_date %} - {{ post.date | date: "%A, %B %-d"}}{% endunless %}{% unless post.type == 'archive' %} - {{ postyr }}{% endunless %}{% else %}{{ post.title }}{% endif %}{% endcapture %}{% capture fulltitle %}SCINet: {{ newtitle }}{% endcapture %}
 UID:{%- capture uid -%}{{site.url}}{{site.baseurl}}{% if post.link %}{{post.link}}{% else %}{{ page.basepage }}#{{ newtitle | slugify }}{% endif %}{%- endcapture -%}{% include feed.html content=uid %}{% capture tzid %}{% if post.tzid %};TZID={{ post.tzid }}{% endif %}{% endcapture %}{% capture endtzid %}{% unless post.tzid %}Z{% endunless %}{% endcapture %}
 DTSTAMP{{ tzid }}:{{ post.date | date: "%Y%m%dT000000" }}{{ endtzid }}{% if post.date-start %}
-DTSTART{{ tzid }}:{{ post.date-start | date: "%Y%m%dT%H%M00" }}{{ endtzid }}{% elsif post.end_date or post.duration %}
-DTSTART{{ tzid }}:{{ post.date | date: "%Y%m%dT%H%M00" }}{{ endtzid }}{% else %}
+DTSTART{{ tzid }}:{{ post.date-start | date: "%Y%m%dT%H%M00" }}{{ endtzid }}{% else %}
 DTSTART:{{ post.date | date: "%Y%m%d" }}{% endif %}{% if post.duration %}
 DURATION:{{ post.duration }} {% elsif post.end_date %}
 DTEND{{ tzid }}:{{ post.end_date | date: "%Y%m%dT%H%M00" }}{{ endtzid }}{% else %}
