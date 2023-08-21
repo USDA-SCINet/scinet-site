@@ -1,37 +1,94 @@
 ---
 layout: none
 ---
-BEGIN:VCALENDAR{%- assign sitedate = site.time | date: "%s" %}{%- assign sitetime = sitedate | minus: 86400 %}{%- assign sitetime = sitetime | date_to_xmlschema %}{%- assign all_downtime = site.data.tables.downtime.downtime %}{%- assign feed_set = '' | split: '' %}{%- for _down in all_downtime %}{%- assign datetime = _down.date | date_to_xmlschema %}{%- if datetime >= sitetime %}{%- assign feed_set = feed_set | push: _down %}{%- endif %}{%- endfor %}
+BEGIN:VCALENDAR{%- assign sitedate = site.time | date: "%s" %}{%- assign sitetime = sitedate | minus: 86400 %}{%- assign sitetime = sitetime | date_to_xmlschema %}{%- assign all_downtime = site.downtime %}{%- assign feed_set = '' | split: '' %}{%- for _down in all_downtime %}{%- assign datetime = _down.date | date_to_xmlschema %}{%- if datetime >= sitetime %}{%- assign feed_set = feed_set | push: _down %}{%- endif %}{%- endfor %}
 VERSION:2.0
 PRODID:{%- capture proid -%}-//{{site.title}}//{{site.url}}//{{page.title}}//EN{%- endcapture -%}{% include feed.html content=proid %}
 CALSCALE:GREGORIAN
 BEGIN:VTIMEZONE
-TZID:America/New_York
+TZID:America/Chicago
+X-LIC-LOCATION:America/Chicago
 BEGIN:STANDARD
-DTSTART:16011104T020000
-RRULE:FREQ=YEARLY;BYDAY=1SU;BYMONTH=11
-TZOFFSETFROM:-0400
-TZOFFSETTO:-0500
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=-1SU;BYMONTH=10
 END:STANDARD
 BEGIN:DAYLIGHT
-DTSTART:16010311T020000
-RRULE:FREQ=YEARLY;BYDAY=2SU;BYMONTH=3
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700405T020000
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=1SU;BYMONTH=4
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VTIMEZONE
+TZID:America/Denver
+X-LIC-LOCATION:America/Denver
+BEGIN:STANDARD
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0700
+TZNAME:MST
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=-1SU;BYMONTH=10
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0600
+TZNAME:MDT
+DTSTART:19700405T020000
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=1SU;BYMONTH=4
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VTIMEZONE
+TZID:America/New_York
+X-LIC-LOCATION:America/New_York
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=-1SU;BYMONTH=10
+END:STANDARD
+BEGIN:DAYLIGHT
 TZOFFSETFROM:-0500
 TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:19700405T020000
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=1SU;BYMONTH=4
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VTIMEZONE
+TZID:America/Vancouver
+X-LIC-LOCATION:America/Vancouver
+BEGIN:STANDARD
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0800
+TZNAME:PST
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=-1SU;BYMONTH=10
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0800
+TZOFFSETTO:-0700
+TZNAME:PDT
+DTSTART:19700405T020000
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=1SU;BYMONTH=4
 END:DAYLIGHT
 END:VTIMEZONE
 METHOD:PUBLISH{% for post in feed_set %}
-BEGIN:VEVENT{% if post.title %}{% assign newtitle = post.title | prepend: "SCINet: " %}{% else %}{% capture newtitle %}SCINet: {% if post.reason %}{{ post.reason }} - {% endif %}{{ post.systems }} - {{ post.date | date: "%A, %B %-d" }}{% unless post.type == 'archive' %} - {{ post.date | date: "%Y" }}{% endunless %}{% endcapture %}{% endif %}
-UID:{%- capture uid -%}{{site.url}}{{site.baseurl}}{% if post.url %}{{post.url}}{% else %}{{ page.basepage }}#{{ newtitle | slugify }}{% endif %}{%- endcapture -%}{% include feed.html content=uid %}
-DTSTAMP:{{ post.date | date: "%Y%m%dT000000Z" }}{% if post.date-start %}
-DTSTART;TZID=America/New_York:{{ post.date-start | date: "%Y%m%dT%H%M00" }}{% elsif post.end_date or post.duration %}
-DTSTART;TZID=America/New_York:{{ post.date | date: "%Y%m%dT%H%M00" }}{% else %}
-DTSTART:{{ post.date | date: "%Y%m%d" }}{% endif %}{% if post.end_date %}
-DTEND;TZID=America/New_York:{{ post.end_date | date: "%Y%m%dT%H%M00" }}{% elsif post.duration %}
-DURATION:{{ post.duration }}{% else %}
+BEGIN:VEVENT{% capture newtitle %}{% if post.alt-title == "TRUE" %}{% if post.reason %}{{ post.reason }} - {% endif %}{{ post.systems }}{% if post.locations %} - {{ post.locations }}{% endif %}{% unless post.end_date %} - {{ post.date | date: "%A, %B %-d"}}{% endunless %}{% unless post.type == 'archive' %} - {{ postyr }}{% endunless %}{% else %}{{ post.title }}{% endif %}{% endcapture %}{% capture fulltitle %}SCINet: {{ newtitle }}{% endcapture %}
+UID:{%- capture uid -%}{{site.url}}{{site.baseurl}}{% if post.link %}{{post.link}}{% else %}{{ page.basepage }}#{{ newtitle | slugify }}{% endif %}{%- endcapture -%}{% include feed.html content=uid %}{% capture tzid %}{% if post.tzid %};TZID={{ post.tzid }}{% endif %}{% endcapture %}{% capture endtzid %}{% unless post.tzid %}Z{% endunless %}{% endcapture %}
+DTSTAMP{{ tzid }}:{{ post.date | date: "%Y%m%dT000000" }}{{ endtzid }}{% if post.date-start %}
+DTSTART{{ tzid }}:{{ post.date-start | date: "%Y%m%dT%H%M00" }}{{ endtzid }}{% elsif post.end_date or post.duration %}
+DTSTART{{ tzid }}:{{ post.date | date: "%Y%m%dT%H%M00" }}{{ endtzid }}{% else %}
+DTSTART:{{ post.date | date: "%Y%m%d" }}{% endif %}{% if post.duration %}
+DURATION:{{ post.duration }} {% elsif post.end_date %}
+DTEND{{ tzid }}:{{ post.end_date | date: "%Y%m%dT%H%M00" }}{{ endtzid }}{% else %}
 DTEND:{{ post.date | date: "%Y%m%d" }}{% endif %}{% if post.rrule %}
 RRULE:{{post.rrule}}{% endif %}
-SUMMARY:{% include feed.html content=newtitle %}
+SUMMARY:{% include feed.html content=fulltitle %}
 DESCRIPTION:{%- capture mydescription -%}<p>{% if post.excerpt %}{{ post.excerpt }}{% else %}{{ post.text }}{% endif %}</p>
 <ul>{% if post.time %}
 <li><b>Outage time:</b> {{ post.time }}</li>{% endif %}{% if post.systems %}
