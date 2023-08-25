@@ -20,18 +20,6 @@ filter:
   external: true
 
 collect_list: 
-  - title: A Brief Introduction to R
-    date: 2022-08-04
-    author: Viswanathan Satheesh
-    excerpt: "Viswanathan Satheesh presented on A Brief Introduction to R." 
-    details_title: "Tutorial Materials:"
-    details:
-      - url: https://usdagcc.sharepoint.com/:u:/s/REE-ARS-SCINetOffice/EUbch4aS7UpIr3f6utCfo1UBU3Qe-PsV-EpiEGlmkNWQtA
-        text: Presentation HTML
-        external: true
-      - url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EYUE5kuPOFZDgePLbFfvxK8BGYv38qjk_dfpIIjZCxTOAg
-        text: Presentation PDF
-        external: true
 
   - title: Python in Jupyter
     url: https://web.microsoftstream.com/video/cf3179eb-eb91-4db8-b8aa-062db5a769b0
@@ -76,6 +64,19 @@ collect_list:
     date: 2022-11-3
     author: Viswanathan Satheesh
     excerpt: "Viswanathan Satheesh provides an introduction to programming in R with emphasis on ggplot2."
+
+  - title: A Brief Introduction to R
+    date: 2022-08-04
+    author: Viswanathan Satheesh
+    excerpt: "Viswanathan Satheesh presented on A Brief Introduction to R." 
+    details_title: "Tutorial Materials:"
+    details:
+      - url: https://usdagcc.sharepoint.com/:u:/s/REE-ARS-SCINetOffice/EUbch4aS7UpIr3f6utCfo1UBU3Qe-PsV-EpiEGlmkNWQtA
+        text: Presentation HTML
+        external: true
+      - url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EYUE5kuPOFZDgePLbFfvxK8BGYv38qjk_dfpIIjZCxTOAg
+        text: Presentation PDF
+        external: true
 
 ---
 
