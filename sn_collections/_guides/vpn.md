@@ -20,8 +20,13 @@ summarybox:
 
 ---
 
-The SCINet VPN will no longer be offered as a service.
-If you have been using the SCINet VPN, please explore OOD for your use cases.  [Open OnDemand](/guides/software/open-ondemand) allows for full access to a Linux desktop, all SCINet apps, and cluster controls. <!--excerpt-->
+**The SCINet VPN will no longer be offered as a service.**
+If you have been using the SCINet VPN, please explore OOD for your use cases.  [Open OnDemand](/guides/software/open-ondemand) allows for full access to a Linux desktop, all SCINet apps, and cluster controls. 
+
+If you do believe the SCINet VPN is essential to your work, please contact [scinet_vrsc@usda.gov](mailto:scinet_vrsc@usda.gov) ASAP so we can help find a solution for you and your critical work isn’t delayed.
+ 
+Note this is not about the USDA/ARS VPN, just that the SCINet VPN is being shut down.
+<!--excerpt-->
 
 
 
