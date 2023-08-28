@@ -2,7 +2,6 @@
 title: SCINet VPN
 description: Guide to the SCINet VPN
 order_number: 20
-excerpt: SCINet provides a VPN to access resouces that require a direct connection or a graphical interface and cannot be made public. <br>  Software is usually required to access the VPN.  We recommend Cisco AnyConnect if that is availbible, and OpenConnect if it is not.
 categories: [Access]
 # author: David Orman
 
@@ -21,6 +20,8 @@ summarybox:
 
 ---
 
+The SCINet VPN will no longer be offered as a service.
+If you have been using the SCINet VPN, please explore OOD for your use cases.  [Open OnDemand](/guides/software/open-ondemand) allows for full access to a Linux desktop, all SCINet apps, and cluster controls. <!--excerpt-->
 
 
 
