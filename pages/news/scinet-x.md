@@ -29,15 +29,13 @@ The ARS SCINet Team developed a SCINet network solution that provides two levels
 
 The following locations are actively working on establishing high-bandwidth SCINet connectivity. 
 
-| Parlier, WA | Salinas, CA | Wenatchee, WA |  Bushland, TX |
+| Parlier, WA | Salinas, CA | Wenatchee, WA | Wapato, WA | 
 | College Station, TX | Fort Keogh, MT | Las Cruces, NM | Lincoln, NE |
-| Mandan, ND | Peoria, IL | Urbana, IL | West Lafayette, IN |
-| Griffin, GA | El Reno, OK | Burlington, VT | Orono, ME |
-| Newark, DE | Geneva, NY | Auburn, AL | Baton Rouge, LA |
-| Booneville, AR | Byron, GA | Canal Point, FL | Dawson, GA | 
-| Fayetteville, AR | Fort Lauderdale, FL | Gainesville, FL | Houma, LA |
-| Jonesboro, AR | Little Rock , AR | Miami, FL | Oxford, MS |
-| Poplarville, AR | Raleigh, NC | Schriever, LA |
+| Urbana, IL | Griffin, GA | El Reno, OK | Burlington, VT |
+| Orono, ME | Auburn, AL | Baton Rouge, LA | Booneville, AR | 
+| Byron, GA | Canal Point, FL | Dawson, GA | Fayetteville, AR |
+| Fort Lauderdale, FL | Gainesville, FL | Miami, FL | Oxford, MS |
+| Poplarville, AR | 
 
 
 
@@ -45,22 +43,25 @@ The following locations have completed implementation of their high-bandwidth SC
 
 Pacific West Area 
 
-| Burns, OR | Hilo, HI | Logan, UT | Maricopa, AZ | 
+| Burns, OR | Hilo, HI | Logan, UT |
+| Maricopa, AZ | 
 
 Plains Area
 
-| Akron, CO | Fargo, ND | Grand Forks, ND |
-| Kerrville, TX | Lubbock, TX | Manhattan, KS |
+| Akron, CO | Bushland, TX | Fargo, ND | 
+| Grand Forks, ND | Kerrville, TX | Lubbock, TX |
+|Mandan, ND | Manhattan, KS |
 
 Midwest Area
 
-| Columbia, MO | Madison, WI | St. Paul, MN |
-| Peoria, IL |
+| Bowling Green, KY | Columbia, MO | Madison, WI | 
+| Peoria, IL | St. Paul, MN | West lafayette, IN |
 
 Northeast Area
 
-| Boston, MA | Kearneysville, WV | Leetown, WV | 
-| Wyndmoor, PA | Newark, DE |
+| Boston, MA | Frederick, MD | Geneva, NY | 
+| Kearneysville, WV | Leetown, WV | Newark, DE | 
+| Wyndmoor, PA | 
 
 Southeast Area
 
