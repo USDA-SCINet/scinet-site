@@ -89,7 +89,7 @@ Dr. Brian Stucky | Acting Chief Scientific Information Officer, ARS
 Ms. Lorna Drennen | Assistant Chief Information officer
 Mr. Stan Kosecki | Deputy Assistant Chief Information Officer
 Mr. Rob Butler | Acting SCINet Project Manager
-Dr. Adam Rivers | Chair, SCINet Scientific Advisory Committee
+Dr. Jeremy Edwards | Chair, SCINet Scientific Advisory Committee
 Mr. Renaoti Chan | Policy and Information Assurance Branch Chief Information Security Officer
 Mr. Ming Chan |  Branch Chief, Scientific Data Engineering Branch, National Agricultural Library
 Mr. Nathan Weeks | Information Technology Specialist

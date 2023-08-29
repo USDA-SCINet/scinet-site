@@ -22,7 +22,7 @@ Joshua Udall| Plains Representative
 Loren Honaas|	Pacific West Representative
 Stan Kosecki|	NAL Representative
 Curtis Brooks|	GWCC Representative
-Jim Coyle|	ISU Representative
+Marina Kraeva|	ISU Representative
 Vincent Sanders|	MSU-HPCC Representative
 Chris Lowe|	Information Security
 Deb Peters|	CSIO

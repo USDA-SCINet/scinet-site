@@ -44,7 +44,7 @@ Below are instructions for how to make a request for Software, Storage, or AWS r
 ### How to send a software request
 If you've done the above but need new software installed as a module, use the software request form (eAuthentication required, non-ARS users should contact their sponsor):
 
-[Software Request Form](https://e.arsnet.usda.gov/sites/OCIO/scinet/Pages/SCINet-New-Application.aspx){: .usa-button .usa-button-big }
+[Software Request Form](https://apps.gov.powerapps.us/play/e/a3bf43b2-009c-43c2-9c4f-bcb2d87972fb/a/5b3265ab-3a98-4405-8557-01c1342690f7){: .usa-button .usa-button-big }
 
 **Note: doing this requires an agency-level security review and takes a few weeks.**
 
@@ -103,6 +103,6 @@ This includes requests for additional funding.
 ### To Request a New SCINet-funded AWS Project 
 Fill out an application form (eAuthentication required, non-ARS users should contact their sponsor)
 
-[Request AWS Project](https://usda-scinet.atlassian.net/servicedesk/customer/portal/4/group/13/create/64){: .usa-button .usa-button-big }
+[Request AWS Project](https://usda-scinet.atlassian.net/servicedesk/customer/portal/4/group/13/create/63){: .usa-button .usa-button-big }
 
 Requests will be reviewed and projects funded based on criteria such as suitability for AWS versus other SCINet computing resources (e.g., Ceres, Atlas), resource requirements estimated from the project description, and availability of SCINet funding.

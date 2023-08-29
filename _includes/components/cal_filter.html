@@ -74,7 +74,7 @@
 
         let type = types.value.toLowerCase(),
             provider = providers.value.toLowerCase(),
-            topic = topics.value.toLowerCase();
+            topic = topics.value.toLowerCase().replace(" ", "-");
 
         filterList(type, provider, topic);
     };
@@ -103,12 +103,21 @@
         document.getElementById("current-filters").innerHTML = mylist;
     };
 
+    function isAlphanumeric(str) {
+        return /^[a-zA-Z0-9]+$/.test(str);
+    }
+
     function format(val) {
-        if (val == null) {
-            return ""
+        if(isAlphanumeric(val)){
+            if (val == null) {
+                return ""
+            } else {
+                return val.toString().toLowerCase()
+            }
         } else {
-            return val.toString().toLowerCase()
+            return "SEARCH VALUE FAILED"
         }
+
     };
 
     function formatText(type, provider, topic) {
@@ -125,7 +134,7 @@
                 mylist.push(provider.toUpperCase())
             };
             if (topic != "") {
-                mylist.push(topic.toUpperCase())
+                mylist.push(topic.toUpperCase().replace("-", " "))
             };
 
             return current+mylist.join(", ");

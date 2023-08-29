@@ -11,20 +11,20 @@
 
 <li class="usa-collection__item width-full maxw-full" >
     <div class="usa-collection__body">
-        {% if _down.url %}<a href="{% if  _down.external %}{{  _down.url }}{% else %}{{  _down.url | relative_url }}{% endif %}">{% endif %}
-            <h3 class="usa-collection__heading {% unless _down.url %} text-primary-dark{% endunless %}">
-                {% if _down.title %}{{ _down.title }}{% else %}
+        {% if _down.link %}<a href="{% if  _down.external %}{{  _down.link }}{% else %}{{  _down.link | relative_url }}{% endif %}">{% endif %}
+            <h3 class="usa-collection__heading {% unless _down.link %} text-primary-dark{% endunless %}">
                 {% if _down.reason %}
                     {{ _down.reason }} &middot 
                 {% endif %}
-                {{ _down.systems }} - {{ _down.date | date: "%A, %B %-d"}}
+                {{ _down.systems }}{% if _down.locations %} - {{ _down.locations }}{% endif %}{% unless _down.end_date %} - {{ _down.date | date: "%A, %B %-d"}}{% endunless %}
                 {% unless post.type == 'archive' %} &middot {{ postyr }}{% endunless %}
-                {% endif %}
             </h3>
         {% if _down.url %}</a>{% endif %}
         <p class="usa-collection__description">
             {% if _down.text %}
             {{ _down.text }}
+            {% else %}
+            {{ _down.excerpt }}
             {% endif %}
         </p>
         <ul class="usa-collection__meta " aria-label="More information">            

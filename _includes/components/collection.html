@@ -42,7 +42,7 @@
             {% if eventpage=='event' %}
             {{ post.date | date_to_string }} &middot {% if post.provider %}{{ post.provider }} &middot {% endif %}{{ post.title }}
             {% else %}
-            <a class="usa-link" href="{% if post.external or all_external == 'true' %}{{ post.url }}{% else %}{{ post.url | relative_url}}{% endif %}">
+            {% if post.url %}<a class="usa-link" href="{% if post.external or all_external == 'true' %}{{ post.url }}{% else %}{{ post.url | relative_url}}{% endif %}">{% endif %}
                 {% if post_type == 'calendar' %}
                     {% if page.type == "archive" %}
                         {{ post.date | date: "%Y" }} &middot 
@@ -55,7 +55,7 @@
                     {% if no_date_below %}{{ post.date | date_to_string }} &middot {% endif %}{% if post.provider and page.type != 'itinerary' %}{{ post.provider }} &middot {% endif %}{{
                 post.title }}
                 {% endif %}
-            </a>
+            {% if post.url %}</a>{% endif %}
             {% endif %}
         </h3>
         {% unless page.type == 'itinerary' %}

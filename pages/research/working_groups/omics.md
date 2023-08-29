@@ -31,6 +31,6 @@ The concept of "omics" refers to the comprehensive study of various biological m
 
 By fostering a dynamic environment for interaction and cooperation, we believe the Translational Omics Working Group will play a significant role in advancing AI applications to omics research and bringing us closer to the new agricultural revolution. We invite all ARS researchers and supporting professionals interested in omics and AI and their translational potentials to join us on this exciting journey. Together, we can make a tangible impact on ARS’s research mission and revolutionize the future of farming.
 
-If you are interested in and would like to join the group, please fill out the following survey: [Translational Omics Working Group Survey](https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&token=3186d869fac14c928c517035acb59b0f&id=5zZb7e4BvE6GfuA8-g1Gl4syCcXL1q9Hg9KN5iCEvlJUOU9WV1NYQUJQTk9SVzNLNTlTQlpVTFlPQy4u).
+If you are interested in and would like to join the group, please fill out the following survey: [Translational Omics Working Group Survey](https://forms.office.com/g/a7VFhG0AJD).
 
 For more information, please contact George Liu ([George.Liu@usda.gov](mailto:George.Liu@usda.gov)) or Zhenbin Hu ([Zhenbin.Hu@usda.gov](mailto:Zhenbin.Hu@usda.gov)).

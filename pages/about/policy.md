@@ -31,7 +31,8 @@ subnav:
 
 **Terms and Conditions:**  
 
-:  All SCINet Users must agree to the Terms and Conditions.
+:  All SCINet Users must agree to the [Terms and Conditions](https://usdagcc.sharepoint.com/sites/REE-ARS-OCIO/scinet/accounts/SitePages/Terms-and-Conditions.aspx).
+:  You can review more about SCINet Policies [here](https://usdagcc.sharepoint.com/sites/REE-ARS-OCIO/scinet/accounts/SitePages/SCINet_Policies.aspx).
 
 **Password Expiration:**  
 

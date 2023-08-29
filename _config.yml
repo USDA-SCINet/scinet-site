@@ -82,11 +82,8 @@ collections:
   tutorials:
     output: true
     permalink: /tutorials/:name
-# collections:
-#   projects:
-#     output: true
-#   team:
-#     output: true
+  downtime:
+    output: false
 
 defaults:
   - 
@@ -155,6 +152,12 @@ defaults:
     values:
       layout: "page"
       sidenav_link: /guides/
+  - 
+    scope:
+      path: ""
+      type: "downtime"
+    values:
+      alt-title: "TRUE"
 
 # allow posts with dates in the future to be published now
 future: true

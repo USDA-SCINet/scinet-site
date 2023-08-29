@@ -97,6 +97,8 @@ ls -l /reference/containers/RStudio/
 
 If you wish to use a different version, replace 3.6.0 below with the version number you choose.
 
+Note that older versions are not supported. If the version you chose is not working, try the latest one before contacting VRSC.
+
 1. (If using VPN) Connect to SCINet VPN (see video instructions): <br>
 [VPN Using the OpenConnect Client]({{ site.baseurl }}/guides/access/vpn#openconnect-vpn)<br>
 [VPN Using the Cisco AnyConnect Client]({{ site.baseurl }}/guides/access/vpn#anyconnect-vpn)

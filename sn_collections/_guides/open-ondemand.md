@@ -19,6 +19,9 @@ subnav:
     url: '#interactive-applications'
 
 apps:
+  - title: Jupyter
+    url: /guides/analysis/jupyter
+    internal: true
   - title: RStudio Server
     url: /guides/analysis/r-studio
     internal: true
@@ -34,7 +37,7 @@ apps:
 
 [Open OnDemand](https://openondemand.org/) is an intuitive, innovative, and interactive interface to remote computing resources. The key benefit for SCINet users is that they can use any web browser, including browsers on a mobile phone, to access Ceres. 
 
-There are several interactive apps that can be run in Open OnDemand including Jupyter, [RStudio Server](/guides/analysis/r-studio), [Geneious](/guides/analysis/geneious), [CLC Genomics Workbench](/guides/analysis/clc-workbench), and more. The desktop app allows a user to run any GUI software.<!--excerpt-->
+There are several interactive apps that can be run in Open OnDemand including [Jupyter](/guides/analysis/jupyter), [RStudio Server](/guides/analysis/r-studio), [Geneious](/guides/analysis/geneious), [CLC Genomics Workbench](/guides/analysis/clc-workbench), and more. The desktop app allows a user to run any GUI software.<!--excerpt-->
 
 ---
 ## Access
