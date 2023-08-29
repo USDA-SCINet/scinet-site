@@ -34,6 +34,8 @@ subnav:
         url: '#conda-package-and-environment-manager'
       - title: Python built-in venv package and environment manager
         url: '#python-built-in-venv-package-and-environment-manager'
+      - title: QIIME2 kernel in Jupyter
+        url: '#qiime2 kernel in Jupyter'
   - title: A few Ceres-specific notes
     url: '#a-few-ceres-specific-notes'
     subnav:
@@ -510,7 +512,7 @@ This will print to the terminal a summary of the read alignments in the BAM file
 
 **NOTE:** For computationally intensive tasks, it is advisable to enclose your commands within a SLURM script and submit it to the queue in the *(also from Jupyter's Terminal app)*, as your JupyterLab session *(and Terminal app within it)* may not have sufficient resources.
 
-### Create Python environments and Jupyter kernels
+## Create Python environments and Jupyter kernels
 
 A virtual environment is a self-contained directory tree that contains a Python installation for a particular version of Python, plus custom packages, each in a selected version. This provides an isolated environment for each project and makes it easy to handle project-specific dependencies. <br>
 **NOTE:** On SCINet clusters, users can freely install additional packages in their `conda` **OR** `venv` virtual environment(s),but they are NOT permitted to make system-wide package installations.
@@ -524,7 +526,7 @@ A virtual environment is a self-contained directory tree that contains a Python 
 * It's a good idea to add the name of your virtual environments (e.g., myenv/) to your `.gitignore` file if you're using Git, to prevent accidentally committing it.
 * Some developers prefer `conda` for managing environments and dependencies, as it offers more features than `venv`.
 
-#### Conda package and environment manager
+### Conda package and environment manager
 
 [Conda](https://conda.io/) is a package and environment manager that makes it easy to install and manage software packages and their dependencies. Using Conda, you can create a virtual environment, a self-contained workspace with its own installed packages, that won't interfere with your system or other projects. This is particularly helpful when different projects require different versions of the same package.
 
@@ -585,7 +587,7 @@ conda install ipykernel
 Now, your Jupyter notebook is linked to your Conda environment, and you can import any libraries you installed in this environment.
 
 
-#### Python built-in `venv` package and environment manager
+### Python built-in `venv` package and environment manager
 
 [venv](https://docs.python.org/3/library/venv.html) is a module that comes with the standard library in Python to allow the creation of isolated **v**irtual **env**ironments. Each environment has its own installation directories and doesn't share libraries with other environments. This is useful when different projects have different requirements and can prevent conflicts between versions.
 
@@ -659,6 +661,9 @@ deactivate
 ```
 rm -r data_processing
 ```
+
+### QIIME2 kernel in Jupyter
+
 
 
 ## A few Ceres-specific notes:
