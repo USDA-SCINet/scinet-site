@@ -483,7 +483,8 @@ python python_script.py
 ```
 Rscript R_script.r
 ```
-* load modules and run the software, for example, use the preinstalled `qiime2` tool
+
+* load modules and run software, for example use the preinstalled `samtools` tool
 
   > Samtools is a suite of utilities for interacting with and post-processing short DNA sequence read alignments in the SAM, BAM and CRAM formats, including indexing, format conversion and basic statistics.
 
@@ -504,13 +505,26 @@ This will print to the terminal a summary of the read alignments in the BAM file
 
 **NOTE:** For computationally intensive tasks, it is advisable to enclose your commands within a SLURM script and submit it to the queue in the *(also from Jupyter's Terminal app)*, as your JupyterLab session *(and Terminal app within it)* may not have sufficient resources.
 
+### Create Python environments and Jupyter kernels
+
+A virtual environment is a self-contained directory tree that contains a Python installation for a particular version of Python, plus custom packages, each in a selected version. This provides an isolated environment for each project and makes it easy to handle project-specific dependencies. <br>
+**NOTE:** On SCINet clusters, users can freely install additional packages in their `conda` **OR** `venv` virtual environment(s),but they are NOT permitted to make system-wide package installations.
+
+**Best Practices:**
+* Always use virtual environments for your Python projects to ensure dependency isolation.
+* Create `conda` or `venv`-based environment first and then convert it to a Jupyter kernel, if you want to use it in Jupyter Notebook app.
+* If you work in Jupyter Terminal app (e.g., to execute your Python scripts), first activate your selected virtual environment.
+* Every time you want to use custom kernel in JupyterLab, you don't need to activate the virtual environment from the terminal. JupyterLab will handle it for you when you select that kernel in a notebook.
+  * However, if you're installing additional packages that you want available in that JupyterLab kernel, you'll need to activate the virtual environment first, install the packages, and then they'll be accessible in the JupyterLab notebook using that kernel.
+* It's a good idea to add the name of your virtual environments (e.g., myenv/) to your `.gitignore` file if you're using Git, to prevent accidentally committing it.
+* Some developers prefer `conda` for managing environments and dependencies, as it offers more features than `venv`.
 
 #### Conda package and environment manager
 
 [Conda](https://conda.io/) is a package and environment manager that makes it easy to install and manage software packages and their dependencies. Using Conda, you can create a virtual environment, a self-contained workspace with its own installed packages, that won't interfere with your system or other projects. This is particularly helpful when different projects require different versions of the same package.
 
 **On Ceres, Conda is preinstalled and available as a module.**
-* To activate Conda manager open Terminal app in JupyterLab interface.
+* To activate Conda manager open **Terminal app in JupyterLab** interface.
 * Use the following command to display available Conda modules:
 ```
 module avail conda
@@ -556,13 +570,90 @@ conda install ipykernel
   ```
   <i>If successful, you should get a message in your terminal: "Installed kernelspec graphing in /home/{user}/.local/share/jupyter/kernels/graphing"</i>
 
+
 * Now, you can return to JupyterLab.
   * In the Python Notebook app, click on the **"Kernel"** menu, then **"Change kernel"**, and finally select your new environment from the list. <br>
   <b>NOTE:</b> <i>If a newly added kernel is not visible on the list, you may need to restart your JupyterLab server. Then, open new or existing Python Notebook to repeat the procedure of selecting the kernel.</i>
 
 ![screenshot of changing Kernel in Python Notebook]({{ site.baseurl }}/assets/img/guides/analysis/jupyter/change_kernel.png)
 
-Now, your Jupyter notebook is linked to your Conda environment, and you can import any libraries you installed in this environment. Let's create some charts using graphical libraries *(available in your new Python environment)*.
+Now, your Jupyter notebook is linked to your Conda environment, and you can import any libraries you installed in this environment.
+
+
+#### Python built-in `venv` package and environment manager
+
+[venv](https://docs.python.org/3/library/venv.html) is a module that comes with the standard library in Python to allow the creation of isolated **v**irtual **env**ironments. Each environment has its own installation directories and doesn't share libraries with other environments. This is useful when different projects have different requirements and can prevent conflicts between versions.
+
+**On Ceres, venv is automatically available with the loaded Python version**, enabling isolated environments without additional setup.
+* To activate venv manager open **Terminal app in JupyterLab** interface.
+* Use the following command to display available Conda modules:
+```
+module avail python
+```
+
+![screenshot of python modules in Terminal on Ceres]({{ site.baseurl }}/assets/img/guides/analysis/jupyter/python_module.png)
+
+* Select the Python module, for example `python_3/3.11.1`, and load it with a command:
+```
+module load python_3/3.11.1
+```
+<i>From now on, you can use `venv` with `python` command to create and manage Python environments and install required dependencies.</i>
+
+
+* Navigate to your project directory (or wherever you want the virtual environment to live).
+  * You can create a `venv`-based environment in any location on the system where you have write access. There is no common hidden directory in your home location (such as .conda) where the venv environments will be stored. You can create each virtual environment in the directory of a given project or you can create `my_venvs` directory on the `/project` path in a cluster, and create all your future environments there.
+  * Once a virtual environment is activated, the Python interpreter and any scripts or commands you run will use the libraries and settings from that virtual environment, regardless of your current directory in the command line.
+    * You don't need to create a soft link to your home directory to use a `venv`-based virtual environment.
+    * However, to activate the virtual environment, you'll generally need to source the activate script from its specific location (or provide the full path). *See sections below.*
+
+
+* Create a new venv environment for Python-based data manipulation:
+```
+python -m venv data_processing
+```
+<i>This creates a new directory called "data_processing" (you can name it anything you like) which contains all the necessary files for the virtual environment.</i>
+
+![screenshot of creating venv environment]({{ site.baseurl }}/assets/img/guides/analysis/jupyter/create_venv.png)
+
+* Once you've created the virtual environment, you need to activate it by executing the `activate` file located in the **bin** subfolder of a newly created virtual environment: <br>
+<b>NOTE:</b> *This file must be used with "source bin/activate" from bash; you cannot run it directly!*
+```
+source data_processing/bin/activate
+```
+<i>When the virtual environment is activated, you'll typically see its name appear at the start of your command prompt, indicating that you are working within that environment.</i>
+
+* Once activated, you can install packages using `pip` and they will be installed specifically within the virtual environment, not system-wide. <br>*For example, install* `numpy` *and* `pandas` *libraries for data manipulation:*
+```
+pip install numpy pandas
+```
+![screenshot of creating venv environment]({{ site.baseurl }}/assets/img/guides/analysis/jupyter/install_in_venv.png)
+
+* To be able to import these libraries in a Jupyter notebook you need also to install `ipykernel` module. This will make your **venv** environment available as a Jupyter kernel. While in your virtual environment, you can install `ipykernel` using:
+```
+pip install ipykernel
+```
+  * You also need to **create a new kernel for your environment**. Still within your environment, run the following command:
+  ```
+  python -m ipykernel install --user --name=data_processing
+  ```
+  <i>If successful, you should get a message in your terminal: "Installed kernelspec data_processing in /home/{user}/.local/share/jupyter/kernels/data_processing"</i>
+
+
+* Now, you can return to JupyterLab.
+  * Once JupyterLab session is running, open **File → New Launcher** to see a new kernel option for `Python Notebook` and `Python Console`.
+  * When in existing Python Notebook, click on the **"Kernel"** menu, then **"Change kernel"**, and finally select your new environment from the list to switch to the kernel you just created. <br>
+  <b>NOTE:</b> <i>If a newly added kernel is not visible on the list, you may need to restart your JupyterLab server. Then, open new or existing Python Notebook to repeat the procedure of selecting the kernel.</i>
+
+![screenshot of changing Kernel in Python Notebook]({{ site.baseurl }}/assets/img/guides/analysis/jupyter/venv_kernel.png)
+
+* When you're done working in the virtual environment **in the Terminal app** and want to return to the global Python environment or switch to another project, you can deactivate the current virtual environment:
+```
+deactivate
+```
+* If you no longer need a specific virtual environment, you can simply deactivate it and delete its directory:
+```
+rm -r data_processing
+```
 
 
 ## A few Ceres-specific notes:
