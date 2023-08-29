@@ -61,17 +61,17 @@ Both **JupyterLab** and **JupyterNotebook** tools are currently in active use on
 ## SCINet Options for Jupyter
 
 Jupyter operates as a client/server application. When you run Jupyter, the application starts a server that serves the Jupyter application to your web browser.
-- The `server` part of the application runs your Python (or other language) code, manages your notebooks (files), and serves the Jupyter application to your browser. You can launch the Jupyter server on a high-performance computing cluster (Ceres or Atlas) via Open OnDemand service (online, no-installation) or on your own computing machine as a local (offline, requires Jupyter installation) server.
-- The `client` part of the application *(regardless of how it was started)* runs in web browser on your local machine and handles the interactive user interface (GUI) of Jupyter. This is where you will perform all your tasks.
+- The `server` part of the application runs your Python (or other languages) code, manages your notebooks (files), and serves the Jupyter application to your browser. You can launch the Jupyter server on a high-performance computing cluster (Ceres or Atlas) via Open OnDemand service (online, no-installation) or on your own computing machine as a local (offline, requires Jupyter installation) server.
+- The `client` part of the application *(regardless of how it was started)* runs in a web browser on your local machine and handles the interactive user interface (GUI) of Jupyter. This is where you will perform all your tasks.
 
 **SCINet users can use Jupyter in one of the following ways:**
 
-1. To run JupyterLab and access data on your local workstation, [install the open source JupyterLab tool](https://jupyter.org/install).
+1. To run JupyterLab and access data on your local workstation, [install the open-source JupyterLab tool](https://jupyter.org/install).
   * Once installed, open the Terminal or Command Prompt window on your local workstation and execute the command:
   ```
   jupyter lab
   ```
-  <i>This will automatically open JupyterLab interface in your default web browser.</i> <br> Manually you can also open it using the URL address: `http://localhost:8888/lab`
+  <i>This will automatically open the JupyterLab interface in your default web browser.</i> <br> Manually you can also open it using the URL address: `http://localhost:8888/lab`
 
 
 2. To run JupyterLab on and access data in Amazon Web Services, contact the SCINet VRSC.
@@ -97,15 +97,15 @@ This will redirect you automatically to the Jupyter Session setup page.
 
 Modify default values if needed. Specifically, make sure:
 * that your selected `Account` is correct
-* to adjust time needed (`Number of hours`) for your work in Jupyter interface
-* to choose the right tool for your task (typically `Lab` is preferred over `Notebook` as it provides built-in file browser)
+* to adjust the time needed (`Number of hours`) for your work in the Jupyter interface
+* to choose the right tool for your task (typically `Lab` is preferred over `Notebook` as it provides a built-in file browser)
 * to specify the `Working Directory` path, which is your $HOME by default, but you may want to work in the `/project/<your-group>` space instead.
 
 ![screenshot of setting up working directory]({{ site.baseurl }}/assets/img/guides/analysis/jupyter/setup_workdir.png)
 
 Once you are done with the settings, click on the blue **"Launch"** button at the bottom of the page. *It may take up to several minutes for the new session to start.*
 
-<i>Note that once you click on the <b>"Launch"</b> button and a new session starts, requested resources will be allocated to your job and won't be available to other users even if you don't run anything in the Jupyter. Please be considerate, request only resources that you need for your tasks and remember to delete the session when done.</i>
+<i>Note that once you click on the <b>"Launch"</b> button and a new session starts, requested resources will be allocated to your job and won't be available to other users even if you don't run anything in Jupyter. Please be considerate, request only resources that you need for your tasks, and remember to delete the session when done.</i>
 
 Once it starts a new button **"Connect to Jupyter"** will appear. Clicking on the button will open Jupyter IDE in a new browser tab, with the `Python Console` opened by default.
 
@@ -143,7 +143,7 @@ Jupyter Notebook initiates with a File Browser view, allowing you to navigate di
 
 ### Jupyter Lab
 
-**JupyterLab** is the next-generation user interface for Project Jupyter. It offers all the familiar building blocks of the classic Jupyter Notebook (notebook, terminal, text editor, Python console, file browser, rich outputs, etc.) in a flexible and powerful user interface. A graphical File Manager (foldable, on the left) allows file upload/download from Ceres via web browser.
+**JupyterLab** is the next-generation user interface for Project Jupyter. It offers all the familiar building blocks of the classic Jupyter Notebook (notebook, terminal, text editor, Python console, file browser, rich outputs, etc.) in a flexible and powerful user interface. A graphical File Manager (foldable, on the left) allows file upload/download from Ceres via a web browser.
 
 ![screenshot of Jupyter Lab interface]({{ site.baseurl }}/assets/img/guides/analysis/jupyter/lab_launcher.png)
 
@@ -157,7 +157,7 @@ JupyterLab also provides additional features not found in Jupyter Notebook, such
 * A more modern and polished user interface
 * Integrated markdown rendering
 * Multiple views of a single document
-* Ability to arrange multiple notebooks, text files, terminals, output areas, all in separate panels of a single layout (in the same window)
+* Ability to arrange multiple notebooks, text files, terminals, and output areas, all in separate panels of a single layout (in the same window)
 
 This makes JupyterLab better suited for more complex tasks, larger projects, or when you want to work with several notebooks and documents at the same time.
 
@@ -170,7 +170,7 @@ Python and R applications in JupyterLab are essentially the same in terms of the
 
 | SIMILARITIES | DIFFERENCES |
 |--------------|-------------|
-|**Interface & Usage** <br> Both Python and R versions of the Console, Notebook, and Script File in JupyterLab offer similar functionalities and user interface. They are both designed to create and run code, inspect variables, and visualize data.|**Scope of applications** <br> Python has a broader user base in software development, machine learning, efficient computing and visualization, while R is more common in academic and research settings, especially in fields like statistics and data analysis.|
+|**Interface & Usage** <br> Both Python and R versions of the Console, Notebook, and Script File in JupyterLab offer similar functionalities and user interfaces. They are both designed to create and run code, inspect variables, and visualize data.|**Scope of applications** <br> Python has a broader user base in software development, machine learning, efficient computing and visualization, while R is more common in academic and research settings, especially in fields like statistics and data analysis.|
 |**Interactivity** <br> Both Python and R Consoles allow executing commands interactively and provide immediate feedback, making them great for testing and debugging. |**Packages and Libraries** <br> Python has strong libraries for machine learning and general-purpose programming (like TensorFlow, PyTorch, NumPy, and Pandas), while R is favored for statistical analysis with a wealth of packages such as ggplot2, dplyr, shiny, and more.|
 |**Notebooks** <br> Both Python and R Notebooks combine executable code blocks with markdown commentary, making them ideal for data exploration, analysis, and visualization, as well as for creating shareable reports. |**Data Analysis** <br> While both languages are robust for data analysis, R was designed with statisticians in mind and has many built-in functions for data analysis. Python is also a powerful tool for data analysis with the help of libraries like Pandas and NumPy.|
 |**Script Files** <br> Both Python and R Script files are used for creating and saving scripts that can be executed in the terminal, console, or through a scheduler for batch jobs. |**Language Syntax & Structure** <br> Python syntax prioritizes simplicity and readability, while R syntax is varied and flexible, especially for statistical functions.|
@@ -339,7 +339,7 @@ python python_script.py
 
 R Script File is a text file in which you can write an R script and save it with a `.R` extension. You can run this script in an R console or terminal. This is typically used for larger coding projects or when you need to run a sequence of R commands repeatedly.
 
-Here's a simple R script that demonstrates R's syntax, data structures (like vectors and lists), and and base functions. This script defines a function that takes a vector of numbers and returns a list containing the sum, average, minimum, and maximum of the numbers.
+Here's a simple R script that demonstrates R's syntax, data structures (like vectors and lists), and base functions. This script defines a function that takes a vector of numbers and returns a list containing the sum, average, minimum, and maximum of the numbers.
 
 `R_script.r`
 ```
@@ -388,7 +388,7 @@ Rscript R_script.r
 
 #### *Markdown File*
 
-Markdown File is a text file where you can write content using Markdown, a lightweight markup language that you can use to format and render your text in a human-friendly way. This is useful for writing notes, describing project pipeline, creating documentation for your code.
+Markdown File is a text file where you can write content using Markdown, a lightweight markup language that you can use to format and render your text in a human-friendly way. This is useful for writing notes, describing project pipeline, and creating documentation for your code.
 
 Markdown in Jupyter notebooks lets you create rich text with different styles, lists, links, images, and even HTML elements. Here's an example illustrating some of these components.
 
@@ -466,7 +466,7 @@ Jill Smith,30,Boston
 
 ### Terminal
 
-Terminal provides command-line access to your system, similar to the terminal application on your computer. This is useful for running system commands, installing packages, managing files, and running scripts. When working in the Terminal in Jupyter on Ceres via Open OnDemand you have immediate access to your locations in a cluster file system (the same as when logged in via SSH protocol).
+The terminal provides command-line access to your system, similar to the terminal application on your computer. This is useful for running system commands, installing packages, managing files, and running scripts. When working in the Terminal in Jupyter on Ceres via Open OnDemand you have immediate access to your locations in a cluster file system (the same as when logged in via SSH protocol).
 
 #### Executing Bash commands and Python/R scripts
 
@@ -488,6 +488,7 @@ python python_script.py
 ```
 Rscript R_script.r
 ```
+
 * load modules and run software, for example use the preinstalled `samtools` tool
 
   > Samtools is a suite of utilities for interacting with and post-processing short DNA sequence read alignments in the SAM, BAM and CRAM formats, including indexing, format conversion and basic statistics.
@@ -536,17 +537,17 @@ module avail conda
 
 ![screenshot of conda modules in Terminal on Ceres]({{ site.baseurl }}/assets/img/guides/analysis/jupyter/conda_modules.png)
 
-* Select the Conda module, for example `miniconda/4.12.0`, and load it with a command:
+* Select the Conda module, for example, `miniconda/4.12.0`, and load it with a command:
 ```
 module load miniconda/4.12.0
 ```
 <i>From now on, you can use `conda` commands to create and manage Python environments and install required dependencies.</i>
 
-* Create new Conda environment for Python-based interactive graphing:
+* Create a new Conda environment for Python-based interactive graphing:
 ```
 conda create -n graphing Python=3.9 matplotlib seaborn plotly
 ```
-<i>This command will create a new virtual environment called 'graphing' in your user space on Ceres, so it will be accessible only by you. It will initialize the coding environment with Python in version 3.9 and install the specified libraries: matplotlib, seaborn, and plotly along with their dependencies. The process will take some time and you will be prompted with <b>"Proceed ([y]/n)?"</b> where you should type <b>"y"</b> and approve with enter to proceed with the installation.</i>
+<i>This command will create a new virtual environment called 'graphing' in your user space on Ceres, so it will be accessible only to you. It will initialize the coding environment with Python in version 3.9 and install the specified libraries: matplotlib, seaborn, and plotly along with their dependencies. The process will take some time and you will be prompted with <b>"Proceed ([y]/n)?"</b> where you should type <b>"y"</b> and approve with enter to proceed with the installation.</i>
 
 The installation process will end with the printed message:
 ```

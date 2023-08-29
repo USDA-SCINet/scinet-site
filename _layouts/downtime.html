@@ -15,7 +15,7 @@ main:
 {% assign sitetime = sitetime | date_to_xmlschema %}
 
 
-{% assign all_downtime = site.data.tables.downtime.downtime %}
+{% assign all_downtime = site.downtime %}
 
 {% assign downtime = '' | split: '' %}
 
@@ -83,7 +83,7 @@ main:
 
 {% else %}
 
-{% for _down in all_downtime %}
+{% for _down in all_downtime reversed %}
   {% include components/collection-downtime.html post=_down %}
   {% endfor %}
 {% endif %}
