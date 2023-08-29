@@ -27,6 +27,13 @@ subnav:
         url: '#files-and-scripts'
       - title: Terminal
         url: '#terminal'
+  - title: Create Python environments and Jupyter kernels
+    url: '#create-python-environments-and-jupyter-kernels'
+    subnav:
+      - title: Conda package and environment manager
+        url: '#conda-package-and-environment-manager'
+      - title: Python built-in venv package and environment manager
+        url: '#python-built-in-venv-package-and-environment-manager'
   - title: A few Ceres-specific notes
     url: '#a-few-ceres-specific-notes'
     subnav:
@@ -36,8 +43,6 @@ subnav:
         url: '#data-access'
       - title: Python Package installation
         url: '#python-package-installation'
-      - title: Conda package and environment manager
-        url: '#conda-package-and-environment-manager'
       - title: Stopping Jupyter Server
         url: '#stopping-jupyter-server'
 
