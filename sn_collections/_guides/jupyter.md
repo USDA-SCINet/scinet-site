@@ -34,8 +34,8 @@ subnav:
         url: '#conda-package-and-environment-manager'
       - title: Python built-in venv package and environment manager
         url: '#python-built-in-venv-package-and-environment-manager'
-      - title: QIIME2 kernel in Jupyter
-        url: '#qiime2 kernel in Jupyter'
+      - title: QIIME2 on Ceres via Jupyter
+        url: '#qiime2-on-ceres-via-jupyter'
   - title: A few Ceres-specific notes
     url: '#a-few-ceres-specific-notes'
     subnav:
@@ -662,9 +662,184 @@ deactivate
 rm -r data_processing
 ```
 
-### QIIME2 kernel in Jupyter
+### QIIME2 on Ceres via Jupyter
+
+[qiime2](https://qiime2.org) is primarily known as a collection of open-source bioinformatics pipelines designed for microbiome analysis from raw DNA sequencing data. It offers a suite of tools to perform tasks ranging from quality control and feature extraction to statistical analysis and data visualization.
+
+**NOTE:** QIIME 2 introduces a system of data storage and interoperability through the concept of [**Artifacts**](https://docs.qiime2.org/2023.7/concepts/#data-files-qiime-2-artifacts) (`.qza` format) and [**Visualizations**](https://docs.qiime2.org/2023.7/concepts/#data-files-visualizations) (`.qzv` format). These **data formats** are designed to enhance reproducibility and data provenance.
+  * Because QIIME 2 uses its own formats for data storage, importing external data into QIIME 2's system is an explicit step. *This means you need to transform your raw data (like a FASTQ file) into a QIIME 2 artifact.*
+  * Both artifacts and visualizations in QIIME 2 are associated with a [**semantic type**](https://docs.qiime2.org/2023.7/concepts/#semantic-types). The semantic type conveys what the data is representing. For example, raw sequence data might have the semantic type `SampleData[SequencesWithQuality]`. *Semantic types help ensure that only appropriate data types are used with specific QIIME 2 methods.*
+  * Make sure to specify appropriate output paths for these files in your commands.
 
 
+On the **Ceres cluster**, `qiime2` is accessible in two primary ways through JupyterLab interface as a **module** and as a Jupyter **kernel**. Within a JupyterLab session:
+* You can load the `qiime2 module` in the [**Terminal app**](#qiime2-module-in-jupyter-terminal) to utilize its command-line features with `qiime` commands. Learn more from the official QIIME 2 documentation: [QIIME 2 command-line interface (q2cli)](https://docs.qiime2.org/2023.7/interfaces/q2cli/)
+
+* Alternatively, by selecting the `qiime2 kernel`, you can craft custom Python scripts harnessing the qiime2 library, either in the **Python console** or in a [**Python Notebook**](#qiime2-ready-made-kernel-for-jupyter-notebook) app. Learn more from the official QIIME 2 documentation: [Artifact API (using QIIME 2 with Python)](https://docs.qiime2.org/2023.7/interfaces/artifact-api/)
+  * **NOTE:** *Using QIIME 2 with Python offers the advantage of interoperability with other Python libraries, such as Pandas, allowing for efficient manipulation and management of data structures, e.g., inputs pre-processing.*
+
+
+* **Combining interfaces** [*folowing the official QIIME2 docs*]
+>Another powerful feature of QIIME 2 is that you can combine interfaces. For example, you could develop a Python script that automatically processes files for you to generate results, and then perform analysis of those files using the command line interface.
+
+#### QIIME2 ready-made kernel for Jupyter Notebook
+
+The pre-configured `qiime2-2023.2` kernel provides an immediate environment to conduct your analysis using tools from the qiime2 Python package without the need of additional installation. By selecting either the Python console or Python notebook in the JupyterLab launcher, the related environment activates seamlessly.
+
+![screenshot of selecting qiime2 kernel]({{ site.baseurl }}/assets/img/guides/analysis/jupyter/qimme_kernel.png)
+
+Simply `import qiime2` in your chosen interface to start leveraging its features. Let's use Notebook app as an example:
+```
+import qiime2
+```
+To easily check if qiime2 has been imported correctly, you can use the `__version__` attribute to verify its version:
+```
+print(qiime2.__version__)
+```
+![screenshot of importing qiime2 in python notebook]({{ site.baseurl }}/assets/img/guides/analysis/jupyter/qimme_kernel_in_notebook.png)
+
+**PRO TIP:** Jupyter notebooks allow for executing both Python code and shell (bash) commands within code cells. The primary language is determined by the kernel you're using (e.g., Python), but you can also run shell commands in a Python kernel by prefixing the command with an exclamation point (`!`).
+  * Jupyter uses IPython as its underlying interpreter for the Python kernel, and IPython has some built-in automations and conveniences. For instance, certain commands like `ls` might be automatically interpreted as shell commands, especially if they don't collide with any Python commands.
+  * Utilizing **bash commands directly in a Jupyter notebook**, alongside Python-based qiime2 analysis, facilitates recording the entire workflow, from setting up the project directory with `mkdir`, fetching data using `wget` or `curl`, other preprocessing steps, to analysis and visualization, ensuring comprehensive documentation of the **entire process is captured within a single file**.
+
+If `qiime2` is imported without any errors and its version is displayed, you can start your custom analysis using qiime2 functionality. For example, having the [feature table](https://docs.qiime2.org/2023.7/tutorials/moving-pictures/#featuretable-and-featuredata-summaries) file, you can create a  QIIME2 `Artifact` object and use `rarefy` method (from `qiime2.plugins` module) to randomly subsample without replacement (i.e., select a set number of features from each sample) a feature table to standardize the sample depths. *This is typically done to avoid biases introduced by different sequencing depths across samples.*
+```
+# download the example file: NOTE: change the '2023.2' to version used in your kernel
+!wget https://docs.qiime2.org/2023.2/data/tutorials/moving-pictures/table.qza
+```
+
+```
+# imports from qiime modules
+from qiime2.plugins import feature_table
+from qiime2 import Artifact
+```
+
+```
+# perform operations using qiime in Python
+unrarefied_table = Artifact.load('table.qza')
+rarefy_result = feature_table.methods.rarefy(table=unrarefied_table, sampling_depth=100)
+rarefied_table = rarefy_result.rarefied_table
+```
+
+```
+# preview the data with Pandas
+import pandas as pd
+df = rarefied_table.view(pd.DataFrame)
+df.head()
+```
+
+![screenshot of importing qiime2 in python notebook]({{ site.baseurl }}/assets/img/guides/analysis/jupyter/example_qiime_in_python.png)
+
+
+<b>To get started, follow the official QIIME 2 guide for [Artifact API (using QIIME 2 with Python)](https://docs.qiime2.org/2023.7/interfaces/artifact-api/).</b><br>
+To discover the specific functionality or analysis tools you need, browse through QIIME 2's [list of available plugins](https://docs.qiime2.org/2023.7/plugins/). Once you navigate to the documentation page for a particular utility, such as [alignment](https://docs.qiime2.org/2023.7/plugins/available/alignment/), you'll find an `Artifact API Import` section that provides the Python import statement you'll need, along with usage instructions of available methods.
+
+
+#### QIIME2 module in Jupyter Terminal
+
+The `qiime2 module`, pre-installed on Ceres, comes with a rich command-line interface (q2cli), which provides numerous sub-commands for different types of analyses. By choosing to work in this interface you will be able to use the `qiime` command directly in your terminal (including Jupyter Terminal app).
+
+Once looged in to Ceres cluster via OOD, launch the Jupyter session and open the Terminal app. Then, check available `qiime` modules and load the selected one.
+```
+module avail qiime
+
+module load qiime2/2023.7
+```
+
+![screenshot of loading qiime2 module in a termianl]({{ site.baseurl }}/assets/img/guides/analysis/jupyter/load_qiime_module.png)
+
+To quickly check if the `qiime` **command-line tool** is available, you can run:
+```
+qiime --help
+```
+*This should provide a list of available commands and options.* <br>
+For example, version `qiime2/2023.7` returns all the plugins and tools available:
+```
+Usage: qiime [OPTIONS] COMMAND [ARGS]...
+
+  QIIME 2 command-line interface (q2cli)
+  --------------------------------------
+
+  To get help with QIIME 2, visit https://qiime2.org.
+
+  To enable tab completion in Bash, run the following command or add it to
+  your .bashrc/.bash_profile:
+
+      source tab-qiime
+
+  To enable tab completion in ZSH, run the following commands or add them to
+  your .zshrc:
+
+      autoload -Uz compinit && compinit
+      autoload bashcompinit && bashcompinit
+      source tab-qiime
+
+Options:
+  --version   Show the version and exit.
+  --help      Show this message and exit.
+
+Commands:
+  info                Display information about current deployment.
+  tools               Tools for working with QIIME 2 files.
+  dev                 Utilities for developers and advanced users.
+  alignment           Plugin for generating and manipulating alignments.
+  composition         Plugin for compositional data analysis.
+  cutadapt            Plugin for removing adapter sequences, primers, and
+                      other unwanted sequence from sequence data.
+  dada2               Plugin for sequence quality control with DADA2.
+  deblur              Plugin for sequence quality control with Deblur.
+  demux               Plugin for demultiplexing & viewing sequence quality.
+  diversity           Plugin for exploring community diversity.
+  diversity-lib       Plugin for computing community diversity.
+  emperor             Plugin for ordination plotting with Emperor.
+  feature-classifier  Plugin for taxonomic classification.
+  feature-table       Plugin for working with sample by feature tables.
+  fragment-insertion  Plugin for extending phylogenies.
+  gneiss              Plugin for building compositional models.
+  longitudinal        Plugin for paired sample and time series analyses.
+  metadata            Plugin for working with Metadata.
+  phylogeny           Plugin for generating and manipulating phylogenies.
+  quality-control     Plugin for quality control of feature and sequence data.
+  quality-filter      Plugin for PHRED-based filtering and trimming.
+  sample-classifier   Plugin for machine learning prediction of sample
+                      metadata.
+  taxa                Plugin for working with feature taxonomy annotations.
+  vsearch             Plugin for clustering and dereplicating with vsearch.
+```
+
+**PRO TIP:** QIIME 2's CLI is rich and extensive. Regularly referring to the `--help` option will guide you through its functionalities and ensure you're using the tools effectively.
+
+If you want to **explore a specific plugin**, e.g., `alignment`, you can type:
+```
+qiime alignment --help
+```
+*This will display all the sub-commands and methods available under the alignment plugin.*
+
+Once you've found a specific method or tool you'd like to use, **get detailed usage information** with:
+```
+qiime alignment {sub-command} --help
+```
+*Replace {sub-command} with the specific tool or method you're interested in (e.g., mafft).*
+
+After understanding the required parameters for a specific sub-command, you can proceed with your analysis, such as:
+
+```
+# download example input data: Expected an artifact of type FeatureData[Sequence]
+wget https://docs.qiime2.org/2023.7/data/tutorials/moving-pictures/rep-seqs-deblur.qza
+mv rep-seqs-deblur.qza input.gza
+```
+
+```
+qiime alignment mafft --i-sequences input.qza --o-alignment aligned.qza
+```
+
+![screenshot of executing qiime2 CLI tools]({{ site.baseurl }}/assets/img/guides/analysis/jupyter/run_qiime_tools.png)
+
+*The* `qiime alignment mafft` *command in QIIME 2 is used to perform sequence alignment using the MAFFT software. Sequence alignment is a fundamental step in many bioinformatics workflows, especially in phylogenetic analyses where aligned sequences are used to reconstruct evolutionary relationships. Once sequences are aligned using this method, they are often used for subsequent steps like masking/filtering and phylogenetic tree construction.*
+
+<b>To get started, follow the official QIIME 2 guide for [QIIME 2 command-line interface (q2cli)](https://docs.qiime2.org/2023.7/interfaces/q2cli/).</b><br>
+The comprehensive list of [tutorials](https://docs.qiime2.org/2023.7/tutorials/) can be accessed at https://docs.qiime2.org/. <br>
+A [user-friendly tutorial for QIIME2](https://bioinformaticsworkbook.org/dataAnalysis/Metagenomics/Qiime2.html#gsc.tab=0) is available in the [Bioinformatics Workbook](https://bioinformaticsworkbook.org/), guiding **Ceres users** through the `complete qiime2 pipeline` with detailed comments and explanations for each step.
 
 ## A few Ceres-specific notes:
 
