@@ -686,7 +686,7 @@ On the **Ceres cluster**, `qiime2` is accessible in two primary ways through Jup
 
 The pre-configured `qiime2-2023.2` kernel provides an immediate environment to conduct your analysis using tools from the qiime2 Python package without the need of additional installation. By selecting either the Python console or Python notebook in the JupyterLab launcher, the related environment activates seamlessly.
 
-![screenshot of selecting qiime2 kernel]({{ site.baseurl }}/assets/img/guides/analysis/jupyter/qimme_kernel.png)
+![screenshot of selecting qiime2 kernel]({{ site.baseurl }}/assets/img/guides/analysis/jupyter/qiime_kernel.png)
 
 Simply `import qiime2` in your chosen interface to start leveraging its features. Let's use Notebook app as an example:
 ```
@@ -696,7 +696,7 @@ To easily check if qiime2 has been imported correctly, you can use the `__versio
 ```
 print(qiime2.__version__)
 ```
-![screenshot of importing qiime2 in python notebook]({{ site.baseurl }}/assets/img/guides/analysis/jupyter/qimme_kernel_in_notebook.png)
+![screenshot of importing qiime2 in python notebook]({{ site.baseurl }}/assets/img/guides/analysis/jupyter/qiime_kernel_in_notebook.png)
 
 **PRO TIP:** Jupyter notebooks allow for executing both Python code and shell (bash) commands within code cells. The primary language is determined by the kernel you're using (e.g., Python), but you can also run shell commands in a Python kernel by prefixing the command with an exclamation point (`!`).
   * Jupyter uses IPython as its underlying interpreter for the Python kernel, and IPython has some built-in automations and conveniences. For instance, certain commands like `ls` might be automatically interpreted as shell commands, especially if they don't collide with any Python commands.
