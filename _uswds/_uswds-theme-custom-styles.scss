@@ -105,3 +105,11 @@ pre {
       @include u-flex('align-center') 
    }
 }
+
+//table
+
+.table-list {
+   @include usa-table;
+   @include usa-table--compact;
+   @include usa-table--borderless;
+}

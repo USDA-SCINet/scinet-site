@@ -25,10 +25,13 @@ subnav:
 
 ## Overview of the SCINet-X Project
 
-The ARS SCINet Team developed a SCINet network solution that provides two levels of high-bandwidth services to meet the different needs of research locations.  These solutions will accelerate the expansion of high-bandwidth SCINet connectivity to all ARS locations as fast as possible while balancing economic, technological, and local constraints.  The SCINet-X project involves the SCINet Team working with each individual location in ARS to directly connect the location to SCINet.  
+The ARS SCINet Team developed a SCINet network solution that provides two levels of high-bandwidth services to meet the different needs of research locations.  These solutions will accelerate the expansion of high-bandwidth SCINet connectivity to all ARS locations as fast as possible while balancing economic, technological, and local constraints.  The SCINet-X project involves the SCINet Team working with each individual location in ARS to directly connect the location to SCINet. 
 
-The following locations are actively working on establishing high-bandwidth SCINet connectivity. 
+<br> 
 
+### The following locations are actively working on establishing high-bandwidth SCINet connectivity. 
+
+{: .table-list }
 | Parlier, WA | Salinas, CA | Wenatchee, WA | Wapato, WA | 
 | College Station, TX | Fort Keogh, MT | Las Cruces, NM | Lincoln, NE |
 | Urbana, IL | Griffin, GA | El Reno, OK | Burlington, VT |
@@ -37,41 +40,47 @@ The following locations are actively working on establishing high-bandwidth SCIN
 | Fort Lauderdale, FL | Gainesville, FL | Miami, FL | Oxford, MS |
 | Poplarville, AR | 
 
+<br>
 
+### The following locations have completed implementation of their high-bandwidth SCINet connectivity. 
 
-The following locations have completed implementation of their high-bandwidth SCINet connectivity. 
+**Pacific West Area**
 
-Pacific West Area 
-
+{: .table-list }
 | Burns, OR | Hilo, HI | Logan, UT |
 | Maricopa, AZ | 
 
-Plains Area
+**Plains Area**
 
+{: .table-list }
 | Akron, CO | Bushland, TX | Fargo, ND | 
 | Grand Forks, ND | Kerrville, TX | Lubbock, TX |
 |Mandan, ND | Manhattan, KS |
 
-Midwest Area
+**Midwest Area**
 
+{: .table-list }
 | Bowling Green, KY | Columbia, MO | Madison, WI | 
 | Peoria, IL | St. Paul, MN | West lafayette, IN |
 
-Northeast Area
+**Northeast Area**
 
+{: .table-list }
 | Boston, MA | Frederick, MD | Geneva, NY | 
 | Kearneysville, WV | Leetown, WV | Newark, DE | 
 | Wyndmoor, PA | 
 
-Southeast Area
+**Southeast Area**
 
+{: .table-list }
 | Athens, GA | Auburn, AL | Charleston, SC | 
 | Florence, SC | Griffin, GA | Jonesboro, AR |
 | Little Rock, AR | New Orleans, LA | Starkville, MS |
 | Schriever (Houma), LA | Tifton, GA | 
 
-Partner Agency - Forest Service
+**Partner Agency - Forest Service**
 
+{: .table-list }
 | Missoula, MT |
 
 We are eager to work with the remaining ARS locations to ensure they are ready when network equipment is available for installation. Please see the steps (milestones) below to be followed in getting a location on our list. The SCINet Team is available to answer questions at any step along the way. 
