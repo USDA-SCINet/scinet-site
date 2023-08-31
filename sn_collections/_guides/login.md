@@ -142,7 +142,7 @@ After selcting this, you will be automatically directed to login using your usua
 - When logging in, you will enter your SCINet credentials (username and password) and click “Sign In”.
 ![]({{ site.baseurl }}/assets/img/guides/access/yubikey-login/login1.png)
 
-- You will be directed to a new screen showing your available security keys. You will select "Sign in with Security Key".
+- You will be directed to a new screen showing your available security keys. You will select "Sign in with Security Key". The system will then prompt you for a PIN. This is the PIN provided to you with your YubiKiey. If you were not given one, please contact the VRSC by emailing scinet_vrsc@usda.gov.
 ![]({{ site.baseurl }}/assets/img/guides/access/yubikey-login/login2.png)
 
 - A pop up will appear asking you if you would like to use your passkey. You will select "Use a different device" in the bottom left corner. 
