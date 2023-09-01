@@ -6,6 +6,8 @@ order_number: 5
 categories: [Access]
 
 subnav:
+  - title: Creating a Config File
+    url: '#creating-a-config-file'
   - title: Step-Based Access Via SSH
     url: '#step-based-access-via-ssh'
     subnav:
@@ -40,6 +42,41 @@ A video demonstration for changing your password can be found [here](https://www
 2. Your last 24 passwords cannot be reused.
 
 
+
+## Creating a Config File
+
+It is recommended to create a config file on your computer. You may do so using Notepad.  The file you create must be titled “config” with no extension for this method to work properly (i.e. “config” not “config.txt”). This will send a “keepalive” signal every 20 seconds and keep retrying for up to 30 failures. 
+	Note: Do not copy the code into the terminal itself, it must be in a separate file. 
+
+Create a ~/.ssh/config file replacing USER.NAME with your actual username, all in lowercase. The path to the .ssh file is as follows: C>Users>(Your Account)>.ssh
+
+Note: If you are using a Mac, the .ssh file may be hidden to you. To reveal the hidden files, you will press and hold CMD+SHIFT+. (Period Key) when choosing a location to save your file. The .ssh file will now be visible for you to save the config file.
+
+```bash
+Host ceres-login
+HostName ceres.scinet.usda.gov
+User USER.NAME
+TCPKeepAlive yes
+ServerAliveInterval 20
+ServerAliveCountMax 30
+
+Host atlas-login
+HostName atlas-login.hpc.msstate.edu
+User USER.NAME
+TCPKeepAlive yes
+ServerAliveInterval 20
+ServerAliveCountMax 30
+```
+If you don’t want to use the config file method above, add the following title to the ssh command replacing USER.NAME with your actual username, all in lowercase.
+
+```bash
+ssh -o TCPKeepAlive=yes -o ServerAliveInterval=20 -o ServerAliveCountMax=30 USER.NAME@ceres.scinet.usda.gov
+```
+and
+
+```bash
+ssh -o TCPKeepAlive=yes -o ServerAliveInterval=20 -o ServerAliveCountMax=30 USER.NAME@atlas-login.hpc.msstate.edu
+```
 
 ## Step-Based Access Via SSH
 
