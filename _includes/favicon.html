@@ -1,6 +1,6 @@
 {% for icon in site.data.favicons %}
-{% if icon.meta-name %}
-<meta name="{{ icon.meta-name }}" content="{{ icon.content }}">
+{% if icon.meta-name or icon.meta-property %}
+<meta {% if icon.meta-name %}name="{{ icon.meta-name }}" {% endif %}{% if icon.meta-property %}property="{{ icon.meta-property }}" {% endif %}content="{{ icon.content }}">
 {% else %}
 <link rel="{{ icon.rel | default: 'icon' }}"{% if icon.type -%} type="{{ icon.type }}"{% endif %}
   {% if icon.sizes -%}sizes="{{ icon.sizes }}"
