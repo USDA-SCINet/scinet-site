@@ -49,8 +49,6 @@ calendar:
 
 ---
 
-<br>
-
 The SCINet Geospatial Research Working Group's Annual Workshop is set to take place September 25-29, 2023. This year's theme is "Machine Learning and Deep Learning with Geospatial Data" and will feature lightning talks, interactive tutorials, and community discussions around research topics.<!--excerpt-->   
 
 
