@@ -4,6 +4,7 @@ short_name: "SCINet"
 language: "en"
 lang_direction: "ltr"
 timezone: America/New_York
+icon: "https://scinet.usda.gov/assets/img/site/favicons/favicon.png"
 
 # GitHub information
 # This is used for adding an edit this page link to the footer
