@@ -33,4 +33,4 @@
 - meta-name: theme-color
   content: "#ffffff"
 - meta-property: "og:image"
-  content: /assets/img/site/favicons/favicon-96x96.png
+  content: "https://scinet.usda.gov/assets/img/site/favicons/favicon.png"
