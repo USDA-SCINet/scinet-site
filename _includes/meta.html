@@ -25,6 +25,6 @@
 <meta property="twitter:image" content="{{ site.icon }}" />
 <meta property="twitter:title" content="{% if page.title %}{{ page.title | strip_html }} | {% endif %}{{ site.title }}" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"{{ description }}","headline":"{% if page.title %}{{ page.title | strip_html }}{% else %}{{ site.title }}{% endif %}","image":"{{ site.icon }}","url":"{{ site.url }}{% if page.permalink %}{{ page.permalink }}{% else %}{{ page.url}}{% endif %}"}</script>
+{"@context":"https://schema.org","@type":"{% if page.permalink == "/" %}WebSite{% else %}WebPage{% endif %}","description":"{{ description }}","headline":"{% if page.title %}{{ page.title | strip_html }}{% else %}{{ site.title }}{% endif %}","image":"{{ site.icon }}",{% if page.permalink == "/" %}"name":"{{ site.short_name }}",{% endif %}"url":"{{ site.url }}{% if page.permalink %}{{ page.permalink }}{% else %}{{ page.url}}{% endif %}"}</script>
 
 {% include favicon.html %}
