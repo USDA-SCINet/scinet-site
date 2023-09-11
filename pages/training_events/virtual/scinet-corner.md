@@ -28,8 +28,11 @@ collect_list:
     excerpt: "Alex presented on how to use Jupyter as a Python coding environment"
     details_title: "Tutorial Materials"
     details:
-      - url: "https://usdagcc.sharepoint.com/:p:/s/REE-ARS-SCINetOffice/EYMy_7xmJ-ZNvGMu9CC1CVEBmlFvfLKLK3W8SrynTBvKvQ?e=Ij1T8k"
+      - url: https://usdagcc.sharepoint.com/:p:/s/REE-ARS-SCINetOffice/EYwU4iMJJpNMh1J9lm39JTYBMHd5ILBdG9CoAAHMczCNHg
         text: Presentation slides
+        external: true
+      - url: https://usdagcc.sharepoint.com/:u:/s/REE-ARS-SCINetOffice/EZTSyZe2Hb1JgVijnac6n-QBCstJucpZVChqPlJzT7GI4A
+        text: Python Code
         external: true
         
   - title: Getting started with Python programming
