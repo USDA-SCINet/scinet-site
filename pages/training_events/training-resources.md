@@ -27,7 +27,7 @@ subnav:
     internal: true
     excerpt: SCINet, the AI-COE, and other providers regularly host a variety of events and trainings. Information on how to attend these events will be posted on this page closer to the event date. You might want to <a href="/training/events/archive">take a look at events we’ve hosted in the past</a>, too.
   - title: SCINet Corner
-    url: /training/corner
+    url: /events/scinet-corner
     internal: true
     excerpt: The SCINet Corner is a recurrent virtual gathering to provide a space for people to meet and discuss SCINet related items.
   - title: SCINet Tutorial Workbooks

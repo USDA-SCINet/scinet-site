@@ -94,6 +94,7 @@ defaults:
     values:
       future: "show"
       layout: "event"
+      cal-titles: "hide"
       sidenav_link: /training/events/
   - 
     scope:
@@ -102,6 +103,7 @@ defaults:
     values:
       future: "show"
       layout: "event"
+      cal-titles: "hide"
       sidenav_link: /training/events/
       recurring: true
   -

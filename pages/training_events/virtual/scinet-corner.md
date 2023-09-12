@@ -1,7 +1,7 @@
 ---
 title: SCINet Corner
 description: SCINet Corner is a space for people to meet and discuss SCINet related items.
-permalink: /training/corner
+permalink: /training/corner-old
 layout: page
 
 sidenav_link: /training/resources
