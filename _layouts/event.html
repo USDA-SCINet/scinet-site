@@ -25,10 +25,10 @@ main:
 
     
     {% if page.recurring %}
-      {% include components/collection-event.html comp_events=my_events eventpage="true" pagetype="future" %}
-      {% include components/collection-event.html comp_events=my_events eventpage="true" pagetype="archive" %}
+      {% include components/collection-event.html comp_events=my_events pagetype="future" %}
+      {% include components/collection-event.html comp_events=my_events pagetype="archive" %}
     {% else %}
-      {% include components/collection-event.html simple_events=my_events eventpage="true" %}
+      {% include components/collection-event.html simple_events=my_events %}
     {% endif %}
   {% endif %}
 

@@ -65,7 +65,7 @@ subnav:
         url: https://forum.scinet.usda.gov/
         class: usa-link--external
       - title: SCINet Corner
-        url: /training/corner
+        url: /events/scinet-corner
 
 ---
 

@@ -1,8 +1,5 @@
 {% if include.post %}
 {% assign post = include.post %}
-{% if include.eventpage == "true" %}
-{% assign eventpage = 'event' %}
-{% endif %}
 {% endif %}
 
 
@@ -53,22 +50,24 @@
     </div>
     {% endif %}
     <div class="usa-collection__body">
-        {% unless eventpage=='event' %}
+        {% unless page.cal-titles == 'hide' %}
         <h3 class="usa-collection__heading">
-            <a class="usa-link" href="{{ posturl | relative_url}}">
+            {% unless page.layout == 'event' and posturl == page.url %}<a class="usa-link" href="{{ posturl | relative_url}}">{% endunless %}
                 {% if post_type == 'calendar' %}
                     {% if pagetype == "archive" %}
                         {{ postdate | date: "%Y" }} &middot 
                     {% endif %}
-                    {% if page.layout != 'workshop' and postprovider != 'false' %}
+                    {% unless page.layout == 'workshop' or page.layout == "event" %}
+                    {% if postprovider != 'false' %}
                         {{ postprovider }} &middot 
                     {% endif %}
+                    {% endunless %}
                     {{ posttitle }}
                 {% else %}
-                    {% if no_date_below %}{{ postdate | date_to_string }} &middot {% endif %}{% if postprovider != 'false' and page.type != 'itinerary' %}{{ postprovider }} &middot {% endif %}{{
+                    {% if no_date_below %}{{ postdate | date_to_string }} &middot {% endif %}{% unless page.layout == "event" %}{% if postprovider != 'false' and page.type != 'itinerary' %}{{ postprovider }} &middot {% endif %}{% endunless %}{{
                 posttitle }}
                 {% endif %}
-            </a>
+                {% unless page.layout == 'event' and posturl == page.url %}</a>{% endunless %}
         </h3>
         {% unless page.type == 'itinerary' %}
         {% if excerpt_type == 'long' %}
@@ -111,7 +110,7 @@
 
 
         </ul>
-        {% unless page.layout == 'workshop' or page.no-tags or eventpage=='event' %}
+        {% unless page.layout == 'workshop' or page.no-tags or page.layout=='event' %}
         {% unless posttags == 'false' and posttype == 'false' %}
         <ul class="usa-collection__meta" aria-label="Tags">
             {% if posttype != 'false' %}
