@@ -87,7 +87,7 @@ The tentative schedule of lightning talks is as follows:
 Presenter | Topic
 ---|---
 Amira Burns | I develop and maintain CameraTrapDetectoR, a fleet of deep learning object detection models that classify and count animals in camera trap images. The models are deployed within an R package, which also contains helpful organizational and post-processing tools.
-Noa Mills | My research focuses on using deep learning tools to identify agricultural field boundaries in satellite imagery. I am currently in the process of transitioning from using the Rastervision framework to torchgeo to use instance segmentation, which is not supported by rastervision. The biggest issue I face in my research is noisy data.
+Noa Mills | My research focuses on using deep learning tools to identify agricultural field in satellite imagery. I have built a semantic segmentation model using the Raster Vision framework to identify agricultural fields. I am now transitioning from Raster Vision to torchgeo, which supports instance segmentation. I will provide an overview of these two geospatial deep learning tools and compare their features.
 Andrea Albright | UAS image processing using ODM on the HPC
 Piyush Pandey | I will present my work in using deep learning models for object detection with UAV images. I have used several approaches to accomplish this including the creation of synthetic training images. I will present tools that may be useful for researchers trying to identify objects and extract traits from UAV imagery.
 Laura Tibbs-Cortes | Switchgrass is not only a native North American prairie grass, but also a biofuel crop, and its response to climate change will have impacts on both conservation and agriculture. This project identifies genetic and environmental factors affecting important fitness and agronomic traits in switchgrass including flowering time, biomass, and winter survival. These results, combined with future climate predictions, indicate that a major shift in the distribution of switchgrass subpopulations is likely by the end of this century as warming temperatures alter the competitive advantage of alleles.
@@ -96,7 +96,7 @@ Dalmo Vieira | A methodology was developed to estimate soil erosion for large wa
 James Zollweg | Using the principle of soil thermal inertia to measure soil moisture from remote sensing data.
 Lucas Heintzman | Ditch networks enhance field drainage, mediate runoff contamination, and are crucial habitat for species. However, our understanding of ditch networks (and associated ecological dynamics) has been constrained due to private land access and insufficient elevation models. Thus, our project aims to develop a regional classification and accounting system to accurately delineate and quantify ditch networks via LiDAR and ML.
 Zhanyou Xu | Machine and deep learning for root system architecture classification and selection
-Amy Hudson | Generating random disease movement and identifying what environmental conditions are different between random possibilities and observed spread
+Amy Hudson | Generating random disease movements to identify differences in environmental conditions between random possibilities and observed spread
 
 A recording of the lightning talks will be made available here after the end of the workshop. 
 
