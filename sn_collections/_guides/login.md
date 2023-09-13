@@ -132,9 +132,11 @@ The second command updates your .ssh/config file. If you already have a complica
 	- Your default web browser should open automatically to the SCINet authentication page.  Choose USDA LincPass as your sign-in option. 
 ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/lincpass.png)
 
-- You will then go through a typical eAuth based login. Select login with PIV/CAC and enter your pin, see the image below for example.
+- You will then go through a typical eAuth based login. You will select your applicable option (either USDA or Non-USDA), select login with your PIV/CAC and enter your pin.  See the images below for an example.
   
-![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/eAuth.png)
+![screenshot of usda eauth highlighted]({{ site.baseurl }}/assets/img/guides/access/eauth_usda.png)
+![screenshot of non-usda eauth highlighted]({{ site.baseurl }}/assets/img/guides/access/eauth_nonusda.png)
+![screenshot of piv/cac selection highlighted]({{ site.baseurl }}/assets/img/guides/access/select_piv.png)
 
 - Now go through your usual eAuth based login. 
 	- Please Note: There could be complications here if its your first time using eAuth.
