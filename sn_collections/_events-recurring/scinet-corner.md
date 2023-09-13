@@ -92,6 +92,8 @@ sessions:
   
 ---
 
-The SCINet Corner is a recurrent virtual gathering to provide a space for people to meet and discuss SCINet related items. The main idea is that SCINet users interested in similar things can get help from each other. This virtual meeting will provide space for, and facilitate these interactions on the first or second Thursday of the month. Meeting times may change. 
+The SCINet Corner is a recurrent virtual gathering to provide a space for people to meet and discuss SCINet related items. The main idea is that SCINet users interested in similar things can get help from each other. This virtual meeting will provide space for, and facilitate these interactions on the first or second Thursday of the month.<!--excerpt-->
 
-[Register Here](https://forms.gle/7DcBoBvbGcjQDBP38){: .usa-button }<!--excerpt-->
+Location: [SpatialChat1](https://app.spatial.chat/s/scinet-corner)
+
+[Register Here](https://forms.gle/7DcBoBvbGcjQDBP38){: .usa-button }
