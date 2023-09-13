@@ -88,7 +88,7 @@ The workshop is split over 5 separate Zoom sessions (as well as a pre-workshop a
 
 **Please register for the sessions so we can have an idea of how many people will be present at each event.** Note, each session will have a separate Zoom link and passcode, so you must register for each session you would like to attend. Calendar events with Zoom links will be sent out automatically based on registration form submissions. 
 
-
+We are committed to making this workshop accessible to everybody. If we can help making learning easier for you (e.g., sign-language interpreters), please get in touch (Heather Savoy, [heather.savoy@usda.gov](heather.savoy@usda.gov)) and we will attempt to do so.
 
 
 
