@@ -74,10 +74,10 @@ The 2020 Workshop was planned following the key needs identified in the communit
 
 The [2022 Workshop]({{ site.baseurl }}/events/2022-08-25-Geospatial-Workshop) was designed to help reduce the barrier to entry in migrating geospatial workflows to SCINet resources. Presentations and tutorials focused on showcasing how to perform basic geospatial operations and analyses in R and Python, discern which operations are embarassingly parallel, employ basic parallel processing options in R and Python, submit SLURM jobs, and use the interactive environments available via Open OnDemand. 
 
-# Overview presentation
+## Overview presentation
 A recording of the working group and workshop overview presentation will be made available here after the end of the workshop. 
 
-# Lightning talks
+## Lightning talks
 
 The tentative schedule of lightning talks is as follows:
 
