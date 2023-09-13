@@ -19,6 +19,10 @@ sessions:
       - text: Basic Python or other scripting language experience
       - text: Basic Unix experience can also be helpful
 
+subnav:
+  - title: Pre-workshop suggested material
+    url: '#pre-workshop-suggested-material'
+
 
 ---
 
