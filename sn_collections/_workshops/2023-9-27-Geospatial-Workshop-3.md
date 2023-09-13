@@ -26,6 +26,8 @@ subnav:
 
 ---
 
+**Leads**: Noa Mills (SCINet Fellow), Brian Stucky (SCINet Computational Biologist)
+
 <br>
 
 This session will introduce how to use the [Raster Vision](https://rastervision.io/) framework for deep learning computer vision tasks with geospatial data. Attendees will participate in a hands-on tutorial to train semantic segmentation and object detection models on satellite imagery and explore how to modify the code for their own use cases.

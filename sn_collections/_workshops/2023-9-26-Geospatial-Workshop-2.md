@@ -20,6 +20,8 @@ sessions:
 
 ---
 
+**Leads**: Heather Savoy (SCINet Computational Biologist), Brian Stucky (SCINet Computational Biologist)
+
 <br>
 
 This session will have a presentation on machine learning methods for spatial modeling use cases followed by a hands-on tutorial implementing those methods. This content is a continuation of the Spatial Interpolation tutorial held at a working group meeting in May 2023. Although that previous tutorial was in R, this tutorial will be in Python. 

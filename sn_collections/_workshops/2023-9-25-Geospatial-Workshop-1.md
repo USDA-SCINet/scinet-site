@@ -29,6 +29,8 @@ subnav:
 
 ---
 
+**Leads**: Heather Savoy (SCINet Computational Biologist), Amy Hudson (Research Ecologist)
+
 <br>
 
 ## Agenda
