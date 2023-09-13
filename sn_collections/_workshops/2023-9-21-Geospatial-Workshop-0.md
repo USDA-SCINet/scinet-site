@@ -28,8 +28,6 @@ subnav:
 <br>
 
 ## Login Support
-
-<br>
 {:.border-bottom}
 
 This pre-workshop session will have VRSC team members available to address issues related to SCINet account logins. If you don't currently have a SCINet account, [apply for one]({{ site.baseurl }}/about/signup) ASAP. 
