@@ -21,6 +21,8 @@ sessions:
 
 ---
 
+**Leads**: Brian Stucky (SCINet Computational Biologist), Heather Savoy (SCINet Computational Biologist)
+
 <br>
 
 This session will introduce key concepts of GPU-based computing, including how they differ from CPUs and what kinds of computing tasks can benefit from GPUs. There will also be a hands-on tutorial showing how to use the GPUs on the Atlas cluster and how to evaluate the effect of using GPUs on your computation time. 

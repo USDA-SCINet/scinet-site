@@ -16,6 +16,8 @@ sessions:
 
 ---
 
+**Leads**: Amy Hudson (Research Ecologist), Heather Savoy (SCINet Computational Biologist)
+
 <br>
 
 This session will have facilitated discussions on:
