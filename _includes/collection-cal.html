@@ -3,7 +3,7 @@
 {% assign comp_events = site.events-recurring | where: 'future', 'show' %}
 
 {% if page.type == "future" %}
-  {% assign timemin = site.time | date: '%s' | plus: 0 %}
+  {% assign timemin = site.time | date: '%s' | minus: 86400 %}
   {% assign simple_events = site.events | where: 'future', 'show' %}
   {% assign mysimple_events = simple_events | where_exp: "post", "post.date >= site.time or post.end_date >= timemin" %}
 
