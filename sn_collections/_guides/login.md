@@ -127,7 +127,7 @@ The second command updates your .ssh/config file. If you already have a complica
  
 ### Usage Instructions:
 - Please note, if you are using a YubiKey, please see the [Yubikey login instructions](#accessing-using-yubikey) 
-- Each morning on your first attempt to ssh to Ceres with ```ssh ceres.scinet.usda.gov```, you will see something like this: 
+- Each morning on your first attempt to ssh to Ceres with ```ssh user.name@ceres.scinet.usda.gov```, (changing user.name to your own SCINet username) you will see something like this: 
 
 	- Your default web browser should open automatically to the SCINet authentication page.  Choose USDA LincPass as your sign-in option. 
 ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/lincpass.png)
