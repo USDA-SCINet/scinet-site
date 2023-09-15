@@ -11,9 +11,9 @@ layout: page
 # collect_title: Events
 # reverse_collection: true
 
-# subnav:
-#  - title: Events
-#    url: '#events'
+subnav:
+  - title: Meeting Materials
+    url: '#meeting-materials'
 ---
 
 We are excited to introduce the SCINet Translational Omics Working Group, an interdisciplinary team of researchers and experts dedicated to advancing the field of translational omics and its applications in agriculture. Omics technologies will play a pivotal role in the new agricultural revolution by unraveling the complex molecular underpinnings of complex traits and helping guide future farming practices. 
@@ -34,6 +34,9 @@ By fostering a dynamic environment for interaction and cooperation, we believe t
 If you are interested in and would like to join the group, please fill out the following survey: [Translational Omics Working Group Survey](https://forms.office.com/g/a7VFhG0AJD).
 
 For more information, please contact George Liu ([George.Liu@usda.gov](mailto:George.Liu@usda.gov)) or Zhenbin Hu ([Zhenbin.Hu@usda.gov](mailto:Zhenbin.Hu@usda.gov)).
+
+
+## Meeting Materials
 
 Presentation materials from previous meetings are available to USDA employees in the table below.
 
