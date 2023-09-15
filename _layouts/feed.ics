@@ -1,7 +1,7 @@
 ---
 layout: none
 ---
-BEGIN:VCALENDAR{%- assign sitedate = site.time | date: "%s" %}{%- assign sitetime = sitedate | minus: 86400 %}{%- assign sitetime = sitetime | date_to_xmlschema %}{%- assign all_downtime = site.downtime %}{%- assign feed_set = '' | split: '' %}{%- for _down in all_downtime %}{%- assign datetime = _down.date | date_to_xmlschema %}{%- if datetime >= sitetime %}{%- assign feed_set = feed_set | push: _down %}{%- endif %}{%- endfor %}
+BEGIN:VCALENDAR{%- assign sitedate = site.time | date: "%s" %}{%- assign sitetime = sitedate | minus: 86400 %}{%- assign sitetime = sitetime | date_to_xmlschema %}{%- assign all_downtime = site.downtime %}{%- assign feed_set = '' | split: '' %}{%- for _down in all_downtime %}{%- assign datetime = _down.date | date_to_xmlschema %}{%- if _down.end_date %}{%- assign enddate = _down.end_date | date_to_xmlschema %}{%- else %}{%- assign enddate = datetime %}{%- endif %}{%- if datetime >= sitetime or enddate >= sitetime %}{%- assign feed_set = feed_set | push: _down %}{%- endif %}{%- endfor %}
 VERSION:2.0
 PRODID:{%- capture proid -%}-//{{site.title}}//{{site.url}}//{{page.title}}//EN{%- endcapture -%}{% include feed.html content=proid %}
 CALSCALE:GREGORIAN
