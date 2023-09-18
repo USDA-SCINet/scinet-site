@@ -35,9 +35,8 @@ The ARS SCINet Team developed a SCINet network solution that provides two levels
 | Parlier, WA | Salinas, CA | Wenatchee, WA | Wapato, WA | 
 | Fort Keogh, MT | Las Cruces, NM | Lincoln, NE | Urbana, IL |
 | Griffin, GA | El Reno, OK | Burlington, VT | Orono, ME |
-| Auburn, AL | Baton Rouge, LA | Byron, GA | Canal Point, FL |
-| Dawson, GA | Fayetteville, AR | Fort Lauderdale, FL | Miami, FL |
-| Poplarville, AR | 
+| Baton Rouge, LA | Byron, GA | Canal Point, FL | Dawson, GA |
+| Fayetteville, AR | Fort Lauderdale, FL | Miami, FL | Poplarville, AR | 
 
 <br>
 
@@ -52,9 +51,9 @@ The ARS SCINet Team developed a SCINet network solution that provides two levels
 **Plains Area**
 
 {: .table-list }
-| Akron, CO | Bushland, TX | College Station, TX | Fargo, ND | 
-| Grand Forks, ND | Kerrville, TX | Lubbock, TX |
-|Mandan, ND | Manhattan, KS |
+| Akron, CO | Bushland, TX | College Station, TX |
+| Fargo, ND | Grand Forks, ND | Kerrville, TX | 
+| Lubbock, TX | Mandan, ND | Manhattan, KS |
 
 **Midwest Area**
 
