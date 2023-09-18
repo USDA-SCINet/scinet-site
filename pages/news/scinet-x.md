@@ -33,11 +33,10 @@ The ARS SCINet Team developed a SCINet network solution that provides two levels
 
 {: .table-list }
 | Parlier, WA | Salinas, CA | Wenatchee, WA | Wapato, WA | 
-| College Station, TX | Fort Keogh, MT | Las Cruces, NM | Lincoln, NE |
-| Urbana, IL | Griffin, GA | El Reno, OK | Burlington, VT |
-| Orono, ME | Auburn, AL | Baton Rouge, LA | Booneville, AR | 
-| Byron, GA | Canal Point, FL | Dawson, GA | Fayetteville, AR |
-| Fort Lauderdale, FL | Gainesville, FL | Miami, FL | Oxford, MS |
+| Fort Keogh, MT | Las Cruces, NM | Lincoln, NE | Urbana, IL |
+| Griffin, GA | El Reno, OK | Burlington, VT | Orono, ME |
+| Auburn, AL | Baton Rouge, LA | Byron, GA | Canal Point, FL |
+| Dawson, GA | Fayetteville, AR | Fort Lauderdale, FL | Miami, FL |
 | Poplarville, AR | 
 
 <br>
@@ -53,14 +52,15 @@ The ARS SCINet Team developed a SCINet network solution that provides two levels
 **Plains Area**
 
 {: .table-list }
-| Akron, CO | Bushland, TX | Fargo, ND | 
+| Akron, CO | Bushland, TX | College Station, TX | Fargo, ND | 
 | Grand Forks, ND | Kerrville, TX | Lubbock, TX |
 |Mandan, ND | Manhattan, KS |
 
 **Midwest Area**
 
 {: .table-list }
-| Bowling Green, KY | Columbia, MO | Madison, WI | 
+| Ames, IA (ISU Campus) | Bowling Green, KY | Columbia, MO |
+| East Lansing, MI | Madison, WI | Morris, MN |
 | Peoria, IL | St. Paul, MN | West lafayette, IN |
 
 **Northeast Area**
@@ -73,10 +73,11 @@ The ARS SCINet Team developed a SCINet network solution that provides two levels
 **Southeast Area**
 
 {: .table-list }
-| Athens, GA | Auburn, AL | Charleston, SC | 
-| Florence, SC | Griffin, GA | Jonesboro, AR |
-| Little Rock, AR | New Orleans, LA | Starkville, MS |
-| Schriever (Houma), LA | Tifton, GA | 
+| Athens, GA | Auburn, AL | Booneville, AR | 
+| Charleston, SC | Florence, SC | Gainesville, FL |
+| Griffin, GA | Jonesboro, AR | Little Rock, AR |
+| New Orleans, LA | Oxford, MS | Raleigh, NC |
+| Starkville, MS | Schriever (Houma), LA | Tifton, GA | 
 
 **Partner Agency - Forest Service**
 
