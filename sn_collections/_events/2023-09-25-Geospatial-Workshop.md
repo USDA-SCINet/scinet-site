@@ -30,7 +30,7 @@ hero:
 intro:
   blurb:
     title: "How to Participate"
-    text: "<b>All members of the working group are welcome to participate!</b> We also welcome anyone interested in learning about the working group, SCINet, or geospatial research.  
+    text: "<b>All members of the <a href='https://scinet.usda.gov/research/working-groups/geospatial'>working group</a> are welcome to participate!</b> We also welcome anyone interested in learning about the working group, SCINet, or geospatial research.  
     </br></br>
     Please register by 9/22/2023 to ensure you will receive event updates and be added to the workshop project space on SCINet."
   card: 
