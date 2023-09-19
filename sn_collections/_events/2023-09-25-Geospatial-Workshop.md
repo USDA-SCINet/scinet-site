@@ -15,8 +15,8 @@ post_type: calendar
 
 hero:
   callout:
-    alt: "Geospatial Research Working Group"
-    text: "Harnessing SCINet computational resources in geospatial data science to further sustainable and intensified agriculture"
+    alt: "Geospatial Research Working Group Annual Workshop"
+    text: "Harnessing SCINet computational resources in geospatial data science to further sustainable and intensified agriculture. </br> The theme this year is <i>Machine Learning and Deep Learning for Geospatial Research</i> and the workshop will be held September 25-28, 2023."
     image:
       src: /geospatial.svg
       alt: "Globe Image"
@@ -30,7 +30,7 @@ intro:
   blurb:
     title: "How to Participate"
     text: "<b>All members of the working group are welcome to participate!</b> We also welcome anyone interested in learning about the working group, SCINet, or geospatial research.  
-    </br></br>
+    </br><a class='usa-button' href='https://forms.office.com/pages/responsepage.aspx?id=5zZb7e4BvE6GfuA8-g1Gl9a5kfIudJlNtOCmlBDF0lNUMkhYRUlYS041SUY2MEE2UlBJVVYwUVFRQi4u'>Register for the Workshop</a> </br>
     Please register by 9/22/2023 to ensure you will receive event updates and be added to the workshop project space on SCINet."
   card: 
     title: "Get Started with SCINet"
@@ -49,7 +49,7 @@ calendar:
 
 ---
 
-The SCINet Geospatial Research Working Group's Annual Workshop is set to take place September 25-29, 2023. This year's theme is "Machine Learning and Deep Learning with Geospatial Data" and will feature lightning talks, interactive tutorials, and community discussions around research topics.<!--excerpt-->   
+The SCINet Geospatial Research Working Group's Annual Workshop is set to take place September 25-28, 2023. This year's theme is *Machine Learning and Deep Learning with Geospatial Data* and will feature lightning talks, interactive tutorials, and community discussions around research topics.<!--excerpt-->   
 
 
 ## Workshop Goals
