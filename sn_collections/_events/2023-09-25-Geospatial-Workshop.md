@@ -16,13 +16,14 @@ post_type: calendar
 hero:
   callout:
     alt: "Geospatial Research Working Group Annual Workshop"
-    text: "Harnessing SCINet computational resources in geospatial data science to further sustainable and intensified agriculture. </br></br> The theme this year is <i>Machine Learning and Deep Learning for Geospatial Research</i> and the workshop will be held September 25-28, 2023."
+    text: "<i>Machine Learning and Deep Learning for Geospatial Research</i> - September 25-28, 2023."
     image:
       src: /geospatial.svg
       alt: "Globe Image"
   button:
-    url: /research/working-groups/geospatial
-    text: Visit the Working Group
+    url: https://forms.office.com/pages/responsepage.aspx?id=5zZb7e4BvE6GfuA8-g1Gl9a5kfIudJlNtOCmlBDF0lNUMkhYRUlYS041SUY2MEE2UlBJVVYwUVFRQi4u
+    external: true
+    text: Register for the Workshop
   container: full
 
 
@@ -30,7 +31,7 @@ intro:
   blurb:
     title: "How to Participate"
     text: "<b>All members of the working group are welcome to participate!</b> We also welcome anyone interested in learning about the working group, SCINet, or geospatial research.  
-    </br><a class='usa-button margin-y-2' href='https://forms.office.com/pages/responsepage.aspx?id=5zZb7e4BvE6GfuA8-g1Gl9a5kfIudJlNtOCmlBDF0lNUMkhYRUlYS041SUY2MEE2UlBJVVYwUVFRQi4u'>Register for the Workshop</a> </br>
+    </br></br>
     Please register by 9/22/2023 to ensure you will receive event updates and be added to the workshop project space on SCINet."
   card: 
     title: "Get Started with SCINet"
