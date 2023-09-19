@@ -81,6 +81,8 @@ When requesting additional data storage you will be asked for:
 
 To request a new project directory, fill out an application form (eAuthentication required, non-ARS users should contact their sponsor):
 
+Please Note: Only full-time ARS employees are able to submit these requests. Any requests sent by other individuals will be declined.
+
 [Request Project Storage](https://forms.office.com/g/wD9rYarVyn){: .usa-button .usa-button-big }
 
 
