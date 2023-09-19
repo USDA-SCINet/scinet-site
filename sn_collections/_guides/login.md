@@ -88,7 +88,7 @@ Delete your .ssh/known_hosts file OR run:
  
 ### Installation Instructions:
 
-- OpenSSH needs to be installed.  This is standard on recent Windows 10 and 11, MacOS, and Linux installs. However your local admin may have removed it or restricted access to it.  Check by running "ssh" in a PSor terminal  window.  You should get Usage instrctions.
+- OpenSSH needs to be installed.  This is standard on recent Windows 10 and 11, MacOS, and Linux installs. However your local admin may have removed it or restricted access to it.  Check by running "ssh" in a PowerShell or terminal  window.  You should get Usage instrctions.
 - ssh-agent needs to to running as a system service.
   - For Linux and MacOS this is probably already running.
   - For Windows this has to be enabled by an administator, it is not on by default even if openssh is installed.  To enable it an administor must:
