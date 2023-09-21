@@ -18,6 +18,14 @@ sessions:
         url: /about/signup
       - text: Basic Python or other scripting language experience
 
+subnav:
+- title: Learning objectives
+  url: '#learning-objectives'
+- title: Agenda
+  url: '#agenda'
+- title: Tutorial instructions
+  url: '#tutorial-instructions'
+
 ---
 
 **Leads**: Heather Savoy (SCINet Computational Biologist), Brian Stucky (SCINet Computational Biologist)
@@ -26,7 +34,76 @@ sessions:
 
 This session will have a presentation on machine learning methods for spatial modeling use cases followed by a hands-on tutorial implementing those methods. This content is a continuation of the [Spatial Interpolation tutorial](https://web.microsoftstream.com/video/3a7e35a4-7355-418e-a85d-84a7edeece95) held at a working group meeting in May 2023. Although that previous tutorial was in R, this tutorial will be in Python. 
 
-More information about the learning objectives, agenda, and tutorial instructions for this session will be added closer to the event. 
+<br>
 
+## Learning objectives
+{:.border-bottom}
+
+This session will include a presentation and tutorial exploring examples of spatial modeling tasks, e.g. spatial interpolation from point data to gridded data, with machine learning methods, e.g. random forest, ...
+
+* obj 1....
+* obj 2...
+
+<br>
+
+## Agenda
+{:.border-bottom}
+
+This session will be an interactive tutorial that covers:
+
+* Using ML for spatial interpolation...
+* ...
+
+<br>
+
+## Tutorial instructions
+{:.border-bottom}
+
+Steps to prepare for the tutorial:
+
+1. **Login to Atlas Open OnDemand** at [https://atlas-ood.hpc.msstate.edu/](https://atlas-ood.hpc.msstate.edu/). For more information on SCINet login procedures, see the [SCINet access user guide](https://scinet.usda.gov/guides/access/login).
+
+1. **Copy the Session 2 material from the workshop project space to your temporary workshop folder.** To get to a shell to do so, you can use the *Clusters* tab at the top of your Open OnDemand page to select 'Atlas Shell Access'. If you are comfortable ssh-ing in instead from, e.g., terminal or powershell, feel free to do so.
+
+    To create your temporary workshop folder, run these commands after replacing *firstname.lastname* with your actual SCINet username:
+
+    ```bash
+    cd /90daydata/shared
+    mkdir firstname.lastname
+    cd firstname.lastname
+    # symbolic link setup????
+    ```
+
+    Copy the Session 2 folder:
+
+    ```bash
+    cp -r /project/geospatialworkshop/session_2-spatial_modeling_dl/ .
+    ```
+
+1. **Setup kernel for JupyterLab.** In the workshop project space, there is a `workshop_venv` virtual environment for the packages we will be using during the workshop tutorials. You will create a kernel called *grwg_workshop* to access from JupyterLab.
+
+    To create a new kernelspec from the virtual environment:
+
+    ```bash
+    # Move to A100 node first????
+    source /project/geospatialworkshop/workshop_venv/bin/activate
+    ipython kernel install --name "grwg_workshop" --user
+    ```
+
+1. **Launch a Jupyter-A100 session.** Under the *Interactive Apps* menu, select *Jupyter-A100*. Specify the following input values on the page:
+
+    * Python Version: 3.10.8 
+    * Lab or Notebook: JupyterLab
+    * Account Name: geospatialworkshop
+    * Partition Name: workshop???
+    * QOS: ood -- Max Time: 8-00:00:00
+    * Number of hours: 4
+    * Number of nodes: 1???
+    * Number of tasks: 1???
+    * Additional Slurm Parameters: --gres=gpu:a100_1g.10gb:1????
+  
+    Click *Launch*.
+
+1. **Start session and select kernel:** Once you are in JupyterLab with this notebook open, select your kernel by clicking on the Switch kernel button in the top right corner of the editor. A pop-up will appear with a dropdown menu containing the geo_kernel kernel we made above. Click on the geo_kernel kernel and click the Select button.
 
 <br>
