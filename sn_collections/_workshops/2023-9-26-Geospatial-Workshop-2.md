@@ -71,13 +71,19 @@ Steps to prepare for the tutorial:
     cd /90daydata/shared
     mkdir firstname.lastname
     cd firstname.lastname
-    # symbolic link setup????
     ```
 
     Copy the Session 2 folder:
 
     ```bash
-    cp -r /project/geospatialworkshop/session_2-spatial_modeling_dl// .
+    cp -r /project/geospatialworkshop/session_2-spatial_modeling_ml/ .
+    ```
+
+    Create symbolic links to this folder and the project folder from your home directory (after replacing *firstname.lastname* with your actual SCINet username):
+
+    ```bash
+    ln -s /90daydata/shared/firstname.lastname ~/my_geoworkshop
+    ln -s /project/geospatialworkshop ~/proj_geoworkshop
     ```
 
 1. **Setup kernel for JupyterLab.** In the workshop project space, there is a `workshop_venv` virtual environment for the packages we will be using during the workshop tutorials. You will create a kernel called *grwg_workshop* to access from JupyterLab.
@@ -88,7 +94,7 @@ Steps to prepare for the tutorial:
     # Move to A100 node first????
     source /project/geospatialworkshop/workshop_venv/bin/activate
     ipython kernel install --name "grwg_workshop" --user
-    copy the custom JSON kernelspec file to /home/firstname.lastname/.local/shared/jupyter/kernels????
+    cp /project/geospatialworkshop/grwg_workshop.json ~/.local/shared/jupyter/kernels/grwg_workshop/kernel.json
     ```
 
 1. **Launch a Jupyter-A100 session.** Under the *Interactive Apps* menu, select *Jupyter-A100*. Specify the following input values on the page:
@@ -96,15 +102,15 @@ Steps to prepare for the tutorial:
     * Python Version: 3.10.8 
     * Lab or Notebook: JupyterLab
     * Account Name: geospatialworkshop
-    * Partition Name: workshop???
+    * Partition Name: gpu-a100
     * QOS: ood -- Max Time: 8-00:00:00
     * Number of hours: 4
     * Number of nodes: 1???
     * Number of tasks: 1???
-    * Additional Slurm Parameters: --gres=gpu:a100_1g.10gb:1????
+    * Additional Slurm Parameters: --gres=gpu:a100_1g.10gb:1????  --reservation=workshop
   
-    Click *Launch*.
+    Click *Launch*. The screen will update to the *Interactive Sessions* page. When your Jupyter session is ready, the top card will update from *Queued* to *Running* and a *Connect to Jupyter* button will appear. Click *Connect to Jupyter*.
 
-1. **Start session and select kernel:** Once you are in JupyterLab, open the `session_2-spatial_modeling_dl` notebook. Then, select your kernel by clicking on the Switch kernel button in the top right corner of the editor. A pop-up will appear with a dropdown menu containing the `grwg_workshop` kernel we made above. Click on the `grwg_workshop` kernel and click the Select button.
+1. **Start session and select kernel:** Once you are in JupyterLab, navigate to `my_geoworkshop/session_2-spatial_modeling_ml/` in the left navigation pane, and open the `spatial_modeling_ml` notebook by double-clicking. Then, select your kernel by clicking on *Kernel > Change kernel...* within the top navigation menu of the Jupyter window. A pop-up will appear with a dropdown menu containing the `grwg_workshop` kernel we made above. Click on the `grwg_workshop` kernel and click the *Select* button.
 
 <br>
