@@ -75,8 +75,8 @@
             {{ postexcerpt }}
         </p>
         {% else %}
-        <p class="usa-collection__description">
-            {{ postexcerpt | truncatewords:25 }}
+        <p class="usa-collection__description"> <!--removed truncatewords -->
+            {{ postexcerpt }} 
         </p>
         {% endif %}
         {% endunless %}
