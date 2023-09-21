@@ -111,6 +111,8 @@ Steps to prepare for the tutorial:
   
     Click *Launch*. The screen will update to the *Interactive Sessions* page. When your Jupyter session is ready, the top card will update from *Queued* to *Running* and a *Connect to Jupyter* button will appear. Click *Connect to Jupyter*.
 
-1. **Start session and select kernel:** Once you are in JupyterLab, navigate to `my_geoworkshop/session_2-spatial_modeling_ml/` in the left navigation pane, and open the `spatial_modeling_ml` notebook by double-clicking. Then, select your kernel by clicking on *Kernel > Change kernel...* within the top navigation menu of the Jupyter window. A pop-up will appear with a dropdown menu containing the `grwg_workshop` kernel we made above. Click on the `grwg_workshop` kernel and click the *Select* button.
+1. **Start session and select kernel:** Once you are in JupyterLab, navigate to `my_geoworkshop/session_2-spatial_modeling_ml/` in the left navigation pane, and open the `spatial_modeling_ml.ipynb` notebook by double-clicking. Then, select your kernel by clicking on *Kernel > Change kernel...* within the top navigation menu of the Jupyter window. A pop-up will appear with a dropdown menu containing the `grwg_workshop` kernel we made above. Click on the `grwg_workshop` kernel and click the *Select* button.
+
+1. Follow along during the tutorial session!
 
 <br>
