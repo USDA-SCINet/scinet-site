@@ -77,7 +77,7 @@ Steps to prepare for the tutorial:
     Copy the Session 2 folder:
 
     ```bash
-    cp -r /project/geospatialworkshop/session_2-spatial_modeling_dl/ .
+    cp -r /project/geospatialworkshop/session_2-spatial_modeling_dl// .
     ```
 
 1. **Setup kernel for JupyterLab.** In the workshop project space, there is a `workshop_venv` virtual environment for the packages we will be using during the workshop tutorials. You will create a kernel called *grwg_workshop* to access from JupyterLab.
@@ -104,6 +104,6 @@ Steps to prepare for the tutorial:
   
     Click *Launch*.
 
-1. **Start session and select kernel:** Once you are in JupyterLab with this notebook open, select your kernel by clicking on the Switch kernel button in the top right corner of the editor. A pop-up will appear with a dropdown menu containing the `grwg_workshop` kernel we made above. Click on the `grwg_workshop` kernel and click the Select button.
+1. **Start session and select kernel:** Once you are in JupyterLab, open the `session_2-spatial_modeling_dl/` notebook. Then, select your kernel by clicking on the Switch kernel button in the top right corner of the editor. A pop-up will appear with a dropdown menu containing the `grwg_workshop` kernel we made above. Click on the `grwg_workshop` kernel and click the Select button.
 
 <br>
