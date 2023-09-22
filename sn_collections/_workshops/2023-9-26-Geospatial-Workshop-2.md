@@ -63,7 +63,7 @@ Steps to prepare for the tutorial:
 
 1. **Login to Atlas Open OnDemand** at [https://atlas-ood.hpc.msstate.edu/](https://atlas-ood.hpc.msstate.edu/). For more information on SCINet login procedures, see the [SCINet access user guide](https://scinet.usda.gov/guides/access/login).
 
-1. **Copy the Session 2 material from the workshop project space to your temporary workshop folder.** To get to a shell to do so, you can use the *Clusters* tab at the top of your Open OnDemand page to select 'Atlas Shell Access'. If you are comfortable ssh-ing in instead from, e.g., terminal or powershell, feel free to do so.
+1. **Copy the Session 2 material from the workshop project space to a temporary workshop folder.** To get to a shell to do so, you can use the *Clusters* tab at the top of your Open OnDemand page to select 'Atlas Shell Access'. If you are comfortable ssh-ing in instead from, e.g., terminal or powershell, feel free to do so. 
 
     To create your temporary workshop folder, run these commands after replacing *firstname.lastname* with your actual SCINet username:
 
@@ -73,17 +73,16 @@ Steps to prepare for the tutorial:
     cd firstname.lastname
     ```
 
-    Copy the Session 2 folder:
-
-    ```bash
-    cp -r /project/geospatialworkshop/session_2-spatial_modeling_ml/ .
-    ```
-
-    Create symbolic links to this folder and the project folder from your home directory (after replacing *firstname.lastname* with your actual SCINet username):
+    Create a symbolic link to your new folder from your home directory (replace *firstname.lastname* with your actual SCINet username). You will then have a shortcut called `my_geoworkshop` in your home directory that points to your workshop folder. This is done so you can access your workshop files from JupyterLab:
 
     ```bash
     ln -s /90daydata/shared/firstname.lastname ~/my_geoworkshop
-    ln -s /project/geospatialworkshop ~/proj_geoworkshop
+    ```
+
+    Make a copy of the Session 2 folder in your new workshop folder:
+
+    ```bash
+    cp -r /project/geospatialworkshop/session_2-spatial_modeling_ml/ .
     ```
 
 1. **Setup kernel for JupyterLab.** In the workshop project space, there is a `workshop_venv` virtual environment for the packages we will be using during the workshop tutorials. You will create a kernel called *grwg_workshop* to access from JupyterLab.
@@ -105,14 +104,14 @@ Steps to prepare for the tutorial:
     * Partition Name: gpu-a100
     * QOS: ood -- Max Time: 8-00:00:00
     * Number of hours: 4
-    * Number of nodes: 1???
-    * Number of tasks: 1???
-    * Additional Slurm Parameters: --gres=gpu:a100_1g.10gb:1????  --reservation=workshop
+    * Number of nodes: 1
+    * Number of tasks: 1
+    * Additional Slurm Parameters: --gres=gpu:a100_1g.10gb:1  --reservation=workshop
   
     Click *Launch*. The screen will update to the *Interactive Sessions* page. When your Jupyter session is ready, the top card will update from *Queued* to *Running* and a *Connect to Jupyter* button will appear. Click *Connect to Jupyter*.
 
-1. **Start session and select kernel:** Once you are in JupyterLab, navigate to `my_geoworkshop/session_2-spatial_modeling_ml/` in the left navigation pane, and open the `spatial_modeling_ml.ipynb` notebook by double-clicking. Then, select your kernel by clicking on *Kernel > Change kernel...* within the top navigation menu of the Jupyter window. A pop-up will appear with a dropdown menu containing the `grwg_workshop` kernel we made above. Click on the `grwg_workshop` kernel and click the *Select* button.
+1. **Start session and select kernel:** Once you are in JupyterLab, navigate to `~/my_geoworkshop/session_2-spatial_modeling_ml/` in the left navigation pane, and open the `spatial_modeling_ml.ipynb` notebook by double-clicking that file. Then, select your kernel by clicking on *Kernel > Change kernel...* within the top navigation menu of the Jupyter window. A pop-up will appear with a dropdown menu containing the `grwg_workshop` kernel we made above. Click on the `grwg_workshop` kernel and click the *Select* button.
 
-1. Follow along during the tutorial session!
+1. **Follow along during the tutorial session!**
 
 <br>
