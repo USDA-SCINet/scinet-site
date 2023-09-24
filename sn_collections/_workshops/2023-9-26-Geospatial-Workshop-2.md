@@ -19,8 +19,8 @@ sessions:
       - text: Basic Python or other scripting language experience
 
 subnav:
-- title: Learning objectives
-  url: '#learning-objectives'
+- title: Session objectives
+  url: '#session-objectives'
 - title: Agenda
   url: '#agenda'
 - title: Tutorial instructions
@@ -36,23 +36,30 @@ This session will have a presentation on machine learning methods for spatial mo
 
 <br>
 
-## Learning objectives
+## Session objectives
 {:.border-bottom}
 
-This session will include a presentation and tutorial exploring examples of spatial modeling tasks, e.g. spatial interpolation from point data to gridded data, with machine learning methods, e.g. random forest, ...
+This session will explore examples of spatial modeling tasks, e.g. spatial interpolation from point data to gridded data, with machine learning methods, e.g. random forest. The content of the session will primarily focus on the spatial component, e.g., how to include spatial proximity as a predictor, although basic machine learning concepts will be discussed as relevant. 
 
-* obj 1....
-* obj 2...
+The goals of this session are to:
+
+* Introduce key concepts about incorporating spatial data in machine learning with examples from recent literature
+* Provide examples in Python on how to:
+  * read in spatial (vector and raster) datasets and reformat them to use in machine learning functions
+  * compare the performance of machine learning approaches for spatial prediction
+  * visualize observed spatial data and the prediction results
 
 <br>
 
 ## Agenda
 {:.border-bottom}
 
-This session will be an interactive tutorial that covers:
+This session will have a short presentation followed by an interactive tutorial:
 
-* Using ML for spatial interpolation...
-* ...
+* Presentation: Introduction to machine learning methods applied to spatial data with examples from recent literature
+* Python tutorial: example code for the following spatial modeling tasks with various machine learning algorithms:
+  * Spatial interpolation from point observations
+  * Spatial prediction from point observations and gridded covariates
 
 <br>
 
