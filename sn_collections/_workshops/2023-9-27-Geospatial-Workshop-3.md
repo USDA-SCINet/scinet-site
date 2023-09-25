@@ -57,9 +57,9 @@ If you would like to have an overview of computer vision concepts covered in thi
 The goals of this session are to:
 
 * Introduce Raster Vision as a framework for implementing key computer vision tasks for satellite or aerial geospatial imagery
-* Provide examples in Python on how to train a deep learning model to perform the following tasks for aerial images (or other geospatial raster data)
-  * semantic segmentation (pixel classification)
-  * object detection
+* Provide examples in Python on how to use Raster Vision to train a deep learning model for the following tasks for aerial images (or other geospatial raster data)
+  * Semantic segmentation (pixel classification)
+  * Object detection
 
 <br>
 
