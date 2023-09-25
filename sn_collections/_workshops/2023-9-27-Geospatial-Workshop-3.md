@@ -126,7 +126,7 @@ Steps to prepare for the tutorial:
     ```bash
     source /project/geospatialworkshop/workshop_venv/bin/activate
     ipython kernel install --name "grwg_workshop" --user
-    cp /project/geospatialworkshop/grwg_workshop.json ~/.local/shared/jupyter/kernels/grwg_workshop/kernel.json
+    cp /project/geospatialworkshop/grwg_workshop.json ~/.local/share/jupyter/kernels/grwg_workshop/kernel.json
     ```
 
 1. **Restart JupyterLab.** You will need to restart JupyterLab in order to use the new kernel you created for step 4, above. Follow these steps:
