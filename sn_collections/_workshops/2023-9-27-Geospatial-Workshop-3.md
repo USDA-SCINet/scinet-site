@@ -117,7 +117,7 @@ Steps to prepare for the tutorial:
     ln -s /90daydata/shared/firstname.lastname ~/my_geoworkshop
     ```
 
-**If you particiapted in Session 2, you do not need to do anything else except for follow along during the tutorial session!** If you did *not* participate in Session 2, you will need to complete the additional steps below.
+**If you participated in Session 2, you do not need to do anything else except for follow along during the tutorial session!** If you did *not* participate in Session 2, you will need to complete the additional steps below.
 
 1. **Setup kernel for JupyterLab.** In the workshop project space, there is a `workshop_venv` virtual environment for the packages we will be using during the workshop tutorials. You will create a kernel called *grwg_workshop* to access from JupyterLab.
 
@@ -135,7 +135,7 @@ Steps to prepare for the tutorial:
     1. Return to the Open OnDemand tab in your browser, and click the *Delete* button that is inside the card for the running "Jupyter-A100" session. (If you do not see the running session cards in Open OnDemand, click the interactive sessions icon next to "Interactive Apps" at the top of the page.) Wait a few seconds for the page to refresh.
     1. Repeat the instructions for step 2, above, to start a new JupyterLab session. Open OnDemand should automatically reuse the settings you entered the first time you launched JupyterLab.
 
-1. **Start session and select kernel:** Once you are in JupyterLab, navigate to `~/my_geoworkshop/session_2-spatial_modeling_ml/` in the left navigation pane, and open the `spatial_modeling_ml.ipynb` notebook by double-clicking that file. Then, select your kernel by clicking on *Kernel > Change kernel...* within the top navigation menu of the Jupyter window. A pop-up will appear with a dropdown menu containing the `grwg_workshop` kernel we made above. Click on the `grwg_workshop` kernel and click the *Select* button.
+1. **Start session and select kernel:** Once you are in JupyterLab, navigate to `~/my_geoworkshop/session_3-dl_rastervision/semantic_segmentation` in the left navigation pane, and open the `semantic_segmentation.ipynb` notebook by double-clicking that file. Then, select your kernel by opening the "Kernel" menu then "Change kernel...". A pop-up will appear with a dropdown menu containing the `grwg_workshop` kernel we made above. Click on the `grwg_workshop` kernel and click the *Select* button.
 
 1. **Follow along during the tutorial session!**
 
