@@ -3,8 +3,8 @@
 title: "Session 3: Geospatial deep learning with Raster Vision"
 
 excerpt: An introduction to deep learning computer vision tasks with geospatial data
-categories: [2023 Geospatial Workshop]  
-provider: Geospatial Working Group
+#categories: [2023 Geospatial Workshop]  
+#provider: Geospatial Working Group
 type: workshop
 tags: Geospatial
 layout: page
