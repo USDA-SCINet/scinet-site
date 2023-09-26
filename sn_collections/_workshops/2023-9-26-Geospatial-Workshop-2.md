@@ -32,14 +32,14 @@ subnav:
 
 <br>
 
-This session will have a presentation on machine learning methods for spatial modeling use cases followed by a hands-on tutorial implementing those methods. This content is a continuation of the [Spatial Interpolation tutorial](https://web.microsoftstream.com/video/3a7e35a4-7355-418e-a85d-84a7edeece95) held at a working group meeting in May 2023. Although that previous tutorial was in R, this tutorial will be in Python. 
+This session will have a presentation on machine learning methods for spatial modeling use cases followed by a hands-on tutorial implementing some of those methods. This content is a continuation of the [Spatial Interpolation tutorial](https://web.microsoftstream.com/video/3a7e35a4-7355-418e-a85d-84a7edeece95) held at a working group meeting in May 2023. Although that previous tutorial was in R, this tutorial will be in Python. 
 
 <br>
 
 ## Session objectives
 {:.border-bottom}
 
-This session will explore examples of spatial modeling tasks, e.g. spatial interpolation from point data to gridded data, with machine learning methods, e.g. random forest. The content of the session will primarily focus on the spatial component, e.g., how to include spatial proximity as a predictor, although basic machine learning concepts will be discussed as relevant. 
+This session will explore examples of spatial modeling tasks, e.g. spatial interpolation from point data to gridded data, with the machine learning methods Random Forest. The content of the session will primarily focus on the spatial component, e.g., how to include spatial proximity as a predictor, although basic machine learning concepts will be discussed as relevant. 
 
 The goals of this session are to:
 
@@ -57,7 +57,7 @@ The goals of this session are to:
 This session will have a short presentation followed by an interactive tutorial:
 
 * Presentation: Introduction to machine learning methods applied to spatial data with examples from recent literature
-* Python tutorial: example code for the following spatial modeling tasks with various machine learning algorithms:
+* Python tutorial: example code for the following spatial modeling tasks with two approaches to including spatial proximity in machine learning models:
   * Spatial interpolation from point observations
   * Spatial prediction from point observations and gridded covariates
 
