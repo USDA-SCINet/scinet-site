@@ -80,7 +80,7 @@ Steps to prepare for the tutorial:
 
 1. **Open a terminal session within JupyterLab.** Within JupyterLab, open the "File" menu, then "New" -> "Terminal".
 
-1. **Copy the Session 3 material from the workshop project space to your temporary workshop folder.** 
+1. **Copy the Session 4 material from the workshop project space to your temporary workshop folder.** 
 
     ```bash
     mkdir -p /90daydata/shared/$USER/session_4-gpu_computing/
@@ -88,9 +88,9 @@ Steps to prepare for the tutorial:
     cp /project/geospatialworkshop/session_4-gpu_computing/gpu_computing_python.ipynb .
     ```
     
-    **If you DID NOT participate in Session 2, please also follow these steps:**
+    **If you DID NOT participate in Session 2 or 3, please also follow these steps:**
     
-    Create a symbolic link to your temporary workshop folder from your home directory (replace *firstname.lastname* with your actual SCINet username). You will then have a shortcut called `my_geoworkshop` in your home directory that points to your workshop folder. This shortcut will allow you to access your workshop files from JupyterLab:
+    Create a symbolic link to your temporary workshop folder from your home directory. You will then have a shortcut called `my_geoworkshop` in your home directory that points to your workshop folder. This shortcut will allow you to access your workshop files from JupyterLab:
 
     ```bash
     ln -s /90daydata/shared/$USER ~/my_geoworkshop
@@ -114,7 +114,7 @@ Steps to prepare for the tutorial:
     1. Return to the Open OnDemand tab in your browser, and click the *Delete* button that is inside the card for the running "Jupyter-A100" session. (If you do not see the running session cards in Open OnDemand, click the interactive sessions icon next to "Interactive Apps" at the top of the page.) Wait a few seconds for the page to refresh.
     1. Repeat the instructions for step 2, above, to start a new JupyterLab session. Open OnDemand should automatically reuse the settings you entered the first time you launched JupyterLab.
 
-1. **Start session and select kernel:** Once you are in JupyterLab, navigate to `~/my_geoworkshop/session_3-dl_rastervision/semantic_segmentation` in the left navigation pane, and open the `semantic_segmentation.ipynb` notebook by double-clicking that file. Then, select your kernel by opening the "Kernel" menu then "Change kernel...". A pop-up will appear with a dropdown menu containing the `grwg_workshop` kernel we made above. Click on the `grwg_workshop` kernel and click the *Select* button.
+1. **Start session and select kernel:** Once you are in JupyterLab, navigate to `~/my_geoworkshop/session_4-gpu_computing` in the left navigation pane, and open the `gpu_computing_python.ipynb` notebook by double-clicking that file. Then, select your kernel by opening the "Kernel" menu then "Change kernel...". A pop-up will appear with a dropdown menu containing the `grwg_workshop` kernel we made above. Click on the `grwg_workshop` kernel and click the *Select* button.
 
 1. **Follow along during the tutorial session!**
 

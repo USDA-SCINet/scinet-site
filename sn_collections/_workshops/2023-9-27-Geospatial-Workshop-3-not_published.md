@@ -109,7 +109,7 @@ Steps to prepare for the tutorial:
     
     **If you DID NOT participate in Session 2, please also follow these steps:**
     
-    Create a symbolic link to your temporary workshop folder from your home directory (replace *firstname.lastname* with your actual SCINet username). You will then have a shortcut called `my_geoworkshop` in your home directory that points to your workshop folder. This shortcut will allow you to access your workshop files from JupyterLab:
+    Create a symbolic link to your temporary workshop folder from your home directory. You will then have a shortcut called `my_geoworkshop` in your home directory that points to your workshop folder. This shortcut will allow you to access your workshop files from JupyterLab:
 
     ```bash
     ln -s /90daydata/shared/$USER ~/my_geoworkshop
