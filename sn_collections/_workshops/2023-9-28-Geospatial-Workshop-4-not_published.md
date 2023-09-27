@@ -5,7 +5,7 @@ title: "Session 4: An introduction to GPU-based computing"
 excerpt: What are GPUs, how they differ from CPUs, and what kinds of computing tasks can benefit from GPUs
 #categories: [2023 Geospatial Workshop]  
 #provider: Geospatial Working Group
-#type: workshop
+type: workshop
 tags: Geospatial
 layout: page
 
