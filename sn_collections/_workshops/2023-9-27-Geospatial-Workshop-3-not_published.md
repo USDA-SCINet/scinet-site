@@ -100,11 +100,9 @@ Steps to prepare for the tutorial:
 
 1. **Copy the Session 3 material from the workshop project space to your temporary workshop folder.** 
 
-    In the commands below, replace "firstname.lastname" with your SCINet username.
-
     ```bash
-    mkdir -p /90daydata/shared/firstname.lastname/session_3-dl_rastervision/
-    cd /90daydata/shared/firstname.lastname/session_3-dl_rastervision/
+    mkdir -p /90daydata/shared/$USER/session_3-dl_rastervision/
+    cd /90daydata/shared/$USER/session_3-dl_rastervision/
     cp /project/geospatialworkshop/session_3-dl_rastervision/semantic_segmentation/semantic_segmentation.ipynb .
     cp /project/geospatialworkshop/session_3-dl_rastervision/object_detection/object_detection.ipynb .
     ```
@@ -114,7 +112,7 @@ Steps to prepare for the tutorial:
     Create a symbolic link to your temporary workshop folder from your home directory (replace *firstname.lastname* with your actual SCINet username). You will then have a shortcut called `my_geoworkshop` in your home directory that points to your workshop folder. This shortcut will allow you to access your workshop files from JupyterLab:
 
     ```bash
-    ln -s /90daydata/shared/firstname.lastname ~/my_geoworkshop
+    ln -s /90daydata/shared/$USER ~/my_geoworkshop
     ```
 
 **If you participated in Session 2, you do not need to do anything else except for follow along during the tutorial session!** If you did *not* participate in Session 2, you will need to complete the additional steps below.
