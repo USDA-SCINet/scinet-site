@@ -80,7 +80,7 @@ Steps to prepare for the tutorial:
     * Number of hours: 4
     * Number of nodes: 1
     * Number of tasks: 1
-    * Additional Slurm Parameters: --gres=gpu:a100_1g.10gb:1 --mem=32G --reservation=workshop
+    * Additional Slurm Parameters: \-\-gres=gpu:a100_1g.10gb:1 \-\-mem=32G \-\-reservation=workshop
   
     Click *Launch*. The screen will update to the *Interactive Sessions* page. When your Jupyter session is ready, the top card will update from *Queued* to *Running* and a *Connect to Jupyter* button will appear. Click *Connect to Jupyter*.
 
