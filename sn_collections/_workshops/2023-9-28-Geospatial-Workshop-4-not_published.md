@@ -96,7 +96,7 @@ Steps to prepare for the tutorial:
     ln -s /90daydata/shared/$USER ~/my_geoworkshop
     ```
 
-**If you participated in Session 2 or 3, you do not need to do anything else except for follow along during the tutorial session!** If you did *not* participate in Session 2 or 3, you will need to complete the additional steps below.
+    **If you participated in Session 2 or 3, you do not need to do anything else except for follow along during the tutorial session!** If you did *not* participate in Session 2 or 3, you will need to complete the additional steps below.
 
 1. **Setup kernel for JupyterLab.** In the workshop project space, there is a `workshop_venv` virtual environment for the packages we will be using during the workshop tutorials. You will create a kernel called *grwg_workshop* to access from JupyterLab.
 
@@ -108,7 +108,7 @@ Steps to prepare for the tutorial:
     cp /project/geospatialworkshop/grwg_workshop.json ~/.local/share/jupyter/kernels/grwg_workshop/kernel.json
     ```
 
-1. **Restart JupyterLab.** You will need to restart JupyterLab in order to use the new kernel you created for step 2, above. Follow these steps:
+1. **Restart JupyterLab.** You will need to restart JupyterLab in order to use the new kernel you created for step 5, above. Follow these steps:
 
     1. Close the JupyterLab tab in your browser.
     1. Return to the Open OnDemand tab in your browser, and click the *Delete* button that is inside the card for the running "Jupyter-A100" session. (If you do not see the running session cards in Open OnDemand, click the interactive sessions icon next to "Interactive Apps" at the top of the page.) Wait a few seconds for the page to refresh.
