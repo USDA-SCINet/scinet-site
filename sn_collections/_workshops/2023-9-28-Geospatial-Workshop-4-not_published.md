@@ -108,7 +108,7 @@ Steps to prepare for the tutorial:
     cp /project/geospatialworkshop/grwg_workshop.json ~/.local/share/jupyter/kernels/grwg_workshop/kernel.json
     ```
 
-1. **Restart JupyterLab.** You will need to restart JupyterLab in order to use the new kernel you created for step 4, above. Follow these steps:
+1. **Restart JupyterLab.** You will need to restart JupyterLab in order to use the new kernel you created for step 2, above. Follow these steps:
 
     1. Close the JupyterLab tab in your browser.
     1. Return to the Open OnDemand tab in your browser, and click the *Delete* button that is inside the card for the running "Jupyter-A100" session. (If you do not see the running session cards in Open OnDemand, click the interactive sessions icon next to "Interactive Apps" at the top of the page.) Wait a few seconds for the page to refresh.
