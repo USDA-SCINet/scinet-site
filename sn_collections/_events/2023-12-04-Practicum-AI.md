@@ -58,7 +58,7 @@ Most hands-on artificial intelligence work is currently done using the Python pr
 
 The content in this workshop is aimed at beginning coders who may have never programmed before. As with the rest of the Practicum AI workshops, we use Jupyter Notebooks for the learning experience. A Jupyter Notebook is an easy-to-use, yet powerful tool that supports interactive coding as well as nicely formatted explanatory text. Much of exploratory AI research is conducted in Jupyter Notebooks, and it is easy to transfer code from Notebooks to scripts when it is time to scale up analyses.
 
-**Prerequisites** – Computing for AI content: Understanding git and GitHub, navigating Jupyter notebooks on Atlas.
+**Prerequisites** – Computing for AI content: Understanding git and GitHub, navigating Jupyter notebooks on Atlas.  
 **Objectives** – Learners will be able to:
 1.	Understand Python's dominance in data science and its role in high-performance computing.
 2.	Develop Python troubleshooting skills, including documentation referencing and error handling.
