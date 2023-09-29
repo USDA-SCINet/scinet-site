@@ -45,7 +45,7 @@
     {% capture eventtitle %}{% if _event.title %}{{ _event.title }}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
     {% capture eventexcerpt %}{% if _event.excerpt %}{{ _event.excerpt }}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
     {% capture eventtype %}{% if _event.type %}{{ _event.type }}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
-    {% capture eventprovider %}{% if _event.provider %}{{ _event.provider }}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
+    {% capture eventprovider %}{% if _event.provider %}{% if _event.hideprovider %}{{ dummyvar }}{% else %}{{ _event.provider }}{% endif %}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
     {% capture eventurl %}{% if _event.url %}{{ _event.url }}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
     {% capture eventend_date %}{% if _event.end_date %}{{ _event.end_date }}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
     {% capture eventdate %}{% if _event.date %}{{ _event.date }}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
@@ -97,7 +97,7 @@
         {% capture eventtitle %}{% if  _session.title %}{{  _session.title }}{% elsif _event.title %}{{ _event.title }}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
         {% capture eventexcerpt %}{% if _session.excerpt %}{{  _session.excerpt }}{% elsif _event.excerpt %}{{ _event.excerpt }}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
         {% capture eventtype %}{% if _event.type %}{{ _event.type }}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
-        {% capture eventprovider %}{% if _event.provider %}{{ _event.provider }}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
+        {% capture eventprovider %}{% if _event.provider %}{% if _event.hideprovider %}{{ dummyvar }}{% else %}{{ _event.provider }}{% endif %}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
         {% capture eventurl %}{% if _session.url and page.layout == 'event' %}{{  _session.url }}{% elsif _event.url %}{{ _event.url }}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
         {% capture eventend_date %}{% if _event.end_date %}{{ _event.end_date }}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}
         {% capture sessiondate %}{% if _session.date %}{{ _session.date }}{% else %}{{ dummyvar }}{% endif %}{% endcapture %}

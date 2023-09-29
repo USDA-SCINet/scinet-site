@@ -8,7 +8,7 @@
 {% assign timecheck = thisdate | date: '%s' | plus: 0 %}
 
 <li class="usa-collection__meta-item">
-    <b>{{ thisdate | date: "%A, %B %-d" }}{% if pagetype == "archive" or page.layout=='event' %}, {{ thisdate | date: "%Y" }}{% endif %}{% if session.time %}, {{ session.time }} {% endif %}</b>
+    <b>{% if session.title %}{{ session.title }} - {% endif %}{% if session.multiday %}{{ session.multiday }}{% else %}{{ thisdate | date: "%A, %B %-d" }}{% endif %}{% if pagetype == "archive" or page.layout=='event' %}, {{ thisdate | date: "%Y" }}{% endif %}{% if session.time %}, {{ session.time }} {% endif %}</b>
     <ul class="unstyled-list">
         {% unless timecheck <= timeout %}
             {% if session.register or registration != "false" %}
