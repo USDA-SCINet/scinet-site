@@ -55,7 +55,7 @@ This course is the second in the Practicum AI series. This course can also be ta
 
 In this course, you will learn about some of the tools recommended for building, testing, tweaking, and deploying AI models. You will learn about Jupyter Notebooks, Git, GitHub, and high-performance computing (HPC) environments. These are the key technologies that have become the industry standards for hands-on applied AI research and development.
 
-**Prerequisites** – 1) A GitHub account and 2) a SCINet account.
+**Prerequisites** – 1) A GitHub account and 2) a SCINet account.  
 **Objectives** – Learners will be able to:
 1.	Describe essential technologies for hands-on AI applications, including Jupyter notebooks.
 2.	Understand the role of Jupyter notebooks in AI data analysis and model development.

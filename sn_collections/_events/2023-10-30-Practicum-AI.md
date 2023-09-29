@@ -50,7 +50,7 @@ Each course will be on Monday and Wednesday from 1:00-5:00 pm Eastern Time.
 
 This course provides a high-level overview of the concepts, history, and vocabulary of AI. You will get hands-on experience with simple online AI tools, experimenting with gathering data, and training a model. We will review the general process that underlies most AI application development pathways and briefly touch on ethical aspects of AI that will also help ensure more reliable AI models.  
 
-**Prerequisites –** None! This is our introductory course and assumes no technical background.
+**Prerequisites –** None! This is our introductory course and assumes no technical background.  
 **Objectives** – Learners will be able to:
 1.	Understand the interplay among and definitions of AI, machine learning, and data science.
 1.	Recall significant historical events in AI and the advantages of high-performance computing for AI development.

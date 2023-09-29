@@ -55,7 +55,7 @@ Each course will be on Monday and Wednesday from 1:00-5:00 pm Eastern Time.
 
 Deep learning is the focus of modern AI. Models have many layers and millions, or now approaching a trillion, parameters! This course breaks things down and introduces you to a small AI model to provide a conceptual understanding of how AI models are built, trained, and deployed.
 
-**Prerequisites** – Python for AI content: Basics of Python coding and Pandas
+**Prerequisites** – Python for AI content: Basics of Python coding and Pandas  
 **Objectives** – Learners will be able to:
 1.	Define neural networks, their basic components (neurons, perceptrons, bias, weights), and activation functions.
 2.	Understand the significance of deep networks in neural computation.
