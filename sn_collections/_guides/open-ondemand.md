@@ -4,6 +4,8 @@ description: Using Open OnDemand on the HPC
 # author: VRSC
 categories: [Software]
 order_number: 23
+redirect_from: 
+  - /guides/access/open-ondemand
 
 layout: guides
 
