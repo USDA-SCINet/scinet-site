@@ -35,7 +35,7 @@ All users should have received their login credentials in an email.  If you have
 **If you have not recieved a LincPass or YubiKey, please see the [Deprecated Login Procedures](/guides/access/legacy-login) page for instructions to access the HPC.**
 <!--excerpt--> 
 
-Before accessing various SCINet resources, new users need to ssh either to Ceres or Atlas cluster and change the temporary password. Note that home directories on Atlas are not created right away, so it is recommended to wait a day after receiving email with the credentials before logging to Atlas cluster.   
+Before accessing various SCINet resources, new users need to ssh either to Ceres and change the temporary password. Note that home directories on Atlas are not created right away, so it is recommended to wait a day after receiving email with the credentials before logging to Atlas cluster.   
 
 A video demonstration for changing your password can be found [here](https://www.youtube.com/watch?v=Amhw2k5mftI). Please keep in mind that due to the recent password requirement change, the video is out of date. It will list more password requirements than necessary.  The current requirements are found below:
 1. AT LEAST 14 characters long
@@ -115,8 +115,10 @@ Get-Service ssh-agent
 ### After Step Installation:
 - Open a Terminal, CMD shell, or PowerShell window and run the following:
 - `step ca bootstrap --ca-url https://step-ca.scinet.usda.gov --fingerprint adb703fd18f176937743b20228d52af7a705d63a0471cd67428660be5fd006bf `
-- `step ssh config --set Provisioner=keycloak --set User=scinetuser.name`
-  - If the step config command fails ssh-agent probably isnt running.  See instructions above. 
+- `step ssh config --set Provisioner=keycloak --set User=scinetuser.name` 
+  - Be sure to change "user.name" to your own SCINet username 
+  - If the step config command fails ssh-agent probably isnt running.  See instructions above.
+
 
 #### These commands will do the following:
 - Gets the initial cert from the certificate authority. 
