@@ -2,6 +2,8 @@
 title: Deprecated Login Procedures
 description: How to access SCINet using GA
 order_number: 50
+redirect_from: 
+  - /guides/access/mfa
 
 categories: [Access]
 
