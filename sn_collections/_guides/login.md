@@ -21,7 +21,9 @@ subnav:
     url: '#accessing-gui-based-services'
     subnav:
       - title: Access Using LincPass  
-        url: '#accessing-using-lincpass' 
+        url: '#accessing-using-lincpass'
+      - title: Access Using LincPass With Linux
+        url: '#accessing-using-lincpass-linux' 
       - title: Access Using YubiKey
         url: '#accessing-using-yubikey'
 
@@ -88,12 +90,13 @@ Delete your .ssh/known_hosts file OR run:
  
 ### Installation Instructions:
 
-- OpenSSH needs to be installed.  This is standard on recent Windows 10 and 11, MacOS, and Linux installs. However your local admin may have removed it or restricted access to it.  Check by running "ssh" in a PowerShell or terminal window.  You should get Usage instrctions.
+- OpenSSH needs to be installed.  This is standard on recent Windows 10 and 11, MacOS, and Linux installs. However your local admin may have removed it or restricted access to it.  Check by running "ssh" in a PowerShell or terminal  window.  You should get Usage instrctions.
 - ssh-agent needs to to running as a system service.
-  - For Linux and MacOS this is probably already running so this step can be skipped.
+  - For Linux and MacOS this is probably already running.
   - For Windows this has to be enabled by an administator, it is not on by default even if openssh is installed.  To enable it an administor must:
 
 ```
+# By default the ssh-agent service is disabled. Configure it to start automatically.
 # Make sure you're running as an Administrator.
 Get-Service ssh-agent | Set-Service -StartupType Automatic
 
@@ -108,15 +111,13 @@ Get-Service ssh-agent
 - If you are on a USDA controlled Windows laptop or workstation, again this will need to be performed by CEC. They should be aware of the process. 
 - If you do need to perform the installation yourself, see: [https://smallstep.com/docs/step-cli/installation/](https://smallstep.com/docs/step-cli/installation/).
   - For windows we recommend the winget installer, we've had the best lusk with that. Again, please be aware that you will only be able to complete the installation yourself if you have admin rights (i.e. you will have admin rights on your home machine rather than an USDA controlled machine.)
-  - For MacOS the instrcutions are more straightforward and can be done by the user without admin access. Please be aware that Homebrew will need to be installed first. There is a link to install this at the link above.
+  - For MacOS the instrcutions are more straightforward and can be done by the user without admin access.
   - Linux will require root/sudo if you want to use the system packager rpm,deb,pacman. But can be done in userspace it you just download the binary directly.
 
 ### After Step Installation:
 - Open a Terminal, CMD shell, or PowerShell window and run the following:
-```
 - `step ca bootstrap --ca-url https://step-ca.scinet.usda.gov --fingerprint adb703fd18f176937743b20228d52af7a705d63a0471cd67428660be5fd006bf `
-- `step ssh config --set Provisioner=keycloak --set User=scinetuser.name`
-```
+- `step ssh config --set Provisioner=keycloak --set User=scinetuser.name` 
   - Be sure to change "user.name" to your own SCINet username 
   - If the step config command fails ssh-agent probably isnt running.  See instructions above.
 
@@ -178,7 +179,26 @@ After selcting this, you will be automatically directed to login using your usua
 
 ![]({{ site.baseurl }}/assets/img/guides/access/sign-on.png)
 ![]({{ site.baseurl }}/assets/img/guides/access/eAuth.png)
- 
+
+### Accessing Using LincPass with Linux
+
+Ensure that you have the following prior to continuing: 
+- Your card reader must work with your distro
+- Your Lincpass must be detected by your distro
+- The root certs installed properly for your distro which can be found [here](https://www.idmanagement.gov/implement/trust-fcpca/#step-1---obtain-and-verify-the-fcpca-root-certificate)
+- The Intermediates as well can be found [here](https://www.idmanagement.gov/implement/trust-fcpca/#certificates-issued-by-the-federal-common-policy-ca!)
+
+To test that everything is functioning properly, you must log into something that requires eAuth, such as your USDA Office 365 account.
+
+Once you have successfully authenticated using eAuth, you will need to install Step following the instructions [here](https://smallstep.com/docs/step-cli/installation/#linux-packages-amd64).
+You will then configure Step according to the instructions above.
+
+Next, you will test eAuth access to SCINet by entering the following (changing “user.name” to your own SCINet username): 
+
+```
+ssh user.name@ceres.scinet.usda.gov
+```
+
 ### Accessing Using YubiKey
 
 - When logging in, you will enter your SCINet credentials (username and password) and click “Sign In”.
