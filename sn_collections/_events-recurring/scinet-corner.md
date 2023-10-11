@@ -20,7 +20,7 @@ sessions:
     title: Command Line Tips and Tricks
     date: 2023-10-19
     time: 1-2 pm ET
-    excerpt: "In continuation of the theme to re-introduce users to SCINet, we will be covering some tips and tricks on the command line that help you do certain routine jobs faster but also help us appreciate *nix systems better."
+    excerpt: "In continuation of the theme to re-introduce users to SCINet, we will be covering some tips and tricks on the command line that help you do certain routine jobs faster."
     
   - session:
     title: Reintroduction to SCINet
