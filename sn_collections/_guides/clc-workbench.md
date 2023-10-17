@@ -15,7 +15,7 @@ subnav:
   - title: CLC Grid
     url: '#clc-grid'
   - title: CLC discussion group on Scinet Forum
-    url:'#clc-discussion-group-on-scinet-forum'
+    url: '#clc-discussion-group-on-scinet-forum'
   - title: Current Licenses on Ceres
     url: '#current-licenses-on-ceres'  
 ---
