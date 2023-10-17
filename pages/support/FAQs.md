@@ -61,7 +61,7 @@ Basecamp  has been replaced by [SCINet Forum](https://forum.scinet.usda.gov). SC
 
 Add the following sentence as an acknowledgment for using SCINet/Ceres as a resource in your manuscripts or datasets meant for publication:
 
-“This research used resources provided by the SCINet project and the AI Center of Excellence of the USDA Agricultural Research Service, ARS project number 0500-00093-001-00-D.”
+“This research used resources provided by the SCINet project and/or the AI Center of Excellence of the USDA Agricultural Research Service, ARS project numbers 0201-88888-003-000D and 0201-88888-002-000D.”
 
 
 ## Accounts & Login
