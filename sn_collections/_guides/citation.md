@@ -8,5 +8,5 @@ categories: [Resources]
 
 Add the following sentence as an acknowledgment for using CERES as a resource in your manuscripts meant for publication:  
 
-**"This research used resources provided by the SCINet project of the USDA Agricultural Research Service, ARS project number 0500-00093-001-00-D."**
+**"This research used resources provided by the SCINet project and/or the AI Center of Excellence of the USDA Agricultural Research Service, ARS project numbers 0201-88888-003-000D and 0201-88888-002-000D."**
 <!--excerpt-->
