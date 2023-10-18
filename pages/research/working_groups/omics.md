@@ -44,3 +44,4 @@ Presentation materials from previous meetings are available to USDA employees in
 Meeting | Materials
 ---|---
 9/23 Initial Organization Meeting | [Presentation Slides](https://usdagcc-my.sharepoint.com/:p:/g/personal/zhenbin_hu_usda_gov/EY5hplNYaDZAkG4fapkIarAB21t6wlyBXm0djmC65_zLwQ)
+10/12 October Meeting | [Recording](https://usdagcc-my.sharepoint.com/personal/zhenbin_hu_usda_gov/_layouts/15/stream.aspx?id=%2Fpersonal%2Fzhenbin_hu_usda_gov%2FDocuments%2FGMT20231012-145931_Recording_1920x1200%2Emp4)

@@ -17,6 +17,12 @@ archive-label: SCINet Corner Recordings
 
 sessions:
   - session:
+    title: Command Line Tips and Tricks
+    date: 2023-10-19
+    time: 1-2 pm ET
+    excerpt: "In continuation of the theme to re-introduce users to SCINet, we will be covering some tips and tricks on the command line that help you do certain routine jobs faster."
+    
+  - session:
     title: Reintroduction to SCINet
     date: 2023-09-14
     time: 1-2 pm ET
