@@ -17,6 +17,8 @@ subnav:
         url: '#after-step-installation' 
       - title: Usage Instructions
         url: '#usage-instructions'
+      - title: Access Using Linux and LincPass
+        url: '#access-using-linux-and-lincpass'
   - title:  Accessing GUI Based Services
     url: '#accessing-gui-based-services'
     subnav:
@@ -156,6 +158,23 @@ ssh user.name@ceres.scinet.usda.gov
 scp file1 file2 user.name@ceres.scinet.usda.gov:~ 
 ```
 
+### Access Using Linux and LincPass
+
+Ensure that you have the following prior to continuing:
+- Your card reader must work with your distro
+- Your Lincpass must be detected by your distro
+- The root certs installed properly for your distro which can be found [here](https://www.idmanagement.gov/implement/trust-fcpca/#step-1---obtain-and-verify-the-fcpca-root-certificate)
+- The Intermediates as well can be found [here](https://www.idmanagement.gov/implement/trust-fcpca/#certificates-issued-by-the-federal-common-policy-ca)
+
+To test that everything is functioning properly, you must log into something that requires eAuth, such as your USDA Office 365 account.
+
+Once you have successfully authenticated using eAuth, you will need to install Step following the instructions [here](https://smallstep.com/docs/step-cli/installation/#linux-packages-amd64) 
+- A current version can be found [here](https://github.com/smallstep/cli/releases/)
+
+You will then configure Step according to our instructions above.  
+
+Finally, you will test eAuth access to SCINet using ssh user.name@ceres.scinet.usda.gov, making sure to change “user.name” to your own SCINet username.
+
 ### Notes and Limitations
 
 - If you use multiple profiles in Chrome, step will open a new window in whichever profile was used last.   If you end up in the wrong one just close it, do something in your work profile and rerun the ssh login command.  
@@ -178,7 +197,7 @@ After selcting this, you will be automatically directed to login using your usua
 
 ![]({{ site.baseurl }}/assets/img/guides/access/sign-on.png)
 ![]({{ site.baseurl }}/assets/img/guides/access/eAuth.png)
- 
+
 ### Accessing Using YubiKey
 
 - When logging in, you will enter your SCINet credentials (username and password) and click “Sign In”.
