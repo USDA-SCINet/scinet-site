@@ -18,7 +18,7 @@ subnav:
       - title: Usage Instructions
         url: '#usage-instructions'
       - title: Access Using Linux and LincPass
-        url: '#accessing-using-linux-lincpass'
+        url: '#access-using-linux-and-lincpass'
   - title:  Accessing GUI Based Services
     url: '#accessing-gui-based-services'
     subnav:
