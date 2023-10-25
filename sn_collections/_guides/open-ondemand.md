@@ -17,6 +17,9 @@ subnav:
     url: '#access'
   - title: Using OOD
     url: '#using-ood'
+    subnav:
+      - title: Using Clipboard to Copy/Paste Data
+        url: '#using-clipboard-copypaste'
   - title: Interactive Applications
     url: '#interactive-applications'
 
@@ -70,8 +73,62 @@ To launch an interactive app, select the **Interactive Apps** dropdown menu and 
 ![screenshot of Open OnDemand Ceres interactive apps configuration page]({{ site.baseurl }}/assets/img/guides/access/ood/ceres-interactive-setup.png)
 After selections have been made, pressing **Launch** will submit an interactive job. This job will be displayed as the topmost entry in the *My Interactive Sessions* page. The bottom of the intaractive app's job information card will display text saying the job is starting or, if it has already started, "Connect to `Interactive App Name`." Press the **Connect** button to launch the app in a new tab. 
 ![screenshot of Open OnDemand Ceres interactive apps job card with connect to button highlighted]({{ site.baseurl }}/assets/img/guides/access/ood/ceres-interactive-card.png)
+
 ### Logging Out
 To log out of Ceres Open OnDemand, click the **Log Out** button. 
+
+### Using Clipboard to Copy/Paste Data
+
+While Open OnDemand(OOD) v 3.0.x does do copy/paste with chrome browser, there is no official support for it. There is a very high likelihood that this “feature” will break due to it being unsupported on noVNC. 
+
+The only supported way to copy/paste on noVNC is via the clipboard feature. This will work regardless of the browser you are using. 
+
+**Remote -> Local**
+
+- From a Desktop/CLC session, copy the contents you need 
+
+- In this example, I am copying the contents from a Desktop OOD session to a text editor on my local machine 
+
+- Select the text you need and right-click to Copy (as seen in image below)
+
+![screenshot of first step to copy/paste]({{ site.baseurl }}/assets/img/guides/access/ood/terminal-copypaste1.png)
+
+- To sanitize the text prior to copying, you can use Mousepad text editor(Application -> Accessories -> Mousepad)
+
+![screenshot of selecting mousepad application]({{ site.baseurl }}/assets/img/guides/access/ood/mousepad-selection.png)
+
+- Use Mousepad to copy all the text you need, this way you can copy the text in one step. 
+
+- From Mousepad, select the text, right-click and copy.  
+
+- noVNC has a control bar that includes a clipboard, to access it, click on the tab at the center on the left of the window. 
+
+![screenshot of selecting novnc control bar]({{ site.baseurl }}/assets/img/guides/access/ood/novnc-control-bar.png)
+
+- Click to tab to show and then select the clipboard icon.
+
+![screenshot of selecting clipboard icon]({{ site.baseurl }}/assets/img/guides/access/ood/clipboard-icon.png)
+
+- The clipboard will have the text in your buffer.
+
+![screenshot of buffer]({{ site.baseurl }}/assets/img/guides/access/ood/clipboard-buffer.png)
+
+- The text from the noVNC clipboard is like any text in your browser, you can copy the text from here and then paste it in your local machine. 
+
+![screenshot of copying buffer]({{ site.baseurl }}/assets/img/guides/access/ood/copy-buffer.png)
+
+![screenshot of pasting buffer]({{ site.baseurl }}/assets/img/guides/access/ood/paste-buffer.png)
+
+- For quick copy/paste you can have the clipboard open and then select the text you need and it will be instantly displayed in the clipboard buffer
+
+**Local Machine -> Remote**
+
+- Copy the text you need from your local machine and then paste into the noVNC clipboard
+
+- Once in the clipboard buffer, it can be pasted into the text editor/application on the remote session. 
+
+![screenshot of pasting buffer]({{ site.baseurl }}/assets/img/guides/access/ood/remote-copy.png)
+
 
 ---
 
