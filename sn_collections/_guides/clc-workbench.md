@@ -2,6 +2,7 @@
 title: CLC Server
 description: Using CLC Server
 ## author: VRSC
+excerpt: "Before You Begin, email scinet_vrsc@USDA.GOV so that the admins can setup the import/export directories and permissions for access."
 
 categories: [Analysis]
 
