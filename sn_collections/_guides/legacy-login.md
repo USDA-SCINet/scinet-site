@@ -57,7 +57,7 @@ In the PowerShell window, you can type one of two options:
 	2) ssh user.name@atlas-login.hpc.msstate.edu (for Atlas Connections)
 
 NOTE: Be sure to replace “user.name” in both options above with your assigned username.
-
+NOTE: To paste into PowerShell, you will use a single right click. Using ctrl+v will result in an error. 
 
 It is also recommended to create a config file on your computer. You may do so using Notepad.  The file you create must be titled “config” with no extension for this method to work properly (i.e. “config” not “config.txt”). 
 	Note: Do not copy the code into the terminal itself, it must be in a separate file. 
