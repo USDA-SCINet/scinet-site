@@ -43,7 +43,7 @@ Open OnDemand is an intuitive, innovative, and interactive interface to remote c
 
 There are several interactive apps that can be run in Open OnDemand including [Jupyter](/guides/analysis/jupyter), [RStudio Server](/guides/analysis/r-studio), [Geneious](/guides/analysis/geneious), [CLC Genomics Workbench](/guides/analysis/clc-workbench), and more. The desktop app allows a user to run any GUI software.
 
-If you are using [Open OnDemand](https://atlas-ood.hpc.msstate.edu/) on the Atlas cluster, visit the [Atlas Open OnDemand Guide](https://www.hpc.msstate.edu/computing/atlas/ood.php). 
+If you are using [Atlas Open OnDemand](https://atlas-ood.hpc.msstate.edu/), visit the [Atlas Open OnDemand Guide](https://www.hpc.msstate.edu/computing/atlas/ood.php) for more information. 
 
 To access Open OnDemand on the Ceres cluster, go to [Ceres OpenOndemand](http://ceres-ood.scinet.usda.gov/)<!--excerpt-->
 
