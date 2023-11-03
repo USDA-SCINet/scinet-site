@@ -39,18 +39,16 @@ apps:
 
 ---
 
+Open OnDemand is an intuitive, innovative, and interactive interface to remote computing resources. The key benefit for SCINet users is that they can use any web browser, including browsers on a mobile phone, to access Ceres. 
 
-[Open OnDemand](https://openondemand.org/) is an intuitive, innovative, and interactive interface to remote computing resources. The key benefit for SCINet users is that they can use any web browser, including browsers on a mobile phone, to access Ceres. 
+There are several interactive apps that can be run in Open OnDemand including [Jupyter](/guides/analysis/jupyter), [RStudio Server](/guides/analysis/r-studio), [Geneious](/guides/analysis/geneious), [CLC Genomics Workbench](/guides/analysis/clc-workbench), and more. The desktop app allows a user to run any GUI software.
 
-There are several interactive apps that can be run in Open OnDemand including [Jupyter](/guides/analysis/jupyter), [RStudio Server](/guides/analysis/r-studio), [Geneious](/guides/analysis/geneious), [CLC Genomics Workbench](/guides/analysis/clc-workbench), and more. The desktop app allows a user to run any GUI software.<!--excerpt-->
+If you are using [Open OnDemand](https://atlas-ood.hpc.msstate.edu/) on the Atlas cluster, visit the [Atlas Open OnDemand Guide](https://www.hpc.msstate.edu/computing/atlas/ood.php). 
+
+To access Open OnDemand on the Ceres cluster, go to [Ceres OpenOndemand](http://ceres-ood.scinet.usda.gov/)<!--excerpt-->
 
 ---
 ## Access
-If you are using Open OnDemand on the Atlas cluster, visit the [Atlas Open OnDemand Guide](https://www.hpc.msstate.edu/computing/atlas/ood.php).
-
-To access Open OnDemand on the Ceres cluster, go to [Ceres OpenOndemand](http://ceres-ood.scinet.usda.gov/)
-![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/lincpass.png)
-
 If you have a LincPass or YubiKey, follow [the GUI login instructions](/guides/access/login#accessing-gui-based-services).  Otherwise, enter your SCINet username and then your combined password and Google Authenticator code. If your password were `password` and your code were `123456`, your entry for this field would be:
 ```
 password123456
