@@ -59,7 +59,7 @@ We expect to fund 4 to 6 proposals up to $100,000 each. Funds must be spent in f
  
 ## Proposal format and submission
 
-All proposals must be submitted using the [online submission form](https://forms.office.com/g/c6s4AR7BnG).  The PI's RL or supervisor must approve the proposal prior to submission (approval will be indicated on the submission form).  A complete proposal will include:
+All proposals must be submitted using the [online submission form](https://forms.office.com/g/xLJMnYUt13).  The PI's RL or supervisor must approve the proposal prior to submission (approval will be indicated on the submission form).  A complete proposal will include:
 * A proposal abstract of 300 words or less.
 * Proposal text (project description) of up to 2 pages in length that clearly lays out a specific challenge or question, proposes a method or tool to be developed or applied to solve the challenge or to answer the question, and demonstrates that the project team has the capability to complete the project.  Deliverables for the project should be defined.
 * A detailed project budget provided as an Excel spreadsheet. Please use [REE budget form 455](https://www.ars.usda.gov/ARSUserFiles/FMAD/Agreements/ree-455-112018.xlsx).
@@ -71,7 +71,6 @@ The proposal text and budget justification should be submitted as PDF documents 
  
 **Eligibility:** ARS Category 1, 4, or 6 scientists with RL or supervisor approval.  Please note that PIs on an FY23 AI Innovation Fund award will not be eligible for an FY24 award.
  
-**Submission form:** All proposals must be [submitted online](https://forms.office.com/g/xLJMnYUt13).
  
 ## Definition of AI/ML technologies
 
