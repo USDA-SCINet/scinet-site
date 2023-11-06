@@ -20,7 +20,6 @@
         </thead>
         <tbody>
             {% for row in tabledata %}
-                {% unless forloop.first %}
                 {% if split %}
                     {% assign filtercheck = "false" %}
                     {% for pair in row %}
@@ -52,7 +51,6 @@
                     {% endunless %}
                     {% endfor %}
                 </tr>
-                {% endunless %}
                 {% endunless %}
             {% endfor %}
         </tbody>
