@@ -9,7 +9,7 @@ layout: page
 table:
     position: back
     source: funded
-    announcement: "Do you know someone who might be interested in becoming an ORISE Fellow with SCINet or the AI Center of Excellence? Contact the mentor listed above."
+    announcement: ""
 
 
 ---
