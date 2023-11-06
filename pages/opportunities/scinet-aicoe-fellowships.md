@@ -32,7 +32,7 @@ All proposals must use [the fellowships proposal template](https://usdagcc.share
  
 **Deadline for proposal submission:** Close of business on Friday, December 15, 2023.
  
-**Eligibility:** ARS Category 1 or 4 scientists with RL or supervisor approval. Please note that lead mentors on FY23 awards are not eligible for an FY24 award.
+**Eligibility:** ARS Category 1, 4, or 6 scientists with RL or supervisor approval. Please note that lead mentors on FY23 awards are not eligible for an FY24 award.
 
 
 ## Proposals funded in FY23
