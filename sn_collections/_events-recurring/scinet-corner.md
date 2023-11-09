@@ -8,7 +8,7 @@ provider: SCINet Corner
 redirect_from: 
   - /training/corner
 registration: 
-  url: https://forms.gle/7DcBoBvbGcjQDBP38
+  url: https://forms.office.com/g/tgh4SxRqit
 cal-titles: true
 
 filter-archive: materials
@@ -16,6 +16,12 @@ filter-archive: materials
 archive-label: SCINet Corner Recordings
 
 sessions:
+  - session:
+    title: More tips and tricks on the command line
+    date: 2023-11-16
+    time: 1-2 pm ET
+    excerpt: "We will be continuing with more tips and tricks on the command line."
+    
   - session:
     title: Command Line Tips and Tricks
     date: 2023-10-19
