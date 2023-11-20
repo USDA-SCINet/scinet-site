@@ -135,7 +135,7 @@
             <li {% unless post.details_title %}class="usa-collection__meta-item"{% endunless %}>
                 {% if detail.url %}
                 <a href="{% if detail.external %}{{ detail.url }}{% else %}{{ detail.url | relative_url}}{% endif %}" 
-                {% if detail.new_tab %} target="_blank" rel="noopener noreferrer"{% endif %}
+                target="_blank" rel="noopener noreferrer"
                 {% if detail.download %} download{% endif %}
                 >{% endif %}
                 {{ detail.text }}
