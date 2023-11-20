@@ -14,6 +14,29 @@ layout: page
 subnav:
   - title: Meeting Materials
     url: '#meeting-materials'
+
+collect: collect_list
+filter: true
+
+collect_list:
+  - title: November Webinar
+    excerpt: Using multiomics to explore the impoact of drought on the root microbiome
+    date: 11-11-2023
+    details: 
+      - text: "Presenter: Dr. Devin Coleman-Derr"
+      - text: Webinar recording
+        url: 
+  - title: October Meeting
+    date: 12-10-2023
+    details: 
+      - text: Meeting recording
+        url: https://usdagcc-my.sharepoint.com/personal/zhenbin_hu_usda_gov/_layouts/15/stream.aspx?id=%2Fpersonal%2Fzhenbin_hu_usda_gov%2FDocuments%2FGMT20231012-145931_Recording_1920x1200%2Emp4
+  - title: Initial Organization Meeting
+    date: 14-09-2023
+    details: 
+      - text: Meeting recording
+        url: https://usdagcc-my.sharepoint.com/:p:/g/personal/zhenbin_hu_usda_gov/EY5hplNYaDZAkG4fapkIarAB21t6wlyBXm0djmC65_zLwQ
+
 ---
 
 We are excited to introduce the SCINet Translational Omics Working Group, an interdisciplinary team of researchers and experts dedicated to advancing the field of translational omics and its applications in agriculture. Omics technologies will play a pivotal role in the new agricultural revolution by unraveling the complex molecular underpinnings of complex traits and helping guide future farming practices. 
@@ -38,10 +61,5 @@ For more information, please contact George Liu ([George.Liu@usda.gov](mailto:Ge
 
 ## Meeting Materials
 
-Presentation materials from previous meetings are available to USDA employees in the table below.
+Presentation materials from previous meetings are available to USDA employees in list below.
 
-{: .usa-table .usa-table--compact }
-Meeting | Materials
----|---
-9/23 Initial Organization Meeting | [Presentation Slides](https://usdagcc-my.sharepoint.com/:p:/g/personal/zhenbin_hu_usda_gov/EY5hplNYaDZAkG4fapkIarAB21t6wlyBXm0djmC65_zLwQ)
-10/12 October Meeting | [Recording](https://usdagcc-my.sharepoint.com/personal/zhenbin_hu_usda_gov/_layouts/15/stream.aspx?id=%2Fpersonal%2Fzhenbin_hu_usda_gov%2FDocuments%2FGMT20231012-145931_Recording_1920x1200%2Emp4)
