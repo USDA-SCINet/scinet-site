@@ -20,7 +20,7 @@ filter: true
 
 collect_list:
   - title: November Webinar
-    excerpt: Using multiomics to explore the impoact of drought on the root microbiome
+    excerpt: Using multiomics to explore the impact of drought on the root microbiome
     date: 11-11-2023
     details: 
       - text: "Presenter: Dr. Devin Coleman-Derr"
