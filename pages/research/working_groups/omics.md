@@ -25,7 +25,14 @@ collect_list:
     details: 
       - text: "Presenter: Dr. Devin Coleman-Derr"
       - text: Webinar recording
-        url: 
+        url: https://usdagcc-my.sharepoint.com/:u:/r/personal/zhenbin_hu_usda_gov/Documents/Devin_11.9.2023/GMT20231109-160005_Recording.m4a?csf=1&web=1
+      - text: Presentation Slides
+        url: https://usdagcc-my.sharepoint.com/:b:/r/personal/zhenbin_hu_usda_gov/Documents/Devin_11.9.2023/2023%20SCINet%20%20Seminar.pdf?csf=1&web=1&e=B5l3gF
+      - text: Webinar Chat
+        url: https://usdagcc-my.sharepoint.com/:t:/r/personal/zhenbin_hu_usda_gov/Documents/Devin_11.9.2023/GMT20231109-160005_Recording.txt?csf=1&web=1&e=RnA2ON
+      - text: Webinar transcription
+        download: true
+        url: https://usdagcc-my.sharepoint.com/:u:/r/personal/zhenbin_hu_usda_gov/Documents/Devin_11.9.2023/GMT20231109-160005_Recording.transcript.vtt?csf=1&web=1&e=fVSYH0
   - title: October Meeting
     date: 12-10-2023
     details: 
@@ -34,7 +41,7 @@ collect_list:
   - title: Initial Organization Meeting
     date: 14-09-2023
     details: 
-      - text: Meeting recording
+      - text: Presentation slides
         url: https://usdagcc-my.sharepoint.com/:p:/g/personal/zhenbin_hu_usda_gov/EY5hplNYaDZAkG4fapkIarAB21t6wlyBXm0djmC65_zLwQ
 
 ---
