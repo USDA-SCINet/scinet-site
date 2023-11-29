@@ -6,6 +6,8 @@ order_number: 20
 categories: [Software]
 
 subnav:
+  - title: Mamba
+    url: '#mamba'
   - title: Setup
     url: '#setup'
   - title: Installing Software
@@ -33,6 +35,9 @@ Many open-source scientific software packages are available:
 The [Bioconda](http://bioconda.github.io/) channel contains thousands of software packages that are useful for bioinformatics.
 *	[Browse/search](https://bioconda.github.io/conda-package_index.html) available Bioconda software packages
 
+## Mamba
+
+The **miniconda** module also provides [mamba](https://mamba.readthedocs.io/en/latest/user_guide/mamba.html) which can be used instead of conda. Mamba offers better performance while following the same syntax as conda. Users can replace "conda" with "mamba" to acheive the same result. 
 
 ## Setup
 
