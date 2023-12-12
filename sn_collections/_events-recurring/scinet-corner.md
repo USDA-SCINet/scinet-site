@@ -17,6 +17,12 @@ archive-label: SCINet Corner Recordings
 
 sessions:
   - session:
+    title: Tips and Tricks on the Command Line Continued
+    date: 2023-12-14
+    time: 1-2 pm ET
+    excerpt: "We will be continuing with more tips and tricks on the command line."
+    
+  - session:
     title: More tips and tricks on the command line
     date: 2023-11-16
     time: 1-2 pm ET
