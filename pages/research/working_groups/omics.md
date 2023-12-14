@@ -19,6 +19,13 @@ collect: collect_list
 filter: true
 
 collect_list:
+  - title: December Webinar
+    excerpt: "Evolutionary dynamics of transposable elements in plant genomes"
+    date: 14-12-2023
+    details:
+      - text: "Presenter: Dr. Shujun Ou"
+      - text: Webinar recording
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/zhenbin_hu_usda_gov/Documents/Working_group12142023/GMT20231214-160001_Recording_1920x1200.mp4?csf=1&web=1
   - title: November Webinar
     excerpt: Using multiomics to explore the impact of drought on the root microbiome
     date: 11-11-2023
