@@ -85,5 +85,5 @@ collect_list:
 
 The SCINet Corner is a recurrent virtual gathering to provide a space for people to meet and discuss SCINet related items. The main idea is that SCINet users interested in similar things can get help from each other. This virtual meeting will provide space for, and facilitate these interactions on the third Thursday of the month. Meeting times may change.
 
-[Register Here](https://forms.gle/7DcBoBvbGcjQDBP38){: .usa-button }
+[Register Here](https://forms.office.com/g/tgh4SxRqit){: .usa-button }
 
