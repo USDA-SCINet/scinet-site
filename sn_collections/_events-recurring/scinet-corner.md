@@ -120,4 +120,4 @@ The SCINet Corner is a recurring virtual gathering to provide a space for people
 
 Location: [SpatialChat1](https://app.spatial.chat/s/scinet-corner)
 
-[Register Here](https://forms.gle/7DcBoBvbGcjQDBP38){: .usa-button }
+[Register Here](https://forms.office.com/g/tgh4SxRqit){: .usa-button }
