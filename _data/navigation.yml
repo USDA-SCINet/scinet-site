@@ -43,11 +43,32 @@ primary:
       - title: SCINet-X
         url: /news/scinet-x
   - title: User Guides
+    sublinks: true
     links:
       - title: Quick Start
         url: /guides/start
       - title: All User Guides
         url: /guides/
+        sublinks: 
+          - title: Access
+            url: /guides/access
+          - title: Resources
+            url: /guides/resources
+          - title: Data
+            url: /guides/data
+          - title: Use
+            url: /guides/use
+          - title: Software
+            url: /guides/software
+          - title: Analysis
+            url: /guides/analysis
+      - title: Support
+        url: /support/contact
+        sublinks: 
+          - title: Request Resources
+            url: /support/request
+          - title: Ceres Job Script Generator
+            url: /support/ceres-job-script
   - title: Research
     sublinks: true
     links:
