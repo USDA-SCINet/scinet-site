@@ -16,6 +16,12 @@ filter-archive: materials
 archive-label: SCINet Corner Recordings
 
 sessions:
+  - session: 
+    title: Command line tricks in Ceres
+    date: 2024-02-15
+    time: 1-3 pm ET
+    excerpt: "We will continue talking about tips and tricks related to Ceres command line techniques."
+
   - session:
     title: Command Line Tips Continued
     date: 2024-01-25
