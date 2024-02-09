@@ -112,6 +112,7 @@
    .sci-card {
       @include at-media("desktop") {
          @include u-maxw('mobile-lg');
+         display: block !important
       }
 
       @include at-media("tablet") {
