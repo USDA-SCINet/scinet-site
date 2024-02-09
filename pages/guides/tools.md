@@ -31,6 +31,13 @@ alerts:
 #    type: info
 #    text: "If you have feedback on the organization of the User Guides sections, or notice broken links or missing images, please email us at <a href='mailto:moe.richert@usda.gov?subject=SCINet Website Feedback'>moe.richert@usda.gov.</a>"
 
+sidenav_link: /guides/
+
+sidenav_append:
+  - title: SEARCH
+    url: /search
+    class: "sidenav-search"
+
 ---
 
 

@@ -52,7 +52,10 @@ subnav:
     url: /guides/software/open-ondemand
     internal: true
 
-
+sidenav_append:
+  - title: SEARCH
+    url: /search
+    class: "sidenav-search"
 ---
 
 [No account? Signup here.]({{ site.baseurl }}/about/signup){: .usa-button .usa-button-big }
