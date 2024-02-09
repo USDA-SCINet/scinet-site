@@ -52,3 +52,5 @@ Non-ARS Employees require an ARS employee sponsor to obtain a SCINet account.  P
 5. Phone number
 6. Office address
 7. Affiliation(s) with ARS. They will need to enter agreement type(s) (e.g., RSA, NARA), agreement number(s), and agreement title(s) or grant, if applicable.  If other, please indicate any formal relationship between the sponsor and sponsored party e.g. advisory committee.
+8. For Foreign Nationals without a LincPass or AltLinc, a name trace (or Permanent Resident Card) is required.
+9. A risk assessment is required for any international access to SCINet
