@@ -140,6 +140,10 @@ defaults:
       layout_type: "guides"
       sidenav_link: /guides/
       class: "guide-nav"
+      sidenav_append: 
+        - title: SEARCH
+          url: /search
+          class: "sidenav-search"
   - 
     scope:
       path: ""
@@ -148,6 +152,10 @@ defaults:
       layout: "page"
       layout_type: "guides"
       sidenav_link: /guides/
+      sidenav_append: 
+        - title: SEARCH
+          url: /search
+          class: "sidenav-search"
   - 
     scope:
       path: ""
