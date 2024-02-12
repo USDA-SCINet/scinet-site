@@ -19,7 +19,7 @@ sessions:
   - session: 
     title: Command line tricks in Ceres
     date: 2024-02-15
-    time: 1-3 pm ET
+    time: 1-2 pm ET
     excerpt: "We will continue talking about tips and tricks related to Ceres command line techniques."
 
   - session:
