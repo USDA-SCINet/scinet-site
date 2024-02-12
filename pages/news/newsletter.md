@@ -3,7 +3,8 @@ title: Quarterly Newsletter Archive
 layout: page
 permalink: /news/newsletter
 
- 
+ redirect_from: 
+  - /newsletter
 
 
 
