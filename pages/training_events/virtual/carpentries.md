@@ -26,7 +26,7 @@ SCINet is excited to sponsor [Data Carpentry](https://datacarpentry.org/ecology-
 
 The Carpentries teaches foundational coding and data science skills to researchers worldwide. These courses are offered to ARS staff looking to advance their computational skills sets in support of their research. ARS staff and skilled Carpentries instructors will be available during these hands-on trainings to facilitate your learning. 
 
-Sign up to be notified about future training opportunities at [https://forms.office.com/g/tVtE8wEgAt](https://forms.office.com/g/tVtE8wEgAt)
+If you have a training request that is not being offered at this time, please complete this short [training request form](https://forms.office.com/g/x0VzQV39Xp) to let us know.
 
 If you are interested in becoming a Carpentries Instructor, please email SCINet-training@usda.gov.
 
