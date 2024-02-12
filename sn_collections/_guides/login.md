@@ -107,7 +107,7 @@ Get-Service ssh-agent
 ```
 
 #### Step needs to be installed on your machine.
-- If you are on a USDA controlled Windows laptop or workstation, again this will need to be performed by CEC. They should be aware of the process. 
+- If you are on a USDA controlled Windows laptop or workstation, you can install **SmallStepsCLI** directly from the Software Center.
 - If you do need to perform the installation yourself, see: [https://smallstep.com/docs/step-cli/installation/](https://smallstep.com/docs/step-cli/installation/).
   - For windows we recommend the winget installer, we've had the best lusk with that. Again, please be aware that you will only be able to complete the installation yourself if you have admin rights (i.e. you will have admin rights on your home machine rather than an USDA controlled machine.)
   - For MacOS the instrcutions are more straightforward and can be done by the user without admin access. Please be aware that Homebrew will need to be installed first. There is a link to install this at the link above.
@@ -117,10 +117,10 @@ Get-Service ssh-agent
 - Open a Terminal, CMD shell, or PowerShell window and run the following:
 ```
 - `step ca bootstrap --ca-url https://step-ca.scinet.usda.gov --fingerprint adb703fd18f176937743b20228d52af7a705d63a0471cd67428660be5fd006bf `
-- `step ssh config --set Provisioner=keycloak --set User=scinetuser.name`
+- `step ssh config --set Provisioner=keycloak --set User=user.name`
 ```
   - Be sure to change "user.name" to your own SCINet username 
-  - If the step config command fails ssh-agent probably isnt running.  See instructions above.
+  - If the step config command fails, ssh-agent probably isnt running.  See instructions above.
 
 
 #### These commands will do the following:
@@ -132,7 +132,7 @@ The second command updates your .ssh/config file. If you already have a complica
  
 ### Usage Instructions:
 - Please note, if you are using a YubiKey, please see the [Yubikey login instructions](#accessing-using-yubikey) 
-- Each morning on your first attempt to ssh to Ceres with ```ssh user.name@ceres.scinet.usda.gov```, (changing user.name to your own SCINet username) you will see something like this: 
+- Each morning on your first attempt to ssh to Ceres with ```ssh user.name@ceres.scinet.usda.gov``` or Atlas with ```ssh user.name@atlas-login.hpc.msstate.edu```, (changing user.name to your own SCINet username) you will see something like this: 
 
 	- Your default web browser should open automatically to the SCINet authentication page.  Choose USDA LincPass as your sign-in option. 
 ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/lincpass.png)
@@ -146,7 +146,7 @@ The second command updates your .ssh/config file. If you already have a complica
 - Now go through your usual eAuth based login. 
 	- Please Note: There could be complications here if its your first time using eAuth.
 
-- Go back to your shell and you should see something like "CA: https://step-ca.scinet.usda.gov" followed by your regular login.
+- Go back to your shell and you should see "CA: https://step-ca.scinet.usda.gov" followed by your regular login.
   
 ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/step-ssh/login-success.png)
 
