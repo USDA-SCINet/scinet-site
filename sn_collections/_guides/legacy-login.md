@@ -323,9 +323,7 @@ Contact [scinet_vrsc@usda.gov](mailto:scinet_vrsc@USDA.GOV?subject=help%20with%2
 
 ## GA account reset
 
-Users may need to reset GA accounts when switching or reinstalling their mobile devices that have GA application installed. To be able to perform GA reset by yourself, save an SMS phone number in the system by issuing phone-collect.sh command on Ceres. This is the same process that is run automatically the first time you login. After doing that you will be able to do a self-service reset of your GA at [https://ga.scinet.usda.gov/reset/](https://ga.scinet.usda.gov/reset).
-
-If you are unable to or do not wish to save an SMS phone number, GA account reset request will have to go though your supervisor or sponsor as we have no way of directly verifying your identity. 
+Users may need to reset GA accounts when switching or reinstalling their mobile devices that have GA application installed. GA account reset request will have to go though your supervisor or sponsor as we have no way of directly verifying your identity. 
 
 
 ## Frequently Asked Questions
