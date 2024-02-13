@@ -19,7 +19,7 @@ collect: collect_list
 filter: true
 
 collect_list:
-  - February Webinar
+  - title: February Webinar
     excerpt: "Statistical and computational methods for spatial transcriptomics data analysis"
     date: 08-02-2024
     details:
