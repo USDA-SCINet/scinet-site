@@ -19,6 +19,13 @@ collect: collect_list
 filter: true
 
 collect_list:
+  - February Webinar
+    excerpt: "Statistical and computational methods for spatial transcriptomics data analysis"
+    date: 08-02-2024
+    details:
+      - text: "Presenter: Dr. Ying Ma"
+      - Webinar recording
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/zhenbin_hu_usda_gov/Documents/Yingma_2.8.2024/GMT20240208-155809_Recording_1920x1080.mp4?csf=1&web=1
   - title: December Webinar
     excerpt: "Evolutionary dynamics of transposable elements in plant genomes"
     date: 14-12-2023
