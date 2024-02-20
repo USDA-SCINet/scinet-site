@@ -99,7 +99,7 @@ pre {
 }
 
 .footer-flex {
-   @include at-media-max('mobile-lg') {
+   @include at-media-max('tablet') {
       display:flex;
       @include u-flex('column');
       @include u-flex('align-center') 
