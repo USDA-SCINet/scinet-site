@@ -1,9 +1,11 @@
+{%- assign _modifed = site.data.modified["modified"] -%}
+{%- assign modifieddate = _modifed | where_exp: "commit", "commit.filename == page.path" -%}
 {% if footer %}
 <footer class="usa-footer usa-footer--big">
 
   {% if footer.last_updated %}
   <div class="grid-container">
-    <p>Last updated: {{ page.last_modified_at | date: '%B %d, %Y at %I:%M %p' }}</p>
+    <p>Last updated: {% for _mdate in modifieddate limit:1 %}{{ _mdate.modified | date: '%B %d, %Y at %I:%M %p' }} {% endfor %} </p>
   </div>
   {% endif %}
 
