@@ -5,6 +5,9 @@ providers:
   - title: Geospatial Research Working Group
     tag: Geospatial Working Group
     url: /research/working-groups/geospatial
+  - title: Translational Omics Working Group
+    tag: Omics Working Group
+    url: /research/working-groups/omics
   - title: Mississippi State University
     tag: MSU
     url: https://reg.extension.msstate.edu/view/cal10a.aspx?aid=MSU

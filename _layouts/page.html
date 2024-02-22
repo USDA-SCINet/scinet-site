@@ -37,6 +37,15 @@ main:
 
   <br>
 
+  {% if page.collects %}
+  <div>
+    {% for _collect in page.collects %}
+      {% include categories.html collect=_collect %}
+    {% endfor %}
+  </div>
+  {% endif %}
   {% if page.collect %}
+  <div>
   {% include categories.html %}
+  </div>
   {% endif %}

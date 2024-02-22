@@ -87,6 +87,7 @@
     {% assign eventsessions = _event.sessions %}
   {% endif %}
     {% for _session in eventsessions %}
+      {% unless _session.exclude and page.maincalendar %}
       {% assign _sessiondate_int = _session.date | date: '%s' | plus: 0 %}
 
       {% if _sessiondate_int >= timemin and _sessiondate_int < timemax %}
@@ -128,6 +129,7 @@
         {% assign _eventdetails = _eventdetails | push: _session %}
         {% assign myevents = myevents | push: _eventdetails %}
       {% endif %}
+      {% endunless %}
   
     {% endfor %}
   {% endfor %}
@@ -177,11 +179,11 @@
 {% include components/cal_filter.html %}
 {% endif %}
 
-{% if page.type == 'event' %}
+{% if page.type == 'event' or include.recur-collect %}
   {% if pagetype == "archive" %}
-    <h2>{% if page.archive-label %}{{page.archive-label}}{%else%}Past Sessions{%endif%}</h2>
+    <h3>{% if page.archive-label %}{{page.archive-label}}{%else%}Past Sessions{%endif%}</h3>
   {% elsif pagetype == "future" %}
-    <h2>Upcoming Sessions</h2>
+    <h3>{% if page.cal-label %}{{page.cal-label}}{%else%}Upcoming Sessions{%endif%}</h3>
   {% endif %}
 {% endif %}
 

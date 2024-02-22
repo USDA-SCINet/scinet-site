@@ -4,7 +4,7 @@ description: Advertise upcoming events
 permalink: /training/events/
 author: Moe Richert
 layout: eventcalendar
-
+maincalendar: true
  
 
 type: future

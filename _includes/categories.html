@@ -1,19 +1,20 @@
+{% capture mycollect %}{%- if include.collect %}{{ include.collect.collect }}{%- else %}{{ page.collect }}{%- endif %}{% endcapture %}
 {% if page.no-year or page.type == "itinerary" %}
 {% assign no-year = true %}
 {% endif %}
 
-{% assign myposts = site[page.collect] %}
+{% assign myposts = site[mycollect] %}
 
 
-{% if page.collect == "announcements" %}
+{% if mycollect == "announcements" %}
   {% assign flow = 'reverse' %}
   {% assign post_type = 'calendar' %}
   {% assign no_date_below = true %}
-{% elsif page.collect == "workshops" %}
+{% elsif mycollect == "workshops" %}
     {% assign all_posts = site.workshops | where: 'future', 'show' %}
     {% assign myposts = all_posts | where_exp: "post", "post.categories == page.categories and post.type == 'workshop' " %}
-{% elsif page.collect == "collect_list" %}
-  {% assign myposts = page.collect_list %}
+{% elsif mycollect == "collect_list" %}
+  {% assign myposts = mycollect_list %}
   {% assign no-year = true %}
 {% endif %}
 
@@ -43,10 +44,16 @@
 {% assign pnum = myposts | size %}
 {% if pnum > 0 %}
 
-{% if page.collect_title %}
+{%- if include.collect.collect_title %}
+<h2>{{ include.collect.collect_title }}</h2>
+{%- elsif page.collect_title %}
 <h2>{{ page.collect_title }}</h2>
-{% endif %}
+{%- endif %}
 
+{% if mycollect == 'events-recurring' %}
+  {% include components/collection-event.html comp_events=myposts pagetype="future" recur-collect='true' %}
+  {% include components/collection-event.html comp_events=myposts pagetype="archive" recur-collect='true' %}
+{% else %}
 <ul class="usa-list usa-list--unstyled">
 {% if flow == 'reverse' %}
 {% for _post in myposts reversed %} 
@@ -59,6 +66,7 @@
 {% endfor %}
 {% endif %}
 </ul>
+{% endif %}
 
 <br>
 
