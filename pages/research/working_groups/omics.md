@@ -3,60 +3,26 @@ title: Translational Omics Working Group
 description: An interdisciplinary team of researchers and experts dedicated to advancing the field of translational omics and its applications in agriculture
 permalink: /research/working-groups/omics
 layout: page
+cal-titles: excerpt
+hide-provider: true
+no-event-links: true
+no-tags: true
 
-# filter:
-#  provider: Translational Omics Working Group
+filter:
+  provider: Omics Working Group
 
-# collect: events
-# collect_title: Events
-# reverse_collection: true
+collect: events-recurring
+#reverse_collection: true
+
+archive-label: Meeting Recordings
+cal-label: Upcoming Webinars
 
 subnav:
   - title: Meeting Materials
     url: '#meeting-materials'
 
-collect: collect_list
-filter: true
-
-collect_list:
-  - title: February Webinar
-    excerpt: "Statistical and computational methods for spatial transcriptomics data analysis"
-    date: 08-02-2024
-    details:
-      - text: "Presenter: Dr. Ying Ma"
-      - text: Webinar recording
-        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/zhenbin_hu_usda_gov/Documents/Yingma_2.8.2024/GMT20240208-155809_Recording_1920x1080.mp4?csf=1&web=1
-  - title: December Webinar
-    excerpt: "Evolutionary dynamics of transposable elements in plant genomes"
-    date: 14-12-2023
-    details:
-      - text: "Presenter: Dr. Shujun Ou"
-      - text: Webinar recording
-        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/zhenbin_hu_usda_gov/Documents/Working_group12142023/GMT20231214-160001_Recording_1920x1200.mp4?csf=1&web=1
-  - title: November Webinar
-    excerpt: Using multiomics to explore the impact of drought on the root microbiome
-    date: 11-11-2023
-    details: 
-      - text: "Presenter: Dr. Devin Coleman-Derr"
-      - text: Webinar recording
-        url: https://usdagcc-my.sharepoint.com/:u:/r/personal/zhenbin_hu_usda_gov/Documents/Devin_11.9.2023/GMT20231109-160005_Recording.m4a?csf=1&web=1
-      - text: Presentation Slides
-        url: https://usdagcc-my.sharepoint.com/:b:/r/personal/zhenbin_hu_usda_gov/Documents/Devin_11.9.2023/2023%20SCINet%20%20Seminar.pdf?csf=1&web=1&e=B5l3gF
-      - text: Webinar Chat
-        url: https://usdagcc-my.sharepoint.com/:t:/r/personal/zhenbin_hu_usda_gov/Documents/Devin_11.9.2023/GMT20231109-160005_Recording.txt?csf=1&web=1&e=RnA2ON
-      - text: Webinar transcription
-        download: true
-        url: https://usdagcc-my.sharepoint.com/:u:/r/personal/zhenbin_hu_usda_gov/Documents/Devin_11.9.2023/GMT20231109-160005_Recording.transcript.vtt?csf=1&web=1&e=fVSYH0
-  - title: October Meeting
-    date: 12-10-2023
-    details: 
-      - text: Meeting recording
-        url: https://usdagcc-my.sharepoint.com/personal/zhenbin_hu_usda_gov/_layouts/15/stream.aspx?id=%2Fpersonal%2Fzhenbin_hu_usda_gov%2FDocuments%2FGMT20231012-145931_Recording_1920x1200%2Emp4
-  - title: Initial Organization Meeting
-    date: 14-09-2023
-    details: 
-      - text: Presentation slides
-        url: https://usdagcc-my.sharepoint.com/:p:/g/personal/zhenbin_hu_usda_gov/EY5hplNYaDZAkG4fapkIarAB21t6wlyBXm0djmC65_zLwQ
+#collect: collect_list
+#filter: true
 
 ---
 
@@ -82,5 +48,5 @@ For more information, please contact George Liu ([George.Liu@usda.gov](mailto:Ge
 
 ## Meeting Materials
 
-Presentation materials from previous meetings are available to USDA employees in list below.
+Presentation materials from previous meetings are available to USDA employees in the list below.
 

@@ -3,7 +3,7 @@ title: Events Archive
 permalink: /training/events/archive
 layout: eventcalendar
 type: archive
- 
+maincalendar: true 
 
 sidenav_link: /training/events/
 

@@ -44,6 +44,8 @@ calendar:
   button: "See the Full Calendar"
   url: /training/events
 
+maincalendar: true
+
 alt_calendar:
   title: "Trainings and Events"
   text: "SCINet, the AI-COE, and other providers regularly host a variety of events and trainings.  There are no upcoming events currently in our calendar."
