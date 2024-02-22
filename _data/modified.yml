@@ -124,10 +124,10 @@ modified:
     authored: 2024-02-09T16:52:59-05:00
     committed: 2024-02-09T16:52:59-05:00
     filename:  pages/guides/tools.md
-  - commit: e92e82a81835715af6aa1e2edf93a5f36cad269d
-    modified: Mon Feb 12 15:32:57 2024 -0500
-    authored: 2024-02-12T15:32:57-05:00
-    committed: 2024-02-12T15:32:57-05:00
+  - commit: 3e74732eb145745b0e6609ace21f6b38dd5d430c
+    modified: Thu Feb 22 14:58:23 2024 -0500
+    authored: 2024-02-22T14:58:23-05:00
+    committed: 2024-02-22T14:58:23-05:00
     filename:  pages/home.md
   - commit: 300393b3e21f48628f3cc3d3a1a8b7fedb820e0d
     modified: Fri Oct 28 13:28:17 2022 -0400
@@ -264,10 +264,10 @@ modified:
     authored: 2022-10-19T17:08:40-04:00
     committed: 2022-10-19T17:08:40-04:00
     filename:  pages/research/working_groups/microbiome.md
-  - commit: b0cf525c768f0cf680b160bf25fdf68ae7ba5f8f
-    modified: Tue Feb 13 15:49:28 2024 -0500
-    authored: 2024-02-13T15:49:28-05:00
-    committed: 2024-02-13T15:49:28-05:00
+  - commit: 3e74732eb145745b0e6609ace21f6b38dd5d430c
+    modified: Thu Feb 22 14:58:23 2024 -0500
+    authored: 2024-02-22T14:58:23-05:00
+    committed: 2024-02-22T14:58:23-05:00
     filename:  pages/research/working_groups/omics.md
   - commit: a558d9e3c88b03a0e13d829cde469e2dd5aed18d
     modified: Fri Aug 25 12:16:47 2023 -0500
@@ -324,20 +324,20 @@ modified:
     authored: 2022-11-09T14:54:11-05:00
     committed: 2022-11-09T14:54:11-05:00
     filename:  pages/support/vrsc.md
-  - commit: c3d5b71f325fd835b1e476b1d7f17a1be31f0d28
-    modified: Mon Feb 12 15:30:51 2024 -0500
-    authored: 2024-02-12T15:30:51-05:00
-    committed: 2024-02-12T15:30:51-05:00
+  - commit: 3e74732eb145745b0e6609ace21f6b38dd5d430c
+    modified: Thu Feb 22 14:58:23 2024 -0500
+    authored: 2024-02-22T14:58:23-05:00
+    committed: 2024-02-22T14:58:23-05:00
     filename:  pages/training_events/events-archive.md
   - commit: c5d4dd8e2f3df852e6445939681e9c7da6071cf6
     modified: Tue Sep 12 15:52:26 2023 -0400
     authored: 2023-09-12T15:52:26-04:00
     committed: 2023-09-12T15:52:26-04:00
     filename:  pages/training_events/training-resources.md
-  - commit: 517284a16055c643596ebebf6425691f3389cb8d
-    modified: Mon Feb 12 15:29:43 2024 -0500
-    authored: 2024-02-12T15:29:43-05:00
-    committed: 2024-02-12T15:29:43-05:00
+  - commit: 3e74732eb145745b0e6609ace21f6b38dd5d430c
+    modified: Thu Feb 22 14:58:23 2024 -0500
+    authored: 2024-02-22T14:58:23-05:00
+    committed: 2024-02-22T14:58:23-05:00
     filename:  pages/training_events/upcoming-events.md
   - commit: 36f3168f5124222c5d27f521b7b9f13a6e548b07
     modified: Tue Nov 8 14:43:57 2022 -0500
@@ -764,6 +764,11 @@ modified:
     authored: 2023-09-12T15:52:26-04:00
     committed: 2023-09-12T15:52:26-04:00
     filename:  sn_collections/_events-recurring/Intro-to-Atlas.md
+  - commit: 3e74732eb145745b0e6609ace21f6b38dd5d430c
+    modified: Thu Feb 22 14:58:23 2024 -0500
+    authored: 2024-02-22T14:58:23-05:00
+    committed: 2024-02-22T14:58:23-05:00
+    filename:  sn_collections/_events-recurring/omics.md
   - commit: 289462a8240f080402eced74d351f9f9c4fa7608
     modified: Mon Feb 12 10:08:13 2024 -0500
     authored: 2024-02-12T10:08:13-05:00
