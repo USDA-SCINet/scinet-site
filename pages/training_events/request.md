@@ -9,13 +9,13 @@ layout: page
 
 ---
 
-Suggestions for workshops or training that you see a need for are accepted through our training [request form]().
+We are always looking for new scientific computing training ideas and needs in ARS! Suggestions for workshops or trainings are accepted through our training [request form]().
 If you are interested in leading the training yourself, please indicate that in the additional comments section in the form.
 
-Our trainings and events are provided by SCINet, the AI-COE, and other providers, including:
-* AI Center of Excellence
-* [Carpentries](/training/carpentries)
-* [MSU](/events/intro-to-atlas)
+Our trainings and events are provided by the SCINet Office and ARS's AI-COE, our collaborators within ARS, and our external collaborators. Recent trainings have been developed in collaboration with:
+* [The Carpentries](/training/carpentries)
+* [Iowa State University](/events/scinet-corner)
+* [Mississippi State University](/events/intro-to-atlas)
 * [SCINet Working Groups](/research/working-groups/)
-* [SCINet Corner](/events/scinet-corner)
+* [The University of Florida](/training/practicum-ai)
 
