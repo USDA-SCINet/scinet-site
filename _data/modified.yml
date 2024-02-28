@@ -189,11 +189,6 @@ modified:
     authored: 2022-11-16T16:20:31-05:00
     committed: 2022-11-16T16:20:31-05:00
     filename:  pages/opportunities/fellowships.md
-  - commit: cefb4f601d86f7e70e10da70eecfe881894ab1ed
-    modified: Wed Oct 19 17:08:40 2022 -0400
-    authored: 2022-10-19T17:08:40-04:00
-    committed: 2022-10-19T17:08:40-04:00
-    filename:  pages/opportunities/request-workshop.md
   - commit: e6db453c37b852b78dc9f5f2f269f28971ce54ad
     modified: Sun Nov 5 23:33:17 2023 -0500
     authored: 2023-11-05T23:33:17-05:00
@@ -329,6 +324,11 @@ modified:
     authored: 2024-02-22T14:58:23-05:00
     committed: 2024-02-22T14:58:23-05:00
     filename:  pages/training_events/events-archive.md
+  - commit: 3f9a5c4fa07fdbf4e0ae3ddf67108e8e0b9ebbdf
+    modified: Mon Feb 26 16:24:36 2024 -0500
+    authored: 2024-02-26T16:24:36-05:00
+    committed: 2024-02-26T16:24:36-05:00
+    filename:  pages/training_events/request.md
   - commit: c5d4dd8e2f3df852e6445939681e9c7da6071cf6
     modified: Tue Sep 12 15:52:26 2023 -0400
     authored: 2023-09-12T15:52:26-04:00

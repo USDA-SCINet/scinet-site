@@ -112,6 +112,8 @@ primary:
         url: /training/events/
       - title: Learning Pathway
         url: /training/learningpath
+      - title: Request Trainings
+        url: /training/request
   - title: Support
     links:
       - title: Contact the VRSC
@@ -128,8 +130,6 @@ primary:
     links:
       - title: SAC Membership
         url: /opportunities/SAC
-      - title: Request a Workshop
-        url: /opportunities/request-workshop
       - title: Fellowships (PhD & MS)
         url: /opportunities/fellowships
       - title: AI Innovation Fund
