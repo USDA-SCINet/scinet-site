@@ -14,9 +14,6 @@ subnav:
   - title: Arthropod Genomics
     url: /research/working-groups/arthropods
     internal: link
-  - title: Fungal Bioinformatics
-    url: /research/working-groups/fungalbioinformatics
-    internal: link
   - title: Geospatial Research
     url: /research/working-groups/geospatial
     internal: link
