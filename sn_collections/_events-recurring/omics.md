@@ -18,7 +18,8 @@ archive-label: Webinar Recordings
 sessions:
   - session:
     excerpt: Advancing omics measurement science to support agricultural research
-    date: 2024-03-14
+    date: 2024-03-21
+    time: 11am-12pm EDT
     presenter: "Dr. Tracy B, Shock"
   - session:
     excerpt: "Mammalian Immunome Project: A large-scale comparative study of mammalian adaptive immune system"
