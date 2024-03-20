@@ -15,7 +15,37 @@ filter-archive: materials
 
 archive-label: SCINet Corner Recordings
 
-sessions:
+sessions:        
+  - session:
+    title: "Data Visualization: Python packages"
+    date: 2024-07-18
+    time: 1-2 pm ET
+    excerpt: The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.
+    
+  - session:
+    title: "Data Visualization: R packages"
+    date: 2024-06-20
+    time: 1-2 pm ET
+    excerpt: The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.
+    
+  - session:
+    title: "Command-line skills"
+    date: 2024-05-16
+    time: 1-2 pm ET
+    excerpt: The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.
+    
+  - session:
+    title: "OpenOnDemand + Galaxy"
+    date: 2024-04-18
+    time: 1-2 pm ET
+    excerpt: The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.
+    
+  - session:
+    title: "Data Transfer"
+    date: 2024-03-28
+    time: 1-2 pm ET
+    excerpt: The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.
+    
   - session: 
     title: Command line tricks in Ceres
     date: 2024-02-15
