@@ -74,11 +74,11 @@
         {% unless page.type == 'itinerary' or postexcerpt == 'false' %}
         {% if excerpt_type == 'long' %}
         <p class="usa-collection__description">
-            {{ postexcerpt }}
+            {{ postexcerpt | markdownify }}
         </p>
         {% else %}
         <p class="usa-collection__description"> <!--removed truncatewords -->
-            {{ postexcerpt }} 
+            {{ postexcerpt | markdownify }}
         </p>
         {% endif %}
         {% endunless %}

@@ -44,7 +44,16 @@ sessions:
     title: "Data Transfer"
     date: 2024-03-28
     time: 1-2 pm ET
-    excerpt: "This SCINet Corner we will discuss data transfer to and from SCINet, using Globus and scp, and data transfer to Juno. There will be 20-25 mins of instruction followed by Q&A"
+    excerpt: "This SCINet Corner we will discuss:  
+
+      *  Data transfer to and from SCINet  
+
+      *  Using Globus, scp  
+      
+      *  Data transfer to Juno
+
+      
+    There will be 20-25 mins of instruction followed by open discussion and Q&A"
     
   - session: 
     title: Command line tricks in Ceres
