@@ -79,10 +79,10 @@ modified:
     authored: 2022-10-14T16:26:55-04:00
     committed: 2022-10-14T16:26:55-04:00
     filename:  pages/404.md
-  - commit: 4c5b520e3bc1df84d28b0d90ba79fc8359c9f0ca
-    modified: Tue May 23 13:34:18 2023 -0500
-    authored: 2023-05-23T13:34:18-05:00
-    committed: 2023-05-23T13:34:18-05:00
+  - commit: f6fab72e643ce5cbd0b727f7aa04f9ee48879d96
+    modified: Tue Mar 19 10:15:47 2024 -0500
+    authored: 2024-03-19T10:15:47-05:00
+    committed: 2024-03-19T10:15:47-05:00
     filename:  pages/about/compute.md
   - commit: cefb4f601d86f7e70e10da70eecfe881894ab1ed
     modified: Wed Oct 19 17:08:40 2022 -0400
@@ -224,10 +224,10 @@ modified:
     authored: 2022-12-02T15:15:21-05:00
     committed: 2022-12-02T15:15:21-05:00
     filename:  pages/research/use_cases/plant-breeding.md
-  - commit: 00e3e354c72b6372b1adc5d20c5e15ab3f7858f6
-    modified: Tue Jul 25 11:27:33 2023 -0400
-    authored: 2023-07-25T11:27:33-04:00
-    committed: 2023-07-25T11:27:33-04:00
+  - commit: 2bce22e7ff06fea0a02da9e88170070d47c4ec1a
+    modified: Wed Mar 6 09:10:33 2024 -0500
+    authored: 2024-03-06T09:10:33-05:00
+    committed: 2024-03-06T09:10:33-05:00
     filename:  pages/research/working-groups.md
   - commit: 75a129d43dea04014948f886a85f8acc0ca27b02
     modified: Mon Nov 14 13:54:43 2022 -0500
@@ -244,11 +244,6 @@ modified:
     authored: 2022-12-01T15:38:37-05:00
     committed: 2022-12-01T15:38:37-05:00
     filename:  pages/research/working_groups/arthropod.md
-  - commit: a7c591cf1d290c46bce809e0dbc9a64bc610a42d
-    modified: Wed Jan 25 16:31:59 2023 -0500
-    authored: 2023-01-25T16:31:59-05:00
-    committed: 2023-01-25T16:31:59-05:00
-    filename:  pages/research/working_groups/fungalbioninformatics.md
   - commit: ccf92ae0d3b648a8311bf7569a8d274f2a47f6f8
     modified: Tue Feb 14 12:12:59 2023 -0500
     authored: 2023-02-14T12:12:59-05:00
@@ -324,10 +319,10 @@ modified:
     authored: 2024-02-22T14:58:23-05:00
     committed: 2024-02-22T14:58:23-05:00
     filename:  pages/training_events/events-archive.md
-  - commit: 3f9a5c4fa07fdbf4e0ae3ddf67108e8e0b9ebbdf
-    modified: Mon Feb 26 16:24:36 2024 -0500
-    authored: 2024-02-26T16:24:36-05:00
-    committed: 2024-02-26T16:24:36-05:00
+  - commit: 22ac4f75c0d4f636b45fded3d5a9ce5e832c9ba9
+    modified: Tue Feb 27 13:11:28 2024 -0500
+    authored: 2024-02-27T13:11:28-05:00
+    committed: 2024-02-27T13:11:28-05:00
     filename:  pages/training_events/request.md
   - commit: c5d4dd8e2f3df852e6445939681e9c7da6071cf6
     modified: Tue Sep 12 15:52:26 2023 -0400
@@ -764,15 +759,15 @@ modified:
     authored: 2023-09-12T15:52:26-04:00
     committed: 2023-09-12T15:52:26-04:00
     filename:  sn_collections/_events-recurring/Intro-to-Atlas.md
-  - commit: 3e74732eb145745b0e6609ace21f6b38dd5d430c
-    modified: Thu Feb 22 14:58:23 2024 -0500
-    authored: 2024-02-22T14:58:23-05:00
-    committed: 2024-02-22T14:58:23-05:00
+  - commit: c74f4bae036e3d000cbaf388420527df335ca2da
+    modified: Thu Mar 7 13:18:45 2024 -0500
+    authored: 2024-03-07T13:18:45-05:00
+    committed: 2024-03-07T13:18:45-05:00
     filename:  sn_collections/_events-recurring/omics.md
-  - commit: 289462a8240f080402eced74d351f9f9c4fa7608
-    modified: Mon Feb 12 10:08:13 2024 -0500
-    authored: 2024-02-12T10:08:13-05:00
-    committed: 2024-02-12T10:08:13-05:00
+  - commit: c174e77361070def58ed13c65ca4afc596ef76e6
+    modified: Fri Mar 22 16:15:57 2024 -0400
+    authored: 2024-03-22T16:15:57-04:00
+    committed: 2024-03-22T16:15:57-04:00
     filename:  sn_collections/_events-recurring/scinet-corner.md
   - commit: e687b3bd0a2ae31f5997f46e423236997ac23569
     modified: Mon Nov 14 13:54:18 2022 -0500
@@ -1094,10 +1089,10 @@ modified:
     authored: 2022-11-09T15:50:11-05:00
     committed: 2022-11-09T15:50:11-05:00
     filename:  sn_collections/_guides/data-management.md
-  - commit: 4c6f483d969c9a9cc112c2a363329f609fbcc255
-    modified: Thu Nov 16 11:29:09 2023 -0600
-    authored: 2023-11-16T11:29:09-06:00
-    committed: 2023-11-16T11:29:09-06:00
+  - commit: 844c8b4d5aa56a7272d2463313a88e15e4491412
+    modified: Wed Feb 28 12:27:02 2024 -0600
+    authored: 2024-02-28T12:27:02-06:00
+    committed: 2024-02-28T12:27:02-06:00
     filename:  sn_collections/_guides/datatransfer.md
   - commit: be404c262ab23d871ab729695cfded81a95c7478
     modified: Fri Oct 21 11:18:31 2022 -0400
@@ -1214,10 +1209,10 @@ modified:
     authored: 2022-10-27T12:57:23-04:00
     committed: 2022-10-27T12:57:23-04:00
     filename:  sn_collections/_guides/smrtlink.md
-  - commit: 0d0b6b90a8b7d6660de70965eb0615cc5bfc8b9b
-    modified: Tue Dec 19 10:28:12 2023 -0600
-    authored: 2023-12-19T10:28:12-06:00
-    committed: 2023-12-19T10:28:12-06:00
+  - commit: 5052f885fcdaaf7330301551bca84a97959f4e21
+    modified: Fri Mar 15 10:27:00 2024 -0500
+    authored: 2024-03-15T10:27:00-05:00
+    committed: 2024-03-15T10:27:00-05:00
     filename:  sn_collections/_guides/storage.md
   - commit: 7bff415951c35f5e4153922054d6d94246e15c55
     modified: Mon Aug 28 14:00:34 2023 -0400
