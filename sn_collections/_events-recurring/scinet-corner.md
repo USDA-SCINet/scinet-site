@@ -78,6 +78,11 @@ sessions:
     date: 2023-10-19
     time: 1-2 pm ET
     excerpt: "In continuation of the theme to re-introduce users to SCINet, we will be covering some tips and tricks on the command line that help you do certain routine jobs faster."
+    materials:
+      - text: session recording part 1
+        url: https://usdagcc.sharepoint.com/:p:/s/REE-ARS-SCINetOffice/EYwU4iMJJpNMh1J9lm39JTYBMHd5ILBdG9CoAAHMczCNHg
+      - text: session recording part 2
+        url: https://usdagcc.sharepoint.com/:u:/s/REE-ARS-SCINetOffice/EZTSyZe2Hb1JgVijnac6n-QBCstJucpZVChqPlJzT7GI4A
     
   - session:
     title: Reintroduction to SCINet
