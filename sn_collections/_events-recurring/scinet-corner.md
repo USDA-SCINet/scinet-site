@@ -60,6 +60,9 @@ sessions:
     date: 2024-01-25
     time: 1-2 pm ET
     excerpt: "We will continue talking about tips and tricks related to Ceres command line techniques."
+    materials:
+      - text: Session Recording Part 1
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/ESOunWF4mGxPoPGtTtECyJkBOlR6sSRxsK__oJKrIPjD5g
 
   - session:
     title: Tips and Tricks on the Command Line Continued
@@ -75,14 +78,10 @@ sessions:
     
   - session:
     title: Command Line Tips and Tricks
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/ESOWnrVV_oJPpZzAtsRpeWEBlllKAcnpZYyEg6WO_r6U9g
     date: 2023-10-19
     time: 1-2 pm ET
     excerpt: "In continuation of the theme to re-introduce users to SCINet, we will be covering some tips and tricks on the command line that help you do certain routine jobs faster."
-    materials:
-      - text: session recording part 1
-        url: https://usdagcc.sharepoint.com/:p:/s/REE-ARS-SCINetOffice/EYwU4iMJJpNMh1J9lm39JTYBMHd5ILBdG9CoAAHMczCNHg
-      - text: session recording part 2
-        url: https://usdagcc.sharepoint.com/:u:/s/REE-ARS-SCINetOffice/EZTSyZe2Hb1JgVijnac6n-QBCstJucpZVChqPlJzT7GI4A
     
   - session:
     title: Reintroduction to SCINet
