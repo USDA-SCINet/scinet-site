@@ -82,7 +82,7 @@
 
   {% for _event in comp_events %}
   {% if page.filter-archive=="materials" and pagetype == "archive" %}
-    {% assign eventsessions = _event.sessions | where_exp: "session", "session.materials" %}
+    {% assign eventsessions = _event.sessions | where_exp: "session", "session.materials or session.url" %}
   {% else %}
     {% assign eventsessions = _event.sessions %}
   {% endif %}
