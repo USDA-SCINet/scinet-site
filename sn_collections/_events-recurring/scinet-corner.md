@@ -60,6 +60,9 @@ sessions:
     date: 2024-01-25
     time: 1-2 pm ET
     excerpt: "We will continue talking about tips and tricks related to Ceres command line techniques."
+    materials:
+      - text: Session Recording Part 1
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/ESOunWF4mGxPoPGtTtECyJkBOlR6sSRxsK__oJKrIPjD5g
 
   - session:
     title: Tips and Tricks on the Command Line Continued
@@ -75,6 +78,7 @@ sessions:
     
   - session:
     title: Command Line Tips and Tricks
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/ESOWnrVV_oJPpZzAtsRpeWEBlllKAcnpZYyEg6WO_r6U9g
     date: 2023-10-19
     time: 1-2 pm ET
     excerpt: "In continuation of the theme to re-introduce users to SCINet, we will be covering some tips and tricks on the command line that help you do certain routine jobs faster."
@@ -157,6 +161,6 @@ sessions:
 
 The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items. The main idea is that SCINet users with similar interests can get help from each other. This virtual meeting will provide space for, and facilitate, these interactions on the first or second Thursday of the month.<!--excerpt-->
 
-Location: [SpatialChat1](https://app.spatial.chat/s/scinet-corner)
+Location: [SpatialChat](https://app.spatial.chat/s/scinet-corner)
 
 [Register Here](https://forms.office.com/g/tgh4SxRqit){: .usa-button }
