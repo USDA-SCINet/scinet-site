@@ -104,7 +104,7 @@ Person | Position
 Brian Stucky | SCINet Computational Biologist and acting CSIO
 Heather Savoy | SCINet Computational Biologist
 Haitao Huang | SCINet Computational Biologist
-Ryan Lucas | SCINet Data Science Coordinator
+Lavida Rogers | SCINet Training Coordinator
 Moe Richert | SCINet Web Developer
 
 ## Scientific Advisory Committee
@@ -116,24 +116,27 @@ The ARS Scientific Computing Initiative is in the domain of ARS researchers, thu
 {: .usa-table .usa-table--compact }
 Person | Area |Role | Sub-subcommittees | Term expires
 -------|------|-----|-------------------|-------------
-Adam Rivers | Southeast | Chair | Communications | 2023
-Steve Schroeder | Northeast | Vice-Chair | Planning, Software | 2024
-Erin Scully |Plains | Secretary | Education, Membership | 2025
-Jeremy Edwards | Southeast | Representative | Communications | 2023
-Feng Guo | Northeast | Representative | Planning | 2024
-Hye-Seon Kim | Midwest | Representative | | 2025
-Margaret Woodhouse | Midwest | Representative | Communications | 2023
-Jason Fiedler | Plains | Representative | Planning | 2023
-Pat Clark | Pacific West | Representative | Education | 2025
-Alison Thompson |Pacific West | Representative | Education | 2024
-Kathy Yeater | Statistician | Representative |Membership | 2024
-Chris Owen | At-Large | Representative | TBD | 2025
-Jack Okamoro | ONP | Ex Officio | - | -
-Cyndy Parr | NAL | Ex Officio | - | -
-Bryan Kaphammer | Area Directors | Ex Officio | - | -
-Brian Stucky | Acting CSIO | Ex Officio | - | -
-Brian Scheffler | Former CSIO | Ex Officio | - | -
-Rob Butler | Acting SCINet<br>Executive Director | Ex Officio | - | -
+Jeremy Edwards | Southeast | Chair | Communications | 2026  
+Jason Fiedler | Plains | Vice-Chair | Planning | 2026  
+Adrienne Narrowe | Northeast | Representative | TBD | 2027
+Harlan Svoboda | Northeast | Representative | TBD | 2027
+Geoff Waldbieser | Southeast | Representative | TBD | 2026  
+Margaret Woodhouse | Midwest | Secretary | Communications | 2026  
+Hye-Seon Kim | Midwest | Representative |  | 2025  
+Erin Scully | Plains | Representative | Education, Membership | 2025  
+Pat Clark | Pacific West | Representative | Education | 2025  
+Peter Olsoy | Pacific West | Representative | TBD | 2027
+Quentin Read | Statistician | Representative | TBD | 2027
+Christopher Owen | At-Large | Representative | TBD | 2025  
+Brian Stucky | A-CSIO | Ex Officio | - | - 
+Cyndy Parr | NAL | Ex Officio | - | - 
+Marlen Eve | ONP | Ex Officio | - | - 
+Jack Okamuro | ONP | Ex Officio | - | - 
+Bryan Kaphammer | AO | Ex Officio | - | - 
+Rob Butler | SCINet Program Manager | Ex Officio | - | - 
+Brian Scheffler | Former CSIO | Ex Officio | - | - 
+Jay Joiner | SCINet Admin Support | Ex Officio | - | - 
+
 
 </div>
 
