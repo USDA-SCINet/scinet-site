@@ -94,10 +94,10 @@ modified:
     authored: 2022-10-19T17:08:40-04:00
     committed: 2022-10-19T17:08:40-04:00
     filename:  pages/about/networking.md
-  - commit: 094cfe19770f86bccc663ab58d215c59a0320b85
-    modified: Fri Feb 9 17:12:30 2024 -0500
-    authored: 2024-02-09T17:12:30-05:00
-    committed: 2024-02-09T17:12:30-05:00
+  - commit: 1a6aa866185f39c5e1c0149a3884043f5f2e42fa
+    modified: Fri Mar 29 10:22:02 2024 -0400
+    authored: 2024-03-29T10:22:02-04:00
+    committed: 2024-03-29T10:22:02-04:00
     filename:  pages/about/organization.md
   - commit: fd8108db528ce46dfe17b8e3c1c3bdfb91a5c115
     modified: Mon Aug 28 13:42:07 2023 -0500
@@ -759,15 +759,15 @@ modified:
     authored: 2023-09-12T15:52:26-04:00
     committed: 2023-09-12T15:52:26-04:00
     filename:  sn_collections/_events-recurring/Intro-to-Atlas.md
-  - commit: c74f4bae036e3d000cbaf388420527df335ca2da
-    modified: Thu Mar 7 13:18:45 2024 -0500
-    authored: 2024-03-07T13:18:45-05:00
-    committed: 2024-03-07T13:18:45-05:00
+  - commit: 856ff51f2c0bd4823668798635fef23e2cfe709c
+    modified: Mon Mar 25 16:31:03 2024 -0400
+    authored: 2024-03-25T16:31:03-04:00
+    committed: 2024-03-25T16:31:03-04:00
     filename:  sn_collections/_events-recurring/omics.md
-  - commit: c174e77361070def58ed13c65ca4afc596ef76e6
-    modified: Fri Mar 22 16:15:57 2024 -0400
-    authored: 2024-03-22T16:15:57-04:00
-    committed: 2024-03-22T16:15:57-04:00
+  - commit: 9e75ccac0a31bce1a782c725b6541e9f4405973b
+    modified: Mon Mar 25 14:31:09 2024 -0400
+    authored: 2024-03-25T14:31:09-04:00
+    committed: 2024-03-25T14:31:09-04:00
     filename:  sn_collections/_events-recurring/scinet-corner.md
   - commit: e687b3bd0a2ae31f5997f46e423236997ac23569
     modified: Mon Nov 14 13:54:18 2022 -0500
