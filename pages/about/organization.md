@@ -99,6 +99,7 @@ Dr. Brian Scheffler | Former Acting Chief Scientific Information Officer
 
 ## SCINet Office
 
+{: .usa-table .usa-table--compact }
 Person | Position
 ---|---
 Brian Stucky | SCINet Computational Biologist and acting CSIO
