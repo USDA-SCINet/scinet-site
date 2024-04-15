@@ -35,10 +35,14 @@ sessions:
     excerpt: The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.
     
   - session:
-    title: "OpenOnDemand + Galaxy"
+    title: "Galaxy: a web-based platform for data-intensive bioinformatics analyses"
     date: 2024-04-18
     time: 1-2 pm ET
-    excerpt: The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.
+    excerpt: "This presentation will cover:
+*  What is Galaxy?
+*  Logging in to Galaxy via SCINet
+*  Uploading data to Galaxy
+*  Example of data analysis on Galaxy"
     
   - session:
     title: "Data Transfer"
