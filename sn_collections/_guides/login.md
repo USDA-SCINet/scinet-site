@@ -43,7 +43,7 @@ A video demonstration for changing your password can be found [here](https://www
 1. AT LEAST 14 characters long
 2. Your last 24 passwords cannot be reused.
 
-
+**LincPass Users** Please contact your IT Specialist if you need help with installing Step on your USDA controlled machine. 
 
 ## Creating a Config File
 
