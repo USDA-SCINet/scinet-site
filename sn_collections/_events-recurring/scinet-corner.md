@@ -38,11 +38,7 @@ sessions:
     title: "Galaxy: a web-based platform for data-intensive bioinformatics analyses"
     date: 2024-04-18
     time: 1-2 pm ET
-    excerpt: "This presentation will cover:
-*  What is Galaxy?
-*  Logging in to Galaxy via SCINet
-*  Uploading data to Galaxy
-*  Example of data analysis on Galaxy"
+    excerpt: "This presentation will cover what Galaxy is, logging in, uploading data, and examples of data analysis on Galaxy"
     
   - session:
     title: "Data Transfer"
