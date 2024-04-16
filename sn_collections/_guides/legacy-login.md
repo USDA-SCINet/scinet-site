@@ -164,7 +164,9 @@ _When Changing your Password (Mandatory Prompt when First Connecting):_
 5. Enter your “new password” twice when prompted.    
 Note: The new password requirements are listed below. 
 
-After updating your password, you will be prompted to answer Yes or No to entering a cell phone. _It is strongly recommended to add a cell phone just in case you need to reset your Google Authenticator in the future._ Enter "y" and then enter your cellphone number with no dashes or parenthesis, as shown in the image below. 
+After updating your password, you will be prompted to answer Yes or No to entering a cell phone. _It is strongly recommended to add a cell phone just in case you need to reset your Google Authenticator in the future._ Enter "y" and then enter your cellphone number with no dashes or parenthesis, as shown in the image below.  
+
+Please Note: The system may no longer prompt you for your phone number.
 
 ![screenshot of cellphone entry]({{ site.baseurl }}/assets/img/guides/access/cellphone.png)
 
