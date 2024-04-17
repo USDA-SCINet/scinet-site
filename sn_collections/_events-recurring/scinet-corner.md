@@ -91,7 +91,7 @@ sessions:
 
   - session: 
     title: Python in Jupyter
-    url: https://web.microsoftstream.com/video/cf3179eb-eb91-4db8-b8aa-062db5a769b0
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EU0jhlzkZTFAtaH4mQErXBcBbok1CyYZkCmWfG9Z1Mls4A?e=EE5NXV
     date: 2023-07-13
     time: 1-2 pm ET
     tags: Python
@@ -117,7 +117,7 @@ sessions:
       
   - session: 
     title: Continues Exploration of R and Intro to dplyr
-    url: https://web.microsoftstream.com/video/abbd4c63-b996-4306-90cc-76620579576a #main link to video
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/Efccvnjx5ilPhokEl1kp-ggBnIrYRYkDpWKEykBF09hDqA?e=usBHyT #main link to video
     date: 2022-12-01
     time: 1-2 pm ET
     tags: R-Project dplyr
@@ -133,7 +133,7 @@ sessions:
   
   - session: 
     title: Introduction to ggplot2
-    url: https://web.microsoftstream.com/video/bbb3e1af-f02a-4dc3-98fe-0a90603198ea
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EYCClS7yTUBNm2mAyYKOsJEBS6zM7Xrbeq8W-VR_AgSydg?e=r1Ge2V
     date: 2022-11-03
     time: 1-2 pm ET
     tags: R-Project
