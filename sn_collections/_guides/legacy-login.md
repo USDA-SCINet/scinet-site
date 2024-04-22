@@ -39,6 +39,8 @@ subnav:
 
 This page contains deprecated login procedures.  If you have a LincPass or YubiKey, you should use [the Step-based login instructions](/guides/access/login). <!--excerpt-->
 
+**LincPass Users** You can now change your password via Open OnDemand in lieu of SmallStep. Please see the video tutorial [here](https://youtu.be/tx3sQX7rl70).
+
 Before accessing various SCINet resources, new users need to ssh either to Ceres or Atlas cluster and change the temporary password. Note that home directories on Atlas are not created right away, so it is recommended to wait a day after receiving email with the credentials before logging to Atlas cluster.   
 
 A video demonstration for changing your password can be found [here](https://www.youtube.com/watch?v=Amhw2k5mftI). Please keep in mind that due to the recent password requirement change, the video is out of date. It will list more password requirements than necessary.  The current requirements are found below:
