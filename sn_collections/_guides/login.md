@@ -45,7 +45,7 @@ A video demonstration for changing your password can be found [here](https://www
 
 **LincPass Users** Please contact your IT Specialist if you need help with installing Step on your USDA controlled machine. 
 
-If you have a LincPass, you can now change your password via Open OnDemand in lieu of SmallStep. Please [see the video tutorial here](https://youtu.be/tx3sQX7rl70).
+If you have a LincPass, you can now change your password via Open OnDemand in lieu of SmallStep and command-line tools. Please [see the video tutorial here](https://youtu.be/tx3sQX7rl70).
 
 ## Creating a Config File
 
