@@ -216,7 +216,7 @@ After selcting this, you will be automatically directed to login using your usua
 - The next pop-up will have three options. You will select "USB security key".
 ![]({{ site.baseurl }}/assets/img/guides/access/yubikey-login/login4.png)
 
-- The final pop up will instruct you to insert your security key and touch it.  You will now insert your USB YubiKey (if you haven't already) and then touch it. This will then automatically log you into the service you were attempting to access. 
+- The final pop up will instruct you to insert your security key and touch it.  You will now insert your USB YubiKey (if you haven't already) and then you must physically touch it. If you do not touch the key, it will not successfully activate. This will then automatically log you into the service you were attempting to access. 
 ![]({{ site.baseurl }}/assets/img/guides/access/yubikey-login/login5.png)
 
 - This step will remain the same for all GUI-based services such as Ceres OpenOnDemand, Galaxy, the SCINet Forum, and others. 
