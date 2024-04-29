@@ -29,10 +29,11 @@ sessions:
     excerpt: The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.
     
   - session:
-    title: "Command-line skills"
+    title: "Open OnDemand: Web-based access to SCINet"
     date: 2024-05-16
     time: 1-2 pm ET
-    excerpt: The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.
+    excerpt: "How to access SCINet computing resources and applications through your browser.  
+This presentation will cover how to log on to Open OnDemand for Ceres and Atlas, followed by an overview of popular applications available on Open OnDemand."
     
   - session:
     title: "Galaxy: a web-based platform for data-intensive bioinformatics analyses"
