@@ -17,6 +17,11 @@ archive-label: Webinar Recordings
 
 sessions:
   - session:
+    excerpt: "Streamline unsupervised machine learning to survey and graph indel-based haplotypes from pan-genomes"
+    date: 2024-05-09
+    time: 11am-12pm EDT
+    presenter: "Dr. Xianran Li"
+  - session:
     excerpt: Advancing omics measurement science to support agricultural research
     date: 2024-03-21
     time: 11am-12pm EDT
