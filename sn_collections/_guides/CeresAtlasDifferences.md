@@ -26,8 +26,6 @@ subnav:
         url: '#partitions'
       - title: Nodes
         url: '#nodes'
-      - title: Internet Connection
-        url: '#internet-connection'
 
 
 ---
@@ -129,10 +127,6 @@ One does not have to specify a partition when submitting a job to a default part
 ### Nodes
 
 Two clusters have different node types, that have different numbers of compute cores and amounts of memory. For most jobs the scripts already specify resources that are available on either cluster, so no changes need to be made. However if a job relies on the default amount of memory being large, it may fail on the other cluster that has smaller defaults. Some jobs may have high number of cores specified. On Ceres hyper-threading is turned on, meaning that each physical core on a node appears as two separate processors to the operating system and can run two threads. Because of that setting all nodes have at least 72 cores available. On Atlas, nodes have 48 cores. Thus if a script specifies more than 48 cores per node, it won't be accepted on Atlas.
-
-### Internet Connection
-
-On Atlas compute nodes do not have access to internet. If your job requires internet access, either submit it to the service partition or modify the job prefetching data and using the previously downloaded data in the job. Conda installs will need to be performed either on the login or data transfer nodes. 
 
 ### salloc
 
