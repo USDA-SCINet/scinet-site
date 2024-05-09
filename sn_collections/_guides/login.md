@@ -47,6 +47,8 @@ A video demonstration for changing your password can be found [here](https://www
 
 If you have a LincPass, you can now change your password via Open OnDemand in lieu of SmallStep and command-line tools. Please [see the video tutorial here](https://youtu.be/tx3sQX7rl70).
 
+If you are encountering errors after completing the below steps, see [SmallStepCLI Install Troubleshooting for LincPass Users](/guides/access/login/smallstepscli)
+
 ## Creating a Config File
 
 It is recommended to create a config file on your computer. You may do so using Notepad.  The file you create must be titled “config” with no extension for this method to work properly (i.e. “config” not “config.txt”). This will send a “keepalive” signal every 20 seconds and keep retrying for up to 30 failures. 
