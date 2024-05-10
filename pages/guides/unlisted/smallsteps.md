@@ -1,6 +1,7 @@
 ---
 title: LincPass (SmallStepsCLI) Logon Troubleshooting
 permalink: /guides/access/login/smallstepscli
+description: Troubleshooting steps for LincPass logon to SCINet
 layout: "page"
 layout_type: "guides"
 sidenav_link: /guides/

@@ -1,6 +1,6 @@
 ---
 title: SCINet Research Overview
-description: summary of current research
+description: Working groups and use cases for SCINet
 permalink: /research/overview
 author: 
 layout: page

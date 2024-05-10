@@ -1,6 +1,6 @@
 ---
 title: Protein Function and Phenotype Prediction Working Group
-description: summary of the working group
+description: The focus of the group is to facilitate community and collaboration for use of SCINet resources to advance research activity in protein function, structure, and phenotype prediction.
 permalink: /research/working-groups/proteinfunction
 author: Ryan Lucas
 layout: page
