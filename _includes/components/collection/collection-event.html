@@ -73,13 +73,13 @@
         </h5>
         {% unless page.type == 'itinerary' or postexcerpt == 'false' %}
         {% if excerpt_type == 'long' %}
-        <p class="usa-collection__description">
+        <div class="usa-collection__description">
             {{ postexcerpt | markdownify }}
-        </p>
+        </div>
         {% else %}
-        <p class="usa-collection__description"> <!--removed truncatewords -->
+        <div class="usa-collection__description"> <!--removed truncatewords -->
             {{ postexcerpt | markdownify }}
-        </p>
+        </div>
         {% endif %}
         {% endunless %}
         {% endunless %}
