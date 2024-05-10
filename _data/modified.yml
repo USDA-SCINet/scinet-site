@@ -104,10 +104,10 @@ modified:
     authored: 2023-08-28T13:42:07-05:00
     committed: 2023-08-28T13:42:07-05:00
     filename:  pages/about/policy.md
-  - commit: e32cc56687212dc0bdebf37fbb6ab7d7e2840c25
-    modified: Wed Jun 7 11:29:57 2023 -0500
-    authored: 2023-06-07T11:29:57-05:00
-    committed: 2023-06-07T11:29:57-05:00
+  - commit: 826fe20a36abc19f14769029e96dc6fd47f53d80
+    modified: Thu Apr 4 10:57:52 2024 -0500
+    authored: 2024-04-04T10:57:52-05:00
+    committed: 2024-04-04T10:57:52-05:00
     filename:  pages/about/signup.md
   - commit: ba2b705d2ae9d681ade79e7fda38552f92fb7869
     modified: Fri Feb 9 16:52:59 2024 -0500
@@ -124,6 +124,11 @@ modified:
     authored: 2024-02-09T16:52:59-05:00
     committed: 2024-02-09T16:52:59-05:00
     filename:  pages/guides/tools.md
+  - commit: 9954909122bba7327808819d6ec5af2a3137c9ea
+    modified: Thu May 9 16:45:46 2024 -0400
+    authored: 2024-05-09T16:45:46-04:00
+    committed: 2024-05-09T16:45:46-04:00
+    filename:  pages/guides/unlisted/smallsteps.md
   - commit: 3e74732eb145745b0e6609ace21f6b38dd5d430c
     modified: Thu Feb 22 14:58:23 2024 -0500
     authored: 2024-02-22T14:58:23-05:00
@@ -289,10 +294,10 @@ modified:
     authored: 2024-02-09T16:49:28-05:00
     committed: 2024-02-09T16:49:28-05:00
     filename:  pages/search.md
-  - commit: 39a0260f9e32e52ac5b72a02aaac9fdf7b7b9bb9
-    modified: Tue Oct 17 17:58:06 2023 -0400
-    authored: 2023-10-17T17:58:06-04:00
-    committed: 2023-10-17T17:58:06-04:00
+  - commit: 75a54ce6155f7eb4aec366c769efff5c47d4a12b
+    modified: Mon Apr 22 13:11:56 2024 -0500
+    authored: 2024-04-22T13:11:56-05:00
+    committed: 2024-04-22T13:11:56-05:00
     filename:  pages/support/FAQs.md
   - commit: cefb4f601d86f7e70e10da70eecfe881894ab1ed
     modified: Wed Oct 19 17:08:40 2022 -0400
@@ -754,20 +759,25 @@ modified:
     authored: 2024-02-20T08:18:38-05:00
     committed: 2024-02-20T08:18:38-05:00
     filename:  sn_collections/_downtime/2024-02-19-ceres.md
+  - commit: db9735fd03d89c115d9547f01e0b9237468467e1
+    modified: Mon Apr 15 18:50:00 2024 -0400
+    authored: 2024-04-15T18:50:00-04:00
+    committed: 2024-04-15T18:50:00-04:00
+    filename:  sn_collections/_downtime/2024-04-30-Atlas.md
   - commit: c5d4dd8e2f3df852e6445939681e9c7da6071cf6
     modified: Tue Sep 12 15:52:26 2023 -0400
     authored: 2023-09-12T15:52:26-04:00
     committed: 2023-09-12T15:52:26-04:00
     filename:  sn_collections/_events-recurring/Intro-to-Atlas.md
-  - commit: 856ff51f2c0bd4823668798635fef23e2cfe709c
-    modified: Mon Mar 25 16:31:03 2024 -0400
-    authored: 2024-03-25T16:31:03-04:00
-    committed: 2024-03-25T16:31:03-04:00
+  - commit: 0572dc0306e434f070430bd0afd8e734a6b2a53f
+    modified: Tue May 7 12:58:36 2024 -0400
+    authored: 2024-05-07T12:58:36-04:00
+    committed: 2024-05-07T12:58:36-04:00
     filename:  sn_collections/_events-recurring/omics.md
-  - commit: 9e75ccac0a31bce1a782c725b6541e9f4405973b
-    modified: Mon Mar 25 14:31:09 2024 -0400
-    authored: 2024-03-25T14:31:09-04:00
-    committed: 2024-03-25T14:31:09-04:00
+  - commit: 022c25ca9beb000a49e93d1735c36913969d404f
+    modified: Mon Apr 29 08:22:41 2024 -0400
+    authored: 2024-04-29T08:22:41-04:00
+    committed: 2024-04-29T08:22:41-04:00
     filename:  sn_collections/_events-recurring/scinet-corner.md
   - commit: e687b3bd0a2ae31f5997f46e423236997ac23569
     modified: Mon Nov 14 13:54:18 2022 -0500
@@ -1034,10 +1044,10 @@ modified:
     authored: 2023-05-23T13:34:18-05:00
     committed: 2023-05-23T13:34:18-05:00
     filename:  sn_collections/_guidecategory/use.md
-  - commit: 4c5b520e3bc1df84d28b0d90ba79fc8359c9f0ca
-    modified: Tue May 23 13:34:18 2023 -0500
-    authored: 2023-05-23T13:34:18-05:00
-    committed: 2023-05-23T13:34:18-05:00
+  - commit: 40bebdffc7cee0a285e6838788363f353276a5f6
+    modified: Tue May 7 15:47:37 2024 -0400
+    authored: 2024-05-07T15:47:37-04:00
+    committed: 2024-05-07T15:47:37-04:00
     filename:  sn_collections/_guides/CeresAtlasDifferences.md
   - commit: cf54d347c1fdf3ce180cb18fc546442900846ca5
     modified: Thu Nov 3 13:16:04 2022 -0400
@@ -1084,10 +1094,10 @@ modified:
     authored: 2023-11-28T15:32:57-05:00
     committed: 2023-11-28T15:32:57-05:00
     filename:  sn_collections/_guides/conda.md
-  - commit: 20bbb87afe834bd22869f7467366a05d33127fd4
-    modified: Wed Nov 9 15:50:11 2022 -0500
-    authored: 2022-11-09T15:50:11-05:00
-    committed: 2022-11-09T15:50:11-05:00
+  - commit: eaf33b61c92ed4ddfaf35d467f02c4ee2befe789
+    modified: Sun Apr 21 22:30:14 2024 -0400
+    authored: 2024-04-21T22:30:14-04:00
+    committed: 2024-04-21T22:30:14-04:00
     filename:  sn_collections/_guides/data-management.md
   - commit: 844c8b4d5aa56a7272d2463313a88e15e4491412
     modified: Wed Feb 28 12:27:02 2024 -0600
@@ -1129,15 +1139,15 @@ modified:
     authored: 2023-08-30T10:11:44-05:00
     committed: 2023-08-30T10:11:44-05:00
     filename:  sn_collections/_guides/jupyter.md
-  - commit: ad71160938adaae66eae975cbb938e4f5815aa37
-    modified: Tue Feb 13 11:18:46 2024 -0600
-    authored: 2024-02-13T11:18:46-06:00
-    committed: 2024-02-13T11:18:46-06:00
+  - commit: 5a1c3b3a37fb2caa40f58c13ee63ff13587ea2ed
+    modified: Mon Apr 22 14:22:16 2024 -0400
+    authored: 2024-04-22T14:22:16-04:00
+    committed: 2024-04-22T14:22:16-04:00
     filename:  sn_collections/_guides/legacy-login.md
-  - commit: 0c24b84f4516b99ac88d9942e6f3d716612d8d61
-    modified: Mon Feb 12 15:47:33 2024 -0500
-    authored: 2024-02-12T15:47:33-05:00
-    committed: 2024-02-12T15:47:33-05:00
+  - commit: 9954909122bba7327808819d6ec5af2a3137c9ea
+    modified: Thu May 9 16:45:46 2024 -0400
+    authored: 2024-05-09T16:45:46-04:00
+    committed: 2024-05-09T16:45:46-04:00
     filename:  sn_collections/_guides/login.md
   - commit: 8143094500d6fbd1793d40cd6be76aab06f998a5
     modified: Tue Dec 6 16:36:16 2022 -0500
@@ -1204,10 +1214,10 @@ modified:
     authored: 2023-05-23T13:34:18-05:00
     committed: 2023-05-23T13:34:18-05:00
     filename:  sn_collections/_guides/slurm.md
-  - commit: e038b1e9f77db1225d65a25b8d2ff4ca24bae119
-    modified: Thu Oct 27 12:57:23 2022 -0400
-    authored: 2022-10-27T12:57:23-04:00
-    committed: 2022-10-27T12:57:23-04:00
+  - commit: 845e829525e78d9bac76f072171883b2c9a5dd5f
+    modified: Mon May 6 12:05:41 2024 -0400
+    authored: 2024-05-06T12:05:41-04:00
+    committed: 2024-05-06T12:05:41-04:00
     filename:  sn_collections/_guides/smrtlink.md
   - commit: 5052f885fcdaaf7330301551bca84a97959f4e21
     modified: Fri Mar 15 10:27:00 2024 -0500

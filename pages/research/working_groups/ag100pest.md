@@ -1,6 +1,6 @@
 ---
 title: Ag100Pest Initiative Working Group 
-description: summary of the working group
+description: "The Ag100Pest Initiative's goal is to produce annotated, reference quality genome assemblies for the top 100 US arthropod agricultural pests"
 permalink: /research/working-groups/ag100pest
 author: Anna Childers
 layout: page
@@ -8,7 +8,7 @@ layout: page
 ---
 
 
-As a subgroup of the [Arthropod Genomics Research Working Group]({{ site.baseurl }}/research/working-groups/arthropods), the [Ag100Pest Initiative](http://i5k.github.io/ag100pest)’s goal is to produce annotated, reference quality genome assemblies for the top 100 US arthropod agricultural pests by leveraging ARS's unique expertise in both arthropod pest management and agricultural genomics research. We are pushing the limits of current technology to produce long-read sequencing data from individual specimens, despite the challenges of small body sizes, and sometimes large genomes, presented by arthropods. Arthropod pests of US field crops, livestock, bees, trees, and stored products as well as foreign pest species considered potential invasive threats to US agriculture are being considered.
+As a subgroup of the [Arthropod Genomics Research Working Group]({{ site.baseurl }}/research/working-groups/arthropods), the [Ag100Pest Initiative](http://i5k.github.io/ag100pest)'s goal is to produce annotated, reference quality genome assemblies for the top 100 US arthropod agricultural pests by leveraging ARS's unique expertise in both arthropod pest management and agricultural genomics research. We are pushing the limits of current technology to produce long-read sequencing data from individual specimens, despite the challenges of small body sizes, and sometimes large genomes, presented by arthropods. Arthropod pests of US field crops, livestock, bees, trees, and stored products as well as foreign pest species considered potential invasive threats to US agriculture are being considered.
 
 Ag100Pest teams are developing best practices in many arenas from process and data management to extraction, sequencing, assembly, and annotation that will benefit the entire genomics community. As an example, we collaborated in the development of an open-source [functional annotation workflow](https://agbase-docs.readthedocs.io/en/latest/agbase/workflow.html) specifically tailored to arthropods, which users can find installed on Ceres or available through CyVerse, Docker, and GitHub.
 

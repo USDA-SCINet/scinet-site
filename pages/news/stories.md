@@ -3,7 +3,7 @@ title: User Stories
 layout: page
 permalink: /news/stories
 categories: [Stories]
- 
+description: Research highlights from researchers who use SCINet resources
 
 collect: posts
 

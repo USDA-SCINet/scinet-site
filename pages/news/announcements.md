@@ -2,7 +2,7 @@
 title: Announcements
 layout: page
 permalink: /news/announcements
-
+description: Announcements from the Virtual Research Support Core to SCINet users
 collect: announcements
 
 

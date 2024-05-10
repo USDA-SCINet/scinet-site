@@ -1,6 +1,6 @@
 ---
 title: SCINet Use Cases
-description: summary of current use cases
+description: Examples of SCINet use cases
 permalink: /research/uses/
 author: 
 layout: page

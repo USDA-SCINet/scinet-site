@@ -2,7 +2,7 @@
 title: Quarterly Newsletter Archive
 layout: page
 permalink: /news/newsletter
-
+description: SCINet quarterly newsletters
 redirect_from:
   - /newsletter
 

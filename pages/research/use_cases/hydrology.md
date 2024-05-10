@@ -1,6 +1,6 @@
 ---
 title: SCINet for hydrology research
-description: SCINet has a number of tools available for geospatial research
+description: SCINet has a number of tools available for hydrology research
 permalink: /research/uses/hydrology
 author: John Smith
 layout: page

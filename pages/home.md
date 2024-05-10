@@ -2,6 +2,7 @@
 title: SCINet Home
 permalink: /
 type: future
+description: The SCINet initiative is an effort by the USDA Agricultural Research Service (ARS) to grow USDA’s research capacity by providing scientists with access to high-performance computing clusters, high-speed networking for data transfer, and training in scientific computing.
 
 # alerts:
 #  - alert:

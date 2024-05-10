@@ -4,7 +4,7 @@ permalink: /training/events/archive
 layout: eventcalendar
 type: archive
 maincalendar: true 
-
+description: Archive of SCINet events
 sidenav_link: /training/events/
 
 ---

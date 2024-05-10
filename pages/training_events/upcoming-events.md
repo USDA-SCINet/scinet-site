@@ -1,6 +1,6 @@
 ---
 title: Upcoming Events 
-description: Advertise upcoming events
+description: Upcoming SCINet events and trainings
 permalink: /training/events/
 author: Moe Richert
 layout: eventcalendar

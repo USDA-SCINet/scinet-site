@@ -1,6 +1,6 @@
 ---
 title: SCINet Learning Pathway
-description: With the expansive list of free training available online, finding the right training to meet your learning needs can be daunting.
+description: Find the right training to meet your learning needs
 permalink: /training/learningpath
 layout: guides
 

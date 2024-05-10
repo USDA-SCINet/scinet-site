@@ -1,6 +1,6 @@
 ---
 title: Workbook Developers
-description: summary of the working group
+description: Developing tutorials and trainings for SCINet users
 permalink: /research/working-groups/workbooks
 author: Kerrie Geil
 layout: page
