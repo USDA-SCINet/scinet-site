@@ -19,8 +19,6 @@ subnav:
 For instructions for configuring LincPass logon, see the [Login instructions](/guides/access/login).  
 The resolutions for these errors assume you have completed the LincPass config steps from the [Login instructions](/guides/access/login).
 
-[Download a word document of these instructions](/assets/pdf/files/guides/login/SCINet-SmallStepsCLI.docx).
-
 ## Bad owner or permissions
 If you are getting a “Bad owner or permissions” error (double \\ in path), the permissions on the .ssh/ and .step directories are too permissive and allowing Full Access to SYSTEM, Administrators, and others. This is not a problem on an account that has never used ssh on the affected computer.
 !['Screenshot of "Bad owner or permissions on C:\\Users\\First.Last/.ssh/config"'](/assets/img/guides/access/step-ssh/bad-owner-permissions-error.png)
