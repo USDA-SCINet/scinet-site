@@ -4,11 +4,11 @@ permalink: /
 type: future
 description: SCINet is a USDA initiative to provide agricultural scientists access to high performance computing, networking and training.
 
-# alerts:
-#  - alert:
-#    title: Ceres Maintenance
-#    type: info
-#    text: Ceres cluster maintenance is scheduled for the week of June 19, to update system software. The cluster will be down for several days. </br> The Atlas cluster will remain up and running during # Ceres downtime. </br> See <a href="https://forum.scinet.usda.gov/t/ceres-maintenance-the-week-of-june-19-20923/1053">the SCINet Forum Announcements page</a> for more information.
+alerts:
+  - alert:
+    title: Atlas Update
+    type: warning
+    text: There have been several changes to the Atlas compute cluster.  <a href="/announcements/2024-05-03-altas" class="usa-link">Read more about these updates here.</a>
 
 layout: scinet_home
 
