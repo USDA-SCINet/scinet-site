@@ -66,3 +66,7 @@ ssh ceres-dtn
 rsync -avz --no-p --no-g ttt nal-dtn.scinet.usda.gov:/LTS/project/<project_name>/
 ```
 
+Please note that in order to access Juno via the command line, you must first connect to Ceres. Then, you can connect to Juno by issuing the following:
+```
+ssh nal-dtn.scinet.usda.gov
+```
