@@ -13,7 +13,7 @@ sidenav_link: /guides/
 
 
 ## The following is the simplest method to update your SCINet password: 
-1.	Go to https://ceres-ood.scinet.usda.gov 
+1.	Go to [https://ceres-ood.scinet.usda.gov](https://ceres-ood.scinet.usda.gov) 
 1.	Select “USDA LincPass” button on the authentication screen. Use no other option. 
 1.	Authenticate via eAuth 
     1. Select "USDA Employee/Contractor", if prompted 
