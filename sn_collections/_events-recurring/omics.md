@@ -21,6 +21,9 @@ sessions:
     date: 2024-05-09
     time: 11am-12pm EDT
     presenter: "Dr. Xianran Li"
+    materials:
+      - text: webinar recording
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/george_liu_usda_gov/Documents/publication/Hu%20Zhenbin/TOmics%20WG/20240509Recording/GMT20240509-145951_Recording_2560x1440.mp4?csf=1&web=1
   - session:
     excerpt: Advancing omics measurement science to support agricultural research
     date: 2024-03-21
