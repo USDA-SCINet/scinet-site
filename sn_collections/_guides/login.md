@@ -37,7 +37,9 @@ All users should have received their login credentials in an email.  If you have
 **If you have not recieved a LincPass or YubiKey, please see the [Deprecated Login Procedures](/guides/access/legacy-login) page for instructions to access the HPC.**
 <!--excerpt--> 
 
-Before accessing various SCINet resources, new users need to ssh either to Ceres and change the temporary password. Note that home directories on Atlas are not created right away, so it is recommended to wait a day after receiving email with the credentials before logging to Atlas cluster.   
+Before accessing various SCINet resources, new users need to ssh either to Ceres and change the temporary password. Note that home directories on Atlas are not created right away, so it is recommended to wait a day after receiving email with the credentials before logging to Atlas cluster. 
+
+[Instructions for how to change your SCINet password can be found here.](/guides/access/login/password)
 
 A video demonstration for changing your password can be found [here](https://www.youtube.com/watch?v=Amhw2k5mftI). Please keep in mind that due to the recent password requirement change, the video is out of date. It will list more password requirements than necessary.  The current requirements are found below:
 1. AT LEAST 14 characters long
