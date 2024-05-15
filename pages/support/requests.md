@@ -7,8 +7,8 @@ layout: page
 subnav:
   - title: Software Request
     url: '#software-request'
-  - title: Storage Request
-    url: '#storage-request'
+  - title: Project Request
+    url: '#project-request'
     subnav:
       - title: Modify Existing Project Allocation
         url: '#to-modify-an-existing-scinet-project-allocation'
@@ -50,7 +50,7 @@ If you've done the above but need new software installed as a module, use the so
 
 <br>
 
-## Storage Request
+## Project Request
 ---
 
 When a user applies for a SCINet account, they are allocated space on Ceres in a /home directory. Each user is allowed 10GB of data in the home directory. 
