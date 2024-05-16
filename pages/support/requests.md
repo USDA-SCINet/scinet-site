@@ -35,6 +35,16 @@ Users are advised to request additional storage space with a SCINet project. SCI
 
 Requests for new projects or changes to existing projects must be submitted by the project’s Principal Investigator (PI) who needs to be a full-time ARS employee. 
 
+### To Request a New Project Allocation
+When requesting a new project, you will be asked for details including:
+* a project summary, 
+* requested storage amounts, and
+* other SCINet users who you want to have access to the project. 
+
+To request a new project, fill out the request form (eAuthentication required, non-ARS users should contact their sponsor):
+
+[Request a Project](https://forms.office.com/g/wD9rYarVyn){: .usa-button .usa-button-big }
+
 ### To Modify an Existing SCINet Project
 The PI should send an email that includes:
 * the name of the project directory (/project/\<projectname>/) and 
@@ -49,15 +59,7 @@ To request a project quota increase for storage on Ceres, Atlas and/or Juno, ple
 
 [Request a Project Quota Increase](https://forms.office.com/g/ntnKBzJiKx){: .usa-button .usa-button-big }
 
-### To Request a New Project Allocation
-When requesting a new project, you will be asked for details including:
-* a project summary, 
-* requested storage amounts, and
-* other SCINet users who you want to have access to the project. 
 
-To request a new project, fill out the request form (eAuthentication required, non-ARS users should contact their sponsor):
-
-[Request a Project](https://forms.office.com/g/wD9rYarVyn){: .usa-button .usa-button-big }
 
 <br>
 
