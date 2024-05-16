@@ -2,7 +2,7 @@
 title: Downtime
 layout: downtime
 permalink: /news/downtime/
-
+description: Information about planned SCINet outages
 type: future
 show_table: true
 

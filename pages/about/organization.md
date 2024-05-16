@@ -63,7 +63,7 @@ SCINet supports a broad range of computational tools, including R (and RStudio),
 </div>
 </div>
 
-The ARS Scientific Computing Initiative is led by an Executive Committee comprised of ARS leadership including Dr. Steven Kappes – Associate Administrator for National Programs,  Dr. Brian Stucky – Acting Chief Scientific Information Officer, Rob Butler – Acting SCINet Project Manager, ARS scientists representing IT and security, and users of the HPC systems. SCINet committees report to the Executive Committee, including the Scientific Advisory Committee (SAC), an HPC Policy Committee, and an HPC Software Committee.
+The ARS Scientific Computing Initiative is led by an Executive Committee comprised of ARS leadership including Dr. Jeff Silverstein – Acting Associate Administrator for National Programs,  Dr. Brian Stucky – Acting Chief Scientific Information Officer, Rob Butler – Acting SCINet Project Manager, ARS scientists representing IT and security, and users of the HPC systems. SCINet committees report to the Executive Committee, including the Scientific Advisory Committee (SAC), an HPC Policy Committee, and an HPC Software Committee.
 
 The program runs two high performance computer clusters and a storage unit.  The Ceres cluster is housed at the National Animal Disease Center in Ames, IA and operated by Iowa State University. The Atlas cluster is located and ran by Mississippi State University in Starkville, MS, and the Juno storage unit is located at the National Agricultural Library in Beltsville, MD. 
 
@@ -74,7 +74,7 @@ User support at SCINet is provided by the  Virtual Support Research Core (VSRC) 
 {: .usa-table .usa-table--compact }
 Person | Position
 ---|---
-Dr. Steven Kappes | Associate Administrator for National Programs
+Dr. Jeff Silverstein | Acting Associate Administrator for National Programs
 Dr. Brian Stucky | Acting Chief Scientific Information Officer, ARS
 
 ## Executive Committee
@@ -84,7 +84,7 @@ The ARS Scientific Computing Initiative is led by an Executive Committee.
 {: .usa-table .usa-table--compact }
 Person | Position
 ---|---
-Dr. Steven Kappes | Associate Administrator for National Programs
+Dr. Jeff Silverstein | Acting Associate Administrator for National Programs
 Dr. Brian Stucky | Acting Chief Scientific Information Officer, ARS
 Ms. Lorna Drennen | Assistant Chief Information officer
 Mr. Stan Kosecki | Deputy Assistant Chief Information Officer
@@ -99,12 +99,13 @@ Dr. Brian Scheffler | Former Acting Chief Scientific Information Officer
 
 ## SCINet Office
 
+{: .usa-table .usa-table--compact }
 Person | Position
 ---|---
 Brian Stucky | SCINet Computational Biologist and acting CSIO
 Heather Savoy | SCINet Computational Biologist
 Haitao Huang | SCINet Computational Biologist
-Ryan Lucas | SCINet Data Science Coordinator
+Lavida Rogers | SCINet Training Coordinator
 Moe Richert | SCINet Web Developer
 
 ## Scientific Advisory Committee
@@ -116,24 +117,27 @@ The ARS Scientific Computing Initiative is in the domain of ARS researchers, thu
 {: .usa-table .usa-table--compact }
 Person | Area |Role | Sub-subcommittees | Term expires
 -------|------|-----|-------------------|-------------
-Adam Rivers | Southeast | Chair | Communications | 2023
-Steve Schroeder | Northeast | Vice-Chair | Planning, Software | 2024
-Erin Scully |Plains | Secretary | Education, Membership | 2025
-Jeremy Edwards | Southeast | Representative | Communications | 2023
-Feng Guo | Northeast | Representative | Planning | 2024
-Hye-Seon Kim | Midwest | Representative | | 2025
-Margaret Woodhouse | Midwest | Representative | Communications | 2023
-Jason Fiedler | Plains | Representative | Planning | 2023
-Pat Clark | Pacific West | Representative | Education | 2025
-Alison Thompson |Pacific West | Representative | Education | 2024
-Kathy Yeater | Statistician | Representative |Membership | 2024
-Chris Owen | At-Large | Representative | TBD | 2025
-Jack Okamoro | ONP | Ex Officio | - | -
-Cyndy Parr | NAL | Ex Officio | - | -
-Bryan Kaphammer | Area Directors | Ex Officio | - | -
-Brian Stucky | Acting CSIO | Ex Officio | - | -
-Brian Scheffler | Former CSIO | Ex Officio | - | -
-Rob Butler | Acting SCINet<br>Executive Director | Ex Officio | - | -
+Jeremy Edwards | Southeast | Chair | Communications | 2026  
+Jason Fiedler | Plains | Vice-Chair | Planning | 2026  
+Adrienne Narrowe | Northeast | Representative | TBD | 2027
+Harlan Svoboda | Northeast | Representative | TBD | 2027
+Geoff Waldbieser | Southeast | Representative | TBD | 2026  
+Margaret Woodhouse | Midwest | Secretary | Communications | 2026  
+Hye-Seon Kim | Midwest | Representative |  | 2025  
+Erin Scully | Plains | Representative | Education, Membership | 2025  
+Pat Clark | Pacific West | Representative | Education | 2025  
+Peter Olsoy | Pacific West | Representative | TBD | 2027
+Quentin Read | Statistician | Representative | TBD | 2027
+Christopher Owen | At-Large | Representative | TBD | 2025  
+Brian Stucky | A-CSIO | Ex Officio | - | - 
+Cyndy Parr | NAL | Ex Officio | - | - 
+Marlen Eve | ONP | Ex Officio | - | - 
+Jack Okamuro | ONP | Ex Officio | - | - 
+Bryan Kaphammer | AO | Ex Officio | - | - 
+Rob Butler | SCINet Program Manager | Ex Officio | - | - 
+Brian Scheffler | Former CSIO | Ex Officio | - | - 
+Jay Joiner | SCINet Admin Support | Ex Officio | - | - 
+
 
 </div>
 

@@ -1,6 +1,6 @@
 ---
 title: SCINet Policy Committee
-description: summary of the working group
+description: This committee makes recommendations to the SCINet Executive Committee on policies and procedures that are relevant to SCINet operations.
 permalink: /research/working-groups/policy
 author: Kerrie Geil
 layout: page

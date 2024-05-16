@@ -12,13 +12,13 @@
 <li class="usa-collection__item width-full maxw-full" >
     <div class="usa-collection__body">
         {% if _down.link %}<a href="{% if  _down.external %}{{  _down.link }}{% else %}{{  _down.link | relative_url }}{% endif %}">{% endif %}
-            <h3 class="usa-collection__heading {% unless _down.link %} text-primary-dark{% endunless %}">
+            <h4 class="usa-collection__heading {% unless _down.link %} text-primary-dark{% endunless %}">
                 {% if _down.reason %}
                     {{ _down.reason }} &middot 
                 {% endif %}
                 {{ _down.systems }}{% if _down.locations %} - {{ _down.locations }}{% endif %}{% unless _down.end_date %} - {{ _down.date | date: "%A, %B %-d"}}{% endunless %}
                 {% unless post.type == 'archive' %} &middot {{ postyr }}{% endunless %}
-            </h3>
+            </h4>
         {% if _down.url %}</a>{% endif %}
         <p class="usa-collection__description">
             {% if _down.text %}

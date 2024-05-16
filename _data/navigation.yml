@@ -43,11 +43,32 @@ primary:
       - title: SCINet-X
         url: /news/scinet-x
   - title: User Guides
+    sublinks: true
     links:
       - title: Quick Start
         url: /guides/start
       - title: All User Guides
         url: /guides/
+        sublinks: 
+          - title: Access
+            url: /guides/access
+          - title: Resources
+            url: /guides/resources
+          - title: Data
+            url: /guides/data
+          - title: Use
+            url: /guides/use
+          - title: Software
+            url: /guides/software
+          - title: Analysis
+            url: /guides/analysis
+      - title: Support
+        url: /support/contact
+        sublinks: 
+          - title: Request Resources
+            url: /support/request
+          - title: Ceres Job Script Generator
+            url: /support/ceres-job-script
   - title: Research
     sublinks: true
     links:
@@ -58,8 +79,6 @@ primary:
           url: /research/working-groups/ag100pest
         - title: Arthropod Genomics
           url: /research/working-groups/arthropods
-        - title: Fungal Bioinformatics
-          url: /research/working-groups/fungalbioinformatics
         - title: Geospatial Research
           url: /research/working-groups/geospatial
         - title: Microbiome
@@ -91,6 +110,8 @@ primary:
         url: /training/events/
       - title: Learning Pathway
         url: /training/learningpath
+      - title: Request Trainings
+        url: /training/request
   - title: Support
     links:
       - title: Contact the VRSC
@@ -107,8 +128,6 @@ primary:
     links:
       - title: SAC Membership
         url: /opportunities/SAC
-      - title: Request a Workshop
-        url: /opportunities/request-workshop
       - title: Fellowships (PhD & MS)
         url: /opportunities/fellowships
       - title: AI Innovation Fund

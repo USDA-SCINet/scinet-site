@@ -1,6 +1,6 @@
 ---
 title: Geospatial Research Working Group
-description: summary of the working group
+description: The focus of the group is to provide continued input on the development of SCINet, to determine the computational needs of ARS geospatial researchers, and to develop collaborative research projects.
 permalink: /research/working-groups/geospatial
 author: Kerrie Geil
 layout: page

@@ -19,7 +19,7 @@ subnav:
 ---
 
 ## Ceres HPC Cluster | Ames, IA
-Ceres is an ARS-owned high-performance computing (HPC) cluster connected to SCINet and located in Ames, IA. The original cluster build included 72 regular compute nodes, 5 high memory nodes, and a two Petabyte file system for a range of scientific applications. The cluster has been extended multiple times and currently has 196 regular compute nodes, 26 high-memory nodes and one GPU node. A small subset of nodes, called “priority” nodes, has been funded by Research Units. “Priority” nodes are available to all ARS users when not in use by their funders. The ['Technical Overview' in the Ceres User Manual]({{ site.baseurl }}/guides/resources/ceres/#technical-overview) describes the number of logical cores and available memory for each type of node.
+Ceres is an ARS-owned high-performance computing (HPC) cluster connected to SCINet and located in Ames, IA. The original cluster build included 72 regular compute nodes, 5 high memory nodes, and a two Petabyte file system for a range of scientific applications. The cluster has been extended multiple times and currently has 196 regular compute nodes, 26 high-memory nodes and one GPU node. A small subset of nodes, called “priority” nodes, has been funded by Research Units. “Priority” nodes are available to all ARS users when not in use by their funders. The ['Technical Overview' in the Ceres User Manual]({{ site.baseurl }}/guides/resources/ceres#technical-overview) describes the number of logical cores and available memory for each type of node.
 
 All nodes run on Linux Centos and compute jobs are managed by the SLURM scheduler. The system is configured with a login node, which users access to submit compute jobs to the SLURM scheduler.
 

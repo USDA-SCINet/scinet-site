@@ -1,6 +1,6 @@
 ---
 title: SCINet-Longterm Agroecosystem Research (LTAR) Phenology Working Group
-description: summary of the working group
+description: The focus of the group is to learn how to use SCINet high performance computing resources to expand the scope and impact of on-going collaborative phenology research.
 permalink: /research/working-groups/LTARphenology
 author: Dawn Browning
 layout: page

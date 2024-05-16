@@ -37,13 +37,19 @@ All users should have received their login credentials in an email.  If you have
 **If you have not recieved a LincPass or YubiKey, please see the [Deprecated Login Procedures](/guides/access/legacy-login) page for instructions to access the HPC.**
 <!--excerpt--> 
 
-Before accessing various SCINet resources, new users need to ssh either to Ceres and change the temporary password. Note that home directories on Atlas are not created right away, so it is recommended to wait a day after receiving email with the credentials before logging to Atlas cluster.   
+Before accessing various SCINet resources, new users need to ssh either to Ceres and change the temporary password. Note that home directories on Atlas are not created right away, so it is recommended to wait a day after receiving email with the credentials before logging to Atlas cluster. 
+
+[Instructions for how to change your SCINet password can be found here.](/guides/access/login/password)
 
 A video demonstration for changing your password can be found [here](https://www.youtube.com/watch?v=Amhw2k5mftI). Please keep in mind that due to the recent password requirement change, the video is out of date. It will list more password requirements than necessary.  The current requirements are found below:
 1. AT LEAST 14 characters long
 2. Your last 24 passwords cannot be reused.
 
+**LincPass Users** Please contact your IT Specialist if you need help with installing Step on your USDA controlled machine. 
 
+If you have a LincPass, you can now change your password via Open OnDemand in lieu of SmallStep and command-line tools. Please [see the video tutorial here](https://youtu.be/tx3sQX7rl70).
+
+If you are encountering errors after completing the below steps, see [SmallStepCLI Install Troubleshooting for LincPass Users](/guides/access/login/smallstepscli)
 
 ## Creating a Config File
 
@@ -107,7 +113,9 @@ Get-Service ssh-agent
 ```
 
 #### Step needs to be installed on your machine.
-- If you are on a USDA controlled Windows laptop or workstation, again this will need to be performed by CEC. They should be aware of the process. 
+- If you are on a USDA controlled Windows laptop or workstation, you can install **SmallStepsCLI** directly from the Software Center.
+  - If Software Center fails to install SmallStepCLI, please contact your IT Specialist prior to continuing.
+- After installing, you may need to restart your terminal for step to be in your path.
 - If you do need to perform the installation yourself, see: [https://smallstep.com/docs/step-cli/installation/](https://smallstep.com/docs/step-cli/installation/).
   - For windows we recommend the winget installer, we've had the best lusk with that. Again, please be aware that you will only be able to complete the installation yourself if you have admin rights (i.e. you will have admin rights on your home machine rather than an USDA controlled machine.)
   - For MacOS the instrcutions are more straightforward and can be done by the user without admin access. Please be aware that Homebrew will need to be installed first. There is a link to install this at the link above.
@@ -117,10 +125,10 @@ Get-Service ssh-agent
 - Open a Terminal, CMD shell, or PowerShell window and run the following:
 ```
 - `step ca bootstrap --ca-url https://step-ca.scinet.usda.gov --fingerprint adb703fd18f176937743b20228d52af7a705d63a0471cd67428660be5fd006bf `
-- `step ssh config --set Provisioner=keycloak --set User=scinetuser.name`
+- `step ssh config --set Provisioner=keycloak --set User=user.name`
 ```
   - Be sure to change "user.name" to your own SCINet username 
-  - If the step config command fails ssh-agent probably isnt running.  See instructions above.
+  - If the step config command fails, ssh-agent probably isnt running.  See instructions above.
 
 
 #### These commands will do the following:
@@ -132,7 +140,7 @@ The second command updates your .ssh/config file. If you already have a complica
  
 ### Usage Instructions:
 - Please note, if you are using a YubiKey, please see the [Yubikey login instructions](#accessing-using-yubikey) 
-- Each morning on your first attempt to ssh to Ceres with ```ssh user.name@ceres.scinet.usda.gov```, (changing user.name to your own SCINet username) you will see something like this: 
+- Each morning on your first attempt to ssh to Ceres with ```ssh user.name@ceres.scinet.usda.gov``` or Atlas with ```ssh user.name@atlas-login.hpc.msstate.edu```, (changing user.name to your own SCINet username) you will see something like this: 
 
 	- Your default web browser should open automatically to the SCINet authentication page.  Choose USDA LincPass as your sign-in option. 
 ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/lincpass.png)
@@ -146,7 +154,7 @@ The second command updates your .ssh/config file. If you already have a complica
 - Now go through your usual eAuth based login. 
 	- Please Note: There could be complications here if its your first time using eAuth.
 
-- Go back to your shell and you should see something like "CA: https://step-ca.scinet.usda.gov" followed by your regular login.
+- Go back to your shell and you should see "CA: https://step-ca.scinet.usda.gov" followed by your regular login.
   
 ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/step-ssh/login-success.png)
 
@@ -212,7 +220,7 @@ After selcting this, you will be automatically directed to login using your usua
 - The next pop-up will have three options. You will select "USB security key".
 ![]({{ site.baseurl }}/assets/img/guides/access/yubikey-login/login4.png)
 
-- The final pop up will instruct you to insert your security key and touch it.  You will now insert your USB YubiKey (if you haven't already) and then touch it. This will then automatically log you into the service you were attempting to access. 
+- The final pop up will instruct you to insert your security key and touch it.  You will now insert your USB YubiKey (if you haven't already) and then you must physically touch it. If you do not touch the key, it will not successfully activate. This will then automatically log you into the service you were attempting to access. 
 ![]({{ site.baseurl }}/assets/img/guides/access/yubikey-login/login5.png)
 
 - This step will remain the same for all GUI-based services such as Ceres OpenOnDemand, Galaxy, the SCINet Forum, and others. 

@@ -9,3 +9,23 @@
     @include u-border-top(0);
     @include u-border-bottom(2px);
 }
+
+// Map for high contrast search icon
+$search-icon2: (
+  "name": "search",
+  "color": currentColor,
+  "svg-height": 20,
+  "svg-width": 20,
+  "position-x": center,
+  "position-y": center,
+  "height": units(2.5),
+);
+
+.sidenav-search{
+    @include u-bg('primary-lighter');
+    @include u-text('center');
+    @include place-icon($search-icon2, "before");
+    &:before{
+        margin-right: 6px;
+    }
+}

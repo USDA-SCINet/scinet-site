@@ -87,6 +87,8 @@ If your password is expired you should be prompted to change your password when 
 [Read more about logging in to SCINet and changing your password here]({{ site.baseurl }}/guides/access/login).
 
 [Watch a video demonstration of changing your password here](https://www.youtube.com/watch?v=Amhw2k5mftI).
+
+[Watch a video demonstration of channging your password using LincPass and OOD here](https://youtu.be/tx3sQX7rl70)
 ```
 [first.last@ceres-login ~] $ passwd
 Changing password for user first.last

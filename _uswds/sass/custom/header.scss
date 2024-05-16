@@ -9,7 +9,9 @@
 }
 
 .nav-width-2{
-   width: 30rem;
+   @include at-media($theme-header-min-width) {
+      width: 30rem;
+   }
 }
 
 .usa-nav__submenu{

@@ -22,10 +22,11 @@
             {% endif %}
         {% endunless %}
         {% if session.instructor %} <li><b>Instructor: </b>{{ session.instructor }}</li>{% endif %}
+        {% if session.presenter %} <li><b>Presenter: </b>{{ session.presenter }}</li>{% endif %}
         {% if session.location %} <li><b>Location: </b>{{ session.location }}</li>{% endif %}
         {% unless timecheck <= timeout %}
+        {% if session.prerequisites %}
         <li><b>Prerequisites: </b>
-            {% if session.prerequisites %}
             <ul class="unstyled-list">
                 {% for _prerequisite in session.prerequisites %}
                 <li>
@@ -40,10 +41,8 @@
                 </li>
                 {% endfor %}
             </ul>
-            {% else %}
-            None
-            {% endif %}
         </li>
+        {% endif %}
         {% endunless %}
         {% if session.materials %}
             {% for _material in session.materials %}

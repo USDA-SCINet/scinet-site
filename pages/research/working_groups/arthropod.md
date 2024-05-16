@@ -1,6 +1,6 @@
 ---
 title: Arthropod Genomics Research (AGR) Working Group
-description: summary of the working group
+description: The AGR working group focuses on outreach within USDA-ARS aimed at enhancing the genomic analyse knowledge and skill sets of members and collaborators.
 permalink: /research/working-groups/arthropods
 author: Brad Coates
 layout: page

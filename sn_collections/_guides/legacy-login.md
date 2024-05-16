@@ -39,6 +39,8 @@ subnav:
 
 This page contains deprecated login procedures.  If you have a LincPass or YubiKey, you should use [the Step-based login instructions](/guides/access/login). <!--excerpt-->
 
+**LincPass Users** You can now change your password via Open OnDemand in lieu of SmallStep. Please [see the video tutorial here](https://youtu.be/tx3sQX7rl70).
+
 Before accessing various SCINet resources, new users need to ssh either to Ceres or Atlas cluster and change the temporary password. Note that home directories on Atlas are not created right away, so it is recommended to wait a day after receiving email with the credentials before logging to Atlas cluster.   
 
 A video demonstration for changing your password can be found [here](https://www.youtube.com/watch?v=Amhw2k5mftI). Please keep in mind that due to the recent password requirement change, the video is out of date. It will list more password requirements than necessary.  The current requirements are found below:
@@ -164,7 +166,9 @@ _When Changing your Password (Mandatory Prompt when First Connecting):_
 5. Enter your “new password” twice when prompted.    
 Note: The new password requirements are listed below. 
 
-After updating your password, you will be prompted to answer Yes or No to entering a cell phone. _It is strongly recommended to add a cell phone just in case you need to reset your Google Authenticator in the future._ Enter "y" and then enter your cellphone number with no dashes or parenthesis, as shown in the image below. 
+After updating your password, you will be prompted to answer Yes or No to entering a cell phone. _It is strongly recommended to add a cell phone just in case you need to reset your Google Authenticator in the future._ Enter "y" and then enter your cellphone number with no dashes or parenthesis, as shown in the image below.  
+
+Please Note: The system may no longer prompt you for your phone number.
 
 ![screenshot of cellphone entry]({{ site.baseurl }}/assets/img/guides/access/cellphone.png)
 
@@ -323,9 +327,7 @@ Contact [scinet_vrsc@usda.gov](mailto:scinet_vrsc@USDA.GOV?subject=help%20with%2
 
 ## GA account reset
 
-Users may need to reset GA accounts when switching or reinstalling their mobile devices that have GA application installed. To be able to perform GA reset by yourself, save an SMS phone number in the system by issuing phone-collect.sh command on Ceres. This is the same process that is run automatically the first time you login. After doing that you will be able to do a self-service reset of your GA at [https://ga.scinet.usda.gov/reset/](https://ga.scinet.usda.gov/reset).
-
-If you are unable to or do not wish to save an SMS phone number, GA account reset request will have to go though your supervisor or sponsor as we have no way of directly verifying your identity. 
+Users may need to reset GA accounts when switching or reinstalling their mobile devices that have GA application installed. GA account reset request will have to go though your supervisor or sponsor as we have no way of directly verifying your identity. 
 
 
 ## Frequently Asked Questions

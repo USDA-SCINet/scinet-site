@@ -53,7 +53,7 @@ contact:
   - title: Twitter
     url: https://twitter.com/USDA_ARS
     external: true
-    type: twitter
+    type: x
   - title: Contact VRSC
     url: mailto:scinet_vrsc@usda.gov
     external: true

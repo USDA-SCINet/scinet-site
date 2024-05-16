@@ -17,7 +17,10 @@ guidegroup:
   accordion: true
   
 
-
+sidenav_append:
+  - title: SEARCH
+    url: /search
+    class: "sidenav-search"
 
 ---
 

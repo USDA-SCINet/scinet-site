@@ -14,9 +14,6 @@ subnav:
   - title: Arthropod Genomics
     url: /research/working-groups/arthropods
     internal: link
-  - title: Fungal Bioinformatics
-    url: /research/working-groups/fungalbioinformatics
-    internal: link
   - title: Geospatial Research
     url: /research/working-groups/geospatial
     internal: link
@@ -43,7 +40,6 @@ The SCINet initiative contributes funding to various working groups that use SCI
 The current working groups are:
 * [Ag100Pest Initiative (subgroup of AGR)]({{ site.baseurl }}/research/working-groups/ag100pest)
 * [Arthropod Genomics Research (AGR) Working Group]({{ site.baseurl }}/research/working-groups/arthropods)
-* [Fungal Bioinformatics Working Group](/research/working-groups/fungalbioinformatics)
 * [Geospatial Research Working Group]({{ site.baseurl }}/research/working-groups/geospatial)
 * [Microbiome Working Group]({{ site.baseurl }}/research/working-groups/microbiome)
 * [Pollinator Working Group]({{ site.baseurl }}/research/working-groups/pollinator)

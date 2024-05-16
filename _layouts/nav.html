@@ -108,8 +108,8 @@ main:
         {% include sidenav.html links=sidenav %}
     </div>
     
-    <div class="usa-layout-docs__main desktop:grid-col-9">
-        {% include breadcrumb.html %}
+    <div class="usa-layout-docs__main desktop:grid-col-9{% if page.nobreadcrumb %} padding-top-8{% endif %}">
+        {% unless page.nobreadcrumb %}{% include breadcrumb.html %}{% endunless %}
         <main class="{{ layout.main.class }}" id="main-content">
 
         {{ content }}

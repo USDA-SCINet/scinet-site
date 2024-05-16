@@ -23,7 +23,6 @@ Cluster name | Location | Login Nodes | Transfer Nodes
 -------------|----------|-------------|---------------
 Ceres        |Ames, IA  |ceres.scinet.usda.gov | ceres-dtn.scinet.usda.gov
 Atlas        |Starkville, MS| atlas-login.hpc.msstate.edu |atlas-dtn.hpc.msstate.edu
-TBD          |Beltsville, MD| TBD|TBD
 -------------|---|---|
 
 </div>
