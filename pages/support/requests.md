@@ -5,15 +5,17 @@ permalink: /support/request
 layout: page
 
 subnav:
+  - title: Project Request
+    url: '#project-request'
+    subnav:
+      - title: Request a New SCINet Project
+        url: '#to-request-a-new-scinet-project'
+      - title: Modify an Existing SCINet Project
+        url: '#to-modify-an-existing-scinet-project'
+      - title: Request a Quota Increase for an Existing SCINet Project
+        url: '#to-request-a-quota-increase-for-an-existing-scinet-project'
   - title: Software Request
     url: '#software-request'
-  - title: Storage Request
-    url: '#storage-request'
-    subnav:
-      - title: Modify Existing Project Allocation
-        url: '#to-modify-an-existing-scinet-project-allocation'
-      - title: Request New Project Allocation
-        url: '#to-request-a-new-project-allocation'
   - title: AWS Request
     url: '#aws-request'
     subnav: 
@@ -24,7 +26,44 @@ subnav:
 
 ---
 
-Below are instructions for how to make a request for Software, Storage, or AWS resources.
+Below are instructions for how to make a request for a SCINet project, new software, or AWS resources.
+
+## Project Request
+---
+
+When a user applies for a SCINet account, they are allocated space on Ceres and Atlas in a home directory (/home/\<username>/). Each user is allowed 15 GB of data in their home directory.
+
+Users are advised to request additional storage space with a SCINet project. SCINet project storage allocations are located in project directories: /project/\<projectname>/ on Ceres and Atlas and /LTS/project/\<projectname>/ on Juno. Project storage allocation sizes, or storage 'quotas', can be requested to be as large as you need to support your work and can be different on each system, e.g., larger on Juno than Ceres or Atlas if you have more data to store long term than process at a given time. SCINet projects also come with a /90daydata directory (/90daydata/\<projectname>/) that is useful for storing intermediate files.
+
+Requests for new projects or changes to existing projects must be submitted by the project’s Principal Investigator (PI) who needs to be a full-time ARS employee. 
+
+### To Request a New SCINet Project
+When requesting a new project, you will be asked for details including:
+* a project summary, 
+* requested storage amounts, and
+* other SCINet users who you want to have access to the project. 
+
+To request a new project, please fill out the request form (eAuthentication required, non-ARS users should contact their sponsor):
+
+[Request a Project](https://forms.office.com/g/wD9rYarVyn){: .usa-button .usa-button-big }
+
+### To Modify an Existing SCINet Project
+If changes need to be made to an existing SCINet project, e.g., adding a new member, the project's PI should send an email that includes:
+* the name of the project directory (/project/\<projectname>/) and 
+* the requested changes 
+
+to the SCINet Virtual Research Support Core (VRSC) [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=modify%20project%20allocation).
+
+### To Request a Quota Increase for an Existing SCINet Project
+When requesting a project quota increase on Ceres or Atlas, you will be asked to briefly explain why using /90daydata does not cover your storage needs.  
+
+To request a project quota increase for storage on Ceres, Atlas and/or Juno, please have the project PI or manager fill out the following request form:
+
+[Request a Project Quota Increase](https://forms.office.com/g/ntnKBzJiKx){: .usa-button .usa-button-big }
+
+
+
+<br>
 
 ## Software Request
 ---
@@ -47,44 +86,6 @@ If you've done the above but need new software installed as a module, use the so
 [Software Request Form](https://apps.gov.powerapps.us/play/e/a3bf43b2-009c-43c2-9c4f-bcb2d87972fb/a/5b3265ab-3a98-4405-8557-01c1342690f7){: .usa-button .usa-button-big }
 
 **Note: doing this requires an agency-level security review and takes a few weeks.**
-
-<br>
-
-## Storage Request
----
-
-When a user applies for a SCINet account, they are allocated space on Ceres in a /home directory. Each user is allowed 10GB of data in the home directory. 
-
-Users are advised to request additional space in the /project directory. Project directory storage is large, fast, not backed up, and can be requested up to 1TB or larger if justified. Project directory storage is good for fast I/O to large data files from compute nodes. The new project requests and request for changes must be submitted by the ARS project’s Principal Investigator (PI). 
-
-### To Modify an Existing SCINet Project Allocation
-The PI should send an email that includes:
-* the name of the project directory (/project/\<projectname>/) and 
-* the requested changes 
-
-to the SCINet Virtual Research Support Core (VRSC) [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=modify%20project%20allocation).
-
-### To Request a Quota Increase for an Existing SCINet Project Allocation
-SCINet users have access to a large short-term storage /90daydata which has no quotas. When requesting a project quota increase on Ceres or Atlas the PI will need to justify the request and explain why using /90daydata is not sufficient. 
-
-To request project quota increase for storage on Ceres, Atlas and/or Juno fill out the following application form:
-
-[Request Project Quota Increase](https://forms.office.com/g/ntnKBzJiKx){: .usa-button .usa-button-big }
-
-Please Note: Only the project manager or the project PI can request a quota increase. Any requests sent by other individuals will be declined.
-
-### To Request a New Project Allocation
-When requesting additional data storage you will be asked for:
-* a project summary, 
-* project end date, 
-* and to detail your long-term plan for data in your project directory after your project end date.
-
-To request a new project directory, fill out an application form (eAuthentication required, non-ARS users should contact their sponsor):
-
-Please Note: Only full-time ARS employees are able to submit these requests. Any requests sent by other individuals will be declined.
-
-[Request Project Storage](https://forms.office.com/g/wD9rYarVyn){: .usa-button .usa-button-big }
-
 
 <br>
 
