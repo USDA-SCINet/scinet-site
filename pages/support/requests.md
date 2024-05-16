@@ -48,7 +48,7 @@ To request a new project, please fill out the request form (eAuthentication requ
 [Request a Project](https://forms.office.com/g/wD9rYarVyn){: .usa-button .usa-button-big }
 
 ### To Modify an Existing SCINet Project
-If changes need to be made to an existing SCINet project, the project's PI should send an email that includes:
+If changes need to be made to an existing SCINet project, e.g., adding a new member, the project's PI should send an email that includes:
 * the name of the project directory (/project/\<projectname>/) and 
 * the requested changes 
 
