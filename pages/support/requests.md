@@ -8,10 +8,12 @@ subnav:
   - title: Project Request
     url: '#project-request'
     subnav:
-      - title: Modify Existing Project Allocation
-        url: '#to-modify-an-existing-scinet-project-allocation'
-      - title: Request New Project Allocation
-        url: '#to-request-a-new-project-allocation'
+      - title: Request a New SCINet Project
+        url: '#to-request-a-new-scinet-project'
+      - title: Modify an Existing SCINet Project
+        url: '#to-modify-an-existing-scinet-project'
+      - title: Request a Quota Increase for an Existing SCINet Project
+        url: '#to-request-a-quota-increase-for-an-existing-scinet-project'
   - title: Software Request
     url: '#software-request'
   - title: AWS Request
@@ -52,7 +54,7 @@ If changes need to be made to an existing SCINet project, the project's PI shoul
 
 to the SCINet Virtual Research Support Core (VRSC) [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=modify%20project%20allocation).
 
-### To Request a Quota Increase for an Existing SCINet Project Allocation
+### To Request a Quota Increase for an Existing SCINet Project
 When requesting a project quota increase on Ceres or Atlas, you will be asked to briefly explain why using /90daydata does not cover your storage needs.  
 
 To request a project quota increase for storage on Ceres, Atlas and/or Juno, please have the project PI or manager fill out the following request form:
