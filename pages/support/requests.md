@@ -29,9 +29,11 @@ Below are instructions for how to make a request for a SCINet project, new softw
 ## Project Request
 ---
 
-When a user applies for a SCINet account, they are allocated space on Ceres in a /home directory. Each user is allowed 10GB of data in the home directory. 
+When a user applies for a SCINet account, they are allocated space on Ceres and Atlas in a /home directory (/home/\<username>/). Each user is allowed 15 GB of data in their home directory.
 
-Users are advised to request additional space in the /project directory. Project directory storage is large, fast, not backed up, and can be requested up to 1TB or larger if justified. Project directory storage is good for fast I/O to large data files from compute nodes. The new project requests and request for changes must be submitted by the ARS project’s Principal Investigator (PI). 
+Users are advised to request additional storage space with a SCINet project. SCINet project storage allocations are located in the /project directory (/project/\<projectname>/) on Ceres, Atlas, and Juno. Project storage allocation sizes, or storage 'quotas', can be requested to be as large as you need to support your work and can be different on each system, e.g., larger on Juno than Ceres or Atlas if you have more data to store long term than process at a given time. SCINet projects also come with a /90daydata directory (/90daydata/\<projectname>/) that is useful for storing intermediate files.
+
+Requests for new projects or changes to existing projects must be submitted by the project’s Principal Investigator (PI) who needs to be a full-time ARS employee. 
 
 ### To Modify an Existing SCINet Project Allocation
 The PI should send an email that includes:
