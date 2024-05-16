@@ -29,31 +29,31 @@ Below are instructions for how to make a request for a SCINet project, new softw
 ## Project Request
 ---
 
-When a user applies for a SCINet account, they are allocated space on Ceres and Atlas in a /home directory (/home/\<username>/). Each user is allowed 15 GB of data in their home directory.
+When a user applies for a SCINet account, they are allocated space on Ceres and Atlas in a home directory (/home/\<username>/). Each user is allowed 15 GB of data in their home directory.
 
-Users are advised to request additional storage space with a SCINet project. SCINet project storage allocations are located in the /project directory (/project/\<projectname>/) on Ceres, Atlas, and Juno. Project storage allocation sizes, or storage 'quotas', can be requested to be as large as you need to support your work and can be different on each system, e.g., larger on Juno than Ceres or Atlas if you have more data to store long term than process at a given time. SCINet projects also come with a /90daydata directory (/90daydata/\<projectname>/) that is useful for storing intermediate files.
+Users are advised to request additional storage space with a SCINet project. SCINet project storage allocations are located in project directories: /project/\<projectname>/ on Ceres and Atlas and /LTS/project/\<projectname>/ on Juno. Project storage allocation sizes, or storage 'quotas', can be requested to be as large as you need to support your work and can be different on each system, e.g., larger on Juno than Ceres or Atlas if you have more data to store long term than process at a given time. SCINet projects also come with a /90daydata directory (/90daydata/\<projectname>/) that is useful for storing intermediate files.
 
 Requests for new projects or changes to existing projects must be submitted by the project’s Principal Investigator (PI) who needs to be a full-time ARS employee. 
 
-### To Request a New Project Allocation
+### To Request a New SCINet Project
 When requesting a new project, you will be asked for details including:
 * a project summary, 
 * requested storage amounts, and
 * other SCINet users who you want to have access to the project. 
 
-To request a new project, fill out the request form (eAuthentication required, non-ARS users should contact their sponsor):
+To request a new project, please fill out the request form (eAuthentication required, non-ARS users should contact their sponsor):
 
 [Request a Project](https://forms.office.com/g/wD9rYarVyn){: .usa-button .usa-button-big }
 
 ### To Modify an Existing SCINet Project
-The PI should send an email that includes:
+If changes need to be made to an existing SCINet project, the project's PI should send an email that includes:
 * the name of the project directory (/project/\<projectname>/) and 
 * the requested changes 
 
 to the SCINet Virtual Research Support Core (VRSC) [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=modify%20project%20allocation).
 
 ### To Request a Quota Increase for an Existing SCINet Project Allocation
-When requesting a project quota increase on Ceres or Atlas, you will be asked to briefly explain why using /90daydata is not sufficient. 
+When requesting a project quota increase on Ceres or Atlas, you will be asked to briefly explain why using /90daydata does not cover your storage needs.  
 
 To request a project quota increase for storage on Ceres, Atlas and/or Juno, please have the project PI or manager fill out the following request form:
 
