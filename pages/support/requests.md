@@ -52,16 +52,14 @@ To request project quota increase for storage on Ceres, Atlas and/or Juno fill o
 Please Note: Only the project manager or the project PI can request a quota increase. Any requests sent by other individuals will be declined.
 
 ### To Request a New Project Allocation
-When requesting additional data storage you will be asked for:
+When requesting a new project, you will be asked for details including:
 * a project summary, 
-* project end date, 
-* and to detail your long-term plan for data in your project directory after your project end date.
+* requested storage amounts, and
+* other SCINet users who you want to have access to the project. 
 
-To request a new project directory, fill out an application form (eAuthentication required, non-ARS users should contact their sponsor):
+To request a new project, fill out the request form (eAuthentication required, non-ARS users should contact their sponsor):
 
-Please Note: Only full-time ARS employees are able to submit these requests. Any requests sent by other individuals will be declined.
-
-[Request Project Storage](https://forms.office.com/g/wD9rYarVyn){: .usa-button .usa-button-big }
+[Request a Project](https://forms.office.com/g/wD9rYarVyn){: .usa-button .usa-button-big }
 
 <br>
 
