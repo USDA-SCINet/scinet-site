@@ -35,7 +35,7 @@ Users are advised to request additional storage space with a SCINet project. SCI
 
 Requests for new projects or changes to existing projects must be submitted by the project’s Principal Investigator (PI) who needs to be a full-time ARS employee. 
 
-### To Modify an Existing SCINet Project Allocation
+### To Modify an Existing SCINet Project
 The PI should send an email that includes:
 * the name of the project directory (/project/\<projectname>/) and 
 * the requested changes 
@@ -43,13 +43,11 @@ The PI should send an email that includes:
 to the SCINet Virtual Research Support Core (VRSC) [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=modify%20project%20allocation).
 
 ### To Request a Quota Increase for an Existing SCINet Project Allocation
-SCINet users have access to a large short-term storage /90daydata which has no quotas. When requesting a project quota increase on Ceres or Atlas the PI will need to justify the request and explain why using /90daydata is not sufficient. 
+When requesting a project quota increase on Ceres or Atlas, you will be asked to briefly explain why using /90daydata is not sufficient. 
 
-To request project quota increase for storage on Ceres, Atlas and/or Juno fill out the following application form:
+To request a project quota increase for storage on Ceres, Atlas and/or Juno, please have the project PI or manager fill out the following request form:
 
-[Request Project Quota Increase](https://forms.office.com/g/ntnKBzJiKx){: .usa-button .usa-button-big }
-
-Please Note: Only the project manager or the project PI can request a quota increase. Any requests sent by other individuals will be declined.
+[Request a Project Quota Increase](https://forms.office.com/g/ntnKBzJiKx){: .usa-button .usa-button-big }
 
 ### To Request a New Project Allocation
 When requesting a new project, you will be asked for details including:
