@@ -22,12 +22,12 @@ subnav:
   - title: R Programming
     url: '#r-programming'
     table: true
-  - title: SAS Programming and JMP
-    url: '#sas-programming-and-jmp'
-    table: true
-  - title: MATLAB Programming
-    url: '#matlab-programming'
-    table: true
+  # - title: SAS Programming and JMP
+  #   url: '#sas-programming-and-jmp'
+  #   table: true
+  # - title: MATLAB Programming
+  #   url: '#matlab-programming'
+  #   table: true
   - title: General Statistics
     url: '#general-statistics'
     table: true
