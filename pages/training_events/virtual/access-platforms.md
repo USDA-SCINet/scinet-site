@@ -14,8 +14,6 @@ subnav:
     url: '#aglearn-and-linkedin-learning'
   - title: Coursera and EdX
     url: '#coursera-and-edx'
-  - title: SAS and JMP
-    url: '#sas-and-jmp'
 
 
 ---
@@ -63,12 +61,3 @@ If more than 3 months is needed to complete a course, a new request will need to
 for another 3 months. 
 
 **SCINet-funded Coursera Licenses:** ARS scientists can request a Coursera license for a three month period to gain access to the full list of Coursera catalogue options related to scientific computing, statistics, and AI. This license also allows ARS scientists to get certifications. To request a license, please visit the [SCINet Coursera page]({{ site.baseurl }}/training/coursera). 
-
-## SAS and JMP
-While links below to sas.com and jmp.com videos are immediately accessible, SAS and JMP course offerings on sas.com and jmp.com (not the courses offered through AgLearn) require the learner to create a free account with their email address and password.
-
-To start a course on sas.com:  
-Follow the link to the course from this page, scroll down the course overview page to the "Self-Paced e-Learning" section, under "Add to Cart" on the right click "Start", follow the instructions to create a profile for a new user.
-
-To start a course on jmp.com:  
-Follow the link to the course from this page, from the JMP course page click "Enroll Now", follow the instructions to create a profile for a new user.
