@@ -12,7 +12,9 @@ sidenav_link: /guides/
 * Your last 24 passwords cannot be reused.
 
 
-## The following is the simplest method to update your SCINet password: 
+## The following is the simplest method to update your SCINet password IF you have a LincPass:
+[Watch a video demonstration of channging your password using LincPass and OOD here](https://youtu.be/tx3sQX7rl70)
+
 1.	Go to [https://ceres-ood.scinet.usda.gov](https://ceres-ood.scinet.usda.gov) 
 1.	Select “USDA LincPass” button on the authentication screen. Use no other option. 
 1.	Authenticate via eAuth 
