@@ -32,11 +32,10 @@ The ARS SCINet Team developed a SCINet network solution that provides two levels
 ### The following locations are actively working on establishing high-bandwidth SCINet connectivity. 
 
 {: .table-list }
-| Parlier, WA | Salinas, CA | Wenatchee, WA | Wapato, WA | 
-| Fort Keogh, MT | Las Cruces, NM | Lincoln, NE | Urbana, IL |
-| Griffin, GA | El Reno, OK | Burlington, VT | Orono, ME |
-| Baton Rouge, LA | Byron, GA | Canal Point, FL | Dawson, GA |
-| Fayetteville, AR | Fort Lauderdale, FL | Miami, FL | Poplarville, AR | 
+| Boise, ID | Salinas, CA | Wapato, WA | Fort Keogh, MT |
+| Houston, TX | Las Cruces, NM | Lincoln, NE | Columbus, OH |
+| Wooster, OH | Griffin, GA | El Reno, OK | Burlington, VT |
+| Orono, ME | Baton Rouge, LA | Fort Lauderdale, FL | Miami, FL | 
 
 <br>
 
@@ -46,7 +45,7 @@ The ARS SCINet Team developed a SCINet network solution that provides two levels
 
 {: .table-list }
 | Burns, OR | Hilo, HI | Logan, UT |
-| Maricopa, AZ | 
+| Maricopa, AZ | Parlier, CA | Wenatchee, WA |
 
 **Plains Area**
 
@@ -54,6 +53,7 @@ The ARS SCINet Team developed a SCINet network solution that provides two levels
 | Akron, CO | Bushland, TX | College Station, TX |
 | Fargo, ND | Grand Forks, ND | Kerrville, TX | 
 | Lubbock, TX | Mandan, ND | Manhattan, KS |
+| Temple, TX |
 
 **Midwest Area**
 
@@ -73,15 +73,13 @@ The ARS SCINet Team developed a SCINet network solution that provides two levels
 
 {: .table-list }
 | Athens, GA | Auburn, AL | Booneville, AR | 
-| Charleston, SC | Florence, SC | Gainesville, FL |
-| Griffin, GA | Jonesboro, AR | Little Rock, AR |
+| Byron, GA | Canal Point, FL | Charleston, SC |
+| Dawson, GA | Fayetteville, AR | Florence, SC | 
+| Fort Pierce, FL | Gainesville, FL | Griffin, GA |
+| Jonesboro, AR | Little Rock, AR | Mayaguez, PR | 
 | New Orleans, LA | Oxford, MS | Raleigh, NC |
 | Starkville, MS | Schriever (Houma), LA | Tifton, GA | 
 
-**Partner Agency - Forest Service**
-
-{: .table-list }
-| Missoula, MT |
 
 We are eager to work with the remaining ARS locations to ensure they are ready when network equipment is available for installation. Please see the steps (milestones) below to be followed in getting a location on our list. The SCINet Team is available to answer questions at any step along the way. 
 
