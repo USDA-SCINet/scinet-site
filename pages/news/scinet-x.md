@@ -32,12 +32,10 @@ The ARS SCINet Team developed a SCINet network solution that provides two levels
 ### The following locations are actively working on establishing high-bandwidth SCINet connectivity. 
 
 {: .table-list }
-| Boise, ID | Salinas, CA | Wapato, WA | 
-| Fort Keogh, MT | Houston, TX | Las Cruces, NM |
-| Lincoln, NE | Columbus, OH | Wooster, OH | 
-| Griffin, GA | El Reno, OK | Burlington, VT |
-| Orono, ME | Baton Rouge, LA | Fort Lauderdale, FL |
-| Miami, FL | 
+| Boise, ID | Salinas, CA | Wapato, WA | Fort Keogh, MT |
+| Houston, TX | Las Cruces, NM | Lincoln, NE | Columbus, OH |
+| Wooster, OH | Griffin, GA | El Reno, OK | Burlington, VT |
+| Orono, ME | Baton Rouge, LA | Fort Lauderdale, FL | Miami, FL | 
 
 <br>
 
