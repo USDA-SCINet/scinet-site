@@ -42,23 +42,23 @@ On Ceres usage and quota information for home and project directories that user 
 
 ## Software
 
-Not all software installed on Ceres is available on Atlas. However software packages provided as Singularity container image files in the [Ceres Container Repository]({{ site.baseurl }}/guides/software/singularity#ceres-container-repository) are synced to Atlas daily.
+Not all software installed on Ceres is available on Atlas. However software packages provided as Apptainer/Singularity container image files in the [Ceres Container Repository]({{ site.baseurl }}/guides/software/singularity#ceres-container-repository) are synced to Atlas daily.
 
 ### Using Containers
 
-On both clusters some modules are installed as singularity containers. On Ceres, all modules, including container based, are displayed in the output of the "module avail" command. On Atlas one needs to load a singularity module ("`module load singularity`" or "`module load singularity/<version>`") to make the "singularity" command accessible and to see container based modules:
+On both clusters some modules are installed as apptainer/singularity containers. On Ceres, all modules, including container based, are displayed in the output of the "module avail" command. On Atlas one needs to load an apptainer module ("`module load apptainer`" or "`module load apptainer/<version>`") to make the "apptainer" command accessible and to see container based modules:
 
 ```
-module load singularity
+module load apptainer
 module avail
 ```
 
 Furthermore, on Atlas one needs to explicitly issue singularity command to use a container based software:
 ```
-singularity exec <container image>
+apptainer exec <container image>
 ```
 
-On Ceres, loading a container-based module will also load a singularity module, and one does not need to type the "`singularity exec ...`" command since it's already built in the module. One can use "`module help <module_name>`" command to get information on how to use the software package provided by the module.
+On Ceres, loading a container-based module will also load an apptainer module, and one does not need to type the "`apptainer exec ...`" command since it's already built in the module. One can use "`module help <module_name>`" command to get information on how to use the software package provided by the module.
 
 
 ### Seeing All Environment Modules
