@@ -34,12 +34,14 @@ sessions:
     time: 1-2 pm ET
     excerpt: "How to access SCINet computing resources and applications through your browser.  
 This presentation will cover how to log on to Open OnDemand for Ceres and Atlas, followed by an overview of popular applications available on Open OnDemand."
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/Ef_4aCtZhmRJrozKrgFLOjMBkaG2iC8GTFJgckNZ64KWKg?e=uCFbwg
     
   - session:
     title: "Galaxy: a web-based platform for data-intensive bioinformatics analyses"
     date: 2024-04-18
     time: 1-2 pm ET
     excerpt: "This presentation will cover what Galaxy is, logging in, uploading data, and examples of data analysis on Galaxy"
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EcI7YNtp25FKiP-pLR07uygBw_OcT1jSCHc729WCGelsXA?e=1ZYYS7
     
   - session:
     title: "Data Transfer"
