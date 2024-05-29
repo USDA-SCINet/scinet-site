@@ -144,7 +144,7 @@ This presentation will cover how to log on to Open OnDemand for Ceres and Atlas,
     excerpt: "Viswanathan Satheesh provides an introduction to programming in R with emphasis on ggplot2."
     materials:
       - text: Presentation recording
-        url: https://web.microsoftstream.com/video/bbb3e1af-f02a-4dc3-98fe-0a90603198ea
+        url: https://usdagcc.sharepoint.com/:v:/r/sites/REE-ARS-SCINetOffice/Shared%20Documents/public/SCINet%20Corner/2022-11-03/SCINet%20Corner,%20November%202022%20-%20Introduction%20to%20ggplot2.mp4?csf=1&web=1&e=rr3rur&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 
   - session: 
     title: A Brief Introduction to R

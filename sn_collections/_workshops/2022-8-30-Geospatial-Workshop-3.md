@@ -15,7 +15,7 @@ sessions:
     materials: 
       - text: You must have a USDA account to access this workshop's recordings.
       - text: Session recording
-        url: https://web.microsoftstream.com/video/f12c8fd7-7459-402e-9e1b-8513bd011bcb
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/moe_richert_usda_gov/Documents/Stream%20Migrated%20Videos/SCINet%20Geospatial%20Working%20Group%20Workshop%202022%20-%20Session%203%20-%20Fundamentals%20of%20parallel%20processing-20220928_023657.mp4?csf=1&web=1&e=lV5K5W&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 
 subnav:
   - title: Learning objectives
@@ -60,7 +60,7 @@ This session will be a lecture with slides covering the following content:
   * Choosing number of cores  
 * SLURM jobs, nodes, and partitions
 
-[Watch a recording of this presentation](https://web.microsoftstream.com/video/f12c8fd7-7459-402e-9e1b-8513bd011bcb). 
+[Watch a recording of this presentation](https://usdagcc-my.sharepoint.com/:v:/r/personal/moe_richert_usda_gov/Documents/Stream%20Migrated%20Videos/SCINet%20Geospatial%20Working%20Group%20Workshop%202022%20-%20Session%203%20-%20Fundamentals%20of%20parallel%20processing-20220928_023657.mp4?csf=1&web=1&e=lV5K5W&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D). 
  
 
 <br>
