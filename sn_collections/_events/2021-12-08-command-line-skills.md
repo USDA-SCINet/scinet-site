@@ -11,7 +11,7 @@ provider: SCINet
 
 Command-line skills are invaluable for a wide range of modern data science and analysis tasks, from data acquisition and processing to high-performance computing.  Participants attended this 3-hour workshop to learn how to use the Unix command line with hands-on practice in a supportive environment.  Recordings of this workshop are available at the links below (a usda.gov account is required to view the videos).
 
-* [Part 1](https://web.microsoftstream.com/video/9121f597-38c3-41e2-9faf-ebce547700ad)
-* [Part 2](https://web.microsoftstream.com/video/8656b793-ed4f-4092-81b1-393be6cc0031)
-* [Part 3](https://web.microsoftstream.com/video/eae798c4-0f6e-4f4b-ba85-e37d3244063f)
+* [Part 1](https://usdagcc-my.sharepoint.com/:v:/r/personal/brian_stucky_usda_gov/Documents/Stream%20Migrated%20Videos/2021-12-08%20SCINet%20workshop_%20Command-line%20skills%20for%20scientific%20computing,%20part%201-20220111_025813.mp4?csf=1&web=1&e=NZuUhW&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+* [Part 2](https://usdagcc-my.sharepoint.com/:v:/r/personal/brian_stucky_usda_gov/Documents/Stream%20Migrated%20Videos/2021-12-08%20SCINet%20workshop_%20Command-line%20skills%20for%20scientific%20computing,%20part%202-20220111_041322.mp4?csf=1&web=1&e=55uAp7&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+* [Part 3](https://usdagcc-my.sharepoint.com/:v:/r/personal/brian_stucky_usda_gov/Documents/Stream%20Migrated%20Videos/2021-12-08%20SCINet%20workshop_%20Command-line%20skills%20for%20scientific%20computing,%20part%203-20220111_035607.mp4?csf=1&web=1&e=0az7uI&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 

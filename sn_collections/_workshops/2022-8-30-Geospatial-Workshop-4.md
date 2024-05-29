@@ -15,7 +15,7 @@ sessions:
     materials: 
       - text: You must have a USDA account to access this workshop's recordings.
       - text: Session recording
-        url: https://web.microsoftstream.com/video/c9e1642b-6624-4c2d-9583-800d84469ad3
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/moe_richert_usda_gov/Documents/Stream%20Migrated%20Videos/SCINet%20Geospatial%20Working%20Group%20Workshop%202022%20-%20Session%204%20-%20Interactive%20Environments-20221213_053646.mp4?csf=1&web=1&e=uRGSOs&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 
     prerequisites:
       - text: Have a SCINet account and be able to login 
@@ -75,7 +75,7 @@ A recording of this presentation and discussion summary notes will be made avail
 <br>
 {:.border-bottom}
 
-[Watch a recording of this presentation](https://web.microsoftstream.com/video/c9e1642b-6624-4c2d-9583-800d84469ad3)
+[Watch a recording of this presentation](https://usdagcc-my.sharepoint.com/:v:/r/personal/moe_richert_usda_gov/Documents/Stream%20Migrated%20Videos/SCINet%20Geospatial%20Working%20Group%20Workshop%202022%20-%20Session%204%20-%20Interactive%20Environments-20221213_053646.mp4?csf=1&web=1&e=uRGSOs&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 
 <br>

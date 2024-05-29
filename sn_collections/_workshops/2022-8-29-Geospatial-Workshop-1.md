@@ -15,7 +15,7 @@ sessions:
     materials: 
       - text: You must have a USDA account to access this workshop's recordings.
       - text: Session recording
-        url: https://web.microsoftstream.com/video/d4cac1a5-bafc-409d-b8fd-fd7127a262a8
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/moe_richert_usda_gov/Documents/Stream%20Migrated%20Videos/SCINet%20Geospatial%20Working%20Group%20Workshop%202022%20-%20Session%201%20-%20Introduction%20to%20SCINet-20221003_091307.mp4?csf=1&web=1&e=Y2BaUB&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 
 
 # alerts: 
@@ -23,7 +23,7 @@ sessions:
 #     type: info
 #     slim: true
 #     text: Zoom session recording (USDA eAuthentication required)
-#    url: https://web.microsoftstream.com/video/e469908f-bc92-4199-a875-21f513c113b2
+#    url: https://usdagcc-my.sharepoint.com/:v:/r/personal/moe_richert_usda_gov/Documents/Stream%20Migrated%20Videos/SCINet%20Geospatial%20Working%20Group%20Workshop%202022%20-%20Session%201%20-%20Introduction%20to%20SCINet-20221003_091307.mp4?csf=1&web=1&e=Y2BaUB&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 #   - alert:
 #     type: info
 #     slim: true
@@ -129,7 +129,7 @@ The 2020 Workshop was planned following the key needs identified in the communit
 
 # Lightning talks
 
-[Watch a recording of this presentation and lightning talks](https://web.microsoftstream.com/video/d4cac1a5-bafc-409d-b8fd-fd7127a262a8). 
+[Watch a recording of this presentation and lightning talks](https://usdagcc-my.sharepoint.com/:v:/r/personal/moe_richert_usda_gov/Documents/Stream%20Migrated%20Videos/SCINet%20Geospatial%20Working%20Group%20Workshop%202022%20-%20Session%201%20-%20Introduction%20to%20SCINet-20221003_091307.mp4?csf=1&web=1&e=Y2BaUB&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D). 
 
 
 <br>

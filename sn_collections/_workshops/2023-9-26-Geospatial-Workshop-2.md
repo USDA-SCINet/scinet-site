@@ -32,7 +32,7 @@ subnav:
 
 <br>
 
-This session will have a presentation on machine learning methods for spatial modeling use cases followed by a hands-on tutorial implementing some of those methods. This content is a continuation of the [Spatial Interpolation tutorial](https://web.microsoftstream.com/video/3a7e35a4-7355-418e-a85d-84a7edeece95) held at a working group meeting in May 2023. Although that previous tutorial was in R, this tutorial will be in Python. 
+This session will have a presentation on machine learning methods for spatial modeling use cases followed by a hands-on tutorial implementing some of those methods. This content is a continuation of the [Spatial Interpolation tutorial](https://usdagcc-my.sharepoint.com/:v:/r/personal/moe_richert_usda_gov/Documents/Stream%20Migrated%20Videos/SCINet%20Geospatial%20Working%20Group_%20Spatial%20Interpolation-20230804_061319.mp4?csf=1&web=1&e=NGbUQY&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) held at a working group meeting in May 2023. Although that previous tutorial was in R, this tutorial will be in Python. 
 
 <br>
 

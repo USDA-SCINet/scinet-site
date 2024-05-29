@@ -15,7 +15,7 @@ sessions:
     materials: 
       - text: You must have a USDA account to access this workshop's recordings.
       - text: Session recording
-        url: https://web.microsoftstream.com/video/125dba00-b307-4675-8575-c3fe0771d914
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/moe_richert_usda_gov/Documents/Stream%20Migrated%20Videos/SCINet%20Geospatial%20Working%20Group%20Workshop%202022%20-%20Session%202%20-%20Fundamentals%20of%20geospatial%20data-20220928_022343.mp4?csf=1&web=1&e=z994Gv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 
 subnav:
   - title: Learning objectives
@@ -62,7 +62,7 @@ This session will be a lecture with slides covering the following content:
   * Common computationally expensive operations
 * Geospatial Data Abstraction Library (GDAL)
 
-[Watch a recording of this presentation](https://web.microsoftstream.com/video/125dba00-b307-4675-8575-c3fe0771d914). 
+[Watch a recording of this presentation](https://usdagcc-my.sharepoint.com/:v:/r/personal/moe_richert_usda_gov/Documents/Stream%20Migrated%20Videos/SCINet%20Geospatial%20Working%20Group%20Workshop%202022%20-%20Session%202%20-%20Fundamentals%20of%20geospatial%20data-20220928_022343.mp4?csf=1&web=1&e=z994Gv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D). 
 
 
 <br>

@@ -15,7 +15,7 @@ sessions:
     materials: 
       - text: You must have a USDA account to access this workshop's recordings.
       - text: Session recording
-        url: https://web.microsoftstream.com/video/c1bb4347-8375-4188-baa9-24d72f0a4fa6
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/moe_richert_usda_gov/Documents/Stream%20Migrated%20Videos/SCINet%20Geospatial%20Working%20Group%20Workshop%202022%20-%20Session%208%20-%20Geospatial%20Analyses%20in%20Parallel%20-%20Python-20230419_051352.mp4?csf=1&web=1&e=R1Gmkm&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
       - text: Written tutortials
         url: https://geospatial.101workbook.org/ExampleGeoWorkflows/GRWGWorkshop
 
@@ -81,7 +81,7 @@ This session will be an interactive tutorial:
 <br>
 {:.border-bottom}
 
-[Watch a recording of this tutorial](https://web.microsoftstream.com/video/c1bb4347-8375-4188-baa9-24d72f0a4fa6)
+[Watch a recording of this tutorial](https://usdagcc-my.sharepoint.com/:v:/r/personal/moe_richert_usda_gov/Documents/Stream%20Migrated%20Videos/SCINet%20Geospatial%20Working%20Group%20Workshop%202022%20-%20Session%208%20-%20Geospatial%20Analyses%20in%20Parallel%20-%20Python-20230419_051352.mp4?csf=1&web=1&e=R1Gmkm&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 Written versions of these tutorials, modified to be accessible to any SCINet user,
 are available on the [Geospatial Workbook](https://geospatial.101workbook.org/ExampleGeoWorkflows/GRWGWorkshop)

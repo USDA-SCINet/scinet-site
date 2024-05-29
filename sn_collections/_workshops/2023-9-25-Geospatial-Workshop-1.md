@@ -15,7 +15,7 @@ sessions:
 #    materials: 
 #      - text: You must have a USDA account to access this workshop's recordings.
 #      - text: Session recording
-#        url: https://web.microsoftstream.com/video/d4cac1a5-bafc-409d-b8fd-fd7127a262a8
+#        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/heather_savoy_usda_gov/Documents/GRWG%20recordings/2023-09-25%20Kickoff%20with%20lightning%20talks/Melanie%20Veron%20-%202023%20Geospatial%20Workshop%20-%20Session%201%20Lightning%20Talk%20-%20Recording.mp4?csf=1&web=1&e=4MJoGs&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 
 subnav:
   - title: What is the SCINet Geospatial Research Working Group?

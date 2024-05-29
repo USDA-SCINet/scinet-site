@@ -17,7 +17,7 @@ sessions:
     materials: 
       - text: You must have a USDA account to access this workshop's recordings.
       - text: Session recording
-        url: https://web.microsoftstream.com/video/6c6c9efd-2a01-43d0-9736-23670d1e564a
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/moe_richert_usda_gov/Documents/Stream%20Migrated%20Videos/SCINet%20Geospatial%20Working%20Group%20Workshop%202022%20-%20Session%207_%20Open%20Drone%20Map%20demo-20220930_124304.mp4?csf=1&web=1&e=QPg6nK&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 subnav:
   - title: Agenda
     url: '#agenda'
@@ -43,6 +43,6 @@ The objective of the Bring Your Own Problem (BYOP) sessions is to allow workshop
 For this initial BYOP session, we will have a demonstration of using Open Drone Map on Atlas. 
 
 #### Post-workshop update
-[Watch a recording of the Open Drone Map on Atlas demonstration](https://web.microsoftstream.com/video/6c6c9efd-2a01-43d0-9736-23670d1e564a).  
+[Watch a recording of the Open Drone Map on Atlas demonstration](https://usdagcc-my.sharepoint.com/:v:/r/personal/moe_richert_usda_gov/Documents/Stream%20Migrated%20Videos/SCINet%20Geospatial%20Working%20Group%20Workshop%202022%20-%20Session%207_%20Open%20Drone%20Map%20demo-20220930_124304.mp4?csf=1&web=1&e=QPg6nK&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D).  
 
 <br>

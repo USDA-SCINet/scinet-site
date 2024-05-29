@@ -15,7 +15,7 @@ sessions:
     materials: 
       - text: You must have a USDA account to access this workshop's recordings.
       - text: Session recording
-        url: https://web.microsoftstream.com/video/387605cf-8531-41c0-9da1-1456a65fef39
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/moe_richert_usda_gov/Documents/Stream%20Migrated%20Videos/SCINet%20Geospatial%20Working%20Group%20Workshop%202022%20-%20Session%205%20-%20SCINet%20Geospatial%20Common%20Data%20Library-20221101_030251.mp4?csf=1&web=1&e=ZcaRJE&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
       - text: Written tutortials
         url: https://geospatial.101workbook.org/ExampleGeoWorkflows/GRWG22_GeoCDL_R
 
@@ -72,7 +72,7 @@ The Geospatial Common Data Library (GeoCDL) is a community-driven product inspir
 <br>
 {:.border-bottom}
 
-[Watch a recording of this tutorial](https://web.microsoftstream.com/video/387605cf-8531-41c0-9da1-1456a65fef39)
+[Watch a recording of this tutorial](https://usdagcc-my.sharepoint.com/:v:/r/personal/moe_richert_usda_gov/Documents/Stream%20Migrated%20Videos/SCINet%20Geospatial%20Working%20Group%20Workshop%202022%20-%20Session%205%20-%20SCINet%20Geospatial%20Common%20Data%20Library-20221101_030251.mp4?csf=1&web=1&e=ZcaRJE&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 A written version of this tutorial, modified to be accessible to any SCINet user,
 is available on the [Geospatial Workbook](https://geospatial.101workbook.org/ExampleGeoWorkflows/GRWG22_GeoCDL_R).
