@@ -225,6 +225,7 @@ The table below summarizes the relevant GNU compiler names and command line flag
 ### My terminal window keeps freezing. Is there something I can do to stop this?
 As a result of the current networking infrastructure, working at the command line can be difficult sometimes because displaying hundreds of lines freezes the display. The solution to this is to enable SSH compression. There are a few different ways to do ssh using compression: do  ```ssh -C```  from the command line; or instead of ssh in Putty, click on SSH on the left, then check Enable Compression In Unix; or alter your ~/.ssh/config file to contain these lines:
 
+{:.copy-code}
 ```
 Host ceres.scinet.usda.gov  
 Compression yes
@@ -233,6 +234,7 @@ Compression yes
 ### I log in at the command line but the system keeps logging me out. Is there something I can do to stop this?
 On Linux or Mac OS just create or add the following to a ~/.ssh/config file. If you use Windows Powershell to login to Ceres the config file will be located at C:/Users/username/.ssh/config.
 
+{:.copy-code}
 ```
 Host ceres
 HostName ceres.scinet.usda.gov
@@ -247,6 +249,7 @@ That will send a "keepalive" signal every 20 seconds and keep retrying for up to
 
 If you don't want to use the config file method you can just add these options to the ssh command:
 
+{:.copy-code}
 ```
 ssh -o TCPKeepAlive=yes -o ServerAliveInterval=20 -o ServerAliveCountMax=30 @ceres.scinet.usda.gov -XA
 ```
