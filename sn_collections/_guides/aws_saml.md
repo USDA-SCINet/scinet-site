@@ -23,6 +23,7 @@ The aws-saml tool can be used in conjunction with the Shibboleth SAML identity p
 
 The tool is currently stored at [https://stash.scinet.science/projects/UAAI/repos/aws-saml-cli/browse](https://stash.scinet.science/projects/UAAI/repos/aws-saml-cli/browse). From here, the code can be cloned to your local machine, and installed with the command 
 
+{:.copy-code}
 ```bash
 $ pip install
 ```
@@ -33,6 +34,7 @@ from the directory containing *setup.py*
 
 Once installed, basic usage is simple.
 
+{:.copy-code}
 ```bash
 $ aws-saml -u your.username
 ```
@@ -42,7 +44,7 @@ On first usage, you will be prompted for an IDP Entry URL. For SCInet's Shibbole
 When prompted for your password, enter your SCInet password. 
 If prompted for a role, enter the number corresponding to the role you'd like to use for this session.
 
-
+{:.copy-code}
 ```bash
 Please choose the role you would like to assume:
 [ 0 ]:  arn:aws:iam::123456789012:role/SAML-proj-beta_testers
@@ -53,6 +55,7 @@ Selection: 1
 
 ## Full usage documentation
 
+{:.copy-code}
 ```bash
 usage: aws-saml [-h] [--username USERNAME] [--prompt-role] [--role ROLE]
                         [--credentials FILE] [--profile PROFILE] [--verbose]

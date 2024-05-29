@@ -62,6 +62,7 @@ Create a ~/.ssh/config file replacing USER.NAME with your actual username, all i
 
 Note: If you are using a Mac, the .ssh file may be hidden to you. To reveal the hidden files, you will press and hold CMD+SHIFT+. (Period Key) when choosing a location to save your file. The .ssh file will now be visible for you to save the config file.
 
+{:.copy-code}
 ```bash
 Host ceres-login
 HostName ceres.scinet.usda.gov
@@ -79,11 +80,13 @@ ServerAliveCountMax 30
 ```
 If you don’t want to use the config file method above, add the following title to the ssh command replacing USER.NAME with your actual username, all in lowercase.
 
+{:.copy-code}
 ```bash
 ssh -o TCPKeepAlive=yes -o ServerAliveInterval=20 -o ServerAliveCountMax=30 USER.NAME@ceres.scinet.usda.gov
 ```
 and
 
+{:.copy-code}
 ```bash
 ssh -o TCPKeepAlive=yes -o ServerAliveInterval=20 -o ServerAliveCountMax=30 USER.NAME@atlas-login.hpc.msstate.edu
 ```
@@ -103,16 +106,17 @@ Delete your .ssh/known_hosts file OR run:
   - For Linux and MacOS this is probably already running so this step can be skipped.
   - For Windows this has to be enabled by an administator, it is not on by default even if openssh is installed.  To enable it an administor must:
 
-```
-# Make sure you're running as an Administrator.
-Get-Service ssh-agent | Set-Service -StartupType Automatic
+    {:.copy-code}
+    ```
+    # Make sure you're running as an Administrator.
+    Get-Service ssh-agent | Set-Service -StartupType Automatic
 
-# Start the service
-Start-Service ssh-agent
+    # Start the service
+    Start-Service ssh-agent
 
-# This should return a status of Running
-Get-Service ssh-agent
-```
+    # This should return a status of Running
+    Get-Service ssh-agent
+    ```
 
 #### Step needs to be installed on your machine.
 - If you are on a USDA controlled Windows laptop or workstation, you can install **SmallStepsCLI** directly from the Software Center.
@@ -125,10 +129,13 @@ Get-Service ssh-agent
 
 ### After Step Installation:
 - Open a Terminal, CMD shell, or PowerShell window and run the following:
-```
-- `step ca bootstrap --ca-url https://step-ca.scinet.usda.gov --fingerprint adb703fd18f176937743b20228d52af7a705d63a0471cd67428660be5fd006bf `
-- `step ssh config --set Provisioner=keycloak --set User=user.name`
-```
+
+  {:.copy-code}
+  ```
+  - `step ca bootstrap --ca-url https://step-ca.scinet.usda.gov --fingerprint adb703fd18f176937743b20228d52af7a705d63a0471cd67428660be5fd006bf `
+  - `step ssh config --set Provisioner=keycloak --set User=user.name`
+  ```
+
   - Be sure to change "user.name" to your own SCINet username 
   - If the step config command fails, ssh-agent probably isnt running.  See instructions above.
 
@@ -163,6 +170,7 @@ The second command updates your .ssh/config file. If you already have a complica
 After these steps, command line ssh works normally. The only different is that it will not prompt you for a password for the day (16 hours). 
 	Note: With the below examples, you will swap user.name for your own SCINet username.
 
+{:.copy-code}
 ```
 ssh user.name@ceres.scinet.usda.gov 
 scp file1 file2 user.name@ceres.scinet.usda.gov:~ 

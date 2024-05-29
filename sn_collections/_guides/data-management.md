@@ -61,12 +61,15 @@ It is also possible to move data on SCINet infrastructure using traditional comm
 
 To move data to/from Juno, login to ceres-dtn and issue scp or rsync command to nal-dtn, e.g.:
 
+{:.copy-code}
 ```
 ssh ceres-dtn
 rsync -avz --no-p --no-g ttt nal-dtn.scinet.usda.gov:/LTS/project/<project_name>/
 ```
 
 Please note that in order to access Juno via the command line, you must first connect to Ceres. Then, you can connect to Juno by issuing the following:
+
+{:.copy-code}
 ```
 ssh nal-dtn.scinet.usda.gov
 ```
