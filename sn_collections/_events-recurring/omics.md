@@ -17,6 +17,11 @@ archive-label: Webinar Recordings
 
 sessions:
   - session:
+    excerpt: Livestock, Companion Animals, and Wildlife; Working Across Industries in Genomics Research
+    date: 2024-06-13
+    time: 11am-12pm ET
+    presenter: "Heather J. Huson, Ph.D."
+  - session:
     excerpt: "Streamline unsupervised machine learning to survey and graph indel-based haplotypes from pan-genomes"
     date: 2024-05-09
     time: 11am-12pm EDT
