@@ -25,7 +25,7 @@ subnav:
       - title: Access Using LincPass  
         url: '#accessing-using-lincpass'
       - title: Accessing Using login.gov  
-        url: '#accessing-using-login.gov' 
+        url: '#accessing-using-logingov' 
       - title: Access Using YubiKey
         url: '#accessing-using-yubikey'
 
