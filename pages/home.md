@@ -4,11 +4,11 @@ permalink: /
 type: future
 description: SCINet is a USDA initiative to provide agricultural scientists access to high performance computing, networking and training.
 
-alerts:
-  - alert:
-    title: Atlas Update
-    type: warning
-    text: There have been several changes to the Atlas compute cluster.  <a href="/announcements/2024-05-03-altas" class="usa-link">Read more about these updates here.</a>
+#alerts:
+#  - alert:
+#    title: Atlas Update
+#    type: warning
+#    text: There have been several changes to the Atlas compute cluster.  <a href="/announcements/2024-05-03-altas" class="usa-link">Read more about these updates here.</a>
 
 layout: scinet_home
 
