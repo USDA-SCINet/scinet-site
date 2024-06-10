@@ -55,7 +55,7 @@ If changes need to be made to an existing SCINet project, e.g., adding a new mem
 to the SCINet Virtual Research Support Core (VRSC) [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=modify%20project%20allocation).
 
 ### To Request a Quota Increase for an Existing SCINet Project
-When requesting a project quota increase on Ceres or Atlas, you will be asked to briefly explain why using /90daydata does not cover your storage needs.  
+When requesting a project quota increase on Ceres or Atlas, you will be asked to briefly explain why using /90daydata and/or permanent storage on Juno does not cover your storage needs.  
 
 To request a project quota increase for storage on Ceres, Atlas and/or Juno, please have the project PI or manager fill out the following request form:
 
