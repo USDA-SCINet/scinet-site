@@ -23,10 +23,16 @@ sessions:
     excerpt: The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.
     
   - session:
-    title: "Data Visualization: R packages"
+    title: "Introduction to Slurm: How to run computing jobs on SCINet clusters"
     date: 2024-06-20
     time: 1-2 pm ET
-    excerpt: The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.
+    excerpt: "*  The common parameters you can specify, e.g., number of cores and wall time limit.  
+
+*  How to request an interactive job  
+
+*  How to write and submit batch scripts  
+
+*  How to check the job queue"
     
   - session:
     title: "Open OnDemand: Web-based access to SCINet"
