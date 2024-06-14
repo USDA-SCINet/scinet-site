@@ -21,6 +21,9 @@ sessions:
     date: 2024-06-13
     time: 11am-12pm ET
     presenter: "Heather J. Huson, Ph.D."
+    materials:
+      - text: webinar recording
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/george_liu_usda_gov/Documents/publication/Hu%20Zhenbin/TOmics%20WG/20240611Recording/GMT20240613-151526_Recording_1920x1200.mp4?csf=1&web=1
   - session:
     excerpt: "Streamline unsupervised machine learning to survey and graph indel-based haplotypes from pan-genomes"
     date: 2024-05-09
@@ -69,8 +72,9 @@ sessions:
 
   - session:
     exclude: true
-    excerpt: October Meeting
+    excerpt: "Farm Animal Genotype-Tissue Expression (FarmGTEx)"
     date: 2023-10-12
+    presenter: "Dr. Lingzhao Fang"
     materials: 
       - text: Meeting recording
         url: https://usdagcc-my.sharepoint.com/personal/zhenbin_hu_usda_gov/_layouts/15/stream.aspx?id=%2Fpersonal%2Fzhenbin_hu_usda_gov%2FDocuments%2FGMT20231012-145931_Recording_1920x1200%2Emp4
