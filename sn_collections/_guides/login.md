@@ -133,6 +133,10 @@ Delete your .ssh/known_hosts file OR run:
   {:.copy-code}
   ```
   step ca bootstrap --ca-url https://step-ca.scinet.usda.gov --fingerprint adb703fd18f176937743b20228d52af7a705d63a0471cd67428660be5fd006bf 
+  ```
+  
+    {:.copy-code}
+  ```
   step ssh config --set Provisioner=keycloak --set User=user.name
   ```
 
