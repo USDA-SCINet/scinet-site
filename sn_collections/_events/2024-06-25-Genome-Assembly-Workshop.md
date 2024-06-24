@@ -24,3 +24,91 @@ In this workshop, we will cover the following topics:
 [To register, please fill out this form](https://forms.office.com/g/6h8ipK77EE)
 
 **Remote**
+
+
+## Schedule:
+
+<ul class="usa-collection">
+  <li class="usa-collection__item">
+    <div class="usa-collection__body">
+      <h4 class="usa-collection__heading">June 25, 2024
+      </h4>
+      <p class="usa-collection__description">
+        <ul class="usa-list">
+          <li><b>Prokaryotic Genome Assembly</b>
+            <ol>
+              <li>Introduction Powerpoint</li>
+              <li>Setting up the computers</li>
+            </ol>
+          </li>
+          <li><b>Hands-On Exercises</b>
+            <ol>
+              <li>Downloading Illumina SRR files from NCBI</li>
+              <li>Illumina Genome Assembly</li>
+              <li>Downloading PacBio and/or nanopore reads</li>
+              <li>Long reads assembly</li>
+              <li>Polishing</li>
+              <li>Assembly evaluation</li>
+              <li>Some curation </li>
+            </ol>
+          </li>
+        </ul>
+      </p>
+    </div>
+  </li>
+  <li class="usa-collection__item">
+    <div class="usa-collection__body">
+      <h4 class="usa-collection__heading">June 26, 2024
+      </h4>
+      <p class="usa-collection__description">
+        <ul class="usa-list">
+          <li><b>Eukaryotic Genome Assembly</b>
+            <ol>
+              <li>Introduction to eukaryotic genome assembly</li>
+            </ol>
+          </li>
+          <li><b>Hands-On Exercises</b>
+            <ul>
+              <li>Assembling Yeast genome with nanopore reads
+                <ol>
+                  <li>Genomescope2</li>
+                  <li>Nanofilt and filtlong</li>
+                  <li>Fly Assembly</li>
+                  <li>Evaluation</li>
+                </ol>
+              </li>
+              <li>Assembling Yeast Genome with HiFi reads
+                <ol>
+                  <li>HiFiAsm assembly</li>
+                  <li>Assembly Evaluation</li>
+                  <li>Polishing</li>
+                  <li>Some scaffolding</li>
+                </ol>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </p>
+    </div>
+  </li>
+  <li class="usa-collection__item">
+    <div class="usa-collection__body">
+      <h4 class="usa-collection__heading">June 27, 2024
+      </h4>
+      <p class="usa-collection__description">
+        <ul class="usa-list">
+          <li><b>Introduction to HiC: <br>
+        Hands-On exercises using an Arabidopsis dataset:</b>
+            <ol>
+              <li>Aligning</li>
+              <li>Scaffolding with hiC reads</li>
+              <li>Haplotype phasing</li>
+              <li>Assembly validation and Visualization </li>
+            </ol>
+          </li>
+        </ul>
+      </p>
+    </div>
+  </li>
+</ul>
+
