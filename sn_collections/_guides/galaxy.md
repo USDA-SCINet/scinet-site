@@ -45,7 +45,29 @@ In order to use SCINet Galaxy, you need an account on Ceres. [Sign up for a SCIN
 
 **NOTE:** All uploaded and output files are removed after ***90 Days*** so it is **recommended** users save their data outside of galaxy.
 
+## Logging On
+
+Ceres Galaxy is public facing, so to access it you just type or paste “https://galaxy.scinet.usda.gov” into the address bar of a web browser.  We recommend Firefox, Chrome, or Safari. MAKE SURE TO TYPE THE “https://” prefix and note the “s”.
+
+You will be presented with the following login screen:
+
+![screenshot of galaxy login screen]({{ site.baseurl }}/assets/img/guides/analysis/galaxy/galaxy-login-1.png)
+
+Click on "Sign in with Keycloak" and follow yubikey/lincpass login. After logging in, the standard Galaxy home screen should appear:
+
+![screenshot of galaxy home screen]({{ site.baseurl }}/assets/img/guides/analysis/galaxy/galaxy-login-2.png)
+
+The "Tools" bar in the left window frame is where you can load, manipulate, and analyze data. The central window frame is where you will see options and parameters programs that you will be running. The right "History" frame shows all the imported files and programs you have run.  In order to begin, you need to upload data. Often data of general interest, such a genome sequences or annotations, are already available in Galaxy under the "Get Data" tab. More commonly, you will be using data that you have generated.
+
+You will import files into Galaxy by clicking on the "Tools" sub-heading "Get Data" and then "Upload File" under "Get Data".  The following download/upload screen should appear:
+
+![screen shot of galaxy tool to download or upload data]({{ site.baseurl }}/assets/img/guides/analysis/galaxy/galaxy-logging-on-3_1280.jpg)
+
+Galaxy offers a method to import data directly from your computer as "Choose local file" button. Feel free to experiment with this direct method, but we find it can be slower and fickler than FTP transfer. To that end, we will mainly focus on uploading files using a file transfer program, such as Globus or Filezilla. If you click on "Choose FTP file", Galaxy will look in your FTP upload folder on Ceres (/galaxy/upload/ceres_email_ID) for files you have uploaded, so you must first upload your data to that folder.
+
 ## Galaxy KeyCloak Instructions
+
+Going forward, Keycloak is the only supported login method. Legacy auth will be discontinued, users who logged in via legacy auth have to manually transition by following the instructions below. 
 
 ### The following instructions will aid with migrating your Galaxy/SCINet Authenticator to KeyCloak
 
@@ -67,29 +89,6 @@ In order to use SCINet Galaxy, you need an account on Ceres. [Sign up for a SCIN
 ![]({{ site.baseurl }}/assets/img/guides/analysis/galaxy/keycloak/manage-ident.png)
 6.	Further logins should only be done via keycloak. The legacy login will no longer work. 
 ![]({{ site.baseurl }}/assets/img/guides/analysis/galaxy/keycloak/keycloak-login.png)
-
-
-## Logging On
-
-Ceres Galaxy is public facing, so to access it you just type or paste “https://galaxy.scinet.usda.gov” into the address bar of a web browser.  We recommend Firefox, Chrome, or Safari. MAKE SURE TO TYPE THE “https://” prefix and note the “s”.
-
-You will be presented with the following login screen, with boxes on the right to enter your username and password:
-
-![screenshot of galaxy login screen]({{ site.baseurl }}/assets/img/guides/analysis/galaxy/galaxy-logging-on-1_1280.jpg)
-
-Your user name should match the full email address you used when registering for your Ceres account and the password should match your Ceres password followed by the Google Authenticator code (Example: password123456). After logging in, the standard Galaxy home screen should appear:
-
-![screenshot of galaxy home screen]({{ site.baseurl }}/assets/img/guides/analysis/galaxy/galaxy-logging-on-2_1280.jpg)
-
-The "Tools" bar in the left window frame is where you can load, manipulate, and analyze data. The central window frame is where you will see options and parameters programs that you will be running. The right "History" frame shows all the imported files and programs you have run.  In order to begin, you need to upload data. Often data of general interest, such a genome sequences or annotations, are already available in Galaxy under the "Get Data" tab. More commonly, you will be using data that you have generated.
-
-You will import files into Galaxy by clicking on the "Tools" sub-heading "Get Data" and then "Upload File" under "Get Data".  The following download/upload screen should appear:
-
-![screen shot of galaxy tool to download or upload data]({{ site.baseurl }}/assets/img/guides/analysis/galaxy/galaxy-logging-on-3_1280.jpg)
-
-Galaxy offers a method to import data directly from your computer as "Choose local file" button. Feel free to experiment with this direct method, but we find it can be slower and fickler than FTP transfer. To that end, we will mainly focus on uploading files using a file transfer program, such as Globus or Filezilla. If you click on "Choose FTP file", Galaxy will look in your FTP upload folder on Ceres (/galaxy/upload/ceres_email_ID) for files you have uploaded, so you must first upload your data to that folder.
-
-
 
 ## Import data to Ceres Galaxy
 
