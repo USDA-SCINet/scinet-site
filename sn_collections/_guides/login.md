@@ -94,18 +94,24 @@ Delete your .ssh/known_hosts file OR run:
 - ssh-agent needs to to running as a system service. **If it is not running SmallStep will NOT work. You must assure it is running before proceeding**
   - For Linux and MacOS this is probably already running so this step can be skipped.
   - For Windows this has to be enabled by an administator, it is not on by default even if openssh is installed.  To enable it an administor must:
+    - Make sure you're running as an Administrator.
 
-    {:.copy-code}
-    ```
-    # Make sure you're running as an Administrator.
-    Get-Service ssh-agent | Set-Service -StartupType Automatic
+      {:.copy-code}
+      ```
+      Get-Service ssh-agent | Set-Service -StartupType Automatic
+      ```
+    - Start the service
 
-    # Start the service
-    Start-Service ssh-agent
-
-    # This should return a status of Running
-    Get-Service ssh-agent
-    ```
+      {:.copy-code}
+      ```
+      Start-Service ssh-agent
+      ```
+    - This should return a status of Running
+    
+      {:.copy-code}
+      ```
+      Get-Service ssh-agent
+      ```
 
 #### Step needs to be installed on your machine.
 - If you are on a USDA controlled Windows laptop or workstation, you can install **SmallStepsCLI** directly from the Software Center.
