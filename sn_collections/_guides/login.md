@@ -36,22 +36,11 @@ subnav:
 
 All users should have received their login credentials in an email.  If you have not, please email the Virtual Research Support Core at [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=account%20access).
 
-**If you have not recieved a LincPass or YubiKey, please see the [Deprecated Login Procedures](/guides/access/legacy-login) page for instructions to access the HPC.**
-<!--excerpt--> 
-
-Before accessing various SCINet resources, new users need to ssh either to Ceres and change the temporary password. Note that home directories on Atlas are not created right away, so it is recommended to wait a day after receiving email with the credentials before logging to Atlas cluster. 
-
-[Instructions for how to change your SCINet password can be found here.](/guides/access/login/password)
-
-A video demonstration for changing your password can be found [here](https://www.youtube.com/watch?v=Amhw2k5mftI). Please keep in mind that due to the recent password requirement change, the video is out of date. It will list more password requirements than necessary.  The current requirements are found below:
-1. AT LEAST 14 characters long
-2. Your last 24 passwords cannot be reused.
+Note that home directories on Atlas are not created right away, so it is recommended to wait a day after receiving email with the credentials before logging to Atlas cluster. 
 
 **LincPass Users** Please contact your IT Specialist if you need help with installing Step on your USDA controlled machine. 
 
-If you have a LincPass, you can now change your password via Open OnDemand in lieu of SmallStep and command-line tools. Please [see the video tutorial here](https://youtu.be/tx3sQX7rl70).
-
-If you are encountering errors after completing the below steps, see [SmallStepCLI Install Troubleshooting for LincPass Users](/guides/access/login/smallstepscli)
+**If you are encountering errors after completing the below steps, see [SmallStepCLI Install Troubleshooting for LincPass Users](/guides/access/login/smallstepscli)**
 
 ## Creating a Config File
 
@@ -91,7 +80,7 @@ and
 ssh -o TCPKeepAlive=yes -o ServerAliveInterval=20 -o ServerAliveCountMax=30 USER.NAME@atlas-login.hpc.msstate.edu
 ```
 
-## Step-Based Access Via SSH
+## Step-Based Access Via SSH - Small Step Installation Instructions
 
 **Please Note:** 
 If you previously manually created a ssh host key, you may need to delete it as the hosts will now have a new signed key.
@@ -102,7 +91,7 @@ Delete your .ssh/known_hosts file OR run:
 ### Installation Instructions:
 
 - OpenSSH needs to be installed.  This is standard on recent Windows 10 and 11, MacOS, and Linux installs. However your local admin may have removed it or restricted access to it.  Check by running "ssh" in a PowerShell or terminal window.  You should get Usage instrctions.
-- ssh-agent needs to to running as a system service.
+- ssh-agent needs to to running as a system service. **If it is not running SmallStep will NOT work. You must assure it is running before proceeding**
   - For Linux and MacOS this is probably already running so this step can be skipped.
   - For Windows this has to be enabled by an administator, it is not on by default even if openssh is installed.  To enable it an administor must:
 
