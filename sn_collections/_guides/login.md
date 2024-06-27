@@ -9,7 +9,7 @@ subnav:
   - title: Creating a Config File
     url: '#creating-a-config-file'
   - title: Step-Based Access Via SSH
-    url: '#step-based-access-via-ssh'
+    url: '#step-based-access-via-ssh---small-step-installation-instructions'
     subnav:
       - title: Installation Instructions
         url: '#installation-instructions'
