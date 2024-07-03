@@ -32,7 +32,7 @@ The below instructions are a step-by-step guide to download SmallStepCLI from So
 
 * Once the installation is complete, you will see that you are prompted to select "Restart".  
   **This is mandatory before attempting to use SmallStep for ssh logins.**  
-  ![Screenshot of Software Center restart button]({{ site.baseurl }}/assets/img/guides/access/softwarecenterstep/restart_smallstep.png)
+  ![Screenshot of Software Center restart button]({{ site.baseurl }}/assets/img/guides/access/softwarecenterstep/restart_message.png)
 
 * Once you have restarted, you can then open your ssh client (Windows PowerShell preferred). You can verify that your ssh-agent is automatically running by issuing the following command:
 
