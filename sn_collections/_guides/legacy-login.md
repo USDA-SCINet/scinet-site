@@ -6,6 +6,7 @@ redirect_from:
   - /guides/access/mfa
 
 categories: [Access]
+published: false
 
 subnav:
   - title: Using ssh to Connect
