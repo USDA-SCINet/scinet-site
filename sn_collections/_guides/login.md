@@ -26,9 +26,6 @@ subnav:
         url: '#accessing-using-lincpass'
       - title: Accessing Using login.gov  
         url: '#accessing-using-logingov' 
-      - title: Access Using YubiKey
-        url: '#accessing-using-yubikey'
-
 
 ---
 
@@ -151,7 +148,6 @@ These commands only need to be done once.
 The second command updates your .ssh/config file. If you already have a complicated structure in there you may wish to review it. The changes are fine for most, but particularly if you already have ceres entries in yours there could be conflicts. 
  
 ### Usage Instructions:
-- Please note, if you are using a YubiKey, please see the [Yubikey login instructions](#accessing-using-yubikey) 
 - Each morning on your first attempt to ssh to Ceres with ```ssh user.name@ceres.scinet.usda.gov``` or Atlas with ```ssh user.name@atlas-login.hpc.msstate.edu```, (changing user.name to your own SCINet username) you will see something like this: 
 
 	- Your default web browser should open automatically to the SCINet authentication page.  Choose USDA LincPass as your sign-in option. 
@@ -251,25 +247,6 @@ After selcting this, you will be automatically directed to login using your usua
 - Once you have successfully authenticated with login.gov, you should see a similar image to the successful logins for LincPass/Yubikey: 
 
 ![]({{ site.baseurl }}/assets/img/guides/access/login.gov screenshots/login-success.png)
-
-### Accessing Using YubiKey
-
-- When logging in, you will enter your SCINet credentials (username and password) and click “Sign In”.
-![]({{ site.baseurl }}/assets/img/guides/access/yubikey-login/login1.png)
-
-- You will be directed to a new screen showing your available security keys. You will select "Sign in with Security Key". The system will then prompt you for a PIN. This is the PIN provided to you with your YubiKiey via email. If you were not given one, please contact the VRSC by emailing scinet_vrsc@usda.gov.
-![]({{ site.baseurl }}/assets/img/guides/access/yubikey-login/login2.png)
-
-- A pop up will appear asking you if you would like to use your passkey. You will select "Use a different device" in the bottom left corner. 
-![]({{ site.baseurl }}/assets/img/guides/access/yubikey-login/login3.png)
-
-- The next pop-up will have three options. You will select "USB security key".
-![]({{ site.baseurl }}/assets/img/guides/access/yubikey-login/login4.png)
-
-- The final pop up will instruct you to insert your security key and touch it.  You will now insert your USB YubiKey (if you haven't already) and then you must physically touch it. If you do not touch the key, it will not successfully activate. This will then automatically log you into the service you were attempting to access. 
-![]({{ site.baseurl }}/assets/img/guides/access/yubikey-login/login5.png)
-
-- This step will remain the same for all GUI-based services such as Ceres OpenOnDemand, Galaxy, the SCINet Forum, and others. 
 
 If you need assistance with this login process, please email your questions to scinet_vrsc@usda.gov.
 
