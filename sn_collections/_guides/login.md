@@ -114,7 +114,7 @@ Delete your .ssh/known_hosts file OR run:
       ```
 
 #### Step needs to be installed on your machine.
-- If you are on a USDA controlled Windows laptop or workstation, you can install **SmallStepsCLI** directly from the Software Center.
+- If you are on a USDA controlled Windows laptop or workstation, you can [install **SmallStepsCLI** directly from the Software Center]({{ site.baseurl}}/guides/access/login/smallstepscli-download).
   - If Software Center fails to install SmallStepCLI, please contact your IT Specialist prior to continuing.
   - **If you are encountering errors after completing the install, see [SmallStepCLI Install Troubleshooting for LincPass Users](/guides/access/login/smallstepscli)**
  
