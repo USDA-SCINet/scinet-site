@@ -16,6 +16,13 @@ maincalendar: true
 archive-label: Webinar Recordings
 
 sessions:
+
+  - session:
+    excerpt: "Untangling False Positives, Statistical Power, Populations Structure, and Kinship in GWAS"
+    date: 2024-07-11
+    time: 11am-12pm ET
+    presenter: "Dr. Zhiwu Zhang"
+
   - session:
     excerpt: Livestock, Companion Animals, and Wildlife; Working Across Industries in Genomics Research
     date: 2024-06-13

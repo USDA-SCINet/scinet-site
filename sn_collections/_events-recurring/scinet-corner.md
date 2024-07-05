@@ -26,6 +26,10 @@ sessions:
     title: "Introduction to Slurm: How to run computing jobs on SCINet clusters"
     date: 2024-06-20
     time: 1-2 pm ET
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EbJQpK8yZZJGsCHQC3_He2cBduyALYrqBmxFU_55Ysmvtw?e=1WP0c4
+    materials:
+      - text: Powerpoint Presentation
+        url: https://usdagcc.sharepoint.com/:p:/s/REE-ARS-SCINetOffice/EdTFE56Y6RRHrxQ5Lz7_p1EBdSK7DvbmFCHiwamrZQTCwQ?e=Ol6W7g
     excerpt: "*  The common parameters you can specify, e.g., number of cores and wall time limit.  
 
 *  How to request an interactive job  
