@@ -63,7 +63,7 @@ SCINet supports a broad range of computational tools, including R (and RStudio),
 </div>
 </div>
 
-The ARS Scientific Computing Initiative is led by an Executive Committee comprised of ARS leadership including Dr. Jeff Silverstein – Acting Associate Administrator for National Programs,  Dr. Brian Stucky – Acting Chief Scientific Information Officer, Rob Butler – Acting SCINet Project Manager, ARS scientists representing IT and security, and users of the HPC systems. SCINet committees report to the Executive Committee, including the Scientific Advisory Committee (SAC), an HPC Policy Committee, and an HPC Software Committee.
+The ARS Scientific Computing Initiative is led by an Executive Committee comprised of ARS leadership including Dr. Marlen Eve – Acting Associate Administrator for National Programs,  Dr. Brian Stucky – Acting Chief Scientific Information Officer, Rob Butler – Acting SCINet Project Manager, ARS scientists representing IT and security, and users of the HPC systems. SCINet committees report to the Executive Committee, including the Scientific Advisory Committee (SAC), an HPC Policy Committee, and an HPC Software Committee.
 
 The program runs two high performance computer clusters and a storage unit.  The Ceres cluster is housed at the National Animal Disease Center in Ames, IA and operated by Iowa State University. The Atlas cluster is located and ran by Mississippi State University in Starkville, MS, and the Juno storage unit is located at the National Agricultural Library in Beltsville, MD. 
 
@@ -74,7 +74,7 @@ User support at SCINet is provided by the  Virtual Support Research Core (VSRC) 
 {: .usa-table .usa-table--compact }
 Person | Position
 ---|---
-Dr. Jeff Silverstein | Acting Associate Administrator for National Programs
+Dr. Marlen Eve | Acting Associate Administrator for National Programs
 Dr. Brian Stucky | Acting Chief Scientific Information Officer, ARS
 
 ## Executive Committee
@@ -84,7 +84,7 @@ The ARS Scientific Computing Initiative is led by an Executive Committee.
 {: .usa-table .usa-table--compact }
 Person | Position
 ---|---
-Dr. Jeff Silverstein | Acting Associate Administrator for National Programs
+Dr. Marlen Eve | Acting Associate Administrator for National Programs
 Dr. Brian Stucky | Acting Chief Scientific Information Officer, ARS
 Ms. Lorna Drennen | Assistant Chief Information officer
 Mr. Stan Kosecki | Deputy Assistant Chief Information Officer
