@@ -27,13 +27,12 @@ subnav:
       - title: Accessing Using login.gov  
         url: '#accessing-using-logingov' 
 
+
 ---
 
 [No account? Signup here.]({{ site.baseurl }}/about/signup){: .usa-button .usa-button-big }
 
 All users should have received their login credentials in an email.  If you have not, please email the Virtual Research Support Core at [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=account%20access).
-
-<!--excerpt-->
 
 Note that home directories on Atlas are not created right away, so it is recommended to wait a day after receiving email with the credentials before logging to Atlas cluster. 
 
@@ -147,20 +146,13 @@ Delete your .ssh/known_hosts file OR run:
 These commands only need to be done once. 
 The second command updates your .ssh/config file. If you already have a complicated structure in there you may wish to review it. The changes are fine for most, but particularly if you already have ceres entries in yours there could be conflicts. 
  
-### Usage Instructions:
-- Each morning on your first attempt to ssh to Ceres with ```ssh user.name@ceres.scinet.usda.gov``` or Atlas with ```ssh user.name@atlas-login.hpc.msstate.edu```, (changing user.name to your own SCINet username) you will see something like this: 
+### Usage Instructions After Step Installtion Via SSH:
+- Each morning on your first attempt to ssh to Ceres with ```ssh user.name@ceres.scinet.usda.gov``` or Atlas with ```ssh user.name@atlas-login.hpc.msstate.edu```, (changing user.name to your own SCINet username), you will see the following screen:
 
-	- Your default web browser should open automatically to the SCINet authentication page.  Choose USDA LincPass as your sign-in option. 
-![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/lincpass.png)
+![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/lincpassorlogingov.png)
 
-- You will then go through a typical eAuth based login. You will select your applicable option (either USDA or Non-USDA), select login with your PIV/CAC and enter your pin.  See the images below for an example.
-  
-![screenshot of usda eauth highlighted]({{ site.baseurl }}/assets/img/guides/access/eauth_usda.png)
-![screenshot of non-usda eauth highlighted]({{ site.baseurl }}/assets/img/guides/access/eauth_nonusda.png)
-![screenshot of piv/cac selection highlighted]({{ site.baseurl }}/assets/img/guides/access/select_piv.png)
-
-- Now go through your usual eAuth based login. 
-	- Please Note: There could be complications here if its your first time using eAuth.
+- Your default web browser should open automatically to the SCINet authentication page.  Choose "Login.gov or USDA LincPass" as your sign-in option.
+- From there, if you havea LincPass, you will authenticate as usual with eAuth. If you are using Login.gov, please follow the steps outlined [below](#accessing-using-logingov)
 
 - Go back to your shell and you should see "CA: https://step-ca.scinet.usda.gov" followed by your regular login.
   
@@ -202,7 +194,7 @@ Finally, you will test eAuth access to SCINet using ssh user.name@ceres.scinet.u
 
 If you have any questions or issues, please contact the VRSC at scinet_vrsc@usda.gov.
 
-## Accessing GUI Based Services
+## Accessing after Step is Installed OR GUI Based Services
 
 This process will be the same for all GUI based SCINet Services. Please follow the instructions below.  If you have further questions or issues, please email [scinet_vrsc@usda.gov](scinet_vrsc@usda.gov). 
  
@@ -248,5 +240,4 @@ After selcting this, you will be automatically directed to login using your usua
 
 ![]({{ site.baseurl }}/assets/img/guides/access/login.gov screenshots/login-success.png)
 
-If you need assistance with this login process, please email your questions to scinet_vrsc@usda.gov.
-
+If you need assistance with this login process, please email your questions to [scinet_vrsc@usda.gov](scinet_vrsc@usda.gov). 
