@@ -49,7 +49,7 @@ To access Open OnDemand on the Ceres cluster, go to [Ceres OpenOndemand](http://
 
 ---
 ## Access
-If you have a LincPass or YubiKey, follow [the GUI login instructions](/guides/access/login#accessing-gui-based-services).  Otherwise, enter your SCINet username and then your combined password and Google Authenticator code. If your password were `password` and your code were `123456`, your entry for this field would be:
+If you have a LincPass or YubiKey, follow [the GUI login instructions](/guides/access/login#accessing-scinet-after-step-is-installed).  Otherwise, enter your SCINet username and then your combined password and Google Authenticator code. If your password were `password` and your code were `123456`, your entry for this field would be:
 ```
 password123456
 ```
