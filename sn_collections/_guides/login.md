@@ -14,13 +14,13 @@ subnav:
       - title: Installation Instructions
         url: '#installation-instructions'
       - title: After Step Installation  
-        url: '#after-step-installation' 
-      - title: Usage Instructions
+        url: '#ssh-access-after-step-installtion' 
+      - title: SSH Access
         url: '#usage-instructions'
       - title: Access Using Linux and LincPass
         url: '#access-using-linux-and-lincpass'
-  - title:  Accessing GUI Based Services
-    url: '#accessing-gui-based-services'
+  - title:  Accessing SCINet
+    url: '#accessing-scinet-after-step-is-installed'
     subnav:
       - title: Access Using LincPass  
         url: '#accessing-using-lincpass'
@@ -146,7 +146,7 @@ Delete your .ssh/known_hosts file OR run:
 These commands only need to be done once. 
 The second command updates your .ssh/config file. If you already have a complicated structure in there you may wish to review it. The changes are fine for most, but particularly if you already have ceres entries in yours there could be conflicts. 
  
-### Usage Instructions After Step Installtion Via SSH:
+### SSH Access After Step Installtion:
 - Each morning on your first attempt to ssh to Ceres with ```ssh user.name@ceres.scinet.usda.gov``` or Atlas with ```ssh user.name@atlas-login.hpc.msstate.edu```, (changing user.name to your own SCINet username), you will see the following screen:
 
 ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/lincpassorlogingov.png)
@@ -194,7 +194,7 @@ Finally, you will test eAuth access to SCINet using ssh user.name@ceres.scinet.u
 
 If you have any questions or issues, please contact the VRSC at scinet_vrsc@usda.gov.
 
-## Accessing after Step is Installed OR GUI Based Services
+## Accessing SCINet after Step is Installed
 
 This process will be the same for all GUI based SCINet Services. Please follow the instructions below.  If you have further questions or issues, please email [scinet_vrsc@usda.gov](scinet_vrsc@usda.gov). 
  

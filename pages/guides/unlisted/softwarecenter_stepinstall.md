@@ -43,4 +43,4 @@ The below instructions are a step-by-step guide to download SmallStepCLI from So
 
   It will return a status of "Running". If it does not, please contact your IT Specialist. 
 
-Now that you have confirmed your ssh-agent is running and Step is properly installed, you can continue with the configuration of Step. These instructions are [here](/guides/access/login#after-step-installation). 
+Now that you have confirmed your ssh-agent is running and Step is properly installed, you can continue with the configuration of Step. These instructions are [here](/guides/access/login#ssh-access-after-step-installtion). 
