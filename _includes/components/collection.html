@@ -57,9 +57,9 @@
         </h3>
         {% unless page.type == 'itinerary' %}
         {% if post.excerpt %}
-        <p class="usa-collection__description">
-            {{ post.excerpt }}
-        </p>
+        <div class="usa-collection__description">
+            {{ post.excerpt | markdownify }}
+        </div>
         {% endif %}
         {% endunless %}
         <ul class="usa-collection__meta" aria-label="More information">
