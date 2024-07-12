@@ -22,7 +22,9 @@ sessions:
     date: 2024-07-11
     time: 11am-12pm ET
     presenter: "Dr. Zhiwu Zhang"
-
+    materials:
+      - text: webinar recording
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/george_liu_usda_gov/Documents/publication/Hu%20Zhenbin/TOmics%20WG/20240711Recording/GMT20240711-150107_Recording_1920x1200.mp4?csf=1&web=1
   - session:
     excerpt: Livestock, Companion Animals, and Wildlife; Working Across Industries in Genomics Research
     date: 2024-06-13
