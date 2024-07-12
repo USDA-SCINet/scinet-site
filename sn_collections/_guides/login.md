@@ -64,6 +64,8 @@ User USER.NAME
 TCPKeepAlive yes
 ServerAliveInterval 20
 ServerAliveCountMax 30
+
+ForwardAgent yes
 ```
 If you don’t want to use the config file method above, add the following title to the ssh command replacing USER.NAME with your actual username, all in lowercase.
 
