@@ -1,8 +1,8 @@
 ---
 title: SCINet Nomenclature
 description: A quick overview of some of the software, hardware, and confusing nomenclature
-categories: [Access]
-order_number: 30
+categories: [Resources]
+order_number: 60
 subnav:
   - title: SCINet vs. Ceres vs. Atlas
     url: '#scinet-vs-ceres-vs-atlas'
@@ -13,6 +13,9 @@ subnav:
   - title: Scientific Coding Languages - Python and R
     url: '#scientific-coding-languages---python-and-r'
 
+
+redirect_from: 
+  - /guides/access/glossary
 
 ---
 
