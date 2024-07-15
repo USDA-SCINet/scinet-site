@@ -10,19 +10,27 @@ excerpt: Non-ARS employee instructions for accessing SCINet
 subnav:
   - title: Creating a Config File
     url: '#creating-a-config-file'
-  - title: Step-Based Access Via SSH
-    url: '#step-based-access-via-ssh'
+  - title: Installing SmallStep Via SSH
+    url: '#installing-smallstep-via-ssh'
     subnav:
-      - title: Small Step Installation
-        url: '#small-step-installation'
-      - title: After Step Installation  
-        url: '#after-step-installtion' 
-      - title: SSH Access
-        url: '#ssh-access-after-step-installation'
+      - title: Windows Instructions
+        url: '#windows-instructions'
+      - title: Mac Instructions
+        url: '#mac-instructions' 
+      - title: Linux Instructions
+        url: '#linux-instructions'
+  - title: After Step Installation
+    url: '#after-step-installation'
+  - title:  SSH Access
+    url: '#ssh-access-after-step-installation'
 
 ---
 
-All users should have received their login credentials in an email.  If you have not, please email the Virtual Research Support Core at [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=account%20access). 
+[No account? Signup here.]({{ site.baseurl }}/about/signup){: .usa-button .usa-button-big }
+
+Note that home directories on Atlas are not created right away, so it is recommended to wait a day after receiving email with the credentials before logging to Atlas cluster. 
+
+**If you are logging in using LincPass/AltLinc/PIV Exemption, please see the [ARS Login Page](/guides/access/login/ars-employee-login)**
 
 ## Creating a Config File
 
@@ -64,21 +72,21 @@ and
 ssh -o TCPKeepAlive=yes -o ServerAliveInterval=20 -o ServerAliveCountMax=30 USER.NAME@atlas-login.hpc.msstate.edu
 ```
 
-## Step-Based Access Via SSH
+## Installing SmallStep Via SSH
 
 **Please Note:** 
 If you previously manually created a ssh host key, you may need to delete it as the hosts will now have a new signed key.
 Delete your .ssh/known_hosts file OR run:
 `ssh-keygen -R ceres.scinet.usda.gov 
 `This process will remain the same for all GUI services.
- 
-### Small Step Installation
+
+### Windows Instructions
 
 - OpenSSH needs to be installed.  This is standard on recent Windows 10 and 11, MacOS, and Linux installs. However your local admin may have removed it or restricted access to it.  Check by running "ssh" in a PowerShell or terminal window.  You should get Usage instrctions.
 - ssh-agent needs to to running as a system service. **If it is not running SmallStep will NOT work. You must assure it is running before proceeding**
-  - For Linux and MacOS this is probably already running so this step can be skipped.
-  - For Windows this has to be enabled by an administator, it is not on by default even if openssh is installed.  To enable it an administor must:
-    - Make sure you're running as an Administrator.
+  - For Windows this has to be enabled by an administator, it is not on by default even if openssh is installed.
+  - To enable it an administor must:
+    - Open a PowerShell Window as an administrator (right click on the program and select "Run as Administrator") and enter the following commands:
 
       {:.copy-code}
       ```
@@ -96,14 +104,28 @@ Delete your .ssh/known_hosts file OR run:
       ```
       Get-Service ssh-agent
       ```
-
-#### Step needs to be installed on your machine.
-- If you do need to perform the installation yourself, see: [https://smallstep.com/docs/step-cli/installation/](https://smallstep.com/docs/step-cli/installation/).
+- To installation yourself, see: [SmallStep Windows Instructions](https://smallstep.com/docs/step-cli/installation/#windows).
   - For windows we recommend the winget installer, we've had the best lusk with that. Again, please be aware that you will only be able to complete the installation yourself if you have admin rights (i.e. you will have admin rights on your home machine rather than an USDA controlled machine.)
-  - For MacOS the instrcutions are more straightforward and can be done by the user without admin access. Please be aware that Homebrew will need to be installed first. There is a link to install this at the link above.
-  - Linux will require root/sudo if you want to use the system packager rpm,deb,pacman. But can be done in userspace it you just download the binary directly.
+- After installing, you may need to restart your terminal for step to be in your path.
 
-### After Step Installation:
+Once your Step installation is complete, see [After Step Installation](#after-step-installation-non-ars)
+
+### Mac Instructions
+
+- For MacOS the instrcutions are more straightforward and can be done by the user without admin access. To do so, see: [SmallStep Mac Instructions](https://smallstep.com/docs/step-cli/installation/#macos).
+- **Please Note** Homebrew will need to be installed first. There is a link to install it at the link above. It is the first step before installing Step.
+- After installing, you may need to restart your terminal for step to be in your path.
+ 
+Once your Step installation is complete, see [After Step Installation](#after-step-installation-non-ars)
+
+### Linux Instructions
+ - Linux will require root/sudo if you want to use the system packager rpm,deb,pacman. But can be done in userspace it you just download the binary directly.
+ - To install SmallStep, see the [Linux Instructions](https://smallstep.com/docs/step-cli/installation/#linux-packages-amd64)
+- After installing, you may need to restart your terminal for step to be in your path.
+
+Once your Step installation is complete, see [After Step Installation](#after-step-installation-non-ars)
+
+## After Step Installation:
 - Open a Terminal, CMD shell, or PowerShell window and run the following:
 
   {:.copy-code}
@@ -117,33 +139,55 @@ Delete your .ssh/known_hosts file OR run:
   ```
 
   - Be sure to change "user.name" to your own SCINet username 
-  - If the step config command fails, ssh-agent probably isnt running.  See instructions above.
+  - **Windows Users Only** If the step config command fails, ssh-agent probably isnt running.  See instructions [above](windows-instructions-non-ars).
 
 
-#### These commands will do the following:
+### These commands will do the following:
 - Gets the initial cert from the certificate authority. 
 - Sets up your ssh profile to simplify future logins
 
 These commands only need to be done once. 
 The second command updates your .ssh/config file. If you already have a complicated structure in there you may wish to review it. The changes are fine for most, but particularly if you already have ceres entries in yours there could be conflicts. 
  
-### SSH Access After Step Installtion:
-- Each morning on your first attempt to ssh to Ceres with ```ssh user.name@ceres.scinet.usda.gov``` or Atlas with ```ssh user.name@atlas-login.hpc.msstate.edu```, (changing user.name to your own SCINet username), you will see the following screen:
+
+## SSH Access After Step Installtion:
+- Each morning on your first attempt to ssh to Ceres with ```ssh user.name@ceres.scinet.usda.gov``` or Atlas with ```ssh user.name@atlas-login.hpc.msstate.edu```, (changing user.name to your own SCINet username), your default web browser should open automatically to the SCINet authentication page, and you will see the following screen:
 
 ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/linpassorlogingov.png)
 
-- Your default web browser should open automatically to the SCINet authentication page.  Choose "Login.gov or USDA LincPass" as your sign-in option.
-- From there, if you havea LincPass, you will authenticate as usual with eAuth. If you are using Login.gov, please follow the steps outlined [below](#accessing-using-logingov)
+- Choose "Login.gov or USDA LincPass" as your sign-in option.
+- If prompted, you will then select “Customer”
 
-- Go back to your shell and you should see "CA: https://step-ca.scinet.usda.gov" followed by your regular login.
-  
-![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/step-ssh/login-success.png)
+![]({{ site.baseurl }}/assets/img/guides/access/login.gov screenshots/selecting-customer.png)
 
-After these steps, command line ssh works normally. The only different is that it will not prompt you for a password for the day (16 hours). 
-	Note: With the below examples, you will swap user.name for your own SCINet username.
+- Then, you will select “Login.gov”
 
-{:.copy-code}
-```
-ssh user.name@ceres.scinet.usda.gov 
-scp file1 file2 user.name@ceres.scinet.usda.gov:~ 
-```
+![]({{ site.baseurl }}/assets/img/guides/access/login.gov screenshots/login.gov-landing.png)
+
+- This will redirect you to login.gov for you to sign in. If you already have an existing login.gov account, there is no need for you to create a new one. You can simply sign in with your existing information. 
+	- However, if you need to create an account, you will toggle from “Sign In” to “Create an account.”
+
+![]({{ site.baseurl }}/assets/img/guides/access/login.gov screenshots/signin-create-account.png)
+![]({{ site.baseurl }}/assets/img/guides/access/login.gov screenshots/signin-existing-account.png)
+
+- Once you fill out the required information, you will be sent an email to confirm your account.  Confirming your email will redirect you back to login.gov for you to set up a password and second authentication method. 
+- More information on account set up can be found [here](https://www.login.gov/help/get-started/create-your-account/)
+- Once you have completed the account setup, you will need to select “Continue without linking to an existing eAuth account” to move forward.  
+
+![]({{ site.baseurl }}/assets/img/guides/access/login.gov screenshots/link-login.gov.png)
+
+- Once you have successfully authenticated with login.gov, you should see a similar image to the successful logins for LincPass/Yubikey: 
+
+![]({{ site.baseurl }}/assets/img/guides/access/login.gov screenshots/login-success.png)
+
+After these steps, command line ssh works normally. You will only need to authenticate once for the day (or every 16 hours). 
+
+### Notes and Limitations
+
+- If you use multiple profiles in Chrome, step will open a new window in whichever profile was used last.   If you end up in the wrong one just close it, do something in your work profile and rerun the ssh login command.  
+- Windows users will find most tools other than the built-in windows ssh command line tools no longer work. 
+- Mac and Linux users may have a bit more luck, but anything beyond command line tools probably won’t work anymore. 
+- For graphical file transfers globus is still the preferred method and will continue to work. 
+- After logging in via OIDC you will not have any automatic Kerberos tickets.  You will need to kinit if you need them. 
+
+If you have any questions or issues, please contact the VRSC at [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=account%20access).
