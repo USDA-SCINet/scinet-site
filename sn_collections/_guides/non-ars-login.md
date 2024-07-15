@@ -9,20 +9,20 @@ excerpt: Non-ARS employee instructions for accessing SCINet
 
 subnav:
   - title: Creating a Config File
-    url: '#config-file-non-ars'
+    url: '#creating-a-config-file'
   - title: Installing SmallStep Via SSH
-    url: '#installing-smallstep-non-ars'
+    url: '#installing-smallstep-via-ssh'
     subnav:
       - title: Windows Instructions
-        url: '#windows-instructions-non-ars'
+        url: '#windows-instructions'
       - title: Mac Instructions
-        url: '#mac-instructions-non-ars' 
+        url: '#mac-instructions' 
       - title: Linux Instructions
-        url: '#linux-instructions-non-ars''
-      - title: After Step Installation
-        url: '#after-step-installation-non-ars''
-      - title: SSH Access
-        url: '#usage-instructions-non-ars''
+        url: '#linux-instructions'
+  - title: After Step Installation
+    url: '#after-step-installation'
+  - title:  SSH Access
+    url: '#ssh-access-after-step-installation'
 
 ---
 
@@ -125,7 +125,7 @@ Once your Step installation is complete, see [After Step Installation](#after-st
 
 Once your Step installation is complete, see [After Step Installation](#after-step-installation-non-ars)
 
-### After Step Installation:
+## After Step Installation:
 - Open a Terminal, CMD shell, or PowerShell window and run the following:
 
   {:.copy-code}
@@ -142,7 +142,7 @@ Once your Step installation is complete, see [After Step Installation](#after-st
   - **Windows Users Only** If the step config command fails, ssh-agent probably isnt running.  See instructions [above](windows-instructions-non-ars).
 
 
-#### These commands will do the following:
+### These commands will do the following:
 - Gets the initial cert from the certificate authority. 
 - Sets up your ssh profile to simplify future logins
 
@@ -150,7 +150,7 @@ These commands only need to be done once.
 The second command updates your .ssh/config file. If you already have a complicated structure in there you may wish to review it. The changes are fine for most, but particularly if you already have ceres entries in yours there could be conflicts. 
  
 
-### SSH Access After Step Installtion:
+## SSH Access After Step Installtion:
 - Each morning on your first attempt to ssh to Ceres with ```ssh user.name@ceres.scinet.usda.gov``` or Atlas with ```ssh user.name@atlas-login.hpc.msstate.edu```, (changing user.name to your own SCINet username), your default web browser should open automatically to the SCINet authentication page, and you will see the following screen:
 
 ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/linpassorlogingov.png)
@@ -182,7 +182,7 @@ The second command updates your .ssh/config file. If you already have a complica
 
 After these steps, command line ssh works normally. You will only need to authenticate once for the day (or every 16 hours). 
 
-#### Notes and Limitations
+### Notes and Limitations
 
 - If you use multiple profiles in Chrome, step will open a new window in whichever profile was used last.   If you end up in the wrong one just close it, do something in your work profile and rerun the ssh login command.  
 - Windows users will find most tools other than the built-in windows ssh command line tools no longer work. 
