@@ -34,6 +34,8 @@ subnav:
 
 All users should have received their login credentials in an email.  If you have not, please email the Virtual Research Support Core at [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=account%20access).
 
+<!--excerpt-->
+
 Note that home directories on Atlas are not created right away, so it is recommended to wait a day after receiving email with the credentials before logging to Atlas cluster. 
 
 **LincPass Users** Please contact your IT Specialist if you need help with installing Step on your USDA controlled machine. 
