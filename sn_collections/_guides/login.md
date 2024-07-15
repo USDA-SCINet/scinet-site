@@ -151,7 +151,7 @@ The second command updates your .ssh/config file. If you already have a complica
 ### SSH Access After Step Installtion:
 - Each morning on your first attempt to ssh to Ceres with ```ssh user.name@ceres.scinet.usda.gov``` or Atlas with ```ssh user.name@atlas-login.hpc.msstate.edu```, (changing user.name to your own SCINet username), you will see the following screen:
 
-![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/lincpassorlogingov.png)
+![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/linpassorlogingov.png)
 
 - Your default web browser should open automatically to the SCINet authentication page.  Choose "Login.gov or USDA LincPass" as your sign-in option.
 - From there, if you havea LincPass, you will authenticate as usual with eAuth. If you are using Login.gov, please follow the steps outlined [below](#accessing-using-logingov)
