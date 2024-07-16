@@ -21,7 +21,7 @@ subnav:
 
 **If you are encountering errors after completing the below steps, see [SmallStepCLI Install Troubleshooting for LincPass Users](/guides/access/login/smallstepscli)**
 
-The below instructions are a step-by-step guide to download SmallStepCLI from Software Center. If you are not on a USDA controlled machine, you can [install SmallStep yourself using the instructions found here]({{ site.baseurl}}/guides/access/non-ars-login#installation-instructions).
+The below instructions are a step-by-step guide to download SmallStepCLI from Software Center. If you are not on a USDA controlled machine, you can [install SmallStep yourself using the instructions found here]({{ site.baseurl}}/guides/access/non-ars-login##installing-smallstep-via-ssh).
 
 * First, please open Software Center. Then you will search for SmallStepCLI.  
   Select the application that appears.  
