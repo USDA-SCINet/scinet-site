@@ -30,6 +30,8 @@ subnav:
 
 All users should have received their login credentials in an email.  If you have not, please email the Virtual Research Support Core at [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=account%20access).
 
+**If do not have a LincPass/AltLinc/PIV Exemption, please see the [Non-ARS Login Page](/guides/access/login/non-ars-employee-login)**
+
 Please contact your IT Specialist if you need help with installing Step on your USDA controlled machine. 
 
 **If you are encountering errors after completing the below steps, see [SmallStepCLI Install Troubleshooting for LincPass Users](/guides/access/login/smallstepscli)**
