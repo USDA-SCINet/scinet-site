@@ -108,7 +108,7 @@ Delete your .ssh/known_hosts file OR run:
   - For windows we recommend the winget installer, we've had the best lusk with that. Again, please be aware that you will only be able to complete the installation yourself if you have admin rights (i.e. you will have admin rights on your home machine rather than an USDA controlled machine.)
 - After installing, you may need to restart your terminal for step to be in your path.
 
-Once your Step installation is complete, see [After Step Installation](#after-step-installation-non-ars)
+Once your Step installation is complete, see [After Step Installation](#after-step-installation)
 
 ### Mac Instructions
 
@@ -116,14 +116,14 @@ Once your Step installation is complete, see [After Step Installation](#after-st
 - **Please Note** Homebrew will need to be installed first. There is a link to install it at the link above. It is the first step before installing Step.
 - After installing, you may need to restart your terminal for step to be in your path.
  
-Once your Step installation is complete, see [After Step Installation](#after-step-installation-non-ars)
+Once your Step installation is complete, see [After Step Installation](#after-step-installation)
 
 ### Linux Instructions
  - Linux will require root/sudo if you want to use the system packager rpm,deb,pacman. But can be done in userspace it you just download the binary directly.
  - To install SmallStep, see the [Linux Instructions](https://smallstep.com/docs/step-cli/installation/#linux-packages-amd64)
 - After installing, you may need to restart your terminal for step to be in your path.
 
-Once your Step installation is complete, see [After Step Installation](#after-step-installation-non-ars)
+Once your Step installation is complete, see [After Step Installation](#after-step-installation)
 
 ## After Step Installation:
 - Open a Terminal, CMD shell, or PowerShell window and run the following:
@@ -139,7 +139,7 @@ Once your Step installation is complete, see [After Step Installation](#after-st
   ```
 
   - Be sure to change "user.name" to your own SCINet username 
-  - **Windows Users Only** If the step config command fails, ssh-agent probably isnt running.  See instructions [above](windows-instructions-non-ars).
+  - **Windows Users Only** If the step config command fails, ssh-agent probably isnt running.  See instructions [above](#windows-instructions).
 
 
 ### These commands will do the following:
