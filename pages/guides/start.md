@@ -32,7 +32,7 @@ subnav:
     url: /guides/resources
     internal: true
   - title: Logging In
-    url: /guides/access/login
+    url: /guides/access
     internal: true
     shows_list: subnav
   - title: Data Storage

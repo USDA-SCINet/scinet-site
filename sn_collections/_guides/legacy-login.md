@@ -38,7 +38,7 @@ subnav:
 
 ---
 
-This page contains deprecated login procedures.  If you have a LincPass or YubiKey, you should use [the Step-based login instructions](/guides/access/login). <!--excerpt-->
+This page contains deprecated login procedures.  If you have a LincPass or YubiKey, you should use [the Step-based login instructions](/guides/access/). <!--excerpt-->
 
 **LincPass Users** You can now change your password via Open OnDemand in lieu of SmallStep. Please [see the video tutorial here](https://youtu.be/tx3sQX7rl70).
 
