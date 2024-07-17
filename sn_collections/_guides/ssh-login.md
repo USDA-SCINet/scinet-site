@@ -135,8 +135,6 @@ After removing the problematic keys, try connecting again via SSH.
 - If you use multiple profiles in Chrome, step will open a new window in whichever profile was used last. If you end up in the wrong one, close that profile, do something in your work profile, and rerun the ssh login command.  
 - Windows users will find most tools other than the built-in windows ssh command line tools no longer work. 
 - Mac and Linux users may have a bit more luck, but anything beyond command line tools probably won’t work. 
-- For graphical file transfers Globus is the preferred method. 
-- After logging in via OIDC you will not have any automatic Kerberos tickets.  You will need to kinit if you need them. 
 
 If you have any questions or issues, please contact the VRSC at scinet_vrsc@usda.gov.
 
