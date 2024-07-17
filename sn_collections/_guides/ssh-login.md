@@ -5,11 +5,13 @@ order_number: 5
 
 categories: [Access]
 
-excerpt: How to access SCINet from the command line using SSH.
+alerts:
+  - alert:
+    type: info
+    title: "For New Users:"
+    text: "After <a href='/about/signup' class='usa-link'>signing up for SCINet</a>, you will recieve your login credentials in an email. If you have not received your login credentials, please email the Virtual Research Support Core at <a href='mailto:scinet_vrsc@usda.gov?subject=account%20access' class='usa-link'>scinet_vrsc@usda.gov.</a>"
 
 subnav:
-  - title: Creating a Config File
-    url: '#creating-a-config-file'
   - title: Small Step Installation
     url: '#small-step-installation-instructions'
     subnav:
@@ -19,20 +21,20 @@ subnav:
         url: '#mac-instructions' 
       - title: Linux Instructions
         url: '#linux-instructions'
-  - title: After Step Installation
-    url: '#after-step-installation'
+  - title: After Small Step Installation
+    url: '#after-small-step-installation'
   - title:  SSH Access
-    url: '#ssh-access-after-step-installation'
+    url: '#ssh-access-after-small-step-installation'
   - title: Notes and Limitations
     url: '#notes-and-limitations'
+  - title: Creating a Config File
+    url: '#creating-a-config-file'
 
 ---
 
-This guide gives step-by-step instructions for accessing SCINet systems via SSH, which allows you to connect to SCINet systems via the command-line terminal. Please note that for most use cases, you do _not_ need to do this! We recommend Open OnDemand as a simpler, more versatile alternative to SSH.
+This guide gives step-by-step instructions for accessing SCINet systems via SSH, which allows you to connect to SCINet systems via the command-line terminal.<!--excerpt--> Please note that for most use cases, you do _not_ need to do this! We recommend Open OnDemand as a simpler, more versatile alternative to SSH.
 
 If you do wish to access SCINet systems via SSH, you will need to have software called "SmallStepCLI" installed on your computer. The instructions below detail how to install and configure SmallStepCLI and use it for SSH access to SCINet systems.
-
-(New users will receive their login credentials in an email. If you have not received your login credentials, please email the Virtual Research Support Core at [scinet_vrsc@usda.gov](mailto:scinet_vrsc@usda.gov?subject=account%20access).)
 
 **If you are a LincPass User and still encountering errors after completing the below steps, see [SmallStepCLI Install Troubleshooting for LincPass Users](/guides/access/login/smallstepscli)**
 
@@ -68,20 +70,20 @@ If you do wish to access SCINet systems via SSH, you will need to have software 
 
 - If you are not on a USDA-managed laptop, you can install the software yourself if you have admin permissions on your computer. See: [SmallStep Windows Instructions](https://smallstep.com/docs/step-cli/installation/#windows). For Windows, we recommend the winget installer. Please be aware that you will only be able to complete the installation yourself if you have admin rights on your computer. If not, you will need to ask your IT support for help installing the software.
 
-Once your Step installation is complete, see [After Step Installation](#after-step-installation).
+Once your Step installation is complete, see [After Step Installation](#after-small-step-installation).
 
 ### Mac Instructions
 
 - For MacOS the instrcutions are more straightforward and can be done by the user without admin access. To do so, see: [SmallStep Mac Instructions](https://smallstep.com/docs/step-cli/installation/#macos).
 - **Please Note** Homebrew will need to be installed first. There is a link to install it at the link above. It is the first step before installing Step. 
 
-Once your Step installation is complete, see [After Step Installation](#after-step-installation).
+Once your Step installation is complete, see [After Step Installation](#after-small-step-installation).
 
 ### Linux Instructions
  - Linux will require root/sudo if you want to use the system package manager (e.g., rpm, deb, apt, pacman). Installation can also be done in userspace if you download the binary directly.
  - To install SmallStep, see the [Linux Instructions](https://smallstep.com/docs/step-cli/installation/#linux-packages-amd64).
 
-Once your Step installation is complete, see [After Step Installation](#after-step-installation).
+Once your Step installation is complete, see [After Step Installation](#after-small-step-installation).
 
 ## After Small Step Installation:
 - Open a Terminal, CMD shell, or PowerShell window and run the following:
@@ -109,17 +111,15 @@ The second command updates your .ssh/config file. If you already have a custom c
  
 
 ## SSH Access After Small Step Installation:
-- The first time you ssh to Ceres with `ssh user.name@ceres.scinet.usda.gov` or Atlas with `ssh user.name@atlas-login.hpc.msstate.edu`, (changing "user.name" to your own SCINet username), your default web browser should open automatically to the SCINet authentication page:
-
-![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/linpassorlogingov.png)
+- The first time you ssh to Ceres with `ssh user.name@ceres.scinet.usda.gov` or Atlas with `ssh user.name@atlas-login.hpc.msstate.edu`, (changing "user.name" to your own SCINet username), your default web browser should open automatically to the SCINet authentication page:  
+  ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/linpassorlogingov.png)
 
 - Choose "Login.gov or USDA LincPass" as your sign-in option.
   - If you have a LincPass/AltLinc or PIV Exemption, you will authenticate as usual with eAuth.
   - If you _do not_ have a LincPass/AltLinc or PIV Exemption, you will authenticate using Login.gov. Please see the [detailed instructions for logging on to SCINet using Login.gov](/guides/access/login/logingov).
 
-- Return to your shell and you should see "CA: https://step-ca.scinet.usda.gov" followed by your regular login.
-  
-![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/step-ssh/login-success.png)
+- Return to your shell and you should see "CA: https://step-ca.scinet.usda.gov" followed by your regular login.  
+  ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/step-ssh/login-success.png)
 
 After these steps, command line ssh should work normally. You will only need to authenticate once for the day (or every 16 hours). 
 
