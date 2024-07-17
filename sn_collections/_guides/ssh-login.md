@@ -38,11 +38,6 @@ If you do wish to access SCINet systems via SSH, you will need to have software 
 
 ## Small Step Installation Instructions
 
-**Please Note:** 
-If you previously manually created a ssh host key, you may need to delete it as the hosts will now have a new signed key.
-Delete your .ssh/known_hosts file OR run:
-`ssh-keygen -R ceres.scinet.usda.gov 
-
 ### Windows Instructions
 
 - OpenSSH needs to be installed. If you have Windows 10 or later, you should already have OpenSSH unless your local admin has removed it or restricted access to it. Check by running `ssh` in a PowerShell or terminal window. If it works, you should see usage instructions.
@@ -106,8 +101,8 @@ Once your Step installation is complete, see [After Step Installation](#after-st
 - Gets the initial cert from the certificate authority. 
 - Sets up your ssh profile to simplify future logins
 
-These commands only need to be done once. 
-The second command updates your .ssh/config file. If you already have a complicated structure in there you may wish to review it. The changes are fine for most, but particularly if you already have ceres entries in yours there could be conflicts. 
+These commands only need to be run once. 
+The second command updates your .ssh/config file. If you already have a custom config file, you may wish to review it after running this command. The changes are fine for most, but there could be conflicts, particularly if you already have SCINet-related entries in your config file.
  
 
 ## SSH Access After Small Step Installation:
@@ -126,6 +121,16 @@ The second command updates your .ssh/config file. If you already have a complica
 After these steps, command line ssh works normally. You will only need to authenticate once for the day (or every 16 hours). 
 
 ## Notes and Limitations
+
+### Key warnings when connecting to Ceres or Atlas
+
+When connecting to Ceres or Atlas via SSH, you may receive a warning about changed SSH keys if the host keys on Ceres or Atlas change (this sometimes happens during routine system maintenance). If you encounter this warning, you can either:
+* Delete the file `.ssh/known_hosts` in your home directory on your local machine; or
+* Remove local keys for specific systems by running `ssh-keygen -R HOSTNAME` where "HOSTNAME" is one of ceres.scinet.usda.gov, atlas-login.hpc.msstate.edu, atlas-login-1.hpc.msstate.edu, or atlas-login-2.hpc.msstate.edu.
+
+After removing the problematic keys, try connecting again via SSH.
+
+### Other notes
 
 - If you use multiple profiles in Chrome, step will open a new window in whichever profile was used last.   If you end up in the wrong one just close it, do something in your work profile and rerun the ssh login command.  
 - Windows users will find most tools other than the built-in windows ssh command line tools no longer work. 
