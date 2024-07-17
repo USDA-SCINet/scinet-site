@@ -43,17 +43,20 @@ If you do wish to access SCINet systems via SSH, you will need to have software 
 - OpenSSH needs to be installed. If you have Windows 10 or later, you should already have OpenSSH unless your local admin has removed it or restricted access to it. Check by running `ssh` in a PowerShell or terminal window. If it works, you should see usage instructions.
 - ssh-agent needs to to running as a system service. **If it is not running, SmallStepCLI will not work. Please verify that it is running before proceeding.**
   - Open a PowerShell window and run
+
       {:.copy-code}
       ```
       Get-Service ssh-agent
       ```
       If the status is "Running", you are ready to install SmallStepCLI. If not, you will need an administrator to enable the ssh-agent system service. The administrator must:
     - Open a PowerShell Window as an administrator (right click on the program and select "Run as Administrator").
+
       {:.copy-code}
       ```
       Get-Service ssh-agent | Set-Service -StartupType Automatic
       ```
     - Start the service
+
       {:.copy-code}
       ```
       Start-Service ssh-agent
@@ -75,7 +78,7 @@ Once your Step installation is complete, see [After Step Installation](#after-st
 Once your Step installation is complete, see [After Step Installation](#after-step-installation).
 
 ### Linux Instructions
- - Linux will require root/sudo if you want to use the system packager rpm,deb,pacman. But can be done in userspace it you just download the binary directly.
+ - Linux will require root/sudo if you want to use the system package manager (e.g., rpm, deb, apt, pacman). Installation can also be done in userspace if you download the binary directly.
  - To install SmallStep, see the [Linux Instructions](https://smallstep.com/docs/step-cli/installation/#linux-packages-amd64).
 
 Once your Step installation is complete, see [After Step Installation](#after-step-installation).
@@ -88,13 +91,13 @@ Once your Step installation is complete, see [After Step Installation](#after-st
   step ca bootstrap --ca-url https://step-ca.scinet.usda.gov --fingerprint adb703fd18f176937743b20228d52af7a705d63a0471cd67428660be5fd006bf 
   ```
   
-    {:.copy-code}
+  {:.copy-code}
   ```
   step ssh config --set Provisioner=keycloak --set User=user.name
   ```
 
   - Be sure to change "user.name" to your own SCINet username 
-  - **Windows Users Only:** If the step config command fails, ssh-agent probably isn't running.  See Windows instructions above.
+  - **Windows Users Only:** If the step config command fails, ssh-agent probably isn't running.  See the [Windows instructions](#windows-instructions) above.
 
 
 #### These commands will do the following:
