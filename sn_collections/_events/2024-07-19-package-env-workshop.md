@@ -41,7 +41,7 @@ Steps to prepare for the tutorial sessions:
 
 1. **Create a workshop working directory** by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the `$USER` variable. 
     ```bash
-    mkdir -r /90daydata/shared/pkg_workshop/$USER/
+    mkdir -p /90daydata/shared/pkg_workshop/$USER/
     cd /90daydata/shared/pkg_workshop/$USER/
     ```
 
