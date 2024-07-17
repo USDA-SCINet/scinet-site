@@ -17,8 +17,8 @@ subnav:
     url: '#bad-owner-or-permissions-error'
 ---
 
-For instructions for configuring LincPass logon, see the [Login instructions](/guides/access/ars-login).  
-The resolutions for these errors assume you have completed the LincPass config steps from the [Login instructions](/guides/access/ars-login).
+For instructions for configuring LincPass logon, see the [Login instructions](/guides/access/ssh-login).  
+The resolutions for these errors assume you have completed the LincPass config steps from the [Login instructions](/guides/access/ssh-login).
 
 ## Bad owner or permissions
 If you are getting a “Bad owner or permissions” error (double \\ in path), the permissions on the .ssh/ and .step directories are too permissive and allowing Full Access to SYSTEM, Administrators, and others. This is not a problem on an account that has never used ssh on the affected computer.
