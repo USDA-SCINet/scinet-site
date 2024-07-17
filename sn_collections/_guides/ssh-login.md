@@ -65,20 +65,20 @@ If you do wish to access SCINet systems via SSH, you will need to have software 
 
 - If you are not on a USDA-managed laptop, you can install the software yourself if you have admin permissions on your computer. See: [SmallStep Windows Instructions](https://smallstep.com/docs/step-cli/installation/#windows). For Windows, we recommend the winget installer. Please be aware that you will only be able to complete the installation yourself if you have admin rights on your computer. If not, you will need to ask your IT support for help installing the software.
 
-Once your Step installation is complete, see [After Step Installation](#after-step-installation)
+Once your Step installation is complete, see [After Step Installation](#after-step-installation).
 
 ### Mac Instructions
 
 - For MacOS the instrcutions are more straightforward and can be done by the user without admin access. To do so, see: [SmallStep Mac Instructions](https://smallstep.com/docs/step-cli/installation/#macos).
 - **Please Note** Homebrew will need to be installed first. There is a link to install it at the link above. It is the first step before installing Step. 
 
-Once your Step installation is complete, see [After Step Installation](#after-step-installation)
+Once your Step installation is complete, see [After Step Installation](#after-step-installation).
 
 ### Linux Instructions
  - Linux will require root/sudo if you want to use the system packager rpm,deb,pacman. But can be done in userspace it you just download the binary directly.
- - To install SmallStep, see the [Linux Instructions](https://smallstep.com/docs/step-cli/installation/#linux-packages-amd64)
+ - To install SmallStep, see the [Linux Instructions](https://smallstep.com/docs/step-cli/installation/#linux-packages-amd64).
 
-Once your Step installation is complete, see [After Step Installation](#after-step-installation)
+Once your Step installation is complete, see [After Step Installation](#after-step-installation).
 
 ## After Small Step Installation:
 - Open a Terminal, CMD shell, or PowerShell window and run the following:
@@ -94,7 +94,7 @@ Once your Step installation is complete, see [After Step Installation](#after-st
   ```
 
   - Be sure to change "user.name" to your own SCINet username 
-  - **Windows Users Only:** If the step config command fails, ssh-agent probably isnt running.  See instructions above.
+  - **Windows Users Only:** If the step config command fails, ssh-agent probably isn't running.  See Windows instructions above.
 
 
 #### These commands will do the following:
@@ -118,7 +118,7 @@ The second command updates your .ssh/config file. If you already have a custom c
   
 ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/step-ssh/login-success.png)
 
-After these steps, command line ssh works normally. You will only need to authenticate once for the day (or every 16 hours). 
+After these steps, command line ssh should work normally. You will only need to authenticate once for the day (or every 16 hours). 
 
 ## Notes and Limitations
 
@@ -132,7 +132,7 @@ After removing the problematic keys, try connecting again via SSH.
 
 ### Other notes
 
-- If you use multiple profiles in Chrome, step will open a new window in whichever profile was used last.   If you end up in the wrong one just close it, do something in your work profile and rerun the ssh login command.  
+- If you use multiple profiles in Chrome, step will open a new window in whichever profile was used last. If you end up in the wrong one, close that profile, do something in your work profile, and rerun the ssh login command.  
 - Windows users will find most tools other than the built-in windows ssh command line tools no longer work. 
 - Mac and Linux users may have a bit more luck, but anything beyond command line tools probably won’t work. 
 - For graphical file transfers Globus is the preferred method. 
@@ -142,7 +142,7 @@ If you have any questions or issues, please contact the VRSC at scinet_vrsc@usda
 
 ## Creating a Configuration File
 
-If you would like more control over the details of your SSH connections to SCINet, you can create a custom SSH configuration file. This is _completely optional_ and _not_ required to access SCINet systems via SSH! You may create ths file using Notepad or any other text editor. The file you create must be titled “config” with no extension for this method to work properly (i.e. “config” not “config.txt”). The example below will send a “keepalive” signal every 20 seconds and keep retrying for up to 30 failures. 
+If you would like more control over the details of your SSH connections to SCINet, you can create a custom SSH configuration file. This is _completely optional_ and _not_ required to access SCINet systems via SSH! You may create this file using Notepad or any other text editor. The file you create must be titled “config” with no extension for this method to work properly (i.e., “config” not “config.txt”). The example below will send a “keepalive” signal every 20 seconds and keep retrying for up to 30 failures. 
 	Note: Do not copy the code into the terminal itself, it must be in a separate file. 
 
 Create a ~/.ssh/config file replacing USER.NAME with your actual username, all in lowercase. The path to the .ssh file is as follows: C>Users>(Your Account)>.ssh

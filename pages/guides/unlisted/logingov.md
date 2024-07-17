@@ -9,7 +9,7 @@ sidenav_link: /guides/
 
 If you do not have a LincPass/AltLinc card or PIV exemption, you will need to use your Login.gov account to log on to SCINet systems.
 
-- When logging into SCINet systems, you will be presented with the SCINet login page: 
+- When logging in to SCINet systems, you will be presented with the SCINet login page: 
 ![]({{ site.baseurl }}/assets/img/guides/access/login.gov screenshots/login-landing.png)
 
 - Select “Login.gov or USDA LincPass”
@@ -21,7 +21,7 @@ If you do not have a LincPass/AltLinc card or PIV exemption, you will need to us
 
 ![]({{ site.baseurl }}/assets/img/guides/access/login.gov screenshots/login.gov-landing.png)
 
-- This will redirect you to Login.gov for you to sign in. If you already have an existing login.gov account, there is no need for you to create a new one. You can simply sign in with your existing information.
+- This will redirect you to Login.gov for you to sign in. If you already have an existing Login.gov account, there is no need for you to create a new one. You can simply sign in with your existing Login.gov account, though ensure that the same email address used for your SCINet account is included in the Login.gov account.
 ![]({{ site.baseurl }}/assets/img/guides/access/login.gov screenshots/signin-existing-account.png)
 
 - If you need to create an account, toggle from “Sign In” to “Create an account”:
@@ -34,7 +34,7 @@ If you do not have a LincPass/AltLinc card or PIV exemption, you will need to us
 
 ![]({{ site.baseurl }}/assets/img/guides/access/login.gov screenshots/link-login.gov.png)
 
-- Once you have successfully authenticated with Login.gov, you should be redirected to the web-based interface you are attempting to accesss (e.g., Open OnDemand) or, if you are authenticating via SSH, you should see a similar image to the successful logins for LincPass/Yubikey: 
+- Once you have successfully authenticated with Login.gov, you should be redirected to the web-based interface you are attempting to accesss (e.g., Open OnDemand) or, if you are authenticating via SSH, you should see a similar image to the successful logins for LincPass: 
 
 ![]({{ site.baseurl }}/assets/img/guides/access/login.gov screenshots/login-success.png)
 

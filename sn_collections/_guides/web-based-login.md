@@ -27,7 +27,7 @@ subnav:
     subnav:
       - title: Accessing Using LincPass
         url: '#accessing-using-lincpass'
-      - title: Accessing Using login.gov
+      - title: Accessing Using Login.gov
         url: '#accessing-using-logingov'
   - title: Available GUI Interfaces
     url: '#available-gui-interfaces'
