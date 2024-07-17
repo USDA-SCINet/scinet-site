@@ -85,7 +85,7 @@ Once your Step installation is complete, see [After Step Installation](#after-st
 
 Once your Step installation is complete, see [After Step Installation](#after-step-installation)
 
-## After Step Installation:
+## After Small Step Installation:
 - Open a Terminal, CMD shell, or PowerShell window and run the following:
 
   {:.copy-code}
@@ -99,7 +99,7 @@ Once your Step installation is complete, see [After Step Installation](#after-st
   ```
 
   - Be sure to change "user.name" to your own SCINet username 
-  - **Windows Users Only** If the step config command fails, ssh-agent probably isnt running.  See instructions above.
+  - **Windows Users Only:** If the step config command fails, ssh-agent probably isnt running.  See instructions above.
 
 
 #### These commands will do the following:
@@ -110,15 +110,16 @@ These commands only need to be done once.
 The second command updates your .ssh/config file. If you already have a complicated structure in there you may wish to review it. The changes are fine for most, but particularly if you already have ceres entries in yours there could be conflicts. 
  
 
-## SSH Access After Step Installtion:
-- The first time you ssh to Ceres with ```ssh user.name@ceres.scinet.usda.gov``` or Atlas with ```ssh user.name@atlas-login.hpc.msstate.edu```, (changing user.name to your own SCINet username), you will see the following screen:
+## SSH Access After Small Step Installation:
+- The first time you ssh to Ceres with `ssh user.name@ceres.scinet.usda.gov` or Atlas with `ssh user.name@atlas-login.hpc.msstate.edu`, (changing "user.name" to your own SCINet username), your default web browser should open automatically to the SCINet authentication page:
 
 ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/linpassorlogingov.png)
 
-- Your default web browser should open automatically to the SCINet authentication page.  Choose "Login.gov or USDA LincPass" as your sign-in option.
-- From there, if you have a LincPass/AltLinc,PIV Exemption, you will authenticate as usual with eAuth.
+- Choose "Login.gov or USDA LincPass" as your sign-in option.
+  - If you have a LincPass/AltLinc or PIV Exemption, you will authenticate as usual with eAuth.
+  - If you _do not_ have a LincPass/AltLinc or PIV Exemption, you will authenticate using Login.gov. Please see the [detailed instructions for logging on to SCINet using Login.gov](/guides/access/login/logingov).
 
-- Go back to your shell and you should see "CA: https://step-ca.scinet.usda.gov" followed by your regular login.
+- Return to your shell and you should see "CA: https://step-ca.scinet.usda.gov" followed by your regular login.
   
 ![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/step-ssh/login-success.png)
 
