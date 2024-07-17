@@ -5,6 +5,8 @@ order_number: 5
 
 categories: [Access]
 
+published: false
+
 subnav:
   - title: Creating a Config File
     url: '#creating-a-config-file'
@@ -33,6 +35,8 @@ subnav:
 [No account? Signup here.]({{ site.baseurl }}/about/signup){: .usa-button .usa-button-big }
 
 All users should have received their login credentials in an email.  If you have not, please email the Virtual Research Support Core at [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=account%20access).
+
+<!--excerpt-->
 
 Note that home directories on Atlas are not created right away, so it is recommended to wait a day after receiving email with the credentials before logging to Atlas cluster. 
 
@@ -64,6 +68,8 @@ User USER.NAME
 TCPKeepAlive yes
 ServerAliveInterval 20
 ServerAliveCountMax 30
+
+ForwardAgent yes
 ```
 If you don’t want to use the config file method above, add the following title to the ssh command replacing USER.NAME with your actual username, all in lowercase.
 
@@ -149,7 +155,7 @@ The second command updates your .ssh/config file. If you already have a complica
 ### SSH Access After Step Installtion:
 - Each morning on your first attempt to ssh to Ceres with ```ssh user.name@ceres.scinet.usda.gov``` or Atlas with ```ssh user.name@atlas-login.hpc.msstate.edu```, (changing user.name to your own SCINet username), you will see the following screen:
 
-![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/lincpassorlogingov.png)
+![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/linpassorlogingov.png)
 
 - Your default web browser should open automatically to the SCINet authentication page.  Choose "Login.gov or USDA LincPass" as your sign-in option.
 - From there, if you havea LincPass, you will authenticate as usual with eAuth. If you are using Login.gov, please follow the steps outlined [below](#accessing-using-logingov)

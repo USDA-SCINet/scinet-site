@@ -17,7 +17,7 @@ archive-label: SCINet Corner Recordings
 
 sessions:        
   - session:
-    title: "Data Visualization: Python packages"
+    title: "Open Q&A"
     date: 2024-07-18
     time: 1-2 pm ET
     excerpt: The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.

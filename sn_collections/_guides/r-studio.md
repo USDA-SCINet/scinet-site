@@ -70,7 +70,7 @@ The ``mv`` and ``chgrp`` commands may take longer time depending on how much dat
 
 ## RStudio Server in Open OnDemand
 
-In your browser go to [https://ceres-ood.scinet.usda.gov/](https://ceres-ood.scinet.usda.gov/) and log in using the [GUI login instructions](/guides/access/login#accessing-scinet-after-step-is-installed).
+In your browser go to [https://ceres-ood.scinet.usda.gov/](https://ceres-ood.scinet.usda.gov/) and log in using the [GUI login instructions](/guides/access/gui#gui-login).
 
 After logging into Open OnDemand, click on "Interactive Apps" in the menu on the top and select "RStudio Server: Ceres". 
 

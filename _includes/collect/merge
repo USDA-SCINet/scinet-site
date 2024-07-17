@@ -1,0 +1,21 @@
+{% capture coll %}collections{% endcapture %}
+  {% assign merge = "" | split: "" %}
+  {% for _collect in page.collecting %}
+    {% capture collecting %}{{ _collect[0] }}{% endcapture %}
+    {% capture fetch %}{{ _collect[1] }}{% endcapture %}
+    {% if collecting == coll %}
+        {% for _posts in site[fetch] %}
+            {% assign newdate = _posts.date | date: '%s' | plus: 0 %}
+            {% include collect/process/hashed date=newdate post=_posts %}
+            {% assign merge = merge | push: hashed %}
+        {% endfor %}
+    {% else %}
+        {% for _posts in page[fetch] %}
+            {% assign newdate = _posts.date | date: '%s' | plus: 0 %}
+            {% include collect/process/hashed date=newdate post=_posts %}
+            {% assign merge = merge | push: hashed %}
+        {% endfor %}
+    {% endif %}
+  {% endfor %}
+
+  {% assign merge = merge | sort: 'date' %}
