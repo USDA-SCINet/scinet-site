@@ -63,12 +63,15 @@ If you do wish to access SCINet systems via SSH, you will need to have software 
       ```
       Start-Service ssh-agent
       ```
-- If you are on a USDA-managed Windows laptop or workstation with CEC support, you can [install **SmallStepsCLI** directly from the Software Center]({{ site.baseurl}}/guides/access/login/smallstepscli-download). If Software Center fails to install SmallStepCLI, please contact your IT Specialist prior to continuing.
-  - **If you are encountering errors after completing the install, see [SmallStepCLI Install Troubleshooting for LincPass Users](/guides/access/login/smallstepscli).**
-  - After installing, you may need to restart your terminal.
-- If you are on a USDA-managed Windows laptop or workstation with "status quo" support (i.e., without CEC support), you will need to have your local IT Specialist install the software for you.
-
-- If you are not on a USDA-managed laptop, you can install the software yourself if you have admin permissions on your computer. See: [SmallStep Windows Instructions](https://smallstep.com/docs/step-cli/installation/#windows). For Windows, we recommend the winget installer. Please be aware that you will only be able to complete the installation yourself if you have admin rights on your computer. If not, you will need to ask your IT support for help installing the software.
+- Installing SmallStepsCLI:
+  - **If you are on a USDA-managed Windows laptop or workstation:**
+    - If your workstation has CEC support, you can [install **SmallStepsCLI** directly from the Software Center]({{ site.baseurl}}/guides/access/login/smallstepscli-download). If Software Center fails to install SmallStepCLI, please contact your IT Specialist prior to continuing.
+      - If you are encountering errors after completing the install, see [SmallStepCLI Install Troubleshooting for LincPass Users](/guides/access/login/smallstepscli).
+      - After installing, you may need to restart your terminal.
+    - If your workstation has "status quo" support (i.e., without CEC support), you will need to have your local IT Specialist install the software for you.
+  - **If you are not on a USDA-managed laptop:**
+    - If you have admin rights on your computer, you can install the software yourself. See: [SmallStep Windows Instructions](https://smallstep.com/docs/step-cli/installation/#windows). For Windows, we recommend the winget installer. 
+    - If you do not have admin rights on your computer, you will need to ask your IT support for help installing the software.
 
 Once your Step installation is complete, see [After Step Installation](#after-small-step-installation).
 
