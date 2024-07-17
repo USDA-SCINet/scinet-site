@@ -34,7 +34,7 @@ primary:
     links:
       - title: System Downtime
         url: /news/downtime/
-      - title: Announcements
+      - title: "What's New?"
         url: /news/announcements
       - title: User Stories
         url: /news/stories

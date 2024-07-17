@@ -49,3 +49,15 @@ main:
   {% include categories.html %}
   </div>
   {% endif %}
+
+  {% if page.collecting %}
+  
+  {% include collect/merge %}
+  <ul class="usa-list usa-list--unstyled">
+    
+  {% for _post in merge reversed %}
+    {% include collection.html post=_post.post %}
+  {% endfor %}
+  </ul>
+
+  {% endif %}

@@ -15,6 +15,7 @@
 {% endif %}
 
 {% if page.guidegroup or page.fetch_subnav %}
+  {% unless page.manual_subnav %}
 
   {% if page.guidegroup.all and page.guidegroup.compile %}
     {% assign mylink = link.categories | join: ',' | append: " Guides" | slugify %}
@@ -29,6 +30,7 @@
   {% endif %}
 
   {% assign nobreakdown = "true" %}
+  {% endunless %}
 
 {% elsif link.layout %}
   {% assign mylink = link.url | relative_url %}
