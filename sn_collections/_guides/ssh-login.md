@@ -5,7 +5,7 @@ order_number: 5
 
 categories: [Access]
 
-excerpt: How to access SCINet via SSH
+excerpt: How to access SCINet from the command line using SSH.
 
 subnav:
   - title: Creating a Config File

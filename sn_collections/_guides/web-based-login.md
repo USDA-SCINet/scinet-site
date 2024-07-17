@@ -1,6 +1,6 @@
 ---
 title: Web-Based Access to SCINet
-description: Options for GUI access to SCINet
+description: Instructions for web-based access to SCINet
 categories: [Access]
 order_number: 2
 layout: guides
@@ -37,24 +37,34 @@ subnav:
       - title: Galaxy on SCINet
         url: '#galaxy-on-scinet'
 
-excerpt: Information about graphical user interface access to SCINet resources
+excerpt: How to access SCINet's web-based user interfaces (Open OnDemand and Galaxy).
 ---
 
-## GUI Login
+## Web-based SCINet interfaces
 
-This process will be the same for all GUI based SCINet Services. Please follow the instructions below.  If you have further questions or issues, please email [scinet_vrsc@usda.gov](scinet_vrsc@usda.gov). 
+SCINet offers three main web-based interfaces:
+* Open OnDemand
+  * [Open OnDemand for Ceres](http://ceres-ood.scinet.usda.gov/)
+  * [Open OnDemand for Atlas](https://atlas-ood.hpc.msstate.edu/)
+* [Galaxy](https://galaxy.scinet.usda.gov)
+* [Globus](https://www.globus.org/) (for file transfers)
+
+See ["Available Web-Based Interfaces"](#available-web-based-interfaces), below, for more information about using SCINet's web-based interfaces.
+
+The process for logging on to SCINet via Open OnDemand or Galaxy is the same. Because Globus is not hosted on SCINet systems, it [uses a different login procedure](/guides/data/datatransfer#globus-data-transfer). To log on to Open OnDemand or Galaxy, start by following the relevant link above.
+
+* You will initially be presented with the SCINet login page:
+
+![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/linpassorlogingov.png)
+
+* Choose "Login.gov or USDA LincPass" as your sign-in option.
+  * If you have a LincPass/AltLinc or PIV Exemption, you will authenticate as usual with eAuth.
+  * If you _do not_ have a LincPass/AltLinc or PIV Exemption, you will authenticate using Login.gov. Please see the [detailed instructions for logging on to SCINet using Login.gov](/guides/access/login/logingov).
+* After successful authentication, you will automatically be redirected to Open OnDemand or Galaxy.
+
+If you have further questions or issues, please email [scinet_vrsc@usda.gov](scinet_vrsc@usda.gov). 
  
-### Accessing Using LincPass
 
-If you are a LincPass holder, you will only select the option of "USDA LincPass" when logging into GUI services such as Open OnDemand, Galaxy, and the SCINet Forum. 
+## Available Web-Based Interfaces
 
-After selcting this, you will be automatically directed to login using your usual eAuth based login.
-
-### Accessing Using login.gov
-
-- When logging into a GUI-based system, you will follow the [login.gov instructions](/guides/access/login/logingov)
-
-
-## Available GUI Interfaces
-
-If you prefer a graphical user interface, these are some of the options you have to access SCINet. 
+Please see below for more information about using SCINet's web-based interfaces. 
