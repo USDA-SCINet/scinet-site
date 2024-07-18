@@ -21,7 +21,7 @@ subnav:
 
 **If you are encountering errors after completing the below steps, see [SmallStepCLI Install Troubleshooting for LincPass Users](/guides/access/login/smallstepscli)**
 
-The below instructions are a step-by-step guide to download SmallStepCLI from Software Center. If you are not on a USDA controlled machine, you can [install SmallStep yourself using the instructions found here]({{ site.baseurl}}/guides/access/non-ars-login##installing-smallstep-via-ssh).
+The below instructions are a step-by-step guide to download SmallStepCLI from Software Center. If you are not on a USDA controlled machine, you can [install SmallStep yourself using the instructions found here]({{ site.baseurl}}/guides/access/ssh-login#small-step-installation-instructions).
 
 * First, please open Software Center. Then you will search for SmallStepCLI.  
   Select the application that appears.  
@@ -43,4 +43,4 @@ The below instructions are a step-by-step guide to download SmallStepCLI from So
 
   It will return a status of "Running". If it does not, please contact your IT Specialist. 
 
-Now that you have confirmed your ssh-agent is running and Step is properly installed, you can continue with the configuration of Step. These instructions are [here](/guides/access/ars-login#ssh-access-after-step-installtion). 
+Now that you have confirmed your ssh-agent is running and Step is properly installed, you can continue with the configuration of Step. These instructions are [here](/guides/access/ssh-login#ssh-access-after-small-step-installtion). 

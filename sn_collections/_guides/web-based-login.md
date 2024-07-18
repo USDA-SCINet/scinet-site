@@ -6,6 +6,9 @@ order_number: 2
 layout: guides
 layout_type: guides
 
+redirect_from: 
+  - /guides/access/gui
+
 guidegroup:
     section: GUIs
 manual_subnav: 'true'
@@ -15,48 +18,62 @@ GUIs:
   - title: Open OnDemand Interface
     url: /guides/software/open-ondemand
     internal: true
-    shows_list: subnav
   - title: Galaxy on SCINet
     url: /guides/software/galaxy
     internal: true
-    shows_list: subnav
+  - title: Globus Online
+    url: /guides/data/datatransfer#globus-data-transfer
+    excerpt: "Globus Online is the recommended method for transferring data to or among Ceres, Atlas, and Juno. It provides faster data transfer speeds compared to scp, has a graphical interface, and does not require authentication for every file transfer. To transfer data to or from a local computer, users will need to install Globus Connect Personal which does NOT require admin privileges."
+    internal: true
 
 subnav:
-  - title: GUI Login
-    url: '#gui-login'
-    subnav:
-      - title: Accessing Using LincPass
-        url: '#accessing-using-lincpass'
-      - title: Accessing Using Login.gov
-        url: '#accessing-using-logingov'
-  - title: Available GUI Interfaces
-    url: '#available-gui-interfaces'
+  - title: Accessing Web-Based Interfaces
+    url: '#accessing-web-based-interfaces'
+  - title: Available Web-Based Interfaces
+    url: '#available-web-based-interfaces'
     subnav:
       - title: Open OnDemand Interface
         url: '#open-ondemand-interface'
       - title: Galaxy on SCINet
         url: '#galaxy-on-scinet'
+      - title: Globus Online
+        url: '#globus-online'
 
 excerpt: How to access SCINet's web-based user interfaces (Open OnDemand and Galaxy).
 ---
 
-## Web-based SCINet interfaces
+<div class="usa-summary-box" role="region" aria-labelledby="key-information">
+  <div class="usa-summary-box__body">
+    <h3 class="usa-summary-box__heading" id="key-information">
+      SCINet offers three main web-based interfaces:
+    </h3>
+    <div class="usa-summary-box__text"  markdown='1'>
 
-SCINet offers three main web-based interfaces:
-* Open OnDemand
+* **Open OnDemand**
   * [Open OnDemand for Ceres](http://ceres-ood.scinet.usda.gov/)
   * [Open OnDemand for Atlas](https://atlas-ood.hpc.msstate.edu/)
-* [Galaxy](https://galaxy.scinet.usda.gov)
-* [Globus](https://www.globus.org/) (for file transfers)
+* **Galaxy**
+  * [Galaxy for Ceres](https://galaxy.scinet.usda.gov)
+* [**Globus**](https://www.globus.org/) (for file transfers)
 
-See ["Available Web-Based Interfaces"](#available-web-based-interfaces), below, for more information about using SCINet's web-based interfaces.
+See ["Available Web-Based Interfaces"](#available-web-based-interfaces) below for more information about using SCINet's web-based interfaces.
 
-The process for logging on to SCINet via Open OnDemand or Galaxy is the same. Because Globus is not hosted on SCINet systems, it [uses a different login procedure](/guides/data/datatransfer#globus-data-transfer). To log on to Open OnDemand or Galaxy, start by following the relevant link above.
+</div>
+</div>
+</div>
 
-* You will initially be presented with the SCINet login page:
+## Accessing Web-Based Interfaces
 
-![screenshot of Login Screen with Legacy Selection]({{ site.baseurl }}/assets/img/guides/access/linpassorlogingov.png)
+The process for logging on to SCINet via Open OnDemand or Galaxy is the same. Because Globus is not hosted on SCINet systems, it [uses a different login procedure](/guides/data/datatransfer#globus-data-transfer). 
 
+* To log on to Open OnDemand or Galaxy, start by following the relevant link below.
+  * Open OnDemand:
+    * [Open OnDemand for Ceres](http://ceres-ood.scinet.usda.gov/)
+    * [Open OnDemand for Atlas](https://atlas-ood.hpc.msstate.edu/)
+  * Galaxy
+    * [Galaxy for Ceres](https://galaxy.scinet.usda.gov)
+
+* You will initially be presented with the SCINet login page.  
 * Choose "Login.gov or USDA LincPass" as your sign-in option.
   * If you have a LincPass/AltLinc or PIV Exemption, you will authenticate as usual with eAuth.
   * If you _do not_ have a LincPass/AltLinc or PIV Exemption, you will authenticate using Login.gov. Please see the [detailed instructions for logging on to SCINet using Login.gov](/guides/access/login/logingov).
