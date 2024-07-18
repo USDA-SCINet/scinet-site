@@ -49,7 +49,7 @@ To access Open OnDemand on the Ceres cluster, go to [Ceres OpenOndemand](http://
 
 ---
 ## Access
-Follow [the GUI login instructions](/guides/access/gui#gui-login) to access.
+Follow [the GUI login instructions](/guides/access/web-based-login#accessing-web-based-interfaces) to access.
 
 ---
 
