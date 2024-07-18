@@ -39,6 +39,11 @@ Steps to prepare for the tutorial sessions:
 
 1. **Open a command-line session** by clicking on “Clusters” -> “Ceres Shell Access” on the top menu. This will open a new tab with a command-line session on Ceres' login node.
 
+1. **Request resources on a computer node** by running the followin command. 
+    ```bash
+    salloc --reservation=scinet_workshop1 -A scinet_workshop1 -t 05:00:00 -n 1 --mem 8G 
+    ```
+
 1. **Create a workshop working directory** by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the `$USER` variable. 
     ```bash
     mkdir /90daydata/shared/pkg_workshop/$USER/
