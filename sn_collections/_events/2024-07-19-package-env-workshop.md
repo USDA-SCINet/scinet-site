@@ -51,7 +51,11 @@ Steps to prepare for the tutorial sessions:
     ```
 
 
-### Python
+### Python (and conda)
 
+The first half of the workshop will focus on [environment and package management using Python and conda](/training/2024-07-19-package-env-workshop-python).
 
 ### R
+
+The second half of the workshop will focus on [environment and package management using R](/training/2024-07-19-package-env-workshop-r).
+
