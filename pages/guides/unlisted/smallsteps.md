@@ -1,7 +1,7 @@
 ---
-title: LincPass (SmallStepsCLI) Logon Troubleshooting
+title: SmallStepsCLI Logon Troubleshooting
 permalink: /guides/access/login/smallstepscli
-description: Troubleshooting steps for LincPass logon to SCINet
+description: Troubleshooting steps for SSH logon to SCINet
 layout: "page"
 layout_type: "guides"
 sidenav_link: /guides/
@@ -17,8 +17,7 @@ subnav:
     url: '#bad-owner-or-permissions-error'
 ---
 
-For instructions for configuring LincPass logon, see the [Login instructions](/guides/access/ars-login).  
-The resolutions for these errors assume you have completed the LincPass config steps from the [Login instructions](/guides/access/ars-login).
+The resolutions on this page assume you have already completed the [Small Step for SSH setup instructions](/guides/access/ssh-login).
 
 ## Bad owner or permissions
 If you are getting a “Bad owner or permissions” error (double \\ in path), the permissions on the .ssh/ and .step directories are too permissive and allowing Full Access to SYSTEM, Administrators, and others. This is not a problem on an account that has never used ssh on the affected computer.

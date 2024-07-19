@@ -107,8 +107,9 @@ If you have forgotten your login password, please email the VRSC: scinet_vrsc@us
 1. AT LEAST 14 characters long
 2. Your last 24 passwords cannot be reused.
 
-### How do I login to Ceres?
-Command line access is available via Secure Shell (SSH) and Virtual Private Network (VPN). For more info, see the [Quick Start Guide]({{ site.baseurl }}/guides/start).
+### How do I login to SCINet?
+We offer web-based access to SCINet (Open OnDemand and Galaxy) and command-line access via SSH. See our [login guide](/guides/access/) for more information.
+
 
 ### I took my onboarding a long time ago, how do I get a refresher course?
 Email the VRSC scinet_vrsc@usda.gov for a time and day. You can also read the [Quick Start Guide]({{ site.baseurl }}/guides/start) or [Ceres User Guide]({{ site.baseurl }}/guides/resources/ceres).
