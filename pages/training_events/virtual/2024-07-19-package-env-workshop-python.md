@@ -25,7 +25,7 @@ Note: After you create your virtual environment, you no longer need to load the 
 
 ## Creating and managing virtual environments with `venv`
 
-1. If you are not already in your workshop directory, change to it by running `cd /90daydata/shared/pkg_workshop/$USER/`.
+1. If you are not already in your workshop directory, change to it by running `cd /project/scinet_workshop1/$USER/`.
 1. Use the `venv` module and command to create a new virtual environment: `python -m venv demo_venv`.
 1. You should now see a new folder called `demo_venv`. Let's take a look inside and explore a bit!
 1. You now have a virtual environment that is ready to use. The easiest way to use the environment is to _activate_ it. Run `source demo_venv/bin/activate`. After running this command, notice that the command prompt has changed to indicate that you are working in the virtual environment named "demo_venv".

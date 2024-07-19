@@ -29,7 +29,7 @@ Multiple R versions are available in the environment module system. Note that mo
 
 To use `renv` for package management, it needs to be associated with an R project. This could be an empty directory if you are just starting a project or it could be one or more R scripts within a directory. Either way, the scope of the `renv` environment will be dictated by the working directory in which it is initialized. To initialize an `renv` environment, you use the `renv::init()` command. **For getting started and for this workshop, we recommend passing two arguments when initializing the environment: `renv::init(settings = list(use.cache = FALSE, ppm.enabled = FALSE))`.** These arguments keep package installations within the project directory instead of your home directory and prevent some potentially faulty URL translations from happening when packages are downloaded from repositories. 
 
-1. If you are not already in your workshop directory, change into it by running `cd /90daydata/shared/pkg_workshop/$USER/`.
+1. If you are not already in your workshop directory, change into it by running `cd /project/scinet_workshop1/$USER/`.
 1. Create and change directory to a project directory: 
     ```
     mkdir project1
