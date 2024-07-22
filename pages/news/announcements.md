@@ -13,7 +13,7 @@ news:
     date: 2024-06-17
     excerpt: "Getting collaborators set up with sponsored SCINet accounts is now much quicker as non-LincPass holders can use Login.gov credentials. We are no longer relying on the physical devices, YubiKeys, that had to be mailed to such users.  
       
-    See detailed instructions on our [Logging Into SCINet Guide]({{site.baseurl}}/guides/access/)."
+    See detailed instructions on our [Logging Into SCINet Guide]({{ site.baseurl }}/guides/access)."
 
 ---
 
