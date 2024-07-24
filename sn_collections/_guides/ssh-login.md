@@ -27,8 +27,8 @@ subnav:
     url: '#ssh-access-after-small-step-installation'
   - title: Notes and Limitations
     url: '#notes-and-limitations'
-  - title: Creating a Config File
-    url: '#creating-a-config-file'
+  - title: Creating a Configuration File
+    url: '#creating-a-configuration-file'
 
 ---
 
