@@ -9,7 +9,7 @@ tags: Unix Git R-Project
 sessions: 
   - session:
     time: 1:00 PM - 5:00 PM ET
-    multiday: "September 19-22"
+    multiday: "August 19-22"
 
 registration: 
   url: https://forms.office.com/g/w0TP43EQ5k
