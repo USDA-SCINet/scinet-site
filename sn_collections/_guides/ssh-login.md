@@ -155,11 +155,11 @@ Note: If you are using a Mac, the .ssh file may be hidden to you. To reveal the 
 
 {:.copy-code}
 ```bash
-Host ceres-login
+Host ceres-login ceres ceres.scinet.usda.gov
 HostName ceres.scinet.usda.gov
 User USER.NAME
 
-Host atlas-login
+Host atlas-login atlas atlas-login.hpc.msstate.edu
 HostName atlas-login.hpc.msstate.edu
 User USER.NAME
 
