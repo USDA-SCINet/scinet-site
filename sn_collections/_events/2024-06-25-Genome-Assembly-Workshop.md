@@ -35,6 +35,7 @@ In this workshop, we will cover the following topics:
       </h4>
       <p class="usa-collection__description">
         <ul class="usa-list">
+          <li><b>[Session Recording](https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EU7ebVMBhddIp4OpwOLWczMBR3r3c6N_tSWw0GN45KIKvg?e=hDYyGL)</b></li>
           <li><b>Prokaryotic Genome Assembly</b>
             <ol>
               <li>Introduction Powerpoint</li>
@@ -62,6 +63,7 @@ In this workshop, we will cover the following topics:
       </h4>
       <p class="usa-collection__description">
         <ul class="usa-list">
+          <li><b>[Session Recording](https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/ERsfAZGXC1dPuK-NIOkGJNwBM-LVt6oRT1xzvHxbr8Y23A?e=vrHq7M)</b></li>
           <li><b>Eukaryotic Genome Assembly</b>
             <ol>
               <li>Introduction to eukaryotic genome assembly</li>
@@ -97,6 +99,7 @@ In this workshop, we will cover the following topics:
       </h4>
       <p class="usa-collection__description">
         <ul class="usa-list">
+          <li><b>[Session Recording](https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EXMnVygZ9CxNg7lB6w3dIuUBENbXoxHEFUEhfIII7ICcww?e=ix5Xf3)</b></li>
           <li><b>Introduction to HiC: <br>
         Hands-On exercises using an Arabidopsis dataset:</b>
             <ol>
