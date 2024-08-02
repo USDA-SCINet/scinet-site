@@ -21,6 +21,27 @@ news:
   - title: "SCINet Login Updates"
     date: 2024-06-17
     excerpt: "Getting collaborators set up with sponsored SCINet accounts is now much quicker because non-LincPass holders can use Login.gov credentials. We are no longer relying on the physical devices, YubiKeys, that had to be mailed to such users. See detailed instructions on our [Logging Into SCINet Guide]({{ site.baseurl }}/guides/access)."
+  - title: "Home directory quota increase"
+    date: 2023-12-05
+    excerpt: "Users can now have up to 15 GB of files in their home directories. "
+  - title: "New Graphics Processing Unit (GPU) nodes on Atlas"
+    date: 2023-08-29
+    excerpt: "Five new nodes on Atlas with a total of 40 NVIDIA A100 GPUs are now available. This drastically increases SCINet's GPU computing capacity and offers SCINet users access to state-of-the-art GPU technology for running AI and deep learning workflows, large-scale data analyses, and other computationally intensive tasks."
+  - title: "Scheduling recurring jobs on Ceres and Atlas"
+    date: 2023-04-10
+    excerpt: "All SCINet users now have access to Slurm's "scrontab" feature, which makes it possible to schedule jobs that automatically run on a recurring basis."
+  - title: "Atlas nodes have internet access"
+    date: 2024-12-07
+    excerpt: "All nodes on Atlas can now access resources on the Internet, which drastically simplifies many scientific computing workflows. For example, it is now possible to update software packages or access external data resources from any node on the system."
+  - title: "New SCINet website launched. "
+    date: 2022-12-01
+    excerpt: "The redesigned site includes a consolidated event calendar, improved user guide navigation, and a more informative landing page. "
+  - title: "QGIS added to Open OnDemand"
+    date: 2022-08-23
+    excerpt: "QGIS, an open-source, graphical software for geographic information systems, has been added to Open OnDemand on both Ceres and Atlas."
+  - title: "SCINet Office staff"
+    date: 2021-04-11
+    excerpt: "The SCINet Office now has its first permanent staff member with more expected to onboard in the coming months."
 
 ---
 
