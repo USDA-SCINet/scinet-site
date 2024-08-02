@@ -31,7 +31,7 @@ news:
     date: 2023-04-10
     excerpt: "All SCINet users now have access to Slurm's "scrontab" feature, which makes it possible to schedule jobs that automatically run on a recurring basis."
   - title: "Atlas nodes have internet access"
-    date: 2024-12-07
+    date: 2022-12-07
     excerpt: "All nodes on Atlas can now access resources on the Internet, which drastically simplifies many scientific computing workflows. For example, it is now possible to update software packages or access external data resources from any node on the system."
   - title: "New SCINet website launched. "
     date: 2022-12-01
