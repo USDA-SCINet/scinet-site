@@ -1,8 +1,9 @@
 ---
 title: Software Package/Environment Management Workshop
 type: workshop
+description: Workshop for managing software packages and computing environments
 excerpt: In this workshop presented by the SCINet Office, we will cover best practices for managing software packages and computing environments on SCINet’s supercomputers. This will be a hands-on workshop that will provide you with the practical knowledge and skills you need to spend less time worrying about package management and more time focusing on your research!
-
+## categories: [2024 SPEMW] ## Removed with the expectation of the Oct one using the same workshop pages
 tags: software package-management
 
 provider: SCINet
@@ -53,9 +54,9 @@ Steps to prepare for the tutorial sessions:
 
 ### Python (and conda)
 
-The first half of the workshop will focus on [environment and package management using Python and conda](/training/2024-07-19-package-env-workshop-python).
+The first half of the workshop will focus on [environment and package management using Python and conda](/workshops/2024-07-19-package-env-workshop-python).
 
 ### R
 
-The second half of the workshop will focus on [environment and package management using R](/training/2024-07-19-package-env-workshop-r).
+The second half of the workshop will focus on [environment and package management using R](/workshops/2024-07-19-package-env-workshop-r).
 
