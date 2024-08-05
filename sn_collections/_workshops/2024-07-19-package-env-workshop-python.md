@@ -1,14 +1,11 @@
 ---
 title: "Software Package/Environment Management Workshop: Python and conda"
 description: In this workshop presented by the SCINet Office, we will cover best practices for managing software packages and computing environments on SCINet's supercomputers.
-permalink: /training/2024-07-19-package-env-workshop-python
 layout: page
-
+categories: [2024 SPEMW] 
 sidenav_link: /training/resources
 
-subnav:
-  - title: Training Calendar
-    url: '#training-calendar'
+
 ---
 
 # Managing packages and environments in Python
