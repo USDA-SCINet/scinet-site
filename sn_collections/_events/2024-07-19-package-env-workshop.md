@@ -17,6 +17,8 @@ registration:
 subnav:
 - title: Tutorial instructions
   url: '#tutorial-instructions'
+- title: Recording
+  url: '#recording'
 ---
 
 Package and computing environment management systems for R, Python, and Anaconda make it easy to install the software you need for your research projects. They also make it easy to accidentally use up all of the space in your home directory or end up with frustrating software conflicts! 
@@ -60,3 +62,9 @@ The first half of the workshop will focus on [environment and package management
 
 The second half of the workshop will focus on [environment and package management using R](/workshops/2024-07-19-package-env-workshop-r).
 
+<br>
+
+## Recording
+{:.border-bottom}
+
+[A recording of this workshop is available here](https://usdagcc.sharepoint.com/:v:/r/sites/REE-ARS-SCINetOffice/Shared%20Documents/public/workshops/2024-07-19%20software%20package%20and%20environment%20management/GMT20240719-160401_Recording_1988x1118.mp4?csf=1&web=1&e=wuw2cI&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D). 
