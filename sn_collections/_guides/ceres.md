@@ -71,9 +71,9 @@ The video includes:
 
 Ceres is the dedicated high performance computing (HPC) infrastructure for ARS researchers on ARS SCINet. Ceres is designed to enable large-scale computing and large-scale storage. Currently, the following compute nodes are available on the Ceres cluster.
 
-120 regular compute nodes, each having:
+100 regular compute nodes, each having:
 
-* 72 logical cores on 2 x 18 core Intel Xeon Processors (6140 2.30GHz 25MB Cache or 6240 2.60GHz 25MB Cache) with hyper-threading turned ON
+* 72 logical cores on 2 x 18 core Intel Xeon Processors (6240 2.60GHz 25MB Cache) with hyper-threading turned ON
 * 384GB DDR3 ECC Memory
 * 250GB Intel DC S3500 Series 2.5” SATA 6.0Gb/s SSDs (used to host the OS and provide small local scratch storage)
 * 1.5TB SSD used for temporary local storage
@@ -87,18 +87,18 @@ Ceres is the dedicated high performance computing (HPC) infrastructure for ARS r
 * 1.5TB SSD used for temporary local storage
 * Mellanox ConnectX®­3 VPI FDR InfiniBand
 
-4 large memory nodes, each having:
+2 large memory nodes, each having:
 
-* 80 logical cores on 2 x 20 core Intel Xeon Processors (6148 2.40GHz 27.5MB Cache or 6248 2.50GHz 27.5MB Cache) with hyper-threading turned ON
+* 80 logical cores on 2 x 20 core Intel Xeon Processors (6248 2.50GHz 27.5MB Cache) with hyper-threading turned ON
 * 768GB DDR3 ECC Memory
 * 250GB Intel DC S3500 Series 2.5” SATA 6.0Gb/s SSDs (used to host the OS and provide small local scratch storage)
 * 1.5TB SSD used for temporary local storage
 * Mellanox ConnectX®­3 VPI FDR InfiniBand
 
 
-11 large memory nodes, each having:
+6 large memory nodes, each having:
 
-* 80 logical cores on 2 x 20 core Intel Xeon Processors (6148 2.40GHz 27.5MB Cache or 6248 2.50GHz 27.5MB Cache) with hyper-threading turned ON
+* 80 logical cores on 2 x 20 core Intel Xeon Processors (6248 2.50GHz 27.5MB Cache) with hyper-threading turned ON
 * 1,536GB DDR3 ECC Memory
 * 250GB Intel DC S3500 Series 2.5” SATA 6.0Gb/s SSDs (used to host the OS and provide small local scratch storage)
 * 1.5TB SSD used for temporary local storage
