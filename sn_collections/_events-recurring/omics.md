@@ -17,11 +17,11 @@ archive-label: Webinar Recordings
 
 sessions:
 
-  - session:
-    excerpt: "The genomic and metabolic making of yeast ecological diversity"
-    date: 2024-08-08
-    time: 11am-12pm ET
-    presenter: "Dr. Chris Todd Hittinger"
+#  - session:
+#    excerpt: "The genomic and metabolic making of yeast ecological diversity"
+#    date: 2024-08-08
+#    time: 11am-12pm ET
+#    presenter: "Dr. Chris Todd Hittinger"
   - session:
     excerpt: "Untangling False Positives, Statistical Power, Populations Structure, and Kinship in GWAS"
     date: 2024-07-11
