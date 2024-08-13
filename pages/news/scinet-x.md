@@ -32,10 +32,9 @@ The ARS SCINet Team developed a SCINet network solution that provides two levels
 ### The following locations are actively working on establishing high-bandwidth SCINet connectivity. 
 
 {: .table-list }
-| Boise, ID | Salinas, CA | Wapato, WA | Fort Keogh, MT |
-| Houston, TX | Las Cruces, NM | Lincoln, NE | Columbus, OH |
-| Wooster, OH | Griffin, GA | El Reno, OK | Burlington, VT |
-| Orono, ME | Baton Rouge, LA | Fort Lauderdale, FL | Miami, FL | 
+| Boise, ID | Wapato, WA | Fort Keogh (Miles City), MT | Sidney, MT | 
+| Houston, TX | Dubois, ID | Las Cruces, NM | Lincoln, NE |
+| Columbus, OH | Wooster, OH | El Reno, OK | Fort Lauderdale, FL | 
 
 <br>
 
@@ -46,14 +45,15 @@ The ARS SCINet Team developed a SCINet network solution that provides two levels
 {: .table-list }
 | Burns, OR | Hilo, HI | Logan, UT |
 | Maricopa, AZ | Parlier, CA | Wenatchee, WA |
+| Salinas, CA |
 
 **Plains Area**
 
 {: .table-list }
-| Akron, CO | Bushland, TX | College Station, TX |
-| Fargo, ND | Grand Forks, ND | Kerrville, TX | 
-| Lubbock, TX | Mandan, ND | Manhattan, KS |
-| Temple, TX |
+| Akron, CO | Boise, ID | Bushland, TX |
+| College Station, TX | Fargo, ND | Grand Forks, ND |
+| Kerrville, TX | Lubbock, TX | Mandan, ND |
+| Manhattan, KS | Temple, TX |
 
 **Midwest Area**
 
@@ -67,18 +67,19 @@ The ARS SCINet Team developed a SCINet network solution that provides two levels
 {: .table-list }
 | Boston, MA | Frederick, MD | Geneva, NY | 
 | Kearneysville, WV | Leetown, WV | Newark, DE | 
-| Wyndmoor, PA | 
+| Wyndmoor, PA | Burlington, VT |
 
 **Southeast Area**
 
 {: .table-list }
 | Athens, GA | Auburn, AL | Booneville, AR | 
-| Byron, GA | Canal Point, FL | Charleston, SC |
-| Dawson, GA | Fayetteville, AR | Florence, SC | 
-| Fort Pierce, FL | Gainesville, FL | Griffin, GA |
-| Jonesboro, AR | Little Rock, AR | Mayaguez, PR | 
-| New Orleans, LA | Oxford, MS | Raleigh, NC |
-| Starkville, MS | Schriever (Houma), LA | Tifton, GA | 
+| Burlington, LA | Byron, GA | Canal Point, FL |
+| Charleston, SC | Dawson, GA | Fayetteville, AR |
+| Florence, SC | Fort Pierce, FL | Gainesville, FL |
+| Griffin, GA | Jonesboro, AR | Little Rock, AR |
+| Mayaguez, PR | Miami, FL | New Orleans, LA | 
+| Oxford, MS | Raleigh, NC | Starkville, MS |
+| Schriever (Houma), LA | Tifton, GA | 
 
 
 We are eager to work with the remaining ARS locations to ensure they are ready when network equipment is available for installation. Please see the steps (milestones) below to be followed in getting a location on our list. The SCINet Team is available to answer questions at any step along the way. 
