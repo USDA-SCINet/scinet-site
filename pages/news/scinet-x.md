@@ -85,6 +85,12 @@ The ARS SCINet Team developed a SCINet network solution that provides two levels
 We are eager to work with the remaining ARS locations to ensure they are ready when network equipment is available for installation. Please see the steps (milestones) below to be followed in getting a location on our list. The SCINet Team is available to answer questions at any step along the way. 
 
 
+**Waived Locations**  
+These sites have been evaluated and are currently receiving network services via their University partners at a level that meets or exceeds the level of service which could be provided by the SCINet-X networking infrastructure.
+
+{: .table-list }
+| Orono, ME | Urbana, IL |
+
 ## Key Milestones for Achieving a high-bandwidth SCINet Connection
 
 1. Location team identifies local network provider, which often involves an agreement with a university or working with a local internet provider
