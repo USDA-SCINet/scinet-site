@@ -23,9 +23,6 @@ subnav:
     url: '#large-data-transfer-by-shipping-hard-drives'
   - title: Other Ways to Transfer Data
     url: '#other-ways-to-transfer-data'
-    subnav:
-      - title: FileZilla
-        url: '#filezilla'
   - title: Data Transfer to NCBI
     url: '#data-transfer-to-ncbi'
 
