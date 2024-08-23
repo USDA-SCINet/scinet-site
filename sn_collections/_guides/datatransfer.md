@@ -23,9 +23,6 @@ subnav:
     url: '#large-data-transfer-by-shipping-hard-drives'
   - title: Other Ways to Transfer Data
     url: '#other-ways-to-transfer-data'
-    subnav:
-      - title: FileZilla
-        url: '#filezilla'
   - title: Data Transfer to NCBI
     url: '#data-transfer-to-ncbi'
 
@@ -168,26 +165,6 @@ Other programs that have a GUI to transfer data and are suitable for smaller fil
 * FileZilla - [https://filezilla-project.org/](https://filezilla-project.org/)
 
 Cyberduck supports multiple protocols (including Amazon S3, iRODS, and Google Drive) and is more secure than FileZilla.
-
-### FileZilla
-
-[Filezilla](https://filezilla-project.org/) is being made available on SCINet cafe machines. FileZilla uses a dual pane approach to moving files with the left pane being the local system and the right pane being remote. Users will need to setup remote sites using the ‘Site Manager’ found under the File menu. 
-
-Once in ‘Site Manager’, do the following:
-
-1. click ‘New Site’
-2. give the site a name
-3. select SFTP protocol
-4. enter a hostname for one of the DTNs
-5. choose Interactive for Logon Type
-6. enter your SCINet username(not an email)
-7. click Connect to test your connection
-
- ![Site Manager screenshot]({{ site.baseurl }}/assets/img/guides/data/filezilla.png)
-
-If successful, you should be able to drag and drop files and folders between systems, if permissions and quota allow. You may also right click a file or directory and select Upload or Download depending on which pane you are in.
-
-Note for Linux users, external drives are mounted under */run/media/firstname.lastname .*
 
 ## Data Transfer to NCBI
 
