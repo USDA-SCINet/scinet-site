@@ -13,7 +13,7 @@
             {% assign listpnum = _navsections | size %}
             {% unless listpnum == 0 %}
             <div class="margin-top-5">
-                <h2>{{ _category.categories }} Guides</h2>
+                <h2>{{ _category.short_title | default: _category.categories }} Guides</h2>
                 {% if page.guidegroup.accordion %}
                     {% include accordion.html %}
                 {% else %}

@@ -126,7 +126,7 @@ For new software requests, go to the [Request Software page]({{ site.baseurl }}/
 ### How do I install my own software programs?
 You may install your own software in your own directories, however, we strongly encourage users to contact the VRSC team to ensure that their required tool(s) might not be better distributed as a shared package within the official software modules tree.
 
-The popular R, Perl and Python languages have many packages/modules available. Some of the programming-language-specific packages are installed on Ceres and are available with the r/perl/python_2/python_3 modules. See the list of installed packages on the [Software Overview page]({{ site.baseurl }}/guides/software/preinstalled) or use “module avail” at the command line. To see more information on a specific module, issue the "module help <module_name>" command. Also see the [Installing R/Python/Perl Packages guide]({{ site.baseurl }}/guides/analysis/r-perl-python).
+The popular R, Perl and Python languages have many packages/modules available. Some of the programming-language-specific packages are installed on Ceres and are available with the r/perl/python_2/python_3 modules. See the list of installed packages on the [Software Overview page]({{ site.baseurl }}/guides/software/preinstalled) or use “module avail” at the command line. To see more information on a specific module, issue the "module help <module_name>" command. Also see the [Installing R/Python/Perl Packages guide]({{ site.baseurl }}/guides/software/r-perl-python).
 
 Another resource for installing your own software programs is the Conda package manager. See the [User-Installed Software on Ceres Using Conda guide]({{ site.baseurl }}/guides/software/conda)
 

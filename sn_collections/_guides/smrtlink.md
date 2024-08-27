@@ -1,9 +1,12 @@
 ---
-title: SMRTLink/SMRTAnalysis using Command Line
+title: SMRTLink/SMRTAnalysis
 description: Guide to use SMRTLink via CLI
 # author: Yasasvy Nanyam
 excerpt: Guide to use SMRTLink via CLI
-categories: [Analysis]
+categories: [Application]
+
+redirect_from: 
+  - /guides/analysis/smrtlink
 
 subnav:
   - title: Instructions for SMRTLink v10+

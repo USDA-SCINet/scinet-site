@@ -49,7 +49,7 @@ subnav:
     shows_list: true
     categories: [Software]
   - title: Open OnDemand Interface
-    url: /guides/software/open-ondemand
+    url: /guides/use/open-ondemand
     internal: true
 
 sidenav_append:

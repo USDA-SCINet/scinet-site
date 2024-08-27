@@ -83,7 +83,7 @@ users need to install software by themselves. Since home directories have a smal
 such as Python, Perl, R packages and conda virtual environments in `/project/<project_name>`. 
 The [Conda Guide]({{ site.baseurl }}/guides/software/conda#example-2-installing-tensorflow-into-a-project-directory) provides instructions 
 on how to install conda virtual environments in `/project`, while 
-[Guide to Installing R, Python, and Perl Packages]({{ site.baseurl }}/guides/analysis/r-perl-python) has examples of
+[Guide to Installing R, Python, and Perl Packages]({{ site.baseurl }}/guides/software/r-perl-python) has examples of
 installing packages in a project directory.
 
 Directories in /project are not automatically backed up. Data that cannot be easily reproduced should be manually copied to [Juno](#juno-archive-storage).

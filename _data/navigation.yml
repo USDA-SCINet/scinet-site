@@ -52,16 +52,18 @@ primary:
         sublinks: 
           - title: Access
             url: /guides/access
-          - title: Resources
+          - title: Computing Resources
             url: /guides/resources
-          - title: Data
+          - title: Data Management
             url: /guides/data
-          - title: Use
+          - title: Cluster Use
             url: /guides/use
+          - title: Development Environment
+            url: /guides/ide
           - title: Software
             url: /guides/software
-          - title: Analysis
-            url: /guides/analysis
+          - title: Applications
+            url: /guides/application
       - title: Support
         url: /support/contact
         sublinks: 
