@@ -1,8 +1,10 @@
 ---
-title: Jupyter Server
+title: Jupyter
 description: Using Jupyter
+redirect_from:
+  - /guides/analysis/jupyter
 
-categories: [Analysis]
+categories: [IDE]
 
 subnav:
   - title: SCINet Options for Jupyter

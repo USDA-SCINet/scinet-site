@@ -1,5 +1,5 @@
 ---
-title: Using Linux Command Line Interface
+title: Linux Command-Line Interface
 description: List of basic CLI commands
 excerpt: List of basic CLI commands
 # author: Marina Kraeva

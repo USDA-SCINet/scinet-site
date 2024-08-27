@@ -1,11 +1,12 @@
 ---
-title: Open OnDemand Interface Guide
+title: Open OnDemand Interface
 description: Using Open OnDemand on the HPC
 # author: VRSC
-categories: [Software]
-order_number: 23
+categories: [Use]
+order_number: 70
 redirect_from: 
   - /guides/access/open-ondemand
+  - /guides/software/open-ondemand
 
 layout: guides
 

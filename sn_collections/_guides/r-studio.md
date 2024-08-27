@@ -1,8 +1,10 @@
 ---
-title: Rstudio Server
+title: RStudio
 description: Using Rstudio
+redirect_from: 
+  - /guides/analysis/r-studio
 
-categories: [Analysis]
+categories: [IDE]
 
 subnav:
   - title: SCINet Options for RStudio

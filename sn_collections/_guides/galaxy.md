@@ -1,9 +1,11 @@
 ---
-title: Galaxy on SCINet
+title: Galaxy
 description: Using Galaxy
 excerpt: Using Galaxy on SCINet
-categories: [Software]
-order_number: 28
+categories: [Application]
+
+redirect_from: 
+  - /guides/software/galaxy
 
 #author: VRSC and Jordan Hoosman
 

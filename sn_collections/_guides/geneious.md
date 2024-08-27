@@ -1,10 +1,13 @@
 ---
-title: Geneious Software Guide
+title: Geneious
 description: Geneious Software Use Guide
 excerpt: Geneious Software Use Guide
 ## author: VRSC
 
-categories: [Analysis]
+categories: [Application]
+
+redirect_from: 
+  - /guides/analysis/geneious
 ---
 
 

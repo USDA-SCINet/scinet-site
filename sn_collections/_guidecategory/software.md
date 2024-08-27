@@ -1,9 +1,11 @@
 ---
-title: SCINet Software
+title: Software Installation and Access
 description: Guide to installing Software on SCINet
 
+short_title: Software Installation and Access
+
 categories: [Software]
-order_number: 40
+order_number: 50
 sorted: true
 excerpt: "The login node provides access to a wide variety of scientific software tools that users can access and use via the module system. These software tools were compiled and optimized for use on SCINet by members of the Virtual Research Support Core (VRSC) team. Most users will find the software tools they need for their research among the provided packages and thus will not need to compile their own software packages. <br /> <br />To learn more about graphical software such as Galaxy, CSC, Geneious, RStudio, and Juptyer, please select the <a href='/guides/software/preinstalled'>Software Preinstalled on Ceres</a> guide"
 ---
