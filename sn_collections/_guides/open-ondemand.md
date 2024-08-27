@@ -26,23 +26,23 @@ subnav:
 
 apps:
   - title: Jupyter
-    url: /guides/analysis/jupyter
+    url: /guides/ide/jupyter
     internal: true
   - title: RStudio Server
-    url: /guides/analysis/r-studio
+    url: /guides/ide/r-studio
     internal: true
   - title: Geneious
-    url: /guides/analysis/geneious
+    url: /guides/application/geneious
     internal: true
   - title: CLC Genomics Workbench
-    url: /guides/analysis/clc-workbench
+    url: /guides/application/clc-workbench
     internal: true
 
 ---
 
 Open OnDemand is an intuitive, innovative, and interactive interface to remote computing resources. The key benefit for SCINet users is that they can use any web browser, including browsers on a mobile phone, to access Ceres. 
 
-There are several interactive apps that can be run in Open OnDemand including [Jupyter](/guides/analysis/jupyter), [RStudio Server](/guides/analysis/r-studio), [Geneious](/guides/analysis/geneious), [CLC Genomics Workbench](/guides/analysis/clc-workbench), and more. The desktop app allows a user to run any GUI software.
+There are several interactive apps that can be run in Open OnDemand including [Jupyter](/guides/ide/jupyter), [RStudio Server](/guides/ide/r-studio), [Geneious](/guides/application/geneious), [CLC Genomics Workbench](/guides/application/clc-workbench), and more. The desktop app allows a user to run any GUI software.
 
 If you are using [Atlas Open OnDemand](https://atlas-ood.hpc.msstate.edu/), visit the [Atlas Open OnDemand Guide](https://www.hpc.msstate.edu/computing/atlas/ood.php) for more information. 
 

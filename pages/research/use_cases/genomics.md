@@ -54,9 +54,9 @@ BLAST, Circos, DIAMOND, MCScanX, and OrthoFinder
 GARLI, PhyML, and RAxML
 
 ### GUI tools for working with genomic data
-Floating licenses for [Geneious Prime]({{ site.baseurl }}/guides/analysis/geneious) GUI (graphic user interface) tools are available through SCINet. 
+Floating licenses for [Geneious Prime]({{ site.baseurl }}/guides/application/geneious) GUI (graphic user interface) tools are available through SCINet. 
 
-Additionally, GUI server licenses for [CLC Workbench]({{ site.baseurl }}/guides/analysis/clc-workbench) are also available. 
+Additionally, GUI server licenses for [CLC Workbench]({{ site.baseurl }}/guides/application/clc-workbench) are also available. 
 
 A [Galaxy]({{ site.baseurl }}/guides/analysis/galaxy) instance is also available on Ceres, allowing users to run popular command line tools through a GUI.
 <br><br><br>

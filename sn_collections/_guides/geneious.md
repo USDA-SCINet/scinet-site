@@ -39,7 +39,7 @@ On the "Enter Your License Details" screen,
 ![screenshot of Geneious software Enter Your License Details screen]({{ site.baseurl }}/assets/img/guides/analysis/geneious/geneious_floating_license_server.png)
 
 
-Geneious Prime can also be accessed via [OpenOnDemand]({{ site.baseurl }}/guides/software/open-ondemand)
+Geneious Prime can also be accessed via [OpenOnDemand]({{ site.baseurl }}/guides/use/open-ondemand)
 which will allow you to run Geneious Prime directly on a cluster node.
 
 ![screenshot of Geneious in OOD menu]({{ site.baseurl }}/assets/img/guides/analysis/geneious/menu.png)
