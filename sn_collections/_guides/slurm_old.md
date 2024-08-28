@@ -4,7 +4,7 @@ description: Using SLURM
 
 categories: [Use]
 order_number: 40
-#published: false
+published: false
 
 subnav:
   - title: Interactive Mode
