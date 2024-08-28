@@ -52,6 +52,7 @@ For more fine grained control over the interactive environment you can use the  
 $ srun --pty -p queue -t hh:mm:ss -n tasks -N nodes /bin/bash -l
 ```
 
+{: .usa-table .usa-table--compact }
 Option |Value
 --- | ---
 -p |	queue (partition)
@@ -98,6 +99,7 @@ $ exit
 
 SLURM allows you to precisely choose the allocation of compute cores across nodes. Below are a number of examples that show different ways to allocate an 8 core job across the Ceres cluster
 
+{: .usa-table .usa-table--compact }
 `salloc/srun/sbatch`  options | core distribution across nodes
 --- | ---
 `-n 8`                       | pick any available cores across the cluster (may be on several nodes or not)
@@ -218,6 +220,7 @@ Lines starting with `#SCRON` indicate a recurring batch job. It is equivalent to
 
 scrontab uses the same syntax for date and time specifiers as cron. Each line has five fields that have the following meanings:
 
+{: .usa-table .usa-table--compact }
 |field| allowed values|
 |-----|--------------|
 |minute| 0-59
@@ -282,6 +285,7 @@ Note that the default working directory is `$HOME` and can be modified with eith
 
 ## Useful SLURM Commands
 
+{: .usa-table .usa-table--compact }
 Command | Description | Example
 --- | --- | ---
 `squeue`	| Gives information about jobs	| `squeue`  or  `squeue -u jane.webb`
