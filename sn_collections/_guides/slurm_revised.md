@@ -59,7 +59,7 @@ For example, to support a job that requires 60GB of memory in the short partitio
 
 ## Allocation of Time
 
-When submitting interactive or batch job users can specify time limit by using the  `-t`  (`–time=`) option on  `salloc/srun/sbatch`  commands. If the time limit is not explicitly specified, it will be set to the partition's Maximum Simulation Time (see the table above).
+When submitting interactive or batch job users can specify time limit by using the  `-t`  (`–time=`) option on  `salloc/srun/sbatch`  commands. If the time limit is not explicitly specified, it will be set to the partition's Maximum Simulation Time (see the tables on the [Partitions or Queues](/guides/use/partitions-queues) page).
 
 
 ## Using SLURM
