@@ -4,7 +4,8 @@ description: Allocation of job resources
 excerpt: Allocation of cores, memory, and time on the HPC
 
 categories: [Use]
-order_number: 30
+order_number: 46
+#published: false
 
 subnav:
   - title: Allocation of Cores

@@ -1,53 +1,71 @@
 ---
 title: SLURM Resource Manager
-description: Using SLURM
+description: Using SLURM to manage application jobs on the HPC
 
 categories: [Use]
 order_number: 40
-#published: false
+
+published: false
+
+redirect_from: 
+  - /guides/use/running-jobs
+  - /guides/use/resource-allocation
 
 subnav:
-  - title: Interactive Mode
-    url: '#interactive-mode'
-  - title: Requesting the Proper Number of Nodes and Cores
-    url: '#requesting-the-proper-number-of-nodes-and-cores'
-  - title: Batch Mode
-    url: '#batch-mode'
+  - title: Allocation of Cores
+    url: '#allocation-of-cores'
+  - title: Allocation of Memory
+    url: '#allocation-of-memory'
+  - title: Allocation of Time
+    url: '#allocation-of-time'
+  - title: Using SLURM
+    url: '#using-slurm'
     subnav:
-      - title: Serial Job
-        url: '#serial-job'
-      - title: Running a Simple OpenMP Job
-        url: '#running-a-simple-openmp-job'
-      - title: Parallel MPI Job
-        url: '#parallel-mpi-job'
-  - title: Recurring Jobs - Scrontab
-    url: '#recurring-jobs---scrontab'
-    subnav:
-      - title: Setup
-        url: '#setup'
-      - title: Basics
-        url: '#basics'
-      - title: Example Job
-        url: '#example-job'
-      - title: Helpful Links
-        url: '#helpful-links'
+      - title: Interactive Mode
+        url: '#interactive-mode'
+      - title: Requesting the Proper Number of Nodes and Cores
+        url: '#requesting-the-proper-number-of-nodes-and-cores'
+      - title: Batch Mode
+        url: '#batch-mode'
+      - title: Recurring Jobs - Scrontab
+        url: '#recurring-jobs---scrontab'
   - title: Useful SLURM Commands
     url: '#useful-slurm-commands'
 
-
-
-
-
 ---
 
-To provide better Ceres usage report all Ceres users have been assigned Slurm accounts based on their project groups. If you don't have a project, then your default and only Slurm account is sandbox.<!--excerpt--> If you have more than one project, then your default Slurm account is one of the project names. You can specify a different Slurm account when submitting a job by using “-A <account_name>” option on salloc/srun/sbatch command or adding “#SBATCH -A <account_name>” to the job script.
+Ceres uses Simple Linux Utility for Resource Management (SLURM) to submit interactive and batch jobs to the compute nodes. Requested resources can be specified either within the job script or using options with the  `salloc`,  `srun`, or  `sbatch`  commands.<!--excerpt-->
+
+All users have been assigned Slurm accounts based on their project groups. If you don't have a project, then your default and only Slurm account is sandbox. If you have more than one project, then your default Slurm account is one of the project names. You can specify a different Slurm account when submitting a job by using “-A <account_name>” option on salloc/srun/sbatch command or adding “#SBATCH -A <account_name>” to the job script.
   
- To see all your Slurm accounts and your default account at any time, use “sacctmgr -Pns show user format=account,defaultaccount”
+To see all your Slurm accounts and your default account at any time, use “sacctmgr -Pns show user format=account,defaultaccount”
   
- You can change your default Slurm account running slurm-account-selector.sh on the login node.
+You can change your default Slurm account running slurm-account-selector.sh on the login node.
+
+Users will run their applications on the cluster in either interactive mode or in batch mode. Interactive mode ( `salloc`  or  `srun`  command) is familiar to anyone using the command line: the user specifies an application by name and various arguments, hits Enter, and the application runs. However, in interactive mode on a cluster the user is automatically switched from using a login node to using a compute node. This keeps all the intense computation off the login nodes, so that login nodes can have all the resources necessary for managing the cluster. You should always use interactive mode when you are running your application but not using batch mode. **Please do not run your applications on the login nodes, use the interactive mode.**
+
+Interactive mode should only be used when interaction is required, for example when preparing or debugging a pipeline. Otherwise the batch mode should be used. Batch mode requires the user to write a short job script (see examples at section [Batch Mode]({{ site.baseurl }}/guides/use/slurm#batch-mode)) or use the [Ceres Job Script Generator]({{ site.baseurl }}/support/ceres-job-script).
+
+
+## Allocation of Cores
+
+On Ceres hyper-threading is turned on. That means that each physical core on a node appears as two separate processors to the operating system and can run two threads. The smallest unit of allocation per job is a single hyper-threaded core, or 2 logical cores, corresponding to specifying  `-n 2`  on  `salloc/srun/sbatch`  commands (i.e. jobs cannot access a single hyper-thread within a core). If a job requests an odd number of cores (`-n 1, -n 3,`...) SLURM will automatically allocate the next larger even number of cores.
+
+## Allocation of Memory
+
+Each allocated core comes with a default amount of memory listed in the table above for different SLURM partitions. If a job attempts to use more memory than what was allocated to a job it will be killed by SLURM. In order to make more memory available to a given job, users can either request the appropriate total number of cores or request more memory per core via the  `--mem-per-cpu`  flag to  `salloc/srun/sbatch`  commands.
+
+For example, to support a job that requires 60GB of memory in the short partition, a user could request 20 logical cores (`-n 20`) with their default allocation of 3000MB or 2 logical cores with 30GB of memory per core via  `--mem-per-cpu 30GB`. Please note that a single hyper-threaded core (2 logical cores) is the smallest unit of allocation. Of course, any other mix of memory per core and total number of cores totaling 60GB would work as well depending on the CPU characteristics of the underlying simulation software.
+
+## Allocation of Time
+
+When submitting interactive or batch job users can specify time limit by using the  `-t`  (`–time=`) option on  `salloc/srun/sbatch`  commands. If the time limit is not explicitly specified, it will be set to the partition's Maximum Simulation Time (see the table above).
+
+
+## Using SLURM
  
 
-## Interactive Mode
+### Interactive Mode
 
 A user can request an interactive session on Ceres using SLURM's  `srun`  or  `salloc`  commands. The simplest way to request an interactive job is by entering the command  `salloc`:
 ```
@@ -105,7 +123,7 @@ Return to the login node:
 $ exit
 ```
 
-## Requesting the Proper Number of Nodes and Cores
+### Requesting the Proper Number of Nodes and Cores
 
 SLURM allows you to precisely choose the allocation of compute cores across nodes. Below are a number of examples that show different ways to allocate an 8 core job across the Ceres cluster
 
@@ -119,8 +137,8 @@ SLURM allows you to precisely choose the allocation of compute cores across node
 `-n 8 -N 1`                  | request 8 cores on a single node
 `-n 8 --ntasks-per-node=8`   | same as  `-n 8 -N 1`
 
-## Batch Mode
-### Serial Job
+### Batch Mode
+#### Serial Job
 
 Jobs can be submitted to various partitions or queues using SLURM's `sbatch` command. The following is an example of how to run a blastp serial job using a job script named "blastSerialJob.sh". The content of blastSerialJob.sh is as follows:
 ```bash
@@ -146,7 +164,7 @@ Launch the job like this:
 $ sbatch blastSerialJob.sh
 ```
 
-### Running a Simple OpenMP Job
+#### Running a Simple OpenMP Job
 
 The following example will demonstrate how to use threads. We will use the following OpenMP C code to print "hello world" on each thread. First copy and paste this code into a file, e.g. "testOpenMP.c".
 ```
@@ -192,7 +210,7 @@ $ sbatch OMPjob.sh
 
 The stdout* file from the above job script should contain 20 lines with "hello world" from each thread.
 
-### Parallel MPI Job
+#### Parallel MPI Job
 
 The following is the example to run Hybrid RAxML which uses both MPI and PTHREADS. It will start 2 MPI processes (one per node) and each process will run 40 threads (one thread per logical core).
 
@@ -216,13 +234,13 @@ And execute it with sbatch:
 $ sbatch RAxMLjob.sh
 ```
 
-## Recurring Jobs - Scrontab
+### Recurring Jobs - Scrontab
 
 **scrontab** is slurm-managed crontab. It is used to submit recurring jobs via slurm scheduler. 
 
 scrontab uses syntax that is similar to [crontab](https://man7.org/linux/man-pages/man5/crontab.5.html)
 
-### Setup
+#### Setup
 Issue `scrontab -e` to edit scrontab. 
 
 Lines starting with `#SCRON` indicate a recurring batch job. It is equivalent to `#SBATCH` in normal batch jobs and users can use the `sbatch` options. 
@@ -239,34 +257,34 @@ scrontab uses the same syntax for date and time specifiers as cron. Each line ha
 
 The entries follow the same syntax as cron. Websites like [https://crontab.cronhub.io/](https://crontab.cronhub.io/) provide useful information on when your job will be executed. 
 
-### Basics
+#### Basics
 
-#### Submit job
+##### Submit job
 <pre>
 $ scrontab FILE.job
 </pre>
 
-#### Check scrontab status
+##### Check scrontab status
 <pre>
 $ scrontab -l
 </pre>
 
-#### Clear scrontab
+##### Clear scrontab
 <pre>
 $ scrontab -r
 </pre>
 
-#### Check job queue 
+##### Check job queue 
 <pre>
 $ squeue
 </pre>
 
-#### Cancel job
+##### Cancel job
 <pre>
 $ scancel ID
 </pre>
 
-#### Example jobs
+##### Example jobs
 
 A python script that runs every 30 minutes and requests 1 node with 4 cores and a timelimit of 1 hour. 
 <pre>
@@ -287,7 +305,7 @@ DIR=/home/user1
 ```
 Note that the default working directory is `$HOME` and can be modified with either setting `DIR` variable or with `#SCRON --chdir`
 
-### Helpful links
+#### Helpful links
 
 * [https://slurm.schedmd.com/scrontab.html](https://slurm.schedmd.com/scrontab.html)
 
