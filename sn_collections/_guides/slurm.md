@@ -1,10 +1,12 @@
 ---
 title: SLURM Resource Manager
-description: Using SLURM
+description: Using SLURM to manage application jobs on the HPC
 
 categories: [Use]
 order_number: 40
-#published: false
+
+redirect_from: 
+  - /guides/use/running-jobs
 
 subnav:
   - title: Interactive Mode
@@ -13,38 +15,25 @@ subnav:
     url: '#requesting-the-proper-number-of-nodes-and-cores'
   - title: Batch Mode
     url: '#batch-mode'
-    subnav:
-      - title: Serial Job
-        url: '#serial-job'
-      - title: Running a Simple OpenMP Job
-        url: '#running-a-simple-openmp-job'
-      - title: Parallel MPI Job
-        url: '#parallel-mpi-job'
   - title: Recurring Jobs - Scrontab
     url: '#recurring-jobs---scrontab'
-    subnav:
-      - title: Setup
-        url: '#setup'
-      - title: Basics
-        url: '#basics'
-      - title: Example Job
-        url: '#example-job'
-      - title: Helpful Links
-        url: '#helpful-links'
   - title: Useful SLURM Commands
     url: '#useful-slurm-commands'
 
-
-
-
-
 ---
 
-To provide better Ceres usage report all Ceres users have been assigned Slurm accounts based on their project groups. If you don't have a project, then your default and only Slurm account is sandbox.<!--excerpt--> If you have more than one project, then your default Slurm account is one of the project names. You can specify a different Slurm account when submitting a job by using “-A <account_name>” option on salloc/srun/sbatch command or adding “#SBATCH -A <account_name>” to the job script.
+Ceres uses Simple Linux Utility for Resource Management (SLURM) to submit interactive and batch jobs to the compute nodes. Requested resources can be specified either within the job script or using options with the  `salloc`,  `srun`, or  `sbatch`  commands.<!--excerpt-->
+
+All users have been assigned Slurm accounts based on their project groups. If you don't have a project, then your default and only Slurm account is sandbox. If you have more than one project, then your default Slurm account is one of the project names. You can specify a different Slurm account when submitting a job by using “-A <account_name>” option on salloc/srun/sbatch command or adding “#SBATCH -A <account_name>” to the job script.
   
- To see all your Slurm accounts and your default account at any time, use “sacctmgr -Pns show user format=account,defaultaccount”
+To see all your Slurm accounts and your default account at any time, use “sacctmgr -Pns show user format=account,defaultaccount”
   
- You can change your default Slurm account running slurm-account-selector.sh on the login node.
+You can change your default Slurm account running slurm-account-selector.sh on the login node.
+
+Users will run their applications on the cluster in either interactive mode or in batch mode. Interactive mode ( `salloc`  or  `srun`  command) is familiar to anyone using the command line: the user specifies an application by name and various arguments, hits Enter, and the application runs. However, in interactive mode on a cluster the user is automatically switched from using a login node to using a compute node. This keeps all the intense computation off the login nodes, so that login nodes can have all the resources necessary for managing the cluster. You should always use interactive mode when you are running your application but not using batch mode. **Please do not run your applications on the login nodes, use the interactive mode.**
+
+Interactive mode should only be used when interaction is required, for example when preparing or debugging a pipeline. Otherwise the batch mode should be used. Batch mode requires the user to write a short job script (see examples at section [Batch Mode]({{ site.baseurl }}/guides/use/slurm#batch-mode)) or use the [Ceres Job Script Generator]({{ site.baseurl }}/support/ceres-job-script).
+
  
 
 ## Interactive Mode
