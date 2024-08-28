@@ -1,9 +1,11 @@
 ---
-title: Running Applications
-description: How to run application jobs on SCINet
+title: Cluster Use Guides
+description: How to use the SCINet Cluster
+
 order_number: 35
 
 categories: [Use]
 sorted: true
 
+short_title: Cluster Use
 ---

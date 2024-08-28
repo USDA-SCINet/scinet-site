@@ -16,10 +16,10 @@ manual_subnav: 'true'
 
 GUIs:
   - title: Open OnDemand Interface
-    url: /guides/software/open-ondemand
+    url: /guides/use/open-ondemand
     internal: true
   - title: Galaxy on SCINet
-    url: /guides/software/galaxy
+    url: /guides/application/galaxy
     internal: true
   - title: Globus Online
     url: /guides/data/datatransfer#globus-data-transfer

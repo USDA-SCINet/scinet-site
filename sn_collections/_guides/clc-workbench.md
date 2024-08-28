@@ -1,10 +1,13 @@
 ---
-title: CLC Server
+title: CLC Genomics Workbench
 description: Using CLC Server
 ## author: VRSC
 excerpt: "Before You Begin, email scinet_vrsc@USDA.GOV so that the admins can setup the import/export directories and permissions for access."
 
-categories: [Analysis]
+redirect_from: 
+  - /guides/analysis/clc-workbench
+
+categories: [Application]
 
 subnav:
   - title: Before You Begin

@@ -18,10 +18,10 @@
   {% unless page.manual_subnav %}
 
   {% if page.guidegroup.all and page.guidegroup.compile %}
-    {% assign mylink = link.categories | join: ',' | append: " Guides" | slugify %}
+    {% assign mytitle = link.short_title | default: link.categories %}
+    {% assign mylink = mytitle | join: ',' | append: " Guides" | slugify %}
     {% assign mylink = mylink | prepend: '#' %}
     {% assign myclass = "" %}
-    {% assign mytitle = link.categories %}
 
   {% elsif page.guidegroup and link.internal %}
       {% assign mylink = link.title | slugify %}

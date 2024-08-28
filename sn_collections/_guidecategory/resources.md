@@ -3,6 +3,8 @@ title: SCINet Computing Resources
 description: Guide to SCINet HPC
 order_number: 20
 
+short_title: Computing Resources
+
 categories: [Resources]
 
 show_full: true

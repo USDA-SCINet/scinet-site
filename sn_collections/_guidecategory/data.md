@@ -6,5 +6,7 @@ excerpt: This guide provides detailed information about the storage options prov
 categories: [Data]
 order_number: 30
 
+short_title: Data Management
+
 ---
 

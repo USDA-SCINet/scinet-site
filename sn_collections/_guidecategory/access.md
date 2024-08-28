@@ -3,6 +3,8 @@ title: Accessing SCINet
 description: How to access SCINet
 order_number: 10
 
+short_title: Access
+
 categories: [Access]
 sorted: true
 

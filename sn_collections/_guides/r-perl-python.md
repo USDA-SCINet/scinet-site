@@ -1,9 +1,11 @@
 ---
-title: Guide to Installing R, Python, and Perl Packages
+title: User-installed R, Python, and Perl Packages
 description: Installing R, Python, and Perl packages
 ## author: VRSC
 
-categories: [Analysis]
+categories: [Software]
+redirect_from:
+  - /guides/analysis/r-perl-python
 
 subnav:
   - title: Installing R packages
