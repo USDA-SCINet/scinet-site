@@ -34,8 +34,8 @@ subnav:
   - title: Quotas
     url: /guides/data/quotas
     internal: true
-  - title: Running Application Jobs on Compute Nodes
-    url: /guides/use/running-jobs
+  - title: SLURM Resource Manager
+    url: /guides/use/slurm
     internal: true
   - title: Compiling Software
     url: /guides/software
