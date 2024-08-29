@@ -2,7 +2,7 @@
 title: Visual Studio Code
 description: Using VS Code with SCINet
 
-published: false ## remove when ready to go live
+#published: false ## remove when ready to go live
 
 categories: [IDE]
 
@@ -11,8 +11,9 @@ subnav:
     url: '#scinet-options-for-vs-code'
   - title: VS Code Server in Open OnDemand
     url: '#vs-code-server-in-open-ondemand'
-  - title: Moving Files to and from the Local Machine
-    url: '#moving-files-to-from-local-machine'
+    subnav:
+      - title: Moving Files to and from the Local Machine
+        url: '#moving-files-to-and-from-the-local-machine'
   - title: Registered Tunnel for VS Code
     url: '#registered-tunnel-for-vs-code'
     subnav:
@@ -34,16 +35,14 @@ Microsoft's Visual Studio Code (aka VS Code) is a popular source code editor and
 
 1. Go to [Ceres OpenOndemand](http://ceres-ood.scinet.usda.gov/) and login. 
 
-2. From the Interactive Apps menu at the top select “VS Code Server”
+2. From the Interactive Apps menu at the top select "VS Code Server"
+  ![ood vscode interactiv app]({{ site.baseurl }}/assets/img/guides/analysis/vscode/ood_vscode.png)
 
-![ood vscode interactiv app]({{ site.baseurl }}/assets/img/guides/analysis/vscode/ood_vscode.png)
+3. Select the interactive partition, as well as any other desired options (the defaults are usually sufficient, but if you want to run from a project rather than your home directory, be sure to update your path) and click "Launch"
+  ![selecting options and path]({{ site.baseurl }}/assets/img/guides/analysis/vscode/choose_path.png)
 
-3. Select the interactive partition, as well as any other desired options (the defaults are usually sufficient, but if you want to run from a project rather than your home directory, be sure to update your path) and click “Connect to VS Code”
-
-![selecting options and path]({{ site.baseurl }}/assets/img/guides/analysis/vscode/choose_path.png)
-![launching vs code]({{ site.baseurl }}/assets/img/guides/analysis/vscode/connect.png)
-
-4. A new VS Code session will automatically be created on one of the Nova compute nodes. This may take a few minutes depending on cluster demand. Once the session has been created, click “Connect to VS Code”.
+4. A new VS Code session will automatically be created on one of the Nova compute nodes. This may take a few minutes depending on cluster demand. Once the session has been created, click "Connect to VS Code".
+  ![launching vs code]({{ site.baseurl }}/assets/img/guides/analysis/vscode/connect.png)
 
 5. Create a symbolic link to store extensions. This only needs to be done the first time you run VS Code OnDemand. 
   * Open the terminal window by going to File->View->Terminal
@@ -68,17 +67,22 @@ mv ~/.local/share/code-server/ /project/projectname/username/.local/share
 ln -s /project/projectname/username/.local/share/code-server  ~/.local/share/code-server
       ```
 6. Install any desired extensions from the Extensions sidebar on the left-hand side. This only needs to be done the first time you run VS Code OnDemand, or whenever you need new extensions.
-![installing exentions button]({{ site.baseurl }}/assets/img/guides/analysis/vscode/extensions.png)
+  ![installing exentions button]({{ site.baseurl }}/assets/img/guides/analysis/vscode/extensions.png)
 
-## Moving Files to and from the Local Machine
+
+
+### Moving Files to and from the Local Machine
 
 1. Open the File Explorer sidebar on the left-hand side of VS Code.
 2. To Download Files:
-  * Right-click on the file you would like to download from VS Code OnDemand to your local computer and select “Download…” from the menu. The file download will automatically start.
+  * Right-click on the file you would like to download from VS Code OnDemand to your local computer and select "Download…" from the menu. The file download will automatically start.
 3. To Upload Files:
-  * Right-click on the folder where you would like to upload the file to and select “Upload…” from the menu.
-  * Select the file on your local computer in the File Upload dialog that appears and then click “Open”
+  * Right-click on the folder where you would like to upload the file to and select "Upload…" from the menu.
+  * Select the file on your local computer in the File Upload dialog that appears and then click "Open"
+
 ![file explorer button]({{ site.baseurl }}/assets/img/guides/analysis/vscode/file explorer.png)
+
+
 
 ## Registered Tunnel for VS Code
 
