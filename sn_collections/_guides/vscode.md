@@ -11,6 +11,8 @@ subnav:
     url: '#scinet-options-for-vs-code'
   - title: VS Code Server in Open OnDemand
     url: '#vs-code-server-in-open-ondemand'
+  - title: Moving Files to and from the Local Machine
+    url: '#moving-files-to-from-local-machine'
   - title: Registered Tunnel for VS Code
     url: '#registered-tunnel-for-vs-code'
     subnav:
@@ -18,14 +20,65 @@ subnav:
         url: '#opening-a-registered-tunnel'
       - title: Closing a Registered Tunnel
         url: '#closing-a-registered-tunnel'
-
+  - title: Troubleshooting
+    url: '#troubleshooting'
 ---
 
 Visual Studio Code (VS Code) is a source-code editor. <!--excerpt-->
 
 ## SCINet Options for VS Code
 
+Microsoft's Visual Studio Code (aka VS Code) is a popular source code editor and development environment with support for many different programming languages.  VS Code software includes a tool called VS Code Server that acts as a gateway from the VS Code session on your computer to the cluster so you execute your code on the cluster from within your VS Code session.
+
 ## VS Code Server in Open OnDemand
+
+1. Go to [Ceres OpenOndemand](http://ceres-ood.scinet.usda.gov/) and login. 
+
+2. From the Interactive Apps menu at the top select “VS Code Server”
+
+![ood vscode interactiv app]({{ site.baseurl }}/assets/img/guides/analysis/vscode/ood_vscode.png)
+
+3. Select the interactive partition, as well as any other desired options (the defaults are usually sufficient, but if you want to run from a project rather than your home directory, be sure to update your path) and click “Connect to VS Code”
+
+![selecting options and path]({{ site.baseurl }}/assets/img/guides/analysis/vscode/choose_path.png)
+![launching vs code]({{ site.baseurl }}/assets/img/guides/analysis/vscode/connect.png)
+
+4. A new VS Code session will automatically be created on one of the Nova compute nodes. This may take a few minutes depending on cluster demand. Once the session has been created, click “Connect to VS Code”.
+
+5. Create a symbolic link to store extensions. This only needs to be done the first time you run VS Code OnDemand. 
+  * Open the terminal window by going to File->View->Terminal
+	
+  * In the terminal type the following commands, replacing <GroupName> with your group name and <UserName> with your user name.
+
+  * Create a folder in work for the VSCode extensions:
+    
+      ```
+mkdir -p /project/projectname/username/.local/share/code-server
+      ```
+  
+  * Move any existing extension files to the new directory:
+
+      ```
+mv ~/.local/share/code-server/ /project/projectname/username/.local/share
+      ```
+  
+  * Create a symbolic link between the old extensions directory and the new one:
+    
+      ```
+ln -s /project/projectname/username/.local/share/code-server  ~/.local/share/code-server
+      ```
+6. Install any desired extensions from the Extensions sidebar on the left-hand side. This only needs to be done the first time you run VS Code OnDemand, or whenever you need new extensions.
+![installing exentions button]({{ site.baseurl }}/assets/img/guides/analysis/vscode/extensions.png)
+
+## Moving Files to and from the Local Machine
+
+1. Open the File Explorer sidebar on the left-hand side of VS Code.
+2. To Download Files:
+  * Right-click on the file you would like to download from VS Code OnDemand to your local computer and select “Download…” from the menu. The file download will automatically start.
+3. To Upload Files:
+  * Right-click on the folder where you would like to upload the file to and select “Upload…” from the menu.
+  * Select the file on your local computer in the File Upload dialog that appears and then click “Open”
+![file explorer button]({{ site.baseurl }}/assets/img/guides/analysis/vscode/file explorer.png)
 
 ## Registered Tunnel for VS Code
 
@@ -69,4 +122,10 @@ This guide will show you how to set up a registered tunnel for VSCode.
 When you are done using a tunnel, it is important to close it to free up those resources for other users to use. To do this: 
 1. Open a terminal on the ceres head node either via Ceres OnDemand or by using SSH to connect to ceres.scinet.usda.gov 
 2. Run the following command, where <JobID> is the slurm job number that was displayed when you launched the tunnel: scancel <JobID> 
-  * If you have forgotten the slurm job number, you can find it by running the following command. Look for a job named "vscode-tunnel". 
+  * If you have forgotten the slurm job number, you can find it by running the following command. Look for a job named "vscode-tunnel".
+
+## Troubleshooting
+
+**The VS Code OnDemand Window Stopped Responding.**
+  * Most likely your OnDemand session timed out. Return to the Ceres OnDemand webpage and request a new session.
+  * If your session hasn’t timed out, the server may be time slicing (i.e. pausing your session to let other small jobs through). To prevent this, make sure you request the interactive partition when creating your OnDemand session.
