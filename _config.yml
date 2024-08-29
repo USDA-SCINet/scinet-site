@@ -76,7 +76,7 @@ collections:
     permalink: /:collection/:path
   guides:
     output: true
-    permalink: /guides/:categories/:name
+    permalink: /:collection/:path
   guidecategory:
     output: true
     permalink: /guides/:categories
