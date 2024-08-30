@@ -58,7 +58,8 @@ mkdir -p /project/projectname/username/.local/share/code-server
   * Move any existing extension files to the new directory:
 
       ```
-mv ~/.local/share/code-server/ /project/projectname/username/.local/share
+mv ~/.local/share/code-server/ /project/projectname/username/.local/share/code-server
+
       ```
   
   * Create a symbolic link between the old extensions directory and the new one:
@@ -66,7 +67,8 @@ mv ~/.local/share/code-server/ /project/projectname/username/.local/share
       ```
 ln -s /project/projectname/username/.local/share/code-server  ~/.local/share/code-server
       ```
-6. Install any desired extensions from the Extensions sidebar on the left-hand side. This only needs to be done the first time you run VS Code OnDemand, or whenever you need new extensions.
+      
+  * Install any desired extensions from the Extensions sidebar on the left-hand side. This only needs to be done the first time you run VS Code OnDemand, or whenever you need new extensions.
   ![installing exentions button]({{ site.baseurl }}/assets/img/guides/analysis/vscode/extensions.png)
 
 
