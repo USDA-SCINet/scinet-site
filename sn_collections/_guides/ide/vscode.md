@@ -62,7 +62,8 @@ mkdir -p /project/projectname/username/.local/share/code-server
   * Move any existing extension files to the new directory:
 
       ```
-mv ~/.local/share/code-server/ /project/projectname/username/.local/share
+mv ~/.local/share/code-server/ /project/projectname/username/.local/share/code-server
+
       ```
   
   * Create a symbolic link between the old extensions directory and the new one:
@@ -85,6 +86,8 @@ ln -s /project/projectname/username/.local/share/code-server  ~/.local/share/cod
   * Select the file on your local computer in the File Upload dialog that appears and then click "Open"
 
 ![file explorer button]({{ images_path }}/vscode/file explorer.png)
+
+
 
 
 
