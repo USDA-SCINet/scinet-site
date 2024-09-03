@@ -166,6 +166,8 @@ Other programs that have a GUI to transfer data and are suitable for smaller fil
 
 Cyberduck supports multiple protocols (including Amazon S3, iRODS, and Google Drive) and is more secure than FileZilla.
 
+**Please Note:** Programs such as WinSCP and FileZilla are not currently supported with the new phishing resistant authentication methods (i.e. SmallStepCLI)
+
 ## Data Transfer to NCBI
 
 To transfer data to/from NCBI, ssh to a DTN node and use either ncftp commands (ncftpput, ncftpget) or Aspera command (ascp). Since ftp connections can be unstable we recommend using Aspera for large file transfers.
