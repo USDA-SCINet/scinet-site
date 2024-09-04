@@ -16,6 +16,19 @@ filter-archive: materials
 archive-label: SCINet Corner Recordings
 
 sessions:        
+  - session: "Plotting in Python with plotnine"
+    date: 2024-08-15
+    time: 1-2 pm ET
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/ERsjhGT5z6pAjSQOiOX0KwYBelwR2ErBkkuIw36cI09MNA?e=1WP0c4
+    excerpt: "*  How to access plotnine in Open OnDemand JupyterLab  
+
+*  Data formats expected by plotnine  
+
+*  Graphing concepts in creating basic plots"
+    materials:
+      - text: Jupyter Notebook
+        url: https://usdagcc.sharepoint.com/:f:/s/REE-ARS-SCINetOffice/EtkA5SYcpU5Et0nAa5J4UZwBcC-3pc7Cyg4WL-WMkvIuOQ?e=5Hczi4
+
   - session:
     title: "Open Q&A"
     date: 2024-07-18
