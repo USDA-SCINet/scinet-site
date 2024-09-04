@@ -20,7 +20,7 @@ subnav:
 
 {% include images_path %}
 
----
+
 
 
 The popular R, Perl and Python languages have many packages/modules available. Some of the packages are installed on Ceres and are available with the r/perl/python_2/python_3 modules. To see the list of installed packages, visit the [Preinstalled Software List]({{ site.baseurl }}/guides/software/preinstalled) page or use  `module help <module_name>`  command. If users need packages that are not available, they can either request VRSC to add packages, or they can download and install packages in their home/project directories. We recommend installing packages in the project directories since collaborators on the same project most probably would need same packages. In addition, home quotas are much lower than quotas for project directories.

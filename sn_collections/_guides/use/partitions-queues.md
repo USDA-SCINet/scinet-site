@@ -17,7 +17,7 @@ subnav:
 
 {% include images_path %}
 
----
+
 
 
 Compute jobs are run on functional groups of nodes called partitions or queues. Each different partition has different capabilities (e.g. regular memory versus high memory nodes) and resource restrictions (e.g. time limits on jobs). Nodes may appear in several partitions.<!--excerpt--> 

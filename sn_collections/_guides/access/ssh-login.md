@@ -34,7 +34,7 @@ subnav:
 
 {% include images_path %}
 
----
+
 
 
 This guide gives step-by-step instructions for accessing SCINet systems via SSH, which allows you to connect to SCINet systems via the command-line terminal.<!--excerpt--> Please note that for most use cases, you do _not_ need to do this! We recommend Open OnDemand as a simpler, more versatile alternative to SSH.

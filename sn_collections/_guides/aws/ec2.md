@@ -47,7 +47,7 @@ alerts:
 
 {% include images_path %}
 
----
+
 
 
 ## EC2 Instance 

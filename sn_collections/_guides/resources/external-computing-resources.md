@@ -17,7 +17,7 @@ subnav:
 
 {% include images_path %}
 
----
+
 
 
 In addition to the Ceres and Atlas clusters, there are external computing resources available to

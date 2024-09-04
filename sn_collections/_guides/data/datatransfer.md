@@ -32,7 +32,7 @@ subnav:
 
 {% include images_path %}
 
----
+
 
 
 ## Best Practices

@@ -12,7 +12,7 @@ redirect_from:
 
 {% include images_path %}
 
----
+
 
 
 

@@ -32,7 +32,7 @@ subnav:
 
 {% include images_path %}
 
----
+
 
 
 This guide lists differences between the Atlas and Ceres clusters to ease transition from one cluster to another.

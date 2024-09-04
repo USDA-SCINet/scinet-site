@@ -9,7 +9,7 @@ parent:
 
 {% include images_path %}
 
----
+
 
 
 If you do not have a LincPass/AltLinc card or PIV exemption, you will need to use your Login.gov account to log on to SCINet systems.

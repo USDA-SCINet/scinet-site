@@ -8,7 +8,7 @@ categories: [Resources]
 
 {% include images_path %}
 
----
+
 
 
 Add the following sentence as an acknowledgment for using CERES as a resource in your manuscripts meant for publication:  

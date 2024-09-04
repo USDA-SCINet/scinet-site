@@ -24,7 +24,7 @@ subnav:
 
 {% include images_path %}
 
----
+
 
 
 Ceres uses Simple Linux Utility for Resource Management (SLURM) to submit interactive and batch jobs to the compute nodes. Requested resources can be specified either within the job script or using options with the  `salloc`,  `srun`, or  `sbatch`  commands.<!--excerpt-->

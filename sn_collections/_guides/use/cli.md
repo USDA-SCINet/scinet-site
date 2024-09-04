@@ -10,7 +10,7 @@ categories: [Use]
 
 {% include images_path %}
 
----
+
 
 
 SCINet HPC resources can be used via ssh-ing to a cluster and using Command Line Interface (CLI). If you're not familiar with CLI, check out the following resources: 

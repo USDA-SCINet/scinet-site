@@ -9,7 +9,7 @@ parent:
 
 {% include images_path %}
 
----
+
 
 
 [A video demonstration for changing your password can be found here.](https://www.youtube.com/watch?v=Amhw2k5mftI)  Please keep in mind that due to the recent password requirement change, the video is out of date. It will list more password requirements than necessary.  The current requirements are found below:

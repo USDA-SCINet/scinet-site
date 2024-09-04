@@ -17,7 +17,7 @@ subnav:
 
 {% include images_path %}
 
----
+
 
 
 The Environment Modules package provides dynamic modification of your shell environment. This also allows a single system to accommodate multiple versions of the same software application and for the user to select the version they want to use. Module commands set, change, or delete environment variables, typically in support of a particular application.<!--excerpt-->

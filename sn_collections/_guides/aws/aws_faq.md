@@ -20,7 +20,7 @@ subnav:
 
 {% include images_path %}
 
----
+
 
 
 FAQ about AWS resources available to ARS scientists.

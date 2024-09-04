@@ -13,7 +13,7 @@ subnav:
 
 {% include images_path %}
 
----
+
 
 
 Each file on a Linux system is associated with one user and one group. On Ceres, files in a user's home directory by default are associated with the user's primary group, which has the same name as user's SCINet account. Files in the project directories by default are associated with the project groups. Group quotas that control the amount of data stored are enabled on both home and project directories.

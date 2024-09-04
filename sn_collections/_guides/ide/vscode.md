@@ -27,7 +27,7 @@ subnav:
 
 {% include images_path %}
 
----
+
 
 Visual Studio Code (VS Code) is a source-code editor. <!--excerpt-->
 

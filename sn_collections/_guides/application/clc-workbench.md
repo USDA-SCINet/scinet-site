@@ -26,7 +26,7 @@ subnav:
 
 {% include images_path %}
 
----
+
 
 
 ## Before You Begin
