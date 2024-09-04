@@ -35,11 +35,22 @@
           <a class="usa-button" href="{% if hero.button.external %}{{ hero.button.url }}{% else %}{{ hero.button.url | relative_url }}{% endif %}">
             {{ hero.button.text }}
           </a>
+          {% endif %}
+          {% if hero.buttons %}
+          <ul class="usa-button-group">
+          {% for _button in hero.buttons %}
+          <li class="usa-button-group__item">
+            <a class="usa-button{% if _button.color %} usa-button--{{ _button.color }}{% endif %}" href="{% if _button.external %}{{ _button.url }}{% else %}{{ _button.url | relative_url }}{% endif %}">
+              {{ _button.text }}
+            </a>
+          </li>
+          {% endfor %}
+          </ul>
+          {% endif %}
 
       {% if hero.callout.img %}
         </div>
       </div>
-      {% endif %}
       {% endif %}
     </div>
   </div>
