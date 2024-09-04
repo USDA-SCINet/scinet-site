@@ -69,23 +69,6 @@ forum:
   button: "Log In"
   url: https://forum.scinet.usda.gov
 
-access:
-  title: "Web-Based Access to SCINet"
-  button: SCINet Access Guides
-  url: /guides/access/
-  buttons:
-    - text: Ceres Open OnDemand
-      url: http://ceres-ood.scinet.usda.gov/
-      color: big
-      external: true
-    - text: Atlas Open OnDemand
-      url: https://atlas-ood.hpc.msstate.edu/
-      color: big
-      external: true
-    - text: Access Guides
-      url: /guides/access/
-      color: big
-
 support:
   title: "Find out how SCINet can enable your Research"
   button: Visit the Support Page
