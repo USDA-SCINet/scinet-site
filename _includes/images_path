@@ -1,0 +1,7 @@
+{% if page.images_path %}{% assign images_path = page.images_path %}
+{% else %}
+  {% assign path_segments = page.url | split: '/' %}
+  
+  {% assign module_path = path_segments | slice: 1, 2 | join: "/" %}
+  {% assign images_path = module_path | append: '/assets' | relative_url %}
+{% endif %}

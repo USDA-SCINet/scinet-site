@@ -25,9 +25,12 @@ hero:
     text: "High-Performance Computing. </br> 
     Training. </br>
     High-Speed Networking."
-  button:
-    url: /about/compute
-    text: Learn More
+  buttons:
+    - url: /about/compute
+      text: Learn More
+    - url: /guides/access
+      text: Access SCINet
+      color: secondary
 
 
 intro:
@@ -65,6 +68,23 @@ forum:
   text: "Visit the SCINet User forum for additional information and discussion with other SCINet Users. </br> Access to SCINet Forum is provided during the SCINet account application process."
   button: "Log In"
   url: https://forum.scinet.usda.gov
+
+access:
+  title: "Web-Based Access to SCINet"
+  button: SCINet Access Guides
+  url: /guides/access/
+  buttons:
+    - text: Ceres Open OnDemand
+      url: http://ceres-ood.scinet.usda.gov/
+      color: big
+      external: true
+    - text: Atlas Open OnDemand
+      url: https://atlas-ood.hpc.msstate.edu/
+      color: big
+      external: true
+    - text: Access Guides
+      url: /guides/access/
+      color: big
 
 support:
   title: "Find out how SCINet can enable your Research"

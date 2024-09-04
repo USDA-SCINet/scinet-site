@@ -3,7 +3,8 @@ layout: default
 main:
   class: usa-layout-docs usa-layout-docs__main usa-prose 
 ---
-
+{% assign blankarray = "" | split: "" %}
+{% assign bc_sidenav = blankarray %}
 
 <div class="grid-container main-side">
 
@@ -70,8 +71,10 @@ main:
 
   {% if page.layout_type == 'guides' %}
 
-    {% assign alt_nav = page.categories %}
+    {% assign alt_nav = page.categories | default: 'guides' %}
 
+    {% if page.categories != empty %}
+    
     {% assign guidecategories = site.guidecategory %}
     {% assign guidepages = site.guides %}
 
@@ -88,6 +91,14 @@ main:
     {% else %}
       {% assign bc_sidenav = breadcrumb_set %}
     {% endif %}
+
+    {% elsif page.parent %}
+      {% assign bc_sectionlink = page.parent %}
+      
+      {% assign bc_sidenav = bc_sidenav | push: page.parent | push: page %}
+    {% endif %}
+
+
 
   {% endif %}
 

@@ -29,7 +29,13 @@ in the form $setting: value,
     $theme-site-margins-width:          5,
     $theme-site-margins-mobile-width:   2,
     $theme-header-logo-text-width: 50,
-    $theme-site-margins-breakpoint: 'tablet'
+    $theme-site-margins-breakpoint: 'tablet',
+    $theme-color-secondary-lighter: 'green-cool-10',
+    $theme-color-secondary-light: 'green-30',
+    $theme-color-secondary: 'green-50',
+    $theme-color-secondary-vivid: 'green-cool-50v',
+    $theme-color-secondary-dark: 'green-60v',
+    $theme-color-secondary-darker: 'green-70v'
     );
 
 
