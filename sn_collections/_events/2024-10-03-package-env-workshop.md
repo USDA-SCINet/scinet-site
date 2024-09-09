@@ -14,7 +14,7 @@ sessions:
     multiday: "October 3-4"
 
 registration: 
-  url: hhttps://forms.office.com/g/ZbWf2Qtyi7
+  url: https://forms.office.com/g/ZbWf2Qtyi7
 
 
 ---
