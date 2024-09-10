@@ -17,8 +17,11 @@ main:
 
   {{ content }}
 
+  {%- if page.materials %}
+    {% include components/collection/materials data=page.materials %}
+  {%- endif %}
 
-  {% if page.type == 'event' or page.type == 'training' %}
+  {%- if page.type == 'event' or page.type == 'training' %}
   <br>
     {% assign my_events = '' | split: '' %}
     {% assign my_events = my_events | push: page %}
@@ -30,6 +33,15 @@ main:
     {% else %}
       {% include components/collection-event.html simple_events=my_events %}
     {% endif %}
-  {% endif %}
+
+  {%- elsif page.type == 'workshop' %}
+  {%- unless page.categories %}
+    {% assign my_events = '' | split: '' %}
+    {% assign my_events = my_events | push: page %}
+    
+    {% include components/collection-event.html simple_events=my_events %}
+    
+  {%- endunless %}
+  {%- endif %}
 
 </div>

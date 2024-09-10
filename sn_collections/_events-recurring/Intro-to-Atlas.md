@@ -10,6 +10,14 @@ lead: Adam Thrash
 registration: 
   url: https://reg.extension.msstate.edu/view/cal10a.aspx?ek=&ref=&aa=&sid1=&sid2=&as=81&wp=476&tz=&ms=&nav=&cc=&cat1=&cat2=&cat3=&aid=MSU&rf=&pn=
 
+
+materials: 
+  - text: The training presentation can be viewed here.
+    url: http://presentations.adamthrash.com/GRI/2021/07/introduction_to_atlas/
+  - text: Access a recording of this content.
+    url: https://msstate.webex.com/recordingservice/sites/msstate/recording/466ef446e8cb1039bb3f005056814297/playback
+
+
 sessions:
   - session: 
     date: 2022-12-08
@@ -29,42 +37,16 @@ sessions:
     instructor: Adam Thrash
   - session: 
     date: 2022-03-22
-    materials: 
-      - text: The training presentation can be viewed here.
-        url: http://presentations.adamthrash.com/GRI/2021/07/introduction_to_atlas/
-      - text: Access a recording of this content.
-        url: https://msstate.webex.com/recordingservice/sites/msstate/recording/466ef446e8cb1039bb3f005056814297/playback
   - session: 
     date: 2022-01-26
-    materials: 
-      - text: The training presentation can be viewed here.
-        url: http://presentations.adamthrash.com/GRI/2021/07/introduction_to_atlas/
   - session: 
     date: 2021-12-15
-    materials: 
-      - text: The training presentation can be viewed here.
-        url: http://presentations.adamthrash.com/GRI/2021/07/introduction_to_atlas/
   - session: 
     date: 2021-10-28
-    materials: 
-      - text: The training presentation can be viewed here.
-        url: http://presentations.adamthrash.com/GRI/2021/07/introduction_to_atlas/
-      - text: Access a recording of this content.
-        url: https://msstate.webex.com/recordingservice/sites/msstate/recording/466ef446e8cb1039bb3f005056814297/playback
   - session: 
     date: 2021-09-28
-    materials: 
-      - text: The training presentation can be viewed here.
-        url: http://presentations.adamthrash.com/GRI/2021/07/introduction_to_atlas/
-      - text: Access a recording of this content.
-        url: https://msstate.webex.com/recordingservice/sites/msstate/recording/466ef446e8cb1039bb3f005056814297/playback
   - session: 
-    date: 2021-08-26
-    materials: 
-      - text: The training presentation can be viewed here.
-        url: http://presentations.adamthrash.com/GRI/2021/07/introduction_to_atlas/
-      - text: Access a recording of this content.
-        url: https://msstate.webex.com/recordingservice/sites/msstate/recording/466ef446e8cb1039bb3f005056814297/playback 
+    date: 2021-08-26 
   
 ---
 
