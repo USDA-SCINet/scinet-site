@@ -16,7 +16,8 @@ filter-archive: materials
 archive-label: SCINet Corner Recordings
 
 sessions:        
-  - session: "Plotting in Python with plotnine"
+  - session: 
+    title: "Plotting in Python with plotnine"
     date: 2024-08-15
     time: 1-2 pm ET
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/ERsjhGT5z6pAjSQOiOX0KwYBelwR2ErBkkuIw36cI09MNA?e=1WP0c4
