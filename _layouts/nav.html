@@ -21,8 +21,9 @@ main:
     {% assign alt_nav = "Workshop" %}
 
     {% assign allevents = site.events | where: 'future', 'show' %}
+    {% assign subevents = site.events | where: 'duplicate', 'false' %}
     {% assign allworkshops = site.workshops | where: 'future', 'show' %}
-    {% assign all_posts = allevents | concat: allworkshops %}
+    {% assign all_posts = subevents | concat: allworkshops %}
 
     {% assign myset = all_posts | where_exp: "post", "post.categories == page.categories" %}
 

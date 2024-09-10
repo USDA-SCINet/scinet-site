@@ -36,7 +36,7 @@
     {% endif %}
     <div class="usa-collection__body">
         <h3 class="usa-collection__heading">
-            {% if page.layout=='event' %}
+            {% if page.layout=='event' and page.type !='workshop' %}
             {{ post.date | date_to_string }} &middot {% if post.provider %}{{ post.provider }} &middot {% endif %}{{ post.title }}
             {% else %}
             {% if post.url %}<a class="usa-link" href="{% if post.external or all_external == 'true' %}{{ post.url }}{% else %}{{ post.url | relative_url}}{% endif %}">{% endif %}

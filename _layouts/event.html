@@ -35,13 +35,47 @@ main:
     {% endif %}
 
   {%- elsif page.type == 'workshop' %}
-  {%- unless page.categories %}
+  {%- if page.categories %}
+    {% assign featured_cal = site.workshops | where: 'future', 'show' %}
+    {% assign filtered_posts = featured_cal | where_exp: "post", "post.categories == page.categories" %}
+    {%- if filtered_posts.size > 0 %}
+    <section aria-label="{{ page.calendar.title | default: 'Workshop Sessions' }}">
+
+        <div class="grid-row grid-gap">
+          <div class="width-full">
+              <h2 class="site-preview-heading">{{ page.calendar.title | default: 'Workshop Sessions' }}</h2>
+              {% if page.calendar.text %}
+              <div class="{% if page.calendar.text-href %} featured_posts{% endif %}">
+                  {% if page.calendar.text-href %}
+                  <a
+                      href="{% if page.calendar.text-href-external %}{{ page.calendar.text-href }}{% else %}{{ page.calendar.text-href | relative_url }}{% endif %}">
+                      {% endif %}
+                      <div class="usa-card__container padding-2">
+                          {{ page.calendar.text }}
+                      </div>
+                      {% if page.calendar.text-href %}
+                  </a>
+                  {% endif %}
+              </div>
+              {% endif %}
+              <ul class="usa-list usa-list--unstyled">
+                  {% for post in filtered_posts %}
+                  {% assign post_type = 'calendar' %}
+                  {% include components/collection.html %}
+                  {% endfor %}
+              </ul>
+          </div>
+        </div>
+      </section>
+    {%- endif %}
+
+  {%- else %}
     {% assign my_events = '' | split: '' %}
     {% assign my_events = my_events | push: page %}
     
     {% include components/collection-event.html simple_events=my_events %}
     
-  {%- endunless %}
+  {%- endif %}
   {%- endif %}
 
 </div>
