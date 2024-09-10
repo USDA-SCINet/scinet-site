@@ -3,7 +3,8 @@ title: Software Package/Environment Management Workshop
 type: workshop
 description: Workshop for managing software packages and computing environments
 excerpt: In this workshop presented by the SCINet Office, we will cover best practices for managing software packages and computing environments on SCINet’s supercomputers. This will be a hands-on workshop that will provide you with the practical knowledge and skills you need to spend less time worrying about package management and more time focusing on your research!
-## categories: [2024 SPEMW] ## Removed with the expectation of the Oct one using the same workshop pages
+categories: [2024 SPEMW] 
+duplicate: true ## Added with the expectation of the Oct one using the same workshop pages
 tags: software package-management
 
 provider: SCINet

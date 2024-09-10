@@ -96,6 +96,7 @@ defaults:
       layout: "event"
       cal-titles: "hide"
       sidenav_link: /training/events/
+      duplicate: false
   - 
     scope:
       path: ""
