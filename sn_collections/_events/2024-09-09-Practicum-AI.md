@@ -21,6 +21,14 @@ sessions:
 registration: 
   url: https://forms.office.com/g/B7ySZmWTKJ
 
+materials:
+  - text: Github Repository
+    url: https://github.com/PracticumAI/computer_vision
+  - text: Workshop Day 1
+    sublist:
+      - text: Session Recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EZT2CoCG9odNjOOsrgOhg6QBT73lGRvQVvHj5z_XDOVSnA?e=4fQe8T
+
 ---
 
 Practicum AI’s Computer Vision Course builds on a basic understanding of Python and deep neural networks to demystify the technology that allows machines to interpret and make decisions based on visual data.<!--excerpt--> We will explore image classification, object detection, and image segmentation tasks. Each module in this course will provide hands-on experiences to create your own working models. By the end, you'll be ready to instantiate and employ a computer vision model to make predictions.

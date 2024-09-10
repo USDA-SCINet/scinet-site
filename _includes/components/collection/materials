@@ -1,0 +1,35 @@
+{%- if include.data %}
+{%- assign materials = include.data %}
+{%- elsif include.fetch %}
+{%- assign materials = page[{{include.fetch}}] %}
+{%- else %}
+{%- assign materials  = "" | split: "" %}
+{%- endif %}
+{% assign pagetype = page.type | capitalize %}
+{% capture materialstitle %}{{ pagetype }}  Materials{% endcapture %}
+{%- if materials.description or materials.excerpt %}
+{% assign materialsdesc = materials.description | default: materials.excerpt %}
+{%- else %}
+{% capture materialsdesc %}{{ pagetype }} materials and recordings available for USDA employees at the links below{% endcapture %}
+{%- endif %}
+<div>
+<h2>{{ materials.title | default: materialstitle }}</h2>
+<p>{{ materialsdesc }}</p>
+
+{% assign mymaterials = materials.materials | default: materials %}
+
+{% if mymaterials.size > 0 %}
+<ul>
+{%- for _material in mymaterials %}
+<li>{% if _material.url %}{% include components/link.html url=_material.url text=_material.text external=true %}{% else %}{{ _material.text }}{% endif %}</li>
+{%- if _material.sublist %}
+<ul>
+{%- for _submaterial in _material.sublist %}
+<li>{% if _submaterial.url %}{% include components/link.html url=_submaterial.url text=_submaterial.text external=true %}{% else %}{{ _submaterial.text }}{% endif %}</li>
+{%- endfor %}
+</ul>
+{%- endif %}
+{%- endfor %}
+</ul>
+{%- endif %}
+</div>
