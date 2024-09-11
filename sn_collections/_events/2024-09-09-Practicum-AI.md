@@ -36,6 +36,8 @@ materials:
     sublist: 
       - text: Module 2
         url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EVhurrN1NL5BihVQ_3WO8JQBAfa0YPylcSZekLl2jmiHIQ?e=CQflc1
+      - text: Presentation Slides
+        url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EcBso6bOkfxOmreo_cczyE4BhKuAXP55NcnZ5nCVjgnwDA?e=aIeelt
   - text: Optimizing Computer Vision Models
 
 ---
