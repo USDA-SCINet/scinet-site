@@ -24,10 +24,19 @@ registration:
 materials:
   - text: Github Repository
     url: https://github.com/PracticumAI/computer_vision
-  - text: Workshop Day 1
+  - text: Computer Vision Concepts
     sublist:
+      - text: Module 1
+        url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EUc6w3V_mKpErUVQDYVkQ60BjrRwSWwZz3n_Uvt4D3aUsw?e=DkMfeR
+      - text: Presentation Slides
+        url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EXtkc8cxMTxNh6wfz9aXlWsBlNtwQGZF_2XTCBzYBiuEPA?e=rhgAZQ
       - text: Session Recording
         url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EZT2CoCG9odNjOOsrgOhg6QBT73lGRvQVvHj5z_XDOVSnA?e=4fQe8T
+  - text: Understanding Computer Vision Tasks
+    sublist: 
+      - text: Module 2
+        url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EVhurrN1NL5BihVQ_3WO8JQBAfa0YPylcSZekLl2jmiHIQ?e=CQflc1
+  - text: Optimizing Computer Vision Models
 
 ---
 
