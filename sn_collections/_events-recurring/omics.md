@@ -21,6 +21,9 @@ sessions:
     date: 2024-09-12
     time: 11am-12pm ET
     presenter: "Dr. Hilario Mantovani"
+    materials:
+      - text: webinar recording
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/george_liu_usda_gov/Documents/publication/Hu%20Zhenbin/TOmics%20WG/20240912Recording/GMT20240912-150120_Recording_1920x1080.mp4?csf=1&web=1
 #  - session:
 #    excerpt: "The genomic and metabolic making of yeast ecological diversity"
 #    date: 2024-08-08

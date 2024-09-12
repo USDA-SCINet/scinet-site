@@ -27,7 +27,7 @@ materials:
   - text: Computer Vision Concepts
     sublist:
       - text: Module 1
-        url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EUc6w3V_mKpErUVQDYVkQ60BjrRwSWwZz3n_Uvt4D3aUsw?e=DkMfeR
+        url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EUWLaJ0Nz2JLq5HPXAtguQYBzSUgpJsUNgrkRWWJ3_tqsA?e=YUZRno
       - text: Presentation Slides
         url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EXtkc8cxMTxNh6wfz9aXlWsBlNtwQGZF_2XTCBzYBiuEPA?e=rhgAZQ
       - text: Session Recording
@@ -41,6 +41,11 @@ materials:
       - text: Session Recording
         url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/ERXS4xc3qrhCtj_V4cBUpKMBokf9R-68iorw5EOV_d_BSw?e=UwkIAP
   - text: Optimizing Computer Vision Models
+    sublist: 
+      - text: Module 3
+        url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EWazsIjpe09Pk04HG36o3hMBjjsy8Emlj9gtuxsrylDxcg?e=mpGPSa
+      - text: Presentation Slides
+        url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EUblx3Ys5FJDreUkqHl3YbYB68XGxiFVUhYbdrFSmtDLXA?e=fYKkbc
 
 ---
 
