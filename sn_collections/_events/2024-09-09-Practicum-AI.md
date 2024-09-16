@@ -46,6 +46,8 @@ materials:
         url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EWazsIjpe09Pk04HG36o3hMBjjsy8Emlj9gtuxsrylDxcg?e=mpGPSa
       - text: Presentation Slides
         url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EUblx3Ys5FJDreUkqHl3YbYB68XGxiFVUhYbdrFSmtDLXA?e=fYKkbc
+      - text: Session Recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EZR3xo-HEElNsz4xnd7UfCEB5aPxBEhlnwixgB4k3is9dw?e=haqKbV
 
 ---
 
