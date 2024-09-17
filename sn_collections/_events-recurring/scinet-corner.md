@@ -17,6 +17,19 @@ archive-label: SCINet Corner Recordings
 
 sessions:        
   - session: 
+    title: "Introduction to plotting with ggplot2"
+    date: 2024-09-19
+    time: 1-2 pm ET
+    excerpt: "*  Accessing RStudio through Open OnDemand  
+    
+ *  Graphing concepts in creating basic plots using the gapminder data set"
+    instructor: Viswanathan Satheesh
+    materials:
+      - text: Lesson PDF
+        url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/ES1q8RqqLmxIu_wktAG8IGoBnMNJustbFkx2i-C7wNqnYw?e=1eXqKe
+      - text: RMarkdown file
+        url: https://usdagcc.sharepoint.com/:u:/s/REE-ARS-SCINetOffice/EVsiIPN2eQVMsk7zfhC0bz4B7idym0WYZPQeVD72lK7U0g?e=rDvDGl
+  - session: 
     title: "Plotting in Python with plotnine"
     date: 2024-08-15
     time: 1-2 pm ET
