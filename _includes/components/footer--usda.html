@@ -1,5 +1,6 @@
 {%- assign _modifed = site.data.modified["modified"] -%}
-{%- assign modifieddate = _modifed | where_exp: "commit", "commit.filename == page.path" -%}
+{% capture ppath %}{% if page.collection %}sn_collections/{% endif %}{{ page.path }}{% endcapture %}
+{%- assign modifieddate = _modifed | where_exp: "commit", "commit.filename == ppath" -%}
 {% if footer %}
 <footer class="usa-footer usa-footer--big">
 

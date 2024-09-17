@@ -10,7 +10,7 @@
     "start-detached": "node _scripts/infolog.js && bundle exec jekyll serve --detach",
     "setup-jekyll": "bundle",
     "watch-start": "npm run dev",
-    "update-mod": "bash _scripts/git-modified-date.sh",
+    "update-mod": "bash ./_scripts/git-modified-date.sh",
     "pa11y-ci": "pa11y-ci --threshold=7"
   },
   "dependencies": {
