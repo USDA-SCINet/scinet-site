@@ -7,5 +7,5 @@ git ls-tree \
     modified: %ad
     authored: %aI
     committed: %cI
-    filename: ' -- $filename) $filename" >>  _data/modified.yml
+    filename: ' -- $filename) $filename" >> _data/modified.yml
 done
