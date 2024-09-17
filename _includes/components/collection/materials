@@ -21,14 +21,15 @@
 {% if mymaterials.size > 0 %}
 <ul>
 {%- for _material in mymaterials %}
-<li>{% if _material.url %}{% include components/link.html url=_material.url text=_material.text external=true %}{% else %}{{ _material.text }}{% endif %}</li>
-{%- if _material.sublist %}
-<ul>
-{%- for _submaterial in _material.sublist %}
-<li>{% if _submaterial.url %}{% include components/link.html url=_submaterial.url text=_submaterial.text external=true %}{% else %}{{ _submaterial.text }}{% endif %}</li>
-{%- endfor %}
-</ul>
-{%- endif %}
+    <li>{% if _material.url %}{% include components/link.html url=_material.url text=_material.text external=true %}{% else %}{{ _material.text }}{% endif %}
+    {%- if _material.sublist %}
+    <ul>
+    {%- for _submaterial in _material.sublist %}
+    <li>{% if _submaterial.url %}{% include components/link.html url=_submaterial.url text=_submaterial.text external=true %}{% else %}{{ _submaterial.text }}{% endif %}</li>
+    {%- endfor %}
+    </ul>
+    {%- endif %}
+    </li>
 {%- endfor %}
 </ul>
 {%- endif %}
