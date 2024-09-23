@@ -76,58 +76,16 @@ The video includes:
 
 Ceres is the dedicated high performance computing (HPC) infrastructure for ARS researchers on ARS SCINet. Ceres is designed to enable large-scale computing and large-scale storage. Currently, the following compute nodes are available on the Ceres cluster.
 
-100 regular compute nodes, each having:
-
-* 72 logical cores on 2 x 18 core Intel Xeon Processors (6240 2.60GHz 25MB Cache) with hyper-threading turned ON
-* 384GB DDR3 ECC Memory
-* 250GB Intel DC S3500 Series 2.5” SATA 6.0Gb/s SSDs (used to host the OS and provide small local scratch storage)
-* 1.5TB SSD used for temporary local storage
-* Mellanox ConnectX®­3 VPI FDR InfiniBand
-
-76 regular compute nodes, each having:
-
-* 96 logical cores on 2 x 24 core Intel Xeon Processors (6240R 2.40GHz 36MB Cache) with hyper-threading turned ON
-* 384GB DDR3 ECC Memory
-* 250GB Intel DC S3500 Series 2.5” SATA 6.0Gb/s SSDs (used to host the OS and provide small local scratch storage)
-* 1.5TB SSD used for temporary local storage
-* Mellanox ConnectX®­3 VPI FDR InfiniBand
-
-2 large memory nodes, each having:
-
-* 80 logical cores on 2 x 20 core Intel Xeon Processors (6248 2.50GHz 27.5MB Cache) with hyper-threading turned ON
-* 768GB DDR3 ECC Memory
-* 250GB Intel DC S3500 Series 2.5” SATA 6.0Gb/s SSDs (used to host the OS and provide small local scratch storage)
-* 1.5TB SSD used for temporary local storage
-* Mellanox ConnectX®­3 VPI FDR InfiniBand
-
-
-6 large memory nodes, each having:
-
-* 80 logical cores on 2 x 20 core Intel Xeon Processors (6248 2.50GHz 27.5MB Cache) with hyper-threading turned ON
-* 1,536GB DDR3 ECC Memory
-* 250GB Intel DC S3500 Series 2.5” SATA 6.0Gb/s SSDs (used to host the OS and provide small local scratch storage)
-* 1.5TB SSD used for temporary local storage
-* Mellanox ConnectX®­3 VPI FDR InfiniBand
-
-
-11 large memory nodes, each having:
-
-* 96 logical cores on 2 x 24 core Intel Xeon Processors (6248R 3GHz 27.5MB Cache or 6248 2.50GHz 27.5MB Cache) with hyper-threading turned ON
-* 1,536GB DDR3 ECC Memory
-* 250GB Intel DC S3500 Series 2.5” SATA 6.0Gb/s SSDs (used to host the OS and provide small local scratch storage)
-* 1.5TB SSD used for temporary local storage
-* Mellanox ConnectX®­3 VPI FDR InfiniBand
-
-
-1 GPU node that has:
-
-* 72 logical cores on 2 x 18 core Intel Xeon Processors (6140 2.30GHz 25MB Cache) with hyper-threading turned ON
-* 2 Tesla V100
-* 384GB DDR3 ECC Memory
-* 250GB Intel DC S3500 Series 2.5” SATA 6.0Gb/s SSDs (used to host the OS and provide small local scratch storage)
-* 1.5TB SSD used for temporary local storage
-* Mellanox ConnectX®­3 VPI FDR InfiniBand
-
+### Detailed Hardware Specifications
+| Number of Nodes | Processors per Node          | Logical Cores per Node | Memory per Node   | Local Storage | Accelerator Card      | Feature Flags                                            |
+|-----------------|------------------------------|------------------------|-------------------|---------------|-----------------------|----------------------------------------------------------|
+| 99              | Two 18-core Intel Xeon 6240  | 72                     | 384 GB DDR3 ECC   | 1.5 TB SSD    | N/A                   | AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES19           |
+| 76              | Two 24-core Intel Xeon 6240R | 96                     | 384 GB DDR3 ECC   | 1.5 TB SSD    | N/A                   | AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES20           |
+| 20              | One 128-core AMD Epyc 9754   | 256                    | 2,305 GB DDR5 ECC | 1.5 TB SSD    | N/A                   | AVX, AVX2, AVX512, AMD, EPYC9754, BERGAMO, CERES24       |
+| 11              | Two 24-core Intel Xeon 6248R | 96                     | 1,536 GB DDR3 ECC | 1.5 TB SSD    | N/A                   | AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES20           | 
+| 6               | Two 20-core Intel Xeon 6248  | 80                     | 1,536 GB DDR3 ECC | 1.5 TB SSD    | N/A                   | AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES19           |
+| 2               | Two 20-core Intel Xeon 6248  | 80                     | 768 GB DDR3 ECC   | 1.5 TB SSD    | N/A                   | AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES19           |
+| 1               | Two 18-core Intel Xeon 6140  | 72                     | 384 GB DDR3 ECC   | 1.5 TB SSD    | Two Nvidia Tesla V100 |  AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES18, GPU     |
 
 In addition there are a specialized data transfer node and several service nodes.
 
