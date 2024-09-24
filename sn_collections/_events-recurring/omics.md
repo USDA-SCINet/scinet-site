@@ -17,6 +17,11 @@ archive-label: Webinar Recordings
 
 sessions:
   - session:
+    excerpt: "The genomic and metabolic making of yeast ecological diversity"
+    date: 2024-10-10
+    time: 11am-12pm ET
+    presenter: "Dr. Chris Todd Hittinger"
+  - session:
     excerpt: "Exploiting microbiota-derived bioactive compounds to enhance animal health and production"
     date: 2024-09-12
     time: 11am-12pm ET
