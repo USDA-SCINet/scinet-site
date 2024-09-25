@@ -71,7 +71,7 @@ Step 3: Connecting to CLC Server:
 	
   * **If connecting via Ceres Open On Demand**
 ```
-Server name: 10.1.5.210
+Server name: 10.1.9.210
 Server port: 7777
 ```
   * **If connecting from elsewhere**
