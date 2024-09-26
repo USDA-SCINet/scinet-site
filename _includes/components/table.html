@@ -2,8 +2,8 @@
     {% assign split = include.split %}
 {% endif %}
 
-<div class="usa-table-container{% if table.scroll %}--scrollable{% endif %}" tabindex="0">
-    <table class="usa-table usa-table--stacked {% if table.class %}{{ table.class }}{% else %}usa-table--striped{% endif %}">
+<div class="usa-table-container{% if table.scroll %}--scrollable{% elsif table.flex %} flex-scroll{% endif %}" tabindex="0">
+    <table class="usa-table usa-table--stacked{% unless table.relabel %}-header{% endunless %} width-full {% if table.class %}{{ table.class }}{% else %}usa-table--striped-flex{% endif %}">
         {% if table.caption %}
         <caption>
             {{ table.caption }}

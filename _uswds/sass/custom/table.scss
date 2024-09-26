@@ -1,0 +1,16 @@
+@use "uswds-core" as *;
+@forward "usa-table";
+
+.flex-scroll{
+    @include at-media-max("tablet-lg") {
+        @include at-media("mobile-lg"){
+            @include usa-table-container--scrollable;
+        }
+    }
+}
+
+.usa-table--striped-flex {
+    @include at-media("mobile-lg"){
+        @include usa-table--striped;
+    }
+}

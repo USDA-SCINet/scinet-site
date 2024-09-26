@@ -24,7 +24,111 @@ subnav:
   - title: SCINet Software Committee
     url: '#scinet-software-committee'
 
-
+SAC-table:
+  caption: Committee Members
+  flex: true
+  class: usa-table--compact
+  data:
+    - Person: Jeremy Edwards
+      Area: Southeast
+      Role: Chair
+      Subcommittees: Communications
+      Term expires: 2026
+    - Person: Jason Fiedler
+      Area: Plains
+      Role: Vice-Chair
+      Subcommittees: Planning
+      Term expires: 2026
+    - Person: Adrienne Narrowe
+      Area: Northeast
+      Role: Representative
+      Subcommittees: TBD
+      Term expires: 2027
+    - Person: Harlan Svoboda
+      Area: Northeast
+      Role: Representative
+      Subcommittees: TBD
+      Term expires: 2027
+    - Person: Geoff Waldbieser
+      Area: Southeast
+      Role: Representative
+      Subcommittees: TBD
+      Term expires: 2026
+    - Person: Margaret Woodhouse
+      Area: Midwest
+      Role: Secretary
+      Subcommittees: Communications
+      Term expires: 2026
+    - Person: Hye-Seon Kim
+      Area: Midwest
+      Role: Representative
+      Subcommittees:  
+      Term expires: 2025
+    - Person: Erin Scully
+      Area: Plains
+      Role: Representative
+      Subcommittees: Education, Membership
+      Term expires: 2025
+    - Person: Pat Clark
+      Area: Pacific West
+      Role: Representative
+      Subcommittees: Education
+      Term expires: 2025
+    - Person: Peter Olsoy
+      Area: Pacific West
+      Role: Representative
+      Subcommittees: TBD
+      Term expires: 2027
+    - Person: Quentin Read
+      Area: Statistician
+      Role: Representative
+      Subcommittees: TBD
+      Term expires: 2027
+    - Person: Christopher Owen
+      Area: At-Large
+      Role: Representative
+      Subcommittees: TBD
+      Term expires: 2025
+    - Person: Brian Stucky
+      Area: A-CSIO
+      Role: Ex Officio
+      Subcommittees: ""
+      Term expires: ""
+    - Person: Cyndy Parr
+      Area: NAL
+      Role: Ex Officio
+      Subcommittees: ""
+      Term expires: ""
+    - Person: Marlen Eve
+      Area: ONP
+      Role: Ex Officio
+      Subcommittees: ""
+      Term expires: ""
+    - Person: Jack Okamuro
+      Area: ONP
+      Role: Ex Officio
+      Subcommittees: ""
+      Term expires: ""
+    - Person: Bryan Kaphammer
+      Area: AO
+      Role: Ex Officio
+      Subcommittees: ""
+      Term expires: ""
+    - Person: Rob Butler
+      Area: SCINet Program Manager
+      Role: Ex Officio
+      Subcommittees: ""
+      Term expires: ""
+    - Person: Brian Scheffler
+      Area: Former CSIO
+      Role: Ex Officio
+      Subcommittees: ""
+      Term expires: ""
+    - Person: Jay Joiner
+      Area: SCINet Admin Support
+      Role: Ex Officio
+      Subcommittees: ""
+      Term expires: ""
 ---
 
 
@@ -112,34 +216,7 @@ Moe Richert | SCINet Web Developer
 
 The ARS Scientific Computing Initiative is in the domain of ARS researchers, thus the program is in a constant state of gathering information to meet users’ needs. The SAC is an effort to assure that users have input on the ARS HPC-storage system. Scientific Advisory Committee (SAC) members represent a broad range of scientific research at ARS, and membership includes two researchers from each of the five ARS geographic areas, a statistician, and an “at-large” member. The SAC divides its work over various subcommittees: communications, education, planning, and membership. In recent years, the SAC has assisted with a quarterly SCINet newsletter, designed a user needs survey, created the scinet.usda.gov website, and held multiple computational workshops and trainings. SAC progress and issues are elevated to the Executive Committee for review and approval. For more information, including how to participate (non-members welcome), please contact Adam Rivers (Chair).
 
-<div class="usa-table-container--scrollable" tabindex="0" markdown="block">
-
-{: .usa-table .usa-table--compact }
-Person | Area |Role | Sub-subcommittees | Term expires
--------|------|-----|-------------------|-------------
-Jeremy Edwards | Southeast | Chair | Communications | 2026  
-Jason Fiedler | Plains | Vice-Chair | Planning | 2026  
-Adrienne Narrowe | Northeast | Representative | TBD | 2027
-Harlan Svoboda | Northeast | Representative | TBD | 2027
-Geoff Waldbieser | Southeast | Representative | TBD | 2026  
-Margaret Woodhouse | Midwest | Secretary | Communications | 2026  
-Hye-Seon Kim | Midwest | Representative |  | 2025  
-Erin Scully | Plains | Representative | Education, Membership | 2025  
-Pat Clark | Pacific West | Representative | Education | 2025  
-Peter Olsoy | Pacific West | Representative | TBD | 2027
-Quentin Read | Statistician | Representative | TBD | 2027
-Christopher Owen | At-Large | Representative | TBD | 2025  
-Brian Stucky | A-CSIO | Ex Officio | - | - 
-Cyndy Parr | NAL | Ex Officio | - | - 
-Marlen Eve | ONP | Ex Officio | - | - 
-Jack Okamuro | ONP | Ex Officio | - | - 
-Bryan Kaphammer | AO | Ex Officio | - | - 
-Rob Butler | SCINet Program Manager | Ex Officio | - | - 
-Brian Scheffler | Former CSIO | Ex Officio | - | - 
-Jay Joiner | SCINet Admin Support | Ex Officio | - | - 
-
-
-</div>
+{% include table.html local='SAC-table' %}
 
 ## Scientific Points of Contact
 
