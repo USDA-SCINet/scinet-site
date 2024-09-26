@@ -84,7 +84,7 @@ If you have questions, please email the VRSC: scinet_vrsc@usda.gov
 ### How do I reset or change my password?
 If your password is expired you should be prompted to change your password when you attempt to login. If you are still able to login, do so and type "passwd" you will be prompted for your old password and asked for a new one.
 
-[Read more about logging in to SCINet and changing your password here]({{ site.baseurl }}/guides/access/).
+[Read more about logging in to SCINet and changing your password here]({{ site.baseurl }}/guides/access).
 
 [Watch a video demonstration of changing your password here](https://www.youtube.com/watch?v=Amhw2k5mftI).
 
@@ -108,7 +108,7 @@ If you have forgotten your login password, please email the VRSC: scinet_vrsc@us
 2. Your last 24 passwords cannot be reused.
 
 ### How do I login to SCINet?
-We offer web-based access to SCINet (Open OnDemand and Galaxy) and command-line access via SSH. See our [login guide](/guides/access/) for more information.
+We offer web-based access to SCINet (Open OnDemand and Galaxy) and command-line access via SSH. See our [login guide](/guides/access) for more information.
 
 
 ### I took my onboarding a long time ago, how do I get a refresher course?

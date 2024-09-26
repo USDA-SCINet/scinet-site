@@ -3,7 +3,7 @@ title: "Accessing SCINet Using Login.gov"
 description: Steps for accessing SCINet resources using Login.gov
 parent:
   title: Login
-  url: /guides/access/
+  url: /guides/access
   class: "guide-nav"
 ---
 

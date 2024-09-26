@@ -3,7 +3,7 @@ title: Updating Your SCINet Password
 description: Steps for updating your SCINet password
 parent:
   title: Login
-  url: /guides/access/
+  url: /guides/access
   class: "guide-nav"
 ---
 
