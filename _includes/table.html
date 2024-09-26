@@ -1,12 +1,18 @@
 {% if include.table %}
 {% assign table=include.table %}
+{% elsif include.local %}
+{% assign table = page[include.local] %}
 {% endif %}
 
+{% if table.data %}
+{% assign tabledata = table.data %}
+{% else %}
 {% for _table in site.data.tables %}
 {% if _table[0] == table.source %}
     {% assign tabledata = _table[1] %}
 {% endif %}
 {% endfor %}
+{% endif %}
 
 {% if table.title %}
 <h2>{{ table.title }}</h2>

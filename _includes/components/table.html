@@ -3,7 +3,7 @@
 {% endif %}
 
 <div class="usa-table-container{% if table.scroll %}--scrollable{% endif %}" tabindex="0">
-    <table class="usa-table {% if table.class %}{{ table.class }}{% else %}usa-table--striped{% endif %}">
+    <table class="usa-table usa-table--stacked {% if table.class %}{{ table.class }}{% else %}usa-table--striped{% endif %}">
         {% if table.caption %}
         <caption>
             {{ table.caption }}
@@ -33,7 +33,7 @@
                     {% for pair in row %}
                     {% unless pair[0]=="url" or pair[0]==table.split %}
                     {% if forloop.first %}
-                    <th scope="row">
+                    <th scope="row"  data-label="{{ pair[0] }}" >
                         {% assign urlcheck = "false" %}
                         {% for _pair in row %}
                             {% if _pair[0]=="url" %}
@@ -46,7 +46,7 @@
                         {% if urlcheck=="false" %}{{ pair[1] }}{% endif %}
                     </th>  
                     {% else %}
-                    <td data-sort-value="{{ pair[1] }}">{{ pair[1] }}</td>
+                    <td data-sort-value="{{ pair[1] }}" data-label="{{ pair[0] }}">{{ pair[1] }}</td>
                     {% endif %}
                     {% endunless %}
                     {% endfor %}
@@ -57,7 +57,7 @@
     </table>
     {% if table.announcement %}
     <div class="usa-table__announcement-region" aria-live="polite">
-       {{ table.announcement }}
+       {{ table.announcement | markdownify }}
     </div>
     {% endif %}
     </div>
