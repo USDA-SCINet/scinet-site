@@ -17,9 +17,6 @@ subnav:
     url: '#technical-overview'
   - title: System Configuration
     url: '#system-configuration'
-    subnav: 
-    - title: Software Environment
-      url: '#software-environment'
   - title: Additional Guides
     url: '#additional-guides-for-ceres'
   - title: Logging In
@@ -46,6 +43,84 @@ subnav:
     url: /guides/resources/citation
     internal: true
 
+hardware-table:
+  class: ""
+  caption: Detailed Hardware Specifications
+  data:
+    - Number of Nodes: 99
+      Processors per Node: Two 18-core Intel Xeon 6240
+      Logical Cores per Node: 72
+      Memory per Node: 384 GB DDR3 ECC
+      Local Storage: 1.5 TB SSD
+      Accelerator Card: N/A
+      Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES19
+    - Number of Nodes: 76
+      Processors per Node: Two 24-core Intel Xeon 6240R
+      Logical Cores per Node: 96
+      Memory per Node: 384 GB DDR3 ECC
+      Local Storage: 1.5 TB SSD
+      Accelerator Card: N/A
+      Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES20
+    - Number of Nodes: 20
+      Processors per Node: One 128-core AMD Epyc 9754
+      Logical Cores per Node: 256
+      Memory per Node: 2,305 GB DDR5 ECC
+      Local Storage: 2.9 TB SSD
+      Accelerator Card: N/A
+      Constraint Flags: AVX, AVX2, AVX512, AMD, EPYC9754, BERGAMO, CERES24  
+    - Number of Nodes: 11
+      Processors per Node: Two 24-core Intel Xeon 6248R
+      Logical Cores per Node: 96
+      Memory per Node: 1,536 GB DDR3 ECC
+      Local Storage: 1.5 TB SSD
+      Accelerator Card: N/A
+      Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES20
+    - Number of Nodes: 6  
+      Processors per Node: Two 20-core Intel Xeon 6248
+      Logical Cores per Node: 80
+      Memory per Node: 1,536 GB DDR3 ECC
+      Local Storage: 1.5 TB SSD
+      Accelerator Card: N/A
+      Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES19
+    - Number of Nodes: 2  
+      Processors per Node: Two 20-core Intel Xeon 6248
+      Logical Cores per Node: 80
+      Memory per Node: 768 GB DDR3 ECC
+      Local Storage: 1.5 TB SSD
+      Accelerator Card: N/A
+      Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES19
+    - Number of Nodes: 1  
+      Processors per Node: Two 18-core Intel Xeon 6140
+      Logical Cores per Node: 72
+      Memory per Node: 384 GB DDR3 ECC
+      Local Storage: 1.5 TB SSD
+      Accelerator Card: Two Nvidia Tesla V100
+      Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES18, GPU
+
+software-table:
+    local: software-data
+    class: ""
+    caption: Software Environment
+    announcement: "For more information on available software and software installs refer to our guides on [Modules](/guides/software/modules), [Singularity Containers](/guides/software/singularity) and [Installing R, Python, and Perl Packages](/guides/software/r-perl-python)."
+    data:
+      - Domain: Operating System  
+        Software: Red Hat Enterprise Linux
+      - Domain: Scheduler
+        Software: SLURM
+      - Domain: Software
+        Software: "For the full list of installed scientific software refer to the <a href='/guides/software/preinstalled'>Preinstalled Software List</a> page or issue the  `module spider`  command on the Ceres login node."
+      - Domain: Modeling  
+        Software: "BeoPEST, EPIC, KINEROS2, MED-FOES, SWAT, h2o"
+      - Domain: Compilers
+        Software: "GNU (C, C++, Fortran), clang, llvm, Intel Parallel Studio"
+      - Domain: Languages
+        Software: Java 6, Java 7, Java 8, Python, Python 3, R, Perl 5, Julia, Node
+      - Domain: Tools and Libraries
+        Software: tmux, Eigen, Boost, GDAL, HDF5, NetCDF, TBB, Metis, PROJ4, OpenBLAS, jemalloc
+      - Domain: MPI libraries
+        Software: MPICH, OpenMPI
+      - Domain: Profiling and debugging
+        Software: PAPI
 
 ---
 
@@ -76,16 +151,7 @@ The video includes:
 
 Ceres is the dedicated high performance computing (HPC) infrastructure for ARS researchers on ARS SCINet. Ceres is designed to enable large-scale computing and large-scale storage. Currently, the following compute nodes are available on the Ceres cluster.
 
-### Detailed Hardware Specifications
-| Number of Nodes | Processors per Node          | Logical Cores per Node | Memory per Node   | Local Storage | Accelerator Card      | Constraint Flags                                         |
-|-----------------|------------------------------|------------------------|-------------------|---------------|-----------------------|----------------------------------------------------------|
-| 99              | Two 18-core Intel Xeon 6240  | 72                     | 384 GB DDR3 ECC   | 1.5 TB SSD    | N/A                   | AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES19           |
-| 76              | Two 24-core Intel Xeon 6240R | 96                     | 384 GB DDR3 ECC   | 1.5 TB SSD    | N/A                   | AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES20           |
-| 20              | One 128-core AMD Epyc 9754   | 256                    | 2,305 GB DDR5 ECC | 2.9 TB SSD    | N/A                   | AVX, AVX2, AVX512, AMD, EPYC9754, BERGAMO, CERES24       |
-| 11              | Two 24-core Intel Xeon 6248R | 96                     | 1,536 GB DDR3 ECC | 1.5 TB SSD    | N/A                   | AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES20           | 
-| 6               | Two 20-core Intel Xeon 6248  | 80                     | 1,536 GB DDR3 ECC | 1.5 TB SSD    | N/A                   | AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES19           |
-| 2               | Two 20-core Intel Xeon 6248  | 80                     | 768 GB DDR3 ECC   | 1.5 TB SSD    | N/A                   | AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES19           |
-| 1               | Two 18-core Intel Xeon 6140  | 72                     | 384 GB DDR3 ECC   | 1.5 TB SSD    | Two Nvidia Tesla V100 | AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES18, GPU      |
+{% include table.html local='hardware-table' %}
 
 In addition there are a specialized data transfer node and several service nodes.
 
@@ -97,21 +163,7 @@ Shared storage consists of 5.5 PB high-performance BeeGFS space and 300TB of bac
 ## System Configuration
 Since most HPC compute nodes are dedicated to running HPC cluster jobs, direct access to the nodes is discouraged. The established HPC best practice is to provide login nodes. Users access a login node to submit jobs to the cluster’s resource manager (SLURM), and access other cluster console functions. All nodes run on Linux CentOS 7.8.
 
-### Software Environment
-
-Domain | Software
---- | ---
-Operating System	| Red Hat Enterprise Linux
-Scheduler	| SLURM
-Software | For the full list of installed scientific software refer to the [Preinstalled Software List]({{ site.baseurl }}/guides/software/preinstalled) page or issue the  `module spider`  command on the Ceres login node.  
-Modeling	| BeoPEST, EPIC, KINEROS2, MED-FOES, SWAT, h2o
-Compilers | GNU (C, C++, Fortran), clang, llvm, Intel Parallel Studio
-Languages | Java 6, Java 7, Java 8, Python, Python 3, R, Perl 5, Julia, Node
-Tools and Libraries | tmux, Eigen, Boost, GDAL, HDF5, NetCDF, TBB, Metis, PROJ4, OpenBLAS, jemalloc
-MPI libraries | MPICH, OpenMPI
-Profiling and debugging | PAPI
-
-For more information on available software and software installs refer to our guides on [Modules]({{ site.baseurl }}/guides/software/modules), [Singularity Containers]({{ site.baseurl }}/guides/software/singularity) and [Installing R, Python, and Perl Packages]({{ site.baseurl }}/guides/software/r-perl-python).
+{% include table.html local='software-table' %}
 
 
 ## Additional Guides for Ceres:
