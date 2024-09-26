@@ -45,6 +45,8 @@ subnav:
 
 hardware-table:
   class: ""
+  flex: true
+  relabel: true
   caption: Detailed Hardware Specifications
   data:
     - Number of Nodes: 99
