@@ -20,16 +20,30 @@ table:
     source: modules
     caption: List updated October 9, 2020. To generate this list run  <code>module avail</code>.
 
----
-## Graphical Software
+graphical-table:
+  title: Graphical Software
+  class: ""
+  data:
+    - Software: Galaxy Server
+      Information: SCINet Runs its own <a href='https://galaxy.scinet.usda.gov'>Galaxy Server</a>.  Galaxy is an open source, web-based platform for data intensive bioinformatic research.
+      url: /guides/analysis/galaxy
+    - Software: CLC Server
+      Information: SCINet has a license key to <a href='https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/enterprise-ngs-solutions/qiagen-clc-genomics-server/'>CLC Server</a>
+      url: /guides/application/clc-workbench
+    - Software: Geneious
+      Information: SCINet has a license key to Geneious
+      url: /guides/application/geneious
+    - Software: Rstudio
+      Information: SCINet runs a R studio Server
+      url: /guides/ide/r-studio
+    - Software: Jupyter
+      Information:  <a href='https://jupyter.org/'>Project Jupyter</a> notebooks and Lab can be run on Ceres
+      url: /guides/ide/jupyter
 
-Software | information
----|---
-[Galaxy Server]({{ site.baseurl }}/guides/analysis/galaxy) | SCINet Runs its own [Galaxy Server](https://galaxy.scinet.usda.gov).  Galaxy is an open source, web-based platform for data intensive bioinformatic research.
-[CLC Server]({{ site.baseurl }}/guides/application/clc-workbench) | SCINet has a license key to [CLC Server](https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/enterprise-ngs-solutions/qiagen-clc-genomics-server/)
-[Geneious]({{ site.baseurl }}/guides/application/geneious) |SCINet has a license key to Geneious
-[Rstudio]({{ site.baseurl }}/guides/ide/r-studio) | SCINet runs a R studio Server
-[Jupyter]({{ site.baseurl }}/guides/ide/jupyter) |  [Project Jupyter](https://jupyter.org/) notebooks and Lab can be run on Ceres
+
+---
+
+{% include table.html local='graphical-table' %}
 
 
 ## Command-line Software on SCINet Clusters
