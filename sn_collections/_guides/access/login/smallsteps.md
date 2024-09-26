@@ -3,7 +3,7 @@ title: SmallStepsCLI Logon Troubleshooting
 description: Troubleshooting steps for SSH logon to SCINet
 parent:
   title: Login
-  url: /guides/access/
+  url: /guides/access
   class: "guide-nav"
 
 subnav: 

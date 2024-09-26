@@ -50,7 +50,7 @@ See the SCINet [Globus Data Transfer guide]({{ site.baseurl }}/guides/data/datat
 
 1. Copy raw data and custom software (e.g., custom scripts, ideally also versioned in Git repositories; conda environments/environment.yml, Singularity image/definition files) from a local workstation or other data source to a project directory on Juno using Globus (search for Globus collection “SCINet-Juno”) (Figure 1.1).  On Juno, the data should be copied to `/LTS/project/PROJNAME/`.
 1. If not already there, copy data to Tier 1 storage on the cluster you will run on, either Ceres or Atlas, using Globus.  For most projects, you should use `/90dayadata` for routine, short-term storage (Figure 1.2).  There are no storage quotas on `/90daydata`, so it is ideal for data-intensive work.  For projects that require longer-term use of Tier 1 storage, space can be requested in `/project`.  However, please note that _no_ data on Tier 1 storage is backed up.
-1. Use ssh to log in to your chosen HPC cluster (Ceres or Atlas; see [Logging in to SCINet]({{ site.baseurl }}/guides/access/)); (e.g.:
+1. Use ssh to log in to your chosen HPC cluster (Ceres or Atlas; see [Logging in to SCINet]({{ site.baseurl }}/guides/access)); (e.g.:
 ```
 ssh FIRST.LAST@ceres.scinet.usda.gov
 ```

@@ -32,5 +32,5 @@ subnav:
 
 This pre-workshop session will have VRSC team members available to address issues related to SCINet account logins. If you don't currently have a SCINet account, [apply for one]({{ site.baseurl }}/about/signup) ASAP. 
 
-You must be [able to login]({{ site.baseurl }}/guides/access/) to your SCINet account to actively participate in any of the interactive follow-along tutorials (Sessions 2-4). Note that log-in procedures have been recently updated, so if it has been a while since you logged in to your account, please confirm that you are able to login. 
+You must be [able to login]({{ site.baseurl }}/guides/access) to your SCINet account to actively participate in any of the interactive follow-along tutorials (Sessions 2-4). Note that log-in procedures have been recently updated, so if it has been a while since you logged in to your account, please confirm that you are able to login. 
 
