@@ -29,17 +29,19 @@ subnav:
 
 Ceres uses Simple Linux Utility for Resource Management (SLURM) to submit interactive and batch jobs to the compute nodes. Requested resources can be specified either within the job script or using options with the  `salloc`,  `srun`, or  `sbatch`  commands.<!--excerpt-->
 
-All users have been assigned Slurm accounts based on their project groups. If you don't have a project, then your default and only Slurm account is sandbox. If you have more than one project, then your default Slurm account is one of the project names. You can specify a different Slurm account when submitting a job by using “-A <account_name>” option on salloc/srun/sbatch command or adding “#SBATCH -A <account_name>” to the job script.
+Users will run their applications on the cluster in either interactive mode or in batch mode. Interactive mode ( `salloc`  or  `srun`  command) is familiar to anyone using the command line: the user specifies an application by name and various arguments, hits Enter, and the application runs. However, in interactive mode on a cluster the user is automatically switched from using a login node to using a compute node. This keeps all the intense computation off the login nodes, so that login nodes can have all the resources necessary for managing the cluster. You should always use interactive mode when you are running your application but not using batch mode. **Please do not run your applications on the login nodes, use the interactive mode.**
+
+Interactive mode should only be used when interaction is required, for example when preparing or debugging a pipeline. Otherwise the batch mode should be used. Batch mode requires the user to write a short job script (see examples at section [Batch Mode]({{ site.baseurl }}/guides/use/slurm#batch-mode)) or use the [Ceres Job Script Generator]({{ site.baseurl }}/support/ceres-job-script).
+
+
+## Slurm Accounts
+
+ All users have been assigned Slurm accounts based on their project groups. If you don't have a project, then your default and only Slurm account is sandbox. If you have more than one project, then your default Slurm account is one of the project names. You can specify a different Slurm account when submitting a job by using “-A <account_name>” option on salloc/srun/sbatch command or adding “#SBATCH -A <account_name>” to the job script.
   
 To see all your Slurm accounts and your default account at any time, use “sacctmgr -Pns show user format=account,defaultaccount”
   
 You can change your default Slurm account running slurm-account-selector.sh on the login node.
 
-Users will run their applications on the cluster in either interactive mode or in batch mode. Interactive mode ( `salloc`  or  `srun`  command) is familiar to anyone using the command line: the user specifies an application by name and various arguments, hits Enter, and the application runs. However, in interactive mode on a cluster the user is automatically switched from using a login node to using a compute node. This keeps all the intense computation off the login nodes, so that login nodes can have all the resources necessary for managing the cluster. You should always use interactive mode when you are running your application but not using batch mode. **Please do not run your applications on the login nodes, use the interactive mode.**
-
-Interactive mode should only be used when interaction is required, for example when preparing or debugging a pipeline. Otherwise the batch mode should be used. Batch mode requires the user to write a short job script (see examples at section [Batch Mode]({{ site.baseurl }}/guides/use/slurm#batch-mode)) or use the [Ceres Job Script Generator]({{ site.baseurl }}/support/ceres-job-script).
-
- 
 
 ## Interactive Mode
 
@@ -54,7 +56,7 @@ To prevent users from requesting interactive nodes and then not using them, ther
 
 For more fine grained control over the interactive environment you can use the  `srun`  command. Issue the  `srun`  command from a login node. Command syntax is:
 ```
-$ srun --pty -p queue -t hh:mm:ss -n tasks -N nodes /bin/bash -l
+$ srun --pty -p queue -t hh:mm:ss -n tasks -N nodes -C constraints /bin/bash -l
 ```
 
 {: .usa-table .usa-table--compact }
@@ -64,6 +66,7 @@ Option |Value
 -t	| maximum runtime
 -n	| number of cores
 -N	| number of nodes
+-C  | constraints (optional)
 
 The following example commands illustrate an interactive session where the user requests 1 hour in the short queue, using 1 compute node and 20 logical cores (half of the cores available on the original compute node), using the bash shell, followed by a BLAST search of a protein database.
 
@@ -114,6 +117,20 @@ SLURM allows you to precisely choose the allocation of compute cores across node
 `-n 8 --ntasks-per-node=2`  |  request 8 cores on 4 nodes with 2 cores per node
 `-n 8 -N 1`                  | request 8 cores on a single node
 `-n 8 --ntasks-per-node=8`   | same as  `-n 8 -N 1`
+
+## Resource Constraints
+
+Slurm permits you to restrict your jobs to only run on nodes with specific hardware features using constraints. This is generally not necessary and can result in longer queue times on jobs while waiting for appropriate hardware to be available.  However, hardware feature constraints are available for those users with software that requires it.
+
+If you have a software package that requires using constraints, you can specify the requirement with interactive jobs by adding the `-C constraint` option to your `salloc` or `srun` command.  For example:
+```bash
+salloc -n 1 -n 4 -t 60 -C intel
+```
+launches an interactive sessions for 60 minutes on a single node with an Intel processor with access to four CPU cores.  The same limitation to only run on Intel processors can be achieved in an sbatch script by adding the line:
+```bash
+#SBATCH -C intel
+```
+For a complete list of available hardware feature constraints, please see the [Ceres hardware guide]({{ site.baseurl }}/guides/resources/ceres#technical-overview).
 
 ## Batch Mode
 ### Serial Job
