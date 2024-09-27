@@ -91,13 +91,6 @@ hardware-table:
       Local Storage: 1.5 TB SSD
       Accelerator Card: N/A
       Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES19
-    - Number of Nodes: 1  
-      Processors per Node: Two 18-core Intel Xeon 6140
-      Logical Cores per Node: 72
-      Memory per Node: 384 GB DDR3 ECC
-      Local Storage: 1.5 TB SSD
-      Accelerator Card: Two Nvidia Tesla V100
-      Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES18, GPU
 
 software-table:
     local: software-data
