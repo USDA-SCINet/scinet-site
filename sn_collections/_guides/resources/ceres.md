@@ -52,44 +52,38 @@ hardware-table:
     - Number of Nodes: 100
       Processors per Node: Two 18-core Intel Xeon 6240
       Logical Cores per Node: 72
-      Memory per Node: 384 GB DDR3 ECC
+      Memory per Node: 381 GB DDR3 ECC
       Local Storage: 1.5 TB SSD
-      Accelerator Card: N/A
       Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES19
     - Number of Nodes: 76
       Processors per Node: Two 24-core Intel Xeon 6240R
       Logical Cores per Node: 96
-      Memory per Node: 384 GB DDR3 ECC
+      Memory per Node: 381 GB DDR3 ECC
       Local Storage: 1.5 TB SSD
-      Accelerator Card: N/A
       Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES20
     - Number of Nodes: 20
       Processors per Node: One 128-core AMD Epyc 9754
       Logical Cores per Node: 256
       Memory per Node: 2,305 GB DDR5 ECC
       Local Storage: 2.9 TB SSD
-      Accelerator Card: N/A
       Constraint Flags: AVX, AVX2, AVX512, AMD, EPYC9754, BERGAMO, CERES24  
     - Number of Nodes: 11
       Processors per Node: Two 24-core Intel Xeon 6248R
       Logical Cores per Node: 96
-      Memory per Node: 1,536 GB DDR3 ECC
+      Memory per Node: 1,546 GB DDR3 ECC
       Local Storage: 1.5 TB SSD
-      Accelerator Card: N/A
       Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES20
     - Number of Nodes: 6  
       Processors per Node: Two 20-core Intel Xeon 6248
       Logical Cores per Node: 80
-      Memory per Node: 1,536 GB DDR3 ECC
+      Memory per Node: 1,546 GB DDR3 ECC
       Local Storage: 1.5 TB SSD
-      Accelerator Card: N/A
       Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES19
     - Number of Nodes: 2  
       Processors per Node: Two 20-core Intel Xeon 6248
       Logical Cores per Node: 80
-      Memory per Node: 768 GB DDR3 ECC
+      Memory per Node: 772 GB DDR3 ECC
       Local Storage: 1.5 TB SSD
-      Accelerator Card: N/A
       Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES19
 
 software-table:
@@ -150,7 +144,7 @@ Ceres is the dedicated high performance computing (HPC) infrastructure for ARS r
 
 For details on how to request a node with specific hardware, see the [SLURM Resource Manager]({{ site.baseurl }}/guides/use/slurm).
 
-In addition there are a specialized data transfer node and several service nodes.
+In addition there is a specialized data transfer node and several service nodes.
 
 In aggregate, there are more than 10,500 compute cores (21,000 logical cores) with 138 terabytes (TB) of total RAM, 350 TB of total local storage, and 5.5 petabyte (PB) of shared storage.
 
