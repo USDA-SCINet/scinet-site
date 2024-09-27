@@ -148,6 +148,8 @@ Ceres is the dedicated high performance computing (HPC) infrastructure for ARS r
 
 {% include table.html local='hardware-table' %}
 
+For details on how to request a node with specific hardware, see the [SLURM Resource Manager]({{ site.baseurl }}/guides/use/slurm).
+
 In addition there are a specialized data transfer node and several service nodes.
 
 In aggregate, there are more than 10,500 compute cores (21,000 logical cores) with 138 terabytes (TB) of total RAM, 350 TB of total local storage, and 5.5 petabyte (PB) of shared storage.
