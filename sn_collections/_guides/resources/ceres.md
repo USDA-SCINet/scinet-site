@@ -49,7 +49,7 @@ hardware-table:
   relabel: true
   caption: Detailed Hardware Specifications
   data:
-    - Number of Nodes: 99
+    - Number of Nodes: 100
       Processors per Node: Two 18-core Intel Xeon 6240
       Logical Cores per Node: 72
       Memory per Node: 384 GB DDR3 ECC
