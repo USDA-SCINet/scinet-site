@@ -25,7 +25,7 @@ i.e.
 //theme sizes
  
 .sci-container {
-   @include u-maxw('desktop-lg');
+   @include u-maxw($theme-grid-container-max-width);
    @include u-margin-x('auto');
 }
 
@@ -36,7 +36,7 @@ i.e.
  
 //side nav formatting
 .main-side {
-  @include u-maxw('desktop-lg');
+  @include u-maxw($theme-grid-container-max-width);
 }
 
 //code block scroll
