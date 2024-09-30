@@ -1,5 +1,5 @@
-{% assign guidecategories = site.guidecategory | sort: 'order_number' %}
-{% assign guidepages = site.guides | sort: 'order_number' %}
+{% assign guidecategories = site.guides | where: "sorting", "index" | sort: 'order_number' %}
+{% assign guidepages = site.guides | where: "sorting", "guide" | sort: 'order_number' %}
 {% assign all_posts = guidecategories | concat: guidepages %}
 
 

@@ -15,17 +15,20 @@
       {% endif %}
       {% for _link in sidenav limit:1 %}
         {% unless _link.url == page.url or _link.url == page.permalink %}
+          {% assign linkurl = _link.url | remove: 'index' %}
           {% capture linktitle %}{% if alt_nav == 'Workshop' %}{{ alt_nav }} Home{% else %}{{ _link.title }}{% endif %}{% endcapture %}
-          {% include components/breadcrumb.html title=linktitle url=_link.url %}
+          {% include components/breadcrumb.html title=linktitle url=linkurl %}
         {% endunless %}
       {% endfor %}
     {% else %}
 
     {% if show_bc_section %}
-      {% include components/breadcrumb.html title=bc_section.title url=bc_section.url %}
+      {% assign linkurl = bc_section.url | remove: 'index' %}
+      {% include components/breadcrumb.html title=bc_section.title url=linkurl %}
     {% endif %}
     {% if bc_sectionlink %}
-      {% include components/breadcrumb.html title=bc_sectionlink.title url=bc_sectionlink.url %}
+      {% assign linkurl = bc_sectionlink.url | remove: 'index' %}
+      {% include components/breadcrumb.html title=bc_sectionlink.title url=linkurl %}
     {% endif %}
     {% endif %}
 

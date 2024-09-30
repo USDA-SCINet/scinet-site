@@ -1,6 +1,10 @@
 ---
 title: Software Installation and Access
 description: Guide to installing Software on SCINet
+sorting: index
+layout: "guides"
+class: "guide-nav"
+
 
 short_title: Software Installation and Access
 

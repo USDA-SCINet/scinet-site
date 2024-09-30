@@ -1,6 +1,10 @@
 ---
 title: Development Environment Guides
 description: Guides for available SCINet develpment environments
+sorting: index
+layout: "guides"
+class: "guide-nav"
+
 
 categories: [IDE]
 order_number: 40
