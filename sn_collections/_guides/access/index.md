@@ -2,6 +2,11 @@
 title: Accessing SCINet
 description: How to access SCINet
 order_number: 10
+sorting: index
+layout: "guides"
+class: "guide-nav"
+
+
 
 short_title: Access
 

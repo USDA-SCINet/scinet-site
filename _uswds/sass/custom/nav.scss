@@ -29,3 +29,62 @@ $search-icon2: (
         margin-right: 6px;
     }
 }
+
+.usa-sidenav{
+    background-color: color('white');
+    border: 2px solid color('base-lighter');
+    border-radius: .25rem;
+    .usa-sidenav__sublist {
+      .usa-current {
+        color: color($theme-color-primary-vivid);
+      }
+    }
+    
+    li.current-section{
+      border-top:    2px solid color('gray-cool-10');
+      border-bottom: 1px solid color('gray-cool-10');
+      border-left: 4px solid color($theme-color-primary-vivid);
+      a.current-section{
+          font-weight: bold;
+      }
+  
+      .pagelinks {
+          a {
+              padding-left: units(2);
+            }
+          a.current-section{
+              font-weight: bold;
+          }
+  
+          .usa-sidenav__sublist {
+              a {
+                padding-left: units(4);
+              }
+              .usa-sidenav__sublist { 
+                  a {
+                  padding-left: units(6);
+                  }
+                  .usa-sidenav__sublist {
+                      a {
+                          padding-left: units(8);
+                      }
+                  }
+              }
+          }
+      }
+  
+      .is-current{
+          border-left: none;
+      }
+    }
+    .is-current{
+      background-color: color('gray-2');
+      border-left: 4px solid color($theme-color-primary-vivid);
+    }
+    .usa-current{
+      background-color: color('gray-2');
+    }
+    .usa-current::after{
+      content: none !important;
+    }
+  }
