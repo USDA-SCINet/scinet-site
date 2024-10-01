@@ -1,6 +1,7 @@
 ---
 
 title: "Session 5: Closing discussion and future planning"
+description: Closing discussion and future planning
 
 excerpt: Discussions on how to use the tools and methods covered in the workshop in your own research and what should the working group focus on in the next year
 categories: [2023 Geospatial Workshop]  

@@ -1,6 +1,7 @@
 ---
 
 title: "Session 0: Pre-workshop SCINet login support"
+description: Pre-workshop SCINet login support
 
 excerpt: Pre-workshop SCINet account login assistance with the VRSC
 categories: [2023 Geospatial Workshop]  

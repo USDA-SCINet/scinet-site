@@ -2,6 +2,7 @@
 title: "Arthropod Genomics Research Workshop 1"
 # author: Brad Coates
 excerpt: Formation of the AGR working group.
+description: Event - Formation of the AGR working group.
 end_date: 2014-09-19
 provider: AGR Working Group
 type: workshop

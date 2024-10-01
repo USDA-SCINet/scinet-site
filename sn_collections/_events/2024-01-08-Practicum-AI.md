@@ -1,7 +1,8 @@
 ---
 
 title: "Practicum AI - Deep Learning Foundations"
-excerpt: "Deep learning is the focus of modern AI. Models have many layers and millions, or now approaching a trillion, parameters! This course breaks things down and introduces you to a small AI model to provide a conceptual understanding of how AI models are built, trained, and deployed." 
+excerpt: "Deep learning is the focus of modern AI. Models have many layers and millions, or now approaching a trillion, parameters! This course breaks things down and introduces you to a small AI model to provide a conceptual understanding of how AI models are built, trained, and deployed."
+description: "Event - Deep learning is the focus of modern AI. Models have many layers and millions, or now approaching a trillion, parameters! This course breaks things down and introduces you to a small AI model to provide a conceptual understanding of how AI models are built, trained, and deployed." 
 type: training
 provider: University of Florida
 hideprovider: true

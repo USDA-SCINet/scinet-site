@@ -1,6 +1,7 @@
 ---
 
 title: "Session 11: Closing discussion and future planning"
+description: Closing discussion and future planning
 
 excerpt: Summarize content from previous sessions, provide feedback on workshop, and discuss future needs of working group
 categories: [2022 Geospatial Workshop]  

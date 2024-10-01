@@ -3,6 +3,7 @@
 title: NMSU-USDA-ARS AI Workshop
 # author: Yasasvy Nanyam
 excerpt: Presented by Laura Boucheron from New Mexico State University. 
+description: Event - Presented by Laura Boucheron from New Mexico State University. 
 provider: NMSU
 type: training
 lead: Laura Boucheron, Brian Stucky

@@ -9,7 +9,7 @@ end_date: 2019-09-11  # always have two numbers for month and day  YYYY-MM-DD
 
 layout: event
 
-
+description: Event - 2019 Geospatial Workshop
 
 ---
 

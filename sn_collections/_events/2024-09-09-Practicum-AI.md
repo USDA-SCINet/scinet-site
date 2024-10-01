@@ -4,7 +4,7 @@ type: workshop
 end_date: 2024-09-13 
 provider: University of Florida
 hideprovider: true
-description: A course that builds on a basic understanding of Python and deep neural networks to demystify the technology that allows machines to interpret and make decisions based on visual data.
+description: Event - A course that builds on a basic understanding of Python and deep neural networks to demystify the technology that allows machines to interpret and make decisions based on visual data.
 
 filtered: practicumai
 

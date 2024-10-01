@@ -1,7 +1,8 @@
 ---
 
 title: "Practicum AI - Getting Started with AI"
-excerpt: "This course provides a high-level overview of the concepts, history, and vocabulary of AI. You will get hands-on experience with simple online AI tools, experimenting with gathering data, and training a model." 
+excerpt: "This course provides a high-level overview of the concepts, history, and vocabulary of AI. You will get hands-on experience with simple online AI tools, experimenting with gathering data, and training a model."
+description: "Event - This course provides a high-level overview of the concepts, history, and vocabulary of AI. You will get hands-on experience with simple online AI tools, experimenting with gathering data, and training a model." 
 type: training
 provider: University of Florida
 hideprovider: true

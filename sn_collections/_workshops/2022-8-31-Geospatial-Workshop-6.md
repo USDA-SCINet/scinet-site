@@ -1,6 +1,7 @@
 ---
 
 title: "Session 6: Geospatial analyses and how to parallelize them in R"
+description: Geospatial analyses and how to parallelize them in R
 
 excerpt: R packages for geospatial analyses and parallel processing with multiple tutorials 
 categories: [2022 Geospatial Workshop]  

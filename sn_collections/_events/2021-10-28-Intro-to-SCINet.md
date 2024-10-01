@@ -3,6 +3,7 @@
 title: "Introduction to SCINet"
 # author: Delanie Johnson
 excerpt: Hear a brief overview of SCINet
+description: Event - Hear a brief overview of SCINet
 provider: SCINet
 type: training
 ---

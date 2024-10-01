@@ -2,7 +2,8 @@
 
 title: "Advanced Topics in Deep Learning"
 # author: Heather Jones
-excerpt: Advanced Topics in Deep Learning
+excerpt: This 3 day course covered advanced topics in deep learning.
+description: Event - Advanced Topics in Deep Learning
 type: training
 tags: Deep-Learning
 provider: SCINet

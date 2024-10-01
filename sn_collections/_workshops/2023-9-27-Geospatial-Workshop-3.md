@@ -1,6 +1,7 @@
 ---
 
 title: "Session 3: Geospatial deep learning with Raster Vision"
+description: Geospatial deep learning with Raster Vision
 
 excerpt: An introduction to deep learning computer vision tasks with geospatial data
 categories: [2023 Geospatial Workshop]  

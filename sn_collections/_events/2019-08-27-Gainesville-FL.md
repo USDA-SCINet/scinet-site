@@ -6,6 +6,7 @@ title: Artificial Intelligence and Machine Learning Training
 # lead: Adam Rivers
 # author: Kerrie Geil
 excerpt: A group of 30 ARS researchers and 20 researchers from the University of Florida (UF) met in Gainesville, FL in August 2019 to gain experience with various machine learning research techniques through interactive training modules
+description: Event - A group of 30 ARS researchers and 20 researchers from the University of Florida (UF) met in Gainesville, FL in August 2019 to gain experience with various machine learning research techniques through interactive training modules
 picture: /assets/img/group_photo_1280px.jpg
 provider: ARS
 type: training

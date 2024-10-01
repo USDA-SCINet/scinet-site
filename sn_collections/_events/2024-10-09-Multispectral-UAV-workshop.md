@@ -4,7 +4,7 @@ type: workshop
 end_date: 2024-10-09 
 provider: Geospatial Working Group
 hideprovider: true
-description: Processing multispectral UAV imagery and extracting zonal statistics for geospatial modeling using OpenDroneMap on SCINet systems.
+description: Event - Processing multispectral UAV imagery and extracting zonal statistics for geospatial modeling using OpenDroneMap on SCINet systems.
 
 tags: UAS
 sessions: 

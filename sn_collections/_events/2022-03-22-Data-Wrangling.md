@@ -3,6 +3,7 @@
 title: "Data Wrangling Workshop"
 # author: Heather Jones
 excerpt: Data wrangling with unmanned aerial system data
+description: Event - Data wrangling with unmanned aerial system data
 type: training
 tags: UAS
 ---

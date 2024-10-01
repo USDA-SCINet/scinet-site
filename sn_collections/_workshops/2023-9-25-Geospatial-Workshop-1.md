@@ -1,6 +1,7 @@
 ---
 
 title: "Session 1: Kickoff with lightning talks"
+description: Kickoff with lightning talks
 
 excerpt: Introduction to the workshop plus lightning presentations from ARS researchers and SCINet Fellows on their research
 categories: [2023 Geospatial Workshop]  

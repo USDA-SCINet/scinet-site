@@ -3,6 +3,7 @@
 title: "Data Carpentries"
 # author: Heather Jones
 excerpt: Data Carpentries
+description: Event - Data Carpentry workshop covering R, SQL and OpenRefine
 type: training
 provider: Carpentries
 lead: Kathleen Yeater

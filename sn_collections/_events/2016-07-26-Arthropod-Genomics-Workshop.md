@@ -2,6 +2,7 @@
 title: "Arthropod Genomics Research Workshop 2"
 # author: Brad Coates
 excerpt: Thirty three members of the Arthropod Genomics Research community representing all five Areas of the Agricultural Research Service convened a workshop charged with building collaborative research communities and improving communication channels in the Agency.
+description: Event - Thirty three members of the Arthropod Genomics Research community representing all five Areas of the Agricultural Research Service convened a workshop charged with building collaborative research communities and improving communication channels in the Agency.
 end_date: 2016-07-28
 provider: AGR Working Group
 type: workshop

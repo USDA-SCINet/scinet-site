@@ -3,6 +3,7 @@
 title: "Itinerary"
 # 
 excerpt: Itinerary for the 2022 Geospatial Workshop.
+description: Itinerary for the 2022 Geospatial Workshop.
 categories: [2022 Geospatial Workshop]  
 provider: Geospatial Working Group
 type: itinerary

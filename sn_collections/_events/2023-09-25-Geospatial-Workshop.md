@@ -3,6 +3,7 @@
 title: "2023 Geospatial Workshop"
 
 # excerpt: Provides hands-on tutorials on workflows to access the SCINet HPC systems and conduct geospatial research at scale and fosters geospatial research efforts.
+description: Event - Provides hands-on tutorials on workflows to access the SCINet HPC systems and conduct geospatial research at scale and fosters geospatial research efforts.
 categories: [2023 Geospatial Workshop]  
 provider: Geospatial Working Group
 type: workshop
