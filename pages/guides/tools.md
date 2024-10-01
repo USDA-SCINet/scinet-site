@@ -4,6 +4,7 @@ description: Navigation for SCINet tools
 permalink: /guides/tools
 layout: guides
 layout_type: guides
+published: false
 
 guidegroup:
   compile: subnav

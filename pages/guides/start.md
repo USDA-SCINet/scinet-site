@@ -29,10 +29,10 @@ subnav:
   - title: User Guides
     url: '#user-guides'
   - title: SCINet HPC Resources
-    url: /guides/resources
+    url: /guides/resources/
     internal: true
   - title: Logging In
-    url: /guides/access
+    url: /guides/access/
     internal: true
     shows_list: subnav
   - title: Data Storage
@@ -44,7 +44,7 @@ subnav:
     internal: true
     shows_list: subnav
   - title: Software
-    url: /guides/software
+    url: /guides/software/
     internal: true
     shows_list: true
     categories: [Software]
