@@ -3,6 +3,7 @@ title: SCINet Policy
 description: SCINet policies and procedures
 permalink: /about/policies
 layout: page
+alt_nav: About
 
 subnav:
   - title: Accounts 

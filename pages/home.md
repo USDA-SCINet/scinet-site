@@ -26,7 +26,7 @@ hero:
     Training. </br>
     High-Speed Networking."
   buttons:
-    - url: /about/organization
+    - url: /about/
       text: Learn More
     - url: /guides/access
       text: Access SCINet

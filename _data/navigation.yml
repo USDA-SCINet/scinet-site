@@ -18,12 +18,14 @@ primary:
     url: /
   - title: About
     links:
+      - title: About SCINet
+        url: /about/
       - title: Sign up for an account
         url: /about/signup
-      - title: About SCINet
-        url: /about/organization
       - title: Computer Systems
         url: /about/compute
+      - title: Organization
+        url: /about/organization
       - title: Virtual Research Support Core (VSRC)
         url: /about/vrsc
       - title: Policies

@@ -14,6 +14,11 @@ main:
   {% else %}
     {% assign pagelink = page.permalink %}
   {% endif %}
+  {% if page.alt_nav %}
+  {% assign alt_nav = page.alt_nav %}
+  {% else %}
+  {% assign alt_nav = false %}
+  {% endif %}
 
 
   {% if page.layout_type == 'workshop' %}
