@@ -1,6 +1,6 @@
 <nav class="usa-breadcrumb usa-breadcrumb--wrap" aria-label="Breadcrumbs">
   <ol class="usa-breadcrumb__list">
-    {% capture home_title %}{% if alt_nav %}SCINet Home{% else %}Home{% endif %}{% endcapture %}
+    {% capture home_title %}{% if alt_nav and page.layout_type == 'workshop' %}SCINet Home{% else %}Home{% endif %}{% endcapture %}
     {% include components/breadcrumb.html title=home_title url="/" %}
 
     {% if page.layout_type == 'guides' and page.permalink != "/guides" %}
@@ -16,7 +16,7 @@
       {% for _link in sidenav limit:1 %}
         {% unless _link.url == page.url or _link.url == page.permalink %}
           {% assign linkurl = _link.url | remove: 'index' %}
-          {% capture linktitle %}{% if alt_nav == 'Workshop' %}{{ alt_nav }} Home{% else %}{{ _link.title }}{% endif %}{% endcapture %}
+          {% capture linktitle %}{% if alt_nav == 'Workshop' %}{{ alt_nav }} Home{% else %}{{ alt_nav }}{% endif %}{% endcapture %}
           {% include components/breadcrumb.html title=linktitle url=linkurl %}
         {% endunless %}
       {% endfor %}
@@ -34,7 +34,8 @@
 
 
     <li class="usa-breadcrumb__list-item usa-current" aria-current="page">
-      <span>{% if page.breadcrumb_title %}{{ page.breadcrumb_title }}{% else %}{{ page.title }}{% endif %}</span>
+      {% capture bctitle %}{% if page.breadcrumb_title %}{{ page.breadcrumb_title }}{% elsif page.sorting == 'index' %}{{ page.categories }}{% else %}{{ page.title }}{% endif %}{% endcapture %}
+      <span>{{ bctitle }}</span>
     </li>
   </ol>
 </nav>

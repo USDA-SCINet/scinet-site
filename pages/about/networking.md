@@ -4,6 +4,7 @@ description: SCINet Networking plan
 permalink: /about/networking
 author:
 layout: page
+alt_nav: About
 
  
 

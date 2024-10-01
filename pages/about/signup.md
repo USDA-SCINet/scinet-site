@@ -6,6 +6,7 @@ redirect_from:
 permalink: /about/signup
 author:
 layout: page
+alt_nav: About
 
 graphics:
   - image:
