@@ -2,6 +2,9 @@
 title: Organization of the SCINet project
 description: Organization and Management of the SCINet project
 permalink: /about/organization
+redirect_from:
+  - /about/
+  - /about
 author: 'Adam Rivers Kerrie Geil'
 layout: page
 
@@ -140,6 +143,8 @@ SCINet supports a growing community of nearly 2,000 USDA research scientists and
 Current uses of SCINet span multiple disciplines, including genomics, plant breeding, hydrology, crop production, plant and animal disease modeling, and natural resource management. SCINet users include ARS and other federal scientists, as well as partners external to the federal government.
 
 SCINet supports a broad range of computational tools, including R (and RStudio), Python (and Jupyter notebooks), and software for bioinformatics, geospatial analyses, machine learning and deep learning, and image processing.
+
+To get started using SCINet, [sign up for an account](/about/signup) and visit our [Quick Start Guide](/guides/start).
 
 <div class="grid-row grid-gap">
 <div class="desktop:grid-col-auto">
