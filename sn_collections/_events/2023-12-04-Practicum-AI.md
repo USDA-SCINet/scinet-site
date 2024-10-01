@@ -4,6 +4,7 @@ title: "Practicum AI - Python for AI"
 excerpt: "Most hands-on artificial intelligence work is currently done using the Python programming language. As such, some understanding of Python and computer programming is needed to be successful in applying AI. That said, it is truly astounding how much complex AI research can be accomplished with a few lines of code!
 
 The content in this workshop is aimed at beginning coders who may have never programmed before. As with the rest of the Practicum AI workshops, we use Jupyter Notebooks for the learning experience." 
+description: Event - Practical application of AI Workshop focusing on Python
 type: training
 provider: University of Florida
 hideprovider: true

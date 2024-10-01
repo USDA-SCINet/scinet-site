@@ -1,6 +1,7 @@
 ---
 
 title: "Session 8: Geospatial analyses and how to parallelize them in python"
+description: Geospatial analyses and how to parallelize them in python
 
 excerpt: Python packages for geospatial analyses and parallel processing with multiple tutorials 
 categories: [2022 Geospatial Workshop]  

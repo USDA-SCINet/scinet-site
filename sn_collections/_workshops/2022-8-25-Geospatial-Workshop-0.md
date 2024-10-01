@@ -1,6 +1,7 @@
 ---
 
 title: "Session 0: Pre-meeting technical support for account logins and data uploads"
+description: Pre-meeting technical support for account logins and data uploads
 
 excerpt: Please complete this pre-meeting checklist ahead of time if you plan to participate in any of the interactive follow-along tutorials (Sessions 4-10). Pre-meeting SCINet Account Login Assistance.
 categories: [2022 Geospatial Workshop]  

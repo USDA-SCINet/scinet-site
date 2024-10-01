@@ -9,7 +9,7 @@ end_date: 2020-09-01  # always have two numbers for month and day  YYYY-MM-DD
 
 layout: event
 
-
+description: Event - Geospatial Workshop - 2020 
 
 ---
 The working group held their annual workshop over 6 separate Zoom sessions which were attended by over 60 scientists, post-docs, research leaders, and data managers. The sessions included an annual meeting of the working group, four tutorials on high-performance computing including 1 tutorial on the use of machine learning, and a symposium on the use of AI techniques in agricultural research. Detailed information on all the sessions, including recordings (to be posted soon), can be found on the session pages of the workshop website<!--excerpt-->.

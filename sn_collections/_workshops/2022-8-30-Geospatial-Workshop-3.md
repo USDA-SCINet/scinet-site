@@ -1,6 +1,7 @@
 ---
 
 title: "Session 3: Fundamentals of parallel processing"
+description: Fundamentals of parallel processing
 
 excerpt: How to approach parallelization of workflows with a geospatial example
 categories: [2022 Geospatial Workshop]  

@@ -3,6 +3,7 @@
 title: "Symposium: AI at the Frontiers of Protein Science for Agriculture"
 # author: Brian Stucky
 excerpt: Symposium and conference to learn about how AI is transforming protein science, hear about protein science happening right now at ARS, and discuss new research opportunities for the future.
+description: Event - Symposium and conference to learn about how AI is transforming protein science, hear about protein science happening right now at ARS, and discuss new research opportunities for the future.
 type: event
 provider: ARS
 

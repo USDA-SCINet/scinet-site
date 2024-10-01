@@ -1,7 +1,8 @@
 ---
 
 title: "Practicum AI - Computing for AI"
-excerpt: "In this course, you will learn about some of the tools recommended for building, testing, tweaking, and deploying AI models. You will learn about Jupyter Notebooks, Git, GitHub, and high-performance computing (HPC) environments." 
+excerpt: "In this course, you will learn about some of the tools recommended for building, testing, tweaking, and deploying AI models. You will learn about Jupyter Notebooks, Git, GitHub, and high-performance computing (HPC) environments."
+description: "Event - In this course, you will learn about some of the tools recommended for building, testing, tweaking, and deploying AI models. You will learn about Jupyter Notebooks, Git, GitHub, and high-performance computing (HPC) environments." 
 type: training
 provider: University of Florida
 hideprovider: true

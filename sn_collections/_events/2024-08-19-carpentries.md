@@ -3,7 +3,7 @@ title: The Carpentries Unix, Git and R Workshop
 type: workshop
 end_date: 2024-08-22 
 provider: Carpentries
-description: Workshop for basic programming tools and concepts for the Unix Shell, Git and version control and R.
+description: Event - Workshop for basic programming tools and concepts for the Unix Shell, Git and version control and R.
 
 tags: Unix Git R-Project
 sessions: 

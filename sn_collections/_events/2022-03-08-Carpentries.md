@@ -2,7 +2,8 @@
 
 title: "Software Carpentries"
 # author: Heather Jones
-excerpt: Software Carpentries
+excerpt: Software Carpentry workshop covering  UNIX, GIT, and Python
+description: Event - Software Carpentry workshop covering  UNIX, GIT, and Python
 type: training
 provider: Carpentries
 tags: Unix Git Python

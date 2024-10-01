@@ -1,6 +1,7 @@
 ---
 
 title: "Session 4: SCINet interactive environments"
+description: SCINet interactive environments
 
 excerpt: An overview of interactive environments available on SCINet - RStudio, Jupyter, etc.
 categories: [2022 Geospatial Workshop]  

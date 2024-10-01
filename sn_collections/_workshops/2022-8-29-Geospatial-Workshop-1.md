@@ -1,6 +1,7 @@
 ---
 
 title: "Session 1: Introduction to SCINet with lightning presentations"
+description: Introduction to SCINet with lightning presentations
 
 excerpt: Introduction to the workshop objectives plus lightning presentations on geospatial workflows
 categories: [2022 Geospatial Workshop]  

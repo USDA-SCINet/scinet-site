@@ -1,6 +1,7 @@
 ---
 
 title: "Session 5: SCINet Geospatial Common Data Library"
+description: SCINet Geospatial Common Data Library
 
 excerpt: An overview of the status of the GeoCDL project and hands-on tutorials showcasing its features
 categories: [2022 Geospatial Workshop]  
