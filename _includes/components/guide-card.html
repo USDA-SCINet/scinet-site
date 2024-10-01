@@ -28,6 +28,12 @@
                                 {% if _post.url == _option.url %}
                                         {% if _post.excerpt %}{{ _post.excerpt }}
                                         {% endif %}
+                                {% else %}
+                                    {% assign optionindex = _option.url | append: 'index' %}
+                                    {% if _post.url == optionindex %}
+                                        {% if _post.excerpt %}{{ _post.excerpt }}
+                                        {% endif %}
+                                    {% endif %}
                                 {% endif %}
                             {% endfor %}
                     {% endif %}
