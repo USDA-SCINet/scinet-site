@@ -28,10 +28,14 @@ Here is a daily breakdown of the topics:
 *  **Day 1, October 3, 1:00 PM - 4:30 PM ET: Introduction, Python & conda**  
 *  **Day 2, October 4, 1:00 PM - 4:00 PM ET: R**
 
+[To register for the Software Package and Environment Management Workshop, please fill out this form.](https://forms.office.com/g/ZbWf2Qtyi7)
+
 -----
 
 
-## Preworkshop instructions: 
+## Pre-Workshop Instructions: 
+
+To help minimize technical issues and delays at the start of the workshop, please try the following four tests prior to the workshop. 
 
 * **Logging on to [Atlas Open OnDemand (OOD)](https://atlas-ood.hpc.msstate.edu/):** Please confirm you can successfully log in to Atlas OOD with your SCINet account [(see instructions here)]({{site.baseurl}}/guides/access/web-based-login). If you are successful, you will be able to see the Atlas OOD home page.
 * **Atlas Shell Access:** When on Atlas OOD, click on the top navigation bar: “Clusters” > “Atlas Shell Access”. A new tab will appear that looks like a shell terminal (e.g., like PowerShell). Please confirm you do not receive any error messages or requests to re-authenticate and that the final line looks like "[firstname.lastname@atlas-login-1 ~]$". 
@@ -46,6 +50,3 @@ Here is a daily breakdown of the topics:
   * Wait a moment for the job card to update from "Queued" to "Running". 
   * Please confirm that clicking on the "Connect to JupyterLab Server" button opens a new tab with the JupyterLab Server interface. 
 * **RStudio Server:** Back on the main Atlas OOD tab, click on the top or side navigation bar: "Interactive Apps" > "RStudio Server". Repeat the same steps as for JupyterLab Server to confirm you can launch an RStudio Server session. 
-
-
-[To register for the Software Package and Environment Management Workshop, please fill out this form.](https://forms.office.com/g/ZbWf2Qtyi7)
