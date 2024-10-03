@@ -185,7 +185,7 @@ Note that a conda environment does not automatically include Python, so you will
 
 > **Exercise 5:** If you have not already done so, create a new conda environment called `conda_env`. Activate the environment and launch Python (`python`). The most recent version of Python available from the `conda-forge` channel is 3.12.6. What do you notice? Use `conda` to install the latest version of Python from `conda-forge` into your conda environment and verify that it works.
 
-Conda provides an alternative way to manage Python packages. Although you can still use `pip` from within a conda environment, doing so can introduce a variety of complications, and the [official recommendation](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-non-conda-packages) is to use `conda` to manage Python packages whenever possible.
+Conda provides an alternative way to manage Python packages. Although you can still use `pip` from within a conda environment, doing so can introduce a variety of complications, and the [official recommendation](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-non-conda-packages) is to use `conda` to manage Python packages within a conda environment whenever possible.
 
 > **Exercise 6:** Modify your conda environment so that you can run the Python script you created for Exercise 1.
 
