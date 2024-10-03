@@ -105,14 +105,14 @@ The approach of using `renv` in RStudio is very similar to using `renv` with com
 Multiple R versions are available when requesting RStudio Server sessions on Open OnDemand. From the [Open OnDemand](https://atlas-ood.hpc.msstate.edu/) page, select "Interactive Apps" > "RStudio Server". You will be taken to a page with multiple input fields to configure your RStudio Server session and one of those is "R Version". 
 
 1. For the following exercise, select the following inputs: 
-    * Account: scinet_workshop1
-    * Queue: short--------Max Time: 2-00:00:00
-    * QOS: 400thread 
-    * **R Version: 4.3.2-EL9**
-    * Number of hours: 1
-    * Number of cores: 2
-    * Memory required: 8G
-    * Optional Slurm Arguments: \-\-reservation=scinet_workshop1
+    * R Version: 4.4.0
+    * Account Name: scinet_workshop1
+    * Partition: atlas
+    * QOS: normal 14-00:00:00
+    * Number of hours: 2
+    * Number of nodes: 1
+    * Number of tasks: 1
+    * Additional Slurm Parameters: \-\-reservation=workshop \-\-mem=8G
 1. When you are in RStudio Server, install `renv`. 
 
 
