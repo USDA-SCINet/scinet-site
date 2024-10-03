@@ -61,7 +61,7 @@ Steps to prepare for the tutorial session each day:
 
 1. **Open a command-line session** by clicking on “Clusters” -> “Atlas Shell Access” on the top menu. This will open a new tab with a command-line session on Atlas' login node.
 
-1. **Request resources on a computer node** by running the following command. 
+1. **Request resources on a compute node** by running the following command. 
 
     {:.copy-code}
     ```bash
