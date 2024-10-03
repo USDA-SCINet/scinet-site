@@ -16,7 +16,7 @@ We will begin by focusing on package and environment management with the standar
 ## Choosing which version of Python to use
 
 1. First, use the cluster's environment module system to find and load the version of Python you want to use for your project: `module spider python` or `ml spider python`.
-1. Load the version of Python you'd like to use. E.g., `module load python_3/3.11.1` or `ml load python_3/3.11.1`. (Note that you can use tab completion for module names!)
+1. Load the version of Python you'd like to use. E.g., `module load python/3.12.5` or `ml load python/3.12.5`. (Note that you can use tab completion for module names!)
 1. It is a good idea to run `python` or `python3` and verify that you get the version you want!
 
 Note: After you create your virtual environment, you no longer need to load the associated Python environment module. You can simply activate the virtual environment!
@@ -183,7 +183,11 @@ The `conda` command is also used to install and remove software from a conda env
 
 Note that a conda environment does not automatically include Python, so you will need to tell `conda` to install it!
 
-> **Exercise 5:** If you have not already done so, create a new conda environment called `conda_env`. Activate the environment and launch Python (`python`). The current version of Python is 3.12.4. What do you notice? Use `conda` to install the latest version of Python into your conda environment and verify that it works.
+> **Exercise 5:** If you have not already done so, create a new conda environment called `conda_env`. Activate the environment and launch Python (`python`). The most recent version of Python available from the `conda-forge` channel is 3.12.6. What do you notice? Use `conda` to install the latest version of Python from `conda-forge` into your conda environment and verify that it works.
+
+Conda provides an alternative way to manage Python packages. Although you can still use `pip` from within a conda environment, doing so can introduce a variety of complications, and the [official recommendation](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-non-conda-packages) is to use `conda` to manage Python packages whenever possible.
+
+> **Exercise 6:** Modify your conda environment so that you can run the Python script you created for Exercise 1.
 
 ## Using `environment.yml` to automate package management
 
@@ -193,7 +197,7 @@ To automatically generate the contents of `environment.yml` for an activated con
 
 To create a new conda environment that matches the contents of an environment file, run `conda env create --prefix ENVNAME --file environment.yml`, where "ENVNAME" is the name of the new environment. E.g., `conda env create --prefix conda_env --file environment.yml`.
 
-> **Exercise 6:** Save the configuration of the conda environment you created for Exercise 5, above, and use it to create a new conda environment. Verify that you have the correct version of Python in the new environment.
+> **Exercise 7:** Save the configuration of the conda environment you created for Exercise 6 and use it to create a new conda environment. Verify that you have the correct version of Python in the new environment and are able to run the Python script you created for Exercise 1.
 
 ## Using conda environments with Jupyter notebooks
 
@@ -205,5 +209,5 @@ The process to make a conda environment available to Jupyter notebooks is nearly
 
 You should now see your new kernel available for use with Jupyter notebooks. (It might take a minute or two for Jupyter to detect the new kernel.)
 
-> **Exercise 7:** Create a Jupyter kernel for one of your conda environments from Exercise 5 or 6 and configure it so that you can use it to run the code from Exercise 4 in a Jupyter notebook.
+> **Exercise 8:** Create a new conda environment, install Python into it, and create a Jupyter kernel for the environment. Modify the environment so that you can use the kernel to run the code from Exercise 4 in a Jupyter notebook.
 
