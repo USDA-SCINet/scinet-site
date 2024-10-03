@@ -109,13 +109,13 @@ For the next exercise, we will use [Open OnDemand on Atlas](https://atlas-ood.hp
 1. From the Open OnDemand landing page, select "Interactive Apps" > "Jupyter". You will be taken to a page with multiple input fields to configure your Jupyter session. 
 1. Select the following inputs: 
     * Account: scinet_workshop1
-    * Queue: short--------Max Time: 2-00:00:00
-    * QOS: 400thread 
+    * Partition: atlas
+    * QOS: normal 14-00:00:00
     * Number of hours: 2
-    * Number of cores: 2
-    * Memory required: 8G
-    * Optional Slurm Arguments: \-\-reservation=scinet_workshop1
-    * Jupyter Notebook vs Lab: Lab
+    * Number of nodes: 1
+    * Number of tasks: 1
+    * Additional Slurm Parameters: \-\-reservation=workshop \-\-mem=8G
+    * Working Directory: /90daydata/shared/${USER}
 
 > **Exercise 4:** Using Open OnDemand, launch a new JupyterLab session and open a new Jupyter notebook using the default "Python 3" kernel. Paste the following into a code cell and run the code. What happens?
 
