@@ -50,3 +50,28 @@ To help minimize technical issues and delays at the start of the workshop, pleas
   * Wait a moment for the job card to update from "Queued" to "Running". 
   * Please confirm that clicking on the "Connect to JupyterLab Server" button opens a new tab with the JupyterLab Server interface. 
 * **RStudio Server:** Back on the main Atlas OOD tab, click on the top or side navigation bar: "Interactive Apps" > "RStudio Server". Repeat the same steps as for JupyterLab Server to confirm you can launch an RStudio Server session. 
+
+-----
+
+## Tutorial Setup Instructions
+
+Steps to prepare for the tutorial session each day:
+
+1. **Login to Atlas Open OnDemand** at [https://atlas-ood.hpc.msstate.edu/](https://atlas-ood.hpc.msstate.edu/). For more information on login procedures for web-based SCINet access, see the [SCINet access user guide]({{site.baseurl}}/guides/access/web-based-login).
+
+1. **Open a command-line session** by clicking on “Clusters” -> “Atlas Shell Access” on the top menu. This will open a new tab with a command-line session on Atlas' login node.
+
+1. **Request resources on a compute node** by running the following command. 
+
+    {:.copy-code}
+    ```bash
+    srun --reservation=workshop -A scinet_workshop1 -t 05:00:00 -n 1 --mem 8G --pty bash
+    ```
+
+1. **Create a workshop working directory** by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the `$USER` variable.
+
+    {:.copy-code}
+    ```bash
+    mkdir -p /90daydata/shared/$USER/
+    cd /90daydata/shared/$USER/
+    ```
