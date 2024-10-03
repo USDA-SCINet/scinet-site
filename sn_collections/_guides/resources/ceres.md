@@ -20,7 +20,7 @@ subnav:
   - title: Additional Guides
     url: '#additional-guides-for-ceres'
   - title: Logging In
-    url: /guides/access
+    url: /guides/access/
     internal: true
   - title: Data Transfer
     url: /guides/data/datatransfer
@@ -35,7 +35,7 @@ subnav:
     url: /guides/use/slurm
     internal: true
   - title: Compiling Software
-    url: /guides/software
+    url: /guides/software/
     shows_list: true
     internal: true
     categories: [Software]

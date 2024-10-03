@@ -3,6 +3,7 @@
 title: "SCINet Onboarding"
 # author: Delanie Johnson
 excerpt: SCINet Onboarding Assistance 
+description: Event - SCINet Onboarding Assistance 
 provider: SCINet
 type: training
 ---

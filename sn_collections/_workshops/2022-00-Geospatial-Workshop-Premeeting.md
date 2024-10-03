@@ -3,6 +3,7 @@
 title: "Pre-meeting Tech Support"
 # 
 excerpt: Please complete this pre-meeting checklist ahead of any workshop sessions you plan to attend.
+description: Geospatial workshop Pre-meeting Tech Support
 categories: [2022 Geospatial Workshop]  
 provider: Geospatial Working Group
 type: orientation

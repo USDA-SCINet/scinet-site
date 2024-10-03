@@ -3,6 +3,7 @@
 title: Introduction to SCINet
 # author: Kerrie Geil
 excerpt: Andrew Severin of the SCINet VRSC held a 3-hour training session covering what SCINet is, a walk through of scinet.usda.gov and bioinformaticsworkbook.org, and an intro to the SCINet HPC Ceres cluster, followed by a Q&A session with participants.
+description: Event - Andrew Severin of the SCINet VRSC held a 3-hour training session covering what SCINet is, a walk through of scinet.usda.gov and bioinformaticsworkbook.org, and an intro to the SCINet HPC Ceres cluster, followed by a Q&A session with participants.
 provider: SCINet
 type: training
 ---

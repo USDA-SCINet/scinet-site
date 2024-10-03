@@ -3,6 +3,7 @@
 title: Unix Tutorial Follow Along
 # author: Kerrie Geil
 excerpt: Andrew Severin of the SCINet VRSC held a 4-hour hands-on introduction to the command line, helping participants login to the SCINet Ceres high performance computer and execute common Unix commands.
+description: Event - Andrew Severin of the SCINet VRSC held a 4-hour hands-on introduction to the command line, helping participants login to the SCINet Ceres high performance computer and execute common Unix commands.
 provider: SCINet
 type: training
 ---

@@ -1,6 +1,7 @@
 ---
 
 title: "Session 10: Interactive BYOP session + TBD special topic based on previous sessions' discussions"
+description: Interactive BYOP session + TBD special topic based on previous sessions' discussions
 
 excerpt: Attendees are encouraged to Bring Your Own Problem (BYOP) for discussion and troubleshooting. A TBD special topic inspired by discussion earlier in the week will also be explored.
 categories: [2022 Geospatial Workshop]  

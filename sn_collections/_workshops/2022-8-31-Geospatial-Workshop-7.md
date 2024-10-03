@@ -1,6 +1,7 @@
 ---
 
 title: "Session 7: Interactive BYOP session + Open Drone Map demo"
+description: Interactive BYOP session + Open Drone Map demo
 excerpt: Attendees are encouraged to Bring Your Own Problem (BYOP) for discussion and troubleshooting. A demonstation of using Open Drone Map on Atlas will be presented.   
 categories: [2022 Geospatial Workshop]  
 provider: Geospatial Working Group

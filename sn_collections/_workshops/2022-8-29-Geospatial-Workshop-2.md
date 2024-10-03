@@ -1,6 +1,7 @@
 ---
 
 title: "Session 2: Fundamentals of geospatial data"
+description: Fundamentals of geospatial data
 
 excerpt: A presentation on raster and vector data types and when geospatial analyses become computationally expensive 
 categories: [2022 Geospatial Workshop]  

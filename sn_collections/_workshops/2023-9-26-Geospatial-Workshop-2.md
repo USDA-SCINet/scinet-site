@@ -1,6 +1,7 @@
 ---
 
 title: "Session 2: Spatial modeling with machine learning"
+description: Spatial modeling with machine learning
 
 excerpt: An overview of machine learning methods for spatial modeling
 categories: [2023 Geospatial Workshop]  

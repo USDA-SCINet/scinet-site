@@ -18,6 +18,8 @@ primary:
     url: /
   - title: About
     links:
+      - title: About SCINet
+        url: /about/
       - title: Sign up for an account
         url: /about/signup
       - title: Computer Systems

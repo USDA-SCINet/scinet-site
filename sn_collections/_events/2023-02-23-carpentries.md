@@ -2,6 +2,7 @@
 
 title: "Software Carpentry with Python"
 excerpt: Course will be conducted over 4 days in 4-hour sessions.   
+description: Event - Course will be conducted over 4 days in 4-hour sessions.   
 type: training
 end_date: 2023-03-03
 provider: Carpentries

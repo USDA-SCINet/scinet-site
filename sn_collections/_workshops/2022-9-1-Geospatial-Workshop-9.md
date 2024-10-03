@@ -1,6 +1,7 @@
 ---
 
 title: "Session 9: Interactive BYOP session"
+description: Interactive BYOP session
 
 excerpt: Attendees are encouraged to Bring Your Own Problem (BYOP) for discussion and troubleshooting.   
 categories: [2022 Geospatial Workshop]  

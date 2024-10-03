@@ -16,8 +16,11 @@
 {% if _href == page.url or _href == page.permalink %}
 {% assign _current = true %}
 {% endif %}
-<li class="usa-sidenav__item">
-    <a href="{% if link.external == true %}{{ _href }}{% else %}{{ _href | relative_url }}{% endif %}" 
+
+{% capture thislink %}{%- if link.external == true %}{{ _href }}{%- else %}{{ _href | remove: 'index' | relative_url }}{%- endif %}{% endcapture %}
+
+<li class="usa-sidenav__item {% if _current %} is-current current-section{% endif %}">
+    <a href="{{ thislink }}" 
         {% if _current or link.class %} 
         class="{% if _current %}usa-current {% endif %}{% if link.class %} {{ link.class }} {% endif %}" 
         {% endif %}>
@@ -25,15 +28,15 @@
     </a>
     {% if _current %}
     {% if page.guidegroup.all or page.subnav or page.fetch_subnav %}
-    <ul class="usa-sidenav__sublist">
+    <ul class="usa-sidenav__sublist pagelinks">
         {% if page.subnav %}
             {% include components/subnav.html links=page.subnav %}
         {% endif %}
         {% if page.guidegroup.all %}
-            {% assign allguides  = site.guidecategory | sort: 'order_number' %}
+            {% assign allguides = site.guides | where: "sorting", "index" | sort: 'order_number' %}
             {% include components/subnav.html links=allguides %}
         {% elsif page.fetch_subnav %}
-            {% assign sidepages = site.guides | where_exp: "post", "post.categories == page.categories" %}
+            {% assign sidepages = site.guides | where_exp: "post", "post.categories == page.categories and post.sorting == 'guide'" %}
             {% include components/subnav.html links=sidepages %}
         {% endif %}
     </ul>

@@ -77,9 +77,6 @@ collections:
   guides:
     output: true
     permalink: /:collection/:path
-  guidecategory:
-    output: true
-    permalink: /guides/:categories
   tutorials:
     output: true
     permalink: /tutorials/:name
@@ -135,24 +132,12 @@ defaults:
   - 
     scope:
       path: ""
-      type: "guidecategory"
-    values:
-      layout: "guides"
-      layout_type: "guides"
-      sidenav_link: /guides/
-      class: "guide-nav"
-      sidenav_append: 
-        - title: SEARCH
-          url: /search
-          class: "sidenav-search"
-  - 
-    scope:
-      path: ""
       type: "guides"
     values:
       layout: "page"
       layout_type: "guides"
       sidenav_link: /guides/
+      sorting: guide
       sidenav_append: 
         - title: SEARCH
           url: /search

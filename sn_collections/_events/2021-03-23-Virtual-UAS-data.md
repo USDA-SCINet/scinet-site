@@ -4,6 +4,7 @@ title: UAS Data Wrangling Workshop
 # author: Kerrie Geil
 lead: Lee Hathcock, Mississippi State University Geosystems Research Institute
 excerpt: Fifty ARS researchers and university collaborators participated in a UAS Data Wrangling Workshop hosted by Mississippi State University Geosystems Research Institute
+description: Event - Fifty ARS researchers and university collaborators participated in a UAS Data Wrangling Workshop hosted by Mississippi State University Geosystems Research Institute
 picture: /assets/img/training-archive-pics/UASDataWranglingWorkshopPix4DSoftware.png
 type: training
 provider: MSU

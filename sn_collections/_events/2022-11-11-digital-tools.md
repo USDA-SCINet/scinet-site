@@ -2,6 +2,7 @@
 
 title: "Digital Tools to Move from Precision to Decision Agrictulture"
 excerpt: Digital technologies are valuable tools that may help farmers improve efficiency and make better decisions.  The seminar will focus on two case studies- retrieval of crop biophysical parameters from UAV hyperspectral imagery and fruit detection using high-resolution UAV RGB imagery.   
+description: Event - Digital technologies are valuable tools that may help farmers improve efficiency and make better decisions.  The seminar will focus on two case studies- retrieval of crop biophysical parameters from UAV hyperspectral imagery and fruit detection using high-resolution UAV RGB imagery.   
 type: event
 tags: Remote-Sensing Machine-Learning Artificial-Intelligence
 provider: MSU

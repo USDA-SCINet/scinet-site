@@ -14,6 +14,11 @@ main:
   {% else %}
     {% assign pagelink = page.permalink %}
   {% endif %}
+  {% if page.alt_nav %}
+  {% assign alt_nav = page.alt_nav %}
+  {% else %}
+  {% assign alt_nav = false %}
+  {% endif %}
 
 
   {% if page.layout_type == 'workshop' %}
@@ -76,8 +81,8 @@ main:
 
     {% if page.categories != empty %}
     
-    {% assign guidecategories = site.guidecategory %}
-    {% assign guidepages = site.guides %}
+    {% assign guidecategories = site.guides | where: "sorting", "index" %}
+    {% assign guidepages = site.guides | where: "sorting", "guide" %}
 
     {% if page.sorted or page.order_number %}
       {% assign guidepages = guidepages | sort: 'order_number' %}

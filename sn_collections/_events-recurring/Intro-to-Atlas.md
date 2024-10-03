@@ -3,6 +3,7 @@
 title: "Introduction to Atlas"
 # author: 
 excerpt: An introduction to Atlas
+description: Reoccuring Introduction to Atlas trainings
 type: training
 tags: Atlas
 provider: MSU

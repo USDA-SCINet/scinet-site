@@ -4,8 +4,7 @@ description: SCINet High-Performance Computer Systems
 permalink: /about/compute
 author: Kerrie Geil
 layout: page
-
- 
+alt_nav: About
 
 subnav:
   - title: Ceres HPC Cluster

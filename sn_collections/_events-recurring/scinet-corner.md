@@ -5,6 +5,7 @@ title: "SCINet Corner"
 type: event
 tags: SCINet
 provider: SCINet Corner
+description: The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.
 redirect_from: 
   - /training/corner
 registration: 

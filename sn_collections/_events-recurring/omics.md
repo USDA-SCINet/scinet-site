@@ -4,6 +4,7 @@ title: "Omics Webinar"
 # author: 
 type: event
 tags: omics
+description: Reoccuring Translational Omics Working Group webinars and presentations
 provider: Omics Working Group
 registration: 
   text: "Join the Working Group"
