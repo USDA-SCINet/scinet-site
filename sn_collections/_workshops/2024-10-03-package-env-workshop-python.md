@@ -153,7 +153,7 @@ First, load the environment module for miniconda so that you have access to the 
 * On Ceres: `module load miniconda` or `ml load miniconda`.
 * On Atlas: `module load miniconda3` or `ml load miniconda3`.
 
-If you've not used `conda` before on the system, you will need to run `conda init`. By default, this will cause the conda "base" environment to automatically be activated every time you log in. This can be annoying! If you want to disable this, run `conda config --set auto_activate_base false`. (You can also undo _all_ changes made by `conda init` by running `conda init --reverse`.)
+If you've not used `conda` before on the system, you will need to run `conda init`. By default, this will cause the conda "base" environment to automatically be activated every time you log in. This can be annoying! If you want to disable this, run `conda config --set auto_activate_base false`. (You can also undo _all_ changes made by `conda init` by running `conda init --reverse`.) After running `conda init` for the first time, you will need to either exit your shell session and start a new one or run `source ~/.basrc`.
 
 Note: `mamba` is a drop-in replacement for `conda` that is generally faster and more robust. However, recent versions of `conda` have adopted code from the `mamba` project so that there is now less of a performance gap between the two. If `mamba` is available (`mamba` is currently available on Ceres but not on Atlas), you can simply replace `conda` with `mamba` in the commands below.
 
