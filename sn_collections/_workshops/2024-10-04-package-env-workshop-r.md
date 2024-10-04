@@ -93,7 +93,7 @@ for(i in c(1:N,N:1)){
 > **Exercise 3:** Update the version of `cli` with:  `install.packages('cli')`. Modify the environment to be consistent.
 
 1. Another `renv` function to make your project environment consistent is `renv::restore()`. It helps update your project library to match your lockfile.
-1. For example, if we install the `MASS` library because we think we may need it but later don't, `renv::restore(clean-TRUE)` will help remove the unused package from the project library.
+1. For example, if we install the `MASS` library because we think we may need it but later don't, `renv::restore(clean=TRUE)` will help remove the unused package from the project library.
 1. `renv::restore()` can also be used to revert package version discrepancies like for `cli` above. 
 
 ## Reproduce renv projects 
