@@ -71,7 +71,7 @@ Next, we will expand our project with additional packages!
 1. You can install packages into your environment as you normally would with `install.packages('PACKAGE')`, or `renv` does have an expanded installation function `renv::install('PACKAGE')` that supports additional remote package sources, e.g., GitHub. If you are interested in learning more about `renv::install()`, please see the documentation [here](https://rstudio.github.io/renv/reference/install.html). 
 1. To have `renv` save the state of the project (i.e., capture all the metadata of the used packages) in the environment configuration file called a 'lockfile', run `renv::snapshot()`. 
 1. If you want to assess the state of the environment, (i.e., which packages are installed but not used, or which packages are used but not recorded), run `renv::status()`.
-1. Let's save the script below in our project and install an old version of the `cli` package so we can simulate needing to update to the latest version next: `install.packages("https://cran.r-project.org/src/contrib/Archive/cli/cli_3.6.1.tar.gz", repos=NULL,type="source”)`. 
+1. Let's save the script below in our project and install an old version of the `cli` package so we can simulate needing to update to the latest version next: `install.packages("https://cran.r-project.org/src/contrib/Archive/cli/cli_3.6.1.tar.gz", repos=NULL,type="source")`. 
 1. If we call `renv::status()`, it will tell us we are out of sync. If we then call `renv::snapshot()`, it will update the project.
 
 {:.copy-code}
