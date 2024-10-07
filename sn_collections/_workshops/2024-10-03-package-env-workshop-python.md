@@ -6,7 +6,9 @@ layout: page
 categories: [2024 SPEMW 2] 
 sidenav_link: /training/resources
 
-
+details:
+  - text: Session Recording
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EUtJOL3plRlDvUeC9EXLjqgBFniFLS4B76w4yWnOtDC4nw?e=vIHnzP
 ---
 
 # Managing packages and environments in Python
