@@ -7,7 +7,9 @@ categories: [2024 SPEMW 2]
 
 sidenav_link: /training/resources
 
-
+details:
+  - text: Session Recording
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EXDitJDkH8JBoPwUwmZryoABJ40oa6XL2K6CDOv4FgWlkA?e=BATq8f
 ---
 
 # Managing packages and environments in command-line R
