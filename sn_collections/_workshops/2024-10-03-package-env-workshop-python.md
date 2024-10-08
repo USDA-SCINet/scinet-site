@@ -8,7 +8,7 @@ sidenav_link: /training/resources
 
 details:
   - text: Session Recording
-    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EUtJOL3plRlDvUeC9EXLjqgBFniFLS4B76w4yWnOtDC4nw?e=vIHnzP
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/Ef55DPFjTMdOqzMwxs4UAtYBDwq4xzLT5qp4M9jzOSZLIg
 ---
 
 # Managing packages and environments in Python
