@@ -33,4 +33,28 @@ This workshop will focus on processing multispectral imagery from unoccupied aer
 
 To register for the Multispectral UAV Imagery Workshop, [please fill out this form](https://forms.office.com/g/jQQN0iyHHT). 
 
+**Leads:**  
+  * Alexander Hernandez, Research Biologist (Computational), Forage and Range Research Unit
+  * Efrain Duarte, SCINet/AI-COE Postdoctoral Fellow, Forage and Range Research Unit
+  * Kaden Patten, Biological Science Technician, Forage and Range Research Unit
 
+-----
+
+
+## Pre-Workshop Instructions: 
+
+To help minimize technical issues and delays at the start of the workshop, please try the following three tests prior to the workshop. 
+
+* **Logging on to [Atlas Open OnDemand (OOD)](https://atlas-ood.hpc.msstate.edu/):** Please confirm you can successfully log in to Atlas OOD with your SCINet account [(see instructions here)]({{site.baseurl}}/guides/access/web-based-login). If you are successful, you will be able to see the Atlas OOD home page.
+* **Atlas Shell Access:** When on Atlas OOD, click on the top navigation bar: “Clusters” > “Atlas Shell Access”. A new tab will appear that looks like a shell terminal (e.g., like PowerShell). Please confirm you do not receive any error messages or requests to re-authenticate and that the final line looks like "[firstname.lastname@atlas-login-1 ~]$". 
+* **JupyterLab Server:** Back on the main Atlas OOD tab, click on the top or side navigation bar: "Interactive Apps" > "JupyterLab Server".  
+  * Fill the input fields with the following (input fields not listed below can be left at their default values):  
+    * Partition: atlas
+    * Number of hours: 1
+    * Number of nodes: 1
+    * Number of tasks: 1
+    * Additional Slurm Parameters: (leave empty)
+  * Click the "Launch" button. 
+  * Wait a moment for the job card to update from "Queued" to "Running". 
+  * Please confirm that clicking on the "Connect to JupyterLab Server" button opens a new tab with the JupyterLab Server interface. 
+ 
