@@ -83,7 +83,7 @@ Steps to prepare for the tutorial session each day:
     cd /90daydata/shared/$USER/
     cp -r /project/scinet_workshop2/multispectral_UAV/detect_GCPs .
     cp -r /project/scinet_workshop2/multispectral_UAV/flight_filtering .
-    cp -r /project/scinet_workshop2/multispectral_UAV/[EXAMPLE DATA?] .
+    cp -r /project/scinet_workshop2/multispectral_UAV/Workshop3 .
     ```
 
 1. **Setup kernel for JupyterLab.** In the workshop project space, there is a `geospatial_conda` conda environment for the packages we will be using during the workshop tutorials. You will create a kernel called *uav_workshop* to access from JupyterLab. 
@@ -119,8 +119,8 @@ Steps to prepare for the tutorial session each day:
     * QOS: normal 14-00:00:00
     * Number of hours: 4
     * Number of nodes: 1
-    * Number of tasks: ??
-    * Additional Slurm Parameters: \-\-mem=??G \-\-reservation=workshop2
+    * Number of tasks: 16
+    * Additional Slurm Parameters: \-\-mem\-per\-cpu=6G \-\-reservation=workshop2
     * Home Directory: /90daydata/shared/${USER}
   
     Click *Launch*. The screen will update to the *Interactive Sessions* page. When your Jupyter session is ready, the top card will update from *Queued* to *Running* and a *Connect to Jupyter* button will appear. Click *Connect to Jupyter*.
