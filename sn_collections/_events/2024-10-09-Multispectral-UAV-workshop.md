@@ -112,6 +112,8 @@ Steps to prepare for the tutorial session each day:
     ipython kernel install --name "uav_workshop" --user
     ```
 
+1. **Stop the interactive job** on the compute node by running the command `exit`.   
+
 1. **Launch a JupyterLab Server session.** Under the *Interactive Apps* menu, select *JupyterLab Server*. Specify the following input values on the page:
 
     * Account: scinet_workshop2
