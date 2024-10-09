@@ -66,7 +66,7 @@ Steps to prepare for the tutorial session each day:
 
 1. **Login to Atlas Open OnDemand** at [https://atlas-ood.hpc.msstate.edu/](https://atlas-ood.hpc.msstate.edu/). For more information on login procedures for web-based SCINet access, see the [SCINet access user guide]({{site.baseurl}}/guides/access/web-based-login).
 
-1. **Open a command-line session** by clicking on “Clusters” -> “Atlas Shell Access” on the top menu. This will open a new tab with a command-line session on Atlas' login node.
+1. **Open a command-line session** by clicking on “Clusters” -> “Atlas Shell Access” on the top menu. This will open a new tab with a command-line session on Atlas's login node.
 
 1. **Request resources on a compute node** to avoid using the login node for data transfers by running the following command. 
 
