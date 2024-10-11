@@ -16,7 +16,11 @@ filter-archive: materials
 
 archive-label: SCINet Corner Recordings
 
-sessions:        
+sessions:    
+  - session:
+    title: Tidyverse for data cleaning and wrangling
+    date: 2024-10-17
+    time: 1-2 pm ET
   - session: 
     title: "Introduction to plotting with ggplot2"
     date: 2024-09-19
