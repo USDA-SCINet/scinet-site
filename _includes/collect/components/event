@@ -48,14 +48,14 @@
                         {{ post.date | date: "%Y" }} &middot 
                     {% endif %}
                     {% if post.parenttitle %}
-                    {% unless page.layout == 'workshop' or page.layout == "event" or post.title == post.parenttitle %}
+                    {% unless page.layout == 'workshop' or page.layout == "event" or post.title == post.parenttitle or page.hide-provider %}
                         {{ post.parenttitle }} &middot 
                     {% endunless %}
                     {% endif %}
                     {{ post.title }}
                 {% else %}
                     {% if no_date_below %}{{ post.date | date_to_string }} &middot {% endif %}
-                    {% if post.parenttitle %}{% unless page.layout == 'workshop' or page.layout == "event" or post.title == post.parenttitle %}
+                    {% if post.parenttitle %}{% unless page.layout == 'workshop' or page.layout == "event" or post.title == post.parenttitle or page.hide-provider %}
                     {{ post.parenttitle }} &middot 
                 {% endunless %}
                 {% endif %}
