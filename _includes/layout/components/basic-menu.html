@@ -1,0 +1,9 @@
+<ul id="{{ _section_id }}" class="usa-nav__submenu" hidden="">
+    {%- for _link in section_links -%}
+        <li class="usa-nav__submenu-item">
+          <a
+            href="{% include url.html link=_link %}">
+            <span>{{ _link.title }}</span></a>
+        </li>
+    {%- endfor -%}
+</ul>

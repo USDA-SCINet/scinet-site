@@ -1,0 +1,17 @@
+<ol>
+{% for _course in page.course-list %}
+{% assign fetch = site.workshops | find_exp:"item", "item.title == _course.title and item.parent.title == page.title" %}
+<li><b><a href="{{ fetch.url }}">{{ fetch.title }}</a></b>
+    <ul>
+    {% if fetch.sessions %}
+        {% for _thissession in fetch.sessions %}
+            {% include collect/process/event parent=fetch session=_thissession %}
+            {% include collect/components/session-ul session=event %}
+        {% endfor %}
+    {% else %}
+        {% include collect/process/event parent=page session=fetch %}
+        {% include collect/components/session-ul session=event %}
+    {% endif %}
+    </ul>
+{% endfor %}
+</ol>

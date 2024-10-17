@@ -1,0 +1,50 @@
+{% assign session = include.session %}
+<ul class="unstyled-list">
+    <!-- {% if session.time %}<li><b>{{ session.time }}</b></li>{% endif %} -->
+    {% unless pagetype=='archive' %}
+        {% if session.register or registration != "false" %}
+            {% if session.register %}
+                {% assign registration = session.register %}
+            {% endif %}
+            {% capture sessregtext %}{% if registration.text %}{{ registration.text }}{% else %}{{ regtext }}{% endif %}{% endcapture %}
+            <li><b>Registration: </b>
+                {% include components/link.html url=registration.url text=sessregtext external=true %}
+            </li>
+        {% endif %}
+    {% endunless %}
+
+    {% if session.instructor %} <li><b>Instructor: </b>{{ session.instructor }}</li>{% endif %}
+    {% if session.presenter %} <li><b>Presenter: </b>{{ session.presenter }}</li>{% endif %}
+    {% if session.location %} <li><b>{{ session.location }}</b></li>{% endif %}
+
+    {% if session.prerequisites %}
+    <li><b>Prerequisites: </b>
+        <ul class="unstyled-list">
+            {% for _prerequisite in session.prerequisites %}
+            <li>
+                {% if _prerequisite.url %}
+                <a
+                    href="{% if _prerequisite.external %}{{ _prerequisite.url }}{% else %}{{ _prerequisite.url | relative_url }}{% endif %}">
+                    {{ _prerequisite.text }}
+                </a>
+                {% else %}
+                {{ _prerequisite.text }}
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endif %}
+
+    {% if session.materials %}
+        {% for _material in session.materials %}
+        <li>{% include components/link.html url=_material.url text=_material.text external=true %}</li>
+        {% endfor %}
+    {% endif %}
+    {% if session.details %}
+    {% for _detail in session.details %}
+    <li>{% include components/link.html url=_detail.url text=_detail.text external=true %}</li>
+    {% endfor %}
+{% endif %}
+
+</ul>

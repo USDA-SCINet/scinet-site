@@ -8,7 +8,7 @@ layout: page
 filter:
   provider: Geospatial Working Group
 
-collect: events
+collect: event
 collect_title: Workshops
 reverse_collection: true
 

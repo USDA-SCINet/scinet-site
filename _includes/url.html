@@ -1,0 +1,3 @@
+{%- assign alink = include.link -%}
+{%- capture thelink -%}{%- if alink.link -%}{{ alink.link }}{%- elsif alink.url -%}{% if alink.path contains '/index.html' %}{{ alink.url | remove: "/index" }}/{% else %}{{ alink.url }}{% endif %}{%- else -%}{{ alink.src }}{%- endif -%}{%- endcapture -%}
+{% if alink.external or include.external %}{{ thelink }}{% else %}{{ thelink | relative_url }}{% endif %}

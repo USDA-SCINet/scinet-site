@@ -3,7 +3,7 @@
 <header class="usa-header usa-header--extended sci-heading" role="banner">
 
   <div class="usa-navbar">
-      {% include components/header/logo.html signature=header %}
+      {% include layout/components/logo.html signature=header %}
     <button type="button" class="usa-menu-btn">Menu</button>
   </div>
 
@@ -65,7 +65,7 @@
       {% endfor %}
       {% endif %}
       {% if site.search_site_handle %}
-        {% include components/search.html  searchid="search_form" %}
+        {% include layout/components/search.html  searchid="search_form" %}
       {% endif %}
     </div>
 

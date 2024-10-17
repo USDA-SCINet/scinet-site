@@ -1,0 +1,16 @@
+<ol>
+{% for _course in page.course-list %}
+{% assign fetch = site.workshops | find_exp:"item", "item.title == _course.title and item.parent.title == page.title" %}
+{% if fetch.sessions %}
+{% assign thissession = fetch.sessions | first %}
+{% assign thisparent = fetch %}
+{% else %}
+{% assign thissession = fetch %}
+{% assign thisparent = page %}
+{% endif %}
+{% include collect/process/event parent=thisparent session=thissession %}
+{% if event.latest %}{% assign times = event.latest %}{% else %}{% assign times = event %}{% endif %}
+<li><b><a href="{{ event.url }}">{{ event.title }}</a></b>: {% if times.multiday %}{{ times.multiday }}, {{ times.date | date: "%Y" }}{% else %}{{ times.date |  date: "%B %-d, %Y"}}{% endif %}
+</li>
+{% endfor %}
+</ol>

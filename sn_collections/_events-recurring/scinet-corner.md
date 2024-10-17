@@ -23,7 +23,7 @@ sessions:
     time: 1-2 pm ET
   - session: 
     title: "Introduction to plotting with ggplot2"
-    date: 2024-09-19
+    date: 2024-09-19 13:00:00
     time: 1-2 pm ET
     excerpt: "*  Accessing RStudio through Open OnDemand  
     
@@ -36,7 +36,7 @@ sessions:
         url: https://usdagcc.sharepoint.com/:u:/s/REE-ARS-SCINetOffice/EVsiIPN2eQVMsk7zfhC0bz4B7idym0WYZPQeVD72lK7U0g?e=rDvDGl
   - session: 
     title: "Plotting in Python with plotnine"
-    date: 2024-08-15
+    date: 2024-08-15 13:00:00
     time: 1-2 pm ET
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/ERsjhGT5z6pAjSQOiOX0KwYBelwR2ErBkkuIw36cI09MNA?e=1WP0c4
     excerpt: "*  How to access plotnine in Open OnDemand JupyterLab  
@@ -50,13 +50,13 @@ sessions:
 
   - session:
     title: "Open Q&A"
-    date: 2024-07-18
+    date: 2024-07-18 13:00:00
     time: 1-2 pm ET
     excerpt: The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.
     
   - session:
     title: "Introduction to Slurm: How to run computing jobs on SCINet clusters"
-    date: 2024-06-20
+    date: 2024-06-20 13:00:00
     time: 1-2 pm ET
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EbJQpK8yZZJGsCHQC3_He2cBduyALYrqBmxFU_55Ysmvtw?e=1WP0c4
     materials:
@@ -72,7 +72,7 @@ sessions:
     
   - session:
     title: "Open OnDemand: Web-based access to SCINet"
-    date: 2024-05-16
+    date: 2024-05-16 13:00:00
     time: 1-2 pm ET
     excerpt: "How to access SCINet computing resources and applications through your browser.  
 This presentation will cover how to log on to Open OnDemand for Ceres and Atlas, followed by an overview of popular applications available on Open OnDemand."
@@ -80,14 +80,14 @@ This presentation will cover how to log on to Open OnDemand for Ceres and Atlas,
     
   - session:
     title: "Galaxy: a web-based platform for data-intensive bioinformatics analyses"
-    date: 2024-04-18
+    date: 2024-04-18 13:00:00
     time: 1-2 pm ET
     excerpt: "This presentation will cover what Galaxy is, logging in, uploading data, and examples of data analysis on Galaxy"
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EcI7YNtp25FKiP-pLR07uygBw_OcT1jSCHc729WCGelsXA?e=1ZYYS7
     
   - session:
     title: "Data Transfer"
-    date: 2024-03-28
+    date: 2024-03-28 13:00:00
     time: 1-2 pm ET
     excerpt: "Data transfer to, from, and among SCINet systems (Ceres, Atlas, and Juno) using Globus or scp.  
 
@@ -96,13 +96,13 @@ This presentation will cover how to log on to Open OnDemand for Ceres and Atlas,
     
   - session: 
     title: Command line tricks in Ceres
-    date: 2024-02-15
+    date: 2024-02-15 13:00:00
     time: 1-2 pm ET
     excerpt: "We will continue talking about tips and tricks related to Ceres command line techniques."
 
   - session:
     title: Command Line Tips Continued
-    date: 2024-01-25
+    date: 2024-01-25 13:00:00
     time: 1-2 pm ET
     excerpt: "We will continue talking about tips and tricks related to Ceres command line techniques."
     materials:
@@ -111,33 +111,33 @@ This presentation will cover how to log on to Open OnDemand for Ceres and Atlas,
 
   - session:
     title: Tips and Tricks on the Command Line Continued
-    date: 2023-12-14
+    date: 2023-12-14 13:00:00
     time: 1-2 pm ET
     excerpt: "We will be continuing with more tips and tricks on the command line."
     
   - session:
     title: More tips and tricks on the command line
-    date: 2023-11-16
+    date: 2023-11-16 13:00:00
     time: 1-2 pm ET
     excerpt: "We will be continuing with more tips and tricks on the command line."
     
   - session:
     title: Command Line Tips and Tricks
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/ESOWnrVV_oJPpZzAtsRpeWEBlllKAcnpZYyEg6WO_r6U9g
-    date: 2023-10-19
+    date: 2023-10-19 13:00:00
     time: 1-2 pm ET
     excerpt: "In continuation of the theme to re-introduce users to SCINet, we will be covering some tips and tricks on the command line that help you do certain routine jobs faster."
     
   - session:
     title: Reintroduction to SCINet
-    date: 2023-09-14
+    date: 2023-09-14 13:00:00
     time: 1-2 pm ET
     excerpt: "We are starting off this fall with a re-introduction to SCINet"
 
   - session: 
     title: Python in Jupyter
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EU0jhlzkZTFAtaH4mQErXBcBbok1CyYZkCmWfG9Z1Mls4A?e=EE5NXV
-    date: 2023-07-13
+    date: 2023-07-13 13:00:00
     time: 1-2 pm ET
     tags: Python
     instructor: Aleksandra Badaczewska
@@ -151,7 +151,7 @@ This presentation will cover how to log on to Open OnDemand for Ceres and Atlas,
         
   - session: 
     title: Getting started with Python programming
-    date: 2023-06-01
+    date: 2023-06-01 13:00:00
     time: 1-2 pm ET
     tags: Python
     instructor: Aleksandra Badaczewska
@@ -163,7 +163,7 @@ This presentation will cover how to log on to Open OnDemand for Ceres and Atlas,
   - session: 
     title: Continues Exploration of R and Intro to dplyr
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/Efccvnjx5ilPhokEl1kp-ggBnIrYRYkDpWKEykBF09hDqA?e=usBHyT #main link to video
-    date: 2022-12-01
+    date: 2022-12-01 13:00:00
     time: 1-2 pm ET
     tags: R-Project dplyr
     instructor: Viswanathan Satheesh
@@ -179,7 +179,7 @@ This presentation will cover how to log on to Open OnDemand for Ceres and Atlas,
   - session: 
     title: Introduction to ggplot2
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EYCClS7yTUBNm2mAyYKOsJEBS6zM7Xrbeq8W-VR_AgSydg?e=r1Ge2V
-    date: 2022-11-03
+    date: 2022-11-03 13:00:00
     time: 1-2 pm ET
     tags: R-Project
     instructor: Viswanathan Satheesh
@@ -190,7 +190,7 @@ This presentation will cover how to log on to Open OnDemand for Ceres and Atlas,
 
   - session: 
     title: A Brief Introduction to R
-    date: 2022-08-04
+    date: 2022-08-04 13:00:00
     time: 1-2 pm ET
     tags: R-Project
     instructor: Viswanathan Satheesh
