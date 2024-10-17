@@ -2,7 +2,7 @@
 title: 2024 Annual GRWG Workshop
 type: workshop
 end_date: 2024-11-07
-description: Event - Workshop for managing software packages and computing environments
+description: Event - Annual Workshop for the SCINet Geospatial Research Working Group
 excerpt: Provides hands-on tutorials on workflows to access the SCINet HPC systems and conduct geospatial research at scale and fosters geospatial research efforts.
 categories: [2024 Geospatial Workshop] 
 tags: Geospatial
