@@ -1,0 +1,4 @@
+{%- assign wg = include.wg %}
+{%- assign wg-full = site.data.workinggroups['wgs'] | where: "shorthand", wg %}
+{%- assign wg1 = wg-full[0] %}
+{% include layout/components/link pg=wg1 %}

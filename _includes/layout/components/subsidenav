@@ -1,0 +1,21 @@
+{%- assign nlink = include.nlink %}
+{%- assign _current = false %}
+{%- if nlink.url == page.url or nlink.url == page.permalink %}
+{%- assign _current = true %}
+{%- endif %}
+{% capture sectionclass %}{% if nlink.links %}current-section{% endif %}{% endcapture %}
+{%- capture prevurl %}{% if nlink.path contains '/index.html' %}{{ nlink.url | remove: "/index" }}/{% else %}{{ nlink.url }}{% endif %}{%- endcapture %}
+<li class="{{ nlink.TOCclass }} {{ ic }}{% if _current %} is-current{% endif %} {{ sectionclass }}"><a class="{% if _current %}usa-current{% else %}{{ sectionclass }}{% endif %}" href="{% if nlink.external %}{{ prevurl }}{% else %}{{ site.baseurl }}{{ prevurl }}{% endif %}">{{ nlink.title }}</a>
+{%- if _current %}
+{% include layout/components/autosidenav nodes=nodes item_class=ic  submenu_class=sc class=sc %}
+{% endif %}
+{%- if nlink.links %}
+{%- if _current or page.path contains nlink.shortpath %}
+<ul class="{{ sc }} pagelinks">
+    {%- for _link in nlink.links %}
+    {% include layout/components/subsidenav nlink=_link item_class=ic  submenu_class=sc class=sc %}
+    {%- endfor %}
+</ul>
+{%- endif %}
+{%- endif %}
+</li>

@@ -12,18 +12,20 @@ registration:
 cal-titles: excerpt
 maincalendar: true
 
+excerpt: To recieve an invitation to upcoming webinars, fill out the [Translational Omics Working Group registration survey](https://forms.office.com/g/tgh4SxRqit).
+
 #filter-archive: materials
 
 archive-label: Webinar Recordings
 
 sessions:
   - session:
-    excerpt: "The genomic and metabolic making of yeast ecological diversity"
-    date: 2024-10-10
+    title: "The genomic and metabolic making of yeast ecological diversity"
+    date: 2024-10-10 11:00:00
     time: 11am-12pm ET
     presenter: "Dr. Chris Todd Hittinger"
   - session:
-    excerpt: "Exploiting microbiota-derived bioactive compounds to enhance animal health and production"
+    title: "Exploiting microbiota-derived bioactive compounds to enhance animal health and production"
     date: 2024-09-12
     time: 11am-12pm ET
     presenter: "Dr. Hilario Mantovani"
@@ -31,12 +33,12 @@ sessions:
       - text: webinar recording
         url: https://usdagcc-my.sharepoint.com/:v:/r/personal/george_liu_usda_gov/Documents/publication/Hu%20Zhenbin/TOmics%20WG/20240912Recording/GMT20240912-150120_Recording_1920x1080.mp4?csf=1&web=1
 #  - session:
-#    excerpt: "The genomic and metabolic making of yeast ecological diversity"
+#    title: "The genomic and metabolic making of yeast ecological diversity"
 #    date: 2024-08-08
 #    time: 11am-12pm ET
 #    presenter: "Dr. Chris Todd Hittinger"
   - session:
-    excerpt: "Untangling False Positives, Statistical Power, Populations Structure, and Kinship in GWAS"
+    title: "Untangling False Positives, Statistical Power, Populations Structure, and Kinship in GWAS"
     date: 2024-07-11
     time: 11am-12pm ET
     presenter: "Dr. Zhiwu Zhang"
@@ -44,7 +46,7 @@ sessions:
       - text: webinar recording
         url: https://usdagcc-my.sharepoint.com/:v:/r/personal/george_liu_usda_gov/Documents/publication/Hu%20Zhenbin/TOmics%20WG/20240711Recording/GMT20240711-150107_Recording_1920x1200.mp4?csf=1&web=1
   - session:
-    excerpt: Livestock, Companion Animals, and Wildlife; Working Across Industries in Genomics Research
+    title: Livestock, Companion Animals, and Wildlife; Working Across Industries in Genomics Research
     date: 2024-06-13
     time: 11am-12pm ET
     presenter: "Heather J. Huson, Ph.D."
@@ -52,7 +54,7 @@ sessions:
       - text: webinar recording
         url: https://usdagcc-my.sharepoint.com/:v:/r/personal/george_liu_usda_gov/Documents/publication/Hu%20Zhenbin/TOmics%20WG/20240611Recording/GMT20240613-151526_Recording_1920x1200.mp4?csf=1&web=1
   - session:
-    excerpt: "Streamline unsupervised machine learning to survey and graph indel-based haplotypes from pan-genomes"
+    title: "Streamline unsupervised machine learning to survey and graph indel-based haplotypes from pan-genomes"
     date: 2024-05-09
     time: 11am-12pm EDT
     presenter: "Dr. Xianran Li"
@@ -60,7 +62,7 @@ sessions:
       - text: webinar recording
         url: https://usdagcc-my.sharepoint.com/:v:/r/personal/george_liu_usda_gov/Documents/publication/Hu%20Zhenbin/TOmics%20WG/20240509Recording/GMT20240509-145951_Recording_2560x1440.mp4?csf=1&web=1
   - session:
-    excerpt: Advancing omics measurement science to support agricultural research
+    title: Advancing omics measurement science to support agricultural research
     date: 2024-03-21
     time: 11am-12pm EDT
     presenter: "Dr. Tracy B, Shock"
@@ -68,7 +70,7 @@ sessions:
       - text: Webinar recording
         url: https://usdagcc-my.sharepoint.com/:v:/r/personal/george_liu_usda_gov/Documents/publication/Hu%20Zhenbin/TOmics%20WG/20240321Recording/GMT20240321-145942_Recording_1920x1080.mp4?csf=1&web=1
   - session:
-    excerpt: Statistical and computational methods for spatial transcriptomics data analysis
+    title: Statistical and computational methods for spatial transcriptomics data analysis
     date: 2024-02-08
     #tags: statistics
     presenter: "Dr. Ying Ma"
@@ -76,14 +78,14 @@ sessions:
       - text: Webinar recording
         url: https://usdagcc-my.sharepoint.com/:v:/r/personal/zhenbin_hu_usda_gov/Documents/Yingma_2.8.2024/GMT20240208-155809_Recording_1920x1080.mp4?csf=1&web=1
   - session:
-    excerpt: Evolutionary dynamics of transposable elements in plant genomes
+    title: Evolutionary dynamics of transposable elements in plant genomes
     date: 2023-12-14
     presenter: "Dr. Shujun Ou"
     materials:
       - text: Webinar recording
         url: https://usdagcc-my.sharepoint.com/:v:/r/personal/zhenbin_hu_usda_gov/Documents/Working_group12142023/GMT20231214-160001_Recording_1920x1200.mp4?csf=1&web=1
   - session:
-    excerpt:  Using multiomics to explore the impact of drought on the root microbiome
+    title:  Using multiomics to explore the impact of drought on the root microbiome
     date: 2023-11-11
     presenter: "Dr. Devin Coleman-Derr"
     materials:
@@ -99,7 +101,7 @@ sessions:
 
   - session:
     exclude: true
-    excerpt: "Farm Animal Genotype-Tissue Expression (FarmGTEx)"
+    title: "Farm Animal Genotype-Tissue Expression (FarmGTEx)"
     date: 2023-10-12
     presenter: "Dr. Lingzhao Fang"
     materials: 
@@ -107,14 +109,16 @@ sessions:
         url: https://usdagcc-my.sharepoint.com/personal/zhenbin_hu_usda_gov/_layouts/15/stream.aspx?id=%2Fpersonal%2Fzhenbin_hu_usda_gov%2FDocuments%2FGMT20231012-145931_Recording_1920x1200%2Emp4
   - session:
     exclude: true
-    excerpt: Initial Organization Meeting
+    title: Initial Organization Meeting
     date: 2023-09-14
     materials:  
       - text: Presentation slides
         url: https://usdagcc-my.sharepoint.com/:p:/g/personal/zhenbin_hu_usda_gov/EY5hplNYaDZAkG4fapkIarAB21t6wlyBXm0djmC65_zLwQ
+
+
 ---
 
-To recieve an invitation to upcoming webinars, fill out the [Translational Omics Working Group registration survey](https://forms.office.com/g/tgh4SxRqit). <!--excerpt-->
+To recieve an invitation to upcoming webinars, fill out the [Translational Omics Working Group registration survey](https://forms.office.com/g/tgh4SxRqit).
 
 The primary goal of the [Translational Omics Working Group](/research/working-groups/omics) is to foster collaboration, knowledge-sharing, and innovation among researchers and experts in diverse fields, including but not limited to genomics, bioinformatics, computational biology, and artificial intelligence (AI).
 

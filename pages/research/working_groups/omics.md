@@ -23,7 +23,7 @@ subnav:
 
 #collect: collect_list
 #filter: true
-
+remove-excerpt: To recieve an invitation to upcoming webinars, fill out the [Translational Omics Working Group registration survey](https://forms.office.com/g/tgh4SxRqit).
 ---
 
 We are excited to introduce the SCINet Translational Omics Working Group, an interdisciplinary team of researchers and experts dedicated to advancing the field of translational omics and its applications in agriculture. Omics technologies will play a pivotal role in the new agricultural revolution by unraveling the complex molecular underpinnings of complex traits and helping guide future farming practices. 

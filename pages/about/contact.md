@@ -4,7 +4,7 @@ description: contact information for website, newsletter, policy/development, an
 permalink: /about/contact
 author: Kerrie Geil
 layout: page
-alt_nav: about
+alt_nav: About
 
 ---
 

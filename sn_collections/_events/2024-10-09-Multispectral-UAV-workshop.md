@@ -1,20 +1,18 @@
 ---
 title: "Multispectral UAV Imagery Workshop"
 type: workshop
-end_date: 2024-10-09 
+display: basic
+end_date: 2024-10-10 21:00
 provider: Geospatial Working Group
 hideprovider: true
 description: Event - Processing multispectral UAV imagery and extracting zonal statistics for geospatial modeling using OpenDroneMap on SCINet systems.
 
 tags: UAS
-sessions: 
-  - session:
-    time: 1-5 PM ET
-    multiday: "October 9-10"
-    prerequisites:
-      - text: Familiarity with the Python programming language
-      - text: Experience with the command line will be very helpful for working through the exercises
-      - text: Some basic knowledge about remote sensing (i.e., digital numbers vs reflectance, vegetation indices) and geospatial (i.e., zonal statistics) concepts will be beneficial.
+time: 1-5 PM ET
+prerequisites:
+  - text: Familiarity with the Python programming language
+  - text: Experience with the command line will be very helpful for working through the exercises
+  - text: Some basic knowledge about remote sensing (i.e., digital numbers vs reflectance, vegetation indices) and geospatial (i.e., zonal statistics) concepts will be beneficial.
 
 registration: 
   url: https://forms.office.com/g/jQQN0iyHHT

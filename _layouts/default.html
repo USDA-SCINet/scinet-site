@@ -7,25 +7,25 @@ scripts: /assets/js/external.js
 <html lang="{{ page.lang | default: site.lang | default: 'en-US' }}">
 
 <head>
-  {% include meta.html %}
-  {% include styles.html %}
+  {% include layout/meta.html %}
+  {% include layout/styles.html %}
   {% if site.google_analytics_ua or site.dap_agency %}
-  {% include analytics.html %}
+  {% include layout/analytics.html %}
   {% endif %}
   <script>0</script>
 </head>
 
 <body class="{% if site.site_width %}site-{{ site.site_width }}{% endif %}">
 
-  {% include skipnav.html %}
-  {% include header.html %}
+  {% include layout/skipnav.html %}
+  {% include layout/header.html %}
 
   {% if page.layout == 'scinet_home' or  page.layout == 'workshop' %}
   <main id="main-content" {% for _attr in layout.main %} {{ _attr[0] }}="{{ _attr[1] }}" {% endfor %}>
     {% endif %}
 
     {% assign hero = page.hero %}
-    {% include components/hero.html %}
+    {% include layout/hero.html %}
 
     {% if page.alerts %}
     <div class="padding-bottom-2" aria-label="Alerts">
@@ -70,9 +70,9 @@ scripts: /assets/js/external.js
   </main>
   {% endif %}
 
-  {% include footer.html %}
+  {% include layout/footer.html %}
 
-  {% include scripts.html %}
+  {% include layout/scripts.html %}
 
 </body>
 

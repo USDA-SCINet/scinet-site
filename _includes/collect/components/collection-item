@@ -1,0 +1,20 @@
+{% assign session = include.session %}
+{% if include.fixdate %}
+    {% assign fixdate = include.fixdate %}
+{% endif %}
+
+{% capture thisdate %}{% if fixdate %}{{ fixdate }}{% elsif session.date %}{{ session.date }}{% else %}{{ post.date }}{% endif %}{% endcapture %}
+{% unless session.multiday %}
+{% if session.end_date %}
+{% capture em %}{{session.end_date | date: "%B" }}{% endcapture %}
+{% capture sm %}{{ thisdate | date: "%B" }}{% endcapture %}
+{% capture datestring %}{% if em == sm %}{{ thisdate | date: "%B %-d" }}-{{ session.end_date | date: "%-d"}}{% else %}{{ thisdate | date: "%B %-d" }} - {{ session.end_date | date: "%B %-d"}}{% endif %}{% if pagetype == "archive" or page.layout=='event' %}, {{ session.end_date | date: "%Y" }}{% endif %}{% endcapture %}
+{% else %}
+{% capture datestring %}{{ thisdate | date: "%A, %B %-d" }}{% if pagetype == "archive" or page.layout=='event' %}, {{ thisdate | date: "%Y" }}{% endif %}{% endcapture %}
+{% endif %}
+{% endunless %}
+
+<li class="usa-collection__meta-item">
+    <b>{% unless include.title == 'false' %}{% if session.title %}{{ session.title }} - {% endif %}{% endunless %}{% if session.multiday %}{{ session.multiday }}{% else %}{{ datestring }}{% endif %}{% if session.time %}, {{ session.time }} {% endif %}</b>
+    {% include collect/components/session-ul session=session %}
+</li>

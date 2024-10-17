@@ -1,0 +1,24 @@
+{% assign signature = include.signature %}
+<div class="usa-logo">
+    {% if signature.logos %}
+    <span class="agency-logo display-flex flex-align-center mobile-lg:margin-right-1">
+        {% for logo in signature.logos %}
+        <a href="{% if logo.url %}{{ logo.url }}{% else %}{{ site.baseurl }}/{% endif %}">
+            <img class="usa-logo-img"
+                src="{% include url.html link=logo %}"
+                alt="{{ logo.alt }}">
+        </a>
+        {% endfor %}
+    </span>
+    {% endif %}
+    <a class="agency-logo-text"
+        href="{% if signature.url %}{{ signature.url }}{% else %}{{ site.baseurl }}/{% endif %}"
+        aria-label="{{ signature.title }}">
+        <div class="agency-identity">
+            <div class="agency-name usa-logo__text">{{ signature.title | default: site.title }}</div>
+            {% if signature.tagline %}
+            <div class="tagline">{{ signature.tagline }}</div>
+            {% endif %}
+        </div>
+    </a>
+</div>

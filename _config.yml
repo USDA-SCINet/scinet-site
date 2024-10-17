@@ -3,7 +3,7 @@ description: SCINet is a USDA initiative to provide agricultural scientists acce
 short_name: "SCINet"
 language: "en"
 lang_direction: "ltr"
-timezone: America/New_York
+timezone: '-0500'
 icon: "https://scinet.usda.gov/assets/img/site/favicons/favicon.png"
 
 # GitHub information
@@ -66,14 +66,14 @@ collections:
   events:
     output: true
     future: true
-    permalink: /:collection/:path
+    permalink: /events/:name
   posts:
     output: true
     permalink: /:collection/:path
   workshops:
     output: true
     future: true
-    permalink: /:collection/:path
+    permalink: /events/:slugified_categories/:name
   guides:
     output: true
     permalink: /:collection/:path
