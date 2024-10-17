@@ -3,7 +3,7 @@ title: "Software Package/Environment Management Workshop: R"
 description: In this workshop presented by the SCINet Office, we will cover best practices for managing software packages and computing environments on SCINet's supercomputers.
 excerpt: "In this session, we will begin by using R from the command line. Later, we will cover similar steps using RStudio Server available on Open OnDemand. We will primarily focus on using the `renv` package for package management, but we will also note alternatives at the end."
 layout: page
-categories: [2024 SPEMW 2] 
+categories: [2024 10 SPEMW] 
 
 sidenav_link: /training/resources
 
