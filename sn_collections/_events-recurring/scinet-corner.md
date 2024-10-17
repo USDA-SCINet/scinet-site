@@ -16,7 +16,11 @@ filter-archive: materials
 
 archive-label: SCINet Corner Recordings
 
-sessions:        
+sessions:    
+  - session:
+    title: Tidyverse for data cleaning and wrangling
+    date: 2024-10-17
+    time: 1-2 pm ET
   - session: 
     title: "Introduction to plotting with ggplot2"
     date: 2024-09-19 13:00:00
@@ -200,7 +204,7 @@ This presentation will cover how to log on to Open OnDemand for Ceres and Atlas,
   
 ---
 
-The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items. The main idea is that SCINet users with similar interests can get help from each other. This virtual meeting will provide space for, and facilitate, these interactions on the first or second Thursday of the month.<!--excerpt-->
+The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.<!--excerpt--> The main idea is that SCINet users with similar interests can get help from each other. This virtual meeting will provide space for, and facilitate, these interactions on the first or second Thursday of the month.
 
 Location: [SpatialChat](https://app.spatial.chat/s/scinet-corner)
 

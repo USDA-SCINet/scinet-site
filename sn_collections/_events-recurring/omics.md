@@ -24,6 +24,9 @@ sessions:
     date: 2024-10-10 11:00:00
     time: 11am-12pm ET
     presenter: "Dr. Chris Todd Hittinger"
+    materials:
+      - text: webinar recording
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/george_liu_usda_gov/Documents/publication/Hu%20Zhenbin/TOmics%20WG/20241010Recording/GMT20241010-150128_Recording_1920x1080.mp4?csf=1&web=1
   - session:
     title: "Exploiting microbiota-derived bioactive compounds to enhance animal health and production"
     date: 2024-09-12
