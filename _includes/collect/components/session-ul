@@ -2,9 +2,9 @@
 <ul class="unstyled-list">
     <!-- {% if session.time %}<li><b>{{ session.time }}</b></li>{% endif %} -->
     {% unless pagetype=='archive' %}
-        {% if session.register %}
-            {% if session.register %}
-                {% assign registration = session.register %}
+        {% if session.registration %}
+            {% if session.registration %}
+                {% assign registration = session.registration %}
             {% endif %}
             {% capture sessregtext %}{% if registration.text %}{{ registration.text }}{% else %}{{ regtext }}{% endif %}{% endcapture %}
             <li><b>Registration: </b>
@@ -15,6 +15,7 @@
 
     {% if session.instructor %} <li><b>Instructor: </b>{{ session.instructor }}</li>{% endif %}
     {% if session.presenter %} <li><b>Presenter: </b>{{ session.presenter }}</li>{% endif %}
+    {% if session.lead %} <li><b>Lead: </b>{{ session.lead }}</li>{% endif %}
     {% if session.location %} <li><b>{{ session.location }}</b></li>{% endif %}
 
     {% if session.prerequisites %}

@@ -24,6 +24,7 @@
 {%- assign link = session.link | default: parent.link %}
 {%- assign instructor = session.instructor | default: parent.instructor %}
 {%- assign presenter = session.presenter | default: parent.presenter %} 
+{%- assign lead = session.lead | default: parent.lead %}
 {%- assign location = session.location | default: parent.location %} 
 {%- assign materials = session.materials | default: parent.materials %}
 {%- assign details = session.details | default: parent.details %}
@@ -62,6 +63,6 @@
 {% endif %}
 
 
-{% include collect/process/hashed date=date date-start=date-start duration=duration time=time end_date=end_date caldate=cal_date multiday=multiday url=url title=title section=section parenttitle=parenttitle excerpt=excerpt type=type provider=provider registration=registration sessions=sessions prerequisites=prerequisites duration=duration system=system location=location reason=reason assets=assets link=link latest=latest instructor=instructor presenter=presenter location=location materials=materials details=details %}
+{% include collect/process/hashed date=date date-start=date-start duration=duration time=time end_date=end_date caldate=cal_date multiday=multiday url=url title=title section=section parenttitle=parenttitle excerpt=excerpt type=type provider=provider registration=registration sessions=sessions prerequisites=prerequisites duration=duration system=system location=location reason=reason assets=assets link=link latest=latest instructor=instructor presenter=presenter lead=lead location=location materials=materials details=details %}
 
 {% assign event = hashed %}

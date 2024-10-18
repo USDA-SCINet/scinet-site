@@ -5,7 +5,12 @@ main:
 ---
 
 <div class="section">
+  {% if page.sessions or page.recurring or page.type == 'workshop' %}
+  {% if page.provider or page.registration %}
+  <hr>
+  <ul class="usa-list usa-list--unstyled">
   {% if page.provider %}
+  <li>
   {% assign _provider = site.data.tables.providers.providers | where:"tag", page.provider | first %}
   <b>Provided by:</b> 
   {% if _provider.size > 0 %}
@@ -13,13 +18,31 @@ main:
   {% else %}
   {{ page.provider }}
   {% endif %}
+  </li>
+  {% endif %}
+  {% if page.registration %}
+  {% assign registration = page.registration %}
+  {% capture sessregtext %}{% if registration.text %}{{ registration.text }}{% else %}Register Here{% endif %}{% endcapture %}
+  <li><b>Registration: </b>
+    {% include components/link.html url=registration.url text=sessregtext external=true %}</li>
+  {% endif %}
+  </ul>  <hr>{% endif %}
+  {% else %}
+  {% assign my_events = '' | split: '' %}
+  {% assign my_events = my_events | push: page %}
+  {% include collect/components/calendar myevents=my_events pagetype="calendar" %}
+  <hr>
   {% endif %}
 
   {{ content }}
 
+
+  
+  {% if page.sessions or page.recurring or page.type == 'workshop' %}
   {%- if page.materials %}
     {% include collect/components/materials data=page.materials %}
   {%- endif %}
+
 
   {%- if page.course-list %}
   {% include collect/components/course-list %}
@@ -92,4 +115,5 @@ main:
       {% include collect/components/calendar myevents=my_events pagetype="calendar" %}
   {%- endif %}
   {%- endif %}
+  {% endif %}
 </div>
