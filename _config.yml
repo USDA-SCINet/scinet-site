@@ -92,7 +92,7 @@ defaults:
       future: "show"
       layout: "event"
       cal-titles: "hide"
-      sidenav_link: /training/events/
+      sidenav_link: /events
       duplicate: false
   - 
     scope:
@@ -102,7 +102,7 @@ defaults:
       future: "show"
       layout: "event"
       cal-titles: "hide"
-      sidenav_link: /training/events/
+      sidenav_link: /events
       recurring: true
   -
     scope:
@@ -127,8 +127,10 @@ defaults:
       type: "workshops"
     values:
       future: "show"
-      layout: "page"
+      layout: "event"
       layout_type: "workshop"
+      cal-titles: "hide"
+
   - 
     scope:
       path: ""
