@@ -1,0 +1,44 @@
+{% if prevTOClength == 0 or nobreadcrumb == 1 %}
+<div class="usa-breadcrumb"></div>
+{% else %}
+<nav class="usa-breadcrumb usa-breadcrumb--wrap" aria-label="Breadcrumbs">
+    <ol class="usa-breadcrumb__list">
+      {%- if page.collection -%}
+
+      {%- if page.index==0 %}
+        {% if prevTOClength == 1 %}
+        {%- for _link in prevTOC -%}
+          {%- if _link.url == page.url or _link.url == page.permalink -%}
+            {%- break -%}
+          {%- endif -%}
+          {%- include layout/components/breadcrumb_link.html link=_link -%}
+        {%- endfor -%}
+        {% else %}
+          {%- include layout/components/breadcrumb_link.html title='All Workbooks' url='/workbooks' -%}
+        {% endif %}
+      {%- elsif  page.index==0.5 -%}
+        {%- include layout/components/breadcrumb_link.html title='Home' url='/' -%}
+      {%- else -%}
+       
+          {%- for _link in prevTOC -%}
+            {%- if _link.url == page.url or _link.url == page.permalink -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- include layout/components/breadcrumb_link.html link=_link -%}
+        {%- endfor -%}
+        {%- endif -%}
+      {%- else %}
+      {%- for _link in prevTOC limit: 1 -%}
+        {%- if _link.url == page.url or _link.url == page.permalink -%}
+          {%- break -%}
+        {%- endif -%}
+        {%- include layout/components/breadcrumb_link.html link=_link -%}
+      {%- endfor -%}
+      {%- endif -%}
+  
+      <li class="usa-breadcrumb__list-item usa-current" aria-current="page">
+        <span>{% if page.breadcrumb_title %}{{ page.breadcrumb_title }}{% else %}{{ page.title }}{% endif %}</span>
+      </li>
+    </ol>
+  </nav>
+  {% endif %}

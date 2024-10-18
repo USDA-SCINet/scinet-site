@@ -1,0 +1,46 @@
+{%- assign num = section_links | size -%}
+{% if num < 7 %}
+    {% include layout/components/basic-menu.html -%}
+{% else %}
+    {% if num < 11 %}
+        {% assign navul = "usa-nav__submenu nav-width-2" %}
+        {% assign divnum = 4 %}
+        {% assign divcol = "usa-col desktop:grid-col-6" %}
+    {% else %}
+        {% assign navul = "usa-nav__submenu usa-megamenu" %}
+        {% assign divnum = 3 %}
+        {% assign divcol = "usa-col" %}
+    {% endif %}
+
+
+<ul id="{{ _section_id }}" class="{{ navul }}" hidden="">
+    <div class="grid-row grid-gap-4">
+        {%- for _link in section_links -%}
+
+            {%- assign current_i = forloop.index0 | divided_by: divnum -%}
+            {%- assign nc = current_i | plus: 1 %}
+            {%- assign pc = current_i | minus: 1 %}
+            
+            {%- assign prev_i = forloop.index0 | minus: 1 | divided_by: divnum -%}
+            {%- assign next_i = forloop.index0 | plus: 1 | divided_by: divnum -%}
+
+            {%- if forloop.first or pc == prev_i -%}
+            <div class="{{ divcol }}">
+                <ul class="usa-nav__submenu-list">
+            {%- endif -%}
+                    <li class="usa-nav__submenu-item">
+                        <a href="{% include url.html link=_link %}">
+                                {{ _link.title }}
+                        </a>
+                    </li>
+
+            {%- if nc == next_i or forloop.last -%}
+            {%- assign loopnum = 0 %}
+                    </ul>
+                </div>
+            {%- endif -%}
+        {%- endfor -%}
+    </div>
+</ul>
+
+{% endif %}

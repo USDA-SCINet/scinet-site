@@ -6,7 +6,7 @@
 title: "Itinerary" # title of this page - this will be used in the sidenav
 author: page author # author name
 excerpt: Itinerary for the 2022 Geospatial Workshop. # page description
-categories: [2022 Geospatial Workshop]  # MUST match category from the Workshop homepage in the event collection
+categories: [2022-Geospatial-Workshop]  # MUST match category from the Workshop homepage in the event collection
 provider: Geospatial Working Group # event provider
 type: itinerary # important
 

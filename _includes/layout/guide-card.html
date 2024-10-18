@@ -1,0 +1,69 @@
+{% assign guidecategories = site.guides | where: "sorting", "index" | sort: 'order_number' %}
+{% assign guidepages = site.guides | where: "sorting", "guide" | sort: 'order_number' %}
+{% assign all_posts = guidecategories | concat: guidepages %}
+
+
+{% if page.guidegroup.compile %}
+    {% assign intlinks = true %}
+    {% assign compiled = "true" %}
+    {% assign show_list = true %}
+    {% if page.guidegroup.all %}
+        {% for _category in guidecategories %}
+            {% assign _navsections = guidepages | where_exp: "item", "item.categories == _category.categories" %}
+            {% assign listpnum = _navsections | size %}
+            {% unless listpnum == 0 %}
+            <div class="margin-top-5">
+                <h2>{{ _category.short_title | default: _category.categories }} Guides</h2>
+                {% if page.guidegroup.accordion %}
+                    {% include layout/accordion.html %}
+                {% else %}
+                    {% include components/guide-card.html %}
+                {% endif %}
+            </div>
+            {% endunless %}
+        {% endfor %}
+    {% else %}
+    {% for _category in page[page.guidegroup.compile] %}
+        {% assign _navsections = guidepages | where_exp: "item", "item.categories == _category.category" %}
+        {% assign listpnum = _navsections | size %}
+        {% unless listpnum == 0 %}
+        <div class="margin-top-5">
+            <h2>{{ _category.category }}</h2>
+            {% if page.guidegroup.accordion %}
+                {% include layout/accordion.html %}
+            {% else %}
+                {% include components/guide-card.html %}
+            {% endif %}
+        </div>
+        {% endunless %}
+    {% endfor %}
+    {% endif %}
+{% else %}
+    {% if page.guidegroup.all %}
+        {% assign intlinks = true %}
+        {% assign show_full = true %}
+        {% assign show_list = true %}
+        {% assign _navsections = guidecategories %}
+    {% elsif page.guidegroup.section %}
+        {% assign _navsections = page[page.guidegroup.section] %}
+
+    {% else %}
+        {% assign intlinks = true %}
+        {% assign _navsections = guidepages | where_exp: "post", "post.categories == page.categories" %}
+        {% if page.sorted %}
+        {% assign _navsections = _navsections | sort: 'order_number' %}
+    {% endif %}
+
+{% endif %}
+
+
+
+    {% assign listpnum = _navsections | size %}
+    {% unless listpnum == 0 %}
+        {% if page.guidegroup.accordion %}
+            {% include layout/accordion.html %}
+        {% else %}
+            {% include components/guide-card.html %}
+        {% endif %}
+    {% endunless %}
+{% endif %}

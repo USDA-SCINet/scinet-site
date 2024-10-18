@@ -2,11 +2,18 @@
 {% if page.no-year or page.type == "itinerary" %}
 {% assign no-year = true %}
 {% endif %}
+{% assign post_type = "" %}
 
-{% assign myposts = site[mycollect] %}
+{% if mycollect == 'event' %}
+
+{% include collect/process/allevents %}
+{% assign myposts = allevents %}
+
+{% else %}
 
 
 {% if mycollect == "announcements" %}
+  {% assign myposts = site[mycollect] %}
   {% assign flow = 'reverse' %}
   {% assign post_type = 'calendar' %}
   {% assign no_date_below = true %}
@@ -16,6 +23,11 @@
 {% elsif mycollect == "collect_list" %}
   {% assign myposts = page.collect_list %}
   {% assign no-year = true %}
+{% else %}
+
+{% assign myposts = site[mycollect] %}
+{% endif %}
+
 {% endif %}
 
 {% if page.filter %}
@@ -50,9 +62,9 @@
 <h2>{{ page.collect_title }}</h2>
 {%- endif %}
 
-{% if mycollect == 'events-recurring' %}
-  {% include components/collection-event.html comp_events=myposts pagetype="future" recur-collect='true' %}
-  {% include components/collection-event.html comp_events=myposts pagetype="archive" recur-collect='true' %}
+{% if mycollect == 'events-recurring' or mycollect =='events' %}
+  {% include collect/components/calendar myevents=myposts pagetype="future" post_type=post_type %}
+  {% include collect/components/calendar myevents=myposts pagetype="archive" post_type=post_type %}
 {% else %}
 <ul class="usa-list usa-list--unstyled">
 {% if flow == 'reverse' %}

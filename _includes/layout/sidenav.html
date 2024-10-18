@@ -1,0 +1,10 @@
+<nav aria-label="Secondary navigation">
+  <ul class="usa-sidenav">
+
+    {% for _link in include.links %}
+    
+    {% include layout/components/sidenav.html link=_link %}
+    {% endfor %}
+
+  </ul>
+</nav>

@@ -9,12 +9,13 @@ class:
     <div class="grid-row width-full">
 
         <div class="desktop:grid-col-auto flex-sci-card" aria-label="Getting Started">
-            {% include sci-card.html highlight = page.intro %}
+            {% include layout/components/sci-card.html highlight = page.intro %}
         </div>
         <div class="desktop:grid-col-fill" aria-label="Calendar">
             <div class="home-block">
-
-                {% include collection-cal.html %}
+                {% assign post_type = 'calendar' %}
+                {% assign pagetype = 'future' %}
+                {% include collect/components/calendar post_type=post_type %}
             </div>
         </div>
     </div>

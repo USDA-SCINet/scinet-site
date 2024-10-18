@@ -12,4 +12,4 @@ layout: page
 
 ---
 
-{% include BYUJobScriptGenerator.html %}
+{% include layout/components/BYUJobScriptGenerator.html %}

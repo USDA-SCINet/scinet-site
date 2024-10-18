@@ -3,7 +3,7 @@
 {% if post.categories contains page.title or post.type contains page.posttype or post.categories == page.categories or page.filter %}
   {% if no-year %}
     {% if forloop.first %}<ul>{% endif %}
-    {% include components/collection.html %}
+    {% include collect/components/event %}
     {% if forloop.last %}</ul>{% endif %}
   {% else %}
     {% assign currentdate = post.date | date: "%Y" %}
@@ -13,7 +13,7 @@
       <ul>
       {% assign date = currentdate %}
     {% endif %}
-    {% include components/collection.html %}
+    {% include collect/components/event %}
   {% if forloop.last %}</ul>{% endif %}
 {% endif %}
 {% endif %}

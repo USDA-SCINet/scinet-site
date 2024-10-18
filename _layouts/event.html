@@ -18,21 +18,23 @@ main:
   {{ content }}
 
   {%- if page.materials %}
-    {% include components/collection/materials data=page.materials %}
+    {% include collect/components/materials data=page.materials %}
   {%- endif %}
 
-  {%- if page.type == 'event' or page.type == 'training' %}
+  {%- if page.course-list %}
+  {% include collect/components/course-list %}
+
+  {% else %}
+
+  {%- if page.type == 'event' or page.type == 'training' or page.display == 'basic' %}
   <br>
     {% assign my_events = '' | split: '' %}
     {% assign my_events = my_events | push: page %}
 
     
-    {% if page.recurring %}
-      {% include components/collection-event.html comp_events=my_events pagetype="future" %}
-      {% include components/collection-event.html comp_events=my_events pagetype="archive" %}
-    {% else %}
-      {% include components/collection-event.html simple_events=my_events %}
-    {% endif %}
+      {% include collect/components/calendar myevents=my_events pagetype="future" %}
+      {% include collect/components/calendar myevents=my_events pagetype="archive" %}
+
 
   {%- elsif page.type == 'workshop' %}
   {%- if page.categories %}
@@ -73,9 +75,9 @@ main:
     {% assign my_events = '' | split: '' %}
     {% assign my_events = my_events | push: page %}
     
-    {% include components/collection-event.html simple_events=my_events %}
+    {% include collect/components/calendar myevents=my_events %}
     
   {%- endif %}
   {%- endif %}
-
+  {%- endif %}
 </div>

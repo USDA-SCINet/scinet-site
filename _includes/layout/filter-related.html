@@ -1,0 +1,3 @@
+<button class="usa-button usa-button--{{ include.color | default: 'unstyled' }} filter-nav" type="button" att="{{ include.attribute }}" cont="{{ include.search }}">
+    <span class="arrow {{ include.class }}">{% if include.text %}{{ include.text }}{% else %}{{include.btext}}{{ include.search }}{{ include.atext }}{% endif %}</span>
+</button>
