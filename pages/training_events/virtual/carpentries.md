@@ -31,4 +31,4 @@ If you have a training request that is not being offered at this time, please co
 If you are interested in becoming a Carpentries Instructor, please email SCINet-training@usda.gov.
 
 
-- [Upcoming SCINet Trainings]({{ site.baseurl }}/training/events)
+- [Upcoming SCINet Trainings]({{ site.baseurl }}/events)

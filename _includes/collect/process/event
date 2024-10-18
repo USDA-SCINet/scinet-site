@@ -9,6 +9,7 @@
 {%- assign multiday = session.multiday | default: parent.multiday %}
 {%- assign url = session.url | default: parent.url %}
 {%- assign title = session.title | default: parent.title %}
+{%- assign section = session.section | default: parent.section %}
 {%- assign excerpt = session.excerpt | default: parent.excerpt %}
 {%- assign type = session.type | default: parent.type %}
 {%- assign provider = session.provider | default: parent.provider %}
@@ -61,6 +62,6 @@
 {% endif %}
 
 
-{% include collect/process/hashed date=date date-start=date-start duration=duration time=time end_date=end_date caldate=cal_date multiday=multiday url=url title=title parenttitle=parenttitle excerpt=excerpt type=type provider=provider registration=registration sessions=sessions prerequisites=prerequisites duration=duration system=system location=location reason=reason assets=assets link=link latest=latest instructor=instructor presenter=presenter location=location materials=materials details=details %}
+{% include collect/process/hashed date=date date-start=date-start duration=duration time=time end_date=end_date caldate=cal_date multiday=multiday url=url title=title section=section parenttitle=parenttitle excerpt=excerpt type=type provider=provider registration=registration sessions=sessions prerequisites=prerequisites duration=duration system=system location=location reason=reason assets=assets link=link latest=latest instructor=instructor presenter=presenter location=location materials=materials details=details %}
 
 {% assign event = hashed %}

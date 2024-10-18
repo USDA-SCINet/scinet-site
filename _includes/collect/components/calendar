@@ -56,15 +56,17 @@
   {% endif %}
 {% endif %}
 
+{% assign sortings = page.sorted %}
+
 <ul class="usa-list usa-list--unstyled">
 
       {% if flow == 'normal' %}
         {% for _events in allevents %}
-        {% include collect/components/event post=_events %}
+        {% include collect/process/sort post=_events sorted=sortings %}
         {% endfor %}
       {% else %}
         {% for _event in allevents reversed %}
-        {% include collect/components/event post=_event %}
+        {% include collect/process/sort post=_event sorted=sortings %}
         {% endfor %}
       {% endif %}
 
