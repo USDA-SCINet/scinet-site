@@ -2,7 +2,7 @@
 <ul class="unstyled-list">
     <!-- {% if session.time %}<li><b>{{ session.time }}</b></li>{% endif %} -->
     {% unless pagetype=='archive' %}
-        {% if session.register or registration != "false" %}
+        {% if session.register %}
             {% if session.register %}
                 {% assign registration = session.register %}
             {% endif %}
