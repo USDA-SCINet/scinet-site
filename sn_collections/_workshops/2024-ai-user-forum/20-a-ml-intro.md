@@ -3,7 +3,7 @@ title: An introduction to machine learning for science
 date: 2024-11-20 12:00
 categories: [2024 AI User Forum] 
 time: 1-4 pm CT
-lead: Genome Informatics Facility at Iowa State University
+lead: ARS SCINet Office
 
 section: November 20, Afternoon — Foundational Skills and Concepts
 
