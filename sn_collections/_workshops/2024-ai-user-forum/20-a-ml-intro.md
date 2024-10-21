@@ -8,7 +8,7 @@ lead: ARS SCINet Office
 section: November 20, Afternoon — Foundational Skills and Concepts
 
 prerequisites:
-  - text: Familiarity with basic command-line concepts. We will offer virtual training for these skills before the Forum begins.
+  - text: Familiarity with basic Python concepts and Jupyter notebooks. We will offer virtual training for these skills before the Forum begins.
 ---
 
 Machine learning underlies the vast majority of modern AI methods, including the ever-expanding applications of deep learning and generative AI. This workshop will give participants a hands-on introduction to the basic concepts and techniques needed to understand machine learning and to apply machine learning methods to scientific research. <!--excerpt--> 
