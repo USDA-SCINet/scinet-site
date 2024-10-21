@@ -14,5 +14,3 @@ prerequisites:
 ---
 
 This workshop will teach participants the concepts and tools they need to begin applying modern, deep learning-based computer vision methods to their own scientific research. This will be an interactive, hands-on workshop that will offer plenty of opportunities for practice and experiential learning. By the end of the session, participants will have trained and evaluated a state-of-the-art image classification model on a custom image dataset.<!--excerpt--> 
-
-Participation cap at 35

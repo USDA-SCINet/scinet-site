@@ -14,5 +14,3 @@ prerequisites:
 Machine learning underlies the vast majority of modern AI methods, including the ever-expanding applications of deep learning and generative AI. This workshop will give participants a hands-on introduction to the basic concepts and techniques needed to understand machine learning and to apply machine learning methods to scientific research. <!--excerpt--> 
 
 Participants will learn how to train, evaluate, and use a variety of machine learning models for data analysis tasks. This session will also help participants critically evaluate the use and application of machine learning in science.
-
-Participation cap at 45

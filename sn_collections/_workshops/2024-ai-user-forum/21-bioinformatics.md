@@ -14,5 +14,3 @@ prerequisites:
 In this hands-on workshop, participants will learn how to predict the functional roles of proteins by analyzing their sequence data using state-of-the-art bioinformatics tools powered by AI. The focus will be on understanding how AI-based methods are applied to predict protein characteristics and other downstream uses for gene annotations. <!--excerpt--> 
 
 Two such examples will be predicting signal peptides (indicators of protein secretion) and subcellular localization (where the protein operates in the cell). Participants will use sample datasets to explore how computational models can interpret protein sequences and provide insights into their biological roles. By the end of the session, attendees will have the knowledge and skills to functionally annotate proteins in any gene annotation.
-
-Participation cap at 35

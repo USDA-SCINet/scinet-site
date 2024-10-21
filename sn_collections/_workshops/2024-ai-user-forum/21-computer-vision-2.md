@@ -16,5 +16,3 @@ prerequisites:
 In this workshop, participants will learn the key concepts and techniques needed to use modern, deep learning-based computer vision methods for object detection and semantic segmentation. Learners will practice training and evaluating state-of-the-art computer vision models on custom image datasets. 
 
 This workshop is intended as a continuation of “Computer vision I: introduction and image classification”, but participants do not need to take the earlier workshop if they already have a basic knowledge of machine learning and computer vision concepts.<!--excerpt--> 
-
-Participation cap at 35
