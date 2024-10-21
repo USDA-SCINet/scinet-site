@@ -1,0 +1,68 @@
+{%- assign parent = include.parent %}
+{% assign blankarray = "" | split: "" %}
+{% assign session = include.session | default: blankarray %}
+
+{%- assign date = session.date | default: parent.date | date: '%s' | plus: 0 %}
+{%- assign date-start = session.date-start | default: parent.date-start %}
+{%- assign duration = session.duration | default: parent.duration %}
+{%- assign end_date = session.end_date | default: parent.end_date %}
+{%- assign multiday = session.multiday | default: parent.multiday %}
+{%- assign url = session.url | default: parent.url %}
+{%- assign title = session.title | default: parent.title %}
+{%- assign section = session.section | default: parent.section %}
+{%- assign excerpt = session.excerpt | default: parent.excerpt %}
+{%- assign type = session.type | default: parent.type %}
+{%- assign provider = session.provider | default: parent.provider %}
+{%- assign registration = session.registration | default: parent.registration %}
+{%- assign prerequisites = session.prerequisites | default: parent.prerequisites %}
+{%- assign duration = session.duration | default: parent.duration %}
+{%- assign time = session.time | default: parent.time %}
+{%- assign system = session.system | default: parent.system %}
+{%- assign location = session.location | default: parent.location %}
+{%- assign reason = session.reason | default: parent.reason %}
+{%- assign assets = session.assets | default: parent.assets %}
+{%- assign link = session.link | default: parent.link %}
+{%- assign instructor = session.instructor | default: parent.instructor %}
+{%- assign presenter = session.presenter | default: parent.presenter %} 
+{%- assign lead = session.lead | default: parent.lead %}
+{%- assign location = session.location | default: parent.location %} 
+{%- assign materials = session.materials | default: parent.materials %}
+{%- assign details = session.details | default: parent.details %}
+
+{%- capture stags %}{% if include.session['tags'] %}{{ session.tags }} {% endif %}{{ parent.tags }}{% endcapture %}
+{% assign tags = stags | split: ' ' %}
+
+{% if end_date %}
+{% assign end_date = end_date | date: '%s' | plus: 0 %}
+{% assign cal_date=end_date %}
+{% else %}
+{% assign end_date = nil %}
+{% assign cal_date = date %}
+{% endif %}
+
+{%- assign sessions = session.sessions | default: false %}
+
+{% if session.sessions %}
+{% assign latest = session.sessions | first %}
+{% elsif parent.sessions %}
+{% assign latest = parent.sessions | first %}
+{% else %}
+{% assign latest = nil %}
+{% endif %}
+
+{% if parent.recurring or parent.course-list or include.parenttitle %}
+{% if include.parenttitle %}
+{% assign parenttitle = include.parenttitle %}
+{% elsif parent.title == title %}
+{% assign parenttitle = nil %}
+{% else %}
+{% assign parenttitle = parent.title %}
+{% endif %}
+{% else %}
+{% assign parenttitle = nil %}
+{% endif %}
+
+
+{% include collect/process/hashed date=date date-start=date-start duration=duration time=time end_date=end_date caldate=cal_date multiday=multiday url=url title=title section=section parenttitle=parenttitle excerpt=excerpt type=type provider=provider registration=registration sessions=sessions prerequisites=prerequisites duration=duration system=system location=location reason=reason assets=assets link=link latest=latest instructor=instructor presenter=presenter lead=lead location=location materials=materials details=details %}
+
+{% assign event = hashed %}

@@ -1,0 +1,96 @@
+{%- assign header = site.data.header -%}
+
+{%- if header.usa_banner %}
+  {% include layout/components/banner.html %}
+{%- endif %}
+
+{%- if header -%}
+<div class="usa-overlay"></div>
+<header class="usa-header usa-header--extended sci-heading" role="banner">
+
+  <div class="usa-navbar">
+      {%- include layout/components/logo.html signature=header -%}
+    <button type="button" class="usa-menu-btn">Menu</button>
+  </div>
+
+  <nav aria-label="Primary navigation" class="usa-nav border-bottom-2px">
+    <div class="usa-nav__inner">
+      <button type="button" class="usa-nav__close">
+        <img src="{{ site.baseurl }}/assets/uswds/img/usa-icons/close.svg" alt="close">
+      </button>
+      {%- assign _primary = header.primary.links -%}
+      {%- assign primary_links = site.data.navigation[_primary] | default: _primary -%}
+      {%- if primary_links -%}
+      <ul class="usa-nav__primary usa-accordion">
+        {%- for _section in primary_links -%}
+        <li class="usa-nav__primary-item">
+          {%- if _section.links or _section.compile -%}
+
+          {%- if _section.links %}
+            {%- assign section_links = site.data.navigation[_section.links] | default: _section.links -%}
+          {%- elsif _section.compile_index %}
+            {%- assign section_links = site[_section.compile] | where: 'index', _section.compile_index | sort: "order" %}
+          {%- elsif _section.compile_all %}
+            {%- assign section_links = site[_section.compile] | sort: "order" %} 
+          {% else %}
+            {%- assign myindex = _section.index | default: 1 %}
+            {%- assign section_links = site[_section.compile] | where: 'index', myindex | sort: "order" %}
+          {%- endif %}
+
+          {%- assign _section_handle = _section.title | slugify -%}
+          {%- assign _section_id = _section_handle | prepend: 'nav-' -%}
+          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="{{ _section_id }}">
+            <span>{{ _section.title }}</span>
+          </button>
+
+          {%- if _section.sublinks -%}
+          {%- include layout/components/submenu.html -%}
+          {%- elsif _section.compile -%}
+          {%- include layout/components/automenu.html -%}
+          {%- else -%}
+          {%- include layout/components/basic-menu.html -%}
+          {%- endif -%}
+
+          {%- else -%}
+          <a class="{%- if _section.class -%}{{ _section.class }}{%- else -%} usa-nav__link {%- endif -%} {%- if _section.url == page.permalink -%} usa-current{%- endif -%}"
+            href="{% include url.html link=_section %}">
+            <span>{{ _section.title }}</span>
+          </a>
+          {%- endif -%}
+        </li>
+        {%- endfor -%}
+
+
+      </ul>
+      {%- endif -%}
+
+    </div>
+
+    {%- assign _secondary = header.secondary -%}
+    <div class="usa-nav__secondary">
+      {%- if site.data.navigation[_secondary.links] -%}
+      <ul class="usa-unstyled-list usa-nav__secondary-links">
+          {%- assign secondary_links = site.data.navigation[_secondary.links] | default: _secondary.links -%}
+        {%- for _link in secondary_links -%}
+        <li class="usa-nav__secondary-item">
+          <a href="{% include url.html link=_link %}" {%- if
+            _link.class -%} class="{{ _link.class }}" {%- endif -%}>
+            {{ _link.title }}
+          </a>
+        </li>
+
+        {%- endfor -%}
+      </ul>
+      {%- endif -%}
+      {%- if site.search_site_handle -%}
+        {%- include layout/components/search.html  searchid="search_form" -%}
+      {%- endif -%}
+    </div>
+
+
+    </div>
+    </div>
+  </nav>
+
+</header>
+{%- endif -%}

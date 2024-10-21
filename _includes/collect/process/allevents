@@ -1,0 +1,76 @@
+{% assign post_type = include.post_type | default: page.post_type %}
+{% assign pagetype = include.pagetype | default: page.type %}
+
+{% if include.myevents %}
+{% assign myevents = include.myevents %}
+{% else %}
+{% assign comp_events = site.events-recurring | where: 'future', 'show' %}
+{% assign simple_events = site.events | where: 'future', 'show' %}
+{% assign myevents = comp_events | concat: simple_events %}
+{% endif %}
+{% assign blankarray = "" | split: "" %}
+
+{% if pagetype == "future" %}
+  {% assign timemin = site.time | date: '%s' | minus: 86400 %}
+  {% assign timemax = 199999999999 %}
+  {% assign flow = 'normal' %}
+
+{% elsif pagetype == "archive" %}
+  {% assign timemin = 0 %}
+  {% assign timemax = site.time | date: '%s' | minus: 86400 %}
+  {% assign flow = 'reverse' %}
+
+{% elsif pagetype == "custom" %}
+  {% assign timemin = 0 %}
+  {% assign timemax = 199999999999 %}
+  {% assign flow = 'normal' %}
+
+{% else %}
+  {% assign timemin = 0 %}
+  {% assign timemax = 199999999999 %}
+  {% if page.type == 'workshop' %}
+  {% assign flow = 'normal' %}
+  {% else %}
+  {% assign flow = 'reverse' %}
+  {% endif %}
+
+{% endif %}
+
+{% assign allevents = "" | split: "" %}
+
+{% for _event in myevents %}
+{% if _event.recurring or event.course-list or page.layout == 'event' %}
+  {% if _event.sessions %}
+    {% for _session in _event.sessions %}
+    {% include collect/process/event parent=_event session=_session %}
+    {% assign returnedevent = event %}
+    {% assign allevents = allevents | push: returnedevent %}
+    {% endfor %}
+  {%- elsif _event.course-list %}
+    {% for _course in _event.course-list %}
+    {% assign fetch = site.workshops | find_exp:"item", "item.title == _course.title  and item.parent.title == _event.title"" %}
+    {% if fetch.sessions %}
+      {% assign thissession = fetch.sessions | first %}
+      {% include collect/process/event parent=fetch session=thissession parenttitle=_event.title %}
+    {% else %}
+      {% include collect/process/event parent=_event session=fetch %}
+    {% endif %}
+    {% assign returnedevent = event %}
+    {% assign allevents = allevents | push: returnedevent %}
+    {% endfor %}
+  {% else %}
+    {% include collect/process/event parent=_event session=blankarray %}
+    {% assign returnedevent = event %}
+    {% assign allevents = allevents | push: returnedevent %}
+  {% endif %}
+  
+{% else %}
+{% if _event.sessions %}{% assign mysessions = _event %}{% else %}{% assign mysessions = blankarray %}{% endif %}
+{% include collect/process/event parent=_event session=mysessions %}
+{% assign returnedevent = event %}
+{% assign allevents = allevents | push: returnedevent %}
+{%- endif %}
+{% endfor %}
+
+{% assign allevents = allevents | sort: 'date' %}
+{% assign allevents = allevents | where_exp: "item", "item.caldate >= timemin and item.caldate < timemax" %}

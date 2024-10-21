@@ -1,0 +1,14 @@
+{% if include.link %}
+{%- assign link = include.link -%}
+<li class="usa-breadcrumb__list-item">
+  <a href="{% include url.html link=link %}" class="usa-breadcrumb__link">
+    <span>{% if link.shortname %}{{ link.shortname }}{% else %}{{ link.title }}{% endif %}</span>
+  </a>
+</li>
+{% else %}
+<li class="usa-breadcrumb__list-item">
+  <a href="{{ include.url | relative_url }}" class="usa-breadcrumb__link">
+    <span>{{ include.title }}</span>
+  </a>
+</li>
+{% endif %}

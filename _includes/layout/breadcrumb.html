@@ -1,0 +1,45 @@
+<nav class="usa-breadcrumb usa-breadcrumb--wrap" aria-label="Breadcrumbs">
+  <ol class="usa-breadcrumb__list">
+    {% capture home_title %}{% if alt_nav and page.layout_type == 'workshop' %}SCINet Home{% else %}Home{% endif %}{% endcapture %}
+    {% include layout/components/breadcrumb.html title=home_title url="/" %}
+
+    {% if page.layout_type == 'guides' and page.permalink != "/guides" %}
+      {% include layout/components/breadcrumb.html title='All User Guides' url='/guides' %}
+    {% elsif bc_base %}
+      {% include layout/components/breadcrumb.html title=bc_base.title url=bc_base.url %}
+    {% endif %}
+
+    {% if alt_nav and page.layout_type == 'workshop' %}
+    {% include layout/components/breadcrumb.html title="Upcoming Events" url="/events" %}
+    {% endif %}
+
+    {% if alt_nav %}
+      {% if breadcrumb_set %}
+        {% assign sidenav = breadcrumb_set %}
+      {% endif %}
+      {% for _link in sidenav limit:1 %}
+        {% unless _link.url == page.url or _link.url == page.permalink %}
+          {% assign linkurl = _link.url | remove: 'index' %}
+          {% capture linktitle %}{% if alt_nav == 'Workshop' %}{{ alt_nav }} Home{% else %}{{ alt_nav }}{% endif %}{% endcapture %}
+          {% include layout/components/breadcrumb.html title=linktitle url=linkurl %}
+        {% endunless %}
+      {% endfor %}
+    {% else %}
+
+    {% if show_bc_section %}
+      {% assign linkurl = bc_section.url | remove: 'index' %}
+      {% include layout/components/breadcrumb.html title=bc_section.title url=linkurl %}
+    {% endif %}
+    {% if bc_sectionlink %}
+      {% assign linkurl = bc_sectionlink.url | remove: 'index' %}
+      {% include layout/components/breadcrumb.html title=bc_sectionlink.title url=linkurl %}
+    {% endif %}
+    {% endif %}
+
+
+    <li class="usa-breadcrumb__list-item usa-current" aria-current="page">
+      {% capture bctitle %}{% if page.breadcrumb_title %}{{ page.breadcrumb_title }}{% elsif page.sorting == 'index' %}{{ page.categories }}{% else %}{{ page.title }}{% endif %}{% endcapture %}
+      <span>{{ bctitle }}</span>
+    </li>
+  </ol>
+</nav>

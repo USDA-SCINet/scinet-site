@@ -1,0 +1,76 @@
+{% assign pagetype = include.pagetype | default: page.type %}
+{% assign post_type = include.post_type | default: page.post_type %}
+
+{% if include.myevents %}
+{% include collect/process/allevents myevents=include.myevents pagetype=pagetype post_type=post_type %}
+{% else %}
+{% include collect/process/allevents  pagetype=pagetype post_type=post_type %}
+{% endif %}
+{% assign allevents = allevents %}
+
+{% assign pnum = allevents | size %}
+{% if pnum == 0 %}
+  {% if post_type == 'calendar' %}
+    {% include collect/components/collection-noevent %}
+  {% endif %}
+{% else %}
+
+{% if include.filter == "true" %}
+
+{% assign tags = allevents | map: 'tags' | uniq %}
+{% assign types = allevents | map: 'type' | uniq %}
+{% assign providers = allevents | map: 'provider' | uniq %}
+{% assign sort_list = true %}
+
+{% endif %}
+
+{% assign pagetitle = page.title | slugify %}
+  
+{% assign cal_id = pagetitle | prepend: "cal-" %}
+
+{% if page.layout == "scinet_home" %}
+<div class="width-full padding-2">
+  <h3 class="site-preview-heading">{{ page.calendar.title }}</h3>
+  <ul class="usa-list usa-list--unstyled">
+      {% for _events in allevents limit:3 %}
+        {% include collect/components/event post=_events %}
+      {% endfor %}
+  </ul>
+</div>
+<div class="right-button padding-x-2">
+  <a class="usa-button margin-x-auto margin-y-2" href=" {{ page.calendar.url | relative_url }}">
+      {{ page.calendar.button }}
+  </a>
+</div>
+{% else %}
+
+{% if include.filter == "true" %}
+{% include components/cal_filter.html %}
+{% endif %}
+
+{% if page.type == 'event' or include.recur-collect %}
+  {% if pagetype == "archive" %}
+    <h3>{% if page.archive-label %}{{page.archive-label}}{%else%}Past Sessions{%endif%}</h3>
+  {% elsif pagetype == "future" %}
+    <h3>{% if page.cal-label %}{{page.cal-label}}{%else%}Upcoming Sessions{%endif%}</h3>
+  {% endif %}
+{% endif %}
+
+{% assign sortings = page.sorted %}
+
+<ul class="usa-list usa-list--unstyled">
+
+      {% if flow == 'normal' %}
+        {% for _events in allevents %}
+        {% include collect/process/sort post=_events sorted=sortings %}
+        {% endfor %}
+      {% else %}
+        {% for _event in allevents reversed %}
+        {% include collect/process/sort post=_event sorted=sortings %}
+        {% endfor %}
+      {% endif %}
+
+  </ul>
+  <br>
+  {% endif %}
+  {% endif %}

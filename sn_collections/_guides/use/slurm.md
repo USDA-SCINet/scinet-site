@@ -124,11 +124,11 @@ Slurm permits you to restrict your jobs to only run on nodes with specific hardw
 
 If you have a software package that requires using constraints, you can specify the requirement with interactive jobs by adding the `-C constraint` option to your `salloc` or `srun` command.  For example:
 ```bash
-salloc -n 1 -n 4 -t 60 -C intel
+salloc -n 1 -n 4 -t 60 -C INTEL
 ```
 launches an interactive sessions for 60 minutes on a single node with an Intel processor with access to four CPU cores.  The same limitation to only run on Intel processors can be achieved in an sbatch script by adding the line:
 ```bash
-#SBATCH -C intel
+#SBATCH -C INTEL
 ```
 For a complete list of available hardware feature constraints, please see the [Ceres hardware guide]({{ site.baseurl }}/guides/resources/ceres#technical-overview).
 

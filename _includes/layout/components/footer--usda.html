@@ -1,0 +1,134 @@
+{%- assign _modifed = site.data.modified["modified"] -%}
+{% capture ppath %}{% if page.collection %}sn_collections/{% endif %}{{ page.path }}{% endcapture %}
+{%- assign modifieddate = _modifed | where_exp: "commit", "commit.filename == ppath" -%}
+{% if footer %}
+<footer class="usa-footer usa-footer--big">
+
+  {% if footer.last_updated %}
+  <div class="grid-container">
+    <p>Last updated: {% for _mdate in modifieddate limit:1 %}{{ _mdate.modified | date: '%B %d, %Y at %I:%M %p' }} {% endfor %} </p>
+  </div>
+  {% endif %}
+
+  {% if footer.top %}
+  <div class="grid-container usa-footer__return-to-top">
+    <a href="{{ footer.top.url | default: '#' }}">{{ footer.top.title | default: 'Return to top' }}</a>
+  </div>
+  {% endif %}
+
+  {% assign _footer = footer.links %}
+  {% assign footer_links = site.data.navigation[_footer] | default: _footer %}
+
+  <div class="usa-footer__primary-section">
+    <div class="grid-container">
+          <nav class="usa-footer__nav" aria-label="Footer navigation">
+            <div class="grid-row grid-gap-4">
+              {% if footer.blurb %}
+              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+                <section class="
+                usa-footer__primary-content
+                usa-footer__primary-content--collapsible
+              ">
+              <h4 class="usa-footer__primary-link">{{ footer.blurb.title }}</h4>
+              <ul class="usa-list usa-list--unstyled">
+                <li>
+                <p>{{ footer.blurb.text }}</p>
+                <a class="usa-button" href="{{ footer.blurb.url | relative_url }}">Learn More</a>
+                </li>
+              </ul>
+                </section>
+                </div>
+              {% endif %}
+              {% for _item in footer_links %}
+              <div class="mobile-lg:grid-col-6 {% if footer.blurb %}desktop:grid-col-3{% else %}desktop:grid-col-4{% endif %}">
+                {% if _item.links %}
+                <section class="
+                    usa-footer__primary-content
+                    usa-footer__primary-content--collapsible
+                  ">
+                  <h4 class="usa-footer__primary-link">{{ _item.title }}</h4>
+
+                  <ul class="usa-list usa-list--unstyled">
+                    {% for _link in _item.links %}
+                    <li class="usa-footer__secondary-link">
+                      <a
+                        href="{% if _link.external == true %}{{ _link.url }}{% else %}{{ _link.url | relative_url }}{% endif %}">
+                        {{ _link.title }}
+                      </a>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </section>
+                {% else %}
+                <a class="usa-footer__primary-link"
+                  href="{% if _item.external == true %}{{ _item.url }}{% else %}{{ _item.url | relative_url }}{% endif %}">
+                  {{ _item.title }}
+                </a>
+                {% endif %}
+              </div>
+              {% endfor %}
+            </div>
+          </nav>
+    </div>
+  </div>
+
+  {% if footer.logos or footer.heading or footer.contact or footer.edit_page %}
+  <div class="usa-footer__secondary-section">
+    <div class="grid-container sci-heading">
+      <div class="grid-row grid-gap">
+        <div class="usa-footer__logo grid-row tablet:grid-col tablet:grid-gap-2 footer-flex">
+          {% if footer.logos %}
+          {% for logo in footer.logos %}
+          <div class="mobile-lg:grid-col-auto footer-flex">
+            {% if logo.url %}
+            <a href="{{ logo.url }}">
+              {% endif %}
+              <img class="footer__logo-img"
+                src="{% if logo.external %}{{ logo.src }}{% else %}{{ logo.src | relative_url }}{% endif %}"
+                alt="{{ logo.alt }}" {% if logo.width %}width="{{ logo.width }}" {% endif %}{% if logo.height
+                %}height="{{ logo.height }}" {% endif %}>
+              {% if logo.url %}
+            </a>
+            {% endif %}
+          </div>
+          {% endfor %}
+          {% else %}
+          {% assign header = site.data.header %}
+          <div class="mobile-lg:grid-col-auto footer-flex">
+          {% include layout/components/logo.html signature=header %}
+          </div>
+          {% endif %}
+
+
+        </div>
+        <div class="grid-row tablet:grid-col tablet:grid-gap-2">
+        {% if footer.contact %}
+        <div class="margin-y-auto tablet:grid-col-8 footer-flex">
+          {% assign contact = footer.contact %}
+          <div class="usa-footer__social-links grid-row grid-gap-1">
+            <div class="grid-col-auto">
+              {% for _link in contact %}
+              <a class="usa-social-link ext-nested" style="padding-right: .25rem;" href="{% if _link.external == true %}{{ _link.url }}{% else %}{{ _link.url | relative_url }}{% endif %}"
+              ><img
+                class="usa-social-link__icon"
+                src="{{ site.baseurl }}/assets/uswds/img/usa-icons/{{ _link.type | default: 'generic' }}.svg"
+                alt="{{ _link.title }}"
+            /></a>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+        {% if footer.edit_page %}
+        <div class="grid-row tablet:grid-col-4 footer-flex">
+        {% include components/github-edit.html footer=footer path=page.path %}
+        </div>
+        {% endif %}
+      </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+</footer>
+{% endif %}

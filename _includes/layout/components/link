@@ -1,0 +1,4 @@
+{%- assign pg = include.pg %}
+{%- if pg.url %}<a href="{% include url.html link=pg %}">{% endif %}
+{{ pg.title }}
+{%- if pg.url %}</a>{% endif %}
