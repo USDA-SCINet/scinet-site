@@ -14,7 +14,7 @@ registration:
 sorted: section
 ---
 
-**Forum Goal:** To advance the appropriate and impactful use of AI tools, techniques and infrastructure across the ARS, REE and USDA research portfolio. <!--excerpt-->
+**Forum Goal:** To advance the appropriate and impactful use of AI tools, techniques, and infrastructure across the ARS, REE, and USDA research portfolio. <!--excerpt-->
 
  
 
