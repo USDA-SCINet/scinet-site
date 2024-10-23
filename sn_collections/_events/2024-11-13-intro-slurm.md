@@ -9,9 +9,9 @@ time: 1-5 PM ET
 details:
   - text: Registration reserved for AI User Forum participants
 
-registration: 
-  text: Register for the AI User Forum
-  url: https://events.tti.tamu.edu/conference/2024-forum-on-ai-applications-to-usda-science/
+# registration: 
+#   text: Register for the AI User Forum
+#   url: https://events.tti.tamu.edu/conference/2024-forum-on-ai-applications-to-usda-science/
 
 ---
 
