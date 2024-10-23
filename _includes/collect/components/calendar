@@ -58,7 +58,7 @@
 
 {% assign sortings = page.sorted %}
 
-<ul class="usa-list usa-list--unstyled">
+<ul class="usa-list usa-list--unstyled margin-bottom-105 padding-bottom-105">
 
       {% if flow == 'normal' %}
         {% for _events in allevents %}
@@ -71,6 +71,6 @@
       {% endif %}
 
   </ul>
-  <br>
+  
   {% endif %}
   {% endif %}
