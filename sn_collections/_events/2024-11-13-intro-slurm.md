@@ -6,9 +6,12 @@ description: Event - introduction to the Linux command line and managing computi
 tags: slurm command-line
 time: 1-5 PM ET
 
+details:
+  - text: Registration reserved for AI User Forum participants
 
 registration: 
-  url: https://forms.office.com/g/ghxrH95QK7
+  text: Register for the AI User Forum
+  url: https://events.tti.tamu.edu/conference/2024-forum-on-ai-applications-to-usda-science/
 
 ---
 

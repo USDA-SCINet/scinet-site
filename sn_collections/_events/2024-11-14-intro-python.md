@@ -6,9 +6,12 @@ description: Training - learning tools and techniques that are fundamental for b
 tags: python jupyter artificial-intelligence
 time: 1-5 PM ET
 
+details:
+  - text: Registration reserved for AI User Forum participants
 
 registration: 
-  url: https://forms.office.com/g/uqiPMCWe0D
+  text: Register for the AI User Forum
+  url: https://events.tti.tamu.edu/conference/2024-forum-on-ai-applications-to-usda-science/
 
 ---
 
