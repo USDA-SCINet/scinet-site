@@ -29,8 +29,7 @@
 {%- assign materials = session.materials | default: parent.materials %}
 {%- assign details = session.details | default: parent.details %}
 
-{%- capture stags %}{% if include.session['tags'] %}{{ session.tags }} {% endif %}{{ parent.tags }}{% endcapture %}
-{% assign tags = stags | split: ' ' %}
+{% assign tags = session.tags | concat: parent.tags %}
 
 {% if end_date %}
 {% assign end_date = end_date | date: '%s' | plus: 0 %}
