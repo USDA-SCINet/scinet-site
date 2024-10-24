@@ -21,6 +21,9 @@ sessions:
     title: Tidyverse for data cleaning and wrangling
     date: 2024-10-17
     time: 1-2 pm ET
+    materials:
+      - text: Session Recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EQ1SQRyluzdDon-gQBzTRu0BoEXwAjmXE5CRw-IhAO0j7g?e=XDuiHi
   - session: 
     title: "Introduction to plotting with ggplot2"
     date: 2024-09-19 13:00:00
