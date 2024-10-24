@@ -2,7 +2,7 @@
 title: Practicum AI
 description: Practicum AI is a hands-on applied artificial intelligence (AI) curriculum intended for learners with limited coding and math background.
 categories: [Practicum AI]
-
+permalink: /events/practicum-ai/
 
 registration:
     text: Practicum AI Registration
