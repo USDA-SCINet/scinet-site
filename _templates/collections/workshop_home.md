@@ -36,7 +36,7 @@ notice: # this is a summary section if needed for your workshop
     - text: Event Itinerary
       url: /workshops/2022-00-Geospatial-Workshop-Itinerary # if you have an itenerary page in the workshop collection, link it here
     - text: Workshop Archive
-      url: /training/events/archive/?type=workshop&provider=geospatial%20working%20group # you can use ths url to prefilter the event archive
+      url: /events/archive/?type=workshop&provider=geospatial%20working%20group # you can use ths url to prefilter the event archive
 
 intro: # this is the first detailed section on the page.
   blurb:

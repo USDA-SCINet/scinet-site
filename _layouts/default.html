@@ -31,7 +31,7 @@ scripts: /assets/js/external.js
     <div class="padding-bottom-2" aria-label="Alerts">
       <section class="sci-container">
       {% for _alert in page.alerts %}
-      {% include alert.html alert=_alert %}
+      {% include components/alert.html alert=_alert %}
       {% endfor %}
       </section>
     </div>

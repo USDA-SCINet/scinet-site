@@ -47,7 +47,7 @@ subnav:
         url: /training/free-online-training
         internal: true
       - title: Event Calendar
-        url: /training/events
+        url: /events
         internal: true
       - title: Carpentries (UNIX, GIT, Python, R, OpenRefine, SQL)
         url: /training/carpentries

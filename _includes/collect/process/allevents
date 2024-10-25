@@ -20,10 +20,19 @@
   {% assign timemax = site.time | date: '%s' | minus: 86400 %}
   {% assign flow = 'reverse' %}
 
+{% elsif pagetype == "custom" %}
+  {% assign timemin = 0 %}
+  {% assign timemax = 199999999999 %}
+  {% assign flow = 'normal' %}
+
 {% else %}
   {% assign timemin = 0 %}
   {% assign timemax = 199999999999 %}
+  {% if page.type == 'workshop' %}
+  {% assign flow = 'normal' %}
+  {% else %}
   {% assign flow = 'reverse' %}
+  {% endif %}
 
 {% endif %}
 

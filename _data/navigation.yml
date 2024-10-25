@@ -109,9 +109,9 @@ primary:
   - title: Trainings and Events
     links:
       - title: Learning Resources
-        url: /training/resources
+        url: /training
       - title: Upcoming Events
-        url: /training/events/
+        url: /events
       - title: Learning Pathway
         url: /training/learningpath
       - title: Request Trainings

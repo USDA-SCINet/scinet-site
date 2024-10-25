@@ -4,11 +4,12 @@ permalink: /
 type: future
 description: SCINet is a USDA initiative to provide agricultural scientists access to high performance computing, networking and training.
 
-#alerts:
-#  - alert:
-#    title: Atlas Update
-#    type: warning
-#    text: There have been several changes to the Atlas compute cluster.  <a href="/announcements/2024-05-03-altas" class="usa-link">Read more about these updates here.</a>
+alerts:
+  - alert:
+    title: Ceres Update
+    type: success
+    title: Ceres maintenance completed
+    text: Ceres' new storage system is now fully deployed and available for use!  <a href="/announcements/2024-10-16-ceres" class="usa-link">Read more about these updates here.</a>
 
 layout: scinet_home
 
@@ -46,7 +47,7 @@ intro:
 calendar:
   title: "Upcoming Trainings and Events"
   button: "See the Full Calendar"
-  url: /training/events
+  url: /events
 
 maincalendar: true
 
@@ -59,7 +60,7 @@ alt_calendar:
     - title: "View available online training resources"
       url: training/free-online-training
     - title: "Take a look at events we have hosted in the past"
-      url: /training/events/archive
+      url: /events/archive
 
 no-tags: true
 

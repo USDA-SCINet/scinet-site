@@ -21,6 +21,9 @@ sessions:
     title: Tidyverse for data cleaning and wrangling
     date: 2024-10-17
     time: 1-2 pm ET
+    materials:
+      - text: Session Recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EQ1SQRyluzdDon-gQBzTRu0BoEXwAjmXE5CRw-IhAO0j7g?e=XDuiHi
   - session: 
     title: "Introduction to plotting with ggplot2"
     date: 2024-09-19 13:00:00
@@ -165,7 +168,7 @@ This presentation will cover how to log on to Open OnDemand for Ceres and Atlas,
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/Efccvnjx5ilPhokEl1kp-ggBnIrYRYkDpWKEykBF09hDqA?e=usBHyT #main link to video
     date: 2022-12-01 13:00:00
     time: 1-2 pm ET
-    tags: R-Project dplyr
+    tags: [R-Project,dplyr]
     instructor: Viswanathan Satheesh
     excerpt: "Viswanathan Satheesh continues exploration of R after the previous SCINet Corner (November 3, 2022) and provides an introduction to dplyr."
     materials:

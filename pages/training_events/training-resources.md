@@ -1,7 +1,9 @@
 ---
 title: Overview of SCINet Training Resources
 description: One of SCINet's missions is training scientists in computational methods to empower agricultural research.
-permalink: /training/resources
+permalink: /training
+redirect_from: 
+  - /training/resources
 layout: guides
 
 guidegroup:
@@ -23,9 +25,9 @@ subnav:
       - title: Find Your Community
         url: '#find-your-community'
   - title: Event Calendar
-    url: /training/events
+    url: /events
     internal: true
-    excerpt: SCINet, the AI-COE, and other providers regularly host a variety of events and trainings. Information on how to attend these events will be posted on this page closer to the event date. You might want to <a href="/training/events/archive">take a look at events we’ve hosted in the past</a>, too.
+    excerpt: SCINet, the AI-COE, and other providers regularly host a variety of events and trainings. Information on how to attend these events will be posted on this page closer to the event date. You might want to <a href="/events/archive">take a look at events we’ve hosted in the past</a>, too.
   - title: SCINet Corner
     url: /events/scinet-corner
     internal: true

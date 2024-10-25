@@ -163,15 +163,34 @@ You can send hard drives containing data to the VRSC if you have very large amou
 
 ## Other Ways to Transfer Data
 
-Other programs that have a GUI to transfer data and are suitable for smaller file transfers are:
+Another supported GUI method for smaller file transfers is Cyberduck ([https://cyberduck.io/](https://cyberduck.io/)). Cyberduck supports multiple protocols (including Amazon S3, iRODS, and Google Drive) and is compatible with the new phishing resistant authentication methods (i.e. SmallStepCLI).
 
-* Cyberduck - [https://cyberduck.io/](https://cyberduck.io/)
+**Please Note:** Programs such as WinSCP and FileZilla are not currently supported with the new phishing resistant authentication methods and will not work.
 
-* FileZilla - [https://filezilla-project.org/](https://filezilla-project.org/)
+### Using Cyberduck
 
-Cyberduck supports multiple protocols (including Amazon S3, iRODS, and Google Drive) and is more secure than FileZilla.
-
-**Please Note:** Programs such as WinSCP and FileZilla are not currently supported with the new phishing resistant authentication methods (i.e. SmallStepCLI)
+To transfer files to and from the clusters using Cyberduck
+1. Download Cyberduck from [https://cyberduck.io/](https://cyberduck.io/) and install it.
+    * This may require local IT assistance if you are on a USDA managed machine.
+2. [SSH into SCINet via the command line](https://scinet.usda.gov/guides/access/ssh-login).
+    * This authentication is valid for 16 hours
+3. Open Cyberduck
+4. Click "Open Connection" in the menu bar.
+5. In the "Open Connection" window that appears, enter the following information:
+    * **Protocol:**  `SFTP (SSH File Transfer Protocol)`
+    * **Server:** `ceres-dtn.scinet.usda.gov` for accessing Ceres or `atlas-dtn.hpc.msstate.edu` for accessing Atlas
+    * **Username:** Your SciNet user name
+    * **Password:** Leave blank!  You have already authenticated with SmallStepCLI in step 2.
+6. Click the "Connect" button.
+7. You may receive a warning about an "Unknown Fingerprint." If you do, click "Allow."
+8. To upload a file:
+   1. In Cyberduck, navigate to the remote directory you want to upload the file to.
+   2. Click the upload button from the main toolbar.
+   3. From the file browser that opens, select the file you want to upload from your local computer and click "Choose."
+9. To download a file:
+   1. In Cyberduck, navigate to the remote directory where the file is stored.
+   2. Right click on the file you want to downlad.
+   3. From the context menu that opens, select "Download."
 
 ## Data Transfer to NCBI
 
