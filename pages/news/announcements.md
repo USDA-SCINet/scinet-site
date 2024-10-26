@@ -47,5 +47,5 @@ news:
 
 Have you not used SCINet in a while, or just want to make sure you haven't missed any changes? See below for a history of SCINet developments such as added software features, user experience improvements, login procedure updates, policy changes, and new working groups. 
 
-For general announcements (e.g., training opportunities and system status updates), please see the [SCINet Forum Announcements page](https://forum.scinet.usda.gov/c/announcements/6). For past and upcoming events, please see the [SCINet Events Calendar](/training/events/).
+For general announcements (e.g., training opportunities and system status updates), please see the [SCINet Forum Announcements page](https://forum.scinet.usda.gov/c/announcements/6). For past and upcoming events, please see the [SCINet Events Calendar](/events).
  

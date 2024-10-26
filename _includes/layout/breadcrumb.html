@@ -9,6 +9,10 @@
       {% include layout/components/breadcrumb.html title=bc_base.title url=bc_base.url %}
     {% endif %}
 
+    {% if alt_nav and page.layout_type == 'workshop' %}
+    {% include layout/components/breadcrumb.html title="Upcoming Events" url="/events" %}
+    {% endif %}
+
     {% if alt_nav %}
       {% if breadcrumb_set %}
         {% assign sidenav = breadcrumb_set %}

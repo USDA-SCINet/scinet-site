@@ -1,0 +1,25 @@
+{%- assign post = include.post %}
+{%- if include.sorted %}
+{%- assign sorted = include.sorted %}
+{%- if sorted == 'year' %}
+{%- assign sorter = post.date | date: "%Y" %}
+{%- elsif sorted == 'month' %}
+{%- assign sorter = post.date | date: "%B %Y" %}
+{%- elsif sorted == 'day' %}
+{%- assign sorter = post.date | date: "%B %-d" %}
+{%- else %}
+{%- assign sorter = post[sorted] %}
+{%- endif %}
+
+{% if sorter != prevsorter %}
+  {% unless forloop.first %}</li></ul>{% endunless %}
+  <li><h3 id="{{ sorter | slugify }}-cal">{{ sorter }}</h3>
+  <ul>
+  {% assign prevsorter = sorter %}
+{% endif %}
+{% include collect/components/event post=post %}
+{% if forloop.last %}</li></ul>{% endif %}
+{%- else %}
+
+{% include collect/components/event post=post %}
+{%- endif %}

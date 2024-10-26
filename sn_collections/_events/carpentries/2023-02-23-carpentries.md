@@ -7,6 +7,7 @@ type: training
 end_date: 2023-03-03
 provider: Carpentries
 tags: Python
+multiday: Feb. 23-24, Mar. 2-3
 
 registration: 
   url: https://forms.office.com/g/5CVRK4m4Xz

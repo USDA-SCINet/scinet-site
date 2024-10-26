@@ -6,7 +6,7 @@ layout: page
 categories: [2024 10 SPEMW] 
 sidenav_link: /training/resources
 
-details:
+materials:
   - text: Session Recording
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/Ef55DPFjTMdOqzMwxs4UAtYBDwq4xzLT5qp4M9jzOSZLIg
 ---

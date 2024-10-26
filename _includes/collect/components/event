@@ -42,7 +42,7 @@
     <div class="usa-collection__body">
         {% unless page.cal-titles == 'hide' %}
         <h4 class="usa-collection__heading">
-            {% unless page.layout == 'event' and post.url == page.url %}{% unless page.no-event-links %}<a class="usa-link" href="{{ post.url | relative_url}}">{% endunless %}{% endunless %}
+            {% if post.url %}{% unless page.layout == 'event' and post.url == page.url %}{% unless page.no-event-links %}<a class="usa-link" href="{{ post.url | relative_url}}">{% endunless %}{% endunless %}{% endif %}
                 {% if post_type == 'calendar' or page.display == 'basic' %}
                     {% if pagetype == "archive" %}
                         {{ post.date | date: "%Y" }} &middot 
@@ -61,7 +61,7 @@
                 {% endif %}
                 {{ post.title }}
                 {% endif %}
-                {% unless page.layout == 'event' and post.url == page.url %}{% unless page.no-event-links %}</a>{% endunless %}{% endunless %}
+                {% if post.url %}{% unless page.layout == 'event' and post.url == page.url %}{% unless page.no-event-links %}</a>{% endunless %}{% endunless %}{% endif %}
         </h5>
         {% unless page.type == 'itinerary' or post.excerpt == 'false' or post.excerpt == page.excerpt or post.excerpt == page.remove-excerpt %}
         {% if excerpt_type == 'long' %}
