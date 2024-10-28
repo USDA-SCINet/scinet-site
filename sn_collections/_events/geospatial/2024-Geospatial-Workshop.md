@@ -8,6 +8,10 @@ excerpt: Provides hands-on tutorials on workflows to access the SCINet HPC syste
 categories: [2024 Geospatial Workshop] 
 tags: Geospatial
 
+layout_type: workshop
+cal-titles: show
+post_type: calendar
+
 provider: Geospatial Working Group
 sessions: 
   - session:
@@ -37,10 +41,10 @@ The two overarching goals of the GRWG Annual Workshop are to:
 1. Provide hands-on tutorials on workflows to access the SCINet high-performance computing (HPC) systems and conduct geospatial research at scale.
 1. Foster research efforts that had previously been unattainable due to computational limitations or technical bottlenecks. 
 
-# Organizing Committee
+## Organizing Committee
 {:.border-bottom}
 
-The organizing committee for the 2024 Annual Workship comprises:
+The organizing committee for the 2024 Annual Workshop comprises:
 
 * Andrea Albright, SCINet Postdoctoral Fellow
 * Amira Burns, SCINet Fellow
@@ -52,10 +56,11 @@ The organizing committee for the 2024 Annual Workship comprises:
 * Melanie Veron, SCINet Fellow
 
 
-# How to Participate
+## How to Participate
 {:.border-bottom}
 
 To participate in the workshop, please register by submitting [the registration form](https://forms.office.com/g/XqvSkCMeM2). A calendar event with the Zoom call-in information will be sent after you register. 
 
 The form asks for your SCINet account since full participation in hands-on activites will require an account. **If you do not have a SCINet account already, [please apply for one]({{ site.baseurl }}/about/signup).** We recommend applying for an account as soon as possible, as the process can take time for final approval. All registrants will be invited to a pre-workshop support session the week before the workshop to test logging into their SCINet account. 
 
+## Workshop Sessions
