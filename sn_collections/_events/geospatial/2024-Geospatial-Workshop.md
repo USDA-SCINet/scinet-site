@@ -7,6 +7,9 @@ description: Event - Annual Workshop for the SCINet Geospatial Research Working 
 excerpt: Provides hands-on tutorials on workflows to access the SCINet HPC systems and conduct geospatial research at scale and fosters geospatial research efforts.
 categories: [2024 Geospatial Workshop] 
 tags: Geospatial
+layout_type: workshop
+cal-titles: show
+post_type: calendar
 
 provider: Geospatial Working Group
 sessions: 
