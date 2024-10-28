@@ -2,17 +2,16 @@
 title: "Kickoff with lightning talks"
 description: Provides hands-on tutorials on workflows to access the SCINet HPC systems and conduct geospatial research at scale and fosters geospatial research efforts.
 excerpt: "This session will have introductory presentations about the working group and workshop goals plus lightning talks by ARS researchers and SCINet fellows about their research."
-layout: page
+ 
 categories: [2024 Geospatial Workshop] 
 
 sidenav_link: /training/resources
 
-sessions:
-  - session: 
-    time: 12:00 PM - 1:15 PM ET
----
+lead: Heather Savoy, Amy Hudson
+time: 12:00 PM - 1:15 PM ET
 
-**Leads**: Heather Savoy, Amy Hudson
+
+---
 
 This session will have introductory presentations about the working group and workshop goals plus lightning talks by ARS researchers and SCINet fellows about their research. 
 
