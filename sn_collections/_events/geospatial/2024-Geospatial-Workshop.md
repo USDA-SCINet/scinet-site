@@ -40,7 +40,7 @@ The two overarching goals of the GRWG Annual Workshop are to:
 # Organizing Committee
 {:.border-bottom}
 
-The organizing committee for the 2024 Annual Workship comprises:
+The organizing committee for the 2024 Annual Workshop comprises:
 
 * Andrea Albright, SCINet Postdoctoral Fellow
 * Amira Burns, SCINet Fellow
