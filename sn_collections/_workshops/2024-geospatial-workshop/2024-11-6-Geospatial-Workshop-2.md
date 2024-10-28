@@ -8,14 +8,12 @@ categories: [2024 Geospatial Workshop]
 sidenav_link: /training/resources
 
 time: 2:45 PM - 3:45 PM ET
-
+lead: Andrea Albright
 prerequisites:
   - text: Have a SCINet account and be able to login 
     url: /about/signup
   - text: Experience with scripting languages, e.g., Python. 
 ---
-
-**Leads**: Andrea Albright
 
 This tutorial will illustrate how to use Visual Studio (VS) Code, a flexible development environment available on SCINet's Ceres cluster, to develop Python scripts. By the end of the tutorial, participants will know how to access VS Code in Open OnDemand and use it to navigate files on Ceres, access Python packages, and develop and execute Python scripts. 
 
