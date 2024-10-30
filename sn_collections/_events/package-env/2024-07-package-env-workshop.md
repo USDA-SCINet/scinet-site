@@ -9,6 +9,9 @@ duplicate: true ## Added with the expectation of the Oct one using the same work
 tags: software package-management
 layout_type: workshop
 provider: SCINet
+
+cal-titles: show
+
 sessions: 
   - session:
     time: 12 PM – 5 PM ET
@@ -55,14 +58,6 @@ Steps to prepare for the tutorial sessions:
     cd /project/scinet_workshop1/$USER/
     ```
 
-
-### Python (and conda)
-
-The first half of the workshop will focus on [environment and package management using Python and conda](/workshops/2024-07-19-package-env-workshop-python).
-
-### R
-
-The second half of the workshop will focus on [environment and package management using R](/workshops/2024-07-19-package-env-workshop-r).
 
 <br>
 
