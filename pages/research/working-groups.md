@@ -44,6 +44,7 @@ The SCINet initiative contributes funding to various working groups that use SCI
 ## Current Working Groups
 * [Ag100Pest Initiative (subgroup of AGR)]({{ site.baseurl }}/research/working-groups/ag100pest)
 * [Arthropod Genomics Research (AGR) Working Group]({{ site.baseurl }}/research/working-groups/arthropods)
+* [Breeding AI and ML Working Group]({{ site.baseurl }}/research/working-groups/breeding)
 * [Geospatial Research Working Group]({{ site.baseurl }}/research/working-groups/geospatial)
 * [Microbiome Working Group]({{ site.baseurl }}/research/working-groups/microbiome)
 * [Pollinator Working Group]({{ site.baseurl }}/research/working-groups/pollinator)

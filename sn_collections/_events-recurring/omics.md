@@ -20,6 +20,11 @@ archive-label: Webinar Recordings
 
 sessions:
   - session:
+    title: "Harnessing Transposons for Precise and Efficient Genome Editing in Plants"
+    date: 2024-11-14
+    time: 11am-12pm ET
+    presenter: Dr. Peng Liu
+  - session:
     title: "The genomic and metabolic making of yeast ecological diversity"
     date: 2024-10-10 11:00:00
     time: 11am-12pm ET
