@@ -20,7 +20,7 @@ subnav:
   - title: Proposal format and submission
     url: '#proposal-format-and-submission'
   - title: Definition of AI/ML technologies
-    url: '#definition-of-ai/ml-technologies'
+    url: '#definition-of-aiml-technologies'
 
 
 ---
