@@ -134,13 +134,13 @@ primary:
     links:
       - title: SAC Membership
         url: /opportunities/SAC
-#      - title: Fellowships (PhD & MS)
-#        url: /opportunities/fellowships
+      - title: Fellowships (PhD & MS)
+        url: /opportunities/fellowships
       - title: AI Innovation Fund
         url: /opportunities/ai-innovation/
-      - title: SCINet and AI-COE postdoctoral fellowships
+      - title: Fellowship Proposals
         url: /opportunities/scinet-aicoe-fellowships
-      - title: AI-COE and SCINet graduate student internships
+      - title: Graduate Student Internship Mentors
         url: /opportunities/aicoe-scinet-internships
 #      - title: Open Positions
 #        url: /opportunities/open_positions
