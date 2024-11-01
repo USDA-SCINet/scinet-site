@@ -5,7 +5,11 @@ permalink: /opportunities/scinet-aicoe-fellowships
 # author: Brian Stucky 
 layout: page
 
-
+subnav:
+  - title: Overview
+    url: '#overview'
+  - title: Proposal format and submission
+    url: '#proposal-format-and-submission'
 ---
 
 

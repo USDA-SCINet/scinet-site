@@ -5,7 +5,7 @@ permalink: /opportunities/scinet-aicoe-fellowships/fy22-awards
 # author: Brian Stucky 
 layout: page
 
-sidenav_link: /opportunities/scinet-aicoe-fellowships/
+sidenav_link: /opportunities/scinet-aicoe-fellowships
 sidenav_append: 
   - title: SCINet/AI-COE postdoctoral fellowships - FY2022 Awards
     url: /opportunities/scinet-aicoe-fellowships/fy22-awards
