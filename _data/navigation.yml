@@ -134,8 +134,8 @@ primary:
     links:
       - title: SAC Membership
         url: /opportunities/SAC
-#      - title: Fellowships (PhD & MS)
-#        url: /opportunities/fellowships
+      - title: Fellowships (PhD & MS)
+        url: /opportunities/fellowships
       - title: AI Innovation Fund
         url: /opportunities/ai-innovation/
       - title: SCINet and AI-COE postdoctoral fellowships
