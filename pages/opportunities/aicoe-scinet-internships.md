@@ -5,12 +5,13 @@ permalink: /opportunities/aicoe-scinet-internships
 # author: Brian Stucky 
 layout: page
 
-
-table:
-    position: back
-    source: funded
-    announcement: ""
-
+subnav:
+  - title: Overview
+    url: '#overview'
+  - title: Program logistics
+    url: '#program-logistics'
+  - title: Application format and submission
+    url: '#application-format-and-submission'
 
 ---
 
