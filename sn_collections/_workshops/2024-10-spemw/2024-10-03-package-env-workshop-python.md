@@ -2,7 +2,6 @@
 title: "Software Package/Environment Management Workshop: Python and conda"
 description: In this workshop presented by the SCINet Office, we will cover best practices for managing software packages and computing environments on SCINet's supercomputers.
 excerpt: "We will begin by focusing on package and environment management with the standard Python toolset: the `venv` and `pip` modules that are usually included with Python. Later, we will learn package and environment management with conda."
-layout: page
 categories: [2024 10 SPEMW] 
 sidenav_link: /training/resources
 
@@ -11,11 +10,11 @@ materials:
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/Ef55DPFjTMdOqzMwxs4UAtYBDwq4xzLT5qp4M9jzOSZLIg
 ---
 
-# Managing packages and environments in Python
+## Managing packages and environments in Python
 
 We will begin by focusing on package and environment management with the standard Python toolset: the `venv` and `pip` modules that are usually included with Python. Later, we will learn package and environment management with conda.
 
-## Choosing which version of Python to use
+### Choosing which version of Python to use
 
 1. First, use the cluster's environment module system to find and load the version of Python you want to use for your project: `module spider python` or `ml spider python`.
 1. Load the version of Python you'd like to use. E.g., `module load python/3.12.5` or `ml load python/3.12.5`. (Note that you can use tab completion for module names!)
@@ -23,7 +22,7 @@ We will begin by focusing on package and environment management with the standar
 
 Note: After you create your virtual environment, you no longer need to load the associated Python environment module. You can simply activate the virtual environment!
 
-## Creating and managing virtual environments with `venv`
+### Creating and managing virtual environments with `venv`
 
 1. If you are not already in your workshop directory, change to it by running `cd /90daydata/shared/$USER/`.
 1. Use the `venv` module and command to create a new virtual environment: `python -m venv demo_venv`.
@@ -34,7 +33,7 @@ Note: After you create your virtual environment, you no longer need to load the 
 
 That is pretty much everything you need to know about how to use and manage Python virtual environments! The `venv` command does have [more options](https://docs.python.org/3/library/venv.html), but you most likely won't need them.
 
-## Installing and managing Python packages in a virtual environment
+### Installing and managing Python packages in a virtual environment
 
 The standard software tool for managing Python packages is `pip`, which is included with Python. If a Python virtual environment is activated, `pip` commands will automatically be applied to the active virtual environment.
 
@@ -65,7 +64,7 @@ for i in range(n):
     print_fake_data()
 ```
 
-## Using `requirements.txt` to automate package management
+### Using `requirements.txt` to automate package management
 
 In order to make virtual environments and package management _truly_ useful, we need a mechanism to easily and precisely record all of the packages an environment requires. `pip` can use a special "requirements file", usually named `requirements.txt`, to do this. In its simplest form, `requirements.txt` simply lists the names of packages that are needed for an environment, with one package on each line. For example:
 ```
@@ -91,7 +90,7 @@ It is a good practice to include a `requirements.txt` file along with the code a
 
 > **Exercise 3:** Create a _new_ virtual environment and install all packages from `requirements.txt` from Exercise 2 into the virtual environment. Confirm that the program from Exercise 1 runs in your new virtual environment.
 
-## Using virtual environments with Jupyter notebooks
+### Using virtual environments with Jupyter notebooks
 
 What we've learned so far is all you need for using Python from the command line. How, though, do you access your virtual environment from a Jupyter notebook? For this, we need to create a "Jupyter kernel" to make our environment available in notebooks.
 
@@ -140,7 +139,7 @@ df = pd.DataFrame({
 > Create a suitable virtual environment for this code, then create a Jupyter kernel for your notebook from the environment. Verify that the code runs.
 
 
-# Managing packages and environments with Anaconda
+## Managing packages and environments with Anaconda
 
 If all of the software components you need to manage in your virtual environment are Python packages, we strongly recommend using the `venv` and `pip` workflow described in detail above. Why? Because `pip` and `venv`:
 * Are included with Python and therefore available pretty much anywhere Python is available. This helps ensure that your workflow is portable and easy to share.
@@ -149,7 +148,7 @@ If all of the software components you need to manage in your virtual environment
 
 However, if you need to manage other kinds of software, too, `conda` can provide a useful alternative. Conceptually, the process of managing software using `conda` is the same: you create a virtual environment and then manage software packages within that environment. We will go over the basics in this workshop; please see [the official documentation](https://conda.io/projects/conda/en/latest/user-guide/index.html) for more information!
 
-## Load and initialize miniconda
+### Load and initialize miniconda
 
 First, load the environment module for miniconda so that you have access to the `conda` command:
 * On Ceres: `module load miniconda` or `ml load miniconda`.
@@ -164,7 +163,7 @@ Note: `mamba` is a drop-in replacement for `conda` that is generally faster and 
 1. Run `conda config --add channels conda-forge` to add the "conda-forge" channel.
 1. Run `conda config --remove channels defaults` to remove the "defaults" channel.
 
-## Creating and managing environments with `conda`
+### Creating and managing environments with `conda`
 
 First, let's cover what _not_ to do! Most online documentation will tell you to create a new conda environment by running `conda create -n ENVNAME`, where "ENVNAME" is the name of the new environment. E.g., `conda create -n conda_env`. The problem with this is that all packages will be installed into a hidden directory inside your home directory (typically `~/.conda/envs`) and you will quickly run out of space!
 
@@ -175,7 +174,7 @@ Instead, we need to tell `conda` to create the environment in a location that we
 1. To deactivate the environment and return to the "normal" command environment you had before, run `conda deactivate`.
 1. To remove the environment, delete its directory: e.g., `rm -I -r conda_venv`. Alternatively, you can run the command `conda remove --prefix /path/to/ENVNAME --all`.
 
-## Installing and managing software in a conda environment
+### Installing and managing software in a conda environment
 
 The `conda` command is also used to install and remove software from a conda environment.
 
@@ -191,7 +190,7 @@ Conda provides an alternative way to manage Python packages. Although you can st
 
 > **Exercise 6:** Modify your conda environment so that you can run the Python script you created for Exercise 1.
 
-## Using `environment.yml` to automate package management
+### Using `environment.yml` to automate package management
 
 Just as we can use `requirements.txt` to specify the packages to include in a Python virtual environment, we can use a file typically called `environment.yml` to specify the packages to include in a conda environment.
 
@@ -201,7 +200,7 @@ To create a new conda environment that matches the contents of an environment fi
 
 > **Exercise 7:** Save the configuration of the conda environment you created for Exercise 6 and use it to create a new conda environment. Verify that you have the correct version of Python in the new environment and are able to run the Python script you created for Exercise 1.
 
-## Using conda environments with Jupyter notebooks
+### Using conda environments with Jupyter notebooks
 
 The process to make a conda environment available to Jupyter notebooks is nearly the same as for Python virtual environments.
 
