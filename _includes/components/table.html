@@ -55,8 +55,12 @@
             {% endfor %}
         </tbody>
     </table>
+    {% if table.sort %}
+    <div class="usa-sr-only usa-table__announcement-region"
+    aria-live="polite" ></div>
+    {% endif %}
     {% if table.announcement %}
-    <div class="usa-table__announcement-region" aria-live="polite">
+    <div>
        {{ table.announcement | markdownify }}
     </div>
     {% endif %}
