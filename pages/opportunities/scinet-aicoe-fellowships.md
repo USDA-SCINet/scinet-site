@@ -1,5 +1,5 @@
 ---
-title: ARS SCINet and AI Center of Excellence Postdoctoral Fellowships Program (FY24)
+title: ARS SCINet and AI Center of Excellence Postdoctoral Fellowships Program (FY25)
 description: Internal USDA-ARS funding for SCINet and AI-COE postdoctoral fellowships.
 permalink: /opportunities/scinet-aicoe-fellowships
 # author: Brian Stucky 
@@ -26,13 +26,13 @@ All fellows will receive a competitive stipend and travel support. Fellowships a
 
 ## Proposal format and submission
 
-All proposals must be submitted using the [online submission form](https://forms.office.com/g/D0PtZC7nS0). The PI's RL or supervisor must approve the proposal prior to submission (approval will be indicated on the submission form).
+All proposals must be submitted using the [online submission form](https://forms.office.com/g/XvP71bTAia). The PI's RL or supervisor must approve the proposal prior to submission (approval will be indicated on the submission form).
 
-All proposals must use [the fellowships proposal template](https://usdagcc.sharepoint.com/:w:/s/REE-ARS-SCINetOffice/EcHJ_mpmo59CvP5Kv6OvOWsBgScm4E-sUTNC478EzbvEMg?e=Z7Ro0H). Please follow the instructions in the template and do not change the section headings or document formatting. The final proposal must be **no more than 750 words, including the headings**.
+All proposals must use [the fellowships proposal template](https://usdagcc.sharepoint.com/:w:/s/REE-ARS-SCINetOffice/EXfbBIAM9vpPrFGXowAYsSwBYJBAwCtwI3UDWWprN0yM-w?e=uznaVH). Please follow the instructions in the template and do not change the section headings or document formatting. The final proposal must be **no more than 750 words, including the headings**.
  
-**Deadline for proposal submission:** Close of business on Friday, December 15, 2023.
+**Deadline for proposal submission:** Close of business on Friday, December 6, 2024.
  
-**Eligibility:** ARS Category 1, 4, or 6 scientists with RL or supervisor approval. Please note that lead mentors on FY23 awards are not eligible for an FY24 award.
+**Eligibility:** ARS Category 1, 4, or 6 scientists with RL or supervisor approval. Please note that lead mentors on FY24 awards are not eligible for an FY25 award.
 
 
 ## Proposals funded in FY23
