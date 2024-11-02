@@ -1,7 +1,7 @@
 ---
 title: "Kickoff with lightning talks"
 description: Provides hands-on tutorials on workflows to access the SCINet HPC systems and conduct geospatial research at scale and fosters geospatial research efforts.
-excerpt: "This session will have introductory presentations about the working group and workshop goals plus lightning talks by ARS researchers and SCINet fellows about their research."
+excerpt: "This session will have an introductory presentation about the working group and workshop goals plus lightning talks by ARS researchers and SCINet fellows about their research."
  
 categories: [2024 Geospatial Workshop] 
 
@@ -13,7 +13,7 @@ time: 12:00 PM - 1:15 PM ET
 
 ---
 
-This session will have introductory presentations about the working group and workshop goals plus lightning talks by ARS researchers and SCINet fellows about their research. 
+This session will have an introductory presentation about the working group and workshop goals plus lightning talks by ARS researchers and SCINet fellows about their research. 
 
 ## Lightning talk presenters
 
