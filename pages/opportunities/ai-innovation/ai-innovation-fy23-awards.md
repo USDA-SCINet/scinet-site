@@ -13,6 +13,8 @@ sidenav_append:
     url: /opportunities/ai-innovation/fy22-awards
   - title: ARS AI Innovation Fund - FY2023 Awards
     url: /opportunities/ai-innovation/fy23-awards
+  - title: ARS AI Innovation Fund - FY2024 Awards
+    url: /opportunities/ai-innovation/fy24-awards
 
 subnav:
   - title: Funded proposals
