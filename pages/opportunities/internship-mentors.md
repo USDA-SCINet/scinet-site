@@ -1,7 +1,7 @@
 ---
 title: ARS AI Center of Excellence and SCINet Graduate Student Internships Program (FY25)
 description: Internal USDA-ARS funding for AI-COE and SCINet graduate student internships.
-permalink: /opportunities/aicoe-scinet-internships
+permalink: /opportunities/internship-mentors
 # author: Brian Stucky 
 layout: page
 
