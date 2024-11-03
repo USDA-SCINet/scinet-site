@@ -138,8 +138,10 @@ primary:
         url: /opportunities/fellowships
       - title: AI Innovation Fund
         url: /opportunities/ai-innovation/
-      - title: SCINet and AI-COE fellowship proposals
-        url: /opportunities/scinet-aicoe-fellowships
+      - title: Postdoctoral Fellowship Mentor Proposals
+        url: /opportunities/fellowship-mentors
+      - title: Graduate Student Internship Mentor Applications
+        url: /opportunities/internship-mentors
 #      - title: Open Positions
 #        url: /opportunities/open_positions
 

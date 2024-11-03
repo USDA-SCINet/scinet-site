@@ -8,7 +8,16 @@ main:
 
 <div class="grid-container main-side">
 
-
+{% if page.sidenav_basic %}  
+  {% assign sidenav = page.sidenav_basic %}
+  {% assign bc_sidenav = sidenav %}
+  {% if page.alt_nav %}
+  {% assign alt_nav = page.alt_nav %}
+  {% else %}
+  {% assign firstnav = sidenav | first %}
+  {% assign alt_nav = firstnav.title %}
+  {% endif %}
+{% else %}
   {% if page.sidenav_link %}
     {% assign pagelink = page.sidenav_link %}
   {% else %}
@@ -137,6 +146,8 @@ main:
     {% assign sidenav = site.data.navigation[page.sidenav_other] | default: sidenav %}
 {% else %}
     {% assign sidenav = bc_sidenav %}
+{% endif %}
+
 {% endif %}
 
 {% if page.sidenav_append %}
