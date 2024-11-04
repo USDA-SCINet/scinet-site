@@ -1,7 +1,7 @@
 ---
 title: "Kickoff with lightning talks"
 description: Provides hands-on tutorials on workflows to access the SCINet HPC systems and conduct geospatial research at scale and fosters geospatial research efforts.
-excerpt: "This session will have introductory presentations about the working group and workshop goals plus lightning talks by ARS researchers and SCINet fellows about their research."
+excerpt: "This session will have an introductory presentation about the working group and workshop goals plus lightning talks by ARS researchers and SCINet fellows about their research."
  
 categories: [2024 Geospatial Workshop] 
 
@@ -13,14 +13,14 @@ time: 12:00 PM - 1:15 PM ET
 
 ---
 
-This session will have introductory presentations about the working group and workshop goals plus lightning talks by ARS researchers and SCINet fellows about their research. 
+This session will have an introductory presentation about the working group and workshop goals plus lightning talks by ARS researchers and SCINet fellows about their research. 
 
 ## Lightning talk presenters
 
 * **Georgia Harrison**: *An Independent Accuracy Assessment of Satellite-Derived Rangeland Fractional Cover*
 * **Efrain Duarte**: *Application of remote sensing tools for monitoring soil moisture in semi-arid ecosystems*
-* **Mahesh Lal Maskey**: *A tool for reading actual evapotranspiration data from USGS MODIS dataset*
-* **Amitava Chatterjee**: *Soil Health Classification Framework for Florida Soils using K- Means Clustering*
+* **Mahesh Lal Maskey**: *A Tool to Extract Actual Evapotranspiration from the USGS MODIS Data Portal*
+* **Amitava Chatterjee**: *Soil Health Classification Framework for Florida Soils using K-Means Clustering*
 * **Andrea Albright**: *Irrigation pond water storage variability using in situ and UAS data*
 * **Kossi Nouwakpo**: *A deep learning approach for irrigation methods mapping*
 
