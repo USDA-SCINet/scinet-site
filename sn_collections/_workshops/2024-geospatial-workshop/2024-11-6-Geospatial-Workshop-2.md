@@ -34,7 +34,7 @@ Steps to prepare for the tutorial sessions:
     * Number of cores: 2
     * Memory required: 16 GB
     * Number of hours: 2
-    * Optional Slurm Arguments: \-\-reservation=???
+    * Optional Slurm Arguments: \-\-reservation=workshop
     * Working Directory: /90daydata/shared/${USER}
     * Codeserver Version: 4.17
   
