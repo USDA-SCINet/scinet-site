@@ -44,3 +44,5 @@ Steps to prepare for the tutorial sessions:
   
     Click *Launch*. The screen will update to the *Interactive Sessions* page. When your Jupyter session is ready, the top card will update from *Queued* to *Running* and a *Connect to Jupyter* button will appear. Click *Connect to Jupyter*.
 
+1. For the notebook used in the tutorial, select the *grwg_2024_env* kernel.
+
