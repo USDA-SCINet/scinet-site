@@ -19,7 +19,7 @@ This session will have an introductory presentation about the working group and 
 
 * **Georgia Harrison**: *An Independent Accuracy Assessment of Satellite-Derived Rangeland Fractional Cover*
 * **Efrain Duarte**: *Application of remote sensing tools for monitoring soil moisture in semi-arid ecosystems*
-* **Mahesh Lal Maskey**: *A tool for reading actual evapotranspiration data from USGS MODIS dataset*
+* **Mahesh Lal Maskey**: *A Tool to Extract Actual Evapotranspiration from the USGS MODIS Data Portal*
 * **Amitava Chatterjee**: *Soil Health Classification Framework for Florida Soils using K-Means Clustering*
 * **Andrea Albright**: *Irrigation pond water storage variability using in situ and UAS data*
 * **Kossi Nouwakpo**: *A deep learning approach for irrigation methods mapping*
