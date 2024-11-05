@@ -63,9 +63,6 @@ Home directories have 10GB quotas and are intended to be mainly used for configu
 should be run from project directories in `/90daydata` or in `/project`. Software installs that require a lot of space, 
 such as conda virtual environments, should be done in [`/project`](#project-directories).
 
-Files in home directories are automatically compressed and backed up. Due to backup method used on Ceres, space freed 
-after deleting files in home directories, becomes available only after 6 days.
-
 ## Project Directories
 
 Project directories are usually associated with ARS Research Projects. While it's possible to run simulations on Ceres or Atlas using only home directories and [Large Short-term Storage](#large-short-term-storage) in `/90daydata/shared`, it is recommended to request a project directory. Having a project directory will allow to install software packages in /project and keep important data on [Juno Archive Storage](#juno-archive-storage).
