@@ -8,7 +8,7 @@ breadcrumb_title: About
 
 The SCINet initiative is an effort by the USDA Agricultural Research Service to improve the USDA’s research capacity by providing scientists with access to high-performance computing (HPC) clusters, high-speed networking for data transfer, and training in scientific computing.
 
-SCINet supports a growing community of nearly 2,000 USDA research scientists and university partners to accelerate agricultural discovery through advanced computational infrastructure and scientific computing. 
+SCINet supports a growing community of over 2,000 USDA research scientists and university partners to accelerate agricultural discovery through advanced computational infrastructure and scientific computing. 
 
 Current uses of SCINet span multiple disciplines, including genomics, plant breeding, hydrology, crop production, plant and animal disease modeling, and natural resource management. SCINet users include ARS and other federal scientists, as well as partners external to the federal government.
 
