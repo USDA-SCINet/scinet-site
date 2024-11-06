@@ -32,7 +32,7 @@ Steps to prepare for the tutorial sessions:
     * Queue: short---------Max Time: 2-00:00:00
     * QOS: 400thread
     * Number of hours: 2
-    * Number of cores: 2
+    * Number of cores: 8
     * Memory required: 16GB
     * Optional Slurm Arguments: \-\-reservation=workshop
     * Jupyter Notebook vs Lab: Lab
