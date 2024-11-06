@@ -32,7 +32,7 @@ Steps to prepare for the tutorial sessions:
     * Queue: short---------Max Time: 2-00:00:00
     * QOS: 400thread
     * Number of cores: 2
-    * Memory required: 16 GB
+    * Memory required: 16GB
     * Number of hours: 2
     * Optional Slurm Arguments: \-\-reservation=workshop
     * Working Directory: /90daydata/shared/${USER}

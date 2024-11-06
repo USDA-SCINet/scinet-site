@@ -36,7 +36,7 @@ Steps to prepare for the tutorial sessions:
     * R Version: 4.4.1
     * Number of hours: 2
     * Number of cores: 8
-    * Memory required: 16 GB
+    * Memory required: 16GB
     * Optional Slurm Arguments: \-\-reservation=workshop
   
     Click *Launch*. The screen will update to the *Interactive Sessions* page. When your Jupyter session is ready, the top card will update from *Queued* to *Running* and a *Connect to RStudio Server* button will appear. Click *Connect to RStudio Server*.

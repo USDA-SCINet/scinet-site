@@ -33,7 +33,7 @@ Steps to prepare for the tutorial sessions:
     * QOS: 400thread
     * Number of hours: 2
     * Number of cores: 2
-    * Memory required: 16 GB
+    * Memory required: 16GB
     * Optional Slurm Arguments: \-\-reservation=workshop
     * Jupyter Notebook vs Lab: Lab
     * Working Directory: /90daydata/shared/${USER}
