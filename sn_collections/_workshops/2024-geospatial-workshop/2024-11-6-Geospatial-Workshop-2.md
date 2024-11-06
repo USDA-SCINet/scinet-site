@@ -39,4 +39,32 @@ Steps to prepare for the tutorial sessions:
     * Codeserver Version: 4.17
   
     Click *Launch*. The screen will update to the *Interactive Sessions* page. When your Jupyter session is ready, the top card will update from *Queued* to *Running* and a *Connect to VS Code* button will appear. Click *Connect to VS Code*.
+   
+1. **Open the terminal**
+   * Select the Menu (upper left)
+   * Select 'Terminal'
+   * Select 'New Terminal'
+  
+1. **Install Python and Jupyter extensions** Find the Extensions tab on the left side. Search for 'Python' and 'Jupyter', and install each extension.
+
+1. **Activate the virtual environment** Select the pre-installed environment, so that the interactive window automatically loads the correct environment.
+    * Select the Menu (upper left)
+    * Select 'View'
+    * Select 'Command Palette'
+    * Type 'Python: Select Interpreter' into the command palette window
+    * Select '+Enter interpreter path...'
+    * Enter:
+    ```bash
+    /project/geospatialworkshop/2024/grwg_2024_env/bin/python
+    ```
+   
+ 1. **Activate environment in terminal -- paste in terminal:**
+    ```bash
+    source /project/geospatialworkshop/2024/grwg_2024_env/bin/activate
+    ```
+1. **Open 'VSCode_geospatial_demo.py' in /90daydata/shared/$USER/tutorial2**
+
+    
+
+
 
