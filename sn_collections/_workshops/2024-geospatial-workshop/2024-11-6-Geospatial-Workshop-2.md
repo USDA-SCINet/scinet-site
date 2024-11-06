@@ -40,7 +40,7 @@ Steps to prepare for the tutorial sessions:
   
     Click *Launch*. The screen will update to the *Interactive Sessions* page. When your Jupyter session is ready, the top card will update from *Queued* to *Running* and a *Connect to VS Code* button will appear. Click *Connect to VS Code*.
    
-1. **Open the terminal**
+1. **Open the terminal** 
    * Select the Menu (upper left)
    * Select 'Terminal'
    * Select 'New Terminal'
@@ -54,15 +54,20 @@ Steps to prepare for the tutorial sessions:
     * Type 'Python: Select Interpreter' into the command palette window
     * Select '+Enter interpreter path...'
     * Enter:
+
+    {:.copy-code}
     ```bash
     /project/geospatialworkshop/2024/grwg_2024_env/bin/python
     ```
    
- 1. **Activate environment in terminal -- paste in terminal:**
+ 1. **Activate the environment:** by pasting the following command in the terminal:
+  
+    {:.copy-code}
     ```bash
     source /project/geospatialworkshop/2024/grwg_2024_env/bin/activate
     ```
-1. **Open 'VSCode_geospatial_demo.py' in /90daydata/shared/$USER/tutorial2**
+
+1. **Open 'VSCode_geospatial_demo.py'** from `/90daydata/shared/$USER/tutorial2`.
 
     
 
