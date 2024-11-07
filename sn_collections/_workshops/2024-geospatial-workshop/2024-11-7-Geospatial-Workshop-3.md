@@ -30,6 +30,19 @@ Steps to prepare for the tutorial sessions:
 
 1. **Login to Ceres Open OnDemand** at [https://ceres-ood.scinet.usda.gov/](https://ceres-ood.scinet.usda.gov/). For more information on login procedures for web-based SCINet access, see the [SCINet access user guide]({{site.baseurl}}/guides/access/web-based-login).
 
+1. **Open a command-line session** by clicking on “Clusters” -> “Ceres Shell Access” on the top menu. This will open a new tab with a command-line session on Ceres' login node.
+
+1. **Create and/or update your workshop working directory** and copy the tutorial materials into it by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the `$USER` variable. These commands will work for everyone, including if you attending previous workshop sessions or not. 
+
+    {:.copy-code}
+    ```bash
+    mkdir -p /90daydata/shared/$USER/
+    cd /90daydata/shared/$USER/
+    cp -r /project/geospatialworkshop/2024/tutorial3 .
+    source /project/geospatialworkshop/2024/grwg_2024_env/bin/activate
+    ipython kernel install --name "grwg_2024_env" --user
+    ```
+
 1. **Launch a JupyterLab Server session.** Under the *Interactive Apps* menu, select *Jupyter*. Specify the following input values on the page:
 
     * Account: geospatialworkshop
