@@ -17,3 +17,46 @@ This workshop will explore examples of spatial modeling tasks (e.g., spatial int
 The goals of this session are to 
 1) introduce key concepts about incorporating spatial data in machine learning and 
 2) provide examples in Python on how to manipulate spatial datasets to use in machine learning functions, compare the performance of machine learning approaches for spatial prediction, and visualize observed spatial data and the prediction results.
+
+
+## Tutorial setup instruction
+
+Steps to prepare for the tutorial:
+
+1. **Login to Atlas Open OnDemand** at [https://atlas-ood.hpc.msstate.edu/](https://atlas-ood.hpc.msstate.edu/). For more information on login procedures for web-based SCINet access, see the [SCINet access user guide]({{site.baseurl}}/guides/access/web-based-login).
+
+1. **Open a command-line session** by clicking on “Clusters” -> “Atlas Shell Access” on the top menu. This will open a new tab with a command-line session on Atlas's login node.
+
+1. **Create and/or update your workshop working directory** and copy the tutorial materials into it by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the `$USER` variable. 
+
+    {:.copy-code}
+    ```bash
+    mkdir -p /90daydata/shared/$USER/spatial_modeling
+    cd /90daydata/shared/$USER/spatial_modeling
+    cp -r /project/ai_forum/spatial_modeling/spatial_modeling.ipynb .
+    ```
+
+1. **Setup the kernel for JupyterLab.** You will create a kernel called *grwg_2024_env* to access from JupyterLab Server. Run the following commands to activate the workshop's virtual environment and create a new kernelspec from it:
+
+    {:.copy-code}
+    ```bash
+    source /project/ai_forum/spatial_modeling/spatial_modeling_env/bin/activate
+    ipython kernel install --name "spatial_modeling_env" --user
+    ```
+
+1. **Launch a JupyterLab Server session.** Under the *Interactive Apps* menu, select *JupyterLab Server*. Specify the following input values on the page:
+
+    * Account: scinet_workshop1
+    * Partition: atlas
+    * QOS: normal 14-00:00:00
+    * Number of hours: 4
+    * Number of nodes: 1
+    * Number of tasks: 2
+    * Additional Slurm Parameters: \-\-reservation=forum --mem=32G
+    * Working Directory: /90daydata/shared/${USER}
+  
+    Click *Launch*. The screen will update to the *Interactive Sessions* page. When your Jupyter session is ready, the top card will update from *Queued* to *Running* and a *Connect to JupyterLab Server* button will appear. Click *Connect to JupyterLab Server*.
+
+1. **Select the `spatial_modeling_env` kernel** for the `spatial_modeling.ipynb` notebook.
+
+
