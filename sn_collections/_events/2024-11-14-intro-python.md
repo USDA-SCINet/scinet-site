@@ -62,4 +62,4 @@ Steps to prepare for the tutorial:
   
     Click *Launch*. The screen will update to the *Interactive Sessions* page. When your Jupyter session is ready, the top card will update from *Queued* to *Running* and a *Connect to JupyterLab Server* button will appear. Click *Connect to JupyterLab Server*.
 
-1. **Select the `intro_python_env` kernel** for each notebook.
+1. **Select the *intro_python_env* kernel** for each notebook.
