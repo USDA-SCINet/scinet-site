@@ -41,7 +41,7 @@ Steps to prepare for the tutorial:
     cp -r /project/ai_forum/intro_python/python-crash-course-ars/* .
     ```
 
-1. **Setup the kernel for JupyterLab.** You will create a kernel called *grwg_2024_env* to access from JupyterLab Server. Run the following commands to activate the workshop's virtual environment and create a new kernelspec from it:
+1. **Setup the kernel for JupyterLab.** You will create a kernel called *intro_python_env* to access from JupyterLab Server. Run the following commands to activate the workshop's virtual environment and create a new kernelspec from it:
 
     {:.copy-code}
     ```bash
