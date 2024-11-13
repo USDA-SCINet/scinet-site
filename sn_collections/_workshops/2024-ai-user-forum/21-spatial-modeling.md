@@ -25,7 +25,7 @@ Steps to prepare for the tutorial:
 
 1. **Login to Atlas Open OnDemand** at [https://atlas-ood.hpc.msstate.edu/](https://atlas-ood.hpc.msstate.edu/). For more information on login procedures for web-based SCINet access, see the [SCINet access user guide]({{site.baseurl}}/guides/access/web-based-login).
 
-1. **Open a command-line session** by clicking on “Clusters” -> “Atlas Shell Access” on the top menu. This will open a new tab with a command-line session on Atlas's login node.
+1. **Open a command-line session** by clicking on "Clusters" -> "Atlas Shell Access" on the top menu. This will open a new tab with a command-line session on Atlas's login node.
 
 1. **Create and/or update your workshop working directory** and copy the tutorial materials into it by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the `$USER` variable. 
 
@@ -36,7 +36,7 @@ Steps to prepare for the tutorial:
     cp -r /project/ai_forum/spatial_modeling/spatial_modeling.ipynb .
     ```
 
-1. **Setup the kernel for JupyterLab.** You will create a kernel called *grwg_2024_env* to access from JupyterLab Server. Run the following commands to activate the workshop's virtual environment and create a new kernelspec from it:
+1. **Setup the kernel for JupyterLab.** You will create a kernel called *spatial_modeling_env* to access from JupyterLab Server. Run the following commands to activate the workshop's virtual environment and create a new kernelspec from it:
 
     {:.copy-code}
     ```bash
