@@ -63,7 +63,7 @@ Steps to prepare for the tutorial:
     * Number of hours: 4
     * Number of nodes: 1
     * Number of tasks: 2
-    * Additional Slurm Parameters: \-\-reservation=forum-gpu --gres=gpu:1 --mem=32G --ntasks-per-node=2
+    * Additional Slurm Parameters: \-\-reservation=forum-gpu \-\-gres=gpu:1 \-\-mem=32G \-\-ntasks-per-node=2
     * Working Directory: /90daydata/shared/${USER}
   
     Click *Launch*. The screen will update to the *Interactive Sessions* page. When your Jupyter session is ready, the top card will update from *Queued* to *Running* and a *Connect to JupyterLab Server* button will appear. Click *Connect to JupyterLab Server*.
