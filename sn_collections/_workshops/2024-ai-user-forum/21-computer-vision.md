@@ -23,6 +23,13 @@ Steps to prepare for the tutorial:
 
 1. **Open a command-line session** by clicking on "Clusters" -> "Atlas Shell Access" on the top menu. This will open a new tab with a command-line session on Atlas's login node.
 
+1. **Request resources on a compute node** by running the following command: 
+
+    {:.copy-code}
+    ```bash
+    srun --reservation=forum -A scinet_workshop1 -t 00:30:00 -n 1 --mem 8G --pty bash 
+    ```
+
 1. **Create and/or update your workshop working directory** and copy the tutorial materials into it by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the `$USER` variable. 
 
     {:.copy-code}
@@ -39,6 +46,13 @@ Steps to prepare for the tutorial:
     ```bash
     source /project/ai_forum/computer_vision1/computer_vision_1_env/bin/activate
     ipython kernel install --name "computer_vision_1_env" --user
+    ```
+
+1. **Stop the interactive job** on the compute node by running the command:
+
+    {:.copy-code}
+    ```bash
+    exit
     ```
 
 1. **Launch a JupyterLab Server session.** Under the *Interactive Apps* menu, select *JupyterLab Server*. Specify the following input values on the page:
