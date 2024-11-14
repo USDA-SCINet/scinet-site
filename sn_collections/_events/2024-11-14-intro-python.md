@@ -71,7 +71,7 @@ Steps to prepare for the tutorial:
     * Number of hours: 4
     * Number of nodes: 1
     * Number of tasks: 1
-    * Additional Slurm Parameters: \-\-reservation=preforum --mem=16G
+    * Additional Slurm Parameters: \-\-reservation=preforum \-\-mem=16G
     * Working Directory: /90daydata/shared/${USER}
   
     Click *Launch*. The screen will update to the *Interactive Sessions* page. When your Jupyter session is ready, the top card will update from *Queued* to *Running* and a *Connect to JupyterLab Server* button will appear. Click *Connect to JupyterLab Server*.
