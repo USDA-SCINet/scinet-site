@@ -130,7 +130,7 @@ SAC-table:
       Term expires: ""
 ---
 
-The ARS Scientific Computing Initiative is led by an Executive Committee comprised of ARS leadership including Dr. Marlen Eve – Acting Associate Administrator for National Programs,  Dr. Brian Stucky – Acting Chief Scientific Information Officer, Rob Butler – Acting SCINet Project Manager, ARS scientists representing IT and security, and users of the HPC systems. SCINet committees report to the Executive Committee, including the Scientific Advisory Committee (SAC), an HPC Policy Committee, and an HPC Software Committee.
+The ARS Scientific Computing Initiative is led by an Executive Committee comprised of ARS leadership including Dr. Jeff Silverstein – Associate Administrator for National Programs,  Dr. Brian Stucky – Acting Chief Scientific Information Officer, Rob Butler – Acting SCINet Project Manager, ARS scientists representing IT and security, and users of the HPC systems. SCINet committees report to the Executive Committee, including the Scientific Advisory Committee (SAC), an HPC Policy Committee, and an HPC Software Committee.
 
 The program runs two high performance computer clusters and a storage unit.  The Ceres cluster is housed at the National Animal Disease Center in Ames, IA and operated by Iowa State University. The Atlas cluster is located and ran by Mississippi State University in Starkville, MS, and the Juno storage unit is located at the National Agricultural Library in Beltsville, MD. 
 
@@ -141,7 +141,7 @@ User support at SCINet is provided by the  Virtual Support Research Core (VSRC) 
 {: .usa-table .usa-table--compact }
 Person | Position
 ---|---
-Dr. Marlen Eve | Acting Associate Administrator for National Programs
+Dr. Jeff Silverstein | Associate Administrator for National Programs
 Dr. Brian Stucky | Acting Chief Scientific Information Officer, ARS
 
 ## Executive Committee
@@ -151,7 +151,7 @@ The ARS Scientific Computing Initiative is led by an Executive Committee.
 {: .usa-table .usa-table--compact }
 Person | Position
 ---|---
-Dr. Marlen Eve | Acting Associate Administrator for National Programs
+Dr. Jeff Silverstein | Associate Administrator for National Programs
 Dr. Brian Stucky | Acting Chief Scientific Information Officer, ARS
 Ms. Lorna Drennen | Assistant Chief Information officer
 Mr. Stan Kosecki | Deputy Assistant Chief Information Officer
@@ -212,7 +212,7 @@ Rob Butler | Acting SCINet Project Manager
 
 The software committee evaluates requests by users to add or delete software to/from one of the HPCs. This committee is composed of scientific experts in the use of HPCs from across agricultural disciplines, and that represent our two HPCs. Users can make software requests by completing the [Software Request Form]({{ site.baseurl }}/support/request#software-request). 
 
-
+{% comment %}
 <!---------------------------------------------------------------------------------------
 WAITING FOR A FEW DEVELOPMENTS IN THE SCINET PROGRAM TO OCCUR, THEN NEED TO EDIT THE title BELOW AND REPLACE THE INFORMATION ON THIS PAGE ENTIRELY
 ## Executive Committee
@@ -257,3 +257,4 @@ Steven Schroeder
 #Scientific Points of Contact (SPOCs)
 Each ARS location also has at least one designated point of contact for the ARS Scientific Computing Initiative. These representatives are occasionally contacted by the various committees when information from many locations is required for decision making. For more information, including how to participate, please contact Stan Kosecki.
 -->
+{% endcomment %}
