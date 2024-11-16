@@ -6,8 +6,14 @@ description: Training - learning tools and techniques that are fundamental for b
 tags: python jupyter artificial-intelligence
 time: 1-5 PM ET
 
-details:
-  - text: Registration reserved for AI User Forum participants
+# details:
+#   - text: Registration reserved for AI User Forum participants
+
+materials
+  - text: Workshop recording
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EVh7jdve53JApdx89HA2Ay4BTjC-t9aAneNJzchDe_VEkQ?e=xtc6hV&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+  - text: Workshop Materials
+    url: https://github.com/PracticumAI/python-crash-course-ars
 
 # registration: 
 #   text: Register for the AI User Forum
