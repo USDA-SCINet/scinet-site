@@ -9,6 +9,10 @@ time: 1-5 PM ET
 details:
   - text: Registration reserved for AI User Forum participants
 
+materials:
+  - text: Workshop Recording
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EVWdBWm8rsROgyk1I-gZIfoB2XuH4bGkZSC6v6jquU38Sw?e=0Ififv
+
 # registration: 
 #   text: Register for the AI User Forum
 #   url: https://events.tti.tamu.edu/conference/2024-forum-on-ai-applications-to-usda-science/
