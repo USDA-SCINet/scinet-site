@@ -57,7 +57,7 @@ Steps to prepare for the tutorial session:
             </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr class="border-top-2px">
             <th scope="row" data-label="Materials" tabindex="0">
               <a href="/assets/pdf/workshops/2024-ai-user-forum/21-protein-structure/Introduction_Slides.pdf" target="_blank">Introduction</a>            
             </th>
@@ -66,7 +66,7 @@ Steps to prepare for the tutorial session:
             <td data-label="Topic"> Introduction </td>
             <td data-label="Presenter">Hye-Seon Kim & Carson Andorf </td>
         </tr>
-        <tr>
+        <tr class="border-top-2px">
           <th scope="row" data-label="Materials" rowspan="5" tabindex="0">
             <a href="/assets/pdf/workshops/2024-ai-user-forum/21-protein-structure/Protein_Structure_Prediction.pdf" target="_blank">Protein Structure Prediction</a>
           </th>
@@ -95,7 +95,7 @@ Steps to prepare for the tutorial session:
           <td data-label="Topic"> OmegaFold </td>
           <td data-label="Presenter"> Stephen Harding </td>
         </tr>
-        <tr>
+        <tr class="border-top-2px">
           <th scope="row" data-label="Materials" rowspan="2" tabindex="0">
             <a href="/assets/pdf/workshops/2024-ai-user-forum/21-protein-structure/Protein_Structure_Search.pdf" target="_blank">Protein Structure Search</a>
           </th>
@@ -108,7 +108,7 @@ Steps to prepare for the tutorial session:
           <td data-label="Topic"> FoldSeek Online </td>
           <td data-label="Presenter"> Stephen Harding </td>
         </tr>
-        <tr>
+        <tr class="border-top-2px">
           <th scope="row" data-label="Materials" rowspan="3" tabindex="0">
             <a href="/assets/pdf/workshops/2024-ai-user-forum/21-protein-structure/Variant_Effect_Scores.pdf" target="_blank">Missense Variant Effect Predictions</a>
           </th>
@@ -125,7 +125,7 @@ Steps to prepare for the tutorial session:
           <td data-label="Topic"> PanEffect (Maize) </td>
           <td data-label="Presenter"> Carson Andorf </td>
         </tr>
-        <tr>
+        <tr class="border-top-2px">
           <th scope="row" data-label="Materials" rowspan="2" tabindex="0">
             <a href="/assets/pdf/workshops/2024-ai-user-forum/21-protein-structure/Protein_Binder_Prediction.pdf" target="_blank">Protein Binder Predictions</a>
           </th>
