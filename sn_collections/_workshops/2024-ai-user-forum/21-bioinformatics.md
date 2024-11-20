@@ -27,17 +27,23 @@ Steps to prepare for the tutorial session:
 
     {: .copy-code }
     ```
-    srun --reservation=forum -A scinet_workshop1 -t 00:30:00 -n 1 --mem 8G --pty bash 
-    ``` 
+salloc --reservation=forum-gpu -A scinet_workshop1 -t 03:30:00 -n 1 --mem 8G
+``` 
 
 1. **Create a workshop working directory** and copy the workshop materials into it by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the $USER variable. 
 
     {: .copy-code }
     ```
-    mkdir -p /90daydata/shared/$USER 
-    cd /90daydata/shared/$USER 
-    cp -r /project/ai_forum/functional_annotation . 
-    ```
- 
+mkdir -p /90daydata/shared/$USER 
+cd /90daydata/shared/$USER 
+cp -r /project/ai_forum/functional_annotation . 
+```
 
 1. **Stop the interactive job** on the compute node by running the command exit.
+
+
+## Tutorials
+
+* [Identifying secreted proteins and predicting their subcellular localization](https://bioinformaticsworkbook.org/dataAnalysis/GenomeAnnotation/Secreted_Protein_Prediction_with_SignalP_and_TMHMM)
+* [DeepGoPlus -	Using AI to associate GO terms with novel proteins](https://bioinformaticsworkbook.org/dataAnalysis/GenomeAnnotation/DeepGoPlus_AI_Functional_Prediction_of_Proteins)
+* [A ProtTrans Pipeline to Differentiate Transmembrane Domains from Other Proteins](https://bioinformaticsworkbook.org/dataAnalysis/GenomeAnnotation/Protein_Classification_with_ProtTrans)
