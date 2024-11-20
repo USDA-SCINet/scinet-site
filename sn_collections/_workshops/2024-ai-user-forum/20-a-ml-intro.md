@@ -62,7 +62,7 @@ Steps to prepare for the tutorial:
     * QOS: normal 14-00:00:00
     * Number of hours: 4
     * Number of nodes: 1
-    * Number of tasks: 2
+    * Number of tasks: 6
     * Additional Slurm Parameters: \-\-reservation=forum \-\-mem=32G
     * Working Directory: /90daydata/shared/${USER}
   
