@@ -28,7 +28,7 @@ Steps to prepare for the tutorial session:
   
     {: .copy-code }
     ```
-    srun --reservation=forum -A scinet_workshop1 -t 00:30:00 -n 1 --mem 8G --pty bash
+    srun --reservation=forum -A scinet_workshop1 -t 03:00:00 -n 1 --mem 8G --pty bash
     ``` 
 
 1. **Create a workshop working directory** and copy the workshop materials into it by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the $USER variable. 
@@ -68,7 +68,7 @@ Steps to prepare for the tutorial session:
     trim_galore --paired \ 
             --basename samplename \ 
             --output_dir Trimmed \ 
-            --cores 48 \ 
+            --cores 24 \ 
             PE_directory/samplename_R1.fastq.gz \ 	 
             PE_directory/samplename_R2.fastq.gz 
             
