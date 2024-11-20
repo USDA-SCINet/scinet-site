@@ -64,10 +64,12 @@ Steps to prepare for the tutorial:
     * Number of nodes: 1
     * Number of tasks: 6
     * Additional Slurm Parameters: \-\-reservation=forum \-\-mem=32G
-    * Working Directory: /90daydata/shared/${USER}
+    * Working Directory: /90daydata/shared/${USER}/intro_ml
   
     Click *Launch*. The screen will update to the *Interactive Sessions* page. When your Jupyter session is ready, the top card will update from *Queued* to *Running* and a *Connect to JupyterLab Server* button will appear. Click *Connect to JupyterLab Server*.
 
-1. **Select the `intro_ml_env` kernel** for the `intro_ml.ipynb` notebook.
+1. **Open the `intro_ml.ipynb` notebook.**
+  
+1. **Select the `intro_ml_env` kernel** for the notebook.
 
 
