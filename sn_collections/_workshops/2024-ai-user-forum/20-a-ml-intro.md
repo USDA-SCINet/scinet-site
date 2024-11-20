@@ -67,7 +67,7 @@ exit
         
         {: .copy-code }
         ```
-\-\-reservation=forum \-\-mem=32G
+--reservation=forum --mem=32G
 ```
     * Working Directory: 
         
