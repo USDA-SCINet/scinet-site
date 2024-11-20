@@ -7,6 +7,14 @@ lead: Genome Informatics Facility at Iowa State University
 
 section: November 20, Afternoon — Foundational Skills and Concepts
 
+materials:
+  - text: Data Prep Markdown File
+    url: https://github.com/ISUgenomics/genome_assembly_workshop/blob/main/AIUserForum_Workshop_Nov2024/01_DataPrep.md
+  - text: Assembly and Assessment Markdown File
+    url: https://github.com/ISUgenomics/genome_assembly_workshop/blob/main/AIUserForum_Workshop_Nov2024/02_AssemblyAssessment.md
+  - text: Genome Annotation Markdown File
+    url: https://github.com/ISUgenomics/genome_assembly_workshop/blob/main/AIUserForum_Workshop_Nov2024/03_GenomeAnnotation.md
+
 prerequisites:
   - text: Familiarity with basic command-line concepts. We will offer virtual training for these skills before the Forum begins.
 ---
