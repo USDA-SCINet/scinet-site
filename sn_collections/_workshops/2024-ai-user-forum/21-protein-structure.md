@@ -27,8 +27,15 @@ Steps to prepare for the tutorial session:
 
     {: .copy-code }
     ```
-    srun --reservation=forum -A scinet_workshop1 -t 00:30:00 -n 1 --mem 8G --pty bash 
-    ``` 
+    salloc --reservation=forum-gpu -A scinet_workshop1 -p gpu-a100 -n1 --gres=gpu:a100:1 -A scinet_workshop1 -t 3:00:00
+    ```
+    `salloc: Granted job allocation <job-id>`  
+    `salloc: Nodes atlas-0245 are ready for job`
+
+    {: .copy-code }
+    ```
+    srun --jobid=<job-id> --pty bash
+    ```
 
 1. **Create a workshop working directory** and copy the workshop materials into it by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the $USER variable. 
 
