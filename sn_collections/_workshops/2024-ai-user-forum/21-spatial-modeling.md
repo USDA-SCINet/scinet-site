@@ -41,6 +41,7 @@ Steps to prepare for the tutorial:
     mkdir -p /90daydata/shared/$USER/spatial_modeling
     cd /90daydata/shared/$USER/spatial_modeling
     cp -r /project/ai_forum/spatial_modeling/spatial_modeling.ipynb .
+    cp -r /project/ai_forum/spatial_modeling/data .
     ```
 
 1. **Setup the kernel for JupyterLab.** You will create a kernel called *spatial_modeling_env* to access from JupyterLab Server. Run the following commands to activate the workshop's virtual environment and create a new kernelspec from it:
@@ -65,9 +66,9 @@ Steps to prepare for the tutorial:
     * QOS: normal 14-00:00:00
     * Number of hours: 4
     * Number of nodes: 1
-    * Number of tasks: 2
+    * Number of tasks: 16
     * Additional Slurm Parameters: \-\-reservation=forum \-\-mem=32G
-    * Working Directory: /90daydata/shared/${USER}
+    * Working Directory: /90daydata/shared/${USER}/spatial_modeling
   
     Click *Launch*. The screen will update to the *Interactive Sessions* page. When your Jupyter session is ready, the top card will update from *Queued* to *Running* and a *Connect to JupyterLab Server* button will appear. Click *Connect to JupyterLab Server*.
 
