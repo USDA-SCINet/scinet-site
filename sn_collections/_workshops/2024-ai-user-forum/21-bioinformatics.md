@@ -27,7 +27,7 @@ Steps to prepare for the tutorial session:
 
     {: .copy-code }
     ```
-salloc --reservation=forum-gpu -A scinet_workshop1 -t 03:30:00 -n 1 --mem 8G
+salloc --reservation=forum-gpu -A scinet_workshop1 -t 03:30:00 -N 1 -c4 --mem 8G
 ``` 
 
 1. **Create a workshop working directory** and copy the workshop materials into it by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the $USER variable. 
