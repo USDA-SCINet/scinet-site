@@ -27,7 +27,7 @@ Steps to prepare for the tutorial session:
 
     {: .copy-code }
     ```
-    salloc --reservation=forum-gpu -A scinet_workshop1 -p gpu-a100 -n1 --gres=gpu:a100:1 -A scinet_workshop1 -t 3:00:00
+    salloc --reservation=forum-gpu -A scinet_workshop1 -p gpu-a100-mig7 -n1 --gres=gpu:a100:1 -A scinet_workshop1 -t 3:00:00
     ```
     `salloc: Granted job allocation <job-id>`  
     `salloc: Nodes atlas-0245 are ready for job`
