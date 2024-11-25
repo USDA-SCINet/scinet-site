@@ -39,8 +39,8 @@ Steps to prepare for the tutorial:
     ```bash
     mkdir -p /90daydata/shared/$USER/computer_vision2
     cd /90daydata/shared/$USER/computer_vision2
-    cp -r /project/ai_forum/computer_vision2/computer_vision_2.ipynb .
-    cp -r /project/ai_forum/computer_vision2/*.py .
+    cp /project/ai_forum/computer_vision2/*.ipynb .
+    cp /project/ai_forum/computer_vision2/*.py .
     ```
 
 1. **Setup the kernel for JupyterLab.** You will create a kernel called *computer_vision_2_env* to access from JupyterLab Server. Run the following commands to activate the workshop's virtual environment and create a new kernelspec from it:
