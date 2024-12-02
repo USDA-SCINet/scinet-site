@@ -19,6 +19,11 @@ excerpt: To recieve an invitation to upcoming webinars, fill out the [Translatio
 archive-label: Webinar Recordings
 
 sessions:
+  - session: 
+    title: "Comparative analysis of adaptive immune systems in agriculturally important species"
+    date: 2024-12-12
+    time: 11am-12pm ET
+    presenter: Dr. Yana Safonova
   - session:
     title: "Harnessing Transposons for Precise and Efficient Genome Editing in Plants"
     date: 2024-11-14
