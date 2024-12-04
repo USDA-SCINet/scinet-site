@@ -38,7 +38,7 @@ subnav:
   #   internal: link
 ---
 
-SCINet working groups (WGs) support ARS researchers and their collaborators in using scientific computing methods and SCINet computational resources in their research. Common WG activities include hosting recurring virtual meetings and webinars, organizing training events, and participating in collaborative research or tool software development projects. The SCINet Office facilitates WGs by:
+SCINet working groups (WGs) support ARS researchers and their collaborators in using scientific computing methods and SCINet computational resources in their research. Common WG activities include hosting recurring virtual meetings and webinars, organizing training events, and participating in collaborative research or software development projects. The SCINet Office facilitates WGs by:
 * Advertising information about the WG and how to join the group on the SCINet website.
 * Sharing WG updates with the ARS community via the quarterly SCINet Newsletter.
 * Assisting in training workshop coordination (e.g., advertising the event to the SCINet community, handling registrations, providing temporary SCINet project space for instructors and participants, and reserving computational resources).
@@ -63,6 +63,6 @@ SCINet working groups (WGs) support ARS researchers and their collaborators in u
 If you are interested in creating a working group, please compile the following:
 * The Working Group's name
 * A description of the Working Group including purpose and goals
-* Contact information for people to reach out to if they who want to learn more about or join the working group.
+* Contact information for people to reach out to if they want to learn more about or join the working group.
 
 Send this information to the SCINet office at [ARS-SCINet-Office@usda.gov](mailto:ARS-SCINet-Office@usda.gov).
