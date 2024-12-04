@@ -52,7 +52,6 @@ SCINet working groups (WGs) support ARS researchers and their collaborators in u
 * [Breeding AI and ML Working Group]({{ site.baseurl }}/research/working-groups/breeding)
 * [Geospatial Research Working Group]({{ site.baseurl }}/research/working-groups/geospatial)
 * [Microbiome Working Group]({{ site.baseurl }}/research/working-groups/microbiome)
-* [Pollinator Working Group]({{ site.baseurl }}/research/working-groups/pollinator)
 * [SCINet-Longterm Agroecosystem Research (LTAR) Phenology Working Group]({{ site.baseurl }}/research/working-groups/LTARphenology)
 * [Protein Function and Phenotype Prediction Working Group]({{ site.baseurl }}/research/working-groups/proteinfunction)
 * [Translational Omics Working Group]({{ site.baseurl }}/research/working-groups/omics)

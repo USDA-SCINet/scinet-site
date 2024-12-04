@@ -4,7 +4,7 @@ description: The SCINet Pollinator working group was initiated in February 2021 
 permalink: /research/working-groups/pollinator
 author: Melanie Kammerer
 layout: page
-
+published: false
 subnav:
   - title: Workshops
     url: '#workshops'
