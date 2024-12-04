@@ -61,8 +61,8 @@ SCINet working groups (WGs) support ARS researchers and their collaborators in u
 ## Creating a working group
 
 If you are interested in creating a working group, please compile the following:
-* The Working Group's name
-* A description of the Working Group including purpose and goals
+* The working group's name
+* A description of the working group including its purpose and goals
 * Contact information for people to reach out to if they want to learn more about or join the working group.
 
 Send this information to the SCINet office at [ARS-SCINet-Office@usda.gov](mailto:ARS-SCINet-Office@usda.gov).
