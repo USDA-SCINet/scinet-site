@@ -21,7 +21,7 @@ sessions:
     title: HPC Software Module System and Placing Requests for Software
     date: 2024-12-12
     time: 1-2 pm ET
-    excerpt: This presentation will cover what modules are in the context of Ceres and Atlas, how to call and use them, examples of frequently used modules, and what to do if your software isn't available.
+    excerpt: This presentation will cover modules in the context of Ceres and Atlas, how to call and use them, examples of frequently used modules, and what to do if your software isn't available.
   - session:
     title: Tidyverse for data cleaning and wrangling
     date: 2024-10-17
@@ -212,7 +212,7 @@ This presentation will cover how to log on to Open OnDemand for Ceres and Atlas,
   
 ---
 
-The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.<!--excerpt--> The main idea is that SCINet users with similar interests can get help from each other. This virtual meeting will provide space for, and facilitate, these interactions on the first or second Thursday of the month.
+The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.<!--excerpt--> The main idea is that SCINet users with similar interests can get help from each other. This virtual meeting will provide space for, and facilitate, these interactions once a month.
 
 Location: [SpatialChat](https://app.spatial.chat/s/scinet-corner)
 
