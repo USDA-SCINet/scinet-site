@@ -16,7 +16,12 @@ filter-archive: materials
 
 archive-label: SCINet Corner Recordings
 
-sessions:    
+sessions:
+  - session:
+    title: HPC Software Module System and Placing Requests for Software
+    date: 2024-12-12
+    time: 1-2 pm ET
+    excerpt: This presentation will cover what modules are in the context of Ceres and Atlas, how to call and use them, examples of frequently used modules, and what to do if your software isn't available.
   - session:
     title: Tidyverse for data cleaning and wrangling
     date: 2024-10-17
