@@ -35,7 +35,7 @@ subnav:
 <!--excerpt-->
 
 Many open-source scientific software packages are available:
-* [Browse/search](https://anaconda.org/search) all conda packages
+* [Browse/search](https://conda-forge.org/packages/) all conda packages
 
 The [Bioconda](http://bioconda.github.io/) channel contains thousands of software packages that are useful for bioinformatics.
 *	[Browse/search](https://bioconda.github.io/conda-package_index.html) available Bioconda software packages
@@ -46,27 +46,32 @@ The **miniconda** module also provides [mamba](https://mamba.readthedocs.io/en/l
 
 ## Setup
 
+Conda must be run on a compute node. Attempting to run Conda on the login node will result in an "Operation not permitted" error. If you are not already on a compute node, you may request an interactive allocation with:
+```
+[user.name@ceres ~]$ salloc
+```
+
 Before using conda or conda-installed software on Ceres, the *miniconda* environment module (which contains the conda software environment) must be loaded. To load the latest miniconda module available on Ceres:
 ```
-[user.name@ceres ~]$ module load miniconda
+[user.name@ceres19-compute-0 ~]$ module load miniconda
 ```
 
 You can see all available versions of miniconda on Ceres with:
 ```
-[user.name@ceres ~]$ module spider miniconda
+[user.name@ceres19-compute-0 ~]$ module spider miniconda
 ```
 
 *(Optional one-time setup for bioconda users)* If you plan on installing software primarily from the bioconda channel, before using conda for the first time on Ceres, you may wish to configure conda [per the bioconda documentation](http://bioconda.github.io/user/install.html#set-up-channels) to search for software packages in the conda-forge, bioconda, and defaults channels (in that order):
 ```
-[user.name@ceres ~]$ conda config --add channels defaults
-[user.name@ceres ~]$ conda config --add channels bioconda
-[user.name@ceres ~]$ conda config --add channels conda-forge
+[user.name@ceres19-compute-0 ~]$ conda config --add channels defaults
+[user.name@ceres19-compute-0 ~]$ conda config --add channels bioconda
+[user.name@ceres19-compute-0 ~]$ conda config --add channels conda-forge
 ```
 
 Otherwise, the conda-forge and then bioconda channels must be specified every time software is installed via `conda install` or `conda create`:
 
 ```
-conda install -c conda-forge -c bioconda SOFTWARE_PACKAGE1 SOFTWARE_PACKAGE2...
+[user.name@ceres19-compute-0 ~]$ conda install -c conda-forge -c bioconda SOFTWARE_PACKAGE1 SOFTWARE_PACKAGE2...
 ```
 
 
@@ -87,30 +92,31 @@ On Ceres, suitable locations for conda environments housing conda packages inclu
 
 ### Best Practices
 
-* **Use an interactive session on a compute node to install software with conda to avoid slowing down the login node for everyone, e.g,**
+* **You must use a compute node to run Conda, e.g,**
   ```
   [user.name@ceres ~]$ salloc
-  [user.name@ceres14-compute-60 ~]$ module load miniconda
-  [user.name@ceres14-compute-60 ~]$ source activate my_env
-  (my_env) [user.name@ceres14-compute-60 ~]$ conda install <package_name>
+  [user.name@ceres19-compute-0 ~]$ module load miniconda
+  [user.name@ceres19-compute-0 ~]$ source activate my_env
+  (my_env) [user.name@ceres19-compute-0 ~]$ conda install <package_name>
   ...
   ```
 
 
 ### Example 1: Installing Trinity into a home directory
 
-Load the latest miniconda module if you haven't already and create an environment called "trinityenv":
+Get a compute node allocation and load the latest miniconda module if you haven't already. Then create an environment called "trinityenv":
 ```
-[user.name@ceres ~]$ module load miniconda
-[user.name@ceres ~]$ conda create --name trinityenv
+[user.name@ceres ~]$ salloc
+[user.name@ceres19-compute-0 ~]$ module load miniconda
+[user.name@ceres19-compute-0 ~]$ conda create --name trinityenv
 ```
 
 Note that the  `conda create` command used above without the --prefix option will create the environment in your home directory ($HOME/.conda/envs/).
 
 To activate the environment (and update environment variables such as PATH that are required to use software installed into this environment):
 ```
-[user.name@ceres ~]$ source activate trinityenv
-(trinityenv) [user.name@ceres ~]$
+[user.name@ceres19-compute-0 ~]$ source activate trinityenv
+(trinityenv) [user.name@ceres19-compute-0 ~]$
 ```
 
 <div class="usa-alert usa-alert-error" role="alert">
@@ -119,7 +125,7 @@ To activate the environment (and update environment variables such as PATH that 
     <div class="usa-alert-title">
       In conda &ge; 4.6, if you run <code>conda activate</code>, you will be prompted to run <code>conda init</code> to modify your shell interactive startup script (e.g, ~/.bashrc):
       <pre>
-[user.name@ceres ~]$ conda activate
+[user.name@ceres19-compute-0 ~]$ conda activate
 
 CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
 To initialize your shell, run
@@ -152,10 +158,10 @@ $ conda init &lt;SHELL_NAME&gt;
         <p>
           If <code>conda activate</code> is needed for some advanced use cases like <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#nested-activation" target="_blank">nested ("stacked") environments</a>, it can be used after <code>source activate</code>:
           <pre>
-[user.name@ceres ~]$ ml miniconda
-[user.name@ceres ~]$ source activate
-(base) [user.name@ceres ~]$ conda activate samtools
-(samtools) [user.name@ceres ~]$
+[user.name@ceres19-compute-0 ~]$ ml miniconda
+[user.name@ceres19-compute-0 ~]$ source activate
+(base) [user.name@ceres19-compute-0 ~]$ conda activate samtools
+(samtools) [user.name@ceres19-compute-0 ~]$
           </pre>
         </p> 
       </div>
@@ -165,12 +171,12 @@ $ conda init &lt;SHELL_NAME&gt;
 
 Now that you are inside the trinityenv environment, install software into this environment with:
 ```
-(trinityenv) [user.name@ceres ~]$ conda install <package_name> <package_name> <package_name>
+(trinityenv) [user.name@ceres19-compute-0 ~]$ conda install <package_name> <package_name> <package_name>
 ```
 
 For example, install the [Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki) transcriptome assembler and [Kallisto](https://pachterlab.github.io/kallisto/) RNA-Seq quantification application (an optional dependency that is not included with the default Trinity 2.8.4 installation). Note this step may take a few minutes:
 ```
-(trinityenv) [user.name@ceres ~]$ conda install trinity kallisto
+(trinityenv) [user.name@ceres19-compute-0 ~]$ conda install trinity kallisto
 ...
 Proceed ([y]/n)? y
 ...
@@ -178,40 +184,41 @@ Proceed ([y]/n)? y
 
 Afterwards, the Trinity and Kallisto executables are in your PATH:
 ```
-(trinityenv) [user.name@ceres ~]$ type Trinity
+(trinityenv) [user.name@ceres19-compute-0 ~]$ type Trinity
 Trinity is hashed (/home/user.name/.conda/envs/trinityenv/bin/Trinity)
 
-(trinityenv) [user.name@ceres ~]$ Trinity --version
+(trinityenv) [user.name@ceres19-compute-0 ~]$ Trinity --version
 Trinity version: Trinity-v2.8.4-currently using the latest production release of Trinity.
 
-(trinityenv) [user.name@ceres ~]$ type kallisto
+(trinityenv) [user.name@ceres19-compute-0 ~]$ type kallisto
 kallisto is hashed (/home/scinet.username/.conda/envs/trinityenv/bin/kallisto)
 
-(trinityenv) [user.name@ceres ~]$ kallisto version
+(trinityenv) [user.name@ceres19-compute-0 ~]$ kallisto version
 kallisto, version 0.44.
 ```
 
 To exit the environment:
 ```
-(trinityenv) [user.name@ceres ~]$ conda deactivate
-[user.name@ceres ~]$ 
+(trinityenv) [user.name@ceres19-compute-0 ~]$ conda deactivate
+[user.name@ceres19-compute-0 ~]$ 
 ```
 
 After deactivating the trinityenv environment, Trinity and kallisto are no longer in your PATH:
 ```
-[user.name@ceres ~]$ type Trinity
+[user.name@ceres19-compute-0 ~]$ type Trinity
 -bash: type: Trinity: not found
 ```
 
 
 ### Example 2: Installing Tensorflow into a /project directory
 
-Load the latest miniconda module if you haven't already and create an environment in your /project directory by using the option  `--prefix`:
+Get a compute node allocation and load the latest miniconda module if you haven't already. Then create an environment in your /project directory by using the option  `--prefix`:
 ```
-[user.name@ceres ~]$ module load miniconda
-[user.name@ceres ~]$ conda create --prefix /project/my_proj/tensorflow
+[user.name@ceres ~]$ salloc
+[user.name@ceres19-compute-0 ~]$ module load miniconda
+[user.name@ceres19-compute-0 ~]$ conda create --prefix /project/my_proj/tensorflow
 ...
-[user.name@ceres ~]$ source activate /project/my_proj/tensorflow
+[user.name@ceres19-compute-0 ~]$ source activate /project/my_proj/tensorflow
 (/project/my_proj/tensorflow) [user.name@ceres ~]$ conda install tensorflow
 ... 
 ```
@@ -229,7 +236,7 @@ See the official [Conda documentation for managing environments](https://conda.i
 
 To list environments that have been created in your home directory:
 ```
-[user.name@ceres ~]$ conda env list
+[user.name@ceres19-compute-0 ~]$ conda env list
 ## conda environments:
 #
 trinityenv               /home/user.name/.conda/envs/trinityenv
@@ -238,14 +245,14 @@ root                  *  /software/7/apps/miniconda/4.7.12
 
 To list software packages in an environment:
 ```
-[user.name@ceres ~]$ conda list --name trinityenv
+[user.name@ceres19-compute-0 ~]$ conda list --name trinityenv
 ## packages in environment at /home/user.name/.conda/envs/trinityenv:
 #
 ...
 ```
 OR
 ```
-[user.name@ceres ~]$ conda list --prefix /project/my_proj/tensorflow
+[user.name@ceres19-compute-0 ~]$ conda list --prefix /project/my_proj/tensorflow
 ## packages in environment at /project/my_proj/tensorflow:
 ...
 ```
@@ -254,14 +261,14 @@ OR
 
 To remove an environment in your home directory:
 ```
-[user.name@ceres ~]$ conda env remove --name trinityenv
+[user.name@ceres19-compute-0 ~]$ conda env remove --name trinityenv
 ```
 To remove an environment in your /project directory:
 ```
-rm -rf /project/my_proj/tensorflow
+[user.name@ceres19-compute-0 ~]$ rm -rf /project/my_proj/tensorflow
 ```
 
 To remove packages not used by any environment, as well as tarballs downloaded into the conda package cache ($HOME/.conda/pkgs):
 ```
-conda clean --all
+[user.name@ceres19-compute-0 ~]$ conda clean --all
 ```
