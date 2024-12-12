@@ -41,7 +41,7 @@ This guide gives step-by-step instructions for accessing SCINet systems via SSH,
 
 If you do wish to access SCINet systems via SSH, you will need to have software called "SmallStepCLI" installed on your computer. The instructions below detail how to install and configure SmallStepCLI and use it for SSH access to SCINet systems.
 
-**If you are a LincPass User and still encountering errors after completing the below steps, see [SmallStepCLI Install Troubleshooting for LincPass Users](/guides/access/login/smallstepscli)**
+**If you are a LincPass User and still encountering errors after completing the below steps, see [SmallStepCLI Install Troubleshooting for LincPass Users](/guides/access/login/smallsteps)**
 
 ## Small Step Installation Instructions
 
@@ -71,7 +71,7 @@ If you do wish to access SCINet systems via SSH, you will need to have software 
 - Installing SmallStepsCLI:
   - **If you are on a USDA-managed Windows laptop or workstation:**
     - If your workstation has CEC support, you can [install **SmallStepsCLI** directly from the Software Center]({{ site.baseurl}}/guides/access/login/smallstepscli-download). If Software Center fails to install SmallStepCLI, please contact your IT Specialist prior to continuing.
-      - If you are encountering errors after completing the install, see [SmallStepCLI Install Troubleshooting for LincPass Users](/guides/access/login/smallstepscli).
+      - If you are encountering errors after completing the install, see [SmallStepCLI Install Troubleshooting for LincPass Users](/guides/access/login/smallsteps).
       - After installing, you may need to restart your terminal.
     - If your workstation has "status quo" support (i.e., without CEC support), you will need to have your local IT Specialist install the software for you.
   - **If you are not on a USDA-managed laptop:**
