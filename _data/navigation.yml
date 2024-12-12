@@ -83,14 +83,14 @@ primary:
           url: /research/working-groups/ag100pest
         - title: Arthropod Genomics
           url: /research/working-groups/arthropods
+        - title: Breeding AI and ML
+          url: /research/working-groups/breeding
         - title: Geospatial Research
           url: /research/working-groups/geospatial
         - title: Microbiome
           url: /research/working-groups/microbiome
         - title: LTAR Phenology
           url: /research/working-groups/LTARphenology
-        - title: Pollinator
-          url: /research/working-groups/pollinator
         - title: Protein Function and Phenotype Prediction
           url: /research/working-groups/proteinfunction
         - title: Translational Omics
@@ -136,8 +136,10 @@ primary:
         url: /opportunities/fellowships
       - title: AI Innovation Fund
         url: /opportunities/ai-innovation/
-      - title: SCINet and AI-COE fellowship proposals
-        url: /opportunities/scinet-aicoe-fellowships
+      - title: Postdoctoral Fellowship Mentor Proposals
+        url: /opportunities/fellowship-mentors
+      - title: Graduate Student Internship Mentor Applications
+        url: /opportunities/internship-mentors
 #      - title: Open Positions
 #        url: /opportunities/open_positions
 

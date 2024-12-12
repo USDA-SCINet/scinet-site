@@ -2,21 +2,20 @@
 title: "Software Package/Environment Management Workshop: R"
 description: In this workshop presented by the SCINet Office, we will cover best practices for managing software packages and computing environments on SCINet's supercomputers.
 excerpt: "In this session, we will begin by using R from the command line. Later, we will cover similar steps using RStudio Server available on Open OnDemand. We will primarily focus on using the `renv` package for package management, but we will also note alternatives at the end."
-layout: page
 categories: [2024 10 SPEMW] 
 
 sidenav_link: /training/resources
 
-details:
+materials:
   - text: Session Recording
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EXDitJDkH8JBoPwUwmZryoABJ40oa6XL2K6CDOv4FgWlkA?e=BATq8f
 ---
 
-# Managing packages and environments in command-line R
+## Managing packages and environments in command-line R
 
 In this session, we will begin by using R from the command line. Later, we will cover similar steps using RStudio Server available on Open OnDemand. We will primarily focus on using the `renv` package for package management, but we will also note alternatives at the end. 
 
-## Choosing which version of R to use 
+### Choosing which version of R to use 
 
 Multiple R versions are available in the environment module system. Note that modules are named with 'r' and the program available after the module is loaded is 'R'. With each new minor version of R you use, the `renv` package will need to be installed.
 
@@ -26,7 +25,7 @@ Multiple R versions are available in the environment module system. Note that mo
 1. Run the R command `install.packages('renv')` to install `renv` for this version of R. 
 1. Run `q()` to exit R, and enter `n` when prompted to save the workspace image.
 
-## Creating and managing R environments with the `renv` package
+### Creating and managing R environments with the `renv` package
 
 To use `renv` for package management, it needs to be associated with an R project. This could be an empty directory if you are just starting a project or it could be one or more R scripts within a directory. Either way, the scope of the `renv` environment will be dictated by the working directory in which it is initialized. To initialize an `renv` environment, you use the `renv::init()` command. **For getting started and for this workshop, we recommend passing two arguments when initializing the environment: `renv::init(settings = list(use.cache = FALSE, ppm.enabled = FALSE))`.** These arguments keep package installations within the project directory instead of your home directory and prevent some potentially faulty URL translations from happening when packages are downloaded from repositories. 
 
@@ -66,7 +65,7 @@ R will have to be restarted before the project library is setup, i.e., our `exer
 
 Now we are set up with a project with an `renv` environment!
 
-## Installing and managing R packages in your project library
+### Installing and managing R packages in your project library
 
 Next, we will expand our project with additional packages! 
 
@@ -98,7 +97,7 @@ for(i in c(1:N,N:1)){
 1. For example, if we install the `MASS` library because we think we may need it but later don't, `renv::restore(clean=TRUE)` will help remove the unused package from the project library.
 1. `renv::restore()` can also be used to revert package version discrepancies like for `cli` above. 
 
-## Reproduce renv projects 
+### Reproduce renv projects 
 
 In order to make environments and package management _truly_ useful, we need a mechanism to easily reproduce environments. With the `renv` project files we looked at before, you can have `renv` reproduce the same environment in a new project directory.
 
@@ -111,11 +110,11 @@ In order to make environments and package management _truly_ useful, we need a m
 
 
 
-# Managing packages and environments in RStudio Server
+## Managing packages and environments in RStudio Server
 
 The approach of using `renv` in RStudio is very similar to using `renv` with command-line R. For completeness, we will create another environment in RStudio Server. 
 
-## Choosing which version of R to use
+### Choosing which version of R to use
 
 Multiple R versions are available when requesting RStudio Server sessions on Open OnDemand. From the [Open OnDemand](https://atlas-ood.hpc.msstate.edu/) page, select "Interactive Apps" > "RStudio Server". You will be taken to a page with multiple input fields to configure your RStudio Server session and one of those is "R Version". 
 
@@ -131,7 +130,7 @@ Multiple R versions are available when requesting RStudio Server sessions on Ope
 1. When you are in RStudio Server, install `renv`. Note, we only need to install `renv` because we chose a different version of R. 
 
 
-## Creating and managing R environments with the `renv` package
+### Creating and managing R environments with the `renv` package
 
 Since `renv` is project specific, you need to change the working directory to the project directory in which you would like to use `renv`. Once in the project directory, you can run `renv::init(settings = list(use.cache = FALSE, ppm.enabled = FALSE))` to start managing the project environment with `renv`. 
 
@@ -163,7 +162,7 @@ string <- x$matches$Title[correct_length] %>%
 }
 ```
 
-# If you don't want to use `renv`
+## If you don't want to use `renv`
 
 `renv` is the main solution if you want a handful of commands to manage a project's packages with a project-specific library and also document that process to increase reproducibility. If, for any reason, you are not a fan of `renv`, there are some commands and R-related files that can help you at least manage the locations of package installations. 
 

@@ -17,9 +17,9 @@
 
 {% if include.filter == "true" %}
 
-{% assign tags = allevents | map: 'tags' | uniq %}
-{% assign types = allevents | map: 'type' | uniq %}
-{% assign providers = allevents | map: 'provider' | uniq %}
+{% assign tags = allevents | map: 'tags' | uniq | compact | sort %}
+{% assign types = allevents | map: 'type' | uniq | compact | sort %}
+{% assign providers = allevents | map: 'provider' | uniq | compact | sort %}
 {% assign sort_list = true %}
 
 {% endif %}
@@ -58,7 +58,7 @@
 
 {% assign sortings = page.sorted %}
 
-<ul class="usa-list usa-list--unstyled">
+<ul class="usa-list usa-list--unstyled margin-bottom-105 padding-bottom-105">
 
       {% if flow == 'normal' %}
         {% for _events in allevents %}
@@ -71,6 +71,6 @@
       {% endif %}
 
   </ul>
-  <br>
+  
   {% endif %}
   {% endif %}

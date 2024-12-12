@@ -29,8 +29,7 @@
 {%- assign materials = session.materials | default: parent.materials %}
 {%- assign details = session.details | default: parent.details %}
 
-{%- capture stags %}{% if include.session['tags'] %}{{ session.tags }} {% endif %}{{ parent.tags }}{% endcapture %}
-{% assign tags = stags | split: ' ' %}
+{% assign tags = session.tags | concat: parent.tags %}
 
 {% if end_date %}
 {% assign end_date = end_date | date: '%s' | plus: 0 %}
@@ -63,6 +62,6 @@
 {% endif %}
 
 
-{% include collect/process/hashed date=date date-start=date-start duration=duration time=time end_date=end_date caldate=cal_date multiday=multiday url=url title=title section=section parenttitle=parenttitle excerpt=excerpt type=type provider=provider registration=registration sessions=sessions prerequisites=prerequisites duration=duration system=system location=location reason=reason assets=assets link=link latest=latest instructor=instructor presenter=presenter lead=lead location=location materials=materials details=details %}
+{% include collect/process/hashed date=date date-start=date-start duration=duration time=time end_date=end_date caldate=cal_date multiday=multiday url=url title=title section=section parenttitle=parenttitle excerpt=excerpt type=type provider=provider registration=registration sessions=sessions prerequisites=prerequisites duration=duration system=system location=location reason=reason assets=assets link=link latest=latest instructor=instructor presenter=presenter lead=lead location=location materials=materials details=details tags=tags %}
 
 {% assign event = hashed %}

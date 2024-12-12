@@ -1,16 +1,5 @@
-﻿Opportunity,Location,Keywords,url
-"Computational Tools & Pipeline Development for Metagenomic Data Analysis Fellowship, USDA-ARS-2022-0027","Ames, IA","Metagenomics, Bioinformatics",https://www.zintellect.com/Opportunity/Details/USDA-ARS-2022-0027
-"High Performance Computing and Prediction of Geospatial Dynamics Fellowship, USDA-ARS-2022-0029",TBD,"Geospatial, Times Series Data",https://www.zintellect.com/Opportunity/Details/USDA-ARS-2022-0029
-"USDA-ARS Remote Sensing of Agro-ecosystems & High-performance Computing Fellowship, USDA-ARS-2022-0031","Beltsville, MD","Geosptial, Remote Sensing, ML",https://www.zintellect.com/Opportunity/Details/USDA-ARS-2022-0031
-"USDA-ARS High Performance Computing Fellowship, USDA-ARS-2022-0071",TBD,"Agro-ecosystem dynamics, Natural Language Processing, Remote Sensing, Geospatial",https://www.zintellect.com/Opportunity/Details/USDA-ARS-2022-0071
-"USDA-ARS SCINet AI Machine Learning in Maize Genomics Postdoctoral Fellowship, USDA-ARS-2022-0158","Dubois, ID","Image Analysis, AI, ML",https://www.zintellect.com/Opportunity/Details/USDA-ARS-2022-0158
-"USDA-ARS SCINet Postdoctoral Fellowship in Machine Learning for Influenza A Virus Pandemic Prevention, USDA-ARS-2022-0162","Ames, IA","Genomics, ML",https://www.zintellect.com/Opportunity/Details/USDA-ARS-2022-0162
-"USDA-ARS SCINet Fellowship for Developing AI and ML Techniques to Advance Understanding of How Dietary Patterns Influence Human Health, USDA-ARS-2022-0369","Beltsville, MD","Human Health, Dietary Patterns, AI, ML",https://www.zintellect.com/Opportunity/Details/USDA-ARS-2022-0369
-"USDA-ARS SCINet Postdoctoral Fellowship in AI Methods for Predicting Protein Function and Disease Susceptibility in Crops, USDA-ARS-2022-0436","Stuttgart, AR","Genomics, AI",https://www.zintellect.com/Opportunity/Details/USDA-ARS-2022-0436
-"USDA-ARS SCINet/AI-COE postdoctoral fellowship in AI/Machining Learning for Animal Behavior Research","Boise, ID","Geospatial, ML, AI",https://www.zintellect.com/Opportunity/Details/USDA-ARS-SCINET-2023-0202
-"USDA-ARS SCINet/AI-COE postdoctoral fellowship in Using AI to address large, complex datasets in microbiome-based integrated pest management","Colombia, MO","Microbiome Science, Genetics, AI, ML",https://www.zintellect.com/Opportunity/Details/USDA-ARS-SCINet-2023-0223
-"USDA-ARS SCINet/AI-COE postdoctoral fellowship in Machine Learning to Distinguish Pest from Non-Pest Weevils","College Station, TX","Genomics, Pest Management, Genomics",https://www.zintellect.com/Opportunity/Details/USDA-ARS-SCINet-2023-0224
-"USDA-ARS SCINet/AI-COE postdoctoral fellowship in Food Security Agency in Alaska","Tifton, GA","Geospatial, Remote Sensing, ML",https://www.zintellect.com/Opportunity/Details/USDA-ARS-SCINet-2023-0228
-"USDA-ARS SCINet/AI-COE postdoctoral fellowship in bridging local measurements to management scales using machine learning","Beltsville, MD","Soil Moisture, Hydrology, AI, Geospatial",https://www.zintellect.com/Opportunity/Details/USDA-ARS-SCINet-2023-0229
-"USDA-ARS SCINet/AI-COE postdoctoral fellowship in using AI to develop a cross kingdom gene editing tool kit","Colombia, MO","Genomics, AI, ML",https://www.zintellect.com/Opportunity/Details/USDA-ARS-SCINet-2023-0245
-"USDA-ARS SCINet/AI-COE postdoctoral fellowship in taxon-specific model training to improve accuracy of variant calling in non-model systems","Hilo, HI","Genomics, AI, ML",https://www.zintellect.com/Opportunity/Details/USDA-ARS-SCINet-2023-0260
+Opportunity,Location,Deadline,url
+USDA-ARS Postdoctoral Fellowship in Fish Functional Genomics and Epigenetics,"Auburn, AL",2025-01-03 03:00 PM ET,https://www.zintellect.com/Opportunity/Details/USDA-ARS-SCINet-2024-0285
+USDA-ARS SCINet/AI-COE Postdoctoral Fellowship in Comparative Chemosensory Genomics of Stored Product Insects,"Manhattan, KS",2025-07-31 03:00 PM ET,https://www.zintellect.com/Opportunity/Details/USDA-ARS-SCINet-2024-0299
+USDA-ARS SCINet/AI-COE Postdoctoral Fellowship to Modernize Hydrologic Models for High-Performance Computing,"Temple, Texas",2025-10-25 03:00 PM ET,https://www.zintellect.com/Opportunity/Details/USDA-ARS-SCINet-2024-0307
+USDA-ARS SCINet/AI-COE Postdoctoral Fellowship in Fungal Secondary Metabolomes,"Ithaca, New York",2024-10-25 03:00 PM ET,https://www.zintellect.com/Opportunity/Details/USDA-ARS-SCINet-2024-0308

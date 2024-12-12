@@ -19,6 +19,19 @@ excerpt: To recieve an invitation to upcoming webinars, fill out the [Translatio
 archive-label: Webinar Recordings
 
 sessions:
+  - session: 
+    title: "Comparative analysis of adaptive immune systems in agriculturally important species"
+    date: 2024-12-12
+    time: 11am-12pm ET
+    presenter: Dr. Yana Safonova
+  - session:
+    title: "Harnessing Transposons for Precise and Efficient Genome Editing in Plants"
+    date: 2024-11-14
+    time: 11am-12pm ET
+    presenter: Dr. Peng Liu
+    materials: 
+      - text: webinar recording
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/george_liu_usda_gov/Documents/publication/Hu%20Zhenbin/TOmics%20WG/20241114Recording/GMT20241114-160115_Recording_1920x1200.mp4?csf=1&web=1
   - session:
     title: "The genomic and metabolic making of yeast ecological diversity"
     date: 2024-10-10 11:00:00

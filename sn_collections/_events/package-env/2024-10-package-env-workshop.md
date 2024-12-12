@@ -9,6 +9,9 @@ categories: [2024 10 SPEMW]
 tags: software package-management
 layout_type: workshop
 provider: SCINet
+
+cal-titles: show
+
 sessions: 
   - session:
     time: 1:00 PM - 4:30 PM ET
