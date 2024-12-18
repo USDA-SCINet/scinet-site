@@ -24,6 +24,9 @@ sessions:
     date: 2024-12-12
     time: 11am-12pm ET
     presenter: Dr. Yana Safonova
+    materials:
+      - text: webinar recording
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/george_liu_usda_gov/Documents/publication/Hu%20Zhenbin/TOmics%20WG/20241212Recording/GMT20241212-163058_Recording_2240x1260.mp4?csf=1&web=1
   - session:
     title: "Harnessing Transposons for Precise and Efficient Genome Editing in Plants"
     date: 2024-11-14
