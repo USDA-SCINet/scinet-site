@@ -9,6 +9,12 @@ collecting:
   yml: news
 
 news:
+  - title: "Simplified Globus login"
+    date: 2024-12-11
+    excerpt: "SCINet users can now log in to Globus using their SCINet accounts like any other web-based SCINet access (previously, logging in to Globus required ORCiD credentials). When logging into Globus.org, you can select 'SCINet - ARS/USDA' in the existing organizational login dropdown menu."
+  - title: "Expanded memory in A100 GPU nodes"
+    date: 2024-10-30
+    excerpt: "All five A100 GPU nodes on Atlas have had their available memory doubled from 1TB to 2TB. This improvement allows for more efficient use of the GPUs and helps support larger input datasets."
   - title: "Atlas OOD terminal"
     date: 2024-07-02
     excerpt: "When in [Open OnDemand on Atlas](https://atlas-ood.hpc.msstate.edu/), the terminal created by clicking on *Clusters* > *Atlas Shell Access* no longer prompts users to re-authenticate."
