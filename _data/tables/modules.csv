@@ -1,404 +1,404 @@
-Application,Version(s)
-TBB,"""2021.7.0"""
-abricate,"""1.0.1"""
-abyss,"""2.3.5"""
-admixture,"""1.3.0"""
-allmaps,"""1.1.11--py36h4f025d9_1"""
-alphafold,"""2.2.0, 2.3.2"""
-alphaimpute,"""1.9.8"""
-alphapulldown,"""1.0.4"""
-amber,"""22-gpu, 22"""
-amptk,"""1.5.5--pyh7cba7a3_0, 1.6.0--pyhdfd78af_0"""
-annif,"""0.60.0"""
-antismash,"""6.1.1, 7.0.0, 7.1.0"""
-antlr,"""2.7.7-1"""
-anvio,"""6.2, 7.1, 8"""
-apptainer,"""1.3.1"""
-arcs,"""1.2.5"""
-argtable2,"""2.13"""
-armadillo,"""11.4.3"""
-arrowgrid,"""1.0.0"""
-augustus,"""3.5.0"""
-autoconf,"""2.71"""
-bamtools,"""2.5.2"""
-barrnap,"""0.9"""
-bayestraits,"""4.0.0"""
-bazel,"""6.0.0"""
-bbtools,"""39.01"""
-bcftools,"""1.16, 1.2"""
-bcl2fastq,"""2.20.0.422"""
-beagle-geno,"""5.4"""
-beagle,"""4.0.0"""
-beast,"""1.8.4, 1.10.4"""
-beast2,"""2.7.3"""
-bedops,"""2.4.41"""
-bedtools,"""2.30.0"""
-beopest,"""14.02"""
-bigscape,"""latest, 1.1.9"""
-binutils,"""2.4"""
-bio_polyploid_tools,"""1.1.2"""
-bismark,"""0.24.0"""
-blasr,"""47.3"""
-blast+,"""2.13.0, 2.15.0"""
-blobtools,"""4.3.6"""
-blupf90,"""20190531, 20230629, 20240722"""
-boost,"""1.81.0, 1.85.0"""
-bowtie,"""1.3.1"""
-bowtie2,"""2.5.1, 2.5.2"""
-bracken,"""2.8"""
-braker,"""2.1.6, 3.0.3"""
-breakdancer,"""1.4.5"""
-btllib,"""1.4.10"""
-busco5,"""5.4.5, 5.7.1"""
-bwa,"""0.7.17"""
-bwa_mem2,"""2.2.1_7aa5ff6"""
-bzip2,"""1.0.6"""
-cactus,"""2.4.1, 2.6.11, 2.7.2"""
-canu,"""2.2"""
-cap3,"""3"""
-card,"""3.2.6"""
-cd-hit,"""4.8.1"""
-cdna_cupcake,"""29.0.0--py310h79ef01b_0"""
-censor,"""4.2.29"""
-centrifuge,"""1.0.4"""
-checkm,"""1.2.2"""
-checkm2,"""1.0.1"""
-circos,"""0.69.9"""
-cisa,"""2014.03.04"""
-clark,"""1.2.6.1"""
-clustalomega,"""1.2.4"""
-cmake,"""3.25.2"""
-cnvnator,"""0.4.1"""
-code_server,"""4.9.1"""
-combine_gafs,"""1.0.0, 1.1"""
-cometgazer,"""1"""
-concoct,"""1.1.0--py38h7be5676_2, 1.1.0"""
-consensuscore,"""1.1.1"""
-cpat,"""3.0.4"""
-crl_scripts,"""1"""
-crystal,"""1.0.1"""
-cuda,"""12.0.0"""
-cufflinks,"""2.2.1--py36_2"""
-curl,"""7.87.0"""
-cutadapt,"""4"""
-daligner,"""2022.12.15"""
-damapper,"""2021.03.30"""
-damasker,"""2021.03.30"""
-dascrubber,"""2021.03.30"""
-dastool,"""1.1.6"""
-datamash,"""1.8"""
-dazz_db,"""2022.12.15, 2023.03.25"""
-delly,"""1.2.6, 1.3.1"""
-dentist,"""4.0.0"""
-diamond,"""2.1.2, 2.1.8"""
-discovar,"""52488"""
-dna_3d,"""201008"""
-dorado,"""0.4.2, 0.8.3"""
-eautils,"""1.04.807"""
-edirect,"""17.3.20220713"""
-effectorp2,"""2.0.1"""
-effectorp3,"""3"""
-egapx,"""0.1.0-alpha, 0.1.2-alpha, 0.2-alpha, 0.3.0-alpha, 0.3.1-alpha"""
-eig,"""8.0.0"""
-eigen,"""3.4.0"""
-emboss,"""6.6.0"""
-esmfold,"""2.0.0"""
-evm,"""2.0.0"""
-exonerate,"""2.4.0"""
-express,"""1.5.3"""
-fargene,"""0.1--py27h21c881e_4, 0.1"""
-fasta,"""36.3.8i"""
-fastaindex,"""0.11c"""
-fastme,"""2.1.6.4"""
-fastqc,"""0.11.9, 0.12.1"""
-faststructure,"""1.0--py27h6b1b274_5"""
-fasttreemp,"""2.1.11"""
-fastx,"""0.0.14"""
-fcs-genome,"""45140"""
-flexbar,"""3.5.0"""
-flye,"""2.9.1, 2.9.4"""
-fraggenescan,"""1.31"""
-fragpipe,"""21.1"""
-frc_align,"""5b3f53e--boost1.64_0"""
-freebayes,"""1.3.6"""
-funannotate,"""1.8.13, 1.8.16"""
-gapcloser,"""1.12"""
-garli,"""2.1-3-deb_cv1"""
-gatk,"""4.0.8.1, 4.3.0.0, 4.4.0.0"""
-gcc,"""12.2.0"""
-gdal,"""3.6.2, 3.6.4, 3.10.0"""
-gemma,"""0.98.5"""
-geneious,"""2024.0.5"""
-genemark,"""4.71"""
-genemarkS,"""4.3"""
-genomestrip,"""2.00.1833"""
-genometools,"""1.6.2"""
-genomicconsensus,"""2.3.3"""
-get_homologues,"""3.5.4"""
-git,"""2.39.2"""
-glimmer,"""3.02"""
-glimmer3,"""3.02"""
-glimpse,"""2.0.1"""
-glpk,"""4.6"""
-gmap_gsnap,"""2023.02.17"""
-gmp,"""6.2.1"""
-gnuplot,"""5.4.6, 5.4.8"""
-go,"""1.4.3, 1.19.5, 1.20.6"""
-goanna,"""2.3"""
-google_cloud_sdk,"""308.0.0, 463.0.0"""
-groopm,"""1.0.0"""
-gsalign,"""1.0.22"""
-gsl,"""2.7"""
-gtdbtk,"""2.2.3, 2.2.4, 2.2.6, 2.3.2, 2.4.0"""
-guppy-gpu,"""6.0.6, 6.5.7"""
-h5py,"""3.8.0"""
-hapcut2,"""1.3.1"""
-haplomerger2,"""20180603"""
-hawk,"""1.6.0, 1.7.0-container, 1.7.0"""
-hdf5,"""1.14.0"""
-hgtector,"""2.0b3"""
-hifiasm,"""0.18.9, 0.19.8, 0.23.0"""
-hisat2,"""2.2.1"""
-hmmer3,"""3.3.2"""
-htseq,"""2.0.2"""
-htslib,"""1.17"""
-htstream,"""1.3.3, 45225"""
-humann,"""3.6, 3.8, 3.9_conda, 3.9, 4.0.0a1"""
-idba,"""1.1.3"""
-igvtools,"""2.16.0"""
-infernal,"""1.1.4"""
-instagraal,"""0.1.6"""
-intel,"""oneapi-2023.1"""
-interproscan,"""5.60-92.0, 5.64-96.0, 5.66-98.0, 5.67-99.0, 5.68-100.0, 5.69-101.0, 5.71-102.0"""
-iq_tree,"""2.0.6, 2.2.0"""
-isescan,"""1.7.2.3--h031d066_2"""
-itagger,"""2.3"""
-itsx,"""1.1.3"""
-jasper,"""2.0.33, 4.2.4"""
-java,"""1.8.0_361, 1.8.0, 11, 11.0.2, 15, 16.0.2, 17"""
-jellyfish,"""1.1.11"""
-jellyfish2,"""2.2.9"""
-jemalloc,"""5.3.0"""
-juicer,"""1.6"""
-julia,"""1.7.0, 1.9.3"""
-jupyterlab,"""4.0.4"""
-kaiju,"""1.9.2"""
-kallisto,"""0.48.0"""
-kentutils,"""302.1.0, 45210"""
-kobas,"""3.0.3_3"""
-kraken,"""1.1.1"""
-kraken2,"""2.1.2, 2.1.3"""
-krona,"""2.8.1"""
-ksnp,"""4.1"""
-ksnp3,"""4"""
-l_rna_scaffolder,"""10302015"""
-lammps,"""2Aug2023_update3"""
-lammps_gpu,"""2Aug2023_update3"""
-libdb,"""5.3.28"""
-libevent,"""2.1.12"""
-libexpat,"""2.5.0"""
-libgd,"""2.3.3"""
-libgsl,"""2.7.1"""
-libgtextutils,"""0.7"""
-libmaus2,"""2.0.813"""
-libpng,"""1.6.39"""
-libtiff,"""4.5.0"""
-libzbar,"""0.23.90"""
-lpsolve,"""5.5.2.11"""
-ltr_retriever,"""2.9.5"""
-lumpy,"""0.3.1"""
-lyve_set,"""1.1.4f"""
-mach_admix,"""2.0.203"""
-mafft,"""7.505"""
-mariadb,"""11.5"""
-mariadb_connector_c,"""3.3.4"""
-mash,"""2.3"""
-masurca,"""4.1.0"""
-matlab_runtime,"""R2022b"""
-mauve,"""42048"""
-maxbin,"""2.2.7"""
-mcscanx,"""1.0.0"""
-mdust,"""1"""
-mecat2,"""20200228"""
-megahit,"""1.2.9"""
-megan,"""6_25_3"""
-merfin,"""1.1"""
-merqury,"""1.3"""
-meryl,"""1.4"""
-meson,"""1.0.0"""
-metabat,"""2.15"""
-metabgc,"""2.0.0"""
-metaphlan,"""4.0.6, 4.1.0, 4.1.1"""
-metavelvet,"""1.2.02"""
-minced,"""0.4.2"""
-miniasm,"""0.3"""
-miniconda,"""24.7.1-2"""
-minimap2,"""2.24"""
-minpath,"""1.4"""
-mira,"""4.9.6"""
-miranda,"""1.9, 3.3a--h031d066_6"""
-mirdeep2,"""0.1.3"""
-mitehunter,"""40848"""
-mocat2,"""2.0.0"""
-mothur,"""1.43.0, 1.48.0"""
-mpc,"""1.3.1"""
-mpfr,"""4.2.0"""
-mpich,"""3.4, 4.1.2"""
-mrbayes,"""3.2.7"""
-mstmap,"""1"""
-mugsy,"""1.2.3"""
-multiqc,"""1.15"""
-mummer,"""4.0.0rc1"""
-muscle,"""5.1.0"""
-namd,"""3.0b6-CUDA, 3.0b6"""
-nanopolish,"""0.14.0"""
-necat,"""20200803"""
-nek5000,"""19"""
-netcdf-intel,"""4.9.1"""
-netcdf,"""4.9.1"""
-netmhccons,"""1.1a"""
-nextflow,"""22.04.3, 22.10.6, 23.04.0, 23.04.3, 23.10.1, 24.04.2, 24.10.1"""
-ninja,"""1.11.1"""
-ninja_phylo,"""1.2.2"""
-node,"""20.11.0"""
-nseg,"""1.0.1"""
-oases,"""0.2.09"""
-omegafold,"""1.1.0"""
-openblas,"""0.3.21"""
-opendronemap,"""3.3.0"""
-openmpi,"""4.1.4, 4.1.5"""
-orthofinder,"""2.5.5"""
-pangloss,"""0.9.1"""
-papi,"""7.0.0"""
-parallel,"""20230222"""
-parsnp,"""1.7.4, 2.0.5"""
-pasa,"""2.5.2"""
-paup,"""4a168"""
-pb-assembly,"""0.0.8"""
-pbsuite,"""15.8.24"""
-pbzip2,"""1.1.13"""
-pepper,"""r0.8"""
-perl,"""5.36.0"""
-pgap,"""2022-12-13.build6494, 2023-05-17.build6771, 2023-10-03.build7061"""
-phylip,"""3.697"""
-phyloflash,"""3.4.2"""
-phylosift,"""1.0.1"""
-phylosnp,"""0.0.1"""
-phyluce,"""1.7.2, 1.7.3"""
-phyml,"""3.3.20220408"""
-phyx,"""1.1"""
-picard,"""2.26.2, 3.0.0"""
-picrust2,"""2.5.1"""
-piggy,"""1.5"""
-pigz,"""2.7"""
-pilon,"""1.24"""
-pindel,"""0.2.5b9--h84372a0_10"""
-platanus,"""2.0.2"""
-plink,"""1.9, 2"""
-porechop,"""0.2.4"""
-porechop_abi,"""0.5.0"""
-postgresql,"""15.2"""
-pplacer,"""v1.1.alpha19"""
-primer3,"""2.6.1"""
-prodigalorffinder,"""2.6.3"""
-proj,"""9.1.1"""
-prokka,"""1.14.6"""
-proot,"""5.3.1"""
-provean,"""1.1.5"""
-pullseq,"""1.0.2--hbd632db_7"""
-purge_dups,"""1.2.6"""
-purge_haplotigs,"""1.1.2"""
-pyscaf,"""0.12a4"""
-python_3,"""3.9.18, 3.11.1"""
-qiime2,"""2023.2, 2023.7"""
-qiime2_amplicon,"""2024.2"""
-qtlcart,"""1.17f"""
-qualimap,"""2.3"""
-quast,"""5.2.0"""
-quickmerge,"""0.3"""
-r,"""4.2.2, 4.2.3, 4.3.0, 4.3.1, 4.4.1"""
-racon,"""1.5.0"""
-ragtag,"""2.1.0"""
-randfold,"""2.0.1"""
-raxml,"""8.2.12"""
-recon,"""1.08"""
-repeatmasker,"""4.1.0, 4.1.3-p1, 4.1.5"""
-repeatmodeler,"""1.0.8, 2.0.4, 2.0.5"""
-repeatscout,"""1.0.6"""
-revbayes,"""1.3.1"""
-rgi,"""5.1.0, 6.0.2"""
-rmblast,"""2.11.0, 2.14.0"""
-roary,"""3.13.0--pl526h516909a_0"""
-rsem,"""1.3.3"""
-ruby,"""3.2.0, 3.2.1"""
-run_dbcan,"""2.0.11, 4.1.1"""
-rust,"""1.66.1, 1.75.0"""
-salmon,"""1.10.0"""
-salsa,"""2.3"""
-samtools,"""1.16.1, 1.17"""
-sbt,"""0.13.18"""
-seqkit,"""2.4.0"""
-seqtk,"""1.3"""
-shapeit5,"""5.1.1"""
-sickle,"""1.33"""
-singularityCE,"""1.3.1"""
-smartdenovo,"""1.0.0"""
-smrtlink,"""10.2.1.143962, 11.1.0.166339, 12.0.0.177059, 13.0.0.207600"""
-snap_ucdavis,"""2024.03.14"""
-sniffles,"""2.0.7"""
-snoscan,"""1"""
-snpeff,"""5.1d"""
-snphylo,"""20180901"""
-soapdenovo2,"""2.04"""
-sortmerna,"""4.3.6"""
-spades,"""3.15.5"""
-sparsehash,"""2.0.4"""
-sqlite3,"""3.40.1"""
-squashfuse,"""0.5.2"""
-squid,"""1.9g"""
-sratoolkit,"""3.1.1"""
-stacks,"""2.64"""
-star,"""2.7.10b"""
-stringtie,"""2.2.0"""
-structure,"""2.3.4"""
-subread,"""2.0.4"""
-superfocus,"""1.6"""
-supernova,"""2.1.1"""
-svdetect,"""0.8b"""
-swat,"""670"""
-swig,"""4.1.1"""
-symap,"""5.3.3"""
-tassel3,"""3.0.174"""
-tassel5,"""5.2.89--hdfd78af_0"""
-tatajuba,"""1.0.4"""
-tcltk,"""8.6.13"""
-tcoffee,"""13.45.0.4846264"""
-tetools,"""1.7"""
-texinfo,"""7"""
-tmux,"""3.3a"""
-tophat,"""2.0.13--py27_2"""
-transdecoder,"""5.7.0, 5.7.1"""
-trf,"""4.09"""
-trimgalore,"""0.6.10"""
-trimmomatic,"""0.38, 0.39"""
-trinityrnaseq,"""2.15.1"""
-trinotate,"""3.2.2"""
-trnascanse,"""2.0.12"""
-turbomole-huge,"""6.3.1-mpi, 6.3.1-smp, 6.3.1"""
-turbomole,"""6.3.1-mpi, 6.3.1-smp, 6.3.1, 7.6.0-mpi, 7.6.0-smp, 7.6.0"""
-udunits,"""2.2.28"""
-unicycler,"""0.5.0"""
-usearch,"""11.0.667"""
-vasp,"""5.4.4"""
-vaspvtst,"""5.4.4"""
-vcftools,"""0.1.16"""
-velvet,"""1.2.10"""
-vicuna,"""1.0.0"""
-viennarna,"""2.5.1"""
-virtualenv,"""virtualenv"""
-vsearch,"""2.22.1"""
-wgs_assembler,"""8.3rc2"""
-xz,"""5.4.1"""
-yaggo,"""1.5.10"""
-zlib,"""1.2.13"""
-zorro,"""1.0.0"""
+﻿Application,Version(s)
+TBB,2021.7.0
+abricate,1.0.1
+abyss,2.3.5
+admixture,1.3.0
+allmaps,1.1.11--py36h4f025d9_1
+alphafold,"2.2.0, 2.3.2"
+alphaimpute,1.9.8
+alphapulldown,1.0.4
+amber,"22-gpu, 22"
+amptk,"1.5.5--pyh7cba7a3_0, 1.6.0--pyhdfd78af_0"
+annif,0.60.0
+antismash,"6.1.1, 7.0.0, 7.1.0"
+antlr,2.7.7-1
+anvio,"6.2, 7.1, 8"
+apptainer,1.3.1
+arcs,1.2.5
+argtable2,2.13
+armadillo,11.4.3
+arrowgrid,1.0.0
+augustus,3.5.0
+autoconf,2.71
+bamtools,2.5.2
+barrnap,0.9
+bayestraits,4.0.0
+bazel,6.0.0
+bbtools,39.01
+bcftools,"1.16, 1.2"
+bcl2fastq,2.20.0.422
+beagle-geno,5.4
+beagle,4.0.0
+beast,"1.8.4, 1.10.4"
+beast2,2.7.3
+bedops,2.4.41
+bedtools,2.30.0
+beopest,14.02
+bigscape,"latest, 1.1.9"
+binutils,2.4
+bio_polyploid_tools,1.1.2
+bismark,0.24.0
+blasr,47.3
+blast+,"2.13.0, 2.15.0"
+blobtools,4.3.6
+blupf90,"20190531, 20230629, 20240722"
+boost,"1.81.0, 1.85.0"
+bowtie,1.3.1
+bowtie2,"2.5.1, 2.5.2"
+bracken,2.8
+braker,"2.1.6, 3.0.3"
+breakdancer,1.4.5
+btllib,1.4.10
+busco5,"5.4.5, 5.7.1"
+bwa,0.7.17
+bwa_mem2,2.2.1_7aa5ff6
+bzip2,1.0.6
+cactus,"2.4.1, 2.6.11, 2.7.2"
+canu,2.2
+cap3,3
+card,3.2.6
+cd-hit,4.8.1
+cdna_cupcake,29.0.0--py310h79ef01b_0
+censor,4.2.29
+centrifuge,1.0.4
+checkm,1.2.2
+checkm2,1.0.1
+circos,0.69.9
+cisa,2014.03.04
+clark,1.2.6.1
+clustalomega,1.2.4
+cmake,3.25.2
+cnvnator,0.4.1
+code_server,4.9.1
+combine_gafs,"1.0.0, 1.1"
+cometgazer,1
+concoct,"1.1.0--py38h7be5676_2, 1.1.0"
+consensuscore,1.1.1
+cpat,3.0.4
+crl_scripts,1
+crystal,1.0.1
+cuda,12.0.0
+cufflinks,2.2.1--py36_2
+curl,7.87.0
+cutadapt,4
+daligner,2022.12.15
+damapper,2021.03.30
+damasker,2021.03.30
+dascrubber,2021.03.30
+dastool,1.1.6
+datamash,1.8
+dazz_db,"2022.12.15, 2023.03.25"
+delly,"1.2.6, 1.3.1"
+dentist,4.0.0
+diamond,"2.1.2, 2.1.8"
+discovar,52488
+dna_3d,201008
+dorado,"0.4.2, 0.8.3"
+eautils,1.04.807
+edirect,17.3.20220713
+effectorp2,2.0.1
+effectorp3,3
+egapx,"0.1.0-alpha, 0.1.2-alpha, 0.2-alpha, 0.3.0-alpha, 0.3.1-alpha"
+eig,8.0.0
+eigen,3.4.0
+emboss,6.6.0
+esmfold,2.0.0
+evm,2.0.0
+exonerate,2.4.0
+express,1.5.3
+fargene,"0.1--py27h21c881e_4, 0.1"
+fasta,36.3.8i
+fastaindex,0.11c
+fastme,2.1.6.4
+fastqc,"0.11.9, 0.12.1"
+faststructure,1.0--py27h6b1b274_5
+fasttreemp,2.1.11
+fastx,0.0.14
+fcs-genome,45140
+flexbar,3.5.0
+flye,"2.9.1, 2.9.4"
+fraggenescan,1.31
+fragpipe,21.1
+frc_align,5b3f53e--boost1.64_0
+freebayes,1.3.6
+funannotate,"1.8.13, 1.8.16"
+gapcloser,1.12
+garli,2.1-3-deb_cv1
+gatk,"4.0.8.1, 4.3.0.0, 4.4.0.0"
+gcc,12.2.0
+gdal,"3.6.2, 3.6.4, 3.10.0"
+gemma,0.98.5
+geneious,2024.0.5
+genemark,4.71
+genemarkS,4.3
+genomestrip,2.00.1833
+genometools,1.6.2
+genomicconsensus,2.3.3
+get_homologues,3.5.4
+git,2.39.2
+glimmer,3.02
+glimmer3,3.02
+glimpse,2.0.1
+glpk,4.6
+gmap_gsnap,2023.02.17
+gmp,6.2.1
+gnuplot,"5.4.6, 5.4.8"
+go,"1.4.3, 1.19.5, 1.20.6"
+goanna,2.3
+google_cloud_sdk,"308.0.0, 463.0.0"
+groopm,1.0.0
+gsalign,1.0.22
+gsl,2.7
+gtdbtk,"2.2.3, 2.2.4, 2.2.6, 2.3.2, 2.4.0"
+guppy-gpu,"6.0.6, 6.5.7"
+h5py,3.8.0
+hapcut2,1.3.1
+haplomerger2,20180603
+hawk,"1.6.0, 1.7.0-container, 1.7.0"
+hdf5,1.14.0
+hgtector,2.0b3
+hifiasm,"0.18.9, 0.19.8, 0.23.0"
+hisat2,2.2.1
+hmmer3,3.3.2
+htseq,2.0.2
+htslib,1.17
+htstream,"1.3.3, 45225"
+humann,"3.6, 3.8, 3.9_conda, 3.9, 4.0.0a1"
+idba,1.1.3
+igvtools,2.16.0
+infernal,1.1.4
+instagraal,0.1.6
+intel,oneapi-2023.1
+interproscan,"5.60-92.0, 5.64-96.0, 5.66-98.0, 5.67-99.0, 5.68-100.0, 5.69-101.0, 5.71-102.0"
+iq_tree,"2.0.6, 2.2.0"
+isescan,1.7.2.3--h031d066_2
+itagger,2.3
+itsx,1.1.3
+jasper,"2.0.33, 4.2.4"
+java,"1.8.0_361, 1.8.0, 11, 11.0.2, 15, 16.0.2, 17"
+jellyfish,1.1.11
+jellyfish2,2.2.9
+jemalloc,5.3.0
+juicer,1.6
+julia,"1.7.0, 1.9.3"
+jupyterlab,4.0.4
+kaiju,1.9.2
+kallisto,0.48.0
+kentutils,"302.1.0, 45210"
+kobas,3.0.3_3
+kraken,1.1.1
+kraken2,"2.1.2, 2.1.3"
+krona,2.8.1
+ksnp,4.1
+ksnp3,4
+l_rna_scaffolder,10302015
+lammps,2Aug2023_update3
+lammps_gpu,2Aug2023_update3
+libdb,5.3.28
+libevent,2.1.12
+libexpat,2.5.0
+libgd,2.3.3
+libgsl,2.7.1
+libgtextutils,0.7
+libmaus2,2.0.813
+libpng,1.6.39
+libtiff,4.5.0
+libzbar,0.23.90
+lpsolve,5.5.2.11
+ltr_retriever,2.9.5
+lumpy,0.3.1
+lyve_set,1.1.4f
+mach_admix,2.0.203
+mafft,7.505
+mariadb,11.5
+mariadb_connector_c,3.3.4
+mash,2.3
+masurca,4.1.0
+matlab_runtime,R2022b
+mauve,42048
+maxbin,2.2.7
+mcscanx,1.0.0
+mdust,1
+mecat2,20200228
+megahit,1.2.9
+megan,6_25_3
+merfin,1.1
+merqury,1.3
+meryl,1.4
+meson,1.0.0
+metabat,2.15
+metabgc,2.0.0
+metaphlan,"4.0.6, 4.1.0, 4.1.1"
+metavelvet,1.2.02
+minced,0.4.2
+miniasm,0.3
+miniconda,24.7.1-2
+minimap2,2.24
+minpath,1.4
+mira,4.9.6
+miranda,"1.9, 3.3a--h031d066_6"
+mirdeep2,0.1.3
+mitehunter,40848
+mocat2,2.0.0
+mothur,"1.43.0, 1.48.0"
+mpc,1.3.1
+mpfr,4.2.0
+mpich,"3.4, 4.1.2"
+mrbayes,3.2.7
+mstmap,1
+mugsy,1.2.3
+multiqc,1.15
+mummer,4.0.0rc1
+muscle,5.1.0
+namd,"3.0b6-CUDA, 3.0b6"
+nanopolish,0.14.0
+necat,20200803
+nek5000,19
+netcdf-intel,4.9.1
+netcdf,4.9.1
+netmhccons,1.1a
+nextflow,"22.04.3, 22.10.6, 23.04.0, 23.04.3, 23.10.1, 24.04.2, 24.10.1"
+ninja,1.11.1
+ninja_phylo,1.2.2
+node,20.11.0
+nseg,1.0.1
+oases,0.2.09
+omegafold,1.1.0
+openblas,0.3.21
+opendronemap,3.3.0
+openmpi,"4.1.4, 4.1.5"
+orthofinder,2.5.5
+pangloss,0.9.1
+papi,7.0.0
+parallel,20230222
+parsnp,"1.7.4, 2.0.5"
+pasa,2.5.2
+paup,4a168
+pb-assembly,0.0.8
+pbsuite,15.8.24
+pbzip2,1.1.13
+pepper,r0.8
+perl,5.36.0
+pgap,"2022-12-13.build6494, 2023-05-17.build6771, 2023-10-03.build7061"
+phylip,3.697
+phyloflash,3.4.2
+phylosift,1.0.1
+phylosnp,0.0.1
+phyluce,"1.7.2, 1.7.3"
+phyml,3.3.20220408
+phyx,1.1
+picard,"2.26.2, 3.0.0"
+picrust2,2.5.1
+piggy,1.5
+pigz,2.7
+pilon,1.24
+pindel,0.2.5b9--h84372a0_10
+platanus,2.0.2
+plink,"1.9, 2"
+porechop,0.2.4
+porechop_abi,0.5.0
+postgresql,15.2
+pplacer,v1.1.alpha19
+primer3,2.6.1
+prodigalorffinder,2.6.3
+proj,9.1.1
+prokka,1.14.6
+proot,5.3.1
+provean,1.1.5
+pullseq,1.0.2--hbd632db_7
+purge_dups,1.2.6
+purge_haplotigs,1.1.2
+pyscaf,0.12a4
+python_3,"3.9.18, 3.11.1"
+qiime2,"2023.2, 2023.7"
+qiime2_amplicon,2024.2
+qtlcart,1.17f
+qualimap,2.3
+quast,5.2.0
+quickmerge,0.3
+r,"4.2.2, 4.2.3, 4.3.0, 4.3.1, 4.4.1"
+racon,1.5.0
+ragtag,2.1.0
+randfold,2.0.1
+raxml,8.2.12
+recon,1.08
+repeatmasker,"4.1.0, 4.1.3-p1, 4.1.5"
+repeatmodeler,"1.0.8, 2.0.4, 2.0.5"
+repeatscout,1.0.6
+revbayes,1.3.1
+rgi,"5.1.0, 6.0.2"
+rmblast,"2.11.0, 2.14.0"
+roary,3.13.0--pl526h516909a_0
+rsem,1.3.3
+ruby,"3.2.0, 3.2.1"
+run_dbcan,"2.0.11, 4.1.1"
+rust,"1.66.1, 1.75.0"
+salmon,1.10.0
+salsa,2.3
+samtools,"1.16.1, 1.17"
+sbt,0.13.18
+seqkit,2.4.0
+seqtk,1.3
+shapeit5,5.1.1
+sickle,1.33
+singularityCE,1.3.1
+smartdenovo,1.0.0
+smrtlink,"10.2.1.143962, 11.1.0.166339, 12.0.0.177059, 13.0.0.207600"
+snap_ucdavis,2024.03.14
+sniffles,2.0.7
+snoscan,1
+snpeff,5.1d
+snphylo,20180901
+soapdenovo2,2.04
+sortmerna,4.3.6
+spades,3.15.5
+sparsehash,2.0.4
+sqlite3,3.40.1
+squashfuse,0.5.2
+squid,1.9g
+sratoolkit,3.1.1
+stacks,2.64
+star,2.7.10b
+stringtie,2.2.0
+structure,2.3.4
+subread,2.0.4
+superfocus,1.6
+supernova,2.1.1
+svdetect,0.8b
+swat,670
+swig,4.1.1
+symap,5.3.3
+tassel3,3.0.174
+tassel5,5.2.89--hdfd78af_0
+tatajuba,1.0.4
+tcltk,8.6.13
+tcoffee,13.45.0.4846264
+tetools,1.7
+texinfo,7
+tmux,3.3a
+tophat,2.0.13--py27_2
+transdecoder,"5.7.0, 5.7.1"
+trf,4.09
+trimgalore,0.6.10
+trimmomatic,"0.38, 0.39"
+trinityrnaseq,2.15.1
+trinotate,3.2.2
+trnascanse,2.0.12
+turbomole-huge,"6.3.1-mpi, 6.3.1-smp, 6.3.1"
+turbomole,"6.3.1-mpi, 6.3.1-smp, 6.3.1, 7.6.0-mpi, 7.6.0-smp, 7.6.0"
+udunits,2.2.28
+unicycler,0.5.0
+usearch,11.0.667
+vasp,5.4.4
+vaspvtst,5.4.4
+vcftools,0.1.16
+velvet,1.2.10
+vicuna,1.0.0
+viennarna,2.5.1
+virtualenv,virtualenv
+vsearch,2.22.1
+wgs_assembler,8.3rc2
+xz,5.4.1
+yaggo,1.5.10
+zlib,1.2.13
+zorro,1.0.0
