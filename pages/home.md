@@ -71,7 +71,7 @@ forum:
   url: https://forum.scinet.usda.gov
 
 support:
-  title: "Find out how SCINet can enable your Research"
+  title: "Find out how SCINet can enable your research"
   button: Visit the Support Page
   url: /support
   options:
@@ -95,7 +95,7 @@ support:
       text: "Answers to common questions asked about SCINet"
       image: help
       url: /support/faq
-    - title: Contact Us
+    - title: Need Help?
       text: "Find who you need to contact for specific issues or requests"
       image: mail
       url: /support/contact
