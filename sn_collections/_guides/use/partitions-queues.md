@@ -45,10 +45,8 @@ Name | Nodes | Logical Cores per Node | Maximum Simulation Time | Default Memory
 --- | --- |--- |--- |--- |---
 mem768-low | 3	| 80 | 2 hours	| 7900 MB | priority nodes with 768GB of memory
 mem-low	| 16 | 80,96 | 2 hours | 16000 MB | priority nodes with 1.5TB of memory
-gpu-low	| 1 | 72 | 2 hours | 3000 MB | priority GPU node
 brief-low | 92 | 72,96 | 2 hours | 3000 MB | all new nodes with 384GB of memory
-scavenger | 49 | 72,80 | 21 days | 3000 MB | non-GPU priority nodes; scavenger jobs can be killed at any moment
-scavenger-gpu | 1 | 72 | 21 days | 3000 MB | GPU priority node; jobs can be killed at any moment
+scavenger | 49 | 72,80 | 21 days | 3000 MB | priority nodes; scavenger jobs can be killed at any moment
 
 ## Priority partitions available only to those users who purchased nodes
 
@@ -57,7 +55,6 @@ Name | Nodes | Maximum Simulation Time | Default Memory per Core | Function
 priority | 49 | 2 weeks | 3000 MB | priority nodes with 384GB memory
 priority-mem | 16 | 2 weeks | 16000 MB | priority nodes with 1.5TB memory
 priority-mem768 | 3 | 2 weeks | 7900 MB | priority nodes with 768 GB memory
-priority-gpu | 1 | 2 weeks | 3000 MB | priority GPU node
 
 
 **At most 2000 cores and 6TB of memory can be used by all simultaneously running jobs per user** across all community and \*-low partitions. In addition, up to 800 cores and 3TB of memory can be used by jobs in scavenger* partitions. Any additional jobs will be queued but won't start. At times these limits can be lowered to prevent a small group of users overtaking the whole cluster. To check current limits for community/low partitions, issue: 
