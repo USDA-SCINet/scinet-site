@@ -18,6 +18,16 @@ archive-label: SCINet Corner Recordings
 
 sessions:
   - session:
+    title: Data transfer using Globus
+    date: 2025-02-27
+    time: 1-2 pm ET
+    excerpt: "Data transfer to, from, and among SCINet systems (Ceres, Atlas, and Juno) using Globus"
+  - session:
+    title: "Login nodes: What they are and how to use them"
+    date: 2025-01-23
+    time: 1-2 pm ET
+    excerpt: This presentation will cover the purpose and proper use of login nodes.
+  - session:
     title: HPC Software Module System and Placing Requests for Software
     date: 2024-12-12
     time: 1-2 pm ET
