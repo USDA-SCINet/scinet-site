@@ -5,7 +5,7 @@ date: 2024-11-20
 end_date: 2024-11-21
 description: Event - Workshop for AI and Machine Learning
 categories: [2024 AI User Forum] 
-tags: artificial-intelligence
+tags: Artificial-Intelligence
 layout_type: workshop
 cal-titles: show
 registration: 

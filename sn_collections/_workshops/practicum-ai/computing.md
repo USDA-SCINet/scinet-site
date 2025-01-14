@@ -5,7 +5,7 @@ excerpt: "In this course, you will learn about some of the tools recommended for
 type: training
 provider: University of Florida
 hideprovider: true
-tags: Artificial-Intelligence git
+tags: Artificial-Intelligence Git
 
 parent: 
   title: Practicum AI

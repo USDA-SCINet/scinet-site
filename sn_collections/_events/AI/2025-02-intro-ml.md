@@ -6,7 +6,7 @@ date: 2025-02-10
 end_date: 2025-02-14
 description: Event - Workshop for AI and Machine Learning
 #categories: [2025 Intro ML] 
-tags: artificial-intelligence machine-learning
+tags: Artificial-Intelligence Machine-Learning
 #layout_type: workshop
 #cal-titles: show
 registration: 

@@ -107,7 +107,8 @@
             <li class="usa-collection__meta-item usa-tag">{{ post.type }}</li>
             {% endif %}
             {% if post.tags %}
-            {% for tag in post.tags %}
+            {% assign posttags = post.tags | uniq %}
+            {% for tag in posttags %}
             <li class="usa-collection__meta-item usa-tag">{{ tag | replace: "-", " " }}</li>
             {% endfor %}
             {% endif %}
