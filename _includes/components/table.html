@@ -35,6 +35,7 @@
                     {% if forloop.first %}
                     <th scope="row"  data-label="{{ pair[0] }}" >
                         {% assign urlcheck = "false" %}
+                        {% unless table.excludeurl %}
                         {% for _pair in row %}
                             {% if _pair[0]=="url" %}
                             <a href="{{ _pair[1] }}">
@@ -43,6 +44,7 @@
                             </a>
                             {% endif %}
                         {% endfor %}
+                        {% endunless %}
                         {% if urlcheck=="false" %}{{ pair[1] }}{% endif %}
                     </th>  
                     {% else %}
