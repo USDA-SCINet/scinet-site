@@ -1,5 +1,5 @@
 ---
-title: An introduction to machine learning for science
+title: An Introduction to Machine Learning for Science
 type: workshop
 provider: SCINet
 date: 2025-02-10
