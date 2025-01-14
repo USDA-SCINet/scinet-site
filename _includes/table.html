@@ -2,6 +2,8 @@
 {% assign table=include.table %}
 {% elsif include.local %}
 {% assign table = page[include.local] %}
+{% else %}
+{% assign table = include %}
 {% endif %}
 
 {% if table.data %}
@@ -9,7 +11,11 @@
 {% else %}
 {% for _table in site.data.tables %}
 {% if _table[0] == table.source %}
+    {% if table.subset %}
+    {% assign tabledata = _table[1][table.subset] %}
+    {% else %}
     {% assign tabledata = _table[1] %}
+    {% endif %}
 {% endif %}
 {% endfor %}
 {% endif %}

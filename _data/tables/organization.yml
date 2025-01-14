@@ -1,0 +1,177 @@
+senior-leadership:
+  - Person: Dr. Jeff Silverstein
+    Position: Associate Administrator for National Programs
+  - Person: Dr. Brian Stucky
+    Position: Acting Chief Scientific Information Officer, ARS
+    
+executive-committee:
+  - Person: Dr. Jeff Silverstein
+    Position: Associate Administrator for National Programs
+  - Person: Dr. Brian Stucky
+    Position: Acting Chief Scientific Information Officer, ARS
+  - Person: Ms. Lorna Drennen
+    Position: Assistant Chief Information officer
+  - Person: Mr. Stan Kosecki
+    Position: Deputy Assistant Chief Information Officer
+  - Person: Mr. Rob Butler
+    Position: Acting SCINet Project Manager
+  - Person: Dr. Jeremy Edwards
+    Position: Chair, SCINet Scientific Advisory Committee
+  - Person: Mr. Renaoti Chan
+    Position: Policy and Information Assurance Branch Chief Information Security Officer
+  - Person: Mr. Ming Chan
+    Position: Branch Chief, Scientific Data Engineering Branch, National Agricultural Library
+  - Person: Mr. Nathan Weeks
+    Position: Information Technology Specialist
+  - Person: Mr. Jay Joiner
+    Position: Project Consultant
+  - Person: Mr. Andy Liberman
+    Position: Information Technology Specialist (Networking)
+  - Person: Dr. Brian Scheffler
+    Position: Former Acting Chief Scientific Information Officer
+
+scinet-office:
+  - Person: Brian Stucky
+    Position: SCINet Computational Biologist and acting CSIO
+  - Person: Heather Savoy
+    Position: SCINet Computational Biologist
+  - Person: Haitao Huang
+    Position: SCINet Computational Biologist
+  - Person: Lavida Rogers
+    Position: SCINet Training Coordinator
+  - Person: Moe Richert
+    Position: SCINet Web Developer
+
+policy-committee:
+  - Person: Jonathan Shao (Chair)
+    Area: Northeast Representative
+  - Person: Steven Schroeder
+    Area: Northeast Representative
+  - Person: Dereck Bickhart
+    Area: Midwest Representative
+  - Person: Corey Moffet
+    Area: Plains Representative
+  - Person: Erin Scully
+    Area: Plains Representative
+  - Person: Joshua Udall
+    Area: Plains Representative
+  - Person: Loren Honaas
+    Area: Pacific West Representative
+  - Person: Stan Kosecki
+    Area: NAL Representative
+  - Person: Curtis Brooks
+    Area: GWCC Representative
+  - Person: Marina Kraeva
+    Area: ISU Representative
+  - Person: Vincent Sanders
+    Area: MSU-HPCC Representative
+  - Person: Angela Pompey
+    Area: Information Security
+  - Person: Chris Lowe
+    Area: Information Security
+  - Person: Brian Stucky
+    Area: Acting Chief Scientific Information Officer, ARS
+  - Person: Rob Butler
+    Area: Acting SCINet Project Manager
+
+SAC:
+  - Person: Jeremy Edwards
+    Area: Southeast
+    Role: Chair
+    Subcommittees: Communications
+    Term expires: 2026
+  - Person: Jason Fiedler
+    Area: Plains
+    Role: Vice-Chair
+    Subcommittees: Planning
+    Term expires: 2026
+  - Person: Adrienne Narrowe
+    Area: Northeast
+    Role: Representative
+    Subcommittees: TBD
+    Term expires: 2027
+  - Person: Harlan Svoboda
+    Area: Northeast
+    Role: Representative
+    Subcommittees: TBD
+    Term expires: 2027
+  - Person: Geoff Waldbieser
+    Area: Southeast
+    Role: Representative
+    Subcommittees: TBD
+    Term expires: 2026
+  - Person: Margaret Woodhouse
+    Area: Midwest
+    Role: Secretary
+    Subcommittees: Communications
+    Term expires: 2026
+  - Person: Hye-Seon Kim
+    Area: Midwest
+    Role: Representative
+    Subcommittees:  
+    Term expires: 2025
+  - Person: Erin Scully
+    Area: Plains
+    Role: Representative
+    Subcommittees: Education, Membership
+    Term expires: 2025
+  - Person: Pat Clark
+    Area: Pacific West
+    Role: Representative
+    Subcommittees: Education
+    Term expires: 2025
+  - Person: Peter Olsoy
+    Area: Pacific West
+    Role: Representative
+    Subcommittees: TBD
+    Term expires: 2027
+  - Person: Quentin Read
+    Area: Statistician
+    Role: Representative
+    Subcommittees: TBD
+    Term expires: 2027
+  - Person: Christopher Owen
+    Area: At-Large
+    Role: Representative
+    Subcommittees: TBD
+    Term expires: 2025
+  - Person: Brian Stucky
+    Area: A-CSIO
+    Role: Ex Officio
+    Subcommittees: ""
+    Term expires: ""
+  - Person: Cyndy Parr
+    Area: NAL
+    Role: Ex Officio
+    Subcommittees: ""
+    Term expires: ""
+  - Person: Marlen Eve
+    Area: ONP
+    Role: Ex Officio
+    Subcommittees: ""
+    Term expires: ""
+  - Person: Jack Okamuro
+    Area: ONP
+    Role: Ex Officio
+    Subcommittees: ""
+    Term expires: ""
+  - Person: Bryan Kaphammer
+    Area: AO
+    Role: Ex Officio
+    Subcommittees: ""
+    Term expires: ""
+  - Person: Rob Butler
+    Area: SCINet Program Manager
+    Role: Ex Officio
+    Subcommittees: ""
+    Term expires: ""
+  - Person: Brian Scheffler
+    Area: Former CSIO
+    Role: Ex Officio
+    Subcommittees: ""
+    Term expires: ""
+  - Person: Jay Joiner
+    Area: SCINet Admin Support
+    Role: Ex Officio
+    Subcommittees: ""
+    Term expires: ""
