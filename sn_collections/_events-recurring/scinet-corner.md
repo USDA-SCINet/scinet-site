@@ -173,7 +173,7 @@ This presentation will cover how to log on to Open OnDemand for Ceres and Atlas,
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/Efccvnjx5ilPhokEl1kp-ggBnIrYRYkDpWKEykBF09hDqA?e=usBHyT #main link to video
     date: 2022-12-01 13:00:00
     time: 1-2 pm ET
-    tags: [R-Project,dplyr]
+    tags: [R-Project,DPLYR]
     instructor: Viswanathan Satheesh
     excerpt: "Viswanathan Satheesh continues exploration of R after the previous SCINet Corner (November 3, 2022) and provides an introduction to dplyr."
     materials:

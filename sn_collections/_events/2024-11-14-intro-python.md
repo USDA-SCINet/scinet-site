@@ -3,7 +3,7 @@ title: Introduction to Jupyter Notebooks and Python
 type: training
 description: Training - learning tools and techniques that are fundamental for building, testing, and deploying AI models in Jupyter Notebooks with Python.
 
-tags: python jupyter artificial-intelligence
+tags: Python Jupyter Artificial-Intelligence
 time: 1-5 PM ET
 
 # details:

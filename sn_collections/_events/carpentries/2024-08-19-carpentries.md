@@ -5,7 +5,7 @@ end_date: 2024-08-22
 provider: Carpentries
 description: Event - Workshop for basic programming tools and concepts for the Unix Shell, Git and version control and R.
 
-tags: Unix Git R-Project
+tags: [Unix,Git,R-Project]
 sessions: 
   - session:
     time: 1:00 PM - 5:00 PM ET
