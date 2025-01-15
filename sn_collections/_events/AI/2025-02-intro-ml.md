@@ -5,9 +5,9 @@ provider: SCINet
 date: 2025-02-10
 end_date: 2025-02-14
 description: Event - Workshop for AI and Machine Learning
-#categories: [2025 Intro ML] 
+categories: [2025 02 Intro ML] 
 tags: Artificial-Intelligence Machine-Learning
-#layout_type: workshop
+layout_type: workshop
 #cal-titles: show
 registration: 
   url: https://forms.office.com/g/mcAbYXjuGJ
@@ -15,6 +15,11 @@ registration:
 display: basic
 no-caldate: true
 time: 1-4 PM ET
+
+has-sessions: true
+parent: 
+  title: AI Workshop Series
+  url: /events/2025-ai
 
 multiday: Feb 10, 12, and 14
 
