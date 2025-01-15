@@ -48,7 +48,11 @@
     {% endfor %}
   {%- elsif _event.course-list %}
     {% for _course in _event.course-list %}
+    {% if _event.fetching == 'events' %}
+    {% assign fetch = site.events | find_exp:"item", "item.title == _course.title and item.parent.title == page.title" %}
+    {% else %}
     {% assign fetch = site.workshops | find_exp:"item", "item.title == _course.title  and item.parent.title == _event.title"" %}
+    {% endif %}
     {% if fetch.sessions %}
       {% assign thissession = fetch.sessions | first %}
       {% include collect/process/event parent=fetch session=thissession parenttitle=_event.title %}
