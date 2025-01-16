@@ -13,7 +13,7 @@ redirect_from:
 
 ## ARS Researchers: Want your research featured on the SCINet website and newsletter?
 
-Research highlights from researchers who use SCINet resources are added quarterly. Contact [SCINet-Newsletter@usda.gov](mailto:SCINet-Newsletter@usda.gov?subject=research%20highlight) and use this short [guide for authors]({{ site.baseurl }}/assets/pdf/research-highlights/Guide-for-SCINet-Research-Highlight-Authors.pdf){:target="_blank"} (opens pdf in new browser window).
+Research highlights from researchers who use SCINet resources are added quarterly. Contact [ARS-SCINet-Office@usda.gov](mailto:ARS-SCINet-Office@usda.gov?subject=research%20highlight) and use this short [guide for authors]({{ site.baseurl }}/assets/pdf/research-highlights/Guide-for-SCINet-Research-Highlight-Authors.pdf){:target="_blank"} (opens pdf in new browser window).
 
 <br>
 
