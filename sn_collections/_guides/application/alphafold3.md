@@ -1,9 +1,10 @@
+---
 title: AlphaFold3
 description: AlphaFold3 on Ceres and Atlas
 ## author: VRSC
 excerpt: "Alphafold3 on Ceres and Atlas"
 
-categories: [Analysis]
+categories: [Application]
 
 subnav:
   - title: Before You Begin
