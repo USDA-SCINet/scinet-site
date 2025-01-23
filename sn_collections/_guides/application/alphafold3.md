@@ -1,27 +1,27 @@
 ---
-title: AlphaFold3
-description: AlphaFold3 on Ceres and Atlas
+title: AlphaFold 3
+description: AlphaFold 3 on Ceres and Atlas
 ## author: VRSC
-excerpt: "Alphafold3 on Ceres and Atlas"
+excerpt: "AlphaFold 3 on Ceres and Atlas"
 
 categories: [Application]
 
 subnav:
   - title: Before You Begin
     url: '#before-you-begin'
-  - title: Alphafold3 Input and Database 
-    url: '#alphafold3-input-and-database'
-  - title: Running AF3 on Ceres and Atlas 
-    url: '#running-af3-on-ceres-and-atlas'
+  - title: AlphaFold 3 Input and Database 
+    url: '#alphafold-3-input-and-database'
+  - title: Running AlphaFold 3 on Ceres and Atlas 
+    url: '#running-alphafold-3-on-ceres-and-atlas'
 ---
 
 ## Before You Begin
-Alphafold3 requires users to accept terms of use. [Click here](https://forms.office.com/g/0y6uAYeSrw) for the request form and to accept the terms of use. 
+AlphaFold 3 requires users to accept terms of use. [Click here](https://forms.office.com/g/0y6uAYeSrw) for the request form and to accept the terms of use. 
 
-You will be notified once you have access to Alphafold3.
+You will be notified once you have access to AlphaFold 3.
 
-## Alphafold3 Input and Database
-Unlike Alphafold2, Alphafold3 requires the input file to be formatted as a JSON file.  
+## AlphaFold 3 Input and Database
+Unlike AlphaFold 2, AlphaFold 3 requires the input file to be formatted as a JSON file.  
 
 For example, 
 
@@ -42,27 +42,28 @@ For example,
 }
 ```
 
-For the full documentation on formatting input files, see - https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md
+For the full documentation on formatting input files, see [https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md](https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md)
 
-The database is located at the following location on both Ceres and Atlas
+The database is located at the following location on both Ceres and Atlas:
 
 ```
 /reference/data/alphafold/3.0.0
 ```
-**Note:** The version may be updated to reflect the most stable version, update path to DB as availability changes 
+**Note:** The version may be updated to reflect the most stable version; please update the path to the database in your scripts as needed.
 
-## Running AF3 on Ceres and Atlas
-Alphafold3 now provides option to split the workflow into [CPU and GPU tasks seperately](https://github.com/google-deepmind/alphafold3/blob/main/docs/performance.md#running-the-pipeline-in-stages). This is useful as users can run the "Data Pipeline" on normal compute nodes and then the model inference on GPU nodes. 
+## Running AlphaFold 3 on Ceres and Atlas
+AlphaFold 3 provides options to split the workflow into [separate CPU and GPU tasks](https://github.com/google-deepmind/alphafold3/blob/main/docs/performance.md#running-the-pipeline-in-stages). This is useful because it allows you to run the "data pipeline", which does not use GPUs, on normal compute nodes and then run the model inference on GPU nodes. 
 
-To run only the data pipeline use `--norun_inference` option
+* To run only the data pipeline use the `--norun_inference` option.
+* To run only the model inference use the `--norun_data_pipeline` option.
 
-To run only the model inference use `--norun_data_pipeline` option
+If you do not specify the above options, AlphaFold 3 will try to run the full pipeline, which means it will only run on the GPU nodes.  
 
-If you do not specify the above options, AF3 will try to run the full pipeline. This is only valid on the GPU nodes.  
+Please note that by default, the maximum protein sequence length that AlphaFold 3 can analyze is limited by the amount of GPU memory available. SCINet's A100 GPUs have 80 GB of memory each, which limits the maximum protein sequence length to 5,120 residues. Longer protein sequences can be analyzed by enabling features that allow the GPU to utilize system memory; please see [the AlphaFold 3 documentation for more information](https://github.com/google-deepmind/alphafold3/blob/main/docs/performance.md#unified-memory).
 
-Below are suggested scripts to run AF3 on the clusters
+Below are suggested scripts to run AlphaFold 3 on the clusters.
 
-### CPU Only data pipeline (Ceres and Atlas)
+### CPU-only data pipeline (Ceres and Atlas)
 ```
 #!/bin/bash
 #SBATCH -N 1
@@ -79,7 +80,7 @@ run_alphafold.py \
    --norun_inference
 ```
 
-### GPU only model inference(Atlas only)
+### GPU-only model inference (Atlas only)
 ```
 #!/bin/bash
 #SBATCH -N 1
@@ -97,9 +98,9 @@ run_alphafold.py \
    --output_dir=/full/path/to/output_dir \
    --norun_data_pipeline
 ```
-The GPU only model inference task requires JSON file generate from the above `--norun_inference` job
+The GPU-only model inference task requires the JSON file generated from the above `--norun_inference` job.
 
-### Full Pipeline (Atlas only)
+### Full pipeline (Atlas only)
 ```
 #!/bin/bash
 #SBATCH -N 1
