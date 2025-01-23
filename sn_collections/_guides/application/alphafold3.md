@@ -10,9 +10,9 @@ subnav:
   - title: Before You Begin
     url: '#before-you-begin'
   - title: AlphaFold 3 Input and Database 
-    url: '#alphafold3-input-and-database'
+    url: '#alphafold-3-input-and-database'
   - title: Running AlphaFold 3 on Ceres and Atlas 
-    url: '#running-af3-on-ceres-and-atlas'
+    url: '#running-alphafold-3-on-ceres-and-atlas'
 ---
 
 ## Before You Begin
