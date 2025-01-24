@@ -1,14 +1,21 @@
 ---
 title: Downloading SmallStepCLI from Software Center (USDA Managed Machines Only)
 description: How to download SmallStepCLI from the Software Center
-parent:
-  title: Login
-  url: /guides/access
-  class: "guide-nav"
+excerpt: How to download SmallStepCLI from the Software Center
+parents:
+  - title: Access
+    url: /guides/access
+    class: "guide-nav"
+  - title: Login Assistance
+    url: /guides/access/login
+    class: "emph-nav"
 
 subnav:
   - title: SmallStepCLI Download
     url: '#smallstepcli-download'
+
+fetched: "login-help"
+order_number: 30
 ---
 
 {% include images_path %}
