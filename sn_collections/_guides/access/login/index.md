@@ -17,5 +17,6 @@ guidegroup:
 
 ---
 
-Guides providing additional information for logging in to SCINet.
+Guides providing additional information for logging in to SCINet.  
+
 If you require further assistance, please [contact the VRSC](/support/contact).<!--excerpt-->
