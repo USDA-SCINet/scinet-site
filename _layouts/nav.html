@@ -152,8 +152,21 @@ main:
 
     {% elsif page.parent %}
       {% assign bc_sectionlink = page.parent %}
+      {% assign alt_nav = page.parent.title %}
       
       {% assign bc_sidenav = bc_sidenav | push: page.parent | push: page %}
+    {% elsif page.parents %}
+
+      {% assign breadcrumb_set = page.parents | push: page %}
+      {% if bc_sidenav %}
+        {% assign bc_sidenav = bc_sidenav | concat: breadcrumb_set %}
+      {% else %}
+        {% assign bc_sidenav = breadcrumb_set %}
+      {% endif %}
+
+      {% assign alt_nav = page.parents[0].title %}
+    
+
     {% endif %}
 
   {% endif %}
