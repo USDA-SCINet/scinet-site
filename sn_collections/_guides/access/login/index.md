@@ -1,7 +1,6 @@
 ---
 title: SCINet Login Assistance
 description: Guides that provide additional login assistance for SCINet users
-Excerpt: Guides that provide additional login assistance for SCINet users
 intlinks: true
 layout: guides
 layout_type: guides
@@ -18,5 +17,5 @@ guidegroup:
 
 ---
 
-Guides for assistance logging in to SCINet.
-If you require further assistance, please [contact the VRSC](/support/contact).
+Guides providing additional information for logging in to SCINet.
+If you require further assistance, please [contact the VRSC](/support/contact).<!--excerpt-->
