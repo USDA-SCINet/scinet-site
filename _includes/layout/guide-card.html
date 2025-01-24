@@ -22,6 +22,21 @@
             </div>
             {% endunless %}
         {% endfor %}
+    {% elsif page.guidegroup.fetch %}
+    
+        {% assign show_list = false %}
+
+        {% assign _navsections = site.guides | where: "fetched", page.guidegroup.fetch | sort: 'order_number' %}
+
+        {% assign listpnum = _navsections | size %}
+        {% unless listpnum == 0 %}
+            {% if page.guidegroup.accordion %}
+                {% include layout/accordion.html %}
+            {% else %}
+                {% include components/guide-card.html %}
+            {% endif %}
+        {% endunless %}
+    
     {% else %}
     {% for _category in page[page.guidegroup.compile] %}
         {% assign _navsections = guidepages | where_exp: "item", "item.categories == _category.category" %}

@@ -5,6 +5,11 @@
     @include u-bg('base-lightest') 
 }
 
+.emph-nav{
+  @include u-text('semibold');
+  @include u-text('primary-darker')
+}
+
 .guide-nav.usa-current{
     @include u-border-top(0);
     @include u-border-bottom(2px);
