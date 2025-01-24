@@ -63,13 +63,13 @@ If you need assistance with this login process, please email your questions to [
 In situations where SCINet users do not have a LincPass, they may use Windows Hello for Business (WHfB) as an alternative to LincPass when accessing SCINet, or they may obtain a PIV Exemption.
 
 - **Windows Hello for Business** - SCINet users who have already enrolled in WHfB may select the eAuth "USDA Work Account" option to login to SCINet.
-- **24 Hour LincPass Expemption** - SCINet users who do not have a LincPass and cannot use WHfB may [submit a LincPass Exemption Request]().  Once the LincPass Exemption Request has been processed, they may login to SCINet by selecting the eAuth PIV Exemption option.
+- **24 Hour LincPass Expemption** - SCINet users who do not have a LincPass and cannot use WHfB may [submit a LincPass Exemption Request](https://apps.gov.powerapps.us/play/e/default-ed5b36e7-01ee-4ebc-867e-e03cfa0d4697/a/6d0116a5-68ab-4c9f-a0ad-ab9717e33fb3?tenantId=ed5b36e7-01ee-4ebc-867e-e03cfa0d4697&hint=b883037a-e068-41e9-92c8-0f6b39f79ecc&sourcetime=1721411867694#).  Once the LincPass Exemption Request has been processed, they may login to SCINet by selecting the eAuth PIV Exemption option.
 
 **For more information, see:**
-* New Personal Identity Verification (PIV) Exemption Process
-* Rollout of Windows Hello for Buisness Login Option
-* Setup Windows Hello PIN 508
-* WHfB PIN creation without PIV (ARS Field)
+* [New Personal Identity Verification (PIV) Exemption Process](https://usdagcc.sharepoint.com/sites/ICAM/SitePages/New-Personal-Identity-Verification-(PIV)-Exemption-Process.aspx?csf=1&web=1&e=pOXGxG&clickparams=eyAiWC1BcHBOYW1lIiA6ICJNaWNyb3NvZnQgT3V0bG9vayIsICJYLUFwcFZlcnNpb24iIDogIjE2LjAuMTgxMjkuMjAyMDAiLCAiT1MiIDogIldpbmRvd3MiIH0%3d&CID=5ec37aa1-7029-7000-cc8c-657eaf09d218&cidOR=SPO)
+* [Rollout of Windows Hello for Buisness Login Option](https://usdagcc.sharepoint.com/sites/ARS-AFM/AFMCommunications_2024/Forms/AllItems.aspx?id=%2Fsites%2FARS%2DAFM%2FAFMCommunications%5F2024%2F2024%2D04%2D25%20ITSD%20Bluey%20Communication%5F%20%20Rollout%20of%20Windows%20Hello%20for%20Business%20Login%20Option%2Epdf&parent=%2Fsites%2FARS%2DAFM%2FAFMCommunications%5F2024)
+* [Setup Windows Hello PIN](https://usdagcc.sharepoint.com/sites/ARS-AFM/AFMCommunications_2024/Forms/AllItems.aspx?id=%2Fsites%2FARS%2DAFM%2FAFMCommunications%5F2024%2FSetup%5FWindows%5FHello%5FPIN%5F508%2Epdf&parent=%2Fsites%2FARS%2DAFM%2FAFMCommunications%5F2024)
+* [WHfB PIN creation without PIV (ARS Field)](https://usdagcc.sharepoint.com/sites/ARS-AFM/AFMCommunications_2024/Forms/AllItems.aspx?id=%2Fsites%2FARS%2DAFM%2FAFMCommunications%5F2024%2FSetup%5FWindows%5FHello%5FPIN%5F508%2Epdf&parent=%2Fsites%2FARS%2DAFM%2FAFMCommunications%5F2024)
   * These instructions requre the assistance of Location IT Support
 
 ![]({{ images_path }}/eAuth_login.PNG)
