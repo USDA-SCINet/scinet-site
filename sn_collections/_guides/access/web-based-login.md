@@ -97,11 +97,14 @@ The process for logging on to SCINet via Open OnDemand or Galaxy is the same. Be
   * Galaxy
     * [Galaxy for Ceres](https://galaxy.scinet.usda.gov)
 
-* You will initially be presented with the SCINet login page.  
-  ![screenshot of Login Screen with Legacy Selection]({{ images_path }}/linpassorlogingov.png)
-* Choose "Login.gov or USDA LincPass" as your sign-in option.
+* You will initially be presented with the SCINet authentication page.  
+  ![SCINet login page]({{ images_path }}/eAuth_login.PNG)
+  
+* Select the login option that is appropriate for you:
   * If you have a LincPass/AltLinc or PIV Exemption, you will authenticate as usual with eAuth.
-  * If you _do not_ have a LincPass/AltLinc or PIV Exemption, you will authenticate using Login.gov. Please see the [detailed instructions for logging on to SCINet using Login.gov](/guides/access/login/logingov).
+  * If you _do not_ have a LincPass/AltLinc or PIV Exemption:
+    * Sponsored, non-USDA SCINet users will authenticate using Login.gov. Please see the [detailed instructions for logging on to SCINet using Login.gov](/guides/access/login/alt-login#non-usda-users---logingov).
+    * USDA employees without a LincPass/AltLinc or PIV Exemption should enroll in Windows Hello for Business or apply for a PIV Exemption. More detailed information is available in the [Alternative Login guide](/access/login/alt-login#usda-users-without-a-lincpass).
 * After successful authentication, you will automatically be redirected to Open OnDemand or Galaxy.
 
 If you have further questions or issues, please email [scinet_vrsc@usda.gov](scinet_vrsc@usda.gov). 
