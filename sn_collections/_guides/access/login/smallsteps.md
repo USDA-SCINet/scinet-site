@@ -1,14 +1,21 @@
 ---
 title: SmallStepsCLI Logon Troubleshooting
 description: Troubleshooting steps for SSH logon to SCINet
-parent:
-  title: Login
-  url: /guides/access
-  class: "guide-nav"
+excerpt: Troubleshooting steps for SSH logon to SCINet.  The resolutions on this page assume you have already completed the [Small Step for SSH setup instructions](/guides/access/ssh-login).
+parents:
+  - title: Access
+    url: /guides/access
+    class: "guide-nav"
+  - title: Login Assistance
+    url: /guides/access/login
+    class: "emph-nav"
 
 subnav: 
   - title: Bad owner or permissions error
     url: '#bad-owner-or-permissions-error'
+
+fetched: "login-help"
+order_number: 40
 ---
 
 {% include images_path %}
