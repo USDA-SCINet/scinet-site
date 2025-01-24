@@ -47,7 +47,7 @@ Sponsored, non-USDA SCINet users will use Login.gov to log on to SCINet systems.
   ![]({{ images_path }}/login.gov screenshots/signin-create-account.png)
 
   - Once you fill out the required information, you will be sent an email to confirm your account.  Confirming your email will redirect you back to Login.gov for you to set up a password and second authentication method. 
-  - More information on account set up can be found [here](https://www.login.gov/help/get-started/create-your-account/).
+  - [More information on account set up can be found here](https://www.login.gov/help/get-started/create-your-account/).
   - Once you have completed the account setup, you will need to select “Continue without linking to an existing eAuth account” to move forward.  
     ![]({{ images_path }}/login.gov screenshots/link-login.gov.png)
 
