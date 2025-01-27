@@ -123,7 +123,7 @@ The second command updates your .ssh/config file. If you already have a custom c
 - The first time you ssh to Ceres with `ssh user.name@ceres.scinet.usda.gov` or Atlas with `ssh user.name@atlas-login.hpc.msstate.edu`, (changing "user.name" to your own SCINet username), your default web browser should open automatically to the USDA eAuthentication login page:  
   ![SCINet login page]({{ images_path }}/eAuth_login1.PNG)
   
-- Select the login option that is appropriate for you:
+- Select the login option that is appropriate for you (Sponsored, non-USDA SCINet users should choose "Customer"):
   - If you have a LincPass/AltLinc, you will authenticate as usual with eAuth.
   - If you _do not_ have a LincPass/AltLinc:
     - Sponsored, non-USDA SCINet users will authenticate using Login.gov. Please see the [detailed instructions for logging on to SCINet using Login.gov](/guides/access/login/alt-login#non-usda-users---logingov).
