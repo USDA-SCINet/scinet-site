@@ -51,13 +51,8 @@ The instructional video at [here](https://www.youtube.com/watch?v=BAodkpwOJuA) d
 
 ### Login
 * In a browser, navigate to [https://www.globus.org/](https://www.globus.org/), click ‘Log In’ in the upper right corner.
-* There are several ways to login to the Globus Web App. Login using one of the available methods:
-  1. ORCiD iD login (recommended). You can use your ORCiD, a persistent digital identifier for individual researchers, to sign into Globus (all ARS researchers should have an ORCiD). Click on "Sign in with ORCiD iD" at the bottom of the page. If you don't yet have an ORCiD, please visit [https://orcid.org/](https://orcid.org/) to obtain one.
-  2. Globus ID login. You can create an account on Globus ID and use it to log into Globus. See the link to Globus ID under the list of organizational logins.
-  3. Organizational login. Many organizations, mostly universities, have organizational logins. ARS currently does not provide an organizational login. If your organization provides an organizational login, select your organization from the list and login with your organization credentials at the familiar login page.
-  4. Google account login. Click on “Sign in with Google” at the bottom of the page if you want to use your google account.
+* SCINet users can now log in to Globus using their SCINet accounts like any other [web-based SCINet access](/access/web-based-login) (previously, logging in to Globus required ORCiD credentials). When logging into Globus.org, you can select ‘SCINet - ARS/USDA’ in the existing organizational login dropdown menu. 
 * You should now be on the Globus ‘File Manager’ page. You should see two panels. If you don't, click on the 2-panels icon at the top right of the screen. You should now see two panels:
-
 ![Globus online homescreen showing two panels]({{ images_path }}/globus-homescreen.png)
 
 ### Copying Data
