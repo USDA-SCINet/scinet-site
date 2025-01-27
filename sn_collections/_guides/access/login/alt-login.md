@@ -1,7 +1,7 @@
 ---
-title: "Accessing SCINet without a LincPass"
-description: Steps for accessing SCINet resources using Login.gov
-excerpt: In situations where SCINet users do not have a LincPass, they may use Windows Hellow for Business (WHfB), obtain a PIV Exemption, or use Login.gov.
+title: "Accessing SCINet without a LincPass/AltLinc"
+description: Steps for accessing SCINet resources without a LincPass
+excerpt: SCINet users do not have a LincPass/AltLinc may use an alternative authentication option for accessing SCINet.
 parents:
   - title: Access
     url: /guides/access
@@ -19,7 +19,7 @@ subnav:
   - title: Non-USDA users - Login.gov
     url: "#non-usda-users---logingov"
   - title: USDA users without a LincPass
-    url: "#usda-users-without-a-lincpass"
+    url: "#usda-users-without-a-lincpass-altlinc"
 
 fetched: "login-help"
 order_number: 20
@@ -27,7 +27,7 @@ order_number: 20
 
 {% include images_path %}
 
-In situations where SCINet users do not have a LincPass, they may use an alternative authentication option for accessing SCINet.
+SCINet users do not have a LincPass/AltLinc may use an alternative authentication option for accessing SCINet.
 
 ## Non-USDA users - Login.gov
 
@@ -58,14 +58,14 @@ If you need assistance with this login process, please email your questions to [
 
 
 
-## USDA users without a LincPass
+## USDA users without a LincPass/AltLinc
 
-In situations where USDA SCINet users do not have a LincPass, they may use Windows Hello for Business (WHfB) or a PIV Exemption as alternatives to LincPass for SCINet authentication. 
+In situations where USDA SCINet users do not have a LincPass/AltLinc, they may use Windows Hello for Business (WHfB) or a PIV Exemption as alternatives for SCINet authentication. 
 
-- **Windows Hello for Business** - SCINet users who have already enrolled in WHfB may select the eAuth "USDA Work Account" option to login to SCINet.
-  - If you have not enrolled in WHfB, get started with the instructions provided at the [Windows Hello: How Do I?](https://usdagcc.sharepoint.com/sites/cec-howdoi/SitePages/whfb.aspx?web=1#setup-windows-hello-for-business-pin) SharePoint site to [set up your Windows Hello PIN](https://usdagcc.sharepoint.com/sites/cec-howdoi/Videos/Forms/AllItems.aspx?id=%2Fsites%2Fcec%2Dhowdoi%2FVideos%2FSetup%5FWindows%5FHello%5FPIN%5F508%2Epdf&parent=%2Fsites%2Fcec%2Dhowdoi%2FVideos).
-  - If you do not have a LincPass/PIV card, you will need to contact IT support. 
-- **24 Hour LincPass Exemption** - SCINet users who do not have a LincPass and cannot use WHfB may [submit a LincPass Exemption Request](https://apps.gov.powerapps.us/play/e/default-ed5b36e7-01ee-4ebc-867e-e03cfa0d4697/a/6d0116a5-68ab-4c9f-a0ad-ab9717e33fb3?tenantId=ed5b36e7-01ee-4ebc-867e-e03cfa0d4697&hint=b883037a-e068-41e9-92c8-0f6b39f79ecc&sourcetime=1721411867694#).  Once the LincPass Exemption Request has been processed, they may login to SCINet by selecting the eAuth PIV Exemption option.
+- **Windows Hello for Business** - SCINet users who have already enrolled in WHfB may select the eAuth "USDA Work Account" option to login to SCINet.  If you have not enrolled in WHfB and would like to enroll, choose one of the following options.
+  - If you have a LincPass/Altlink, get started with the instructions provided at the [Windows Hello: How Do I?](https://usdagcc.sharepoint.com/sites/cec-howdoi/SitePages/whfb.aspx?web=1#setup-windows-hello-for-business-pin) SharePoint site to [set up your Windows Hello PIN](https://usdagcc.sharepoint.com/sites/cec-howdoi/Videos/Forms/AllItems.aspx?id=%2Fsites%2Fcec%2Dhowdoi%2FVideos%2FSetup%5FWindows%5FHello%5FPIN%5F508%2Epdf&parent=%2Fsites%2Fcec%2Dhowdoi%2FVideos).
+  - If you do not have a LincPass/AltLinc card, you will need to contact IT support for help with WHfB enrollment.
+- **24 Hour LincPass Exemption** - SCINet users who do not have a LincPass/AltLinc and cannot use WHfB may [submit a LincPass Exemption Request](https://apps.gov.powerapps.us/play/e/default-ed5b36e7-01ee-4ebc-867e-e03cfa0d4697/a/6d0116a5-68ab-4c9f-a0ad-ab9717e33fb3?tenantId=ed5b36e7-01ee-4ebc-867e-e03cfa0d4697&hint=b883037a-e068-41e9-92c8-0f6b39f79ecc&sourcetime=1721411867694#).  Once the LincPass Exemption Request has been processed, they may login to SCINet by selecting the eAuth PIV Exemption option.
 
 ![]({{ images_path }}/eAuth_login.PNG)
 
