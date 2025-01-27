@@ -52,6 +52,7 @@ The instructional video at [here](https://www.youtube.com/watch?v=BAodkpwOJuA) d
 ### Login
 * In a browser, navigate to [https://www.globus.org/](https://www.globus.org/), click ‘Log In’ in the upper right corner.
 * Select ‘SCINet - ARS/USDA’ in the existing organizational login dropdown menu to [use your SCINet credentials to log in](/guides/access/web-based-login)
+  ![selection of SCINet - ARS/USDA in the 'Look up your organization' dropdown menu]({{ images_path }}/globus-selection.png)
 * You should now be on the Globus ‘File Manager’ page. You should see two panels. If you don't, click on the 2-panels icon at the top right of the screen. You should now see two panels:
 ![Globus online homescreen showing two panels]({{ images_path }}/globus-homescreen.png)
 
