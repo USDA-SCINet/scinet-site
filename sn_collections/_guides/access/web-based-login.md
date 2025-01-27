@@ -101,7 +101,7 @@ The process for logging on to SCINet via Open OnDemand or Galaxy is the same. Th
 * You will be presented with the USDA eAuthentication login page.  
   ![SCINet login page]({{ images_path }}/eAuth_login1.PNG)
   
-* Select the login option that is appropriate for you:
+* Select the login option that is appropriate for you (Sponsored, non-USDA SCINet users should choose "Customer"):
   * If you have a LincPass/AltLinc, you will authenticate as usual with eAuth. 
   * If you _do not_ have a LincPass/AltLinc:
     * Sponsored, non-USDA SCINet users will authenticate using Login.gov. Please see the [detailed instructions for logging on to SCINet using Login.gov](/guides/access/login/alt-login#non-usda-users---logingov).
