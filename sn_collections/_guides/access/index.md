@@ -6,7 +6,13 @@ sorting: index
 layout: "guides"
 class: "guide-nav"
 
-
+sidenav_append: 
+  - title: Login Assistance
+    url: /guides/access/login
+    class: "text-emph"
+  - title: SEARCH
+    url: /search
+    class: "sidenav-search"
 
 short_title: Access
 
