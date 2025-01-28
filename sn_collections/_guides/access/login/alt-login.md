@@ -1,7 +1,7 @@
 ---
 title: "Accessing SCINet without a LincPass/AltLinc"
 description: Steps for accessing SCINet resources without a LincPass
-excerpt: SCINet users do not have a LincPass/AltLinc may use an alternative authentication option for accessing SCINet.
+excerpt: SCINet users that do not have a LincPass/AltLinc may use an alternative authentication option for accessing SCINet.
 parents:
   - title: Access
     url: /guides/access
@@ -27,7 +27,7 @@ order_number: 20
 
 {% include images_path %}
 
-SCINet users do not have a LincPass/AltLinc may use an alternative authentication option for accessing SCINet.
+SCINet users that do not have a LincPass/AltLinc may use an alternative authentication option for accessing SCINet.
 
 ## Non-USDA users - Login.gov
 
