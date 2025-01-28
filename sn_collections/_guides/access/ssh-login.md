@@ -127,7 +127,7 @@ The second command updates your .ssh/config file. If you already have a custom c
   - If you have a LincPass/AltLinc, you will authenticate as usual with eAuth.
   - If you _do not_ have a LincPass/AltLinc:
     - Sponsored, non-USDA SCINet users will authenticate using Login.gov. Please see the [detailed instructions for logging on to SCINet using Login.gov](/guides/access/login/alt-login#non-usda-users---logingov).
-    - USDA employees without a LincPass/AltLinc should enroll in Windows Hello for Business or apply for a PIV Exemption. More detailed information is available in the [Alternative Login guide](/guides/access/login/alt-login#usda-users-without-a-lincpass).
+    - USDA employees without a LincPass/AltLinc should enroll in Windows Hello for Business or apply for a PIV Exemption. More detailed information is available in the [Alternative Login guide](/guides/access/login/alt-login#usda-users-without-a-lincpassaltlinc).
 
 - Return to your shell and you should see "CA: https://step-ca.scinet.usda.gov" followed by your regular login.  
   ![screenshot of Login Screen with Legacy Selection]({{ images_path }}/step-ssh/login-success.png)
