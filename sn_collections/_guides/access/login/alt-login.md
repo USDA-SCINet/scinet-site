@@ -19,7 +19,7 @@ subnav:
   - title: Non-USDA users - Login.gov
     url: "#non-usda-users---logingov"
   - title: USDA users without a LincPass
-    url: "#usda-users-without-a-lincpass-altlinc"
+    url: "#usda-users-without-a-lincpassaltlinc"
 
 fetched: "login-help"
 order_number: 20
