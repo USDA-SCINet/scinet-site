@@ -75,9 +75,6 @@ To launch an interactive app, select the **Interactive Apps** dropdown menu and 
 After selections have been made, pressing **Launch** will submit an interactive job. This job will be displayed as the topmost entry in the *My Interactive Sessions* page. The bottom of the intaractive app's job information card will display text saying the job is starting or, if it has already started, "Connect to `Interactive App Name`." Press the **Connect** button to launch the app in a new tab. 
 ![screenshot of Open OnDemand Ceres interactive apps job card with connect to button highlighted]({{ images_path }}/ood/ceres-interactive-card.png)
 
-### Logging Out
-To log out of Ceres Open OnDemand, click the **Log Out** button. 
-
 ### Using Clipboard to Copy/Paste Data
 
 While Open OnDemand(OOD) v 3.0.x does do copy/paste with chrome browser, there is no official support for it. There is a very high likelihood that this “feature” will break due to it being unsupported on noVNC. 
