@@ -31,9 +31,9 @@ Machine learning underlies the vast majority of modern AI methods, including the
 
 Participants will learn how to train, evaluate, and use a variety of machine learning models for data analysis tasks. This session will also help participants critically evaluate the use and application of machine learning in science.
 
-## Pre-Workshop Instructions: 
+## Pre-workshop instructions 
 
-To help minimize technical issues and delays at the start of the workshop, please try the following four tests prior to the workshop. 
+To help minimize technical issues and delays at the start of the workshop, please try the following three tests prior to the workshop. 
 
 * **Logging on to [Atlas Open OnDemand (OOD)](https://atlas-ood.hpc.msstate.edu/):** Please confirm you can successfully log in to Atlas OOD with your SCINet account [(see instructions here)]({{site.baseurl}}/guides/access/web-based-login). If you are successful, you will be able to see the Atlas OOD home page.
 * **Atlas Shell Access:** When on Atlas OOD, click on the top navigation bar: “Clusters” > “Atlas Shell Access”. A new tab will appear that looks like a shell terminal (e.g., like PowerShell). Please confirm you do not receive any error messages or requests to re-authenticate and that the final line looks like "[firstname.lastname@atlas-login-1 ~]$". 
@@ -50,7 +50,7 @@ To help minimize technical issues and delays at the start of the workshop, pleas
 
 -----
 
-## Tutorial setup instruction
+## Tutorial setup instructions
 
 Steps to prepare for the tutorial:
 
