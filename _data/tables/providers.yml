@@ -8,6 +8,9 @@ providers:
   - title: Translational Omics Working Group
     tag: Omics Working Group
     url: /research/working-groups/omics
+  - title: Animal Behavior AI Working Group
+    tag: Animal Behavior AI Working Group
+    url: /research/working-groups/behavior
   - title: Mississippi State University
     tag: MSU
     url: https://reg.extension.msstate.edu/view/cal10a.aspx?aid=MSU

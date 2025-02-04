@@ -1,6 +1,18 @@
 {% assign session = include.session %}
 <ul class="unstyled-list">
     <!-- {% if session.time %}<li><b>{{ session.time }}</b></li>{% endif %} -->
+    {% if page.type == 'event' and post.provider and postsessions == "false" %}
+    
+    <li>
+        {% assign _provider = site.data.tables.providers.providers | where:"tag", post.provider | first %}
+        <b>Provided by:</b> 
+        {% if _provider.size > 0 %}
+        <a href="{% if _provider.external %}{{ _provider.url }}{% else %}{{ _provider.url | relative_url }}{% endif %}">{% if _provider.title %}{{ _provider.title }}{% else %}{{ page.provider }}{% endif %}</a>
+        {% else %}
+        {{ page.provider }}
+        {% endif %}
+        </li>
+    {% endif %}
     {% unless pagetype=='archive' %}
         {% if session.registration %}
             {% if session.registration %}
