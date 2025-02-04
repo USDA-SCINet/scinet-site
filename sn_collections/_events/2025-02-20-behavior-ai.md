@@ -1,5 +1,5 @@
 ---
-title: Initial Working Group Meeting
+title: Animal Behavior AI - Initial Working Group Meeting
 type: event
 description: Event - First Meeting of the Animal Behavior AI working groups
 
