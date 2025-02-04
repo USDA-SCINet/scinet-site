@@ -1,11 +1,11 @@
 ---
 title: Animal Behavior AI - Initial Working Group Meeting
 type: event
-description: Event - First Meeting of the Animal Behavior AI working groups
+description: Event - First Meeting of the Animal Behavior AI working group
 
 time: 12-1 PM ET
 
-provider: Animal Behavior Working Group
+provider: Animal Behavior AI Working Group
 
 registration: 
   text: "Join the Working Group"
