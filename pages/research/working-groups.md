@@ -48,6 +48,7 @@ SCINet working groups (WGs) support ARS researchers and their collaborators in u
 
 ## Current Working Groups
 * [Ag100Pest Initiative (subgroup of AGR)]({{ site.baseurl }}/research/working-groups/ag100pest)
+* [Animal Behavior AI Working Group]({{ site.baseurl }}/research/working-groups/behavior)
 * [Arthropod Genomics Research (AGR) Working Group]({{ site.baseurl }}/research/working-groups/arthropods)
 * [Breeding AI and ML Working Group]({{ site.baseurl }}/research/working-groups/breeding)
 * [Geospatial Research Working Group]({{ site.baseurl }}/research/working-groups/geospatial)

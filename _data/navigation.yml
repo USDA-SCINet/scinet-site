@@ -81,6 +81,8 @@ primary:
         sublinks:
         - title: Ag100Pest
           url: /research/working-groups/ag100pest
+        - title: Animal Behavior AI
+          url: /research/working-groups/behavior
         - title: Arthropod Genomics
           url: /research/working-groups/arthropods
         - title: Breeding AI and ML
