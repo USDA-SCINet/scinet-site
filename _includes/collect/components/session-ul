@@ -1,7 +1,8 @@
 {% assign session = include.session %}
 <ul class="unstyled-list">
     <!-- {% if session.time %}<li><b>{{ session.time }}</b></li>{% endif %} -->
-    {% if page.type == 'event' and post.provider %}
+    {% if page.type == 'event' and post.provider and postsessions == "false" %}
+    
     <li>
         {% assign _provider = site.data.tables.providers.providers | where:"tag", post.provider | first %}
         <b>Provided by:</b> 
