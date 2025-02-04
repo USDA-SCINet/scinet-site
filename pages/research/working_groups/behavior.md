@@ -7,7 +7,7 @@ hide-provider: true
 no-tags: true
 
 filter:
-  provider: Animal Behavior Working Group
+  provider: Animal Behavior AI Working Group
 
 collect: event
 reverse_collection: true
