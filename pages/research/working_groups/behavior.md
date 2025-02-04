@@ -30,3 +30,5 @@ Recent rapid evolution of DNNs holds significant promise directly applicable to 
 The ultimate goal of the working group is to utilize large datasets, cutting-edge AI techniques, and collaborative expertise to unlock new insights into animal movement pattern analyses. A deeper understanding of animal behavior, including movement patterns, habitat use, and interactions, is crucial for effective wildlife conservation and sustainable agroecosystem management.
 
 If you are interested and would like to join, please fill out the [Animal Behavior AI Working Group survey](https://forms.office.com/g/LbhqnGnjqw).
+
+For more information, please contact John Y. Park., SCINet Postdoctoral Fellow ([john.park3@usda.gov](mailto:john.park3@usda.gov)).
