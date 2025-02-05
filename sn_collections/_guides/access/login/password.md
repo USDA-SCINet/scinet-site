@@ -1,10 +1,17 @@
 ---
 title: Updating Your SCINet Password
 description: Steps for updating your SCINet password
-parent:
-  title: Login
-  url: /guides/access
-  class: "guide-nav"
+excerpt: Steps for updating your SCINet password
+parents:
+  - title: Access
+    url: /guides/access
+    class: "guide-nav"
+  - title: Login Assistance
+    url: /guides/access/login
+    class: "emph-nav"
+
+fetched: "login-help"
+order_number: 50
 ---
 
 {% include images_path %}

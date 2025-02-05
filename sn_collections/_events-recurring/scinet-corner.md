@@ -18,6 +18,16 @@ archive-label: SCINet Corner Recordings
 
 sessions:
   - session:
+    title: Data transfer using Globus
+    date: 2025-02-27
+    time: 1-2 pm ET
+    excerpt: "Data transfer to, from, and among SCINet systems (Ceres, Atlas, and Juno) using Globus"
+  - session:
+    title: "Login nodes: What they are and how to use them"
+    date: 2025-01-23
+    time: 1-2 pm ET
+    excerpt: This presentation will cover the purpose and proper use of login nodes.
+  - session:
     title: HPC Software Module System and Placing Requests for Software
     date: 2024-12-12
     time: 1-2 pm ET
@@ -173,7 +183,7 @@ This presentation will cover how to log on to Open OnDemand for Ceres and Atlas,
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/Efccvnjx5ilPhokEl1kp-ggBnIrYRYkDpWKEykBF09hDqA?e=usBHyT #main link to video
     date: 2022-12-01 13:00:00
     time: 1-2 pm ET
-    tags: [R-Project,dplyr]
+    tags: [R-Project,DPLYR]
     instructor: Viswanathan Satheesh
     excerpt: "Viswanathan Satheesh continues exploration of R after the previous SCINet Corner (November 3, 2022) and provides an introduction to dplyr."
     materials:

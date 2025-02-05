@@ -5,7 +5,7 @@ description: Event - Genomics workshop from Carpentries
 type: training
 end_date: 2023-10-25
 provider: Carpentries
-tags: genomics
+tags: Genomics
 
 sessions: 
   - session:

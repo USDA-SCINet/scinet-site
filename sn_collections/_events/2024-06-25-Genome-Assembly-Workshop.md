@@ -4,7 +4,7 @@ type: workshop
 end_date: 2024-06-27 
 provider: ISU
 
-tags: genomics genome-assembly
+tags: Genomics Genome-Assembly
 sessions: 
   - session:
     time: 12 PM – 4 PM ET

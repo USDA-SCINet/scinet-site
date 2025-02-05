@@ -192,6 +192,12 @@ Use the [SCINet Forum](https://forum.scinet.usda.gov) message board (must have S
 
 For Galaxy questions, please use the same email contact scinet_vrsc@usda.gov
 
+### When I submit a support ticket, I do not see an automatated email from the VRSC. How do I fix this? 
+
+The simplest way to never miss a Jira email is to ensure that your Focused Inbox is turned off. You can turn it off using the instructions found on the [Microsoft Support Page](https://support.microsoft.com/en-us/office/focused-inbox-for-outlook-f445ad7f-02f4-4294-a82e-71d8964e3978). Make sure you select the applicable section of New or Classic Outlook, or Web. 
+
+If you wish to keep your Focused Inbox on, you will instead need to find the automated Jira email in your Other folder. Righ-click on the email, and select "Always Move to Focused".
+
 ### Who is the SCINet program manager?
 The current acting SCINet program manager is Rob Butler.
 

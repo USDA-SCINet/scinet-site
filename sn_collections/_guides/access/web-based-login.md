@@ -59,6 +59,7 @@ SCINet offers three main web-based interfaces:
 </div>
 
 "
+#fetched: "login-help"
 ---
 
 {% include images_path %}
@@ -87,21 +88,25 @@ See ["Available Web-Based Interfaces"](#available-web-based-interfaces) below fo
 
 ## Accessing Web-Based Interfaces
 
-The process for logging on to SCINet via Open OnDemand or Galaxy is the same. Because Globus is not hosted on SCINet systems, it [uses a different login procedure](/guides/data/datatransfer#globus-data-transfer). 
+The process for logging on to SCINet via Open OnDemand or Galaxy is the same. The process is also the same for Globus, but you access this login method by selecting "SCINet - ARS/USDA" from the organization drop-down menu on the Globus Login page. 
 
-* To log on to Open OnDemand or Galaxy, start by following the relevant link below.
+* To access SCINet's web-based interfaces, start by following the relevant link below.
   * Open OnDemand:
     * [Open OnDemand for Ceres](http://ceres-ood.scinet.usda.gov/)
     * [Open OnDemand for Atlas](https://atlas-ood.hpc.msstate.edu/)
   * Galaxy
     * [Galaxy for Ceres](https://galaxy.scinet.usda.gov)
+  * [Globus](https://www.globus.org/) (for file transfers) 
 
-* You will initially be presented with the SCINet login page.  
-  ![screenshot of Login Screen with Legacy Selection]({{ images_path }}/linpassorlogingov.png)
-* Choose "Login.gov or USDA LincPass" as your sign-in option.
-  * If you have a LincPass/AltLinc or PIV Exemption, you will authenticate as usual with eAuth.
-  * If you _do not_ have a LincPass/AltLinc or PIV Exemption, you will authenticate using Login.gov. Please see the [detailed instructions for logging on to SCINet using Login.gov](/guides/access/login/logingov).
-* After successful authentication, you will automatically be redirected to Open OnDemand or Galaxy.
+* You will be presented with the USDA eAuthentication login page.  
+  ![SCINet login page]({{ images_path }}/eAuth_login1.PNG)
+  
+* Select the login option that is appropriate for you (Sponsored, non-USDA SCINet users should choose "Customer"):
+  * If you have a LincPass/AltLinc, you will authenticate as usual with eAuth. 
+  * If you _do not_ have a LincPass/AltLinc:
+    * Sponsored, non-USDA SCINet users will authenticate using Login.gov. Please see the [detailed instructions for logging on to SCINet using Login.gov](/guides/access/login/alt-login#non-usda-users---logingov).
+    * USDA employees without a LincPass/AltLinc should enroll in Windows Hello for Business or apply for a PIV Exemption. More detailed information is available in the [Alternative Login guide](/guides/access/login/alt-login#usda-users-without-a-lincpassaltlinc).
+* After successful authentication, you will automatically be redirected to Open OnDemand, Galaxy, or the Globus file management interface.
 
 If you have further questions or issues, please email [scinet_vrsc@usda.gov](scinet_vrsc@usda.gov). 
  

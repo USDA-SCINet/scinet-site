@@ -18,7 +18,7 @@ sidenav:
 table:
     position: back
     source: modules
-    caption: List updated October 9, 2020. To generate this list run  <code>module avail</code>.
+    caption: List updated December 30, 2024. To generate this list run  <code>module avail</code>.
 
 graphical-table:
   title: Graphical Software

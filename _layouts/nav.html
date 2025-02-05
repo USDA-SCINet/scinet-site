@@ -2,6 +2,7 @@
 layout: default
 main:
   class: usa-layout-docs usa-layout-docs__main usa-prose 
+
 ---
 {% assign blankarray = "" | split: "" %}
 {% assign bc_sidenav = blankarray %}
@@ -32,6 +33,7 @@ main:
 
   {% if page.layout_type == 'workshop' %}
     {% if page.parent %}
+    
     {% assign bc_sectionlink = page.parent %}
     {% if page.parent.class %}
     {% assign bc_sidenav = bc_sidenav | push: page.parent %}
@@ -40,10 +42,23 @@ main:
     {% assign bc_sidenav = bc_sidenav | push: hashed %}
     {% endif %}
 
+    {% assign alt_nav = page.parent.title %}
 
-    {% assign altnav = page.parent.title %}
+    {% if page.has-sessions %}
+
+    {% assign allevents = site.events | where: 'future', 'show' %}
+    {% assign allworkshops = site.workshops | where: 'future', 'show' %}
+    {% assign all_posts = allevents | concat: allworkshops %}
+
+    {% assign myset = all_posts | where_exp: "post", "post.categories == page.categories" %}
+
+    
+    {% assign bc_sidenav = bc_sidenav | concat: myset %}
+    
+    {% else %}
+
     {% assign mixedevents = site.events | concat: site.events-recurring %}
-    {% assign sorter = mixedevents | find_exp: "post", "post.title == altnav" %}
+    {% assign sorter = mixedevents | find_exp: "post", "post.title == alt_nav" %}
     {% assign myset = site.workshops | where_exp: "post", "post.categories == page.categories" %}
 
     {% if sorter.course-list %}
@@ -53,6 +68,7 @@ main:
     {% endfor %}
     {% else %}
     {% assign bc_sidenav = bc_sidenav | concat: myset %}
+    {% endif %}
     {% endif %}
 
     {% else %}
@@ -136,8 +152,21 @@ main:
 
     {% elsif page.parent %}
       {% assign bc_sectionlink = page.parent %}
+      {% assign alt_nav = page.parent.title %}
       
       {% assign bc_sidenav = bc_sidenav | push: page.parent | push: page %}
+    {% elsif page.parents %}
+
+      {% assign breadcrumb_set = page.parents | push: page %}
+      {% if bc_sidenav %}
+        {% assign bc_sidenav = bc_sidenav | concat: breadcrumb_set %}
+      {% else %}
+        {% assign bc_sidenav = breadcrumb_set %}
+      {% endif %}
+
+      {% assign alt_nav = page.parents[0].title %}
+    
+
     {% endif %}
 
   {% endif %}

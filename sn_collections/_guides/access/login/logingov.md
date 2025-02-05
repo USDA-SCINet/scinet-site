@@ -1,10 +1,19 @@
 ---
 title: "Accessing SCINet Using Login.gov"
 description: Steps for accessing SCINet resources using Login.gov
-parent:
-  title: Login
-  url: /guides/access
-  class: "guide-nav"
+excerpt: If you do not have a LincPass/AltLinc card or PIV exemption, you will need to use your Login.gov account to log on to SCINet systems. 
+parents:
+  - title: Access
+    url: /guides/access
+    class: "guide-nav"
+  - title: Login Assistance
+    url: /guides/access/login
+    class: "emph-nav"
+
+fetched: "login-help"
+order_number: 10
+
+published: false
 ---
 
 {% include images_path %}

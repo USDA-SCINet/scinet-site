@@ -3,7 +3,7 @@ title: "Introduction to the Command line and Slurm"
 type: training
 description: Event - introduction to the Linux command line and managing computing tasks on a supercomputer
 
-tags: slurm command-line
+tags: SLURM Command-Line
 time: 1-5 PM ET
 
 details:
