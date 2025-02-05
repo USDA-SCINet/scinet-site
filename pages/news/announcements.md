@@ -14,7 +14,7 @@ news:
     excerpt: "This SCINet working group aims to explore the potential benefits of Artificial Intelligence (AI) in animal behavior research. To learn more about the working group, please [see the working group description here](/research/working-groups/behavior)."
   - title: "LincPass login for café machines"
     date: 2025-01-15
-    excerpt: "The SCINet café machines offer high-speed data transfer capabilities to and from SCINet’s supercomputers and data storage infrastructure. These machines have been updated to require a LincPass for logging on to the machines."
+    excerpt: "The SCINet café machines offer high-speed data transfer capabilities to and from SCINet’s supercomputers and data storage infrastructure. These machines have been updated to support streamlined logins with a LincPass."
   - title: "Streamlined web-based login"
     date: 2025-01-28
     excerpt: "SCINet users will no longer see the SCINet login page that asks for a username and password when they access SCINet systems. Instead, SCINet logins immediately redirect to USDA’s eAuthentication (eAuth) site, at which point they continue to authenticate as usual using either their LincPass/AltLinc card or Login.gov credentials."
