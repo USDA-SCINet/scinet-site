@@ -2,16 +2,31 @@
 title: What's New?
 layout: page
 permalink: /news/announcements
-description: A a history of SCINet developments such as added software features, user experience improvements, login procedure updates, policy changes, and new working groups.
+description: A history of SCINet developments such as added software features, user experience improvements, login procedure updates, policy changes, and new working groups.
 filter: check
 collecting: 
   collections: announcements
   yml: news
 
 news:
+  - title: "New Animal Behavior AI Working Group"
+    date: 2025-02-04
+    excerpt: "This SCINet working group aims to explore the potential benefits of Artificial Intelligence (AI) in animal behavior research. To learn more about the working group, please [see the working group description here](/research/working-groups/behavior)."
+  - title: "LincPass login for café machines"
+    date: 2025-01-15
+    excerpt: "The SCINet café machines offer high-speed data transfer capabilities to and from SCINet’s supercomputers and data storage infrastructure. These machines have been updated to require a LincPass for logging on to the machines."
+  - title: "Streamlined web-based login"
+    date: 2025-01-28
+    excerpt: "SCINet users will no longer see the SCINet login page that asks for a username and password when they access SCINet systems. Instead, SCINet logins immediately redirect to USDA’s eAuthentication (eAuth) site, at which point they continue to authenticate as usual using either their LincPass/AltLinc card or Login.gov credentials."
+  - title: "AlphaFold 3 Available on SCINet Clusters"
+    date: 2025-01-28
+    excerpt: "The AlphaFold 3 software, databases, and model weights are now available on both Ceres and Atlas! To learn more about how to use AlphaFold 3 on SCINet clusters, please [see instructions here](/guides/application/alphafold3)."
   - title: "Simplified Globus login"
     date: 2024-12-11
     excerpt: "SCINet users can now log in to Globus using their SCINet accounts like any other web-based SCINet access (previously, logging in to Globus required ORCiD credentials). When logging into Globus.org, you can select 'SCINet - ARS/USDA' in the existing organizational login dropdown menu."
+  - title: "New Breeding AI and ML Working Group"
+    date: 2024-10-31
+    excerpt: "The focus of this group is to create a space where researchers working on addressing problems in breeding using artificial intelligence (AI) and machine learning (ML) methods can exchange knowledge and build community support. To learn more about the working group, please [see the working group description here](/research/working-groups/breeding)."
   - title: "Expanded memory in A100 GPU nodes"
     date: 2024-10-30
     excerpt: "All five A100 GPU nodes on Atlas have had their available memory doubled from 1TB to 2TB. This improvement allows for more efficient use of the GPUs and helps support larger input datasets."
