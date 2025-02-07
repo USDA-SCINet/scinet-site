@@ -19,6 +19,11 @@ excerpt: To recieve an invitation to upcoming webinars, fill out the [Translatio
 archive-label: Webinar Recordings
 
 sessions:
+  - session:
+    title: Design of multi-scale dynamics and functions of microbial communities
+    date: 2025-02-13
+    presenter: Dr. Ophelia Venturelli
+    time: 11am-12pm ET
   - session: 
     title: "Comparative analysis of adaptive immune systems in agriculturally important species"
     date: 2024-12-12
