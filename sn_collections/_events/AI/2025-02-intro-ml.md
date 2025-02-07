@@ -52,9 +52,9 @@ To help minimize technical issues and delays at the start of the workshop, pleas
 
 ## Tutorial setup instructions
 
-Steps to prepare for the tutorial:
+Steps to prepare for the tutorial each day of the workshop:
 
-1. **Login to Atlas Open OnDemand** at [https://atlas-ood.hpc.msstate.edu/](https://atlas-ood.hpc.msstate.edu/). For more information on login procedures for web-based SCINet access, see the [SCINet access user guide]({{site.baseurl}}/guides/access/web-based-login).
+1. **Login to Atlas Open OnDemand** at [https://atlas-ood.hpc.msstate.edu/](https://atlas-ood.hpc.msstate.edu/). For more information on login procedures for web-based SCINet access, see the [SCINet access user guide]({{site.baseurl}}/guides/access/web-based-login). If it is the first day of the workshop, go to step 2. For the second or third day of the workshop, go to step 7.
 
 1. **Open a command-line session** by clicking on "Clusters" -> "Atlas Shell Access" on the top menu. This will open a new tab with a command-line session on Atlas's login node.
 
@@ -71,7 +71,7 @@ srun --reservation=ml_workshop -A scinet_workshop1 -t 00:30:00 -n 1 --mem 8G --p
     ```bash
 mkdir -p /90daydata/shared/$USER/intro_ml
 cd /90daydata/shared/$USER/intro_ml
-cp -r /project/scinet_workshop1/intro_ml/intro_ml.ipynb .
+cp -r /project/scinet_workshop1/intro_ml/*.ipynb .
 ```
 
 1. **Setup the kernel for JupyterLab.** You will create a kernel called *intro_ml_env* to access from JupyterLab Server. Run the following commands to activate the workshop's virtual environment and create a new kernelspec from it:
