@@ -110,3 +110,9 @@ exit
 /90daydata/shared/${USER}/intro_ml
 ```
     
+1. If this is the first day, then follow along with the notebook available in JupyterLab. If this is the second day, open up a terminal in JupyterLab and run the following command to retrieve the second notebook:
+
+    {:.copy-code}
+    ```bash
+cp /project/scinet_workshop1/intro_ml/intro_ml-2.ipynb .
+```
