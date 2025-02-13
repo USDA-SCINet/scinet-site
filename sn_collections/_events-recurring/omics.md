@@ -20,6 +20,11 @@ archive-label: Webinar Recordings
 
 sessions:
   - session:
+    title: The Promises and Pitfalls of Deep Learning Methods for Plant Phenotype Prediction
+    date: 2025-03-13
+    presenter: Dr. Jacob D. Washburn
+    time: 11am-12pm ET
+  - session:
     title: Design of multi-scale dynamics and functions of microbial communities
     date: 2025-02-13
     presenter: Dr. Ophelia Venturelli
