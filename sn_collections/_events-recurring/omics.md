@@ -24,6 +24,9 @@ sessions:
     date: 2025-02-13
     presenter: Dr. Ophelia Venturelli
     time: 11am-12pm ET
+    materials:
+      - text: webinar recording
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/george_liu_usda_gov/Documents/publication/Hu%20Zhenbin/TOmics%20WG/20250213Recording/GMT20250213-160151_Recording_1920x1080.mp4?csf=1&web=1
   - session: 
     title: "Comparative analysis of adaptive immune systems in agriculturally important species"
     date: 2024-12-12
