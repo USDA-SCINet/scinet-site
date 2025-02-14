@@ -114,5 +114,13 @@ exit
 
     {:.copy-code}
     ```bash
+cd /90daydata/shared/${USER}/intro_ml
 cp /project/scinet_workshop1/intro_ml/intro_ml-2.ipynb .
+```
+If this is the third day, open up a terminal in JupyterLab and run the following command to retrieve the third notebook:
+
+    {:.copy-code}
+    ```bash
+cd /90daydata/shared/${USER}/intro_ml
+cp /project/scinet_workshop1/intro_ml/intro_ml-3.ipynb .
 ```
