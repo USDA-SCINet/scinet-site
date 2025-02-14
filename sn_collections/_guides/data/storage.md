@@ -7,6 +7,8 @@ categories: [Data]
 subnav:
   - title: Quotas
     url: '#quotas'
+  - title: Changing file permissions
+    url: '#changing-file-permissions'
   - title: Home Directories
     url: '#home-directories'
   - title: Project Directories
@@ -40,6 +42,24 @@ There are multiple places to store data on the Ceres and Atlas clusters that all
 
 Home directories, project directories in `/project` and on [Juno Archive Storage](#juno-archive-storage) have quotas. Home directories have 30GB quota. The default project directory quota in /project is set to 1TB. Note that quotas for project directories on Ceres and Atlas may differ.
 To see the current usage and quotas for your home and project directories on Ceres, as well as on Juno, issue the `my_quotas` command on the Ceres login node. On Atlas, issue "`/apps/bin/reportFSUsage -p proj1,proj2,proj3`", substituting proj# with project name(s).
+
+## Changing file permissions
+
+In Linux, access to the files is managed through the file permissions, attributes, and ownership. This ensures that only authorized users and processes can access files and directories. 
+
+Each file on a Linux system is associated with one user and one group. Files in /project and /90daydata on SCINet systems by default are associated with the project groups. 
+Each file is assigned with permission access rights for three different classes of users: the file owner, the group members, and others (everybody else). There are three file permissions types that apply to each class: read, write, and execute permissions.
+File permissions can be viewed using the `ls` command:
+```
+ls -l filename.txt
+```
+
+Having files in /project have group write permission would promote collaboration among project members. However, Globus and OnDemand do not allow to set this as default. To make behavior consistent among all SCINet services, the default is set so that the group members have read permissions but not write permissions to the files in the project directories owned by other project members. 
+Users can change the default behavior for files created within ssh sessions by setting umask for their accounts. Setting umask will not have effect on files created in OnDemand or when transfering data via Globus. File owners can add group write permissions for files and directories using chmod command, e.g.:
+```
+chmod -R g+w /project/<project_name>/<dir_name>
+```
+After doing so, other project members will be able to modify or delete files in `/project/<project_name>/<dir_name>`.
 
 
 ## Home Directories
