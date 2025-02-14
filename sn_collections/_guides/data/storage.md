@@ -77,7 +77,7 @@ To request a quota increase for an existing project see [Request Quota Increase]
 
 [Request Project Quota Increase](https://forms.office.com/g/ntnKBzJiKx){: .usa-button .usa-button-big }
 
-Default quota for `/project/<project_name>` is set to 1TB. Historically, before [Juno Archive Storage](#juno-archive-storage) has been deployed, large space had routinely been allocated in /project, but going forward, additional space in /project will only be allocated on an as-needed basis. Most users should use /90daydata to run analysis, and the results should be copied to [Juno Archive Storage](#juno-archive-storage).
+Default quota for `/project/<project_name>` is set to 1TB. 
 
 
 Many software applications are available on the clusters as [modules]({{ site.baseurl }}/guides/software/modules), however sometimes 
