@@ -28,9 +28,6 @@ subnav:
   - title: Modules
     url: /guides/software/modules
     internal: true
-  - title: Quotas
-    url: /guides/data/quotas
-    internal: true
   - title: SLURM Resource Manager
     url: /guides/use/slurm
     internal: true
