@@ -225,5 +225,6 @@ This presentation will cover how to log on to Open OnDemand for Ceres and Atlas,
 
 The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.<!--excerpt--> The main idea is that SCINet users with similar interests can get help from each other. This virtual meeting will provide space for, and facilitate, these interactions once a month.
 
-To receive calendar events for the SCINet Corner, subscribe to the mailing list.
-[Join our mailing list to recieve the webinar link](https://forms.office.com/g/tgh4SxRqit){: .usa-button }
+To receive calendar events for the SCINet Corner, subscribe to the mailing list.  
+
+[Subscribe here](https://forms.office.com/g/tgh4SxRqit){: .usa-button }
