@@ -38,28 +38,16 @@ There are multiple places to store data on the Ceres and Atlas clusters that all
 
 ## Quotas
 
-Home directories, project directories in `/project` and on [Juno Archive Storage](#juno-archive-storage) have quotas. Home directories have 10GB quota. The default project directory quota in /project is set to 1TB. Note that quotas for project directories on Ceres and Atlas may differ.
+Home directories, project directories in `/project` and on [Juno Archive Storage](#juno-archive-storage) have quotas. Home directories have 30GB quota. The default project directory quota in /project is set to 1TB. Note that quotas for project directories on Ceres and Atlas may differ.
 To see the current usage and quotas for your home and project directories on Ceres, as well as on Juno, issue the `my_quotas` command on the Ceres login node. On Atlas, issue "`/apps/bin/reportFSUsage -p proj1,proj2,proj3`", substituting proj# with project name(s).
 
-Quotas on Ceres are based off file group ownership/association. By default files in a home directory are associated with the user's
-primary group that has the same name as the user name, while files in a project directory are associated with the project
-group (proj-<project_name>). Sometimes when users move files from one directory to another or rsync files using "`-a`" or "`-g`" and "`-p`" 
-options, files in the new location will retain group from the old location and setgid bit will not be set. (The setgid bit needs to be set so that new files and directories created in the directory in /project would be associated with the project group.) To avoid this, use "`cp`" and "`rm`" instead of "`mv`" 
-to move data between home and project directories, and use "`-rltoD`" rsync options instead  of "`-a`" or explicitly specify "`--no-p --no-g`" options. 
-
-The "`beegfs-ctl --getquota --gid $USER --cfgFile=/etc/beegfs/beegfs-client-project.conf`" command will report usage and quota for your primary group in `/project`. This quota is 
-intentionally set to a small value. The non-zero usage indicates that there are files associated with the user's primary group
-in /project . To set ownership of the files in a directory in /project to the project group and to set the setgid bit, the user can issue the following command:
-```
-find /project/<project_name>/<dir> -exec chgrp proj-<project_name> {} + -a -type d -exec chmod g+s {} + 
-```
 
 ## Home Directories
 
 Home directories are private, they are only accessible to the user and the system administrators. When a user logs 
 into Ceres or Atlas, they are automatically logged into their home directory `/home/firstname.lastname`. 
 
-Home directories have 10GB quotas and are intended to be mainly used for configuration and login files. Computations 
+Home directories have 30GB quotas and are intended to be mainly used for configuration and login files. Computations 
 should be run from project directories in `/90daydata` or in `/project`. Software installs that require a lot of space, 
 such as conda virtual environments, should be done in [`/project`](#project-directories).
 
