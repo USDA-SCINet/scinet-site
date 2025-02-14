@@ -8,7 +8,8 @@ provider: SCINet Corner
 description: The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.
 redirect_from: 
   - /training/corner
-registration: 
+registration:
+  text: "Subscribe to calendar events"
   url: https://forms.office.com/g/tgh4SxRqit
 cal-titles: true
 
@@ -224,6 +225,6 @@ This presentation will cover how to log on to Open OnDemand for Ceres and Atlas,
 
 The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.<!--excerpt--> The main idea is that SCINet users with similar interests can get help from each other. This virtual meeting will provide space for, and facilitate, these interactions once a month.
 
-Location: [SpatialChat](https://app.spatial.chat/s/scinet-corner)
+To receive calendar events for the SCINet Corner, subscribe to the SCINet Corner mailing list.  
 
-[Register Here](https://forms.office.com/g/tgh4SxRqit){: .usa-button }
+[Subscribe Here](https://forms.office.com/g/tgh4SxRqit){: .usa-button }
