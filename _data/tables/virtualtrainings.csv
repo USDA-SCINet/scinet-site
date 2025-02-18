@@ -1,5 +1,4 @@
 ﻿Course Title/Link,subnav,Platform or Site,Time Investment,url
-SCINet: Python Programming Collection,Python Programming,AgLearn/LinkedIn,1-3 hrs/course,https://www.linkedin.com/learning-login/share?account=76310346&forceAccount=true&redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Flearning%2Fcollections%2Fenterprise%2F1%7EAAAAAASMZ0o%3D415014%3FshareId=c0cde733-5cfc-45d5-b052-979471c35fa3
 Getting Started with Python: Introduction,Python Programming,AgLearn/Skillsoft,1.5 hr,https://aglearn.usda.gov/enrol/index.php?id=48854
 Python Fundamentals,Python Programming,AgLearn/Skillsoft,1.5 hrs,https://aglearn.usda.gov/course/view.php?id=42094
 Python: the Basics,Python Programming,AgLearn/Skillsoft,~3.5 hrs,https://aglearn.usda.gov/course/view.php?id=36287
@@ -18,7 +17,6 @@ Python for Research,Python Programming,EdX,3hrs/12wks,https://www.edx.org/course
 Python: Basic and Advanced Tutorials,Python Programming,Tutorials Point,2+ hrs,https://www.tutorialspoint.com/python/python_variable_types.htm
 Python Tutorial for Beginners: Learn Python Programming in 7 days,Python Programming,Guru99,14 hrs,https://www.guru99.com/python-tutorials.html
 Python Tutorials,Python Programming,Coding Club,varies,https://ourcodingclub.github.io/tutorials.html
-SCINet: R Programming Collection,R Programming,AgLearn/LinkedIn,1-3 hrs/course,https://www.linkedin.com/checkpoint/enterprise/login/76310346?pathWildcard=76310346&application=learning&redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Flearning%2Fcollections%2Fenterprise%2F1%7EAAAAAASMZ0o%3D415016%3Fu%3D76310346
 Introduction to R Programming,R Programming,AgLearn/Skillsoft,~2.5 hrs,https://aglearn.usda.gov/mod/scorm/view.php?id=13217
 Debugging in R,R Programming,AgLearn/Skillsoft,1 hr,https://aglearn.usda.gov/course/view.php?id=28456
 Programming Techniques in R,R Programming,AgLearn/Skillsoft,~2 hrs,https://aglearn.usda.gov/course/view.php?id=28457
@@ -41,7 +39,6 @@ How-to SAS video tutorials,SAS Programming and JMP,sas.com,5–10 min videos,htt
 SAS Programming 1: Essentials,SAS Programming and JMP,sas.com,14 hrs,https://support.sas.com/edu/schedules.html?ctry=us&crs=PROG1
 "Statistics 1: Introduction to ANOVA, Regression, and Logistic Regression",SAS Programming and JMP,sas.com,21 hrs,https://support.sas.com/edu/schedules.html?ctry=us&crs=STAT1
 SAS Programming for R Users,SAS Programming and JMP,sas.com,14 hrs,https://support.sas.com/edu/schedules.html?ctry=us&crs=SP4R
-SCINet: SAS Programming Collection,SAS Programming and JMP,AgLearn/LinkedIn,1-3 hrs/course,https://www.linkedin.com/checkpoint/enterprise/login/76310346?pathWildcard=76310346&application=learning&redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Flearning%2Fcollections%2Fenterprise%2F1%7EAAAAAASMZ0o%3D430036%3Fu%3D76310346
 Statistical thinking for Industrial Problem Solving,SAS Programming and JMP,jmp.com,20-30 hrs,https://www.jmp.com/en_us/online-statistics-course.html
 On-demand Webinars -- Mastering JMP,SAS Programming and JMP,jmp.com,≤ 1 hr,https://www.jmp.com/en_us/events/mastering/overview.html
 SAS Base SAS 9 Programming: The SAS environment,SAS Programming and JMP,AgLearn/Skillsoft,~2 hrs,https://aglearn.usda.gov/enrol/index.php?id=28544
@@ -50,19 +47,15 @@ SAS Base SAS 9 Programming: Working with Data Sets,SAS Programming and JMP,AgLea
 SAS Base SAS 9 Programming: Creating Reports,SAS Programming and JMP,AgLearn/Skillsoft,~2 hrs,https://aglearn.usda.gov/enrol/index.php?id=28547
 SAS Base SAS 9 Programming: Inputs and Outputs,SAS Programming and JMP,AgLearn/Skillsoft,~2 hrs,https://aglearn.usda.gov/enrol/index.php?id=28548
 SAS Base SAS 9 Programming: Data Structures,SAS Programming and JMP,AgLearn/Skillsoft,~2 hrs,https://aglearn.usda.gov/enrol/index.php?id=28549
-SCINet: Matlab Learning Pathway,MATLAB Programming,AgLearn/LinkedIn,4.5hrs,https://www.linkedin.com/learning-login/share?account=76310346&forceAccount=true&redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Flearning%2Fpaths%2Fusda-scinet-matlab%3FshareId=68d82c5d-5116-4e61-954e-f48e70d432eb
 Practical Data Science with MATLAB Specialization,MATLAB Programming,Coursera,2 mo; 10 hrs/wk,https://www.coursera.org/specializations/practical-data-science-matlab
 Exploratory Data Analysis with MATLAB,MATLAB Programming,Coursera,5 wks; 4 hrs/wk,https://www.coursera.org/learn/exploratory-data-analysis-matlab
 Data Processing and Feature Engineering with MATLAB,MATLAB Programming,Coursera,26 hrs,https://www.coursera.org/learn/feature-engineering-matlab
 Predictive Modeling and Machine Learning with MATLAB,MATLAB Programming,Coursera,4 hrs,https://www.coursera.org/learn/predictive-modeling-machine-learning
 Data Science Project: MATLAB for the Real World,MATLAB Programming,Coursera,unknown,https://www.coursera.org/learn/matlab-capstone
-SCINet: Statistics Collection,General Statistics,AgLearn/LinkedIn,1-3 hrs/course,https://www.linkedin.com/learning-login/share?account=76310346&forceAccount=true&redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Flearning%2Fcollections%2Fenterprise%2F1%7EAAAAAASMZ0o%3D421015%3FshareId=4a2ab797-9d1c-4f92-b84f-f7d76369a0c7
 SCINet Coursera Collection (Scroll down to see full course collection in Statistics),General Statistics,Coursera,Varies,https://www.coursera.org/programs/scinet-program-of-study-a6nd3
 Statistical Learning (using R),General Statistics,EdX,9 wks; 3-5 hrs/wk,https://www.edx.org/course/statistical-learning
 Statistical Predictive Modelling and Applications,General Statistics,EdX,9 wks; 3-5 hrs/wk,https://www.edx.org/course/statistical-predictive-modelling
 Statistical Rethinking: A Bayesian Approach-Connecting Scientific Models to Evidence,General Statistics,Github,10 wks; 1-3 hrs/wk,https://github.com/rmcelreath/stat_rethinking_2022
-SCINet: Machine Learning and AICollection,Artificial Intelligence and Machine Learning,AgLearn/LinkedIn,1-3 hrs/course,https://www.linkedin.com/checkpoint/enterprise/login/76310346?pathWildcard=76310346&application=learning&redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Flearning%2Fcollections%2Fenterprise%2F1%7EAAAAAASMZ0o%3D412022%3Fu%3D76310346
-Machine Learning & AI Foundations: Recommendations,Artificial Intelligence and Machine Learning,AgLearn/LinkedIn,~4 hrs,https://aglearn.usda.gov/course/view.php?id=44673https://aglearn.usda.gov/course/view.php?id=44673
 Linear Regression Models: Building Simple Regression Models with Scikit Learn and KerasSCORM package (Python),Artificial Intelligence and Machine Learning,AgLearn/Skillsoft,1 hr,https://aglearn.usda.gov/mod/scorm/view.php?id=30365
 SCINet AI-COE Coursera Collection,Artificial Intelligence and Machine Learning,Coursera,Varies,https://www.coursera.org/programs/ai-center-of-excellence-program-of-study-yunri
 AI for Everyone: Master the Basics,Artificial Intelligence and Machine Learning,EdX,4 wks; 1-2 hrs/wk,https://www.edx.org/course/artificial-intelligence-for-everyone
@@ -111,14 +104,9 @@ Machine Learning and Visualization Tutorials in Python for Earth Science,Ecologi
 What is Git? (Interactive tutorial),Git and GitHub,atlassian.com,45 min,https://www.atlassian.com/git/tutorials/what-is-git
 Intro to GitHub for Version Control,Git and GitHub,Coding Club,varies,https://ourcodingclub.github.io/tutorials/git/
 Setting up a GitHub Repository for Your Lab,Git and GitHub,Coding Club,varies,https://ourcodingclub.github.io/tutorials/git-for-labs/
-SCINet: Git and Github Collection,Git and GitHub,AgLearn/LinkedIn,1-3 hrs/course,https://www.linkedin.com/learning-login/share?account=76310346&forceAccount=true&redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Flearning%2Fcollections%2Fenterprise%2F1%7EAAAAAASMZ0o%3D435021%3FshareId=039d4c4e-d1e0-462b-989c-6cbcf5883e0d
 RStudio,"Reproducibility, Productivity, and Integration Management Tools",rstudio.com,varies,https://rstudio.com/
-Introducing Jupyter,"Reproducibility, Productivity, and Integration Management Tools",AgLearn/LinkedIn,~1 hr,https://aglearn.usda.gov/enrol/index.php?id=47618
 Open Source Tools for Data Science,"Reproducibility, Productivity, and Integration Management Tools",Coursera,3 wks; 3 hrs/wk,https://www.coursera.org/learn/open-source-tools-for-data-science
 Getting Started with R Markdown,"Reproducibility, Productivity, and Integration Management Tools",Coding Club,varies,https://ourcodingclub.github.io/tutorials/rmarkdown/
-Learning Markdown,"Reproducibility, Productivity, and Integration Management Tools",AgLearn/LinkedIn,~ 1hr,https://aglearn.usda.gov/enrol/index.php?id=43878
-Creating Reports and Presentations with R Markdown and RStudio,"Reproducibility, Productivity, and Integration Management Tools",AgLearn/LinkedIn,~2.5 hrs,https://aglearn.usda.gov/enrol/index.php?id=46475
-EndNote Essential Training,"Reproducibility, Productivity, and Integration Management Tools",AgLearn/LinkedIn,~1.5 hrs,https://aglearn.usda.gov/enrol/index.php?id=44590
 Coding Etiquette,"Reproducibility, Productivity, and Integration Management Tools",Coding Club,varies,https://ourcodingclub.github.io/tutorials/etiquette/
 Transferring Quantitative Skills Among Scientists,"Reproducibility, Productivity, and Integration Management Tools",Coding Club,varies,https://ourcodingclub.github.io/tutorials/tutorials/
 Reproducible Research,"Reproducibility, Productivity, and Integration Management Tools",Coursera,11 hrs,https://www.coursera.org/learn/reproducible-research
