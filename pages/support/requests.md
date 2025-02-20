@@ -31,7 +31,7 @@ Below are instructions for how to make a request for a SCINet project, new softw
 ## Project Request
 ---
 
-When a user applies for a SCINet account, they are allocated space on Ceres and Atlas in a home directory (/home/\<username>/). Each user is allowed 15 GB of data in their home directory.
+When a user applies for a SCINet account, they are allocated space on Ceres and Atlas in a home directory (/home/\<username>/). Each user is allowed 30 GB of data in their home directory.
 
 Users are advised to request additional storage space with a SCINet project. SCINet project storage allocations are located in project directories: /project/\<projectname>/ on Ceres and Atlas and /LTS/project/\<projectname>/ on Juno. Project storage allocation sizes, or storage 'quotas', can be requested to be as large as you need to support your work and can be different on each system, e.g., larger on Juno than Ceres or Atlas if you have more data to store long term than process at a given time. SCINet projects also come with a /90daydata directory (/90daydata/\<projectname>/) that is useful for storing intermediate files.
 

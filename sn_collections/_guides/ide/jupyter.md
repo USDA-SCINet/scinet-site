@@ -869,7 +869,7 @@ The best practice recommended is to create a personal Python virtual environment
 
 **Before you start using Conda:**
 
-**Note:** Before starting to use Conda, it's advisable to change the default location (your home directory) where Conda will install your customized libraries. Installing a lot of Python libraries may contribute to the default 5G soft limit quota on your home directory being surpassed. To overcome this issue you can move `.conda` directory from your home directory to your project directory and create a symbolic link to the new location. In JupyterLab open the **"Terminal"** app and enter the following commands substituting your values:
+**Note:** Before starting to use Conda, it's advisable to change the default location (your home directory) where Conda will install your customized libraries. Installing a lot of Python libraries may contribute to the default 30G soft limit quota on your home directory being surpassed. To overcome this issue you can move `.conda` directory from your home directory to your project directory and create a symbolic link to the new location. In JupyterLab open the **"Terminal"** app and enter the following commands substituting your values:
 
 ```
 cd ~

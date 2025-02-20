@@ -107,7 +107,7 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 ```
 
-Since home directories on both clusters have 10GB quota, it's recommended to move the installed miniconda to a project directory and create a symbolic link to the new location in the home directory:
+Since home directories on both clusters have 30GB quota, it's recommended to move the installed miniconda to a project directory and create a symbolic link to the new location in the home directory:
 
 ```
 mv ~/miniconda3 /project/project_folder/software/.
