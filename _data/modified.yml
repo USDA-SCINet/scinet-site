@@ -79,15 +79,15 @@ modified:
     authored: 2022-10-14T16:26:55-04:00
     committed: 2022-10-14T16:26:55-04:00
     filename:  pages/404.md
-  - commit: 98a7cd5842931aac35366e0ed525827974bf306d
-    modified: Tue Oct 1 13:31:32 2024 -0400
-    authored: 2024-10-01T13:31:32-04:00
-    committed: 2024-10-01T13:31:32-04:00
+  - commit: 8240c138a1261d4827d007eaf3b8cc3a8aa9e412
+    modified: Mon Nov 4 15:08:46 2024 -0500
+    authored: 2024-11-04T15:08:46-05:00
+    committed: 2024-11-04T15:08:46-05:00
     filename:  pages/about/about.md
-  - commit: 98a7cd5842931aac35366e0ed525827974bf306d
-    modified: Tue Oct 1 13:31:32 2024 -0400
-    authored: 2024-10-01T13:31:32-04:00
-    committed: 2024-10-01T13:31:32-04:00
+  - commit: 6a3c5a70db7f9465b4b268af8e5cd58202b3efec
+    modified: Mon Jan 6 16:41:49 2025 -0600
+    authored: 2025-01-06T16:41:49-06:00
+    committed: 2025-01-06T16:41:49-06:00
     filename:  pages/about/compute.md
   - commit: 2db6f105f2aaa1c2f823652af87a5861aa526da1
     modified: Thu Oct 17 18:46:46 2024 -0400
@@ -99,10 +99,10 @@ modified:
     authored: 2024-10-01T13:31:32-04:00
     committed: 2024-10-01T13:31:32-04:00
     filename:  pages/about/networking.md
-  - commit: 98a7cd5842931aac35366e0ed525827974bf306d
-    modified: Tue Oct 1 13:31:32 2024 -0400
-    authored: 2024-10-01T13:31:32-04:00
-    committed: 2024-10-01T13:31:32-04:00
+  - commit: 8ebdf999618dce2dae1c52c2b92fe0c3732adc88
+    modified: Mon Jan 13 15:45:51 2025 -0600
+    authored: 2025-01-13T15:45:51-06:00
+    committed: 2025-01-13T15:45:51-06:00
     filename:  pages/about/organization.md
   - commit: 98a7cd5842931aac35366e0ed525827974bf306d
     modified: Tue Oct 1 13:31:32 2024 -0400
@@ -129,15 +129,15 @@ modified:
     authored: 2024-10-01T09:20:04-04:00
     committed: 2024-10-01T09:20:04-04:00
     filename:  pages/guides/tools.md
-  - commit: 31e4140039837a38cbe3ee377cafe75a6f934c7e
-    modified: Wed Oct 23 08:29:09 2024 -0400
-    authored: 2024-10-23T08:29:09-04:00
-    committed: 2024-10-23T08:29:09-04:00
+  - commit: 078482f97ce2391796b27fbb2477df83320839cf
+    modified: Mon Jan 6 15:22:35 2025 -0500
+    authored: 2025-01-06T15:22:35-05:00
+    committed: 2025-01-06T15:22:35-05:00
     filename:  pages/home.md
-  - commit: 336ce97f8a87bea0ab233762ee912fe7ed4fa9bf
-    modified: Fri Oct 18 17:04:45 2024 -0400
-    authored: 2024-10-18T17:04:45-04:00
-    committed: 2024-10-18T17:04:45-04:00
+  - commit: 8f558297a90f878e8268f9bad7beb50409651a56
+    modified: Wed Feb 5 09:24:25 2025 -0700
+    authored: 2025-02-05T09:24:25-07:00
+    committed: 2025-02-05T09:24:25-07:00
     filename:  pages/news/announcements.md
   - commit: d8b0a86820450bc5be05b28d9f479138e5893398
     modified: Fri May 10 09:50:18 2024 -0400
@@ -149,10 +149,10 @@ modified:
     authored: 2024-05-10T09:50:18-04:00
     committed: 2024-05-10T09:50:18-04:00
     filename:  pages/news/downtime.md
-  - commit: f5e70a990a9acc3884b8a5176e091304d2399654
-    modified: Mon Sep 23 15:47:32 2024 -0400
-    authored: 2024-09-23T15:47:32-04:00
-    committed: 2024-09-23T15:47:32-04:00
+  - commit: 06b887673cef2995a43312c52d88a3b8d4e698b1
+    modified: Thu Jan 16 11:08:27 2025 -0500
+    authored: 2025-01-16T11:08:27-05:00
+    committed: 2025-01-16T11:08:27-05:00
     filename:  pages/news/newsletter.md
   - commit: 194c6f64e984bf79c96f2a05294902bc3d6e75f9
     modified: Wed Aug 21 10:01:59 2024 -0400
@@ -189,10 +189,10 @@ modified:
     authored: 2024-10-26T23:55:00-04:00
     committed: 2024-10-26T23:55:00-04:00
     filename:  pages/opportunities/ai-innovation/ai-innovation-fy23-awards.md
-  - commit: 7054190efd0b928738cd153263aa13a61a0b9573
-    modified: Sat Oct 26 23:54:37 2024 -0400
-    authored: 2024-10-26T23:54:37-04:00
-    committed: 2024-10-26T23:54:37-04:00
+  - commit: 0b5a8b24a37d886dd2984edd07abe757cc41f2b4
+    modified: Fri Jan 31 07:34:36 2025 -0500
+    authored: 2025-01-31T07:34:36-05:00
+    committed: 2025-01-31T07:34:36-05:00
     filename:  pages/opportunities/ai-innovation/ai-innovation-fy24-awards.md
   - commit: 1a3f87a3f08191392a3b10f0115890ac3852bc0a
     modified: Sat Nov 2 22:24:16 2024 -0400
@@ -224,10 +224,10 @@ modified:
     authored: 2024-11-02T22:24:16-04:00
     committed: 2024-11-02T22:24:16-04:00
     filename:  pages/opportunities/internship-mentors.md
-  - commit: d8b0a86820450bc5be05b28d9f479138e5893398
-    modified: Fri May 10 09:50:18 2024 -0400
-    authored: 2024-05-10T09:50:18-04:00
-    committed: 2024-05-10T09:50:18-04:00
+  - commit: 6a751822a9223e202d5e461d936b8642e9185d5e
+    modified: Wed Dec 4 10:06:02 2024 -0500
+    authored: 2024-12-04T10:06:02-05:00
+    committed: 2024-12-04T10:06:02-05:00
     filename:  pages/research/overview.md
   - commit: d8b0a86820450bc5be05b28d9f479138e5893398
     modified: Fri May 10 09:50:18 2024 -0400
@@ -254,10 +254,10 @@ modified:
     authored: 2022-12-02T15:15:21-05:00
     committed: 2022-12-02T15:15:21-05:00
     filename:  pages/research/use_cases/plant-breeding.md
-  - commit: ce3941b1e2bc98656332139a80895a760e1505c5
-    modified: Thu Oct 31 15:40:37 2024 -0400
-    authored: 2024-10-31T15:40:37-04:00
-    committed: 2024-10-31T15:40:37-04:00
+  - commit: 3b4056f73afbf96fb9d5fbbd9d615bbfd3ed8381
+    modified: Tue Feb 4 00:54:55 2025 -0600
+    authored: 2025-02-04T00:54:55-06:00
+    committed: 2025-02-04T00:54:55-06:00
     filename:  pages/research/working-groups.md
   - commit: d8b0a86820450bc5be05b28d9f479138e5893398
     modified: Fri May 10 09:50:18 2024 -0400
@@ -274,6 +274,11 @@ modified:
     authored: 2024-05-10T09:50:18-04:00
     committed: 2024-05-10T09:50:18-04:00
     filename:  pages/research/working_groups/arthropod.md
+  - commit: f7cf5282dae82b944040134bd9db01e791ebd4a5
+    modified: Tue Feb 4 14:02:02 2025 -0500
+    authored: 2025-02-04T14:02:02-05:00
+    committed: 2025-02-04T14:02:02-05:00
+    filename:  pages/research/working_groups/behavior.md
   - commit: ce3941b1e2bc98656332139a80895a760e1505c5
     modified: Thu Oct 31 15:40:37 2024 -0400
     authored: 2024-10-31T15:40:37-04:00
@@ -299,10 +304,10 @@ modified:
     authored: 2024-05-10T09:50:18-04:00
     committed: 2024-05-10T09:50:18-04:00
     filename:  pages/research/working_groups/policycommittee.md
-  - commit: d8b0a86820450bc5be05b28d9f479138e5893398
-    modified: Fri May 10 09:50:18 2024 -0400
-    authored: 2024-05-10T09:50:18-04:00
-    committed: 2024-05-10T09:50:18-04:00
+  - commit: 46e744fad486dd3bc2dede2533bcd7c68e77698e
+    modified: Wed Dec 4 10:08:46 2024 -0500
+    authored: 2024-12-04T10:08:46-05:00
+    committed: 2024-12-04T10:08:46-05:00
     filename:  pages/research/working_groups/pollinator.md
   - commit: ffb049b11f1caf72114333175d223777a138ef50
     modified: Wed May 29 14:14:36 2024 -0400
@@ -324,10 +329,10 @@ modified:
     authored: 2024-02-09T16:49:28-05:00
     committed: 2024-02-09T16:49:28-05:00
     filename:  pages/search.md
-  - commit: 6fd5732707ada977a561288371040c5cab15c680
-    modified: Thu Sep 26 14:24:07 2024 -0400
-    authored: 2024-09-26T14:24:07-04:00
-    committed: 2024-09-26T14:24:07-04:00
+  - commit: f49d1b52dab32960dff39c061f594d99e9605f7d
+    modified: Tue Jan 7 12:13:15 2025 -0600
+    authored: 2025-01-07T12:13:15-06:00
+    committed: 2025-01-07T12:13:15-06:00
     filename:  pages/support/FAQs.md
   - commit: 2db6f105f2aaa1c2f823652af87a5861aa526da1
     modified: Thu Oct 17 18:46:46 2024 -0400
@@ -339,10 +344,10 @@ modified:
     authored: 2022-11-09T15:50:11-05:00
     committed: 2022-11-09T15:50:11-05:00
     filename:  pages/support/contact.md
-  - commit: 46bc328a2100aea43049e92993ff6da48c0ed86b
-    modified: Sun Jun 9 23:49:26 2024 -0400
-    authored: 2024-06-09T23:49:26-04:00
-    committed: 2024-06-09T23:49:26-04:00
+  - commit: 564672bf107035b29f2c944a76063686e1a2e3be
+    modified: Thu Feb 20 12:30:44 2025 -0500
+    authored: 2025-02-20T12:30:44-05:00
+    committed: 2025-02-20T12:30:44-05:00
     filename:  pages/support/requests.md
   - commit: 78290deb61df2fa9b04ac3fda3a62931d346e607
     modified: Wed Nov 9 14:54:11 2022 -0500
@@ -769,25 +774,70 @@ modified:
     authored: 2024-10-03T12:59:15-04:00
     committed: 2024-10-03T12:59:15-04:00
     filename:  sn_collections/_downtime/2024-10-11-ceres.md
+  - commit: 1b85b2af03d4e02f3a637c0fbb276e1276612ad1
+    modified: Wed Dec 11 15:57:30 2024 -0500
+    authored: 2024-12-11T15:57:30-05:00
+    committed: 2024-12-11T15:57:30-05:00
+    filename:  sn_collections/_downtime/2024-12-12-juno.md
+  - commit: e8a06762a27c4524e2a9ddbaf5716e786cef42f4
+    modified: Wed Dec 4 10:50:18 2024 -0500
+    authored: 2024-12-04T10:50:18-05:00
+    committed: 2024-12-04T10:50:18-05:00
+    filename:  sn_collections/_downtime/2024-12-18-ceres.md
+  - commit: 8fae6e4d08b8f1d8983edc58e5e4e704271c8739
+    modified: Mon Dec 9 13:38:43 2024 -0500
+    authored: 2024-12-09T13:38:43-05:00
+    committed: 2024-12-09T13:38:43-05:00
+    filename:  sn_collections/_downtime/2025-01-14-Atlas.md
+  - commit: 5f013d67028a0ea7e45062a1b9c4f1bc52ffa1fc
+    modified: Fri Feb 7 09:46:16 2025 -0600
+    authored: 2025-02-07T09:46:16-06:00
+    committed: 2025-02-07T09:46:16-06:00
+    filename:  sn_collections/_downtime/2025-02-17-Ceres.md
+  - commit: 8fae6e4d08b8f1d8983edc58e5e4e704271c8739
+    modified: Mon Dec 9 13:38:43 2024 -0500
+    authored: 2024-12-09T13:38:43-05:00
+    committed: 2024-12-09T13:38:43-05:00
+    filename:  sn_collections/_downtime/2025-04-08-Atlas.md
+  - commit: 8b3741adb361481da881fb4f243a33a499ee5f55
+    modified: Thu Feb 20 12:39:32 2025 -0500
+    authored: 2025-02-20T12:39:32-05:00
+    committed: 2025-02-20T12:39:32-05:00
+    filename:  sn_collections/_downtime/2025-06-19-Ceres.md
+  - commit: 8fae6e4d08b8f1d8983edc58e5e4e704271c8739
+    modified: Mon Dec 9 13:38:43 2024 -0500
+    authored: 2024-12-09T13:38:43-05:00
+    committed: 2024-12-09T13:38:43-05:00
+    filename:  sn_collections/_downtime/2025-07-08-Atlas.md
+  - commit: 8b3741adb361481da881fb4f243a33a499ee5f55
+    modified: Thu Feb 20 12:39:32 2025 -0500
+    authored: 2025-02-20T12:39:32-05:00
+    committed: 2025-02-20T12:39:32-05:00
+    filename:  sn_collections/_downtime/2025-10-13-Ceres.md
+  - commit: 8fae6e4d08b8f1d8983edc58e5e4e704271c8739
+    modified: Mon Dec 9 13:38:43 2024 -0500
+    authored: 2024-12-09T13:38:43-05:00
+    committed: 2024-12-09T13:38:43-05:00
+    filename:  sn_collections/_downtime/2025-10-14-Atlas.md
   - commit: d61981f1f3db059ce1a125768dc81a437ec04365
     modified: Tue Oct 1 10:30:52 2024 -0400
     authored: 2024-10-01T10:30:52-04:00
     committed: 2024-10-01T10:30:52-04:00
     filename:  sn_collections/_events-recurring/Intro-to-Atlas.md
-  - commit: 0bb1dbafafb5c501188fade4826f011549172836
-    modified: Thu Oct 31 15:41:12 2024 -0400
-    authored: 2024-10-31T15:41:12-04:00
-    committed: 2024-10-31T15:41:12-04:00
+  - commit: 183a8305f6224a9a46e66a13a6e5089689e2c81e
+    modified: Thu Feb 13 15:27:10 2025 -0500
+    authored: 2025-02-13T15:27:10-05:00
+    committed: 2025-02-13T15:27:10-05:00
     filename:  sn_collections/_events-recurring/omics.md
   - commit: a82b02a687c5e04f945c437866e299942506b387
     modified: Thu Oct 24 10:35:48 2024 -0400
     authored: 2024-10-24T10:35:48-04:00
     committed: 2024-10-24T10:35:48-04:00
     filename:  sn_collections/_events-recurring/practicum-ai.md
-  - commit: a15f3d1da962d0d1dd391afc6e821a5e2af6857f
-    modified: Thu Oct 24 10:45:00 2024 -0400
-    authored: 2024-10-24T10:45:00-04:00
-    committed: 2024-10-24T10:45:00-04:00
+  - commit: 8e83e188424459a5a42f60501a88b8d13fc2b12e
+    modified: Fri Feb 14 10:38:07 2025 -0500
+    authored: 2025-02-14T10:38:07-05:00
+    committed: 2025-02-14T10:38:07-05:00
     filename:  sn_collections/_events-recurring/scinet-corner.md
   - commit: d61981f1f3db059ce1a125768dc81a437ec04365
     modified: Tue Oct 1 10:30:52 2024 -0400
@@ -849,26 +899,31 @@ modified:
     authored: 2024-10-01T10:30:52-04:00
     committed: 2024-10-01T10:30:52-04:00
     filename:  sn_collections/_events/2023-11-07-UAS.md
-  - commit: a2d7546d5637c1b79de87ef40adaaa55f8469c5c
-    modified: Thu Aug 1 09:16:20 2024 -0400
-    authored: 2024-08-01T09:16:20-04:00
-    committed: 2024-08-01T09:16:20-04:00
+  - commit: 1a60eb42c534c82af2d839acae019dbed62876ad
+    modified: Tue Jan 14 13:52:23 2025 -0500
+    authored: 2025-01-14T13:52:23-05:00
+    committed: 2025-01-14T13:52:23-05:00
     filename:  sn_collections/_events/2024-06-25-Genome-Assembly-Workshop.md
   - commit: 534ff5943d153b904e279f6102838d181aaeb652
     modified: Thu Oct 17 18:50:53 2024 -0400
     authored: 2024-10-17T18:50:53-04:00
     committed: 2024-10-17T18:50:53-04:00
     filename:  sn_collections/_events/2024-10-09-Multispectral-UAV-workshop.md
-  - commit: 67c215dae4dbde3ab073f28cc57d18394024948e
-    modified: Wed Oct 23 13:17:58 2024 -0400
-    authored: 2024-10-23T13:17:58-04:00
-    committed: 2024-10-23T13:17:58-04:00
+  - commit: 1a60eb42c534c82af2d839acae019dbed62876ad
+    modified: Tue Jan 14 13:52:23 2025 -0500
+    authored: 2025-01-14T13:52:23-05:00
+    committed: 2025-01-14T13:52:23-05:00
     filename:  sn_collections/_events/2024-11-13-intro-slurm.md
-  - commit: 67c215dae4dbde3ab073f28cc57d18394024948e
-    modified: Wed Oct 23 13:17:58 2024 -0400
-    authored: 2024-10-23T13:17:58-04:00
-    committed: 2024-10-23T13:17:58-04:00
+  - commit: 1a60eb42c534c82af2d839acae019dbed62876ad
+    modified: Tue Jan 14 13:52:23 2025 -0500
+    authored: 2025-01-14T13:52:23-05:00
+    committed: 2025-01-14T13:52:23-05:00
     filename:  sn_collections/_events/2024-11-14-intro-python.md
+  - commit: d55d3ce64948f1b403bf3d8ea9cbcc6737a34113
+    modified: Tue Feb 4 13:47:26 2025 -0500
+    authored: 2025-02-04T13:47:26-05:00
+    committed: 2025-02-04T13:47:26-05:00
+    filename:  sn_collections/_events/2025-02-20-behavior-ai.md
   - commit: 2db6f105f2aaa1c2f823652af87a5861aa526da1
     modified: Thu Oct 17 18:46:46 2024 -0400
     authored: 2024-10-17T18:46:46-04:00
@@ -899,11 +954,31 @@ modified:
     authored: 2024-10-17T18:46:46-04:00
     committed: 2024-10-17T18:46:46-04:00
     filename:  sn_collections/_events/AI/2023-02-28-AI.md
-  - commit: 47ff2606d3172fdd91403e32f0e1a9ca48e5ab3f
-    modified: Mon Oct 21 08:06:18 2024 -0400
-    authored: 2024-10-21T08:06:18-04:00
-    committed: 2024-10-21T08:06:18-04:00
+  - commit: 1a60eb42c534c82af2d839acae019dbed62876ad
+    modified: Tue Jan 14 13:52:23 2025 -0500
+    authored: 2025-01-14T13:52:23-05:00
+    committed: 2025-01-14T13:52:23-05:00
     filename:  sn_collections/_events/AI/2024-ai-user-forum.md
+  - commit: 2d69b1273997fe35079c4cb7b7264d1c0f6955ae
+    modified: Fri Feb 14 10:42:05 2025 -0700
+    authored: 2025-02-14T10:42:05-07:00
+    committed: 2025-02-14T10:42:05-07:00
+    filename:  sn_collections/_events/AI/2025-02-intro-ml.md
+  - commit: 26198bd94bdd7e95ea5065682d645111dbb6f34e
+    modified: Thu Jan 16 08:37:30 2025 -0500
+    authored: 2025-01-16T08:37:30-05:00
+    committed: 2025-01-16T08:37:30-05:00
+    filename:  sn_collections/_events/AI/2025-03-cv1.md
+  - commit: 63ab708cc19b68434d54b3386ea437c7992ca0db
+    modified: Tue Jan 21 05:26:20 2025 -0500
+    authored: 2025-01-21T05:26:20-05:00
+    committed: 2025-01-21T05:26:20-05:00
+    filename:  sn_collections/_events/AI/2025-03-cv2.md
+  - commit: aa90ea8231b4f055d0eab2bd9753ec35d933b98f
+    modified: Fri Jan 24 08:03:49 2025 -0600
+    authored: 2025-01-24T08:03:49-06:00
+    committed: 2025-01-24T08:03:49-06:00
+    filename:  sn_collections/_events/AI/2025-ai.md
   - commit: 2db6f105f2aaa1c2f823652af87a5861aa526da1
     modified: Thu Oct 17 18:46:46 2024 -0400
     authored: 2024-10-17T18:46:46-04:00
@@ -969,15 +1044,15 @@ modified:
     authored: 2024-10-17T18:46:46-04:00
     committed: 2024-10-17T18:46:46-04:00
     filename:  sn_collections/_events/carpentries/2023-05-09-Carpentries.md
-  - commit: 2db6f105f2aaa1c2f823652af87a5861aa526da1
-    modified: Thu Oct 17 18:46:46 2024 -0400
-    authored: 2024-10-17T18:46:46-04:00
-    committed: 2024-10-17T18:46:46-04:00
+  - commit: 1a60eb42c534c82af2d839acae019dbed62876ad
+    modified: Tue Jan 14 13:52:23 2025 -0500
+    authored: 2025-01-14T13:52:23-05:00
+    committed: 2025-01-14T13:52:23-05:00
     filename:  sn_collections/_events/carpentries/2023-10-23-carpentries.md
-  - commit: 2db6f105f2aaa1c2f823652af87a5861aa526da1
-    modified: Thu Oct 17 18:46:46 2024 -0400
-    authored: 2024-10-17T18:46:46-04:00
-    committed: 2024-10-17T18:46:46-04:00
+  - commit: 1a60eb42c534c82af2d839acae019dbed62876ad
+    modified: Tue Jan 14 13:52:23 2025 -0500
+    authored: 2025-01-14T13:52:23-05:00
+    committed: 2025-01-14T13:52:23-05:00
     filename:  sn_collections/_events/carpentries/2024-08-19-carpentries.md
   - commit: 2db6f105f2aaa1c2f823652af87a5861aa526da1
     modified: Thu Oct 17 18:46:46 2024 -0400
@@ -999,10 +1074,10 @@ modified:
     authored: 2024-10-17T18:46:46-04:00
     committed: 2024-10-17T18:46:46-04:00
     filename:  sn_collections/_events/geospatial/2023-Geospatial-Workshop.md
-  - commit: c77d7a85f0363c795f6fdff378915643455823b7
-    modified: Mon Oct 28 09:19:49 2024 -0400
-    authored: 2024-10-28T09:19:49-04:00
-    committed: 2024-10-28T09:19:49-04:00
+  - commit: 9bf51406f7d534202ba50603166198a265a894b9
+    modified: Sat Nov 2 15:12:54 2024 -0600
+    authored: 2024-11-02T15:12:54-06:00
+    committed: 2024-11-02T15:12:54-06:00
     filename:  sn_collections/_events/geospatial/2024-Geospatial-Workshop.md
   - commit: 2db6f105f2aaa1c2f823652af87a5861aa526da1
     modified: Thu Oct 17 18:46:46 2024 -0400
@@ -1034,51 +1109,66 @@ modified:
     authored: 2024-10-17T18:46:46-04:00
     committed: 2024-10-17T18:46:46-04:00
     filename:  sn_collections/_events/getting-started/2021-11-05-SCINet-Onboarding.md
-  - commit: e8a4f49b4b2b3ca4484ee1f3a44db81fbfcf67fb
-    modified: Wed Oct 30 13:49:57 2024 -0400
-    authored: 2024-10-30T13:49:57-04:00
-    committed: 2024-10-30T13:49:57-04:00
+  - commit: 1a60eb42c534c82af2d839acae019dbed62876ad
+    modified: Tue Jan 14 13:52:23 2025 -0500
+    authored: 2025-01-14T13:52:23-05:00
+    committed: 2025-01-14T13:52:23-05:00
     filename:  sn_collections/_events/package-env/2024-07-package-env-workshop.md
-  - commit: e8a4f49b4b2b3ca4484ee1f3a44db81fbfcf67fb
-    modified: Wed Oct 30 13:49:57 2024 -0400
-    authored: 2024-10-30T13:49:57-04:00
-    committed: 2024-10-30T13:49:57-04:00
+  - commit: 1a60eb42c534c82af2d839acae019dbed62876ad
+    modified: Tue Jan 14 13:52:23 2025 -0500
+    authored: 2025-01-14T13:52:23-05:00
+    committed: 2025-01-14T13:52:23-05:00
     filename:  sn_collections/_events/package-env/2024-10-package-env-workshop.md
-  - commit: 5171860c9ce53d852ad05fb52688625736ba3525
-    modified: Tue Oct 1 09:20:04 2024 -0400
-    authored: 2024-10-01T09:20:04-04:00
-    committed: 2024-10-01T09:20:04-04:00
+  - commit: c8030cccd3b13f8e83e29b2f7a430d5a76d135e3
+    modified: Fri Jan 24 16:10:35 2025 -0500
+    authored: 2025-01-24T16:10:35-05:00
+    committed: 2025-01-24T16:10:35-05:00
     filename:  sn_collections/_guides/access/index.md
-  - commit: 6fd5732707ada977a561288371040c5cab15c680
-    modified: Thu Sep 26 14:24:07 2024 -0400
-    authored: 2024-09-26T14:24:07-04:00
-    committed: 2024-09-26T14:24:07-04:00
+  - commit: 0adbd7047e6cba543b9753bb8171ccf9ee49151e
+    modified: Tue Jan 28 08:07:06 2025 -0500
+    authored: 2025-01-28T08:07:06-05:00
+    committed: 2025-01-28T08:07:06-05:00
+    filename:  sn_collections/_guides/access/login/alt-login.md
+  - commit: f4180b8d85ee502b632f2fd68b90e1e10d13286c
+    modified: Fri Jan 24 15:49:16 2025 -0500
+    authored: 2025-01-24T15:49:16-05:00
+    committed: 2025-01-24T15:49:16-05:00
+    filename:  sn_collections/_guides/access/login/index.md
+  - commit: c8030cccd3b13f8e83e29b2f7a430d5a76d135e3
+    modified: Fri Jan 24 16:10:35 2025 -0500
+    authored: 2025-01-24T16:10:35-05:00
+    committed: 2025-01-24T16:10:35-05:00
     filename:  sn_collections/_guides/access/login/logingov.md
-  - commit: 6fd5732707ada977a561288371040c5cab15c680
-    modified: Thu Sep 26 14:24:07 2024 -0400
-    authored: 2024-09-26T14:24:07-04:00
-    committed: 2024-09-26T14:24:07-04:00
+  - commit: 13195e0f9711c7319b401961e749793bbba20a2e
+    modified: Fri Jan 24 15:45:06 2025 -0500
+    authored: 2025-01-24T15:45:06-05:00
+    committed: 2025-01-24T15:45:06-05:00
     filename:  sn_collections/_guides/access/login/password.md
-  - commit: 6fd5732707ada977a561288371040c5cab15c680
-    modified: Thu Sep 26 14:24:07 2024 -0400
-    authored: 2024-09-26T14:24:07-04:00
-    committed: 2024-09-26T14:24:07-04:00
+  - commit: 13195e0f9711c7319b401961e749793bbba20a2e
+    modified: Fri Jan 24 15:45:06 2025 -0500
+    authored: 2025-01-24T15:45:06-05:00
+    committed: 2025-01-24T15:45:06-05:00
     filename:  sn_collections/_guides/access/login/smallsteps.md
-  - commit: 6fd5732707ada977a561288371040c5cab15c680
-    modified: Thu Sep 26 14:24:07 2024 -0400
-    authored: 2024-09-26T14:24:07-04:00
-    committed: 2024-09-26T14:24:07-04:00
+  - commit: 13195e0f9711c7319b401961e749793bbba20a2e
+    modified: Fri Jan 24 15:45:06 2025 -0500
+    authored: 2025-01-24T15:45:06-05:00
+    committed: 2025-01-24T15:45:06-05:00
     filename:  sn_collections/_guides/access/login/softwarecenter_stepinstall.md
-  - commit: 68f00b40503f8f3c92d2bcae19f8a4a10b2ecfd6
-    modified: Tue Sep 3 22:31:11 2024 -0400
-    authored: 2024-09-03T22:31:11-04:00
-    committed: 2024-09-03T22:31:11-04:00
+  - commit: 1172b59af17a89e739c91ab84be570c0b32a93c7
+    modified: Tue Jan 28 08:12:48 2025 -0500
+    authored: 2025-01-28T08:12:48-05:00
+    committed: 2025-01-28T08:12:48-05:00
     filename:  sn_collections/_guides/access/ssh-login.md
-  - commit: 68f00b40503f8f3c92d2bcae19f8a4a10b2ecfd6
-    modified: Tue Sep 3 22:31:11 2024 -0400
-    authored: 2024-09-03T22:31:11-04:00
-    committed: 2024-09-03T22:31:11-04:00
+  - commit: 1bf1e500e23653445dcc7011158fb3deb3246923
+    modified: Tue Jan 28 08:11:26 2025 -0500
+    authored: 2025-01-28T08:11:26-05:00
+    committed: 2025-01-28T08:11:26-05:00
     filename:  sn_collections/_guides/access/web-based-login.md
+  - commit: 87ac16ffad1d50631316b0645dee7b795f86364e
+    modified: Thu Jan 23 08:52:21 2025 -0500
+    authored: 2025-01-23T08:52:21-05:00
+    committed: 2025-01-23T08:52:21-05:00
+    filename:  sn_collections/_guides/application/alphafold3.md
   - commit: 9bd960a2e6bd9424ba16c67df7a27f9339df5321
     modified: Wed Sep 25 12:58:26 2024 -0400
     authored: 2024-09-25T12:58:26-04:00
@@ -1134,10 +1224,10 @@ modified:
     authored: 2024-09-26T14:24:07-04:00
     committed: 2024-09-26T14:24:07-04:00
     filename:  sn_collections/_guides/data/data-management.md
-  - commit: 86a9e8c83e4db6aae5551cb491d8b175bf9b8240
-    modified: Mon Oct 21 14:44:33 2024 -0500
-    authored: 2024-10-21T14:44:33-05:00
-    committed: 2024-10-21T14:44:33-05:00
+  - commit: 778161bce7b6a4401f4d96707360b0a7f9a167d0
+    modified: Fri Feb 14 14:55:18 2025 -0500
+    authored: 2025-02-14T14:55:18-05:00
+    committed: 2025-02-14T14:55:18-05:00
     filename:  sn_collections/_guides/data/datatransfer.md
   - commit: ba7ff996a981d3a7e18307c3c8b1a5cca278324e
     modified: Mon Sep 30 13:00:37 2024 -0400
@@ -1148,51 +1238,46 @@ modified:
     modified: Tue Sep 3 22:31:11 2024 -0400
     authored: 2024-09-03T22:31:11-04:00
     committed: 2024-09-03T22:31:11-04:00
-    filename:  sn_collections/_guides/data/quotas.md
-  - commit: 68f00b40503f8f3c92d2bcae19f8a4a10b2ecfd6
-    modified: Tue Sep 3 22:31:11 2024 -0400
-    authored: 2024-09-03T22:31:11-04:00
-    committed: 2024-09-03T22:31:11-04:00
     filename:  sn_collections/_guides/data/rclone.md
-  - commit: 68f00b40503f8f3c92d2bcae19f8a4a10b2ecfd6
-    modified: Tue Sep 3 22:31:11 2024 -0400
-    authored: 2024-09-03T22:31:11-04:00
-    committed: 2024-09-03T22:31:11-04:00
+  - commit: 132644ffe9168223df7572d19b689170ff1fa898
+    modified: Fri Feb 14 13:44:34 2025 -0600
+    authored: 2025-02-14T13:44:34-06:00
+    committed: 2025-02-14T13:44:34-06:00
     filename:  sn_collections/_guides/data/storage.md
   - commit: ba7ff996a981d3a7e18307c3c8b1a5cca278324e
     modified: Mon Sep 30 13:00:37 2024 -0400
     authored: 2024-09-30T13:00:37-04:00
     committed: 2024-09-30T13:00:37-04:00
     filename:  sn_collections/_guides/ide/index.md
-  - commit: 68f00b40503f8f3c92d2bcae19f8a4a10b2ecfd6
-    modified: Tue Sep 3 22:31:11 2024 -0400
-    authored: 2024-09-03T22:31:11-04:00
-    committed: 2024-09-03T22:31:11-04:00
+  - commit: 564672bf107035b29f2c944a76063686e1a2e3be
+    modified: Thu Feb 20 12:30:44 2025 -0500
+    authored: 2025-02-20T12:30:44-05:00
+    committed: 2025-02-20T12:30:44-05:00
     filename:  sn_collections/_guides/ide/jupyter.md
-  - commit: 68f00b40503f8f3c92d2bcae19f8a4a10b2ecfd6
-    modified: Tue Sep 3 22:31:11 2024 -0400
-    authored: 2024-09-03T22:31:11-04:00
-    committed: 2024-09-03T22:31:11-04:00
+  - commit: 564672bf107035b29f2c944a76063686e1a2e3be
+    modified: Thu Feb 20 12:30:44 2025 -0500
+    authored: 2025-02-20T12:30:44-05:00
+    committed: 2025-02-20T12:30:44-05:00
     filename:  sn_collections/_guides/ide/r-studio.md
   - commit: 68f00b40503f8f3c92d2bcae19f8a4a10b2ecfd6
     modified: Tue Sep 3 22:31:11 2024 -0400
     authored: 2024-09-03T22:31:11-04:00
     committed: 2024-09-03T22:31:11-04:00
     filename:  sn_collections/_guides/ide/vscode.md
-  - commit: 68f00b40503f8f3c92d2bcae19f8a4a10b2ecfd6
-    modified: Tue Sep 3 22:31:11 2024 -0400
-    authored: 2024-09-03T22:31:11-04:00
-    committed: 2024-09-03T22:31:11-04:00
+  - commit: 564672bf107035b29f2c944a76063686e1a2e3be
+    modified: Thu Feb 20 12:30:44 2025 -0500
+    authored: 2025-02-20T12:30:44-05:00
+    committed: 2025-02-20T12:30:44-05:00
     filename:  sn_collections/_guides/resources/CeresAtlasDifferences.md
   - commit: c9e53e3abbdae4c0477a1c2b4a38af8b08087d7a
     modified: Thu Aug 29 18:04:12 2024 -0400
     authored: 2024-08-29T18:04:12-04:00
     committed: 2024-08-29T18:04:12-04:00
     filename:  sn_collections/_guides/resources/atlas.md
-  - commit: 5171860c9ce53d852ad05fb52688625736ba3525
-    modified: Tue Oct 1 09:20:04 2024 -0400
-    authored: 2024-10-01T09:20:04-04:00
-    committed: 2024-10-01T09:20:04-04:00
+  - commit: b7c5513ea6f8f7e585c00502b6a4e879b7406337
+    modified: Fri Feb 14 14:52:53 2025 -0500
+    authored: 2025-02-14T14:52:53-05:00
+    committed: 2025-02-14T14:52:53-05:00
     filename:  sn_collections/_guides/resources/ceres.md
   - commit: 68f00b40503f8f3c92d2bcae19f8a4a10b2ecfd6
     modified: Tue Sep 3 22:31:11 2024 -0400
@@ -1214,10 +1299,10 @@ modified:
     authored: 2024-09-30T13:04:35-04:00
     committed: 2024-09-30T13:04:35-04:00
     filename:  sn_collections/_guides/resources/index.md
-  - commit: 68f00b40503f8f3c92d2bcae19f8a4a10b2ecfd6
-    modified: Tue Sep 3 22:31:11 2024 -0400
-    authored: 2024-09-03T22:31:11-04:00
-    committed: 2024-09-03T22:31:11-04:00
+  - commit: b7a332af3fd4f034e28460d25df778a32c34d149
+    modified: Thu Dec 12 17:43:53 2024 -0600
+    authored: 2024-12-12T17:43:53-06:00
+    committed: 2024-12-12T17:43:53-06:00
     filename:  sn_collections/_guides/software/conda.md
   - commit: ba7ff996a981d3a7e18307c3c8b1a5cca278324e
     modified: Mon Sep 30 13:00:37 2024 -0400
@@ -1229,10 +1314,10 @@ modified:
     authored: 2024-09-03T22:31:11-04:00
     committed: 2024-09-03T22:31:11-04:00
     filename:  sn_collections/_guides/software/modules.md
-  - commit: 8352301e18111262116c69414d3a63239ccc2fd2
-    modified: Thu Sep 26 13:29:10 2024 -0400
-    authored: 2024-09-26T13:29:10-04:00
-    committed: 2024-09-26T13:29:10-04:00
+  - commit: 45715d7ef0f6ea85097d9dca7898f9d582455504
+    modified: Mon Dec 30 14:46:13 2024 -0500
+    authored: 2024-12-30T14:46:13-05:00
+    committed: 2024-12-30T14:46:13-05:00
     filename:  sn_collections/_guides/software/preinstalled.md
   - commit: 68f00b40503f8f3c92d2bcae19f8a4a10b2ecfd6
     modified: Tue Sep 3 22:31:11 2024 -0400
@@ -1254,15 +1339,15 @@ modified:
     authored: 2024-09-30T13:00:37-04:00
     committed: 2024-09-30T13:00:37-04:00
     filename:  sn_collections/_guides/use/index.md
-  - commit: 68f00b40503f8f3c92d2bcae19f8a4a10b2ecfd6
-    modified: Tue Sep 3 22:31:11 2024 -0400
-    authored: 2024-09-03T22:31:11-04:00
-    committed: 2024-09-03T22:31:11-04:00
+  - commit: 132041b785324d72a4e72a79a5ff9564776cf795
+    modified: Wed Jan 29 12:03:21 2025 -0500
+    authored: 2025-01-29T12:03:21-05:00
+    committed: 2025-01-29T12:03:21-05:00
     filename:  sn_collections/_guides/use/open-ondemand.md
-  - commit: 68f00b40503f8f3c92d2bcae19f8a4a10b2ecfd6
-    modified: Tue Sep 3 22:31:11 2024 -0400
-    authored: 2024-09-03T22:31:11-04:00
-    committed: 2024-09-03T22:31:11-04:00
+  - commit: 50a8dea2a64e60ffe520f68863584019e209b253
+    modified: Mon Jan 6 16:30:33 2025 -0600
+    authored: 2025-01-06T16:30:33-06:00
+    committed: 2025-01-06T16:30:33-06:00
     filename:  sn_collections/_guides/use/partitions-queues.md
   - commit: 68f00b40503f8f3c92d2bcae19f8a4a10b2ecfd6
     modified: Tue Sep 3 22:31:11 2024 -0400
@@ -1304,10 +1389,10 @@ modified:
     authored: 2024-10-01T10:30:52-04:00
     committed: 2024-10-01T10:30:52-04:00
     filename:  sn_collections/_posts/2021-01-10-Geib.md
-  - commit: d61981f1f3db059ce1a125768dc81a437ec04365
-    modified: Tue Oct 1 10:30:52 2024 -0400
-    authored: 2024-10-01T10:30:52-04:00
-    committed: 2024-10-01T10:30:52-04:00
+  - commit: 7484b61a09c1634fde15b5db7647a4204dd565f7
+    modified: Fri Jan 31 12:00:25 2025 -0500
+    authored: 2025-01-31T12:00:25-05:00
+    committed: 2025-01-31T12:00:25-05:00
     filename:  sn_collections/_posts/2021-01-10-Geil.md
   - commit: d61981f1f3db059ce1a125768dc81a437ec04365
     modified: Tue Oct 1 10:30:52 2024 -0400
@@ -1319,10 +1404,10 @@ modified:
     authored: 2024-10-01T10:30:52-04:00
     committed: 2024-10-01T10:30:52-04:00
     filename:  sn_collections/_posts/2021-04-15-Bickhart.md
-  - commit: d61981f1f3db059ce1a125768dc81a437ec04365
-    modified: Tue Oct 1 10:30:52 2024 -0400
-    authored: 2024-10-01T10:30:52-04:00
-    committed: 2024-10-01T10:30:52-04:00
+  - commit: 82b3805aae6b9a83c92b27b9b1841446244dca30
+    modified: Fri Jan 31 11:42:18 2025 -0500
+    authored: 2025-01-31T11:42:18-05:00
+    committed: 2025-01-31T11:42:18-05:00
     filename:  sn_collections/_posts/2021-04-15-Hudson.md
   - commit: d61981f1f3db059ce1a125768dc81a437ec04365
     modified: Tue Oct 1 10:30:52 2024 -0400
@@ -1494,10 +1579,10 @@ modified:
     authored: 2024-10-30T13:57:41-04:00
     committed: 2024-10-30T13:57:41-04:00
     filename:  sn_collections/_workshops/2023-geospatial-workshop/2023-9-21-Geospatial-Workshop-0.md
-  - commit: bcb981d002bbf872dafdd029e1d4ea49dd783601
-    modified: Wed Oct 30 13:57:41 2024 -0400
-    authored: 2024-10-30T13:57:41-04:00
-    committed: 2024-10-30T13:57:41-04:00
+  - commit: eda0412d9e12bfb11a45e8c154da42021d63d46c
+    modified: Fri Jan 31 11:47:29 2025 -0500
+    authored: 2025-01-31T11:47:29-05:00
+    committed: 2025-01-31T11:47:29-05:00
     filename:  sn_collections/_workshops/2023-geospatial-workshop/2023-9-25-Geospatial-Workshop-1.md
   - commit: bcb981d002bbf872dafdd029e1d4ea49dd783601
     modified: Wed Oct 30 13:57:41 2024 -0400
@@ -1539,80 +1624,80 @@ modified:
     authored: 2024-10-30T13:57:41-04:00
     committed: 2024-10-30T13:57:41-04:00
     filename:  sn_collections/_workshops/2024-10-spemw/2024-10-04-package-env-workshop-r.md
-  - commit: f84346a10eb70f188e47f65dcfd0f544a1de3c2d
-    modified: Mon Oct 21 09:43:24 2024 -0400
-    authored: 2024-10-21T09:43:24-04:00
-    committed: 2024-10-21T09:43:24-04:00
+  - commit: e27f362d88f4410aa6c7226beb30af3b5e4247d2
+    modified: Wed Nov 20 13:03:48 2024 -0500
+    authored: 2024-11-20T13:03:48-05:00
+    committed: 2024-11-20T13:03:48-05:00
     filename:  sn_collections/_workshops/2024-ai-user-forum/20-a-ml-intro.md
-  - commit: f9103cf0fc9ee8622448894652afed2d0a428cdb
-    modified: Mon Oct 21 09:41:51 2024 -0400
-    authored: 2024-10-21T09:41:51-04:00
-    committed: 2024-10-21T09:41:51-04:00
+  - commit: 7cc03cce00e56ed981bad609c339f3b4ffbe3f27
+    modified: Wed Nov 20 14:55:05 2024 -0500
+    authored: 2024-11-20T14:55:05-05:00
+    committed: 2024-11-20T14:55:05-05:00
     filename:  sn_collections/_workshops/2024-ai-user-forum/20-data-prep.md
   - commit: f9103cf0fc9ee8622448894652afed2d0a428cdb
     modified: Mon Oct 21 09:41:51 2024 -0400
     authored: 2024-10-21T09:41:51-04:00
     committed: 2024-10-21T09:41:51-04:00
     filename:  sn_collections/_workshops/2024-ai-user-forum/20-project-management.md
-  - commit: f9103cf0fc9ee8622448894652afed2d0a428cdb
-    modified: Mon Oct 21 09:41:51 2024 -0400
-    authored: 2024-10-21T09:41:51-04:00
-    committed: 2024-10-21T09:41:51-04:00
+  - commit: e214b3022a2b33cb0977da49893b8a3a3dcd72cc
+    modified: Thu Nov 21 14:15:38 2024 -0500
+    authored: 2024-11-21T14:15:38-05:00
+    committed: 2024-11-21T14:15:38-05:00
     filename:  sn_collections/_workshops/2024-ai-user-forum/21-bioinformatics.md
-  - commit: f9103cf0fc9ee8622448894652afed2d0a428cdb
-    modified: Mon Oct 21 09:41:51 2024 -0400
-    authored: 2024-10-21T09:41:51-04:00
-    committed: 2024-10-21T09:41:51-04:00
+  - commit: 6e585180b106b44e1fd1c9f69efed8299400738b
+    modified: Tue Jan 21 08:21:52 2025 -0500
+    authored: 2025-01-21T08:21:52-05:00
+    committed: 2025-01-21T08:21:52-05:00
     filename:  sn_collections/_workshops/2024-ai-user-forum/21-computer-vision-2.md
-  - commit: f9103cf0fc9ee8622448894652afed2d0a428cdb
-    modified: Mon Oct 21 09:41:51 2024 -0400
-    authored: 2024-10-21T09:41:51-04:00
-    committed: 2024-10-21T09:41:51-04:00
+  - commit: 09354a00780fa72882885c68bedbf6772cff8053
+    modified: Thu Nov 21 01:25:48 2024 -0600
+    authored: 2024-11-21T01:25:48-06:00
+    committed: 2024-11-21T01:25:48-06:00
     filename:  sn_collections/_workshops/2024-ai-user-forum/21-computer-vision.md
   - commit: f9103cf0fc9ee8622448894652afed2d0a428cdb
     modified: Mon Oct 21 09:41:51 2024 -0400
     authored: 2024-10-21T09:41:51-04:00
     committed: 2024-10-21T09:41:51-04:00
     filename:  sn_collections/_workshops/2024-ai-user-forum/21-data-management.md
-  - commit: f9103cf0fc9ee8622448894652afed2d0a428cdb
-    modified: Mon Oct 21 09:41:51 2024 -0400
-    authored: 2024-10-21T09:41:51-04:00
-    committed: 2024-10-21T09:41:51-04:00
+  - commit: 856319fb9f1d27eb2dc217cc81c9af40bf0b9199
+    modified: Thu Nov 21 09:34:27 2024 -0500
+    authored: 2024-11-21T09:34:27-05:00
+    committed: 2024-11-21T09:34:27-05:00
     filename:  sn_collections/_workshops/2024-ai-user-forum/21-deepvariant.md
-  - commit: f9103cf0fc9ee8622448894652afed2d0a428cdb
-    modified: Mon Oct 21 09:41:51 2024 -0400
-    authored: 2024-10-21T09:41:51-04:00
-    committed: 2024-10-21T09:41:51-04:00
+  - commit: 41414fd72df82be642bafa27171f8dc2ad07aca8
+    modified: Thu Nov 21 14:13:29 2024 -0500
+    authored: 2024-11-21T14:13:29-05:00
+    committed: 2024-11-21T14:13:29-05:00
     filename:  sn_collections/_workshops/2024-ai-user-forum/21-protein-structure.md
-  - commit: f9103cf0fc9ee8622448894652afed2d0a428cdb
-    modified: Mon Oct 21 09:41:51 2024 -0400
-    authored: 2024-10-21T09:41:51-04:00
-    committed: 2024-10-21T09:41:51-04:00
+  - commit: f793ea99a65114ab63e07edf5204d46820e8b8cf
+    modified: Thu Nov 21 13:54:49 2024 -0500
+    authored: 2024-11-21T13:54:49-05:00
+    committed: 2024-11-21T13:54:49-05:00
     filename:  sn_collections/_workshops/2024-ai-user-forum/21-spatial-modeling.md
-  - commit: c77d7a85f0363c795f6fdff378915643455823b7
-    modified: Mon Oct 28 09:19:49 2024 -0400
-    authored: 2024-10-28T09:19:49-04:00
-    committed: 2024-10-28T09:19:49-04:00
+  - commit: 233504dcedb792a2add7b7191f9b26c2a8386808
+    modified: Wed Nov 6 05:11:53 2024 -0700
+    authored: 2024-11-06T05:11:53-07:00
+    committed: 2024-11-06T05:11:53-07:00
     filename:  sn_collections/_workshops/2024-geospatial-workshop/2024-11-6-Geospatial-Workshop-0.md
-  - commit: c77d7a85f0363c795f6fdff378915643455823b7
-    modified: Mon Oct 28 09:19:49 2024 -0400
-    authored: 2024-10-28T09:19:49-04:00
-    committed: 2024-10-28T09:19:49-04:00
+  - commit: 1c654bc17949b00d59b5ae22cd8dcad9903d28ff
+    modified: Wed Nov 6 13:38:48 2024 -0500
+    authored: 2024-11-06T13:38:48-05:00
+    committed: 2024-11-06T13:38:48-05:00
     filename:  sn_collections/_workshops/2024-geospatial-workshop/2024-11-6-Geospatial-Workshop-1.md
-  - commit: dcb3aa58c5643162767f1867c81025b5fad92642
-    modified: Mon Oct 28 15:23:27 2024 -0400
-    authored: 2024-10-28T15:23:27-04:00
-    committed: 2024-10-28T15:23:27-04:00
+  - commit: 1feb228c7692be8eb42189579b6652b1d8af3a02
+    modified: Wed Nov 6 09:38:08 2024 -0700
+    authored: 2024-11-06T09:38:08-07:00
+    committed: 2024-11-06T09:38:08-07:00
     filename:  sn_collections/_workshops/2024-geospatial-workshop/2024-11-6-Geospatial-Workshop-2.md
-  - commit: c77d7a85f0363c795f6fdff378915643455823b7
-    modified: Mon Oct 28 09:19:49 2024 -0400
-    authored: 2024-10-28T09:19:49-04:00
-    committed: 2024-10-28T09:19:49-04:00
+  - commit: b80c0591c551476358ee83fd6b857ea99af051f3
+    modified: Thu Nov 7 09:24:06 2024 -0700
+    authored: 2024-11-07T09:24:06-07:00
+    committed: 2024-11-07T09:24:06-07:00
     filename:  sn_collections/_workshops/2024-geospatial-workshop/2024-11-7-Geospatial-Workshop-3.md
-  - commit: c77d7a85f0363c795f6fdff378915643455823b7
-    modified: Mon Oct 28 09:19:49 2024 -0400
-    authored: 2024-10-28T09:19:49-04:00
-    committed: 2024-10-28T09:19:49-04:00
+  - commit: 04c7bf2c4bbd068e4d3e27f29ad06ee89bec0ce7
+    modified: Thu Nov 7 10:18:49 2024 -0700
+    authored: 2024-11-07T10:18:49-07:00
+    committed: 2024-11-07T10:18:49-07:00
     filename:  sn_collections/_workshops/2024-geospatial-workshop/2024-11-7-Geospatial-Workshop-4.md
   - commit: c77d7a85f0363c795f6fdff378915643455823b7
     modified: Mon Oct 28 09:19:49 2024 -0400
@@ -1624,10 +1709,10 @@ modified:
     authored: 2024-10-17T18:46:46-04:00
     committed: 2024-10-17T18:46:46-04:00
     filename:  sn_collections/_workshops/practicum-ai/computer-vision.md
-  - commit: 2db6f105f2aaa1c2f823652af87a5861aa526da1
-    modified: Thu Oct 17 18:46:46 2024 -0400
-    authored: 2024-10-17T18:46:46-04:00
-    committed: 2024-10-17T18:46:46-04:00
+  - commit: 1a60eb42c534c82af2d839acae019dbed62876ad
+    modified: Tue Jan 14 13:52:23 2025 -0500
+    authored: 2025-01-14T13:52:23-05:00
+    committed: 2025-01-14T13:52:23-05:00
     filename:  sn_collections/_workshops/practicum-ai/computing.md
   - commit: 2db6f105f2aaa1c2f823652af87a5861aa526da1
     modified: Thu Oct 17 18:46:46 2024 -0400
