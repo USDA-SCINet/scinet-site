@@ -116,11 +116,11 @@ SAC:
     Role: Representative
     Subcommittees: Education
     Term expires: 2025
-  - Person: Peter Olsoy
-    Area: Pacific West
-    Role: Representative
-    Subcommittees: TBD
-    Term expires: 2027
+ # - Person: Peter Olsoy
+ #   Area: Pacific West
+ #   Role: Representative
+ #   Subcommittees: TBD
+ #   Term expires: 2027
   - Person: Quentin Read
     Area: Statistician
     Role: Representative
