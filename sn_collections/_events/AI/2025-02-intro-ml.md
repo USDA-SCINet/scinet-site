@@ -3,7 +3,7 @@ title: An Introduction to Machine Learning for Science
 type: workshop
 provider: SCINet
 date: 2025-02-10
-end_date: 2025-02-14
+end_date: 2025-02-21
 description: Event - Workshop for AI and Machine Learning
 categories: [2025 02 Intro ML] 
 tags: Artificial-Intelligence Machine-Learning
@@ -25,6 +25,11 @@ multiday: Feb 10, 12, and 14
 
 excerpt: This workshop will give participants a hands-on introduction to the basic concepts and techniques needed to understand machine learning and to apply machine learning methods to scientific research.
 
+materials:
+  - text: Day 1 recording
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/ET-LfOoVNcxKuO1TY8YnNPgBg3UwGpr5-gUbLsYhutTtdg
+  - text: Day 2 recording
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EV-WPZG5V61IrL3wiuWXYcYB-xLsb6khv6nLGzi2GLdcQw
 ---
 
 Machine learning underlies the vast majority of modern AI methods, including the ever-expanding applications of deep learning and generative AI. This workshop will give participants a hands-on introduction to the basic concepts and techniques needed to understand machine learning and to apply machine learning methods to scientific research.
