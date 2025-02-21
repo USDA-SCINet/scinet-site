@@ -7,7 +7,7 @@ order_number: 20
 
 subnav:
   - title: Community partitions
-    url: '#community-partitions'
+    url: '#deprecated-community-partitions'
   - title: Partitions that allow all users access to priority nodes
     url: '#partitions-that-allow-all-users-access-to-priority-nodes'
   - title: Priority partitions available only to those users who purchased nodes
