@@ -41,7 +41,7 @@ At this time, all legacy partitions on Ceres are still available and existing jo
 The new “ceres” partition has a maximum job time of 3 weeks and a default job time of 2 hours. The shorter default time will help avoid very long wait times in the queue due to accidentally submitting jobs requesting the partition’s maximum job time (which is the default on Ceres’ legacy partitions). This new default behavior on the “ceres” partition will ultimately improve the user experience on Ceres. However, it also means that if the work you do on Ceres requires more than 2 hours, you will need to explicitly request more time.
 
 
-## Legacy Community partitions
+## Legacy community partitions
 *Please see the above information regarding the new partition "ceres".*
 
 Name | Nodes | Logical Cores per Node | Maximum Simulation Time | Default Memory per Core | Function
