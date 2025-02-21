@@ -26,7 +26,13 @@ Some of the Ceres compute nodes have been purchased by individual researchers or
 
 The following table lists partitions. Number of nodes in a specific partition can be adjusted from time to time and be different from the one published in this document.
 
-## Community partitions
+Please be advised that a new partition, called “ceres”, has been added to the cluster. It includes all community nodes, creating a larger pool which will result in shorter wait times and better cluster utilization. **This partition will eventually replace other community partitions (short, medium, long, mem, mem768, and debug). At this time, all other partitions are still available, and existing job scripts will continue working. However, we recommend switching to the “ceres” partition.**
+
+The new “ceres” partition has 3 weeks maximum wall time and default job time of 2 hours. The shorter default time was chosen to encourage users to specify time required for their jobs instead of blindly using maximum partition time.  
+
+
+## Deprecated Community partitions
+*Please see the above information regarding the new partition "ceres". The community partitions are deprecated and scheduled to be removed during a future maintenance*
 
 Name | Nodes | Logical Cores per Node | Maximum Simulation Time | Default Memory per Core | Function
 --- | --- |--- |--- |--- |---
