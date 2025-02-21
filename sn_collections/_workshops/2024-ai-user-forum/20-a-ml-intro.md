@@ -9,6 +9,13 @@ section: November 20, Afternoon — Foundational Skills and Concepts
 
 prerequisites:
   - text: Familiarity with basic Python concepts and Jupyter notebooks. We will offer virtual training for these skills before the Forum begins.
+
+materials:
+  - text: Presentation slides
+    url: https://usdagcc.sharepoint.com/:b:/s/REE-ARS-SCINetOffice/EcNkufANGD1Eqq0-1gObIJYBe2LKKjfQN2OmKgmEDDaKLA?e=aNepOW
+  - text: Jupyter Notebook
+    url: https://usdagcc.sharepoint.com/:u:/s/REE-ARS-SCINetOffice/Ea9eC98vRYBHuhCKGHD0TLwBiX6N9GgNuOAKUHzarU45OQ?e=8vP2dS
+    
 ---
 
 Machine learning underlies the vast majority of modern AI methods, including the ever-expanding applications of deep learning and generative AI. This workshop will give participants a hands-on introduction to the basic concepts and techniques needed to understand machine learning and to apply machine learning methods to scientific research. <!--excerpt--> 
