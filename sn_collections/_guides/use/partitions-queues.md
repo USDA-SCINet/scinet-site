@@ -7,7 +7,7 @@ order_number: 20
 
 subnav:
   - title: The "ceres" partition
-    url: '#the-ceres-partitions'
+    url: '#the-ceres-partition'
   - title: Legacy community partitions
     url: '#legacy-community-partitions'
   - title: Partitions that allow all users access to priority nodes
