@@ -30,6 +30,8 @@ materials:
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/ET-LfOoVNcxKuO1TY8YnNPgBg3UwGpr5-gUbLsYhutTtdg
   - text: Day 2 recording
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EV-WPZG5V61IrL3wiuWXYcYB-xLsb6khv6nLGzi2GLdcQw
+  - text: Day 3 recording
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EdTS_yjHG2dNpTU0K9LY7fABcbgcB16m2qjQC5m9PMEUJg
 ---
 
 Machine learning underlies the vast majority of modern AI methods, including the ever-expanding applications of deep learning and generative AI. This workshop will give participants a hands-on introduction to the basic concepts and techniques needed to understand machine learning and to apply machine learning methods to scientific research.
