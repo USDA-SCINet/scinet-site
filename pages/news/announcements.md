@@ -9,6 +9,10 @@ collecting:
   yml: news
 
 news:
+
+  - title: "CLC Workbench and Server upgraded"
+    date: 2025-02-18
+    excerpt: "CLC Workbench and Server, a bioinformatics application available on the Ceres cluster's Open OnDemand interface, has been upgraded to version 25."
   - title: "New Animal Behavior AI Working Group"
     date: 2025-02-04
     excerpt: "This SCINet working group aims to explore the potential benefits of Artificial Intelligence (AI) in animal behavior research. To learn more about the working group, please [see the working group description here](/research/working-groups/behavior)."

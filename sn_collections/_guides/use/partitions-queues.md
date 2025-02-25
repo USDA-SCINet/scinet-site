@@ -30,7 +30,7 @@ The following table lists partitions. Number of nodes in a specific partition ca
 
 ## The "ceres" partition
 
-During the February 2025 maintenance, a new partition, named “ceres”, was added to the cluster. This new partition includes all community nodes, and its addition is the first step towards simplifying the community partitions on Ceres, i.e., short, medium, long, mem, mem768, and debug. In the future, some or all of these legacy community partitions will be removed. This change will bring several important benefits: 
+During the February 2025 maintenance, a new partition, named “ceres”, was added to the cluster. This new partition includes all community nodes, and its addition is the first step towards simplifying the community partitions on Ceres ("short", "medium", "long", "mem", "mem768", and "debug"). In the future, some or all of the legacy community partitions will be removed. This change will bring several important benefits: 
 
 * Placing  Ceres nodes into fewer partitions will result in shorter wait times and better cluster utilization. 
 * Ceres will be easier and less confusing to use. 
