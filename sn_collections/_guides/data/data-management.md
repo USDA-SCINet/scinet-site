@@ -8,12 +8,10 @@ categories: [Data]
 subnav:
   - title: Definitions
     url: '#definitions'
-  - title: Detailed instructions, using Globus
-    url: '#detailed-instructions-using-globus-preferred'
-  - title: Alternative instructions, not using Globus
-    url: '#alternative-instructions-not-using-globus'
+  - title: Standards of Practice
+    url: '#standards-of-practice'
 
-
+# excerpt: 'This document describes recommended procedures (SOP) for managing data on ARS HPC and storage infrastructure.  The key concept is to only use “Tier 1 storage” (that is, storage that is local to a given HPC cluster) as required for actively running compute jobs. Tier 1 storage is not backed up and should not be used for archival purposes.  For permanent and archival storage, use of Juno is recommended'
 ---
 
 {% include images_path %}
@@ -21,10 +19,31 @@ subnav:
 
 
 
-This document describes recommended procedures (SOP) for managing data on ARS HPC and storage infrastructure.<!--excerpt--> The key concept is to only use “Tier 1 storage” (that is, storage that is local to a given HPC cluster) as required for actively running compute jobs. Tier 1 storage is not backed up and should not be used for archival purposes. Juno, on the other hand, is periodically backed up to tape and can be used for long-term storage of data and results.  We recommend immediate adoption of the procedures described here for new projects. These procedures should also be followed for “old” projects after first moving extant project data in Tier 1 storage to Juno using one of the procedures described below.  If you would like more detailed information about the data storage options provided by SCINet and how to use them, please see the [SCINet Storage Guide]({{ site.baseurl }}/guides/data/storage).
+This document describes recommended procedures (SOP) for managing data on ARS HPC and storage infrastructure.
 
+<div class="usa-summary-box" role="region" aria-labelledby="summary-box-key-information">
+  <div class="usa-summary-box__body">
+    <h3 class="usa-summary-box__heading" id="summary-box-key-information">
+      Key Concept:
+    </h3>
+    <div class="usa-summary-box__text">
+    <p>Only use “Tier 1 storage” (that is, storage that is local to a given HPC cluster) as required for actively running compute jobs. Tier 1 storage is not backed up and should not be used for archival purposes.</p>
+    
+    <p>For permanent and archival storage, use of Juno is recommended.</p>
+    </div>
+  </div>
+</div>
 
-![Schematic diagram of recommended data management workflow using Globus.]({{ images_path }}/data_management_sop-fig_1.png)
+<!--excerpt-->
+
+## Definitions
+* **Juno:** Large, multi-petabyte ARS storage device at the National Agricultural Library in Maryland, accessed by users; periodically backed up to tape device.  Includes periodic file system snapshots that allow users to recover accidentally deleted files.
+* **Tape backup:** Off-site backup of Juno, located at Mississippi State University, accessible by VRSC staff for disaster recovery following major system data loss.
+* **Tier 1 Storage:** Storage on either of the HPC clusters, local to computing resources at the National Centers for Animal Health in Ames, Iowa or Mississippi State University. These locations are for storing code, data, and intermediate results while performing a series of computational jobs. This storage is not backed up. Two storage locations are available on each HPC cluster, `/project` and `/90daydata`. Space in `/project` is allocated on an as-needed basis. Most users should use `/90daydata` for routine Tier 1 storage.
+
+## Standards of Practice
+
+![Figure 1]({{ images_path }}/data_management_sop-fig_1.png)
 *Figure 1. Recommended procedures for managing data on ARS HPC infrastructure using Globus.*
 
 1. Move data to Juno
@@ -36,45 +55,16 @@ This document describes recommended procedures (SOP) for managing data on ARS HP
 {: aria-describedby="source"}
 {: title="Diagram of Recommended Data Management Workflow - Screen Reader Text" }  
 
-## Definitions
-* **Juno:** Large, multi-petabyte ARS storage device at the National Agricultural Library in Maryland, accessed by users; periodically backed up to tape device.  Includes periodic file system snapshots that allow users to recover accidentally deleted files.
-* **Tape backup:** Off-site backup of Juno, located at Mississippi State University, accessible by VRSC staff for disaster recovery following major system data loss.
-* **Tier 1 Storage:** Storage on either of the HPC clusters, local to computing resources at the National Centers for Animal Health in Ames, Iowa or Mississippi State University. These locations are for storing code, data, and intermediate results while performing a series of computational jobs. This storage is not backed up. Two storage locations are available on each HPC cluster, `/project` and `/90daydata`. Historically, space had routinely been allocated in `/project`, but going forward, space in `/project` will only be allocated on an as-needed basis. Most users should use `/90daydata` for routine Tier 1 storage.
+Globus Online is the recommended method for transferring data to, from, or among Ceres, Atlas, and Juno. It provides faster data transfer speeds compared to scp, has a graphical interface, and does not require authentication for every file transfer.  
 
+Given the space and access limitations of a home directory, large amounts of data or data that will be used collaboratively should be transferred to a project directory. See the User Guide section on [SCINet Storage](/guides/storage) for more information on home and project directory quotas.  
 
-## Detailed instructions, using Globus (preferred)
+1. For most data transfer needs, we recommend that you use [Globus](/guides/data/transfer/globus).  
+  1. If you would like to transfer data from your local machine, see [Data Transfer from Local Machine](/guides/data/transfer/local)  
+  1. If you are at a SCINetX location, see [Transferring data via Cafe Machine](/guides/data/transfer/cafe). 
+  1. If you would like to transfer data between Ceres/Atlas and a Non-SCINet Globus endpoint, please go directly to Section [Globus Data Transfer](/guides/data/transfer/globus).  
+1. If you are transferring small amounts of data (10s to 100s of MB) it is typically fine to use other file transfer protocols. See [Data Transfer from Local Machine](/guides/data/transfer/local) 
+1. If you are moving data to and from cloud resources, see [Rclone](/guides/data/transfer/rclone) 
+1. If you have to transfer very large amounts of data or if network speed at your location is slow, please submit a request to the Virtual Research Support Core (VRSC) to ingress data from a hard drive as described in [Large Data Transfer by Shipping Hard Drives](/guides/data/transfer/shipping).  
 
-Using Globus is recommended for file transfer performance and reliability. The recommended data management workflow using Globus is illustrated in Figure 1, above.
-
-See the SCINet [Globus Data Transfer guide]({{ site.baseurl }}/guides/data/datatransfer#globus-data-transfer) for instructions on how to use Globus.
-
-1. Copy raw data and custom software (e.g., custom scripts, ideally also versioned in Git repositories; conda environments/environment.yml, Singularity image/definition files) from a local workstation or other data source to a project directory on Juno using Globus (search for Globus collection “SCINet-Juno”) (Figure 1.1).  On Juno, the data should be copied to `/LTS/project/PROJNAME/`.
-1. If not already there, copy data to Tier 1 storage on the cluster you will run on, either Ceres or Atlas, using Globus.  For most projects, you should use `/90dayadata` for routine, short-term storage (Figure 1.2).  There are no storage quotas on `/90daydata`, so it is ideal for data-intensive work.  For projects that require longer-term use of Tier 1 storage, space can be requested in `/project`.  However, please note that _no_ data on Tier 1 storage is backed up.
-1. Use ssh to log in to your chosen HPC cluster (Ceres or Atlas; see [Logging in to SCINet]({{ site.baseurl }}/guides/access)); (e.g.:
-```
-ssh FIRST.LAST@ceres.scinet.usda.gov
-```
-) and run your compute job (Figure 1.3).
-1. Copy any results you need to keep to Juno so that they are preserved (Figure 1.4).
-1. If desired, you can also copy results to your local workstation (Figure 1.5). 
-Note that step 1 might not be necessary for all data used for a project. For example, suppose you need to use a large, publicly available satellite-derived dataset for a project. In this case, the data probably do not need to be stored on Juno and can simply be placed directly in `/90daydata` on Tier 1 storage and deleted when they are no longer needed.
-
-
-## Alternative instructions, not using Globus
-
-It is also possible to move data on SCINet infrastructure using traditional command-line tools like `scp` and `rsync`.  See the [SCINet File Transfer guide]({{ site.baseurl }}/guides/data/datatransfer#small-data-transfer-using-scp-and-rsync) for instructions on how to use these commands to transfer data to/from Ceres and Atlas cluster. 
-
-To move data to/from Juno, login to ceres-dtn and issue scp or rsync command to nal-dtn, e.g.:
-
-{:.copy-code}
-```
-ssh ceres-dtn
-rsync -avz --no-p --no-g ttt nal-dtn.scinet.usda.gov:/LTS/project/<project_name>/
-```
-
-Please note that in order to access Juno via the command line, you must first connect to Ceres. Then, you can connect to Juno by issuing the following:
-
-{:.copy-code}
-```
-ssh nal-dtn.scinet.usda.gov
-```
+If you have issues with transferring data, please contact the VRSC at scinet_vrsc@USDA.GOV. 

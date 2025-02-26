@@ -1,36 +1,41 @@
 ---
 title: "Rclone: Moving Data To and From Cloud Resources"
 description: Using rclone
-# author: Jordan Hoosman
 
-categories: [Data]
-order_number: 70
+parents:
+  - title: Storage and Data Management
+    url: /guides/data
+    class: "guide-nav"
+  - title: SCINet File Transfer
+    url: /guides/data/transfer
+    class: "emph-nav"
 
 subnav:
   - title: Getting Ready
     url: '#getting-ready'
-  - title: rclone installation on Windows
-    url: '#rclone-installation-on-windows'
-  - title: macOS installation 
-    url: '#macos-installation-'
-  - title: Configuration of rclone on windows or osX
-    url: '#configuration-of-rclone-on-windows-or-osx'
-  - title: rclone configuration on SciNet
-    url: '#rclone-configuration-on-scinet'
-  - title: Test
-    url: '#test'
+    subnav:
+      - title: rclone installation on Windows
+        url: '#rclone-installation-on-windows'
+      - title: macOS installation 
+        url: '#macos-installation-'
+      - title: Configuration of rclone on windows or osX
+        url: '#configuration-of-rclone-on-windows-or-osx'
+      - title: rclone configuration on SciNet
+        url: '#rclone-configuration-on-scinet'
+      - title: Test
+        url: '#test'
   - title: Commands
     url: '#commands'
   - title: Advanced commands
     url: '#advanced-commands'
 
-published: false
+
+
+fetched: "data-transfer"
+order_number: 40
 ---
 
 {% include images_path %}
-
-
-
 
 
 Rclone is already installed on the DTNS and all of the compute nodes. Please do not use rclone from the headnode. Attempting to do so will remind you to use the others.<br>
