@@ -22,7 +22,7 @@ subnav:
     url: /guides/data/transfer/globus
     internal: true
     shows_list: subnav
-  - title: Data Transfer via Café Machine"
+  - title: Data Transfer via Café Machine
     url: /guides/data/transfer/cafe
     internal: true
     shows_list: subnav

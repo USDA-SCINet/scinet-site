@@ -35,9 +35,6 @@ fetched: "data-transfer"
 order_number: 40
 ---
 
-{% include images_path %}
-
-
 Rclone is already installed on the DTNS and all of the compute nodes. Please do not use rclone from the headnode. Attempting to do so will remind you to use the others.<br>
 The rclone home page is [https://rclone.org](https://rclone.org).<!--excerpt-->
 
@@ -135,7 +132,7 @@ rclone copy /project/bogus_genome usdabox:/scinetbackup/bogus_genome --verbose
 
 ### Advanced commands
 
-This advanced guide assumes you have read the previous page and have some familiarity with rclone already.
+This advanced guide assumes you have read the previous sectiion and have some familiarity with rclone already.
 
 Rclone supports "overlay" filesystems which can be then be overlayed in multiple layers. 
 
