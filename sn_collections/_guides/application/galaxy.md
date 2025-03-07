@@ -60,7 +60,7 @@ You will be presented with the following login screen:
 
 ![screenshot of galaxy login screen]({{ images_path }}/galaxy/galaxy-login-1.png)
 
-Click on "Sign in with Keycloak" and follow yubikey/lincpass login. After logging in, the standard Galaxy home screen should appear:
+Click on "Sign in with Keycloak" and follow Login.gov/LincPass login. After logging in, the standard Galaxy home screen should appear:
 
 ![screenshot of galaxy home screen]({{ images_path }}/galaxy/galaxy-login-2.png)
 
