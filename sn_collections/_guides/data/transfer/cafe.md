@@ -6,6 +6,7 @@ parents:
   - title: Storage and Data Management
     url: /guides/data
     class: "guide-nav"
+    shortname: Data
   - title: SCINet File Transfer
     url: /guides/data/transfer
     class: "emph-nav"
