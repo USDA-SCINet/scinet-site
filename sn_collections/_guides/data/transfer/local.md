@@ -30,6 +30,8 @@ To transfer files to your personal computer you may use Globus Connect Personal,
 
 To transfer files to or from your personal computer, you may use Globus Connect Personal.  
 
+### Installation
+
 * **If you are on a USDA-managed Windows laptop or workstation:**
   * If your workstation has CEC support, you may be able to install Globus Connect Personal directly from the Software Center.
 * **If you are not on a USDA-managed laptop, or do not see GCP in the Software Center:**
@@ -41,7 +43,26 @@ To transfer files to or from your personal computer, you may use Globus Connect 
 
 By default on Windows, Globus Connect Personal prompts to be installed in C:\Program Files which requires administrator rights. However, you don’t need Administrator rights to install Globus Connect Personal on your local machine. If you do not have Administrator rights, browse to a place you have write access to (e.g., your Desktop folder) or contact your local IT staff for assistance. 
 
-{repeat instructions for getting GCP set up?}
+### Setup
+
+1. Once installed, launch the application and a Globus login popup window will open.  
+  * Select Log In.  
+  * Go to the main Firefox window that opens behind the popup and select Allow.  
+  * Select SCINET-ARS/USDA from the dropdown and complete the eAuth login. 
+1. **If you have used Globus before, select "link to" to join your globus account to this one.**  Otherwise, click continue.
+  * You can also link accounts later using the steps on the [Globus linking account instructions.](https://docs.globus.org/guides/tutorials/manage-identities/link-to-existing/)
+1. When registering, type USDA-ARS as your organization and non-profit research – agree to terms and click continue. 
+1. Next page will ask you to agree to setup and asks for a name for future reference, you can keep the default. Click allow. 
+1. Now you get a window for "Collection Details" – give it a name that will make sense to you.  For example:  your-initials and local (ABC_local).  Description is not necessary.  Do not select the "high assurance" button. Click save. 
+1. You should get a "setup successful" popup with the name of your collection. 
+  * If you want to edit your collection name, you can click "show collection details" on the right of the collection details page and select "edit attributes" to edit the collection's name.  
+  * If you are happy with it, click "Exit Setup." 
+
+You can now transfer data from your local machine using Globus when Globus Connect Personal is running. 
+You can check the status of your connection by clicking the GCP icon in your task bar.  
+![Globus Connect Personal icon in windows taskbar](../assets/taskbar_gcp_icon.png)
+
+For more information on transferring data using Globus, see [Globus Data Transfer](/guides/data/transfer/globus#copying-data)
 
 ## Small Data Transfer Using scp and rsync
 
