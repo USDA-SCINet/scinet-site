@@ -24,9 +24,9 @@ We also have [a curated list of availale free trainings]({{ site.baseurl }}/trai
 
 ## AgLearn
 
-AgLearn hosts multiple free learning courses and learning platforms including Skillsoft Percipio. 
+AgLearn hosts multiple free learning courses and learning platforms including Skillsoft/Percipio. 
 
-All federal USDA permanent and term employees should be able to access the courses listed on this free online training page by logging into AgLearns. 
+All federal USDA permanent and term employees should be able to access the courses listed on this free online training page by logging into AgLearn. 
 
 {% comment %}
 Non-federal USDA employees may access AgLearn using the following steps:
