@@ -6,6 +6,7 @@ parents:
   - title: Storage and Data Management
     url: /guides/data
     class: "guide-nav"
+    shortname: Data
   - title: SCINet File Transfer
     url: /guides/data/transfer
     class: "emph-nav"
@@ -20,9 +21,11 @@ fetched: "data-transfer"
 order_number: 20
 ---
 
-{introduction to the cafe machines}<!--excerpt-->
+If you are at an ARS research facility with a SCINet-X connection, you have access to a SCINet cafe machine - a dedicated computer for high-speed data transfer to SCINet resources. <!--excerpt-->
 
 ## Getting Started
+
+Using the café machines typically requires a LincPass.  If you have access to a café machine, but do not have a LincPass, contact the VRSC for assistance to use an alternative eAuth access method.
 
 {: .usa-list }
 1. **Log in to the machine using your SCINet username (first.last) and LincPass/PIN.**
