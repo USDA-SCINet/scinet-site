@@ -23,6 +23,9 @@ sessions:
     date: 2025-02-27
     time: 1-2 pm ET
     excerpt: "Data transfer to, from, and among SCINet systems (Ceres, Atlas, and Juno) using Globus"
+    materials:
+      - text: Recorded Summary
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EaeV3x3-k9pCqNvvUVreMw8BP5WgwqyyyjZ9fBRXChudZg
   - session:
     title: "Login nodes: What they are and how to use them"
     date: 2025-01-23
