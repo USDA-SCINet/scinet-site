@@ -19,6 +19,11 @@ archive-label: SCINet Corner Recordings
 
 sessions:
   - session:
+    title: Open Q&A
+    date: 2025-03-27
+    time: 1-2 pm ET
+    excerpt: "We invite you to submit any SCINet-related questions, challenges or concerns you'd like us to address in this SCINet Corner by [filling out this short form.](https://forms.office.com/g/kMbsQNssMH)"
+  - session:
     title: Data transfer using Globus
     date: 2025-02-27
     time: 1-2 pm ET
