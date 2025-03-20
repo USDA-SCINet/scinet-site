@@ -18,7 +18,7 @@ filter-archive: materials
 archive-label: SCINet Corner Recordings
 
 sessions:
-  - session
+  - session:
     title: Open Q&A
     date: 2025-03-27
     time: 1-2 pm ET
