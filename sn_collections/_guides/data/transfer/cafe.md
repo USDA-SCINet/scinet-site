@@ -41,7 +41,7 @@ Using the café machines typically requires a LincPass.  If you have access to a
         ```
 globusconnect
 ```
-    1. The first time you run globuconnect it will download, install, and start the setup process for Globus Connect Personal.
+    1. The first time you run "globusconnect" it will download, install, and start the setup process for Globus Connect Personal.
     1. The setup process usually, but not always, requires you to login.  (This process may vary depending on how you login) 
       * A globus login popup window will open. Select Log In.  
       * Go to the main Firefox window that opens behind the popup and select Allow.  
@@ -54,7 +54,7 @@ globusconnect
       * You should get a "setup successful" popup with the name of your collection. 
         * If you get a collection name that is generic like "scinet_cafe" you can click "show collection details" and, on the right of the collection details page, select "edit attributes" to edit the collection's  name.  
         * If you are happy with it, click "Exit Setup."   
-    1. When you run globusconnect in the future, it will scan for USB devices, add any that it finds to the globus config, and start the server. You can use "globusconnect -help" to see this information.
+    1. When you run "globusconnect" in the future, it will scan for USB devices, add any that it finds to the globus config, and start the server. You can use "globusconnect -help" to see this information.
     1. If you need to add USB devices after starting the server just run “globusconnect -restart” to rescan devices and restart the server.    
 
 
@@ -71,7 +71,7 @@ After Globus Connect Personal is set up, you can use the following command in th
 
 {: .copy-code }
 ```
-$ ./globusconnectpersonal -start							 
+globusconnect
 ```  
 
 Once connected, you can use the window to connect or disconnect your session.  When you are finished transferring data, you can close the window or hit CTRL+C in the terminal to end your session.  
