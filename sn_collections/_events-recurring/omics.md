@@ -8,7 +8,7 @@ description: Reoccuring Translational Omics Working Group webinars and presentat
 provider: Omics Working Group
 registration: 
   text: "Join the Working Group"
-  url: https://forms.office.com/g/a7VFhG0AJD
+  url: https://forms.office.com/g/tgh4SxRqit
 cal-titles: excerpt
 maincalendar: true
 
@@ -19,6 +19,11 @@ excerpt: To recieve an invitation to upcoming webinars, fill out the [Translatio
 archive-label: Webinar Recordings
 
 sessions:
+  - session:
+    title: Decoding Plant Complexity with Single-Cell Technology
+    date: 2025-04-10
+    presenter: Dr. Xuan Zhang
+    time: 1-2pm ET
 #  - session:
 #    title: The Promises and Pitfalls of Deep Learning Methods for Plant Phenotype Prediction
 #    date: 2025-03-13
