@@ -105,7 +105,7 @@ ipa group-add-member proj-<project_name> --users=<scinet_username>
 ipa group-remove-member proj-<project_name> --users=<scinet_username>
 ```
 
-Note: When ssh-ing to the cluster from a connected site, you may need to issue “kinit” command and enter your SCINet password before issuing ipa commands above.
+**Note: When ssh-ing to the cluster from a connected site, you may need to issue “kinit” command and enter your SCINet password before issuing ipa commands above.**
  
 After being added to the proj-<project_name> project group, users will be able to access `/project/<project_name>` and `/90daydata/<project_name>` both on Ceres and Atlas, as well as `/LTS/project/<project_name>` on Juno.
  
