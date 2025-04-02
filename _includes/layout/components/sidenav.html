@@ -40,6 +40,10 @@
             {% include components/subnav.html links=sidepages %}
         {% endif %}
     </ul>
+    {% elsif page.layout == "newsletter" and subnav %}
+    <ul class="usa-sidenav__sublist pagelinks">
+        {% include components/subnav.html links=subnav %}
+    </ul>
     {% endif %}
     {% endif %}
 </li>

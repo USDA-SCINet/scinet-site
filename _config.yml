@@ -82,6 +82,11 @@ collections:
     permalink: /tutorials/:name
   downtime:
     output: false
+  newsletter:
+    output: true
+    permalink: /news/newsletter/:name
+  news-components:
+    output: false
 
 defaults:
   - 
@@ -157,6 +162,13 @@ defaults:
       type: "downtime"
     values:
       alt-title: "TRUE"
+  - 
+    scope:
+      path: ""
+      type: "newsletter"
+    values:
+      layout: "newsletter"
+
 
 # allow posts with dates in the future to be published now
 future: true
