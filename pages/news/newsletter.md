@@ -1,7 +1,7 @@
 ---
 title: Quarterly Newsletter Archive
 layout: page
-permalink: /news/newsletter
+permalink: /news/newsletter/
 description: SCINet quarterly newsletters
 redirect_from:
   - /newsletter
@@ -17,7 +17,7 @@ Research highlights from researchers who use SCINet resources are added quarterl
 
 <br>
 
-### [USDA ARS SCINet Newsletter: January 2025](/assets/pdf/newsletters/SCINET-Newsletter-January-2025.pdf){:target="_blank"}
+### [USDA ARS SCINet Newsletter: January 2025](/news/newsletter/2025-01)
 
 ### [USDA ARS SCINet Newsletter: October 2024](/assets/pdf/newsletters/SCINet-Newsletter-October-2024.pdf){:target="_blank"}
 

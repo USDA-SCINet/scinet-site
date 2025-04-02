@@ -1,0 +1,79 @@
+---
+layout: print
+styles: /assets/css/newsletter.css
+---
+
+{%- assign rs_section = page.sections | first %}
+{%- capture sectionfetch %}_posts/{{ rs_section.fetch }}.md{% endcapture %}
+{%- assign rs = site.posts | find: "path", sectionfetch %}
+<h2>Research Spotlight</h2>
+<h3>{{ rs.title }}</h3>
+<p>
+{% if rs.author %}<em><strong>{{ rs.author }}</strong></em>{% endif %}<br>
+{% if rs.affiliation %}<em><strong>{{ rs.affiliation }}</strong></em>{% endif %}
+</p>
+{{ rs.content }}
+{{ content }}
+
+
+
+{% comment %}
+<!--<div>
+    <div><img src="/assets/img/news/newsletters/newsletter-header_original.jpg"></div>
+    <h1>{{ page.title }}</h1>
+    <div>
+        {% for _section in page.sections %}
+        {%- assign current_i = forloop.index0 | divided_by: 3 -%}
+        {%- assign nc = current_i | plus: 1 %}
+        {%- assign pc = current_i | minus: 1 %}
+        
+        {%- assign prev_i = forloop.index0 | minus: 1 | divided_by: 3 -%}
+        {%- assign next_i = forloop.index0 | plus: 1 | divided_by: 3 -%}
+
+        {%- if forloop.first or pc == prev_i -%}
+        <span class="toplinks" align="center">
+        {%- endif -%}
+        <a href="#{{ _section.title | slugify }}" class="g-links">{{ _section.text | default: _section.title }}</a>
+        {% if nc == next_i or forloop.last %}</span>
+        <br>{% else %} | {% endif %}
+        
+        {% endfor %}
+    </div>
+</div>
+<div class="newsletter-toc">
+    <h2>In this Newsletter</h2>
+    {%- for _section in page.sections %}
+    {% unless _section.title == "Connect" %}
+    <div>
+    {% if _section.fetch %}
+    {% capture sectionfetch %}_posts/{{ _section.fetch }}.md{% endcapture %}
+    {% assign rs = site.posts | find: "path", sectionfetch %}
+    <a href="#{{ _section.title | slugify }}">{{ _section.title }}: {{ rs.title }}</a>
+
+    {% elsif _section.subsections %}
+    {{ _section.title }}
+    <ul>
+        {%- for _sub in _section.subsections %}
+        <li>
+        {%- if _sub.title %}
+        <a href="#{{ _sub.title | slugify }}">{{ _sub.text }}</a>
+        {%- else %}
+        <a href="#{{ _sub | slugify }}">{{ _sub }}</a>
+        {%- endif %}
+        </li>
+        {%- endfor %}
+    </ul>
+    {% endif %}
+    </div>
+    {% endunless %}
+    {%- endfor %}
+</div>
+<div>
+    <h2>Research Spotlight</h2>
+    <h3>{{ rs.title }}</h3>
+    {% if rs.author %}<em><strong>{{ page.author }}</strong></em>{% endif %}
+    {% if page.affiliation %}<em><strong>{{ page.affiliation }}</strong></em>{% endif %}
+    {{ rs.content }}
+</div>-->
+{% endcomment %}
+
