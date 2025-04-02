@@ -45,7 +45,7 @@
                     <p style="line-height: 140%; color: #141414; font-family: helvetica; font-size: 14px; text-align: left; margin: 10px 0;" align="left">
                         <strong>{{ _section.title }}</strong>
                     </p>
-                    <ul>
+                    <ul style="display: block;">
                         {%- for _sub in _section.subsections %}
                         <li style="margin: 0 0 7px;">
                         {%- if _sub.title %}
