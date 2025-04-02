@@ -25,5 +25,5 @@ Results have been uploaded as a track on the genome browser at MaizeGDB, a USDA-
 
 For more details, check out our open-access publication in Genome Research at [https://www.genome.org/cgi/doi/10.1101/gr.279027.124](https://www.genome.org/cgi/doi/10.1101/gr.279027.124).
  
-![Figure 1](/assets/img/posts/2025-01-tc.jpg)
+![Figure 1](/assets/img/posts/2025-01-tc.jpg)  
 *Figure 1: Environmental indices identified for the 19 traits, shown with an example of maize development. For each trait, a line segment represents the environmental index identified by CERIS-JGRA, with color denoting the environmental variable(s) used and extent on the x axis the time window. Environmental indices show biological relevance, with a clear transition from the vegetative to the reproductive stage visible.*

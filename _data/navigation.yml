@@ -41,7 +41,7 @@ primary:
       - title: User Stories
         url: /news/stories
       - title: Newsletter
-        url: /news/newsletter
+        url: /news/newsletter/
       - title: SCINet-X
         url: /news/scinet-x
   - title: User Guides

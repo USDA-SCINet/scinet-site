@@ -1,0 +1,5 @@
+{% assign thiscollection = include.collection | default: "news-components" %}
+{% capture section-path %}_{{ thiscollection }}{{ include.section }}.md{% endcapture %}
+{% assign section_post = site[thiscollection] | find: "path", section-path %}
+{% unless section_post.notitle %}<h3>{{ section_post.title }}</h3>{% endunless %}
+{{ section_post.content }}

@@ -1,0 +1,72 @@
+{% assign blankarray = "" | split: "" %}
+{% assign sidenav = blankarray %}
+{%- assign subnav = blankarray %}
+{%- include layout/components/hashed title="Newsletter Archive" url="/news/newsletter" %}
+{%- assign sidenav = sidenav | push: hashed %}
+{% assign bc_base = hashed %}
+{% capture printnav %}
+<tr>
+    <td id="main-nav" width="100%" data-govdstyle="all" data-govdtitle="Newsletter Navigation" style="padding: 4px 20px 0px 15px;"  align="center">
+        {%- for _section in page.sections %}
+        {%- assign current_i = forloop.index0 | divided_by: 3 -%}
+        {%- assign nc = current_i | plus: 1 %}
+        {%- assign pc = current_i | minus: 1 %}
+        {%- assign prev_i = forloop.index0 | minus: 1 | divided_by: 3 -%}
+        {%- assign next_i = forloop.index0 | plus: 1 | divided_by: 3 -%}
+        {%- if forloop.first or pc == prev_i -%}
+        <p style="text-align: center; line-height: 1.1; font-weight: bold; color: #000000; font-family: helvetica; font-size: 18px; margin: 0 0 10px 0;" align="center">
+        {%- endif -%}
+        <a href="#{{ _section.title | slugify }}" style="color: #006600; -ms-word-break: break-all; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; text-decoration: underline;">{{ _section.text | default: _section.title }}</a>
+        {% if nc == next_i or forloop.last %}</p>{% else %} | {% endif %}
+        {%- endfor %}
+    </td>
+</tr>
+<tr>
+    <td id="sub-nav" width="100%" data-govdstyle="all" data-govdtitle="In This Newsletter" style="padding: 20px 25px 0px 25px;">
+        <table class="gd_table" style="width: 100%; border-collapse: collapse; background-color: #f0f0f0;" cellpadding="20" bgcolor="#f0f0f0">
+            <tbody>
+              <tr>
+                <td style="width: 60%; line-height: 140%; color: #141414; font-family: helvetica; font-size: 14px; text-align: left; margin: 10px 0;" align="left">
+                    <h2 style="line-height: 1.1; font-weight: bold; color: #0F0E0E; font-family: helvetica; font-size: 24px; margin: 0 0 10px;" align="center">In this Newsletter</h2>
+                    <hr>
+                    {%- for _section in page.sections %}
+                    {%- capture sslug %}{{ page.url }}#{{ _section.title | slugify }}{% endcapture %}
+                    {%- include layout/components/hashed title=_section.title url=sslug %}
+                    {%- assign subnav = subnav | push: hashed %}
+                    {% unless _section.title == "Connect" %}
+
+                    {% if _section.fetch %}
+                    {% capture sectionfetch %}_posts/{{ _section.fetch }}.md{% endcapture %}
+                    {% assign rs = site.posts | find: "path", sectionfetch %}
+                    <p style="line-height: 140%; color: #141414; font-family: helvetica; font-size: 14px; text-align: left; margin: 10px 0;" align="left">
+                        <a href="#{{ _section.title | slugify }}" style="color: #006600; -ms-word-break: break-all; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; text-decoration: underline;"><strong>{{ _section.title }}: {{ rs.title }}</strong></a>
+                    </p>
+                    {% elsif _section.subsections %}
+                    <p style="line-height: 140%; color: #141414; font-family: helvetica; font-size: 14px; text-align: left; margin: 10px 0;" align="left">
+                        <strong>{{ _section.title }}</strong>
+                    </p>
+                    <ul>
+                        {%- for _sub in _section.subsections %}
+                        <li style="margin: 0 0 7px;">
+                        {%- if _sub.title %}
+                        <a href="#{{ _sub.title | slugify }}" style="color: #006600; -ms-word-break: break-all; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; text-decoration: underline;"><strong>{{ _sub.text }}</strong></a>
+                        {%- else %}
+                        <a href="#{{ _sub | slugify }}" style="color: #006600; -ms-word-break: break-all; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; text-decoration: underline;"><strong>{{ _sub }}</strong></a>
+                        {%- endif %}
+                        </li>
+                        {%- endfor %}
+                    </ul>
+                    {% endif %}
+
+                    {% endunless %}
+                    {%- endfor %}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </td>
+</tr>
+{% endcapture %}
+{%- include layout/components/hashed title=page.title url=page.url subnav=subnav %}
+{%- assign sidenav = sidenav | push: hashed %}
+    
