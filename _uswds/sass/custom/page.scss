@@ -17,10 +17,7 @@
 }
 
 .hero-img {
-    @supports not (background-image: url("/assets/img/hero.webp")) {
-            background-image: url("/assets/img/hero.jpg")
-    }
-    background-image: url("/assets/img/hero.webp");
+    background-image: url("/assets/img/hero.jpg")
 }
 
 .no-hero-img {
