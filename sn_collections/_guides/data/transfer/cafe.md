@@ -1,6 +1,6 @@
 ---
 title: "Data Transfer via Café Machine"
-description: How to transfer data using SCINet Café Machines
+description: How to transfer data using SCINet café machines
 
 parents:
   - title: Storage and Data Management
@@ -21,65 +21,64 @@ fetched: "data-transfer"
 order_number: 20
 ---
 
-If you are at an ARS research facility with a SCINet-X connection, you have access to a SCINet cafe machine - a dedicated computer for high-speed data transfer to SCINet resources. <!--excerpt-->
+If you are at an ARS research location with a SCINet-X connection, you have access to a SCINet café machine - a dedicated computer for high-speed data transfer to and from SCINet’s supercomputers and long-term storage system. <!--excerpt--> You do not need to use the café machine to use SCINet’s computing systems. Computing work should be done from your regular workstation or laptop. 
 
 ## Getting Started
 
-Using the café machines typically requires a LincPass.  If you have access to a café machine, but do not have a LincPass, contact the VRSC for assistance to use an alternative eAuth access method.
+Using the café machines requires a LincPass. If you have access to a café machine, but do not have a LincPass, contact the VRSC for assistance to use an alternative eAuth access method. The recommended way to perform large file transfers to and from SCINet infrastructure is using Globus, and doing that from a SCINet café machine first requires installing Globus Connect Personal (GCP). Instructions for installing and setting up GCP are below:
 
 {: .usa-list }
-1. **Log in to the machine using your SCINet username (first.last) and LincPass/PIN.**
-  * The login screen should look like a typical desktop login.  If you see a terminal instead, contact the VRSC for assistance.
-  * The Café machine may be slow right after login, don’t worry about the extended black screen, it will eventually do something.
-  * When you get the start screen you should see icons along the bottom for Firefox, files (cabinet), and terminal.  If you don’t see this, go to 'activities' in the upper left of the screen and it will toggle from the full window so you can access this dock.  
+1. **Log in to the café machine using your SCINet username and LincPass/PIN.**
+  * The login screen should look like a desktop login.  If you see a terminal instead, contact the VRSC (scinet_vrsc@usda.gov) for assistance.
+  * The café machine may show an extended black screen right after logging in, but this is expected. 
+  * When you get to the start screen, you should see icons along the bottom for Firefox, files (cabinet), and terminal.  If you don’t see these icons, click on "Activities" in the upper left of the screen to make them visible.  
     ![Screenshot of the desktop with icon dock](../assets/cafe_desktop_ribbon.png)
 
-1. **Set up Globus Connect Personal (one time setup – done for each user)**
-    1. Run "globusconnect" in a terminal.  This is a script that automates installing, setting up, and running Globus Connect Personal.
+1. **Set up Globus Connect Personal (GCP) (one time setup done for each user)**
+    1. Open a terminal by clicking the terminal icon (black box with ">_" in white) on the bottom of the screen. 
+    1. Type "globusconnect" in the terminal to run a script that automates installing, setting up, and running Globus Connect Personal.
         
         {: .copy-code}
         ```
 globusconnect
 ```
-    1. The first time you run "globusconnect" it will download, install, and start the setup process for Globus Connect Personal.
-    1. The setup process usually, but not always, requires you to login.  (This process may vary depending on how you login) 
-      * A globus login popup window will open. Select Log In.  
-      * Go to the main Firefox window that opens behind the popup and select Allow.  
-      * Select SCINET-ARS/USDA from the dropdown and complete the eAuth login.
-      *  **If you have used Globus before, select "link to" to join your globus account to this one.**  Otherwise, click continue.
-        * You can also link accounts later using the steps on the [Globus linking account instructions.](https://docs.globus.org/guides/tutorials/manage-identities/link-to-existing/)
-      * When registering, type USDA-ARS as your organization and non-profit research – agree to terms and click continue. 
-      * Next page will ask you to agree to setup and asks for a name for future reference, keep the default – it should be the name of your SCINet café. Click allow. 
-      * Now you get a window for "Collection Details" – give it a name that will make sense to you.  For example:  your-initials and scinet-café (ABC_scinet_cafe).  Description is not necessary.  Do not select the "high assurance" button. Click save. 
-      * You should get a "setup successful" popup with the name of your collection. 
+      The first time you run the `globusconnect` script, it will download, install, and start the setup process for Globus Connect Personal.
+    1. The setup process usually, but not always, requires you to login.  (This process may vary depending on how you log in.) 
+      * A Globus login pop-up window will open. Select "Log In".  
+      * Go to the main Firefox window that opens behind the pop-up and select "Allow".  
+      * Select "SCINet-ARS/USDA" from the dropdown menu and complete the eAuth login procedure.
+        * **If this is your first time authenticating via your SCINet account and you already have a Globus account with another authentication identity (e.g., via ORCID or a university), select "Link to" to join your SCINet-ARS/USDA Globus identity to your existing account.**  Otherwise, click "Continue".
+        * You can also link identities later using the steps on the [Globus linking account instructions](https://docs.globus.org/guides/tutorials/manage-identities/link-to-existing/).
+      * When registering, type "USDA-ARS" as your organization and non-profit research – agree to the terms and click "continue". 
+      * The next page will ask you to agree to set up GCP and ask for a name for the machine for future reference. You can keep the default value which should be the name of your SCINet café machine. Click "Allow". 
+      * Now a window for "Collection Details" will appear. For "Collection Name", provide a name that will be recognizable to you as the café machine.  For example:  your initials and "_scinet_cafe" (i.e., ABC_scinet_cafe). Providing a description is optional. Do not select the "High Assurance" checkbox (read about sensitive data on SCINet infrastructure [here]({{ site.baseurl }}/support/faq#can-i-store-sensitive-data-on-scinet-infrastructure)). Click "Save". 
+      * You should get a "Setup Successful!" pop-up with the name of your collection. 
         * If you get a collection name that is generic like "scinet_cafe" you can click "show collection details" and, on the right of the collection details page, select "edit attributes" to edit the collection's  name.  
-        * If you are happy with it, click "Exit Setup."   
-    1. When you run "globusconnect" in the future, it will scan for USB devices, add any that it finds to the globus config, and start the server. You can use "globusconnect -help" to see this information.
-    1. If you need to add USB devices after starting the server just run “globusconnect -restart” to rescan devices and restart the server.    
+        * If you are happy with the collection name, click "Exit Setup".      
 
 
-## Transferring Data
+## Transferring Data 
 
-**Please do not copy any files onto the café machine as it has limited hard drive space.** 
+To begin transferring data using GCP on the café machine, connect an external drive to the machine. At minimum, the external drive should support the USB 3.0 standard to ensure sufficient data throughput. Bitlocker-encrypted external drives can be accessed on the café machine using software called “dislocker”. **Please do not copy any files onto the café machine as it has limited hard drive space.** 
 
-To move data from an external drive, connect the external drive and restart the server with “globusconnect -restart”
-
-
-### Using Globus Connect Personal.   
-
-After Globus Connect Personal is set up, you can use the following command in the terminal to open the GCP connection interface and start the connection:
-
-{: .copy-code }
+* If GCP is not currently running, open a terminal and run the following command to scan for external drives, to open the GCP connection interface, and to start the GCP connection with access to the found external drives:
+  {: .copy-code }
 ```
 globusconnect
-```  
+``` 
+* If GCP was already running before connecting the external drive, run the following command to restart the GCP connection and to rescan for the external drive:
+  {: .copy-code }
+```
+globusconnect -restart
+```   
 
-Once connected, you can use the window to connect or disconnect your session.  When you are finished transferring data, you can close the window or hit CTRL+C in the terminal to end your session.  
+Now that your GCP connection is running and can access your external drive, you can go to [Globus.org](https://www.globus.org/) to perform data transfers from or to the café machine. You should find the "*_scinet_cafe" collection made [above](#getting-started) in your list of collections, and you will be able to connect to it while the local GCP connection is running on the café machine. After selecting your café machine collection, you should see the files you have on that machine or external drive. For detailed instructions on transferring data using Globus, see [Globus Data Transfer](/guides/data/transfer/globus#copying-data). 
 
-When you start the app and go to globus.org and login, you will be able to select your scinet-café collection, and you should see the files you have on that machine or external drive.  When you stop the app, it will no longer be accessible to you.  Please stop the app after each session. 
+On the café machine, you can use the GCP window to disconnect your session (or reconnect after disconnecting).  When you are finished transferring data, you can close the window or hit CTRL+C in the terminal to end your session. When you stop the GCP connection, it will no longer be accessible to you.  Please stop the connection after each session. 
 
 ![Screenshot of GCP and Globus interface with connected status](../assets/globus_connected.png)
 ![Screenshot of GCP and Globus interface with disconnected status](../assets/globus_disconnected.png)
 
+You can use `globusconnect -help` on the café machine for additional information. If you run into any issues using the café machine, please contact the VRSC by emailing scinet_vrsc@usda.gov.  
 
-For more information on transferring data using Globus, see [Globus Data Transfer](/guides/data/transfer/globus#copying-data)
+

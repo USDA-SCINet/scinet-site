@@ -164,6 +164,9 @@ Please fill out an application form at [Request Project Storage]({{ site.baseurl
 ### How do I request access to a project directory?
 Only project directory managers can request access to their project space for other users. 
 
+### Can I store sensitive data on SCINet infrastructure?
+No, any data that includes personal identifiable information (PII), controlled unclassified information (CUI), or other sensitive information should not be stored on Atlas, Ceres, Juno, or café machines. 
+
 
 ## Data Transfer
 ---
