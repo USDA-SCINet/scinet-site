@@ -3,8 +3,9 @@ layout: default
 css: newsletter.css
 ---
 <div class="grid-container main-side">
-{% capture mycontent %}{{ content | markdownify }}{% endcapture %}
+{% capture mycontent %}{{ content }}{% endcapture %}
 {% include layout/newsletter/nav %}
+{% include layout/newsletter/emailcontent mycontent=mycontent %}
 
 <div class="grid-row grid-gap flex-align-start">
     <div class="usa-layout-docs__sidenav desktop:grid-col-3 desktop:padding-y-10{% unless page.sidenav %} usa-sticky-sidenav{% endunless %}">
@@ -21,43 +22,30 @@ css: newsletter.css
             {{ content }}
             </div>
 
-{%- assign mycontent = mycontent | replace: '<h4', '<h4 style="font-family: helvetica; font-size: 16px; margin: 20px 0 5px;"' | replace: '<h3', '<h3 style="font-family: helvetica; font-size: 20px; margin: 20px 0 5px;"' | replace: '<h2', '<h2 style="text-align: center; line-height: 1.1; font-weight: bold; color: #0F0E0E; font-family: helvetica; font-size: 24px; margin: 30px 0 10px; padding:5px; border-top:2px solid #000000; border-bottom:2px solid #000000;"' | replace: '<li', '<li style="margin: 0 0 7px;"' | replace: '<img ', '<img style="max-width: 100%;"' | replace: 'src="/', 'src="https://scinet.usda.gov/' | replace: '<a ', '<a style="color: #006600; -ms-word-break: break-all; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; text-decoration: underline;" ' | replace: '<ul', '<ul style="display: block;"' %}
-{%- assign mycontent = mycontent | replace: '<!--excerpt-->', '' %}
 <!--
-<div style="max-width: 600px; width: 100%; margin: 0 auto;">
-  <table width="100%" align="center" style="border-collapse: collapse;" cellpadding="0" cellspacing="0">
-      <tbody>
-          <tr>
-              <td id="view-in-browser" width="100%" data-govdstyle="all" data-govdtitle="View in Browser" class="thin" style="padding: 10px;"></td>
-          </tr>
-          <tr>
-              <td id="main-header" width="100%" data-govdstyle="all" data-govdtitle="Main Header" style="background-color: #000000; padding: 0px 0px 1px; border: none;" bgcolor="#000000"  align="center">
-                  <img class="govd_template_image" src="https://scinet.usda.gov/assets/img/news/newsletters/newsletter-header_original.jpg" style="width: 600px; height: auto !important; max-height: auto !important; border: none;" alt="SCINet header narrow" width="600" height="79">
-              </td>
-          </tr>
-          <tr>
-              <td id="main-date" width="100%" data-govdstyle="all" data-govdtitle="Main Title" class="thin" style="padding: 20px 2px 9px 10px; border: none;">
-                  <h1 class="gd_p" style="text-align: center; line-height: 140%; font-weight: bold; font-family: helvetica; font-size: 26px; color: #070708; margin: 0;" align="center">
-                      <strong>{{ page.title }}</strong>
-                  </h1>
-              </td>
-          </tr>
-          {{ printnav }}
-          <tr>
-              <td id="main-body" width="100%" data-govdstyle="all" data-govdtitle="Main Body" style="padding: 4px 20px 0px 15px; line-height: 140%; color: #141414; font-family: helvetica; font-size: 14px; text-align: left; margin: 10px 0;" align="left">
-                  {{ mycontent }}
-              </td>
-          </tr>
-          <tr>
-              <td>
-                  <p style="font-family: helvetica; font-size: 18px; text-align: center; margin: 20px">
-                  <a href="https://scinet.usda.gov" style="color: #006600; text-decoration:none;"><strong>SCINet Site</strong></a>
-                  </p>
-              </td>
-          </tr>
-      </tbody>
-  </table>
- </div>
+<table style="max-width:600px;margin:0 auto; box-sizing: border-box; border-collapse: collapse; border-spacing: 0px;" cellpadding=0 >
+<tbody>
+<tr>
+<td style="max-width:600px;margin:0 auto;">
+<div style="text-align: center; font-family: Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0); width:600px;margin:0 auto;" class="elementToProof">
+  <img src="https://scinet.usda.gov/assets/img/news/newsletters/newsletter-header_original.jpg" style="max-width: 100%;" alt="SCINet header narrow">
+</div>
+<div style="padding: 20px 10px;text-align: center; font-family: Helvetica, sans-serif; line-height: 140%; font-weight: bold; font-family: helvetica; font-size: 26px; color: rgb(0, 0, 0); width:600px;margin:0 auto;" class="elementToProof">
+  <strong>SCINet Newsletter: January 2025</strong>
+</div>
+{{ printnav }}
+
+{{ emailcontent }}
+
+<div style="text-align: center; font-family: Helvetica, sans-serif; font-size: 18px; width:600px;margin:0 auto;" class="elementToProof">
+    <p style="font-family: helvetica; font-size: 18px; text-align: center; margin: 20px">
+        <a href="https://scinet.usda.gov" style="color: #006600; text-decoration:none;"><strong>SCINet Site</strong></a>
+    </p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 -->
 
 

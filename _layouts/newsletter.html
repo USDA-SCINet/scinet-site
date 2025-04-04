@@ -6,7 +6,7 @@ styles: /assets/css/newsletter.css
 {%- assign rs_section = page.sections | first %}
 {%- capture sectionfetch %}_posts/{{ rs_section.fetch }}.md{% endcapture %}
 {%- assign rs = site.posts | find: "path", sectionfetch %}
-<h2>Research Spotlight</h2>
+<h2 id="research-spotlight">Research Spotlight</h2>
 <h3>{{ rs.title }}</h3>
 <p>
 {% if rs.author %}<em><strong>{{ rs.author }}</strong></em>{% endif %}<br>
