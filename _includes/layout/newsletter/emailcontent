@@ -1,0 +1,9 @@
+{% assign emailcontent = include.mycontent %}
+{%- assign emailcontent = emailcontent | replace: '<ul>', '<ul style="margin-top:0px;margin-bottom:0px;list-style-type:disc">' %}
+{%- assign emailcontent = emailcontent | replace: '<h4', '<h4 style="text-align: left; margin: 20px 0px 8px; font-family: Helvetica, sans-serif; font-size: 16px; color: rgb(0, 0, 0);" class="elementToProof"' | replace: '<h3', '<h3 style="text-align: left; margin: 20px 0px 8px; font-family: Helvetica, sans-serif; font-size: 20px; color: rgb(0, 0, 0);" class="elementToProof"'  | replace: '<h2', '<h2 style="text-align: center; line-height: 1.1; font-weight: bold; color: rgb(0, 0, 0); font-family: helvetica; font-size: 24px; margin: 30px 0 10px; padding:5px; border-top:2px solid #000000; border-bottom:2px solid #000000;"  class="elementToProof"' %}
+{%- assign emailcontent = emailcontent | replace: '<p>', '<p style="font-family: Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);line-height: 1.38; margin-top: 0px; margin-bottom: 8pt;"  class="elementToProof">' %}
+{%- assign emailcontent = emailcontent | replace: '<li>', '<li style="font-family: Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0); margin: 5 0;"><p style="line-height: 1.38; margin-top: 0px; margin-bottom: 8pt;">' | replace: '</li>', '</p></li>' %}
+
+
+{%- assign emailcontent = emailcontent | replace: '<img', '<img style="max-width: 100%;"' | replace: 'src="/', 'src="https://scinet.usda.gov/' | replace: 'href="/', 'href="https://scinet.usda.gov/' | replace: '<a ', '<a style="color: #006600;" ' %}
+{%- assign emailcontent = emailcontent | replace: '<!--excerpt-->', '' %}
