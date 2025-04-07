@@ -17,7 +17,7 @@ course-list:
   - title: RNA for Genome Annotation and Reproducibility in Bioinformatics
 ---
 
-If you are interested in learning a complete story, we recommend registering for all workshops in this series. However, it is not required, and you may register for only the workshops that are most relevant to your work. 
+The workshops in this series are designed to provide a thorough introduction to modern bioinformatics concepts, best practices, and practical skills. If that is of interest, we recommend registering for all workshops in this series. However, registration for all workshops is not required, and you may register for only the workshops that are most relevant to your work. 
 
 You will need a SCINet account to actively participate in this workshop. [If you do not have a SCINet account, you may request one](https://scinet.usda.gov/about/signup).
 
