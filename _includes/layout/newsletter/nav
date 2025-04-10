@@ -6,7 +6,7 @@
 {% assign bc_base = hashed %}
 {% capture printnav %}
 
-<div style="padding: 4px 20px 0px 15px;text-align: center; font-family: Helvetica, sans-serif; line-height: 1.1; font-weight: bold; font-family: helvetica; font-size: 18px; color: rgb(0, 0, 0); width:600px;margin:0 auto;" class="elementToProof">
+<td width="100%" data-govdstyle="all" style="padding: 5px 20px 30px;">
         {%- for _section in page.sections %}
         {%- assign current_i = forloop.index0 | divided_by: 3 -%}
         {%- assign nc = current_i | plus: 1 %}
@@ -14,23 +14,23 @@
         {%- assign prev_i = forloop.index0 | minus: 1 | divided_by: 3 -%}
         {%- assign next_i = forloop.index0 | plus: 1 | divided_by: 3 -%}
         {%- if forloop.first or pc == prev_i -%}
-        <p style="margin: 0 0 10px 0;">{%- endif %}
+        <p style="text-align: center; line-height: 1.1; font-weight: bold; color: #000000; font-family: helvetica; font-size: 18px; margin: 10px 0;" align="center">{%- endif %}
         <a href="#{{ _section.title | slugify }}" style="color: #006600;">{{ _section.text | default: _section.title }}</a>
         {% if nc == next_i or forloop.last %}</p>{% else %} | {% endif %}
         {%- endfor %}
-</div>
-
-<table style="width:550px;margin:0 auto; box-sizing: border-box; border-collapse: collapse; border-spacing: 0px; background-color: #f0f0f0;" cellpadding=20 id="Table of Contents">
+</td>
+</tr>
+<tr>
+  <td>
+<table align="center" class="nl_table" style="width: 70%; border-collapse: collapse; background-color: #f0f0f0;" cellpadding="20" bgcolor="#f0f0f0" id="Table of Contents">
     <tbody>
-      <tr>
-        <td style="width: 448.422px; height: 22px; border-bottom: 1.333px solid rgb(171, 171, 171); vertical-align: top; box-sizing: border-box;" data-editing-info="{&quot;borderOverride&quot;:true}">
-          <div style="text-align: center; font-family: Helvetica, sans-serif; line-height: 1.1; font-weight: bold; font-family: helvetica; font-size: 24px; color: rgb(0, 0, 0)">
-            <span style="text-align: center; font-family: helvetica; font-size: 24px; margin: 0">In this Newsletter</span>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td style="width: 448.422px; height: 94.0787px; border-top: 1.333px solid rgb(171, 171, 171); vertical-align: top; box-sizing: border-box;" data-editing-info="{&quot;borderOverride&quot;:true}">
+    <tr>
+    <td style="width: 90%; text-align: center;" align="center">
+      <span style="text-align: center; font-family: helvetica; font-size: 24px; margin: 0" align="center"><strong>In this Newsletter</strong></span>
+    </td>
+    </tr>
+    <tr>
+    <td style="width: 90%; border-top: 1.333px solid rgb(171, 171, 171);">
             {%- for _section in page.sections %}
             {%- capture sslug %}{{ page.url }}#{{ _section.title | slugify }}{% endcapture %}
             {%- include layout/components/hashed title=_section.title url=sslug %}
@@ -39,29 +39,25 @@
             {%- if _section.fetch %}
             {%- capture sectionfetch %}_posts/{{ _section.fetch }}.md{% endcapture %}
             {%- assign rs = site.posts | find: "path", sectionfetch %}
-          <div style="font-family: Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
-            <p style="line-height: 1.38; margin-top: 0px; margin-bottom: 8pt;">
-                <a href="#{{ _section.title | slugify }}" style="color: #006600;">
-                <strong>{{ _section.title }}: {{ rs.title }}</strong>
-              </a>
+            <p style="line-height: 130%; color: #141414; font-family: helvetica; font-size: 14px; text-align: left; margin: 0 0 7px;" align="left">
+              <strong>{{ _section.title }}: <a href="#{{ _section.title | slugify }}" style="color: #006700; text-decoration: underline; -ms-word-break: break-all; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none;">
+                {{ rs.title }}
+              </a></strong>
             </p>
-          </div>
           {%- elsif _section.subsections %}
-          <div style="font-family: Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
-            <p style="line-height: 1.38; margin-top: 0px; margin-bottom: 8pt;">
-              <strong>{{ _section.title }}</strong>
-            </p>
-          </div>
-          <ul style="margin-top:0px;margin-bottom:0px;list-style-type:disc">
+          <p style="line-height: 130%; color: #141414; font-family: helvetica; font-size: 14px; text-align: left; margin: 0 0 7px;" align="left">
+            <strong>{{ _section.title }}</strong>
+          </p>
+          <ul>
             {%- for _sub in _section.subsections %}
-            <li style="font-family: Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0); margin: 5 0;">
-              <p style="line-height: 1.38; margin-top: 0px; margin-bottom: 8pt;">
-                {%- if _sub.title %}
-                <a href="#{{ _sub.title | slugify }}" style="color: #006600;"><strong>{{ _sub.text }}</strong></a>
+            <li style="line-height: 130%; color: #141414; font-family: helvetica; font-size: 14px; text-align: left; margin: 0 0 7px;">
+              <strong>
+              {%- if _sub.title %}
+                <a href="#{{ _sub.title | slugify }}" style="color: #006700; text-decoration: underline; -ms-word-break: break-all; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none;">{{ _sub.text }}</a>
                 {%- else %}
-                <a href="#{{ _sub | slugify }}" style="color: #006600;"><strong>{{ _sub }}</strong></a>
+                <a href="#{{ _sub | slugify }}" style="color: #006700; text-decoration: underline; -ms-word-break: break-all; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none;">{{ _sub }}</a>
                 {%- endif %}
-              </p>
+                </strong>
             </li>
             {%- endfor %}
           </ul>
@@ -72,6 +68,8 @@
       </tr>
     </tbody>
 </table>
+</td>
+
 {% endcapture %}
 {%- include layout/components/hashed title=page.title url=page.url subnav=subnav %}
 {%- assign sidenav = sidenav | push: hashed %}

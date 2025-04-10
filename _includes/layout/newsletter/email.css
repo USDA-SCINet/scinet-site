@@ -72,7 +72,7 @@ a[x-apple-data-detectors] {
 /* Sets the line height in everything but Outlook */
 table#yahoo body,
 table#yahoo p,
-table#yahoo .gd_p,
+table#yahoo .nl_p,
 table#yahoo p span,
 table#yahoo li,
 table#yahoo li span {
@@ -87,13 +87,13 @@ table#yahoo li span {
   line-height: 100%
 }
 
-table#yahoo .govd_template_image {
+table#yahoo .newsletter_template_image {
   max-width: 100% !important;
   max-width: 100%;
 }
 
-table#yahoo .govd_template_image,
-table#yahoo .govd_template_image img {
+table#yahoo .newsletter_template_image,
+table#yahoo .newsletter_template_image img {
   height: auto !important;
   height: auto;
 }
@@ -105,13 +105,8 @@ table#yahoo .govd_template_image img {
     position: relative;
   }
 
-  table#yahoo .govd_header {
+  table#yahoo .newsletter_header {
     max-width: 480px !important;
-  }
-
-  table#yahoo .govd_hr img,
-  table#yahoo .govd_hr_inner img {
-    display: none !important;
   }
 
   table#yahoo img {
@@ -119,45 +114,45 @@ table#yahoo .govd_template_image img {
     width: auto !important;
   }
 
-  table#yahoo .govd_template_image {
+  table#yahoo .newsletter_template_image {
     height: auto !important;
     max-width: 100% !important;
     width: auto !important;
     margin: 0 !important;
   }
 
-  table#yahoo table.gd_combo_table .govd_template_image {
+  table#yahoo table.nl_combo_table .newsletter_template_image {
     margin: 0 auto 10px auto !important;
     display: block !important;
     float: none !important;
     text-align: center;
   }
 
-  table#yahoo table.gd_combo_table td.gd_combo_image_cell .govd_template_image {
+  table#yahoo table.nl_combo_table td.nl_combo_image_cell .newsletter_template_image {
     margin: 0 !important;
     text-align: left;
   }
 
-  table#yahoo #main-header .govd_template_image {
+  table#yahoo #main-header .newsletter_template_image {
     max-width: 480px !important;
     width: 100% !important;
   }
 
-  table#yahoo .govd_content_container .govd_image_display {
+  table#yahoo .newsletter_content_container .newsletter_image_display {
     margin-left: 0 !important;
   }
 
   table#yahoo .container-fill,
-  table.gd_tbl_wrap,
-  table.gd_tbl_wrap table {
+  table.nl_tbl_wrap,
+  table.nl_tbl_wrap table {
     max-width: 480px !important;
   }
 
   .main-table,
   .mobile-footer,
   .mobile-tagline,
-  table.gd_tbl_wrap,
-  table.gd_tbl_wrap table {
+  table.nl_tbl_wrap,
+  table.nl_tbl_wrap table {
     width: 100% !important;
     min-width: 100% !important;
     max-width: 480px !important;
@@ -171,14 +166,14 @@ table#yahoo .govd_template_image img {
 
   table#yahoo p,
   table#yahoo p span,
-  table#yahoo .gd_p,
+  table#yahoo .nl_p,
   table#yahoo li {
     font-size: 13pt !important;
   }
 
   table#yahoo #view-in-browser p,
   table#yahoo #view-in-browser p span,
-  table#yahoo #view-in-browser .gd_p,
+  table#yahoo #view-in-browser .nl_p,
   table#yahoo #view-in-browser li {
     font-size: 8pt !important;
   }
@@ -195,7 +190,7 @@ table#yahoo .govd_template_image img {
     font-size: 14pt !important;
   }
 
-  table#yahoo #main-body .govd_hr {
+  table#yahoo #main-body {
     background: transparent none !important;
   }
 
