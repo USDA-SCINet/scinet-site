@@ -2,16 +2,12 @@
 title: "Getting Started with SCINet is as Easy as 1,2,3"
 ---
 
-<table>
-<tbody>
-<tr>  
-<td style="padding-right: 10px;"><p>If you do not already have a SCINet account, we hope you will consider joining the 2,300+ researchers who do. Follow the steps below to get started with SCINet.</p></td>
-<td style="padding: 0; width: 254px; height: auto;">
-<img src="https://scinet.usda.gov/assets/img/site/SCINet_logo.svg" alt="SCINet Logo" style="padding: 0; width: 254px; height: auto; float: right; border: none;">
-</td>
-</tr>
-</tbody>
-</table>
+<div class="grid-row"><div class="grid-col">
+<p>If you do not already have a SCINet account, we hope you will consider joining the 2,300+ researchers who do. <br>
+Follow the steps below to get started with SCINet.</p>
+</div><div class="grid-col-4">
+<img src="https://scinet.usda.gov/assets/img/site/SCINet_logo.svg" alt="SCINet Logo">
+</div></div>
 
 1. [Request a SCINet account](/about/signup) to gain access to computational and training
 resources.
