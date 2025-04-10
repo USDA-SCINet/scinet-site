@@ -16,7 +16,6 @@
 <meta property="og:description" content="{{ description }}">
 {% endif %}
 
-<link rel="canonical" href="{{ site.url }}{% if page.permalink %}{{ page.permalink }}{% else %}{{ page.url}}{% endif %}" />
 <meta property="og:site_name" content="{{ site.title }}" />
 <meta property="og:image" content="{{ site.icon }}" />
 <meta property="og:type" content="website" />
@@ -26,4 +25,5 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"{% if page.permalink == "/" %}WebSite{% else %}WebPage{% endif %}","description":"{{ description }}","headline":"{% if page.title %}{{ page.title | strip_html }}{% else %}{{ site.title }}{% endif %}","image":"{{ site.icon }}",{% if page.permalink == "/" %}"name":"{{ site.short_name }}",{% endif %}"url":"{{ site.url }}{% if page.permalink %}{{ page.permalink }}{% else %}{{ page.url}}{% endif %}"}</script>
 
+<link rel="canonical" href="{{ site.url }}{% if page.canonical %}{{ page.canonical }}{% elsif page.permalink %}{{ page.permalink }}{% else %}{{ page.url }}{% endif %}" />
 {% include layout/components/favicon.html %}
