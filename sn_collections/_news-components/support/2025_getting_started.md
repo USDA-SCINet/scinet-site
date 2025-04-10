@@ -3,8 +3,7 @@ title: "Getting Started with SCINet is as Easy as 1,2,3"
 ---
 
 <div class="grid-row"><div class="grid-col">
-<p>If you do not already have a SCINet account, we hope you will consider joining the 2,300+ researchers who do. <br>
-Follow the steps below to get started with SCINet.</p>
+<p>If you do not already have a SCINet account, we hope you will consider joining the 2,300+ researchers who do. Follow the steps below to get started with SCINet.</p>
 </div><div class="grid-col-4">
 <img src="https://scinet.usda.gov/assets/img/site/SCINet_logo.svg" alt="SCINet Logo">
 </div></div>
