@@ -26,13 +26,15 @@
     {% if imgct == 1 %}{% assign imgct = 0 %}{% endif %}
     {% assign emailarray = emailarray | push: '</p>' %}
 {% when 'h2' %}
-    {% capture htmlconts %}<h2 align="center" style="text-align: center; line-height: 1.1; font-weight: bold; color: rgb(0, 0, 0); font-family: helvetica; font-size: 20pt; margin: 30px 0 10px; padding:5px; border-bottom:2px solid #000000;"><a {{ nodedesc | shift | first }} {{ nodedesc | shift | first | replace: 'id=', 'name=' }} style="text-decoration: none; -ms-word-break: break-all; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none;" ></a>{% endcapture %}
+    {% assign hrefid = nodedesc | shift | first | replace: 'id="', '' | replace: '"', '' | replace: '-', '' | truncate: 20 , ''%}
+    {% capture htmlconts %}<h2 align="center" style="text-align: center; line-height: 1.1; font-weight: bold; color: rgb(0, 0, 0); font-family: helvetica; font-size: 20pt; margin: 30px 0 10px; padding:5px; border-bottom:2px solid #000000;"><a id="{{ hrefid }}" name="{{ hrefid }}" style="text-decoration: none; -ms-word-break: break-all; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none;" ></a>{% endcapture %}
     {% assign emailarray = emailarray | push: htmlconts %}
 {% when 'h3' %}
-    {% capture htmlconts %}<h3 align="left" style="text-align: left; margin: 20px 0px 8px; font-family: Helvetica, sans-serif; font-weight: bold; font-size: 16pt; color: rgb(0, 0, 0);"><a {{ nodedesc | shift | first }} {{ nodedesc | shift | first | replace: 'id=', 'name=' }} style="text-decoration: none; -ms-word-break: break-all; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none;" ></a>{% endcapture %}
+    {% assign hrefid = nodedesc | shift | first | replace: 'id="', '' | replace: '"', '' | replace: '-', '' | truncate: 20, '' %}
+    {% capture htmlconts %}<h3 align="left" style="text-align: left; margin: 20px 0px 8px; font-family: Helvetica, sans-serif; font-weight: bold; font-size: 16pt; color: rgb(0, 0, 0);"><a id="{{ hrefid }}" name="{{ hrefid }}" style="text-decoration: none; -ms-word-break: break-all; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none;" ></a>{% endcapture %}
     {% assign emailarray = emailarray | push: htmlconts %}
 {% when 'h4' %}
-    {% capture htmlconts %}<h4 align="left" style="text-align: left; margin: 20px 0px 8px; font-family: Helvetica, sans-serif; font-weight: bold; font-size: 14pt; color: rgb(0, 0, 0);"><a {{ nodedesc | shift | first }} {{ nodedesc | shift | first | replace: 'id=', 'name=' }} style="text-decoration: none; -ms-word-break: break-all; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none;" ></a>{% endcapture %}
+    {% capture htmlconts %}<h4 align="left" style="text-align: left; margin: 20px 0px 8px; font-family: Helvetica, sans-serif; font-weight: bold; font-size: 14pt; color: rgb(0, 0, 0);">{% endcapture %}
     {% assign emailarray = emailarray | push: htmlconts %}
 {% when 'em' %}
     {% if imgct == 1 %}
