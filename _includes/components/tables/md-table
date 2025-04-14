@@ -1,0 +1,48 @@
+{% assign datas = include.data %}
+{% capture tableline %}|
+|{% endcapture %}
+{%- assign md = datas.content %}
+{%- assign nodes = md | split: tableline %}
+{%- assign titlestring = nodes.first %}
+{%- assign titles = titlestring | split: "|" | shift %}
+{%- capture sortable %}{% if datas.sortable %} data-sortable role="columnheader"{% endif %}{% endcapture %}
+{%- assign rowcount = 0 %}
+
+{%- if datas.classes %}{% assign classes = datas.classes | split: " " %}{% else assign classes = nil %}{% endif %}
+{%- capture tableclass %}usa-table {% unless datas.fixed %}usa-table--stacked-header{% endunless %} width-full {% if classes %}{% for _class in classes %}usa-table--{{ _class }}{% if _class == 'striped' %}{% unless datas.fixed %}-flex{% endunless %}{% endif %} {% endfor %}{% endif %}{% endcapture %}
+{%- capture tablediv %}{% if datas.fixed %}{% if datas.sticky %}sticky{% endif %}{% else %}flex-scroll{% endif %}{%- endcapture %}
+
+
+<div class="usa-table-container {{ tablediv }}">
+<table class="{{ tableclass }}">
+    {%- if datas.caption %}
+    <caption>
+      {{ datas.caption }}
+    </caption>
+    {%- endif %}
+    <thead>
+      <tr>
+        {% for _title in titles %}
+        <th scope="col"{{ sortable }}>{{_title | strip }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+        {% for _node in nodes %}
+        {% unless rowcount < 2 %}
+        {% assign colcount = 0 %}
+        {% assign rowdata = _node | split: "|" %}
+      <tr>
+        {% for _col in rowdata %}
+        <th data-label="{{ titles[colcount] | strip }}" scope="row"{% if forloop.first and datas.sortable %} role="rowheader"{% endif %}>
+          {{ _col | strip | .RenderString }}
+        </th>
+        {% assign colcount = colcount | plus: 1 %}
+        {% endfor %}
+      </tr>
+      {% endunless %}
+      {% assign rowcount = rowcount | plus: 1 %}
+      {% endfor %}
+    </tbody>
+</table>
+</div>

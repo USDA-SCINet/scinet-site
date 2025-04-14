@@ -1,0 +1,2 @@
+{% capture tablelayout %}components/tables/{% if include.type %}{{ include.type }}{% else %}md{% endif %}-table{% endcapture %}
+{%- include {{ tablelayout }} data=include -%}
