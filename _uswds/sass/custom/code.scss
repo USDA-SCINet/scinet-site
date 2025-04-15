@@ -125,3 +125,9 @@ div.highlight {
         
 
 }
+
+li{
+  .copy-code, .highlight{
+    @include u-margin-bottom(1);
+  }
+}
