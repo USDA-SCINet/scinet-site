@@ -35,7 +35,7 @@
       <tr>
         {% for _col in rowdata %}
         <th data-label="{{ titles[colcount] | strip }}" scope="row"{% if forloop.first and datas.sortable %} role="rowheader"{% endif %}>
-          {{ _col | strip | .RenderString }}
+          {{ _col | strip | markdownify }}
         </th>
         {% assign colcount = colcount | plus: 1 %}
         {% endfor %}
