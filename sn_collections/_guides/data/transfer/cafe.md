@@ -35,26 +35,26 @@ Using the café machines requires a LincPass. If you have access to a café mach
     ![Screenshot of the desktop with icon dock](../assets/cafe_desktop_ribbon.png)
 
 1. **Set up Globus Connect Personal (GCP) (one time setup done for each user)**
-    1. Open a terminal by clicking the terminal icon (black box with ">_" in white) on the bottom of the screen. 
-    1. Type "globusconnect" in the terminal to run a script that automates installing, setting up, and running Globus Connect Personal.
-        
-        {: .copy-code}
-        ```
+  1. Open a terminal by clicking the terminal icon (black box with ">_" in white) on the bottom of the screen. 
+  1. Type "globusconnect" in the terminal to run a script that automates installing, setting up, and running Globus Connect Personal.
+  
+      {: .copy-code}
+      ```
 globusconnect
 ```
       The first time you run the `globusconnect` script, it will download, install, and start the setup process for Globus Connect Personal.
-    1. The setup process usually, but not always, requires you to login.  (This process may vary depending on how you log in.) 
+  1. The setup process usually, but not always, requires you to login.  (This process may vary depending on how you log in.)  
       * A Globus login pop-up window will open. Select "Log In".  
       * Go to the main Firefox window that opens behind the pop-up and select "Allow".  
-      * Select "SCINet-ARS/USDA" from the dropdown menu and complete the eAuth login procedure.
-        * **If this is your first time authenticating via your SCINet account and you already have a Globus account with another authentication identity (e.g., via ORCID or a university), select "Link to" to join your SCINet-ARS/USDA Globus identity to your existing account.**  Otherwise, click "Continue".
-        * You can also link identities later using the steps on the [Globus linking account instructions](https://docs.globus.org/guides/tutorials/manage-identities/link-to-existing/).
-      * When registering, type "USDA-ARS" as your organization and non-profit research – agree to the terms and click "continue". 
-      * The next page will ask you to agree to set up GCP and ask for a name for the machine for future reference. You can keep the default value which should be the name of your SCINet café machine. Click "Allow". 
-      * Now a window for "Collection Details" will appear. For "Collection Name", provide a name that will be recognizable to you as the café machine.  For example:  your initials and "_scinet_cafe" (i.e., ABC_scinet_cafe). Providing a description is optional. Do not select the "High Assurance" checkbox (read about sensitive data on SCINet infrastructure [here]({{ site.baseurl }}/support/faq#can-i-store-sensitive-data-on-scinet-infrastructure)). Click "Save". 
-      * You should get a "Setup Successful!" pop-up with the name of your collection. 
+      * Select "SCINet-ARS/USDA" from the dropdown menu and complete the eAuth login procedure.  
+        * **If this is your first time authenticating via your SCINet account and you already have a Globus account with another authentication identity (e.g., via ORCID or a university), select "Link to" to join your SCINet-ARS/USDA Globus identity to your existing account.**  Otherwise, click "Continue".  
+        * You can also link identities later using the steps on the [Globus linking account instructions](https://docs.globus.org/guides/tutorials/manage-identities/link-to-existing/).  
+      * When registering, type "USDA-ARS" as your organization and non-profit research – agree to the terms and click "continue".  
+      * The next page will ask you to agree to set up GCP and ask for a name for the machine for future reference. You can keep the default value which should be the name of your SCINet café machine. Click "Allow".  
+      * Now a window for "Collection Details" will appear. For "Collection Name", provide a name that will be recognizable to you as the café machine.  For example:  your initials and "_scinet_cafe" (i.e., ABC_scinet_cafe). Providing a description is optional. Do not select the "High Assurance" checkbox (read about sensitive data on SCINet infrastructure [here]({{ site.baseurl }}/support/faq#can-i-store-sensitive-data-on-scinet-infrastructure)). Click "Save".  
+      * You should get a "Setup Successful!" pop-up with the name of your collection.  
         * If you get a collection name that is generic like "scinet_cafe" you can click "show collection details" and, on the right of the collection details page, select "edit attributes" to edit the collection's  name.  
-        * If you are happy with the collection name, click "Exit Setup".      
+        * If you are happy with the collection name, click "Exit Setup".  
 
 
 ## Transferring Data 
