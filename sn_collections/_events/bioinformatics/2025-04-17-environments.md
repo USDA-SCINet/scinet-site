@@ -595,3 +595,56 @@ apptainer exec blast_quay.sif blastn -version
 #blastn: 2.12.0+
 # Package: blast 2.12.0, build Jul 13 2021 09:03:00
 ```
+
+-----
+
+Project management through proper directory organization is clear and intuitive for beginners as well as experts. Proper documentation ssaves a lot of time and reduces potential for errors down the line.
+
+## Project Management in Bioinformatics
+#### Introduction
+Project organization is important:
+	* Reproducibility
+	* Collaboration
+	* Scalability
+	* Debugging and Maintenance
+	* Transparency and Pubblications
+	
+
+#### Mock Project Directory structutre
+
+```bash
+.
+├── 00_Raw_Data
+├── 01_QC
+├── 02_Trimming
+├── 03_Trimmed_Data
+├── 04_Alignment
+├── 05_Counts
+├── 06_DE_Analysis
+├── 07_Plots
+├── 08_Manuscript
+├── 09_Processed_Data
+├── README.md
+├── config
+├── envs
+└── scripts
+```
+
+`00_Raw_Data`: Raw FASTQs, from sequencing core
+
+`01_QC → 07_DE_Analysis`: analysis steps and results
+
+`08_Plots`: Figures for interpretation and further ivestigation if needed
+
+`09_Manuscript`: Final figures, text, references
+
+`10_Processed_Data`: Final processed data for publication
+
+`config/`: parameters for scripts, metadata etc.
+
+`scripts/`: reusable bash/R/python scripts
+
+`envs/`: Conda environment YAMLs or Apptainer images
+
+`README.md`: General overview of the project, inputs, steps etc.
+
