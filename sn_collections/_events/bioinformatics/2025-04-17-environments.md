@@ -21,6 +21,14 @@ tags: bioinformatics
 
 prerequisites:
   - text: Familiarity with basic command-line concepts. 
+
+subnav:
+  - title: Tutorial Setup
+    url: '#tutorial-setup-instructions'
+  - title: HPC for Bioinformatics
+    url: '#high-performance-computing-hpc-for-bioinformatics-a-practical-introduction'
+  - title: Project Management
+    url: '#project-management-in-bioinformatics'
 ---
 
 This workshop provides hands-on training in using SCINet’s high-performance computing (HPC) clusters for bioinformatics workflows. Participants will learn how to access and navigate SCINet’s systems as well as command line basics for managing and analyzing bioinformatics data including running BLAST and handling FASTA and FASTQ files. The workshop also covers project management and organization strategies to improve data organization and workflow efficiency.  <!--excerpt-->
@@ -598,19 +606,19 @@ apptainer exec blast_quay.sif blastn -version
 
 -----
 
-Project management through proper directory organization is clear and intuitive for beginners as well as experts. Proper documentation ssaves a lot of time and reduces potential for errors down the line.
-
 ## Project Management in Bioinformatics
-#### Introduction
-Project organization is important:
-	* Reproducibility
-	* Collaboration
-	* Scalability
-	* Debugging and Maintenance
-	* Transparency and Pubblications
+
+Project management through proper directory organization is clear and intuitive for beginners as well as experts. Proper documentation saves a lot of time and reduces potential for errors down the line.
+
+Project organization is important:  
+* Reproducibility  
+* Collaboration  
+* Scalability  
+* Debugging and Maintenance  
+* Transparency and Pubblications  
 	
 
-#### Mock Project Directory structutre
+**Mock Project Directory structutre**
 
 ```bash
 .
@@ -630,21 +638,13 @@ Project organization is important:
 └── scripts
 ```
 
-`00_Raw_Data`: Raw FASTQs, from sequencing core
-
-`01_QC → 07_DE_Analysis`: analysis steps and results
-
-`08_Plots`: Figures for interpretation and further ivestigation if needed
-
-`09_Manuscript`: Final figures, text, references
-
-`10_Processed_Data`: Final processed data for publication
-
-`config/`: parameters for scripts, metadata etc.
-
-`scripts/`: reusable bash/R/python scripts
-
-`envs/`: Conda environment YAMLs or Apptainer images
-
-`README.md`: General overview of the project, inputs, steps etc.
+* `00_Raw_Data`: Raw FASTQs, from sequencing core
+* `01_QC → 07_DE_Analysis`: analysis steps and results
+* `08_Plots`: Figures for interpretation and further ivestigation if needed
+* `09_Manuscript`: Final figures, text, references
+* `10_Processed_Data`: Final processed data for publication
+* `config/`: parameters for scripts, metadata etc.
+* `scripts/`: reusable bash/R/python scripts
+* `envs/`: Conda environment YAMLs or Apptainer images
+* `README.md`: General overview of the project, inputs, steps etc.
 
