@@ -45,5 +45,3 @@ To help minimize technical issues and delays at the start of the workshop, pleas
   * Please confirm that clicking on the “Connect to RStudio Server” button opens a new tab with the RStudio Server interface. 
 
 <br>
-
-## Workshop Series
