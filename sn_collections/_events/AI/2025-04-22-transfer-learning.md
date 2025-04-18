@@ -2,6 +2,7 @@
 title: Transfer Learning
 end_date: 2025-04-24 17:00
 type: workshop
+layout_type: workshop
 display: basic
 no-caldate: true
 provider: University of Florida
@@ -18,6 +19,16 @@ multiday: April 22, 24
 materials:
   - text: Workshop materials
     url: https://github.com/PracticumAI/transfer_learning
+
+materialsdesc: "Workshop materials available at the links below."
+
+subnav:
+  - title: Tutorial setup instruction
+  - title: Workshop Materials
+
+parent: 
+  title: AI Workshop Series
+  url: /events/2025-ai
 ---
 
 This workshop provides the foundational concepts and practical applications of transfer learning, a powerful technique in deep learning that allows AI models to leverage pre-trained knowledge to improve performance on new tasks. The sessions will cover different types of transfer learning techniques, such as feature extraction and fine-tuning. This includes hands-on experience in applying these techniques to computer vision and language models. <!--excerpt-->
