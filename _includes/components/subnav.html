@@ -12,6 +12,8 @@
   {% capture mylink %}
     {% if link.internal or link.layout %}{{ link.url | relative_url }}{% else %}{{ link.url }}{% endif %}
   {% endcapture %}
+{% else %}
+{% capture mylink %}#{{ link.title | slugify | downcase }}{% endcapture %}
 {% endif %}
 
 {% if page.guidegroup or page.fetch_subnav %}
