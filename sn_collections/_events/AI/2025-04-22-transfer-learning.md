@@ -14,6 +14,10 @@ registration:
   url: https://forms.office.com/g/c1bTdxKqJi
 time: 1 – 5 PM ET
 multiday: April 22, 24
+
+materials:
+  - text: Workshop materials
+    url: https://github.com/PracticumAI/transfer_learning
 ---
 
 This workshop provides the foundational concepts and practical applications of transfer learning, a powerful technique in deep learning that allows AI models to leverage pre-trained knowledge to improve performance on new tasks. The sessions will cover different types of transfer learning techniques, such as feature extraction and fine-tuning. This includes hands-on experience in applying these techniques to computer vision and language models. <!--excerpt-->
