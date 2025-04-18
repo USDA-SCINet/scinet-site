@@ -29,6 +29,10 @@ subnav:
     url: '#high-performance-computing-hpc-for-bioinformatics-a-practical-introduction'
   - title: Project Management
     url: '#project-management-in-bioinformatics'
+
+materials:
+  - text: Workshop recording
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EUXWkp41THZCh35zWzNuH98BNj94tE8WWPJq4BqvEi2tJg?e=Zz0lkF
 ---
 
 This workshop provides hands-on training in using SCINet’s high-performance computing (HPC) clusters for bioinformatics workflows. Participants will learn how to access and navigate SCINet’s systems as well as command line basics for managing and analyzing bioinformatics data including running BLAST and handling FASTA and FASTQ files. The workshop also covers project management and organization strategies to improve data organization and workflow efficiency.  <!--excerpt-->
