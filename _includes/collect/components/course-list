@@ -1,3 +1,5 @@
+<h2>{{ page.courselist-title | default: "Workshop Series" }}</h2>
+
 <ol>
 {% for _course in page.course-list %}
 {% if page.fetching == 'events' %}
