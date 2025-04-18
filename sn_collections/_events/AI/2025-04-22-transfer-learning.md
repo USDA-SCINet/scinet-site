@@ -70,17 +70,18 @@ ipython kernel install --name "tl_env" --user
 exit 
 ``` 
 
-1. **Launch a JupyterLab Server session.** Under the *Interactive Apps* menu, select *JupyterLab Server*. Specify the following input values on the page:
-    * Account: scinet_workshop1 
-    * Partition: gpu-a100-mig7 
-    * QOS: normal 14-00:00:00 
-    * Number of hours: 4 
-    * Number of nodes: 1 
-    * Number of tasks: 4 
-    * Additional Slurm Parameters:
-
-        {: .copy-code } 
-        ``` 
+1. **Launch a JupyterLab Server session.** Under the *Interactive Apps* menu, select *JupyterLab Server*.
+  * Specify the following input values on the page:
+      * Account: scinet_workshop1 
+      * Partition: gpu-a100-mig7 
+      * QOS: normal 14-00:00:00 
+      * Number of hours: 4 
+      * Number of nodes: 1 
+      * Number of tasks: 4 
+      * Additional Slurm Parameters:
+  
+          {: .copy-code } 
+          ``` 
 --reservation=workshop --gres=gpu:1 --mem=32G --ntasks-per-node=4 
 ```
 
@@ -91,4 +92,4 @@ exit
 /90daydata/shared/${USER}/transfer_learning 
 ``` 
 
-    Click *Launch*. The screen will update to the *Interactive Sessions* page. When your Jupyter session is ready, the top card will update from *Queued* to *Running* and a *Connect to JupyterLab Server* button will appear. Click *Connect to JupyterLab Server*. 
+  * Click *Launch*. The screen will update to the *Interactive Sessions* page. When your Jupyter session is ready, the top card will update from *Queued* to *Running* and a *Connect to JupyterLab Server* button will appear. Click *Connect to JupyterLab Server*. 
