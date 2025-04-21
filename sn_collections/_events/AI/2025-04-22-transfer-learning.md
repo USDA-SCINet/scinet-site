@@ -7,7 +7,7 @@ display: basic
 no-caldate: true
 provider: University of Florida
 hideprovider: true
-description: This workshop provides the foundational concepts and practical applications of transfer learning
+description: This workshop provides foundational concepts and practical applications of transfer learning
 
 tags: Artificial-Intelligence Machine-Learning
 
@@ -23,7 +23,7 @@ materials:
 materialsdesc: "Workshop materials available at the links below."
 
 subnav:
-  - title: Tutorial setup instruction
+  - title: Tutorial setup instructions
   - title: Workshop Materials
 
 parent: 
@@ -47,7 +47,7 @@ This workshop provides the foundational concepts and practical applications of t
 * Troubleshoot common challenges in transfer learning, such as catastrophic forgetting and negative transfer.
 
 
-## Tutorial setup instruction
+## Tutorial setup instructions
 
 Steps to prepare for the tutorial:
 
@@ -67,7 +67,7 @@ srun -A scinet_workshop1 -t 00:30:00 -n 1 --mem 8G --pty bash
 mkdir -p /90daydata/shared/$USER/transfer_learning
 cd /90daydata/shared/$USER/transfer_learning
 cp -r /project/scinet_workshop1/transfer_learning/*.ipynb .
-cp -r /project/scinet_workshop1/ transfer_learning /*.py .
+cp -r /project/scinet_workshop1/transfer_learning/*.py .
 ``` 
 
 1. **Setup the kernel for JupyterLab.** You will create a kernel called *computer_vision_1_env* to access from JupyterLab Server. Run the following commands to activate the workshop's virtual environment and create a new kernelspec from it: 
