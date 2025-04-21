@@ -74,7 +74,7 @@ cp -r /project/scinet_workshop1/transfer_learning/*.py .
 
     {:.copy-code} 
     ```bash
-source /project/scinet_workshop1/ transfer_learning /tl_env/bin/activate
+source /project/scinet_workshop1/transfer_learning/tl_env/bin/activate
 ipython kernel install --name "tl_env" --user
 ``` 
 
