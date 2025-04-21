@@ -31,7 +31,7 @@ parent:
   url: /events/2025-ai
 ---
 
-This workshop provides the foundational concepts and practical applications of transfer learning, a powerful technique in deep learning that allows AI models to leverage pre-trained knowledge to improve performance on new tasks. The sessions will cover different types of transfer learning techniques, such as feature extraction and fine-tuning. This includes hands-on experience in applying these techniques to computer vision and language models. <!--excerpt-->
+This workshop provides the foundational concepts and practical applications of transfer learning, a powerful technique in deep learning that allows AI models to leverage pretrained knowledge to improve performance on new tasks. The sessions will cover different types of transfer learning techniques, such as feature extraction and fine-tuning. This includes hands-on experience in applying these techniques to computer vision and language models. <!--excerpt-->
 
 **Prerequisites:**
 * Active SCINet Account
@@ -70,7 +70,7 @@ cp -r /project/scinet_workshop1/transfer_learning/*.ipynb .
 cp -r /project/scinet_workshop1/transfer_learning/*.py .
 ``` 
 
-1. **Setup the kernel for JupyterLab.** You will create a kernel called *computer_vision_1_env* to access from JupyterLab Server. Run the following commands to activate the workshop's virtual environment and create a new kernelspec from it: 
+1. **Setup the kernel for JupyterLab.** You will create a kernel called *tl_env* to access from JupyterLab Server. Run the following commands to activate the workshop's virtual environment and create a new kernelspec from it: 
 
     {:.copy-code} 
     ```bash
