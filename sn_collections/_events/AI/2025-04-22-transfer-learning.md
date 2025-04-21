@@ -57,7 +57,7 @@ Steps to prepare for the tutorial:
  
     {:.copy-code}
     ```bash
-srun -A scinet_workshop1 -t 00:30:00 -n 1 --mem 8G --pty bash  
+srun -A scinet_workshop1 -t 00:30:00 -n 1 --mem 8G --pty bash
 ```
 
 1. **Create your workshop working directory** and copy the tutorial materials into it by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the `$USER` variable.  
@@ -73,38 +73,38 @@ cp -r /project/scinet_workshop1/transfer_learning/*.py .
 1. **Setup the kernel for JupyterLab.** You will create a kernel called *computer_vision_1_env* to access from JupyterLab Server. Run the following commands to activate the workshop's virtual environment and create a new kernelspec from it: 
 
     {:.copy-code} 
-    ```bash 
-source /project/scinet_workshop1/ transfer_learning /tl_env/bin/activate 
-ipython kernel install --name "tl_env" --user 
+    ```bash
+source /project/scinet_workshop1/ transfer_learning /tl_env/bin/activate
+ipython kernel install --name "tl_env" --user
 ``` 
 
 1. **Stop the interactive job** on the compute node by running the command:
 
      {:.copy-code} 
-    ```bash 
-exit 
+    ```bash
+exit
 ``` 
 
 1. **Launch a JupyterLab Server session.** Under the *Interactive Apps* menu, select *JupyterLab Server*.
   * Specify the following input values on the page:
-      * Account: scinet_workshop1 
-      * Partition: gpu-a100-mig7 
-      * QOS: normal 14-00:00:00 
-      * Number of hours: 4 
-      * Number of nodes: 1 
-      * Number of tasks: 4 
+      * Account: scinet_workshop1
+      * Partition: gpu-a100-mig7
+      * QOS: normal 14-00:00:00
+      * Number of hours: 4
+      * Number of nodes: 1
+      * Number of tasks: 4
       * Additional Slurm Parameters:
   
           {: .copy-code } 
           ``` 
---reservation=workshop --gres=gpu:1 --mem=32G --ntasks-per-node=4 
+--reservation=workshop --gres=gpu:1 --mem=32G --ntasks-per-node=4
 ```
 
     * Working Directory:  
 
         {: .copy-code } 
         ``` 
-/90daydata/shared/${USER}/transfer_learning 
+/90daydata/shared/${USER}/transfer_learning
 ``` 
 
   * Click *Launch*. The screen will update to the *Interactive Sessions* page. When your Jupyter session is ready, the top card will update from *Queued* to *Running* and a *Connect to JupyterLab Server* button will appear. Click *Connect to JupyterLab Server*. 
