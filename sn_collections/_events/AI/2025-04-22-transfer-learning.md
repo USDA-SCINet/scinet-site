@@ -68,6 +68,7 @@ mkdir -p /90daydata/shared/$USER/transfer_learning
 cd /90daydata/shared/$USER/transfer_learning
 cp -r /project/scinet_workshop1/transfer_learning/*.ipynb .
 cp -r /project/scinet_workshop1/transfer_learning/*.py .
+cp -r /project/scinet_workshop1/transfer_learning/images .
 ``` 
 
 1. **Setup the kernel for JupyterLab.** You will create a kernel called *tl_env* to access from JupyterLab Server. Run the following commands to activate the workshop's virtual environment and create a new kernelspec from it: 
