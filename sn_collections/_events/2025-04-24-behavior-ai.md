@@ -14,4 +14,4 @@ registration:
 
 This SCINet working group aims to explore the potential benefits of Artificial Intelligence (AI) in animal behavior research.  
 *	SCINet discussion, focusing on how to use globus and Juno for hosting data.
-*	Brad A. Freking, Research Geneticist from the U.S. Meat Animal Research Center (USMARC) at ARS will present their on-going challenge about detecting sheep maternal behavior from camera images.  We will discuss possible AI approaches to address this challenge.
+*	Dr. Brad A. Freking, Research Geneticist from the U.S. Meat Animal Research Center (USMARC) at ARS will be joining us to present their on-going challenge about detecting sheep maternal behavior from camera images.  We will discuss possible AI approaches to address this challenge.
