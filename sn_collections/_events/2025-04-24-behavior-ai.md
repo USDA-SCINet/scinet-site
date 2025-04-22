@@ -3,7 +3,7 @@ title: Animal Behavior AI - Working Group Meeting
 type: event
 description: Event - Meeting of the Animal Behavior AI working group
 
-time: 1-2 PM ET
+time: 12-1 PM ET
 
 provider: Animal Behavior AI Working Group
 
