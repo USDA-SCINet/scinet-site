@@ -19,6 +19,8 @@ multiday: April 22, 24
 materials:
   - text: Workshop materials
     url: https://github.com/PracticumAI/transfer_learning
+  - text: Day 1 Recording
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EabbrNojUy1CtAIVOaxNL9YBEvDjSGF_JTb5qsQuyZ6C2Q?e=DRKbeE
 
 materialsdesc: "Workshop materials available at the links below."
 
