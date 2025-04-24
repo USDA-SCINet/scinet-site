@@ -28,9 +28,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.7
-      # dont want to use real site name for test site.
-      #- name: Create CNAME file
-      #  run: echo "scinet.usda.gov" > CNAME
+       dont want to use real site name for test site.
+      - name: Create CNAME file
+        run: echo "scinet.usda.gov" > CNAME
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
