@@ -76,7 +76,7 @@ ceres $ pwd
     ```
 srun --reservation=wk1_workshop -A scinet_workshop2 -t 05:00:00 -N1 -n4 --mem 8G --pty bash 
 ```
-        {% include reservation-alert reservation="wk1_workshop" project="scinet_workshop2" %}
+    {% include reservation-alert reservation="wk1_workshop" project="scinet_workshop2" %}
 
 * **Storage system**:  
   Shared file system accessible by all nodes.
