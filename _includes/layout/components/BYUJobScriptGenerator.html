@@ -211,7 +211,7 @@ BYUScriptGen.prototype.createForm = function(doc) {
 
 //	this.inputs.single_node = this.newCheckbox({checked:1});
   	this.inputs.job_script_template = this.newSelect({options:[["standard","standard"], ["rstudio-server", "RStudio Server"]]});
-  	this.inputs.node_type = this.newSelect({options:[["standard","standard"], ["gpu","gpu"]]});
+  	this.inputs.node_type = "standard";
   	this.inputs.nodes = this.newInput({value:1, size:2, maxLength:2});
 	this.inputs.ncores_per_node = this.newInput({value:1, size:3, maxLength:3});
 	this.inputs.num_gpus = this.newInput({value:0, size:4});
@@ -358,41 +358,16 @@ BYUScriptGen.prototype.retrieveValues = function() {
                          // users accidentally requesting MB when they mean GB
 // 2018/02/21 current ceres partitions
     var max_memory = {
-        mem:     1530000,
-        longmem: 1530000,
-        short:   381000,
-        medium:  381000,
-        long:    381000,
-        debug:   381000,
-		"gpu-low": 379000
+		ceres:   1530000
     };
     var max_proc_per_node = {
-        mem:     48,
-        longmem: 40,
-        short:   48,
-        medium:  48,
-        long:    48,
-        debug:   36,
-		"gpu-low": 36
+		ceres:   48
     };
     var max_nodes = {
-        mem:     5,
-        longmem: 1,
-        short:   57,
-        medium:  20,
-        long:    10,
-        debug:   1,
-		"gpu-low": 1
+		ceres:   57
     }
     var max_walltime_in_seconds = {
-        mem:     21*24*60*60,          // 21 days
-        longmem: 41*24*60*60+16*60*60, // 1000 hours
-        short:   2*24*60*60,           // 48 hours
-        medium:  7*24*60*60,           // 7 days
-        long:    21*24*60*60,          // 21 days
-        debug:   60*60,                // 1 hour
-		"gpu-low": 2 * 60 * 60
-
+		ceres:   504*60*60   // 21 days
     }
 	var partition, jobnotes = [];
 	this.values.MB_per_node = Math.round(this.inputs.mem_per_node.value * (this.inputs.mem_units.value =="GB" ? 1024 : 1));
@@ -427,29 +402,9 @@ BYUScriptGen.prototype.retrieveValues = function() {
 	this.values.job_output = this.inputs.job_output.value;
 	this.values.job_error = this.inputs.job_error.value;
 
-    // select partition with the shortest wall time limit that will satisfy the request
-    if (this.values.node_type == "large-memory") {
-        if (this.values.walltime_in_seconds > max_walltime_in_seconds["longmem"])
-		    jobnotes.push("ERROR: wall time exceeds maximum (1000:00:00) for \"longmem\" partition");
-        if (this.values.walltime_in_seconds > max_walltime_in_seconds["mem"])
-            partition = "longmem";
-        else
-            partition = "mem";
-	} else if (this.values.node_type == "gpu"){
-		if (this.values.walltime_in_seconds > max_walltime_in_seconds["gpu-low"])
-			jobnotes.push("ERROR: wall time exceeds maximum (" + max_walltime_in_seconds["gpu-low"]/(60*60) + " hours) for \"gpu-low\" partition");
-		else
-			partition = "gpu-low";
-    } else {
-        if (this.values.walltime_in_seconds <= max_walltime_in_seconds["short"])
-            partition = "short";
-        else if (this.values.walltime_in_seconds <= max_walltime_in_seconds["medium"])
-            partition = "medium";
-        else if (this.values.walltime_in_seconds <= max_walltime_in_seconds["long"])
-            partition = "long";
-        else
-		    jobnotes.push("ERROR: wall time exceeds maximum (504:00:00) for \"long\" partition");
-    }
+
+    partition="ceres";
+
 
 	/* Add warnings, etc. to jobnotes array */
     if (!(this.values.nodes >= 1))
