@@ -20,6 +20,11 @@ archive-label: Webinar Recordings
 
 sessions:
   - session:
+    title: Improving Production Traits in Poultry through Genome Editing
+    date: 2025-05-08
+    presenter: Dr. Paula Chen
+    time: 1-2pm ET   
+  - session:
     title: Decoding Plant Complexity with Single-Cell Technology
     date: 2025-04-10
     presenter: Dr. Xuan Zhang
