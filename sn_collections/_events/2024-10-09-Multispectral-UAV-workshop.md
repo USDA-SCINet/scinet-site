@@ -71,7 +71,8 @@ Steps to prepare for the tutorial session each day:
     {:.copy-code}
     ```bash
     srun --reservation=workshop2 -A scinet_workshop2 -t 00:30:00 -n 1 --mem 8G --pty bash
-    ```
+    ```  
+      {% include reservation-alert reservation="workshop2" project="scinet_workshop2" %}
 
 1. **Create a workshop working directory** and copy the workshop materials into it by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the `$USER` variable.
 
