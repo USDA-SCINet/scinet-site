@@ -21,6 +21,8 @@ materials:
     url: https://github.com/PracticumAI/transfer_learning
   - text: Day 1 Recording
     url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EabbrNojUy1CtAIVOaxNL9YBEvDjSGF_JTb5qsQuyZ6C2Q?e=DRKbeE
+  - text: Day 2 Recording
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EXBMpt5cw4xJo-x3rolundQBimPFZvEgOaXgyS6-58uFrQ?e=Pdx23Q
 
 materialsdesc: "Workshop materials available at the links below."
 
