@@ -40,7 +40,7 @@ Sponsored, non-USDA SCINet users will use Login.gov to log on to SCINet systems.
 - Select “Login.gov”
   ![]({{ images_path }}/login.gov screenshots/login.gov-landing.png)
 
-- This will redirect you to Login.gov for you to sign in. If you already have an existing Login.gov account, there is no need for you to create a new one. You can simply sign in with your existing Login.gov account, though ensure that the same email address used for your SCINet account is included in the Login.gov account.
+- This will redirect you to Login.gov for you to sign in. If you already have an existing Login.gov account, there is no need for you to create a new one. You can simply sign in with your existing Login.gov account, ***though ensure that the same email address used for your SCINet account is included in the Login.gov account.***
   ![]({{ images_path }}/login.gov screenshots/signin-existing-account.png)
 
 - If you need to create an account, toggle from “Sign In” to “Create an account”:
