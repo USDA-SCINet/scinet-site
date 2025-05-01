@@ -11,7 +11,7 @@ parent:
   title: Bioinformatics Workshop Series
   url: /events/2025-bioinfo
 
-instructor: ""Rick Masonbrink, Sivanandan Chudalayandi, and Satheesh Viswanathan"
+instructor: "Rick Masonbrink, Sivanandan Chudalayandi, and Satheesh Viswanathan"
 
 layout_type: workshop
 has-sessions: true
