@@ -82,7 +82,6 @@ cd day2
 
   {:.copy-code}
   ```bash
-cp ../02_Files/Genome.fasta .
 mkdir references
 mkdir fastq
 mkdir splits
@@ -338,9 +337,15 @@ module load dna_3d;module load parallel;module load java; bash run-asm-pipeline.
 ```bash
 mkdir /90daydata/shared/$USER/genome_assembly/day2/03_JuiceBox
 cd /90daydata/shared/$USER/genome_assembly/day2/03_JuiceBox
+
 ##Download Juicebox
 wget https://s3.us-east-1.wasabisys.com/hicfiles/public/Juicebox/Juicebox_1.11.08.jar
 
 module load java
 java -Xmx4g -jar Juicebox_1.11.08.jar
+```
+
+{:.copy-code}
+```bash
+module load dna_3d;module load java;module load parallel; bash run-asm-pipeline-post-review.sh --sort-output -s seal -i 100 -r Genome.0.review.assembly Genome.fasta merged_nodups.txt
 ```
