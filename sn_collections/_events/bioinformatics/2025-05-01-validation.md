@@ -66,8 +66,11 @@ Getting started:
 
 {:.copy-code}
 ```bash
-srun --reservation=wk2_workshop -A scinet_workshop2 -t 08:00:00 -p ceres -N1 -c8 --pty bash
-mkdir -p /90daydata/shared/$USER/genome_assembly 
+srun --reservation=wk2_workshop -A scinet_workshop2 -t 08:00:00 -p ceres -N1 -c8 --pty ba
+sh
+
+mkdir -p /90daydata/shared/$USER/genome_assembly
+cd /90daydata/shared/$USER/genome_assembly
 cp -r /project/scinet_workshop2/Bioinformatics_series/wk2_workshop/day2/ .
 cd day2
 ```
@@ -79,7 +82,7 @@ cd day2
 
   {:.copy-code}
   ```bash
-cd 01_TestJuicer/
+cp ../02_Files/Genome.fasta .
 mkdir references
 mkdir fastq
 mkdir splits
@@ -93,6 +96,7 @@ cp ../../02_Files/Genome.fasta .
 ```
 
 * Build Index
+  
   {:.copy-code}
   ```bash
 module purge
