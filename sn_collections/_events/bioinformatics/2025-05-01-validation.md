@@ -11,6 +11,7 @@ parent:
   title: Bioinformatics Workshop Series
   url: /events/2025-bioinfo
 
+instructor: ""Rick Masonbrink, Sivanandan Chudalayandi, and Satheesh Viswanathan"
 
 layout_type: workshop
 has-sessions: true
@@ -66,8 +67,7 @@ Getting started:
 
 {:.copy-code}
 ```bash
-srun --reservation=wk2_workshop -A scinet_workshop2 -t 08:00:00 -p ceres -N1 -c8 --pty ba
-sh
+srun --reservation=wk2_workshop -A scinet_workshop2 -t 08:00:00 -p ceres -N1 -c8 --pty bash
 
 mkdir -p /90daydata/shared/$USER/genome_assembly
 cd /90daydata/shared/$USER/genome_assembly
@@ -114,6 +114,7 @@ cut -f 1,2 references/Genome.fasta.fai > chrom.sizes
 ```
 
 * Copy the fastq files to the fastq folder and explore
+  *Note:* Juicer requires that the fastq files be named with this extension `_R1.fastq` and `_R2.fastq`. Any other naming scheme will fail, and the files must not be compressed.
 
   {:.copy-code}
   ```bash
@@ -122,9 +123,7 @@ wc -l fastq/*
 ../02_Files/new_Assemblathon.pl references/Genome.fasta
 ```
 
-
 * Change to `splits folder` and split the fastq files
-  *Note:* Juicer requires that the fastq files be named with this extension `_R1.fastq` and `_R2.fastq`. Any other naming scheme will fail, and the files must not be compressed.
 
   {:.copy-code}
   ```bash
@@ -140,7 +139,8 @@ split -a 3 -l 240000 -d --additional-suffix=_R2.fastq ../fastq/2MAtHiCDedup_R2.f
 cd /90daydata/shared/$USER/genome_assembly/day2/01_TestJuicer/
 module purge
 module load juicer
-time JUICER juicer.sh -d $PWD -p chrom.sizes -s none -z references/Genome.fasta -t 8 —assembly
+export _JAVA_OPTIONS=-Djava.io.tmpdir=${TMPDIR}
+time JUICER juicer.sh -d $PWD -p chrom.sizes -s none -z references/Genome.fasta -t 8 --assembly
 ```
 
   Essential output files reside within the `aligned` folder.
@@ -227,12 +227,14 @@ There are many ways to optimize 3D-dna. Those options can be seen with sh run-as
 
 
 ##### Basic commands
-ml dna_3d; bash run-asm-pipeline.sh -h 
 
+```bash
+ml dna_3d; bash run-asm-pipeline.sh -h 
 
 3D de novo assembly: version 190716
 
 USAGE: ./run-asm-pipeline.sh [options] path_to_input_fasta path_to_input_mnd
+```
 
 DESCRIPTION:
 This is a script to assemble draft assemblies (represented in input by draft fasta and deduplicated list of alignments of Hi-C reads to this fasta as produced by the Juicer pipeline) into chromosome-length scaffolds. The script will produce an output fasta file, a Hi-C map of the final assembly, and a few supplementary annotation files to help review the result in Juicebox.
