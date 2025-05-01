@@ -92,7 +92,7 @@ mkdir splits
 
   {:.copy-code}
   ```bash
-cp ../../02_Files/Genome.fasta .
+cp ../../02_Files/Genome.fasta references/
 ```
 
 * Build Index
@@ -101,7 +101,7 @@ cp ../../02_Files/Genome.fasta .
   ```bash
 module purge
 module load bwa
-time bwa index Genome.fasta
+time bwa index references/Genome.fasta
 ```
 
 * Make the chrome.sizes file
@@ -117,7 +117,7 @@ cut -f 1,2 references/Genome.fasta.fai > chrom.sizes
 
   {:.copy-code}
   ```bash
-cp ../*.fastq fastq
+cp ../02_Files/*.fastq fastq
 wc -l fastq/*
 ../02_Files/new_Assemblathon.pl references/Genome.fasta
 ```
@@ -137,11 +137,10 @@ split -a 3 -l 240000 -d --additional-suffix=_R2.fastq ../fastq/2MAtHiCDedup_R2.f
 
   {:.copy-code}
   ```bash
+cd /90daydata/shared/$USER/genome_assembly/day2/01_TestJuicer/
 module purge
 module load juicer
-cd /90daydata/shared/$USER/genome_assembly/day2/
 time JUICER juicer.sh -d $PWD -p chrom.sizes -s none -z references/Genome.fasta -t 8 —assembly
-# approx: 4 1/2 mins
 ```
 
   Essential output files reside within the `aligned` folder.
