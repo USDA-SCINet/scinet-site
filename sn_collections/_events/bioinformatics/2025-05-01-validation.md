@@ -331,3 +331,16 @@ module load dna_3d;module load parallel;module load java; bash run-asm-pipeline.
   ```bash
 module load dna_3d;module load parallel;module load java; bash run-asm-pipeline.sh --editor-coarse-stringency 90 --editor-coarse-resolution 125000 --editor-coarse-region  250000 --editor-repeat-coverage 30 Genome.fasta merged_nodups.txt
 ```
+
+
+## Running JuiceBox on Ceres Desktop
+
+```bash
+mkdir /90daydata/shared/$USER/genome_assembly/day2/03_JuiceBox
+cd /90daydata/shared/$USER/genome_assembly/day2/03_JuiceBox
+##Download Juicebox
+wget https://s3.us-east-1.wasabisys.com/hicfiles/public/Juicebox/Juicebox_1.11.08.jar
+
+module load java
+java -Xmx4g -jar Juicebox_1.11.08.jar
+```
