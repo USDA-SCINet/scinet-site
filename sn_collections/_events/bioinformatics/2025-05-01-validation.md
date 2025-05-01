@@ -113,7 +113,7 @@ samtools faidx references/Genome.fasta
 cut -f 1,2 references/Genome.fasta.fai > chrom.sizes
 ```
 
-* Copy the fastq files to the fastq folder and explore
+* Copy the fastq files to the fastq folder and explore  
   *Note:* Juicer requires that the fastq files be named with this extension `_R1.fastq` and `_R2.fastq`. Any other naming scheme will fail, and the files must not be compressed.
 
   {:.copy-code}
