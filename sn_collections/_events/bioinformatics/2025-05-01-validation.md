@@ -334,15 +334,19 @@ module load dna_3d;module load parallel;module load java; bash run-asm-pipeline.
 
 ## Running JuiceBox on Ceres Desktop
 
+{:.copy-code}
 ```bash
 mkdir /90daydata/shared/$USER/genome_assembly/day2/03_JuiceBox
 cd /90daydata/shared/$USER/genome_assembly/day2/03_JuiceBox
 
 ##Download Juicebox
-wget https://s3.us-east-1.wasabisys.com/hicfiles/public/Juicebox/Juicebox_1.11.08.jar
+wget https://github.com/aidenlab/JuiceboxGUI/releases/download/v3.1.4/juicebox.jar
+```
 
+{:.copy-code}
+```bash
 module load java
-java -Xmx4g -jar Juicebox_1.11.08.jar
+java -Xms512m -Xmx2048m -jar juicebox.jar
 ```
 
 {:.copy-code}
