@@ -32,14 +32,20 @@
         {% unless rowcount < 2 %}
         {% assign colcount = 0 %}
         {% assign rowdata = _node | split: "|" %}
-      <tr>
-        {% for _col in rowdata %}
-        <th data-label="{{ titles[colcount] | strip }}" scope="row"{% if forloop.first and datas.sortable %} role="rowheader"{% endif %}>
-          {{ _col | strip | markdownify }}
-        </th>
-        {% assign colcount = colcount | plus: 1 %}
-        {% endfor %}
-      </tr>
+        <tr>
+          {% for _col in rowdata %}
+          {% if forloop.first %}
+          <th data-label="{{ titles[colcount] | strip }}" scope="row"{% if datas.sortable %} role="rowheader"{% endif %} >
+            {{ _col | strip | markdownify }}
+          </th>
+          {% else %}
+          <td data-label="{{ titles[colcount] | strip }}">
+            {{ _col | strip | markdownify }}
+          </td>
+          {% endif %}
+          {% assign colcount = colcount | plus: 1 %}
+          {% endfor %}
+        </tr>
       {% endunless %}
       {% assign rowcount = rowcount | plus: 1 %}
       {% endfor %}
