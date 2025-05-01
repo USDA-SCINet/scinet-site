@@ -198,7 +198,6 @@ module purge
 module load dna_3d
 module load parallel
 module load java
-
 mkdir 3D_DNA/
 cd 3D_DNA/
 ```
