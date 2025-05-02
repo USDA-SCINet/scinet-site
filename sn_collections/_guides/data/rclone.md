@@ -15,7 +15,7 @@ subnav:
     url: '#macos-installation-'
   - title: Configuration of rclone on windows or osX
     url: '#configuration-of-rclone-on-windows-or-osx'
-  - title: rclone configuration on SciNet
+  - title: rclone configuration on SCINet
     url: '#rclone-configuration-on-scinet'
   - title: Test
     url: '#test'
@@ -85,7 +85,7 @@ rclone authorize "box"
 6. Click on the **Grant access to Box** button
 7. Go back to the command prompt window, an authentication token should be there. Copy this including the braces {“access_token”:“ABCDEF...}
 
-### rclone configuration on SciNet
+### rclone configuration on SCINet
 
 1. Type
 ```bash
@@ -123,7 +123,7 @@ rclone lsl usdabox: | head
 ```bash
 man rclone
 ```
-3. Acommon case might be to backup your SciNet project directory to box. You could do this with:
+3. Acommon case might be to backup your SCINet project directory to box. You could do this with:
 ```bash
 rclone copy /project/bogus_genome usdabox:/scinetbackup/bogus_genome --verbose
 ```

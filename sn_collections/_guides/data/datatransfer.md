@@ -175,7 +175,7 @@ To transfer files to and from the clusters using Cyberduck
 5. In the "Open Connection" window that appears, enter the following information:
     * **Protocol:**  `SFTP (SSH File Transfer Protocol)`
     * **Server:** `ceres-dtn.scinet.usda.gov` for accessing Ceres or `atlas-dtn.hpc.msstate.edu` for accessing Atlas
-    * **Username:** Your SciNet user name
+    * **Username:** Your SCINet user name
     * **Password:** Leave blank!  You have already authenticated with SmallStepCLI in step 2.
 6. Click the "Connect" button.
 7. You may receive a warning about an "Unknown Fingerprint." If you do, click "Allow."
