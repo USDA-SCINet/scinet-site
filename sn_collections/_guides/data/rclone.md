@@ -123,7 +123,7 @@ rclone lsl usdabox: | head
 ```bash
 man rclone
 ```
-3. Acommon case might be to backup your SCINet project directory to box. You could do this with:
+3. A common case might be to backup your SCINet project directory to box. You could do this with:
 ```bash
 rclone copy /project/bogus_genome usdabox:/scinetbackup/bogus_genome --verbose
 ```
