@@ -5,7 +5,7 @@
 {%- assign sidenav = sidenav | push: hashed %}
 {% assign bc_base = hashed %}
 {% capture printnav %}
-
+{% if page.title==currentnewsletter %}
 <td width="100%" data-govdstyle="all" style="padding: 5px 20px 30px;">
         {%- for _section in page.sections %}
         {%- assign current_i = forloop.index0 | divided_by: 3 -%}
@@ -31,10 +31,12 @@
     </tr>
     <tr>
     <td style="width: 90%; border-top: 1.333px solid rgb(171, 171, 171);">
+      {% endif %}
             {%- for _section in page.sections %}
             {%- capture sslug %}{{ page.url }}#{{ _section.title | slugify }}{% endcapture %}
             {%- include layout/components/hashed title=_section.title url=sslug %}
             {%- assign subnav = subnav | push: hashed %}
+            {% if page.title==currentnewsletter %}
             {%- unless _section.title == "Connect" %}
             {%- if _section.fetch %}
             {%- capture sectionfetch %}_posts/{{ _section.fetch }}.md{% endcapture %}
@@ -44,10 +46,11 @@
                 {{ rs.title }}
               </a></strong>
             </p>
-          {%- elsif _section.subsections %}
+          {%- else %}
           <p style="line-height: 130%; color: #141414; font-family: helvetica; font-size: 14px; text-align: left; margin: 0 0 7px;" align="left">
-            <strong>{{ _section.title }}</strong>
+            <strong>{{ _section.text | default: _section.title }}</strong>
           </p>
+          {%- if _section.subsections %}
           <ul>
             {%- for _sub in _section.subsections %}
             <li style="line-height: 130%; color: #141414; font-family: helvetica; font-size: 14px; text-align: left; margin: 0 0 7px;">
@@ -62,13 +65,17 @@
             {%- endfor %}
           </ul>
           {%- endif %}
+          {%- endif %}
           {%- endunless %}
+          {% endif %}
           {%- endfor %}
+          {% if page.title==currentnewsletter %}
         </td>
       </tr>
     </tbody>
 </table>
 </td>
+{% endif %}
 
 {% endcapture %}
 {%- include layout/components/hashed title=page.title url=page.url subnav=subnav %}
