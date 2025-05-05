@@ -21,7 +21,7 @@
 
 {% case nodename %}
 {% when 'p' %}
-    {% assign emailarray = emailarray | push: '<p align="left" style="font-family: Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0); margin-top: 0px; margin-bottom: 8pt; line-height: 130%">' %}
+    {% assign emailarray = emailarray | push: '<p align="left" style="font-family: Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0); margin-top: 0px; margin-bottom: 8pt; line-height: 130%; -ms-word-break: break-all; word-break: break-word;">' %}
 {% when '/p' %}
     {% if imgct == 1 %}{% assign imgct = 0 %}{% endif %}
     {% assign emailarray = emailarray | push: '</p>' %}
