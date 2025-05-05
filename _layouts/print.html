@@ -2,10 +2,15 @@
 layout: default
 css: newsletter.css
 ---
+{%- unless currentnewsletter %}
+{%- assign currentnewsletter = site.newsletter.last.title %}
+{%- endunless %}
 <div class="grid-container main-side">
 {% capture mycontent %}{{ content }}{% endcapture %}
 {% include layout/newsletter/nav %}
+{% if page.title==currentnewsletter %}
 {% include layout/newsletter/emailcontent mycontent=mycontent %}
+{% endif %}
 
 <div class="grid-row grid-gap flex-align-start">
     <div class="usa-layout-docs__sidenav desktop:grid-col-3 desktop:padding-y-10{% unless page.sidenav %} usa-sticky-sidenav{% endunless %}">
@@ -22,6 +27,7 @@ css: newsletter.css
             {{ content }}
             </div>
 
+{% if page.title==currentnewsletter %}
 <!--
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
@@ -112,7 +118,7 @@ css: newsletter.css
 </body>
 </html>
 -->
-
+{% endif %}
 
 <br>
 </main>

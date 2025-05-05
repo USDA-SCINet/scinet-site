@@ -9,7 +9,7 @@ featured: home
 
 author: Laura Tibbs-Cortes
 affiliation: "ORISE Postdoctoral Fellow, USDA-ARS Crop Genome Informatics Laboratory, Ames, IA"
-canonical: /news/newsletter/2025-01
+
 ---
 
 In maize and other crops, important traits are often complex, affected by genetics, the environment, and their interaction. In addition, different crop varieties exhibit varying degrees of phenotypic plasticity, in which a given genotype displays different phenotype values in different environments.<!--excerpt--> Identifying genes influencing traits as well as their plasticity can help plant breeders to develop successful new varieties, especially in the face of changing climate.
