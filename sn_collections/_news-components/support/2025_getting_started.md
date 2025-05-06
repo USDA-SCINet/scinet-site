@@ -18,4 +18,4 @@ how SCINet can enable your research.
 P.S. Don't forget to complete your annual USDA information security awareness training!
 This is required to maintain your account.
 For technical assistance with your SCINet account, please email
-scinet_vrsc@usda.gov.
+[scinet_vrsc@usda.gov](mailto:scinet_vrsc@usda.gov).
