@@ -10,7 +10,7 @@ styles: /assets/css/newsletter.css
 <h3>{{ rs.title }}</h3>
 <p>
 {% if rs.author %}<em><strong>{{ rs.author }}</strong></em>{% endif %}<br>
-{% if rs.affiliation %}<em><strong>{{ rs.affiliation }}</strong></em>{% endif %}
+{% if rs.affiliation %}<em>{{ rs.affiliation }}</em>{% endif %}
 </p>
 {{ rs.content }}
 {{ content }}

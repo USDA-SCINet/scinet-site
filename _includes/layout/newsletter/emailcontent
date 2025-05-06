@@ -21,7 +21,7 @@
 
 {% case nodename %}
 {% when 'p' %}
-    {% assign emailarray = emailarray | push: '<p align="left" style="font-family: Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0); margin-top: 0px; margin-bottom: 8pt; line-height: 130%; -ms-word-break: break-all; word-break: break-word;">' %}
+    {% assign emailarray = emailarray | push: '<p align="left" style="font-family: Helvetica, sans-serif; font-size: 10.5pt; color: rgb(0, 0, 0); margin-top: 0px; margin-bottom: 8pt; line-height: 130%; -ms-word-break: break-all; word-break: break-word;">' %}
 {% when '/p' %}
     {% if imgct == 1 %}{% assign imgct = 0 %}{% endif %}
     {% assign emailarray = emailarray | push: '</p>' %}
@@ -38,7 +38,7 @@
     {% assign emailarray = emailarray | push: htmlconts %}
 {% when 'em' %}
     {% if imgct == 1 %}
-    {% assign emailarray = emailarray | push: '<p class="nl_caption" style="width: 100%; text-align: left; font-style: italic; line-height: 130%; color: #131313; margin: 8px 0; font-family: Helvetica, sans-serif; font-size: 10pt;">' %}
+    {% assign emailarray = emailarray | push: '<p class="nl_caption" style="width: 100%; text-align: left; font-style: italic; line-height: 130%; color: #131313; margin: 8px 0; font-family: Helvetica, sans-serif; font-size: 9pt;">' %}
     {% else %}
     {% assign emailarray = emailarray | push: '<em>' %}
     {% endif %}
@@ -66,7 +66,7 @@
     {% endif %}
 {% when 'li' %}
     {% assign licount = 1 %}
-    {% assign emailarray = emailarray | push: '<li style="font-family: Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0); margin-top: 0px; margin-bottom: 8pt;"><p style="line-height: 130%; margin-top: 0px; margin-bottom: 8pt; font-family: Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">' %}
+    {% assign emailarray = emailarray | push: '<li style="font-family: Helvetica, sans-serif; font-size: 10.5pt; color: rgb(0, 0, 0); margin-top: 0px; margin-bottom: 8pt;"><p style="line-height: 130%; margin-top: 0px; margin-bottom: 8pt; font-family: Helvetica, sans-serif; font-size: 10.5pt; color: rgb(0, 0, 0);">' %}
 {% when '/li' %}
     {% assign licount = 0 %}
     {% if ulreleased == 1 %}
