@@ -206,6 +206,7 @@ BYUScriptGen.prototype.createForm = function(doc) {
 	var newEl;
 	form = document.createElement("form");
 	var table = document.createElement("table");
+	table.classList.add('scripttable');
 	form.appendChild(table);
 	table.appendChild(newHeaderRow("Parameters"));
 
