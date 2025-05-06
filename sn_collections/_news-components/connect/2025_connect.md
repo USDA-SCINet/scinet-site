@@ -4,8 +4,7 @@ notitle: true
 ---
 ### The SCINet Community
 
-Every newsletter highlights SCINet community members as a way to connect the ARS
-scientific computing community.  To see all the SCINet community updates and review past newsletters, visit the [Newsletter Archive](/news/newsletter/).
+To see all the SCINet community updates and review past newsletters, visit the [Newsletter Archive](/news/newsletter/).
 
  
 ### Contribute
