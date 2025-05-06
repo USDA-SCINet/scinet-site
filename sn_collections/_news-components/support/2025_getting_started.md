@@ -1,5 +1,5 @@
 ---
-title: "Getting Started with SCINet is as Easy as 1,2,3"
+title: "Getting Started with SCINet is as easy as 1,2,3"
 ---
 
 <div class="grid-row"><div class="grid-col">
