@@ -15,6 +15,8 @@ course-list:
   - title: Genome Assembly Validation and Improvement
   - title: Introduction to RNA-seq Analysis
   - title: RNA for Genome Annotation and Reproducibility in Bioinformatics
+  - title: From Reads to Variants
+  
 ---
 
 The workshops in this series are designed to provide a thorough introduction to modern bioinformatics concepts, best practices, and practical skills. If that is of interest, we recommend registering for all workshops in this series. However, registration for all workshops is not required, and you may register for only the workshops that are most relevant to your work. 
