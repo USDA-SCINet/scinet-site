@@ -21,7 +21,11 @@ registration:
 tags: bioinformatics
 
 prerequisites:
-  - text: Familiarity with basic command-line concepts. 
+  - text: Familiarity with basic command-line concepts.
+
+materials:
+  - text: Workshop recording
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/ERTmIW73KilAkiOe74KQXHsBZ8eKElIadzk4dpKZDZ6hNg
 ---
 
 In this workshop, participants will learn how to understand and validate a genome assembly. The participants will appreciate why genome assembly is often an iterative process, where you start with a draft and constantly improve using techniques such as polishing and scaffolding. Participants will also be introduced to gene annotation. <!--excerpt-->
