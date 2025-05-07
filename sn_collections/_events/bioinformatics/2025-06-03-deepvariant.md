@@ -21,8 +21,7 @@ registration:
     url: https://forms.office.com/g/dERg7vbS9B
 tags: bioinformatics
 
-prerequisites:
-  - text: Familiarity with basic command-line concepts. 
+
 
 
 ---
