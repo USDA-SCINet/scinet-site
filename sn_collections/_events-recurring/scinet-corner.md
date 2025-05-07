@@ -19,6 +19,15 @@ archive-label: SCINet Corner Recordings
 
 sessions:
   - session:
+    title: "Commonly used Slurm parameters and the new “ceres” partition"
+    date: 2025-05-22
+    time: 1-2 pm ET
+    excerpt: "* Understanding partitions and accounts on SCINet’s supercomputers.
+
+* Specifying the partition, account, and time limit for compute jobs.
+
+* Using the new “ceres” partition on Ceres."
+  - session:
     title: Open Q&A
     date: 2025-03-27
     time: 1-2 pm ET
