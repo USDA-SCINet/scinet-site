@@ -23,7 +23,10 @@ sessions:
     title: Improving Production Traits in Poultry through Genome Editing
     date: 2025-05-08
     presenter: Dr. Paula Chen
-    time: 1-2pm ET   
+    time: 1-2pm ET
+    materials:
+      - text: webinar recording
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/george_liu_usda_gov/Documents/publication/Hu%20Zhenbin/TOmics%20WG/20250508Recording/GMT20250508-170007_Recording_1920x1080.mp4?csf=1&web=1
   - session:
     title: Decoding Plant Complexity with Single-Cell Technology
     date: 2025-04-10
