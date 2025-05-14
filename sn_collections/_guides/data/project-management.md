@@ -3,7 +3,7 @@ title: SCINet Project Management
 description: Guide to managing quotas and permissions for SCINet projects
 excerpt: There are multiple places to store data on the Ceres and Atlas clusters that all serve different purposes. 
 # author: Marina Kraeva
-categories: [Data]
+categories: [Storage]
 
 subnav:
   - title: Request a Project Directory

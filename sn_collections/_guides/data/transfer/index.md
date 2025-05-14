@@ -1,7 +1,7 @@
 ---
-title: SCINet File Transfer
-description: Best practices for file transfer
-categories: [Data]
+title: File Transfer Methods
+description: Best practices for transferring files
+categories: [Storage]
 order_number: 60
 
 redirect_from: 
@@ -33,13 +33,13 @@ subnav:
   - title: "Rclone: Moving Data To and From Cloud Resources"
     url: /guides/data/transfer/rclone
     internal: true
-  - title: "Large data tranfer by shipping hard drives"
+  - title: "Large data transfer by shipping hard drives"
     url: /guides/data/transfer/shipping
     internal: true
 
 ---
 
-Globus Online is the recommended method for transferring data to, from, or among Ceres, Atlas, and Juno. It provides faster data transfer speeds compared to scp, has a graphical interface, and does not require authentication for every file transfer.  
+Globus Online is the recommended method for transferring data to, from, or among Ceres, Atlas, and Juno. It provides faster data transfer speeds compared to `scp`, has a graphical interface, and does not require authentication for every file transfer.  
 
 Given the space and access limitations of a home directory, large amounts of data or data that will be used collaboratively should be transferred to a project directory. See the User Guide section on [SCINet Storage](/guides/storage) for more information on home and project directory quotas.  
 
