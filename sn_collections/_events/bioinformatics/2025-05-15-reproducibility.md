@@ -55,33 +55,37 @@ cp -p /project/scinet_workshop2/Bioinformatics_series/wk3_workshop/day2/braker.s
 
 Genome assemblies, especially in plants and eukaryotes in general, contain a significant proportion of repetitive elements: transposons, retroelements, simple repeats, and satellite DNA. These elements can make it harder to perform genome annotation, confound gene prediction tools, and inflate assembly size. To accurately annotate genomes, it is crucial to identify and mask these repeats prior to downstream analyses like gene prediction (e.g., with BRAKER) or comparative genomics. Two widely used tools in this process are RepeatModeler and RepeatMasker.
 
-## 1. Repeat Identification and Masking:
+<ol class="usa-process-list">
+<li class="usa-process-list__item" markdown="1">
+
+{:.usa-process-list__heading}
+### Repeat Identification and Masking
 
 #### RepeatModeler – Building a Custom Repeat Library
 RepeatModeler is a *de novo* transposable element (TE) discovery tool. It identifies repeat families in a genome without prior knowledge by combining multiple tools like RECON, RepeatScout, and LTR structural analyzers.
 
-**Main points:**
+Main points:
 * Input: A genome assembly (FASTA) file.
 * RepeatModeler scans the genome to identify repeated regions and clusters them into repeat families.
 * It classifies known elements (e.g., LINEs, SINEs, LTRs, DNA transposons) and labels unknown families as “Unknown”.
 * The output is a custom repeat library (consensi.fa) containing representative consensus sequences of repeat families.
 
-*Note: Reference repeat databases (e.g., RepBase, Dfam) may not contain species-specific repeats. RepeatModeler ensures that the masking step is informed by repeats unique to the genome, improving masking sensitivity and annotation accuracy.*
+Note: Reference repeat databases (e.g., RepBase, Dfam) may not contain species-specific repeats. RepeatModeler ensures that the masking step is informed by repeats unique to the genome, improving masking sensitivity and annotation accuracy.
 
 #### RepeatMasker – Masking Repeats for Accurate Annotation
 RepeatMasker uses a library of known or *de novo* identified repeats (e.g., from RepeatModeler) to scan a genome and “mask” those regions. It has two masking modes:
 
-**Main Points**
 * Softmasking: Converts repeat bases to lowercase. Allows gene predictors to consider masked regions but with reduced weight.
 * Hardmasking: Converts repeats into Ns, effectively hiding them from downstream tools.
 * Input: The genome file and a repeat library (from RepeatModeler or Dfam).
 * Masking options: -xsmall for softmasking, -nolow to avoid masking simple repeats.
 * Optional, use -gff to output a GFF annotation file of repeats.
 
+#### Using the modules
 
- For this step we will use the repeatmodeler and repeatmasker module in the script below (included)
+For this step we will use the repeatmodeler and repeatmasker module in the script below (included)
 
-**repeats.sl**
+`repeats.sl`
 
 ```bash
 #!/bin/bash
@@ -150,21 +154,26 @@ mv RepeatMaskOut "$SLURM_SUBMIT_DIR/."
 Submit the script:
 
 {:.copy-code}
-  ```bash 
+```bash 
 sbatch repeats.sl  
 ``` 
 
-**Best Practices**
+#### Best Practices
 
 * Use RepeatModeler on your genome especially if no curated repeat libriary exists in the species.
 * Mask the genome before gene prediction with tools like BRAKER or Augustus to avoid false gene calls in repetitive regions.
 * Softmasking prefered over hard masking.
 * Visualize repeat annotations alongside genes in JBrowse2 to better understand genome structure.
 
-## 2 BRAKER: Genome Annotation with RNA-Seq and/or Protein Evidence
+</li> 
+<li class="usa-process-list__item" markdown="1">
+
+{:.usa-process-list__heading}
+### BRAKER: Genome Annotation with RNA-Seq and/or Protein Evidence
+
 BRAKER (Biological Reference Annotation and KEyword Retrieval) is an automated pipeline designed to predict protein-coding genes in eukaryotic genomes. It integrates *ab initio* gene prediction with evidence from RNA-seq and/or protein alignments, providing high-quality annotations even for model and non-model organisms.
 
-#### BRAKER uses two main gene prediction tools:
+BRAKER uses two main gene prediction tools:
 
 * GeneMark:
     - ES mode for unsupervised direct training from the genome. This uses codon usage and intron/exon structure.
@@ -173,7 +182,7 @@ BRAKER (Biological Reference Annotation and KEyword Retrieval) is an automated p
 * AUGUSTUS:
     - An *ab initio* gene predictor that uses a Hidden Markov Model (HMM) to model gene structures. AUGUSTUS uses training parameters produced by Genemark and further refines those predictions using hints from RNA-seq or proteins.
 
-#### Evidence types in BRAKER:
+Evidence types in BRAKER:
 
 * RNA-seq only
 * Protein only
@@ -192,6 +201,8 @@ BRAKER (Biological Reference Annotation and KEyword Retrieval) is an automated p
         - BRAKER is parallelizable (multi-threaded)
         - Monitor log files
 
+
+#### Using the module
 In this step we will use the `braker` module as described in the script below (included)
 
 **braker.sl**
@@ -271,59 +282,63 @@ mv braker_out "$SLURM_SUBMIT_DIR"
 Submit the script:
 
 {:.copy-code}
-  ```bash 
+```bash 
 sbatch braker.sl  
 ``` 
+</li> 
+<li class="usa-process-list__item" markdown="1">
 
-## 3 Visualizing using JBrowse2 Desktop:
+{:.usa-process-list__heading}
+### Visualizing using JBrowse2 Desktop:
 
-**JBrowse 2 Desktop** is a powerful standalone genome browser that enables interactive visualization of genome assemblies, annotations, and sequencing data without a web server. We can quickly inspect results from gene prediction pipelines like BRAKER, visualizing RNA-seq alignments, or comparing annotations. We will use JBrowse 2 Desktop on Ceres via Open OnDemand, focusing on gene annotation visualization and comparison.
+JBrowse 2 Desktop is a powerful standalone genome browser that enables interactive visualization of genome assemblies, annotations, and sequencing data without a web server. We can quickly inspect results from gene prediction pipelines like BRAKER, visualizing RNA-seq alignments, or comparing annotations. We will use JBrowse 2 Desktop on Ceres via Open OnDemand, focusing on gene annotation visualization and comparison.
 
-* **Step 1: Launch JBrowse 2 on Open OnDemand**
+1. **Launch JBrowse 2 on Open OnDemand**
     - Open an OOD interactive desktop session
     - Launch a terminal and load the module
     - Run the program
 
-    {:.copy-code}
-```bash
+        {:.copy-code}
+        ```bash
 module load jbrowse
 jbrowse-desktop
 ```
 
-* **Step 2: Create a New Session**
-When JBrowse 2 Desktop launches, you will be prompted to "Create a New Session".
+1. **Create a New Session**  
+    When JBrowse 2 Desktop launches, you will be prompted to "Create a New Session".
     - Click "New Session".
     - Start with an empty workspace.
 
-* **Step 3: Load Genome Assembly**
+1. **Load Genome Assembly**  
     - Click "File → Open" and choose "Add assembly".
     - Browse to your FASTA file (e.g., chr2.fasta) and load it. If the fasta index is missing, JBrowse will generate it.
 
-* **Step4: Add Annotation Tracks**
-Add GFF3, BED, or GTF files that represent different BRAKER runs:
+1. **Add Annotation Tracks**  
+    Add GFF3, BED, or GTF files that represent different BRAKER runs:
     - Click "Track" → "Add track".
     - Select the GFF3 file (e.g., braker_rnaseq.gff3.gz).
     - JBrowse will ask for the index and if missing, generate it:
 
-* **Step5: Add the RNAseq alignments**
-NOTE: The BAM file must be indexed (.bai file). Before indexing the BAM file, it must be sorted.
+1. **Add the RNAseq alignments**  
+    Note: The BAM file must be indexed (.bai file). Before indexing the BAM file, it must be sorted.
     - Click "Track" → "Add track".
     - Select only the BAM file (ensure that the index file is present as well).
     - JBrowse will load both the BAM and the index.
 
-* **Step 5: Visualize and Compare**
-Use zoom and pan to explore gene structures. Compare exon-intron organization between annotation runs.
+1. **Visualize and Compare**  
+    Use zoom and pan to explore gene structures. Compare exon-intron organization between annotation runs.  
+      * Inspect:
+        - Missing/extra exons or genes
+        - Differences in gene boundaries
+        - Evidence of alignment (BAM files)
 
-Inspect:
-    - Missing/extra exons or genes
-    - Differences in gene boundaries
-    - Evidence of alignment (BAM files)
+1. **Save and Share Sessions**  
+    Save the session using:  
+    File → Export Session  
+      * Save it as `file.jbrowse` for reloading later or sharing with collaborators.
 
-* **Step 6: Save and Share Sessions**
-Save the session using:
-File → Export Session
 
-Save it as `file.jbrowse` for reloading later or sharing with collaborators.
-
+</li>
+</ol>
 
 
