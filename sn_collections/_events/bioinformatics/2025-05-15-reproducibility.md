@@ -53,7 +53,7 @@ cp -p /project/scinet_workshop2/Bioinformatics_series/wk3_workshop/day2/braker.s
 ## Genome Annotation
 *by Viswanathan Satheesh, Sivanandan Chudalayandi and Rick Masonbrink*
 
-Genome assemblies, especially in plants and eukaryotes in general, contain a significant proportion of repetitive elements: transposons, retroelements, simple repeats, and satellite DNA. These elements can make it harder to perform genome annotation, confound gene prediction tools, and inflate assembly size. To accurately annotate genomes, it is crucial to identify and mask these repeats prior to downstream analyses like gene prediction (e.g., with BRAKER) or comparative genomics. Two widely used tools in this process are RepeatModeler and RepeatMasker.
+Genome assemblies, especially in plants and eukaryotes in general, contain a significant proportion of repetitive elements: transposons, retroelements, simple repeats, and satellite DNA. These elements can make it harder to perform genome annotation, confound gene prediction tools, and inflate assembly size. To accurately annotate genomes, it is crucial to identify and mask these repeats prior to downstream analyses like gene prediction (e.g., with BRAKER) or comparative genomics. Two widely used tools in this process are [RepeatModeler](https://github.com/Dfam-consortium/RepeatModeler) and [RepeatMasker](https://www.repeatmasker.org/).
 
 <ol class="usa-process-list">
 <li class="usa-process-list__item" markdown="1">
@@ -171,7 +171,7 @@ sbatch repeats.sl
 {:.usa-process-list__heading}
 ### BRAKER: Genome Annotation with RNA-Seq and/or Protein Evidence
 
-BRAKER (Biological Reference Annotation and KEyword Retrieval) is an automated pipeline designed to predict protein-coding genes in eukaryotic genomes. It integrates *ab initio* gene prediction with evidence from RNA-seq and/or protein alignments, providing high-quality annotations even for model and non-model organisms.
+[BRAKER](https://github.com/Gaius-Augustus/BRAKER) (Biological Reference Annotation and KEyword Retrieval) is an automated pipeline designed to predict protein-coding genes in eukaryotic genomes. It integrates *ab initio* gene prediction with evidence from RNA-seq and/or protein alignments, providing high-quality annotations even for model and non-model organisms.
 
 BRAKER uses two main gene prediction tools:
 
@@ -291,7 +291,7 @@ sbatch braker.sl
 {:.usa-process-list__heading}
 ### Visualizing using JBrowse2 Desktop:
 
-JBrowse 2 Desktop is a powerful standalone genome browser that enables interactive visualization of genome assemblies, annotations, and sequencing data without a web server. We can quickly inspect results from gene prediction pipelines like BRAKER, visualizing RNA-seq alignments, or comparing annotations. We will use JBrowse 2 Desktop on Ceres via Open OnDemand, focusing on gene annotation visualization and comparison.
+[JBrowse2](https://jbrowse.org/jb2/download/) Desktop is a powerful standalone genome browser that enables interactive visualization of genome assemblies, annotations, and sequencing data without a web server. We can quickly inspect results from gene prediction pipelines like BRAKER, visualizing RNA-seq alignments, or comparing annotations. We will use JBrowse 2 Desktop on Ceres via Open OnDemand, focusing on gene annotation visualization and comparison.
 
 1. **Launch JBrowse 2 on Open OnDemand**
     - Open an OOD interactive desktop session
