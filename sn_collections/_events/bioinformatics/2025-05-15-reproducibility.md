@@ -20,7 +20,11 @@ registration:
 tags: bioinformatics
 
 prerequisites:
-  - text: Familiarity with basic command-line concepts. 
+  - text: Familiarity with basic command-line concepts.
+
+materials:
+  - text: Workshop recording
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EVNFEq4hxqJOjF-m8d7dtuwBtriwiDz8DqPtQbksUqq1Og?e=5NJQ8J
 ---
 
 This workshop demonstrates how RNA data can be used for genome annotation. Participants will explore using RNA-derived evidence to improve genome annotations, distinguish coding from non-coding regions, and validate. We will also explore strategies for increasing reproducibility in bioinformatics. <!--excerpt-->
