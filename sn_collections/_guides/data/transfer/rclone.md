@@ -1,5 +1,5 @@
 ---
-title: "Rclone: Moving Data To and From Cloud Resources"
+title: "Rclone: Moving Data to and from Cloud Resources"
 description: Using rclone
 
 parents:
@@ -15,16 +15,19 @@ subnav:
   - title: Getting Ready
     url: '#getting-ready'
     subnav:
-      - title: rclone installation on Windows
-        url: '#rclone-installation-on-windows'
-      - title: macOS installation 
-        url: '#macos-installation-'
-      - title: Configuration of rclone on windows or osX
-        url: '#configuration-of-rclone-on-windows-or-osx'
-      - title: rclone configuration on SciNet
-        url: '#rclone-configuration-on-scinet'
-      - title: Test
-        url: '#test'
+      - title: Installation on a local machine
+        url: '#installation-on-a-local-machine'
+        subnav:
+          - title: Installation on Windows
+            url: '#installation-on-windows'
+          - title: Installation on macOS 
+            url: '#installation-on-macos'
+      - title: Configuration of rclone on a local machine
+        url: '#configuration-of-rclone-on-a-local-machine'
+      - title: Configuration of rclone on SCINet
+        url: '#configuration-of-rclone-on-scinet'
+      - title: Test rclone
+        url: '#test-rclone'
   - title: Commands
     url: '#commands'
   - title: Advanced commands
@@ -36,32 +39,38 @@ fetched: "data-transfer"
 order_number: 40
 ---
 
-Rclone is already installed on the DTNS and all of the compute nodes. Please do not use rclone from the headnode. Attempting to do so will remind you to use the others.<br>
-The rclone home page is [https://rclone.org](https://rclone.org).<!--excerpt-->
+`rclone` is already installed on all SCINet data transfer and compute nodes. Please do not use `rclone` from the login node. Attempting to do so will remind you to use the others.<br>
+To learn more about `rclone`, see [https://rclone.org](https://rclone.org).<!--excerpt-->
 
-### Getting Ready
-In order to use Rclone on Ceres its necessary to have it installed on your local machine as well.  This is needed to generate an authentication token.<br>
+## Getting Ready
+Before transferring files to or from cloud resources, `rclone` must first be configured to access cloud storage resources, e.g., an USDA-ARS Box account or AWS S3 buckets. If authentication with eAuth is required to access the cloud resource (e.g., your Box account), you will need to also install and configure `rclone` on your local machine for authenticating with eAuth and generating an authentication token to use on SCINet infrastructure.<br>
 
-### rclone installation on Windows
+### Installation on a local machine
+In order to use `rclone` on SCINet infrastructure, it is necessary to have it installed on your local machine as well. This is needed to generate an authentication token.<br>
 
-Go to the web page at [https://rclone.org/downloads/](https://rclone.org/downloads/) and find the Windows installer. Download it and install rclone. Once installed, proceed to the configuration section below.
+#### Installation on Windows
 
-### macOS installation 
+Go to the web page at [https://rclone.org/downloads/](https://rclone.org/downloads/) and find the Windows installer. Download it and install `rclone`. Once installed, proceed to the configuration section below.
 
-Download the latest version of rclone.
+#### Installation on macOS
 
+Download the latest version of `rclone`.
+
+{:.copy-code}
 ```bash
 cd && curl -O https://downloads.rclone.org/rclone-current-osx-amd64.zip
 ```
 
-Unzip the download and cd to the extracted folder.
+Unzip the download and change directory to the extracted folder.
 
+{:.copy-code}
 ```bash
 unzip -a rclone-current-osx-amd64.zip && cd rclone-*-osx-amd64
 ```
 
-Move rclone to your $PATH. You will be prompted for your password.
+Move `rclone` to your `$PATH`. You will be prompted for your password.
 
+{:.copy-code}
 ```bash
 sudo mkdir -p /usr/local/bin
 sudo mv rclone /usr/local/bin/
@@ -70,70 +79,86 @@ sudo mv rclone /usr/local/bin/
 (the mkdir command is safe to run, even if the directory already exists)
 Remove the leftover files.
 
+{:.copy-code}
 ```bash
 cd .. && rm -rf rclone-*-osx-amd64 rclone-current-osx-amd64.zip
 ```
 
-### Configuration of rclone on windows or osX
+### Configuration of `rclone` on a local machine
 
-
-1. Open a Windows command prompt (cmd) or macOS Terminal
+1. Open a Windows command prompt (cmd) or macOS Terminal.
 2. Type
-```bash
-rclone authorize "box"
-```
-3. On the web page that shows up, click on **Use Single Sign On (SSO)**
-4. Enter your USDA email address
-5. Do the eAuthentication thing
-6. Click on the **Grant access to Box** button
-7. Go back to the command prompt window, an authentication token should be there. Copy this including the braces {“access_token”:“ABCDEF...}
 
-### rclone configuration on SciNet
+   {:.copy-code}
+   ```bash
+   rclone authorize "box"
+   ```
+
+3. On the web page that shows up, click on **Use Single Sign On (SSO)**.
+4. Enter your USDA email address.
+5. Login with eAuthentication, if prompted.
+6. Click on the **Grant access to Box** button.
+7. Go back to the command prompt window, an authentication token should be there. Copy this including the braces {“access_token”:“ABCDEF...}.
+
+### Configuration of `rclone` on SCINet
 
 1. Type
-```bash
-rclone config
-```
+
+   {:.copy-code}
+   ```bash
+   rclone config
+   ```
+
 2. Type **n** for **n) New remote**
-3. For **<name>** enter any name <i>e.g.</i> **usdabox**
-4. For **Storage>** you can find the number, but it is easier to just type **box**
-5. For **client_id>**, **client_secret>**, **box_config_file**, and **access_token** leave blank, just hit enter
-6. For **box_sub_type>** enter **enterprise**
-7. For **Edit advanced config** enter **n**
-8. For **Remote config, Use auto config?** enter **n**
-9. For **result** Paste the text from the last step of the above rclone guide section "Configuration of rclone on windows and osX" and hit enter
-10. Type **y** for **y) Yes this is OK**
-11. Type **q** to quit
+3. For **name>** enter any name, e.g., "usdabox".
+4. For **Storage>** you can find the number, but it is easier to just type "box".
+5. For **client_id>**, **client_secret>**, **box_config_file**, and **access_token** leave blank, just hit enter.
+6. For **box_sub_type>** enter **enterprise**.
+7. For **Edit advanced config** enter **n**.
+8. For **Remote config, Use auto config?** enter **n**.
+9. For **result** Paste the text from the last step of the above rclone guide section "Configuration of rclone on windows and osX" and hit enter.
+10. Type **y** for **y) Yes this is OK**.
+11. Type **q** to quit.
 
 **Please Note:** If your authentication token is expired, you will need to get a new one. This can be done using the same steps you used (above) to acquire the previous token. 
 
 
-### Test
+### Test rclone
 
 1. Test directory listing using the **name>** you selected earlier:
-```bash
-rclone lsd usdabox:
-```
-2. Test file listing
-```bash
-rclone lsl usdabox: | head
-```
 
-### Commands
+   {:.copy-code}
+   ```bash
+   rclone lsd usdabox:
+   ```
 
-1. For description of commands available see [https://rclone.org/docs/#subcommands](https://rclone.org/docs/#subcommands)
-2. You installed the rclone manual page earlier, so you can also do
-```bash
-man rclone
-```
-3. Acommon case might be to backup your SciNet project directory to box. You could do this with:
-```bash
-rclone copy /project/bogus_genome usdabox:/scinetbackup/bogus_genome --verbose
-```
+2. Test file listing:
 
-### Advanced commands
+   {:.copy-code}
+   ```bash
+   rclone lsl usdabox: | head
+   ```
 
-This advanced guide assumes you have read the previous sectiion and have some familiarity with rclone already.
+## Commands
+
+1. For description of commands available see [https://rclone.org/docs/#subcommands](https://rclone.org/docs/#subcommands).
+2. You installed the rclone manual page earlier, so you can also do:
+
+   {:.copy-code}
+   ```bash
+   man rclone
+   ```
+
+3. A common case might be to backup your SCINet project directory to box. You could do this with:
+
+   {:.copy-code}
+   ```bash
+   rclone copy /project/bogus_genome usdabox:/scinetbackup/bogus_genome --verbose
+   ```
+
+## Advanced commands
+
+This advanced guide assumes you have read the previous section and have some familiarity with `rclone` already.
 
 Rclone supports "overlay" filesystems which can be then be overlayed in multiple layers. 
 
@@ -141,13 +166,12 @@ In this guide we will discuss the "crypt" and "chunk" overlays.  Using these 2 i
 
 The process here is:
 
-
 *  Create a basic store
 *  Apply a crypt overlay.  This gets you encryption and works around filename limitations.
 *  Apply a chunk overlay.  This gets around file size limitations.
 
 
-We are going to assume you have  already created a basic functional remote, In this case mine is called "google:"
+The following instructions assume you have already created a basic functional remote called "google:".
 
 First we create a folder in the remote to hold our encrypted data.  I called mine "crypt"
 
@@ -155,9 +179,9 @@ First we create a folder in the remote to hold our encrypted data.  I called min
 $ rclone mkdir google:crypt
 ```
 
-Next run rclone config choosing crypt as the remote type and then use the name of your new folder as the path.  You will want to encrypt the directory names to avoid character limitation issues in the path. 
+Next run `rclone config` choosing crypt as the remote type and then use the name of your new folder as the path.  You will want to encrypt the directory names to avoid character limitation issues in the path. 
 
-You must remember the password(s) you chose here. Your data will not be recoverable by anyone if your forget or lose it. There is no "password recovery."
+You must remember the password(s) you choose here. Your data will not be recoverable by anyone if your forget or lose it. There is no "password recovery."
 
 ```bash
 $ rclone config
