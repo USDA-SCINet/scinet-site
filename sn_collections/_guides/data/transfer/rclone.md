@@ -12,8 +12,8 @@ parents:
     class: "emph-nav"
 
 subnav:
-  - title: Getting Ready
-    url: '#getting-ready'
+  - title: Setting up rclone
+    url: '#setting-up-rclone'
     subnav:
       - title: Installation on a local machine
         url: '#installation-on-a-local-machine'
@@ -28,8 +28,8 @@ subnav:
         url: '#configuration-of-rclone-on-scinet'
       - title: Test rclone
         url: '#test-rclone'
-  - title: Commands
-    url: '#commands'
+  - title: Transferring files with rclone
+    url: '#transferring-files-with-rclone'
   - title: Advanced commands
     url: '#advanced-commands'
 
@@ -39,14 +39,16 @@ fetched: "data-transfer"
 order_number: 40
 ---
 
-`rclone` is already installed on all SCINet data transfer and compute nodes. Please do not use `rclone` from the login node. Attempting to do so will remind you to use the others.<br>
+Rclone is already installed on all SCINet data transfer and compute nodes. Please do not use the `rclone` command from the login node. Attempting to do so will remind you to use the others.<br>
 To learn more about `rclone`, see [https://rclone.org](https://rclone.org).<!--excerpt-->
 
-## Getting Ready
-Before transferring files to or from cloud resources, `rclone` must first be configured to access cloud storage resources, e.g., an USDA-ARS Box account or AWS S3 buckets. If authentication with eAuth is required to access the cloud resource (e.g., your Box account), you will need to also install and configure `rclone` on your local machine for authenticating with eAuth and generating an authentication token to use on SCINet infrastructure.<br>
+## Setting up rclone 
+Before transferring files to or from cloud resources, rclone must first be configured to access cloud storage resources, e.g., an USDA-ARS Box account or AWS S3 buckets. If authentication with eAuth is required to access the cloud resource (e.g., your Box account), you will need to also install and configure rclone on your local machine for authenticating with eAuth and generating an authentication token to use on SCINet systems. 
+
+**Please note:** Although rclone supports data transfer to and from Microsoft OneDrive accounts, rclone is not currently authorized to access USDA OneDrive accounts, so rclone cannot facilitate data transfers directly between your OneDrive account and SCINet systems. 
 
 ### Installation on a local machine
-In order to use `rclone` on SCINet infrastructure, it is necessary to have it installed on your local machine as well. This is needed to generate an authentication token.<br>
+In order to use `rclone` on SCINet systems, it is necessary to have it installed on your local machine as well. This is needed to generate an authentication token.<br>
 
 #### Installation on Windows
 
@@ -94,10 +96,10 @@ cd .. && rm -rf rclone-*-osx-amd64 rclone-current-osx-amd64.zip
    rclone authorize "box"
    ```
 
-3. On the web page that shows up, click on **Use Single Sign On (SSO)**.
+3. On the web page that shows up, click on "Use Single Sign On (SSO)".
 4. Enter your USDA email address.
 5. Login with eAuthentication, if prompted.
-6. Click on the **Grant access to Box** button.
+6. Click on the "Grant access to Box" button.
 7. Go back to the command prompt window, an authentication token should be there. Copy this including the braces {“access_token”:“ABCDEF...}.
 
 ### Configuration of `rclone` on SCINet
@@ -109,23 +111,23 @@ cd .. && rm -rf rclone-*-osx-amd64 rclone-current-osx-amd64.zip
    rclone config
    ```
 
-2. Type **n** for **n) New remote**
-3. For **name>** enter any name, e.g., "usdabox".
-4. For **Storage>** you can find the number, but it is easier to just type "box".
-5. For **client_id>**, **client_secret>**, **box_config_file**, and **access_token** leave blank, just hit enter.
-6. For **box_sub_type>** enter **enterprise**.
-7. For **Edit advanced config** enter **n**.
-8. For **Remote config, Use auto config?** enter **n**.
-9. For **result** Paste the text from the last step of the above rclone guide section "Configuration of rclone on windows and osX" and hit enter.
-10. Type **y** for **y) Yes this is OK**.
-11. Type **q** to quit.
+2. Type `n` for "n) New remote".
+3. For "name>" enter any name, e.g., `usdabox`.
+4. For "Storage>" you can find the number, but it is easier to just type `box`.
+5. For "client_id>", "client_secret>", "box_config_file", and "access_token", leave blank, just hit enter.
+6. For "box_sub_type>" enter `enterprise`.
+7. For "Edit advanced config" enter `n`.
+8. For "Remote config, Use auto config?" enter `n`.
+9. For "result", paste the text from the last step of the above rclone guide section "Configuration of rclone on windows and osX" and hit enter.
+10. Type `y` for "y) Yes this is OK".
+11. Type `q` to quit.
 
 **Please Note:** If your authentication token is expired, you will need to get a new one. This can be done using the same steps you used (above) to acquire the previous token. 
 
 
 ### Test rclone
 
-1. Test directory listing using the **name>** you selected earlier:
+1. Test directory listing using the "name>" you selected earlier:
 
    {:.copy-code}
    ```bash
@@ -139,7 +141,7 @@ cd .. && rm -rf rclone-*-osx-amd64 rclone-current-osx-amd64.zip
    rclone lsl usdabox: | head
    ```
 
-## Commands
+## Transferring files with rclone
 
 1. For description of commands available see [https://rclone.org/docs/#subcommands](https://rclone.org/docs/#subcommands).
 2. You installed the rclone manual page earlier, so you can also do:
@@ -363,7 +365,7 @@ $
 
 
 At this point you have a working encryption overlay.  You will want to add a "chunking" overlay on top on that.
-As before first create a folder in the encrypted overlay to hold your chunked overlay.  In this case I called mine "chunk"
+As before, first create a folder in the encrypted overlay to hold your chunked overlay.  In this case I called mine "chunk"
 
 ```bash
 $ rclone mkdir googlecrypt:chunk 
