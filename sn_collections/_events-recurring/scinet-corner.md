@@ -32,6 +32,9 @@ sessions:
     date: 2025-03-27
     time: 1-2 pm ET
     excerpt: "We invite you to submit any SCINet-related questions, challenges or concerns you'd like us to address in this SCINet Corner by [filling out this short form.](https://forms.office.com/g/kMbsQNssMH)"
+    materials:
+      - text: Session Recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EYVutR0iIFFGvFMjG_cHJHABCg_pbx7wkBMIJx-KXQ-kFg?e=HRpec2
   - session:
     title: Data transfer using Globus
     date: 2025-02-27
