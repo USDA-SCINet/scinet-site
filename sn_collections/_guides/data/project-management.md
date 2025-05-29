@@ -24,7 +24,7 @@ subnav:
 
 To request a new project directory or quota increase, see our [Request Resources page](/support/request#project-request), or select one of the following forms (eAuthentication required):  
 * [Request a project directory](https://forms.office.com/g/wD9rYarVyn)  
-* [Request Project Quota Increase](https://forms.office.com/g/ntnKBzJiKx) 
+* [Request a project quota increase](https://forms.office.com/g/ntnKBzJiKx) 
 
 
 **Please Note**: Only full-time ARS employees are able to submit these requests. Any requests sent by other individuals will be declined. ORISE participants and term ARS employees are not authorized to have their own project allocations, but they can be added to projects requested by project PIs or managers.
