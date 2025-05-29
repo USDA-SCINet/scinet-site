@@ -49,7 +49,16 @@ If you do wish to access SCINet systems via SSH, you will need to have software 
 ### Windows Instructions
 
 - OpenSSH needs to be installed. If you have Windows 10 or later, you should already have OpenSSH unless your local admin has removed it or restricted access to it. Check by running `ssh` in a PowerShell or terminal window. If it works, you should see usage instructions.
-- ssh-agent needs to to running as a system service. **If it is not running, SmallStepCLI will not work. Please verify that it is running before proceeding.**
+- Installing SmallStepsCLI:
+  - **If you are on a USDA-managed Windows laptop or workstation:**
+    - If your workstation has CEC support, you can [install **SmallStepsCLI** directly from the Software Center]({{ site.baseurl}}/guides/access/login/softwarecenter_stepinstall). If Software Center fails to install SmallStepCLI, please contact your IT Specialist prior to continuing.
+      - If you are encountering errors after completing the install, see [SmallStepCLI Install Troubleshooting for LincPass Users](/guides/access/login/smallsteps).
+      - After installing, you may need to restart your terminal.
+    - If your workstation has "status quo" support (i.e., without CEC support), you will need to have your local IT Specialist install the software for you.
+  - **If you are not on a USDA-managed laptop:**
+    - If you have admin rights on your computer, you can install the software yourself. See: [SmallStep Windows Instructions](https://smallstep.com/docs/step-cli/installation/#windows). For Windows, we recommend the winget installer. 
+    - If you do not have admin rights on your computer, you will need to ask your IT support for help installing the software.
+    - ssh-agent needs to to running as a system service. **If it is not running, SmallStepCLI will not work. Please verify that it is running before proceeding.**
   - Open a PowerShell window and run
 
       {:.copy-code}
@@ -69,15 +78,6 @@ If you do wish to access SCINet systems via SSH, you will need to have software 
       ```
       Start-Service ssh-agent
       ```
-- Installing SmallStepsCLI:
-  - **If you are on a USDA-managed Windows laptop or workstation:**
-    - If your workstation has CEC support, you can [install **SmallStepsCLI** directly from the Software Center]({{ site.baseurl}}/guides/access/login/softwarecenter_stepinstall). If Software Center fails to install SmallStepCLI, please contact your IT Specialist prior to continuing.
-      - If you are encountering errors after completing the install, see [SmallStepCLI Install Troubleshooting for LincPass Users](/guides/access/login/smallsteps).
-      - After installing, you may need to restart your terminal.
-    - If your workstation has "status quo" support (i.e., without CEC support), you will need to have your local IT Specialist install the software for you.
-  - **If you are not on a USDA-managed laptop:**
-    - If you have admin rights on your computer, you can install the software yourself. See: [SmallStep Windows Instructions](https://smallstep.com/docs/step-cli/installation/#windows). For Windows, we recommend the winget installer. 
-    - If you do not have admin rights on your computer, you will need to ask your IT support for help installing the software.
 
 Once your Step installation is complete, see [After Step Installation](#after-small-step-installation).
 
