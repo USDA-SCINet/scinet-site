@@ -22,15 +22,13 @@ subnav:
 
 
 
-Compute jobs are run on functional groups of nodes called partitions or queues. Each different partition has different capabilities (e.g. regular memory versus high memory nodes) and resource restrictions (e.g. time limits on jobs). Nodes may appear in several partitions.<!--excerpt--> 
+Compute jobs are run on functional groups of nodes called partitions or queues. Each partition has different capabilities (e.g. regular memory versus high memory nodes) and resource restrictions (e.g. time limits on jobs). Nodes may appear in several partitions.<!--excerpt--> 
 
-Some of the Ceres compute nodes have been purchased by individual researchers or research groups. These nodes are available to the owners in the priority* partitions but can also be used by anyone on the cluster through \*-low and scavenger* partitions. These partitions have been introduced to increase usage of the priority nodes while still allowing node owners to have guaranteed fast access to priority nodes. All \*-low partitions have 2-hour time limit. Scavenger* partitions have 3-weeks time limit, but jobs in this partition will be killed when resources are requested for the jobs in priority* partitions. Since jobs in the scavenger* partitions can be killed at any moment, running in those partitions does not affect job priorities in the community partitions.
-
-The following table lists partitions. Number of nodes in a specific partition can be adjusted from time to time and be different from the one published in this document.
+Some of the Ceres compute nodes have been purchased by individual researchers or research groups. These nodes are available to the owners in the partitions named "priority\*" but can also be used by anyone on the cluster through the partitions named "\*-low" and "scavenger\*". These partitions increase usage of the priority nodes while still allowing node owners to have guaranteed fast access to priority nodes. All "\*-low" partitions have a 2-hour time limit. The "scavenger\*" partitions have a 3-week time limit, but jobs in this partition will be killed when resources are requested for the jobs in the "priority\*" partitions. Since jobs in the "scavenger\*" partitions can be killed at any moment, running in those partitions does not affect job priorities in the community partitions.
 
 ## The "ceres" partition
 
-During the February 2025 maintenance, a new partition, named “ceres”, was added to the cluster. This new partition includes all community nodes, and its addition is the first step towards simplifying the community partitions on Ceres ("short", "medium", "long", "mem", "mem768", and "debug"). In the future, some or all of the legacy community partitions will be removed. This change will bring several important benefits: 
+During the February 2025 maintenance, a new partition, named “ceres”, was added to the cluster. This new partition includes all community nodes, and its addition is the first step towards simplifying the community partitions on Ceres ("short", "medium", "long", "long60", "mem", "longmem", "mem768", and "debug"). In the future, some or all of the legacy community partitions will be removed. This change will bring several important benefits: 
 
 * Placing  Ceres nodes into fewer partitions will result in shorter wait times and better cluster utilization. 
 * Ceres will be easier and less confusing to use. 
@@ -43,6 +41,8 @@ The new “ceres” partition has a maximum job time of 3 weeks and a default jo
 
 ## Legacy community partitions
 *Please see the above information regarding the new partition "ceres".*
+
+The following table lists available community partitions. Number of nodes in a specific partition can be adjusted from time to time and may differ from the table.
 
 Name | Nodes | Logical Cores per Node | Maximum Simulation Time | Default Memory per Core | Function
 --- | --- |--- |--- |--- |---
@@ -73,7 +73,7 @@ priority-mem | 16 | 2 weeks | 16000 MB | priority nodes with 1.5TB memory
 priority-mem768 | 3 | 2 weeks | 7900 MB | priority nodes with 768 GB memory
 
 
-**At most 2000 cores and 6TB of memory can be used by all simultaneously running jobs per user** across all community and \*-low partitions. In addition, up to 800 cores and 3TB of memory can be used by jobs in scavenger* partitions. Any additional jobs will be queued but won't start. At times these limits can be lowered to prevent a small group of users overtaking the whole cluster. To check current limits for community/low partitions, issue: 
+**At most 2000 cores and 6TB of memory can be used by all simultaneously running jobs per user** across all community and "\*-low" partitions. In addition, up to 800 cores and 3TB of memory can be used by jobs in the "scavenger\*" partitions. Additional jobs will be queued but will not start if doing so would exceed those limits. At times these limits can be lowered to prevent a small group of users overtaking the whole cluster. To check current limits for community/low partitions, issue: 
 ```
 sacctmgr show qos memlimit format=MaxTRESPU%30
 ```
@@ -83,7 +83,7 @@ While the following command will show current limits for scavenger* partitions:
 sacctmgr show qos 400thread format=MaxTRESPU%30
 ```
 
-Users that have access to priority partitions are limited by the amount of resources purchased by the group. For example, if a group has purchased one 768GB node, then group members cannot use more than an equivalent of one 768GB node across all jobs simulteniously running in priority-mem768 partition even when there are idle nodes in the partition. However all users on the system can use these idle nodes through \*-low and scavenger* partitions. Each group that has purchased nodes on Ceres, has a special QOS created for it. To list QOSes for your account, issue "sacctmgr -Pns show user format=qos". The group's QOS needs to be specified when submitting a job to a priority partition via the "-q" salloc/sbatch/srun option. When users submit a job to a priority partition, any node in the partition can be assigned to the job. 
+Users that have access to priority partitions are limited by the amount of resources purchased by the group. For example, if a group has purchased one 768GB node, then group members cannot use more than an equivalent of one 768GB node across all jobs simultaneously running in priority-mem768 partition even when there are idle nodes in the partition. However, all users on the system can use these idle nodes through the "\*-low" and "scavenger\*" partitions. Each group that has purchased nodes on Ceres has a special QOS created for it. To list QOSes for your account, run `sacctmgr -Pns show user format=qos`. The group's QOS needs to be specified when submitting a job to a priority partition via the `-q` salloc/sbatch/srun option. When users submit a job to a priority partition, any node in the partition can be assigned to the job. 
 
 To get current details on all partitions use the following scontrol command:
 ```

@@ -1,5 +1,5 @@
 title: "SCINet | USDA Scientific Computing Initiative"
-description: SCINet is a USDA initiative to provide agricultural scientists access to high performance computing, networking and training
+description: SCINet is a USDA-ARS initiative providing high-performance computing, data transfer and storage, and computing support and training for agricultural research.
 short_name: "SCINet"
 language: "en"
 lang_direction: "ltr"
@@ -82,6 +82,11 @@ collections:
     permalink: /tutorials/:name
   downtime:
     output: false
+  newsletter:
+    output: true
+    permalink: /news/newsletter/:name
+  news-components:
+    output: false
 
 defaults:
   - 
@@ -157,6 +162,13 @@ defaults:
       type: "downtime"
     values:
       alt-title: "TRUE"
+  - 
+    scope:
+      path: ""
+      type: "newsletter"
+    values:
+      layout: "newsletter"
+
 
 # allow posts with dates in the future to be published now
 future: true

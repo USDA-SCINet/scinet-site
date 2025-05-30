@@ -43,9 +43,9 @@ The ARS SCINet Team developed a SCINet network solution that provides two levels
 **Pacific West Area**
 
 {: .table-list }
-| Burns, OR | Hilo, HI | Logan, UT |
-| Maricopa, AZ | Parlier, CA | Wenatchee, WA |
-| Salinas, CA |
+| Burns, OR | Dubois, ID | Hilo, HI |
+| Logan, UT | Maricopa, AZ | Parlier, CA |
+| Wenatchee, WA | Salinas, CA | Kimberly, ID | 
 
 **Plains Area**
 
@@ -53,7 +53,7 @@ The ARS SCINet Team developed a SCINet network solution that provides two levels
 | Akron, CO | Boise, ID | Bushland, TX |
 | College Station, TX | Fargo, ND | Grand Forks, ND |
 | Kerrville, TX | Lubbock, TX | Mandan, ND |
-| Manhattan, KS | Temple, TX |
+| Manhattan, KS | Temple, TX | Stillwater, OK |
 
 **Midwest Area**
 
@@ -78,8 +78,8 @@ The ARS SCINet Team developed a SCINet network solution that provides two levels
 | Florence, SC | Fort Pierce, FL | Gainesville, FL |
 | Griffin, GA | Jonesboro, AR | Little Rock, AR |
 | Mayaguez, PR | Miami, FL | New Orleans, LA | 
-| Oxford, MS | Raleigh, NC | Starkville, MS |
-| Schriever (Houma), LA | Tifton, GA | 
+| Oxford, MS | Poplarville, MS | Raleigh, NC |
+| Starkville, MS | Schriever (Houma), LA | Tifton, GA | 
 
 
 We are eager to work with the remaining ARS locations to ensure they are ready when network equipment is available for installation. Please see the steps (milestones) below to be followed in getting a location on our list. The SCINet Team is available to answer questions at any step along the way. 

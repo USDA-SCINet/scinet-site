@@ -1,0 +1,53 @@
+{% assign datas = include.data %}
+{%- if datas.file %}
+
+{% include file_path %}
+{% assign tablepath = file_path | append: datas.file %}
+{% assign allpages = site[page.collection] %}
+{% assign table = allpages | find: "url", tablepath %}
+{% assign source = datas.source | default: "data" %}
+{% assign tabledata = table[source] %}
+
+{%- elsif datas.local %}
+
+{% assign table = page[datas.local] %}
+
+{% if table.data %}
+{% assign tabledata = table.data %}
+{% else %}
+{% assign tabledata = table %}
+{% endif %}
+
+{%- endif %}
+
+
+{% assign blankarray = "" | split: "" %}
+{% assign newline = site.newline | remove: ":" %}
+{% assign tablesplit = blankarray %}
+{% assign edited = tabledata | replace: newline, "!!newline!!" %}
+{% assign rows = tabledata | split: newline %}
+{% for _row in rows %}
+{% assign cols = _row | split: "," %}
+
+{% if forloop.first %}
+    {% assign headers = cols %}
+{% else %}
+    {% assign labeledcols = blankarray %}
+    {% for _entry in cols %}
+        {% if forloop.first %}
+            {% assign loopcount=0 %}
+        {% endif %}
+        {% assign cell = blankarray %}
+        {% assign cell = cell | push: headers[loopcount] | push: _entry %}
+        {% assign labeledcols = labeledcols | push: cell %}
+        {% assign loopcount=loopcount | plus: 1 %}
+    {% endfor %}
+
+    {% assign tablesplit = tablesplit | push: labeledcols %}
+{% endif %}
+{% endfor %}
+{% assign tabledata = tablesplit %}
+
+    {% include components/table.html table=table tabledata=tabledata announcement=datas.announcement%}
+
+

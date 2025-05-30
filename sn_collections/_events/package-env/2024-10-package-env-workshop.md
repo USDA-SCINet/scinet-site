@@ -71,6 +71,7 @@ Steps to prepare for the tutorial session each day:
     ```bash
     srun --reservation=workshop -A scinet_workshop1 -t 05:00:00 -n 1 --mem 8G --pty bash
     ```
+    {% include reservation-alert reservation="workshop" project="scinet_workshop1" %}
 
 1. **Create a workshop working directory** by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the `$USER` variable.
 

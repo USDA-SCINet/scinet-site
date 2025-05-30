@@ -55,10 +55,10 @@ main:
     
     {% assign bc_sidenav = bc_sidenav | concat: myset %}
     
-    {% else %}
+    {% elsif page.categories != empty %}
 
     {% assign mixedevents = site.events | concat: site.events-recurring %}
-    {% assign sorter = mixedevents | find_exp: "post", "post.title == alt_nav" %}
+    {% assign sorter = mixedevents | find_exp: "post", "post.url == page.parent.url" %}
     {% assign myset = site.workshops | where_exp: "post", "post.categories == page.categories" %}
 
     {% if sorter.course-list %}
@@ -69,6 +69,8 @@ main:
     {% else %}
     {% assign bc_sidenav = bc_sidenav | concat: myset %}
     {% endif %}
+    {% else %}
+    {% assign bc_sidenav = bc_sidenav | push: page %}
     {% endif %}
 
     {% else %}
@@ -124,6 +126,10 @@ main:
             {% endif %}
           {% endunless %}
         {% endfor %}
+      {% endif %}
+
+      {% if page.layout == "event" %}
+      {% assign bc_sidenav = bc_sidenav | push: page %}
       {% endif %}
   {% endif %}
 

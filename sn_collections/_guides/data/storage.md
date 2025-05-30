@@ -27,7 +27,7 @@ subnav:
 {% include images_path %}
 
 
-This guide provides detailed information about the storage options provided by SCINet and how to use them.
+This guide provides detailed information about the storage options provided by SCINet and how to use them. <!--excerpt-->
 
 ## Cluster Storage
 

@@ -12,7 +12,7 @@ registration:
 cal-titles: excerpt
 maincalendar: true
 
-excerpt: To recieve an invitation to upcoming webinars, fill out the [Translational Omics Working Group registration survey](https://forms.office.com/g/tgh4SxRqit).
+excerpt: To recieve an invitation to upcoming webinars, fill out the [Translational Omics Working Group registration survey](https://forms.office.com/g/a7VFhG0AJD).
 
 #filter-archive: materials
 
@@ -20,10 +20,26 @@ archive-label: Webinar Recordings
 
 sessions:
   - session:
-    title: The Promises and Pitfalls of Deep Learning Methods for Plant Phenotype Prediction
-    date: 2025-03-13
-    presenter: Dr. Jacob D. Washburn
-    time: 11am-12pm ET
+    title: Improving Production Traits in Poultry through Genome Editing
+    date: 2025-05-08
+    presenter: Dr. Paula Chen
+    time: 1-2pm ET
+    materials:
+      - text: webinar recording
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/george_liu_usda_gov/Documents/publication/Hu%20Zhenbin/TOmics%20WG/20250508Recording/GMT20250508-170007_Recording_1920x1080.mp4?csf=1&web=1
+  - session:
+    title: Decoding Plant Complexity with Single-Cell Technology
+    date: 2025-04-10
+    presenter: Dr. Xuan Zhang
+    time: 1-2pm ET
+    materials:
+      - text: webinar recording
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/george_liu_usda_gov/Documents/publication/Hu%20Zhenbin/TOmics%20WG/20250410Recording/GMT20250410-165940_Recording_1920x1080.mp4?csf=1&web=1
+#  - session:
+#    title: The Promises and Pitfalls of Deep Learning Methods for Plant Phenotype Prediction
+#    date: 2025-03-13
+#    presenter: Dr. Jacob D. Washburn
+#    time: 11am-12pm ET
   - session:
     title: Design of multi-scale dynamics and functions of microbial communities
     date: 2025-02-13
@@ -150,7 +166,7 @@ sessions:
 
 ---
 
-To recieve an invitation to upcoming webinars, fill out the [Translational Omics Working Group registration survey](https://forms.office.com/g/tgh4SxRqit).
+To recieve an invitation to upcoming webinars, fill out the [Translational Omics Working Group registration survey](https://forms.office.com/g/a7VFhG0AJD).
 
 The primary goal of the [Translational Omics Working Group](/research/working-groups/omics) is to foster collaboration, knowledge-sharing, and innovation among researchers and experts in diverse fields, including but not limited to genomics, bioinformatics, computational biology, and artificial intelligence (AI).
 

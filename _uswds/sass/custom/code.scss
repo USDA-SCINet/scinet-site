@@ -1,0 +1,133 @@
+@use "uswds-core" as *;
+
+// LIGHT
+
+$code-bg: color("gray-cool-4");
+$code-base: color("gray-cool-50");
+$code-name: color("gold-60v");
+$code-key: color("green-cool-50v");
+$code-number: color("green-cool-50v");
+$code-dark: color("gray-cool-70");
+$code-punctuation: color("blue-60v");
+$code-operator: color("violet-50v");
+$code-comment: color("cyan-60v");
+$code-string: color("red-cool-60v");
+$code-error: color("red-50"); 
+
+// DARK
+
+/* $code-bg: color("gray-80");
+$code-base: color("gold-10v");
+$code-name: color("yellow-5v");
+$code-key: color("green-cool-20v");
+$code-number: color("green-cool-20v");
+$code-dark: color("gold-10v");
+$code-punctuation: color("blue-20v");
+$code-operator: color("violet-5v");
+$code-comment: color("cyan-10v");
+$code-string: color("red-warm-10v");
+$code-error: color("red-20"); */
+
+/* .highlighter-rouge.language-plaintext {
+    background: color("gray-10");
+    color: color('ink');
+} */
+
+/* code.highlighter-rouge.language-plaintext{
+    background: $code-bg;
+    border: 2px solid $code-bg;
+    color: $code-dark;
+} */
+
+div.highlighter-rouge{
+    border: 2px solid color("gray-10");
+    background: $code-bg;
+    color: $code-dark;
+}
+div.highlighter-rouge.copy-code{
+    padding-right: .5rem;
+}
+div.highlight {
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+.highlight {
+
+    .ld, .s, .sa, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss, .dl {
+        color:$code-string; // strings
+    }
+
+    .c, .g, .cm, .cp, .c1, .ch, .cpf, .cs {
+        color: $code-comment; // comments
+    }
+        
+    .l, .x, .no, .nd, .nl, .nx, .py, .w, .n, .nv, .vg {
+        color:$code-dark;
+    }
+        
+    .o, .ow {
+        color:$code-operator; // operators
+        font-weight: bold 
+    }
+        
+    .gh, .gp {
+        color: $code-base; // headings and prompts
+        font-weight: bold;
+    }
+    .gs {
+        color: $code-base; // subheading
+        font-weight: 600;
+    }
+        
+    .gi, .kt {
+        color: $code-key
+    }
+        
+    .m, .mb, .mf, .mh, .mi, .mo, .il {
+        color:$code-number;
+    }
+        
+    .na, .nt, .nb, .nc, .nf, .bp, .vc, .ni, .ne, .nn, .vi {
+        // names
+        color: $code-name;
+    }
+
+    .err, .gr, .gt {
+        // error
+        color: $code-error;
+    }
+        
+    .k, .kc, .kd, .kn, .kp, .kr, .kt {
+        // keys
+        color: $code-key; 
+        font-weight: bold 
+    }
+        
+    .p, .pm {
+        //  Punctuation 
+        color: $code-punctuation;
+      }
+
+    .gd {
+        // deleted
+        color: $code-error;
+        }
+        
+    .ge {
+        // emphasis
+        font-style:italic;
+    }
+        
+    .go {
+        // generic output 
+        color: $code-name;
+     }
+        
+
+}
+
+li{
+  .copy-code, .highlight{
+    @include u-margin-bottom(1);
+  }
+}
