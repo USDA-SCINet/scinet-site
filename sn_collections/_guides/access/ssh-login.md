@@ -56,8 +56,6 @@ If you do wish to access SCINet systems via SSH, you will need to have software 
       - After installing, you may need to restart your terminal.
     - If your workstation has "status quo" support (i.e., without CEC support), you will need to have your local IT Specialist install the software for you.
   - **If you are not on a USDA-managed laptop:**
-    - If you have admin rights on your computer, you can install the software yourself. See: [SmallStep Windows Instructions](https://smallstep.com/docs/step-cli/installation/#windows). For Windows, we recommend the winget installer. 
-    - If you do not have admin rights on your computer, you will need to ask your IT support for help installing the software.
     - ssh-agent needs to to running as a system service. **If it is not running, SmallStepCLI will not work. Please verify that it is running before proceeding.**
       - Open a PowerShell window and run
 
@@ -66,18 +64,21 @@ If you do wish to access SCINet systems via SSH, you will need to have software 
         Get-Service ssh-agent
         ```
         If the status is "Running", you are ready to install SmallStepCLI. If not, you will need an administrator to enable the ssh-agent system service. The administrator must:
-      - Open a PowerShell Window as an administrator (right click on the program and select "Run as Administrator").
+          - Open a PowerShell Window as an administrator (right click on the program and select "Run as Administrator").
 
-        {:.copy-code}
-        ```
-        Get-Service ssh-agent | Set-Service -StartupType Automatic
-        ```
-      - Start the service
+            {:.copy-code}
+            ```
+            Get-Service ssh-agent | Set-Service -StartupType Automatic
+            ```
+          - Start the service
 
-        {:.copy-code}
-        ```
-        Start-Service ssh-agent
-        ```
+            {:.copy-code}
+            ```
+            Start-Service ssh-agent
+            ```
+    - If you have admin rights on your computer, you can install the software yourself. See: [SmallStep Windows Instructions](https://smallstep.com/docs/step-cli/installation/#windows). For Windows, we recommend the winget installer. 
+    - If you do not have admin rights on your computer, you will need to ask your IT support for help installing the software.
+
 
 Once your Step installation is complete, see [After Step Installation](#after-small-step-installation).
 
