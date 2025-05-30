@@ -59,25 +59,25 @@ If you do wish to access SCINet systems via SSH, you will need to have software 
     - If you have admin rights on your computer, you can install the software yourself. See: [SmallStep Windows Instructions](https://smallstep.com/docs/step-cli/installation/#windows). For Windows, we recommend the winget installer. 
     - If you do not have admin rights on your computer, you will need to ask your IT support for help installing the software.
     - ssh-agent needs to to running as a system service. **If it is not running, SmallStepCLI will not work. Please verify that it is running before proceeding.**
-  - Open a PowerShell window and run
+      - Open a PowerShell window and run
 
-      {:.copy-code}
-      ```
-      Get-Service ssh-agent
-      ```
-      If the status is "Running", you are ready to install SmallStepCLI. If not, you will need an administrator to enable the ssh-agent system service. The administrator must:
-    - Open a PowerShell Window as an administrator (right click on the program and select "Run as Administrator").
+        {:.copy-code}
+        ```
+        Get-Service ssh-agent
+        ```
+        If the status is "Running", you are ready to install SmallStepCLI. If not, you will need an administrator to enable the ssh-agent system service. The administrator must:
+      - Open a PowerShell Window as an administrator (right click on the program and select "Run as Administrator").
 
-      {:.copy-code}
-      ```
-      Get-Service ssh-agent | Set-Service -StartupType Automatic
-      ```
-    - Start the service
+        {:.copy-code}
+        ```
+        Get-Service ssh-agent | Set-Service -StartupType Automatic
+        ```
+      - Start the service
 
-      {:.copy-code}
-      ```
-      Start-Service ssh-agent
-      ```
+        {:.copy-code}
+        ```
+        Start-Service ssh-agent
+        ```
 
 Once your Step installation is complete, see [After Step Installation](#after-small-step-installation).
 
