@@ -33,9 +33,9 @@ To get started using SCINet, [sign up for an account](/about/signup) and visit o
 <ul>
   <li>2 High-Performance Computing Clusters
     <ul>
-      <li>320 Standard Compute Nodes</li>
-      <li>41 High-Memory Compute Nodes</li>
-      <li>9 GPU Nodes (more on the way)</li>
+      <li>304 Standard Compute Nodes</li>
+      <li>89 High-Memory Compute Nodes</li>
+      <li>21 GPU Nodes</li>
     </ul>
   </li>
 </ul>
