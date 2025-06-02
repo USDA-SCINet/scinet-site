@@ -9,7 +9,7 @@ alerts:
     title: Ceres Update
     type: warning
     title: Transferring Data from Box
-    text: If you have data on Box, you can learn how to transfer it to SCINet resources by watching <a href="https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EWLRzQiW7MNImGaq0Wb49FQB8RvEi3i4p5IztD3CJ-NIgQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=jJE07y" class="usa-link">this instructional video</a> or by following <a href="/assets/pdf/files/cheatsheet_transferring-Box-data-to-SCINet.pdf" class="usa-link">these written instructions</a>.
+    text: If you have data on Box, you can learn how to transfer it to SCINet resources by watching <a href="https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EWLRzQiW7MNImGaq0Wb49FQB8RvEi3i4p5IztD3CJ-NIgQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=jJE07y" class="usa-link">this instructional video</a> or by following <a href="/guides/data/rclone" class="usa-link">the instructions in the SCINet User Guides</a>.
 
 layout: scinet_home
 
