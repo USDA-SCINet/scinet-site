@@ -134,37 +134,6 @@ apptainer exec Software/sifs/deepvariant_1.6.0.sif \
           --dry_run 
 ```
 
-#### Merge and Filter  
-
-{: .copy-code }
-```
-module load miniconda3 
-module load jemalloc 
-module load bcftools 
-module load htslib 
-conda activate /project/scinet_workshop1/deepvariant/Software/condaenvs/glnexus 
-
-# Use GLNexus for joint calling .g.vcf samples: 
-glnexus_cli --threads 48 --config DeepVariantWGS *.g.vcf.gz > cohort.bcf 
-
-# Convert raw bcf results to vcf format: 
-bcftools convert -Oz -o cohort.vcf.gz cohort.bcf 
-
-# Fill tags and drop DP<=1 calls 
-bcftools +setGT cohort.bcf --threads 46 -Ob -- -t q -n . -e 'FMT/DP>=1' | \ 
-bcftools +fill-tags --threads 46 - -Ob -- -t AF,AN,AC | \ 
-bcftools annotate --threads 46 - -Ov -x FORMAT/RNC -o cohort.clean.vcf 
-
-# Filter 
-plink2 --vcf cohort.clean.vcf --geno 0.5 --vcf-min-qual 20 --min-alleles 2 --max-alleles 2 --vcf-half-call missing --allow-extra-chr --recode vcf --out cohort.clean.diploid 
-
-# Make numeric (0,1,2) 
-plink2 --vcf cohort.clean.diploid.vcf --allow-extra-chr --recode A-transpose –out cohort.clean.diploid.Atranspose 
-
-# See results 
-head -n 20 cohort.clean.diploid.Atranspose.traw 
-```
-
 ### Step 4: Joint Genotyping
 
 {: .copy-code }
@@ -290,6 +259,36 @@ plink2 \
 # End
 ```
 
+### Merge and Filter  
+
+{: .copy-code }
+```
+module load miniconda3 
+module load jemalloc 
+module load bcftools 
+module load htslib 
+conda activate /project/scinet_workshop1/deepvariant/Software/condaenvs/glnexus 
+
+# Use GLNexus for joint calling .g.vcf samples: 
+glnexus_cli --threads 48 --config DeepVariantWGS *.g.vcf.gz > cohort.bcf 
+
+# Convert raw bcf results to vcf format: 
+bcftools convert -Oz -o cohort.vcf.gz cohort.bcf 
+
+# Fill tags and drop DP<=1 calls 
+bcftools +setGT cohort.bcf --threads 46 -Ob -- -t q -n . -e 'FMT/DP>=1' | \ 
+bcftools +fill-tags --threads 46 - -Ob -- -t AF,AN,AC | \ 
+bcftools annotate --threads 46 - -Ov -x FORMAT/RNC -o cohort.clean.vcf 
+
+# Filter 
+plink2 --vcf cohort.clean.vcf --geno 0.5 --vcf-min-qual 20 --min-alleles 2 --max-alleles 2 --vcf-half-call missing --allow-extra-chr --recode vcf --out cohort.clean.diploid 
+
+# Make numeric (0,1,2) 
+plink2 --vcf cohort.clean.diploid.vcf --allow-extra-chr --recode A-transpose –out cohort.clean.diploid.Atranspose 
+
+# See results 
+head -n 20 cohort.clean.diploid.Atranspose.traw 
+```
 
 
 **Stop the interactive job** on the compute node by running the command exit. 
