@@ -52,33 +52,34 @@ Steps to prepare for the tutorial session:
 
 1. **Create a workshop working directory** and copy the workshop materials into it by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the $USER variable. 
 
-    ```
-    mkdir -p /90daydata/shared/$USER/deepvariant 
-    cd /90daydata/shared/$USER/deepvariant
-    
-    cp /project/scinet_workshop1/deepvariant/Sample_Data/assembly.fasta . 
-    
-    mkdir PE_directory 
-    cp -r /project/scinet_workshop1/deepvariant/Sample_Data/samplename_R*.fastq.gz .
-    
-    # Create a directory for trimmed reads 
-    mkdir Trimmed 
-    
-    # Create a directory for mapped reads 
-    mkdir Mapped 
-    
-    # Create a directory for variants 
-    mkdir Variants 
-    
-    # Create a directory for intermediate files 
-    mkdir Int 
-    
-    # Activate your conda environment 
-    module load miniconda3 
-    module load samtools 
-    module load apptainer 
-    source activate /project/scinet_workshop1/deepvariant/Software/condaenvs/deepvariant
-    ``` 
+{: .copy-code }
+```
+mkdir -p /90daydata/shared/$USER/deepvariant 
+cd /90daydata/shared/$USER/deepvariant
+
+cp /project/scinet_workshop1/deepvariant/Sample_Data/assembly.fasta . 
+
+mkdir PE_directory 
+cp -r /project/scinet_workshop1/deepvariant/Sample_Data/samplename_R*.fastq.gz .
+
+# Create a directory for trimmed reads 
+mkdir Trimmed 
+
+# Create a directory for mapped reads 
+mkdir Mapped 
+
+# Create a directory for variants 
+mkdir Variants 
+
+# Create a directory for intermediate files 
+mkdir Int 
+
+# Activate your conda environment 
+module load miniconda3 
+module load samtools 
+module load apptainer 
+source activate /project/scinet_workshop1/deepvariant/Software/condaenvs/deepvariant
+``` 
 
 ## Tutorial Instructions
 
