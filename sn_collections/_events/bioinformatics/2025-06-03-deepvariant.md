@@ -60,7 +60,9 @@ cd /90daydata/shared/$USER/deepvariant
 cp /project/scinet_workshop1/deepvariant/Sample_Data/assembly.fasta . 
 
 mkdir PE_directory 
-cp -r /project/scinet_workshop1/deepvariant/Sample_Data/samplename_R*.fastq.gz .
+cd PE_directory 
+cp -r /project/scinet_workshop1/deepvariant/Sample_Data/samplename_R*.fastq.gz .  
+cd ..
 
 # Create a directory for trimmed reads 
 mkdir Trimmed 
