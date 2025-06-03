@@ -134,7 +134,7 @@ apptainer exec Software/sifs/deepvariant_1.6.0.sif \
           --dry_run 
 ```
 
-### Merge and Filter  
+#### Merge and Filter  
 
 {: .copy-code }
 ```
@@ -164,5 +164,132 @@ plink2 --vcf cohort.clean.diploid.vcf --allow-extra-chr --recode A-transpose –
 # See results 
 head -n 20 cohort.clean.diploid.Atranspose.traw 
 ```
+
+### Step 4: Joint Genotyping
+
+{: .copy-code }
+```
+#!/bin/bash
+
+#SBATCH --time=08:00:00   # walltime limit (HH:MM:SS)
+#SBATCH --nodes=1   # number of nodes
+#SBATCH --ntasks-per-node=48   # 20 processor core(s) per node X 2 threads per core
+#SBATCH --partition=atlas    # standard node(s)
+#SBATCH --job-name="step4:joint_genotyping"
+#SBATCH --mail-user=$USER@usda.gov   # email address
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+#SBATCH --output="deepvariant-std-%j-%N.out" # job standard output file (%j replaced by job id)
+#SBATCH --error="deepvariant-std-%j-%N.err" # job standard error file (%j replaced by job id)
+#SBATCH --account=scinet_workshop1
+
+module load miniconda3
+module load bcftools
+module load htslib
+
+conda activate /project/ai_forum/deepvariant/Software/condaenvs/glnexus
+
+# Scalable gVCF merging and joint variant calling 
+glnexus_cli \
+    --threads 48 \
+    --config DeepVariant_WGS \
+    Variants/*.g.vcf.gz > Variants/cohort.bcf
+
+conda deactivate
+
+# Convert raw bcf results to vcf format
+bcftools convert -Oz -o Variants/cohort.vcf.gz Variants/cohort.bcf
+
+# Set GT (DP < 1 then GT = ./.) then re-calculate AF and fill AN,AC INFO tags
+# Only keep standard FORMAT fields: GT:DP:AD:GQ:PL
+bcftools +setGT Variants/cohort.bcf --threads 48 -Ob -- -t q -n . -e 'FMT/DP>=1' | \
+bcftools +fill-tags --threads 48 - -Ob -- -t AF,AN,AC | \
+bcftools annotate --threads 48 - -Ov -x FORMAT/RNC -o Variants/cohort.clean.vcf
+
+# End
+```
+
+### Step 5: Variant Filtration
+
+{: .copy-code }
+```
+#!/bin/bash
+
+#SBATCH --time=08:00:00   # walltime limit (HH:MM:SS)
+#SBATCH --nodes=1   # number of nodes
+#SBATCH --ntasks-per-node=48   # 20 processor core(s) per node X 2 threads per core
+#SBATCH --partition=atlas    # standard node(s)
+#SBATCH --job-name="step5:variant_filtration"
+#SBATCH --mail-user=$USER@usda.gov   # email address
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+#SBATCH --output="deepvariant-std-%j-%N.out" # job standard output file (%j replaced by job id)
+#SBATCH --error="deepvariant-std-%j-%N.err" # job standard error file (%j replaced by job id)
+#SBATCH --account=scinet_workshop1
+
+module load htslib
+module load plink 2
+
+# Many ways to filter variants... Here are a couple examples:
+
+# Example 1 - AWK
+
+chmod +x Scripts/filter_vcf.awk
+
+./Scripts/filter_vcf.awk \
+    -v dphom=2 \
+    -v dphet=4 \
+    -v minqual=20 \
+    -v mindp=100 \
+    -v minhomn=1 \
+    -v minhomp=0.9 \
+      -v tol=0.2 \
+      -v minmaf=0.01 \
+      -v minpresent=0.35 \
+    Variants/cohort.clean.vcf > Variants/cohort.clean.filt.vcf
+
+# "filter_vcf" parameters:
+# dphom ... minimum read depth to accept a homozygous genotype call
+# dphet ... minimum read depth to accept a heterozygous genotype call
+# minqual ... minimum SNP quality (6th column of the VCF)
+# mindp ... SNPs with a total depth (parsed from DP subfield of the INFO field) will be discarded.
+# minhomn ... SNPs with fewer than minhomn homozygous calls for the REF and/or the ALT allele will be discarded.
+# minhomp ... SNPs with a fraction of heterozygous calls among all present genotye calls exceeding 1 - minhomp will be discarded.
+# tol ... Genotypes with DV/DP <= tol will be called 0/0; genotypes with DV/DP >= 0.5 - tol & DV/DP <= 0.5 + tol will be called 0/1; and genotypes with DV/DP >= 1 - tol will be called 1/1.
+# minmaf ... SNPs with a minor allele frequency below minmax will be discarded.
+# minpresent ... SNPs with a fraction of present data less than minpresent will be discarded.
+
+# Compress results
+bgzip --threads 48 Variants/cohort.clean.filt.vcf
+tabix -p vcf Variants/cohort.clean.filt.vcf.gz
+
+# Example 2 - Plink2
+
+# Filter
+plink2 \
+    --vcf Variants/cohort.clean.vcf \
+    --geno 0.35 \
+    --maf 0.05 \
+    --vcf-min-qual 16 \
+    --min-alleles 2 \
+    --max-alleles 2 \
+    --vcf-half-call missing \
+    --allow-extra-chr \
+    --recode vcf \
+    --out Variants/cohort.clean.filt
+
+# Convert filtered .vcf to numeric [snps, inds] ".traw" file extension:
+plink2 \
+    --vcf Variants/cohort.clean.filt.vcf.gz \
+    --allow-extra-chr \
+    --recode A-transpose \
+    --out Variants/cohort.clean.filt.numeric
+
+# End
+```
+
+
 
 **Stop the interactive job** on the compute node by running the command exit. 
