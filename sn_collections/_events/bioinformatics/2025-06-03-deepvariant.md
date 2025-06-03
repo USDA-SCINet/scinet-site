@@ -52,7 +52,6 @@ Steps to prepare for the tutorial session:
 
 1. **Create a workshop working directory** and copy the workshop materials into it by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the $USER variable. 
 
-    {: .copy-code }
     ```
     mkdir -p /90daydata/shared/$USER/deepvariant 
     cd /90daydata/shared/$USER/deepvariant
