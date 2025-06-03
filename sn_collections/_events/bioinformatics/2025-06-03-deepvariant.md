@@ -78,73 +78,89 @@ Steps to prepare for the tutorial session:
     module load miniconda3 
     module load samtools 
     module load apptainer 
-    source activate /project/scinet_workshop1/deepvariant/Software/condaenvs/deepvariant 
-    
-    # Prepare for a fun time 
-    
-    # Step 1: trimming 
-    # Trim adapter artifacts from your reads 
-    trim_galore --paired \ 
-            --basename samplename \ 
-            --output_dir Trimmed \ 
-            --cores 24 \ 
-            PE_directory/samplename_R1.fastq.gz \ 	 
-            PE_directory/samplename_R2.fastq.gz 
-            
-    # Step 2: mapping 
-    # Index your reference assembly 
-    bwa-mem2 index assembly.fasta 
+    source activate /project/scinet_workshop1/deepvariant/Software/condaenvs/deepvariant
+    ``` 
 
-    # Index reference assembly using Samtools (for later) 
-    samtools faidx assembly.fasta >assembly.fasta.fai 
-    
-    # For each of your trimmed and paired reads:  
-    bwa-mem2 mem –t 48 assembly.fasta \ 	 
-          Trimmed/samplename_val_1.fq.gz \ 	 
-          Trimmed/samplename_val_2.fq.gz | \ 
-          samblaster | \ 	 
-          samtools sort -@ 48  –o Mapped/samplename.bam 
-    
-    # Step 3: call variants 
-    apptainer exec Software/sifs/deepvariant_1.6.0.sif \ 
-              python3 Software/deepvariant/scripts/run_deepvariant.py \ 	 
-              --num_shards=48 \ 
-              --model_type WGS \ 
-              --output_vcf Variants/samplename.vcf.gz \ 
-              --output_gvcf Variants/samplename.g.vcf.gz \ 
-              --ref assembly.fasta \ 
-              --reads Mapped/samplename.bam \ 
-              --sample_name samplename \ 
-              --intermediate_results_dir Int/samplename_int \ 
-              --make_examples_extra_args "normalize_reads=true” \\ 
-              --dry_run 
+## Tutorial Instructions
 
-    # Merge and Filter  
-    module load miniconda3 
-    module load jemalloc 
-    module load bcftools 
-    module load htslib 
-    conda activate /project/scinet_workshop1/deepvariant/Software/condaenvs/glnexus 
+### Step 1: trimming 
 
-    # Use GLNexus for joint calling .g.vcf samples: 
-    glnexus_cli --threads 48 --config DeepVariantWGS *.g.vcf.gz > cohort.bcf 
+{: .copy-code }
+```
+# Trim adapter artifacts from your reads 
+trim_galore --paired \ 
+        --basename samplename \ 
+        --output_dir Trimmed \ 
+        --cores 24 \ 
+        PE_directory/samplename_R1.fastq.gz \ 	 
+        PE_directory/samplename_R2.fastq.gz 
+```
 
-    # Convert raw bcf results to vcf format: 
-    bcftools convert -Oz -o cohort.vcf.gz cohort.bcf 
+### Step 2: mapping 
 
-    # Fill tags and drop DP<=1 calls 
-    bcftools +setGT cohort.bcf --threads 46 -Ob -- -t q -n . -e 'FMT/DP>=1' | \ 
-    bcftools +fill-tags --threads 46 - -Ob -- -t AF,AN,AC | \ 
-    bcftools annotate --threads 46 - -Ov -x FORMAT/RNC -o cohort.clean.vcf 
+{: .copy-code }
+```
+# Index your reference assembly 
+bwa-mem2 index assembly.fasta 
 
-    # Filter 
-    plink2 --vcf cohort.clean.vcf --geno 0.5 --vcf-min-qual 20 --min-alleles 2 --max-alleles 2 --vcf-half-call missing --allow-extra-chr --recode vcf --out cohort.clean.diploid 
+# Index reference assembly using Samtools (for later) 
+samtools faidx assembly.fasta >assembly.fasta.fai 
 
-    # Make numeric (0,1,2) 
-    plink2 --vcf cohort.clean.diploid.vcf --allow-extra-chr --recode A-transpose –out cohort.clean.diploid.Atranspose 
+# For each of your trimmed and paired reads:  
+bwa-mem2 mem –t 48 assembly.fasta \ 	 
+      Trimmed/samplename_val_1.fq.gz \ 	 
+      Trimmed/samplename_val_2.fq.gz | \ 
+      samblaster | \ 	 
+      samtools sort -@ 48  –o Mapped/samplename.bam 
+```
 
-    # See results 
-    head -n 20 cohort.clean.diploid.Atranspose.traw 
-    ```
+### Step 3: call variants 
 
-1. **Stop the interactive job** on the compute node by running the command exit. 
+{: .copy-code }
+```
+apptainer exec Software/sifs/deepvariant_1.6.0.sif \ 
+          python3 Software/deepvariant/scripts/run_deepvariant.py \ 	 
+          --num_shards=48 \ 
+          --model_type WGS \ 
+          --output_vcf Variants/samplename.vcf.gz \ 
+          --output_gvcf Variants/samplename.g.vcf.gz \ 
+          --ref assembly.fasta \ 
+          --reads Mapped/samplename.bam \ 
+          --sample_name samplename \ 
+          --intermediate_results_dir Int/samplename_int \ 
+          --make_examples_extra_args "normalize_reads=true” \\ 
+          --dry_run 
+```
+
+### Merge and Filter  
+
+{: .copy-code }
+```
+module load miniconda3 
+module load jemalloc 
+module load bcftools 
+module load htslib 
+conda activate /project/scinet_workshop1/deepvariant/Software/condaenvs/glnexus 
+
+# Use GLNexus for joint calling .g.vcf samples: 
+glnexus_cli --threads 48 --config DeepVariantWGS *.g.vcf.gz > cohort.bcf 
+
+# Convert raw bcf results to vcf format: 
+bcftools convert -Oz -o cohort.vcf.gz cohort.bcf 
+
+# Fill tags and drop DP<=1 calls 
+bcftools +setGT cohort.bcf --threads 46 -Ob -- -t q -n . -e 'FMT/DP>=1' | \ 
+bcftools +fill-tags --threads 46 - -Ob -- -t AF,AN,AC | \ 
+bcftools annotate --threads 46 - -Ov -x FORMAT/RNC -o cohort.clean.vcf 
+
+# Filter 
+plink2 --vcf cohort.clean.vcf --geno 0.5 --vcf-min-qual 20 --min-alleles 2 --max-alleles 2 --vcf-half-call missing --allow-extra-chr --recode vcf --out cohort.clean.diploid 
+
+# Make numeric (0,1,2) 
+plink2 --vcf cohort.clean.diploid.vcf --allow-extra-chr --recode A-transpose –out cohort.clean.diploid.Atranspose 
+
+# See results 
+head -n 20 cohort.clean.diploid.Atranspose.traw 
+```
+
+**Stop the interactive job** on the compute node by running the command exit. 
