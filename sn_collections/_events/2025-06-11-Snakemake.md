@@ -33,3 +33,12 @@ registration:
 
 In this workshop, Aaron Yerke (SCINet/AI-COE fellow) will introduce the basics of a Snakemake workflow and demonstrate how to run it on a SCINet cluster. After attending this workshop, you should be able to integrate Snakemake into your own projects on SCINet HPC clusters. 
 <!--excerpt-->
+
+## Pre-Workshop Instructions: 
+To help minimize technical issues and delays at the start of the workshop, please try the following tests prior to the workshop. 
+
+* **Logging on to [Ceres Open OnDemand (OOD)](http://ceres-ood.scinet.usda.gov/):** 
+  * Please confirm you can successfully log in to Ceres OOD with your SCINet account [(see login instructions here)](/guides/access/web-based-login). If you are successful, you will be able to see the Ceres OOD home page.   
+* **Ceres Shell Access:** 
+  * When on Ceres OOD, click on the top navigation bar: “Clusters” > “Ceres Shell Access”. A new tab will appear that looks like a shell terminal (e.g., like PowerShell). 
+  * Please confirm you do not receive any error messages or requests to re-authenticate and that the final line looks like “[firstname.lastname@ceres ~]$”.
