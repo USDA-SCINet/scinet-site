@@ -21,8 +21,9 @@ registration:
     url: https://forms.office.com/g/dERg7vbS9B
 tags: bioinformatics
 
-
-
+materials:
+  - text: Workshop recording
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EZE9sRitKJVNjfZ1JJiWaRUBPuPEG1hk-ejQ1YNb5s86Zg?e=T6qcZo
 
 ---
 
