@@ -209,7 +209,7 @@ In this tuturial project only one conda environment is used, but as many as need
 cat workflow/env/snk_mk_conda_env.yml
 ```
 
-This file holds the conda env that you loaded in [Tutorial Setup Instructions](#tutorial-Setup-Instructions). There are comments at the top and bottom of this file to help you install it when you need to set up your own projects.
+This file holds the conda env that you loaded in [Tutorial Setup Instructions](#tutorial-setup-instructions). There are comments at the top and bottom of this file to help you install it when you need to set up your own projects.
 
 #### Resources
 Default resources are allocated in workflow/config/config.yaml, but for a given rule, these resources can modified for individual rules with a resources block. In the example below, a custom runtime and memory allotment would be requested when this rule is submitted to Slurm. This can be seen in rule rf_test_dataset from the Snakefile, for example. If this is not specified then the defaule resources are requested.
