@@ -202,7 +202,7 @@ Snakemake can execute rules in specified Conda environments. The environments sh
 
 `conda:"env/snk_mk_conda_env.yml",`
 
-In this tuturial project, only one Conda environment is used, but as many as needed can be used. Snakemake expects the Conda environment YAML file to be found in the `workflow/env` folder. In order to execute jobs on the cluster, the environment that you run snakemake from requires the snakemake snakemake-executor-plugin-cluster-generic from line 17.
+In this tutorial project, only one Conda environment is used, but as many as needed can be used. Snakemake expects the Conda environment YAML file to be found in the `workflow/env` folder. In order to execute jobs on the cluster, the environment that you run snakemake from requires the snakemake snakemake-executor-plugin-cluster-generic from line 17.
 
 {:.copy-code}
 ```bash
