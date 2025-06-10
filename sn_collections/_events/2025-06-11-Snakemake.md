@@ -141,14 +141,14 @@ When you run that, you should see something like this:
 
 ## Snakemake logic
 
-The instructions to Snakemake for running the pipeline are typically found in /workflow/Snakemake. This file contains the rules that Snakemake is meant to follow as well as links to config files.
+The instructions to Snakemake for running the pipeline are typically found in `/workflow/Snakemake`. This file contains the rules that Snakemake is meant to follow as well as links to config files.
 
 {:.copy-code}
 ```bash
 cat workflow/Snakefile
 ```
 
-The rules in the file are prepened by the keyword "rule" and given a unique and descriptive name. Most of them have input and output designations. The inputs and outputs help Snakemake build a Directed Acyclic Graph of the rules in the graph (DAG) to create the workflow.
+The rules in the file are prepended by the keyword "rule" and given a unique and descriptive name. Most of them have input and output designations. The inputs and outputs help Snakemake build a Directed Acyclic Graph (DAG) of the rules in the graph to create the workflow.
 
 Wildcards are designated by curly brackets "{}" and the name of the wildcard in the input and output sections of the word. In the shell command section of the rule, the name of the wildcard must be prefixed with "wildcard.".
 
@@ -156,36 +156,36 @@ Wildcards are designated by curly brackets "{}" and the name of the wildcard in 
 This pipeline can best be described by summarizing the rules, in the order that their actions are triggered:  
 ![Flow of rules]({{ base.url }}/assets/img/events/snakemake/rulegraph.png)  
 * **rule create_test_rf_dataset**
-    This rule will download the "Cars" dataset using R. From that dataset, it will make a table of response variables that includes "mpg" as numeric values and "good_mileage" as a categorical variable. The predictor and response tables are saved to the data/unit_test directory.
+    This rule will download the "Cars" dataset using R. From that dataset, it will make a table of response variables that includes `mpg` as numeric values and `good_mileage` as a categorical variable. The predictor and response tables are saved to the `data/unit_test` directory.
 * **rule rf_test_dataset:**
-    Reads in the response columns one at a time to the random forest. The random forest makes a pdf graphic, saved to output/unit_test/graphics and and a table of the scikit learn scores (r squared for mgp and accuracy for good_milage) in output/unit_test/tables. 
+    Reads in the response columns one at a time to the random forest. The random forest makes a PDF graphic, saved to `output/unit_test/graphics` and a table of the scikit-learn scores (r squared for `mgp` and accuracy for `good_mileage`) in `output/unit_test/tables`. 
 * **rule aggregate_rf_tables_test_data:**
-    This rule tells Snakemake to look for the later output and then aggregates all the scores into a single file. This rule makes use of the expand() helper function, see https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#helpers-for-defining-rules to see all the helper functions.
-    In this case, expand() creates a list of file paths for each of the *response_cols* wildcards, see [Our wildcards](#our-wildcards) for a bit more about wildcards.
+    This rule tells Snakemake to look for the later output and then aggregates all the scores into a single file. This rule makes use of the `expand()` helper function, see https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#helpers-for-defining-rules to see all the helper functions.
+    In this case, `expand()` creates a list of file paths for each of the *response_cols* wildcards, see [Our wildcards](#our-wildcards) for a bit more about wildcards.
 * **rule all**
-    This is the final rule that only has input. It a catch-all rule that holds the final output of all other rule chains. If you have multiple chains of rules, the end product of each chain will go here. Note that there is a convention to name this rule "all", though it is not required by Snakemake.
+    This is the final rule that only has input. It is a catch-all rule that holds the final output of all other rule chains. If you have multiple chains of rules, the end product of each chain will go here. Note that there is a convention to name this rule "all", though it is not required by Snakemake.
 
 ### Our wildcards
-Wildcards enable Snakemake to identify and keep track of different files in the workflow. Our wildcards are defined on line 13 of the Snakefile as 
+Wildcards enable Snakemake to identify and keep track of different files in the workflow. Our wildcards are defined on line 8 of the Snakefile as 
 `response_cols = ["mpg","good_milage","car_name"]`
-These wildcards are the column names of data/unit_test/mtc_response.csv that we download in **rule create_test_rf_dataset**. You will notice that intermediate files for this workflow use those wildcards in the filenames.  
+These wildcards are the column names of `data/unit_test/mtc_response.csv` that we download in **rule create_test_rf_dataset**. You will notice that intermediate files for this workflow use those wildcards in the filenames.  
 ![Rules with wildcards]({{ base.url }}/assets/img/events/snakemake/dag.png)
 
 ### Configuation
 
-The main file for configuring Snakemake to your system architecture is workflow/config/config.yaml. This file has some features to note:
+The main file for configuring Snakemake to your system architecture is `workflow/config/config.yaml`. This file has some features to note:
 
 {:.copy-code}
 ```bash
 cat workflow/config/config.yaml
 ```
 
-The first 14 lines instruct Snakemake to use the generic cluster executor plug-in to launch jobs with sbatch, which is the Slurm batching command. 
-* Line 5 runs before the executor to create a top level directory to store the Slurm log files in a directory called "slurmLogs".
+The first 14 lines instruct Snakemake to use the generic cluster executor plug-in to launch jobs with `sbatch`, which is the Slurm batching command. 
+* Line 4 runs before the executor to create a top level directory to store the Slurm log files in a directory called "slurmLogs".
 * Lines 10 and 11 tell Slurm to put slurm reports in a subfolder of `slurmLogs` named after the name of the rule. The name of the log file is the name of the rule, followed by wildcards and the Slurm job number.
 * Line 14 is commented out, it would tell Slurm where to send notification emails. To use this line, remove the "#" and add your email address where the placeholder address is.
 
-To edit this document, you can open it with the vim editor.
+To edit this document, you can open it with the Vim editor.
 
 {:.copy-code}
 ```bash
@@ -198,21 +198,21 @@ The next section (lines 15-20) holds the default parameters. They are currently 
 
 ### Additional rule components
 #### Conda
-Snakemake can execute rules in specified conda environments. The environments should be specified for each rule in the optional "conda:" header. 
+Snakemake can execute rules in specified Conda environments. The environments should be specified for each rule in the optional "conda:" header. 
 
 `conda:"env/snk_mk_conda_env.yml",`
 
-In this tuturial project only one conda environment is used, but as many as needed can be used. Snakemake expects the Conda environment YAML to be found in the workflow/env folder. In order to execute jobs on the cluster, the envrioment that you run snakemake from requires the snakemake snakemake-executor-plugin-cluster-generic from line 16.
+In this tuturial project, only one Conda environment is used, but as many as needed can be used. Snakemake expects the Conda environment YAML file to be found in the `workflow/env` folder. In order to execute jobs on the cluster, the environment that you run snakemake from requires the snakemake snakemake-executor-plugin-cluster-generic from line 17.
 
 {:.copy-code}
 ```bash
 cat workflow/env/snk_mk_conda_env.yml
 ```
 
-This file holds the conda env that you loaded in [Tutorial Setup Instructions](#tutorial-setup-instructions). There are comments at the top and bottom of this file to help you install it when you need to set up your own projects.
+This file holds the Conda environment that you loaded in [Tutorial Setup Instructions](#tutorial-setup-instructions). There are comments at the top and bottom of this file to help you install it when you need to set up your own projects.
 
 #### Resources
-Default resources are allocated in workflow/config/config.yaml, but for a given rule, these resources can modified for individual rules with a resources block. In the example below, a custom runtime and memory allotment would be requested when this rule is submitted to Slurm. This can be seen in rule rf_test_dataset from the Snakefile, for example. If this is not specified then the defaule resources are requested.
+Default resources are allocated in `workflow/config/config.yaml`, but for a given rule, these resources can be modified for individual rules with a "resources" block. In the example below, a custom runtime and memory allotment would be requested when this rule is submitted to Slurm. This can be seen in **rule rf_test_dataset** from the Snakefile, for example. If this is not specified then the default resources are requested.
 
 ```
 	resources:
@@ -223,14 +223,14 @@ Default resources are allocated in workflow/config/config.yaml, but for a given 
 ## Run snakemake
 
 ### Set up environment
-* Load miniconda for access to conda environments.
+* Load miniconda for access to Conda environments.
   
   {:.copy-code}
   ```bash
   module load miniconda
   ```
 
-* Load the conda environment for Snakemake and the libraries for the pipeline. This env will be available as long the files from the completed env in workflow/env dir are available. The YAML to build this environment and instructions for creating it can be found at workflow/env/snk_mk_conda_env.yml.
+* Load the Conda environment for Snakemake and the libraries for the pipeline. This environment will be available as long as the files from the completed environment in `workflow/env` directory are available. The YAML file to build this environment and instructions for creating it can be found at `workflow/env/snk_mk_conda_env.yml`.
   
   {:.copy-code}
   ```bash
@@ -251,7 +251,7 @@ This does not submit any jobs to the cluster. If the output looks acceptable, ru
 snakemake --profile workflow/config
 ```
 
-This will actually launch the jobs and if you have added your email to line 14 of the config file, you should recieve confirmation as well.
+This will actually launch the jobs, and if you have added your email to line 14 of the config file, you should receive confirmation as well.
 
 After all of your Slurm jobs have completed, you should see that files have been downloaded into the data folder and output has been generated in the output folder.
 
