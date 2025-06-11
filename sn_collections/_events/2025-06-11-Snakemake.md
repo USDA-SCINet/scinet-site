@@ -167,7 +167,7 @@ This pipeline can best be described by summarizing the rules, in the order that 
 
 ### Our wildcards
 Wildcards enable Snakemake to identify and keep track of different files in the workflow. Our wildcards are defined on line 8 of the Snakefile as 
-`response_cols = ["mpg","good_milage","car_name"]`
+`response_cols = ["mpg","good_mileage","car_name"]`
 These wildcards are the column names of `data/unit_test/mtc_response.csv` that we download in **rule create_test_rf_dataset**. You will notice that intermediate files for this workflow use those wildcards in the filenames.  
 ![Rules with wildcards]({{ base.url }}/assets/img/events/snakemake/dag.png)
 
@@ -234,7 +234,7 @@ Default resources are allocated in `workflow/config/config.yaml`, but for a give
   
   {:.copy-code}
   ```bash
-  source activate /project/scinet_workshop1/snakemake/.conda
+  source activate /project/scinet_workshop1/snakemake/snakemake_env
   ```
 
 First, we need to do a dry run to see what jobs will run:
@@ -275,4 +275,3 @@ Snakemake has an extensive community of users that post their content, as well a
 * [Example Conda Environment](https://github.com/binder-project/example-conda-environment)
 
 -----
-
