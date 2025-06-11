@@ -57,7 +57,7 @@ materials:
 In this workshop, Aaron Yerke (SCINet/AI-COE fellow) will introduce the basics of a Snakemake workflow and demonstrate how to run it on a SCINet cluster. After attending this workshop, you should be able to integrate Snakemake into your own projects on SCINet HPC clusters. 
 <!--excerpt-->
 
-Note that this tutorial is for Snakemake __versions 8+__, as version 8 introduced breaking changes to previous versions.
+Note that this tutorial is for Snakemake __versions 8+__, as version 8 introduced changes that are not compatible with previous versions.
 
 
 ## Pre-Workshop Instructions: 
@@ -99,7 +99,7 @@ We are now ready to setup and run Snakemake!
 -----  
 
 ## Snakemake Introduction
-[Snakemake](https://snakemake.readthedocs.io/en/stable/index.html "Snakemake") is a python retooling of the old UNIX tool called "Make". It can be used to document and automatically run a pipeline and can help run jobs in parallel. 
+[Snakemake](https://snakemake.readthedocs.io/en/stable/index.html "Snakemake") is a Python retooling of the standard UNIX tool called "Make". It can be used to document and automatically run a pipeline and can help run jobs in parallel. 
 
 The main driver of action in Snakemake is the "rule". At minimum, a rule will have an input, which are files that trigger Snakemake to run the rule. Most rules will also have an output too, which will allow Snakemake to make a chain of actions based on inputs and outputs. A rule can run a command in the commandline or it can run python. Variables that are passed from rule to rule are called wildcards. Wildcards are valueable tools for adding parallel processes to the the workflow. See more at: [Snakemake Logic](#snakemake-logic)
 
@@ -141,14 +141,14 @@ When you run that, you should see something like this:
 
 ## Snakemake logic
 
-The instructions to Snakemake for running the pipeline are typically found in `/workflow/Snakemake`. This file contains the rules that Snakemake is meant to follow as well as links to config files.
+The instructions to Snakemake for running the pipeline are typically found in `/workflow/Snakemake`. This file, commonly referred to as a "Snakefile", contains the rules that Snakemake is meant to follow as well as links to config files.
 
 {:.copy-code}
 ```bash
 cat workflow/Snakefile
 ```
 
-The rules in the file are prepended by the keyword "rule" and given a unique and descriptive name. Most of them have input and output designations. The inputs and outputs help Snakemake build a Directed Acyclic Graph (DAG) of the rules in the graph to create the workflow.
+The rules in the file are prepended by the keyword "rule" and given a unique and descriptive name. Most of them have input and output designations. The inputs and outputs help Snakemake build a Directed Acyclic Graph (DAG) of the rules to create the workflow.
 
 Wildcards are designated by curly brackets "{}" and the name of the wildcard in the input and output sections of the word. In the shell command section of the rule, the name of the wildcard must be prefixed with "wildcard.".
 
@@ -158,7 +158,7 @@ This pipeline can best be described by summarizing the rules, in the order that 
 * **rule create_test_rf_dataset**
     This rule will download the "Cars" dataset using R. From that dataset, it will make a table of response variables that includes `mpg` as numeric values and `good_mileage` as a categorical variable. The predictor and response tables are saved to the `data/unit_test` directory.
 * **rule rf_test_dataset:**
-    Reads in the response columns one at a time to the random forest. The random forest makes a PDF graphic, saved to `output/unit_test/graphics` and a table of the scikit-learn scores (r squared for `mgp` and accuracy for `good_mileage`) in `output/unit_test/tables`. 
+    Reads in the response columns one at a time to the random forest. The random forest makes a PDF graphic, saved to `output/unit_test/graphics` and a table of the scikit-learn scores (r squared for `mpg` and accuracy for `good_mileage`) in `output/unit_test/tables`. 
 * **rule aggregate_rf_tables_test_data:**
     This rule tells Snakemake to look for the later output and then aggregates all the scores into a single file. This rule makes use of the `expand()` helper function, see https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#helpers-for-defining-rules to see all the helper functions.
     In this case, `expand()` creates a list of file paths for each of the *response_cols* wildcards, see [Our wildcards](#our-wildcards) for a bit more about wildcards.
@@ -185,14 +185,14 @@ The first 14 lines instruct Snakemake to use the generic cluster executor plug-i
 * Lines 10 and 11 tell Slurm to put slurm reports in a subfolder of `slurmLogs` named after the name of the rule. The name of the log file is the name of the rule, followed by wildcards and the Slurm job number.
 * Line 14 is commented out, it would tell Slurm where to send notification emails. To use this line, remove the "#" and add your email address where the placeholder address is.
 
-To edit this document, you can open it with the Vim editor.
+To edit this document, you can open it with the Vim editor or any other editor of your choice (nano is another good option).
 
 {:.copy-code}
 ```bash
 vim workflow/config/config.yaml
 ```
 
-After you uncomment the line of code, you can exit Vim by hitting "Esc" and then typing ":wq" and hitting "enter".
+Once Vim starts, type "i" to turn on "insert" mode, which makes it easier to edit the file. After you uncomment the line of code, you can exit Vim by hitting "Esc" and then typing ":wq" and hitting "enter".
 
 The next section (lines 15-20) holds the default parameters. They are currently set for small jobs. As you add Snakemake to your own pipelines you can update these to your own requirements.
 
