@@ -4,6 +4,7 @@ type: workshop
 description: Event - Introduction to Snakemake for SCINet
 cal-titles: show
 display: basic
+end_date: 2025-06-13
 
 sessions: 
   - session:
