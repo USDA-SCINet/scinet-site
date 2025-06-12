@@ -20,6 +20,11 @@ archive-label: Webinar Recordings
 
 sessions:
   - session:
+    title: Detection of interactions between biomolecules with novel sequencing based tools
+    date: 2025-06-12
+    time: 1-2pm ET
+    presenter: Dr. Alon Goren
+  - session:
     title: Improving Production Traits in Poultry through Genome Editing
     date: 2025-05-08
     presenter: Dr. Paula Chen
