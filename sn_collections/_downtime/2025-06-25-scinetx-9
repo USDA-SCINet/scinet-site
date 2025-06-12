@@ -1,0 +1,30 @@
+---
+date: 2025-06-25 09:00:00
+tzid: 'America/New_York'
+duration: PT2H
+time: 9 - 11 am ET
+systems: SCINet-X
+locations: Multiple
+reason: Network Maintenance 
+---
+
+To maintain the performance and security of our SCINet-X circuits across ARS, we will be performing routine network maintenance at sites with SCINet-X connections.
+
+During a Location's assigned maintenance window, the café machine(s) at the Location will be intermittently disconnected from SCINet for up to an hour as the maintenance work is completed.  
+ 
+This work will not affect access to SCINet from your desktop or laptop computer.  **Only SCINet access from café machines will be interrupted.**  This work will not affect jobs running on Atlas or Ceres.  
+
+If you have any questions or concerns about this maintenance, please reach out to the SCINet team at [SCINet@usda.gov](mailtto:SCINet@usda.gov).
+
+* Miles City, MT
+* Morris, MN
+* New Orleans, LA
+* Parlier, CA
+* Poplarville, MS
+* Raleigh, NC
+* Salinas, CA
+* Schriever, LA
+* Sidney, MT
+* Stillwater, OK
+* Temple, TX
+* Wenatchee, WA
