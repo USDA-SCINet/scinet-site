@@ -70,8 +70,8 @@ The instructional video at [here](https://www.youtube.com/watch?v=BAodkpwOJuA) d
 * To start the transfer click the blue box with the arrow at the bottom of the page pointing in the direction of the destination pane.
 * You may now click ‘Activity’ at the left to see a list of current and prior transfers. Click on "File Manager" at the top left of the page to get back to the main page.
 
-### Globus Connect Personal
-To transfer files to your personal computer you may use Globus Connect Personal. A link “Install Globus Connect Personal” can be found in the Recent tab and in the "More Options" tab in the list of Collections. Click on "Collection" box to get to the list.  
+## Globus Connect Personal
+To transfer files to or from your personal computer you may use Globus Connect Personal. A link “Install Globus Connect Personal” can be found in the Recent tab and in the "More Options" tab in the list of Collections. Click on "Collection" box to get to the list.  
 
 The installation instructions for Globus Connect Personal are available here:
 * [Windows Install Instructions](https://docs.globus.org/how-to/globus-connect-personal-windows/)
@@ -79,6 +79,42 @@ The installation instructions for Globus Connect Personal are available here:
 * [Linux Install Instructions](https://docs.globus.org/how-to/globus-connect-personal-linux/)
 
 By default, Globus Connect Personal prompts to be installed in C:\Program Files which requires administrator rights. However you don't need Administrator rights to install Globus Connect Personal on your local machine. If you do not have Administrator rights browse to a place you have write access to (e.g. your Desktop folder) or contact your local IT staff for assistance.
+
+### SCINet Café Machine Installation Instructions for Globus Connect Personal 
+
+Please Note: The Café machine may be slow right after login, don’t worry if you are met with a black screen for an extended period of time.
+
+**Step One:** 
+- Log in to the machine using your SCINET username (first.last) and your LincPass/PIN.
+	- When you get to the start screen, you should see icons along the bottom for Firefox, files (cabinet), and terminal.  If you don’t see this, go to ‘activities’ in the upper left of the screen and it will toggle from the full window so you can access this dock.
+
+**Step Two:** 
+1. Run the command `globusconnect` in a terminal. 
+	- Please Note: This is a script that automates installing, setting up and running globuspersonalconnect.  If you would rather run globuspersonalconnect without the extra assistance, please feel free to do so. 
+
+	- The first time you run `globuconnect` it will download, install, and start the setup process for Globus Connect Personal.
+
+	- The setup process usually, but not always, requires you to login (this process may vary depending on how you login).
+
+1. A globus login popup window will open.  Select Log In.  Go to the main Firefox window that opens behind the popup and select Allow.  You will get a window asking you to login, select SCINET-ARS/USDA from the dropdown instead of ORCID and complete the eauth login. 
+	- If the system does not automatically open a browser window for you, you can simply copy and past the link that will appear in the terminal session into the browswer to continue the process. 
+
+1. IMPORTANT: If you haven’t used Globus before, click continue.  Otherwise, select ‘link to’ to join your existing Globus account to this one.
+
+1. When registering, type 'SCINet - ARS/USDA' as your organization and non-profit research. Select agree to terms and click continue.
+
+1. The next page will ask you to agree to setup and asks for a name for future reference. It is recommednded to keep the default (it should be the name of your SCINet café). Click allow.
+
+1. You will then see a window for ‘Collection Details’ – give it a name that will make sense to you.
+	- For example:  your-initials and scinet-café ( ABC_scinet_cafe).  A description is not necessary.  **Do not select the ‘high assurance’ button.** Click save.
+
+1. You should get a ‘setup successful’ popup with the name of your collection.  Click exit setup.
+	- If you have a collection name that is generic like ‘scinet_cafe’ you can click ‘show collection details’.  On the right of the collection details page, select ‘edit attributes’ which will allow you to edit the collection's name. If you are happy with it, click exit setup.  
+
+1. On runs after the initial setup, it will scan for USB devices and then add any that it finds to the globus config and start the server.
+	- You can use “globusconnect -help” to see this info later.
+
+1. If you need to add USB devices after starting the server just run “globusconnect -restart” to rescan devices and restart the server. 
 
 
 ## Small Data Transfer Using scp and rsync
