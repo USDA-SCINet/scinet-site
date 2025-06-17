@@ -58,7 +58,7 @@ news:
   - title: "Atlas nodes have internet access"
     date: 2022-12-07
     excerpt: "All nodes on Atlas can now access resources on the Internet, which drastically simplifies many scientific computing workflows. For example, it is now possible to update software packages or access external data resources from any node on the system."
-  - title: "New SCINet website launched."
+  - title: "New SCINet website launched"
     date: 2022-12-01
     excerpt: "The redesigned site includes a consolidated event calendar, improved user guide navigation, and a more informative landing page."
   - title: "QGIS added to Open OnDemand"

@@ -1,4 +1,4 @@
----
+-
 title: AWS Product Documentation
 description: AWS Product Documentation
 excerpt: This guide contains the documentation for AWS.
@@ -30,7 +30,7 @@ The following instructions will demonstrate how to calculate the projected month
 
 1. Navigate to [https://auth.scinet.usda.gov/](https://auth.scinet.usda.gov) and click the link for "AWS Login"  
 ![]({{ images_path }}/productdocumentation1.png)
-2. Authenticate using your SciNet credentials  
+2. Authenticate using your SCINet credentials  
 ![]({{ images_path }}/productdocumentation2.png)
 3. Ensure you have the correct region selected "US East (N. Virginia)" in the top right dropdown menu of the AWS console:  
 ![]({{ images_path }}/productdocumentation3.png)

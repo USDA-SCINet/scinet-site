@@ -2,7 +2,7 @@
 title: SCINet Home
 permalink: /
 type: future
-description: SCINet is a USDA initiative to provide agricultural scientists access to high performance computing, networking and training.
+description: SCINet is a USDA-ARS initiative providing high-performance computing, data transfer and storage, and computing support and training for agricultural research.
 
 # alerts:
 #   - alert:

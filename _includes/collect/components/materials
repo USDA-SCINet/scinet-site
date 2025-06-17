@@ -7,7 +7,9 @@
 {%- endif %}
 {% assign pagetype = page.type | capitalize %}
 {% capture materialstitle %}{{ pagetype }}  Materials{% endcapture %}
-{%- if materials.description or materials.excerpt %}
+{%- if page.materialsdesc %}
+{% assign materialsdesc = page.materialsdesc %}
+{%- elsif materials.description or materials.excerpt or page.materialsdesc %}
 {% assign materialsdesc = materials.description | default: materials.excerpt %}
 {%- else %}
 {% capture materialsdesc %}{{ pagetype }} materials and recordings available for USDA employees at the links below{% endcapture %}

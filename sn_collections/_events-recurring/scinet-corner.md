@@ -19,10 +19,30 @@ archive-label: SCINet Corner Recordings
 
 sessions:
   - session:
+    title: "Commonly used Slurm parameters and the new “ceres” partition"
+    date: 2025-05-22
+    time: 1-2 pm ET
+    excerpt: "* Understanding partitions and accounts on SCINet’s supercomputers.
+
+* Specifying the partition, account, and time limit for compute jobs.
+
+* Using the new “ceres” partition on Ceres."
+  - session:
+    title: Open Q&A
+    date: 2025-03-27
+    time: 1-2 pm ET
+    excerpt: "We invite you to submit any SCINet-related questions, challenges or concerns you'd like us to address in this SCINet Corner by [filling out this short form.](https://forms.office.com/g/kMbsQNssMH)"
+    materials:
+      - text: Session Recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EYVutR0iIFFGvFMjG_cHJHABCg_pbx7wkBMIJx-KXQ-kFg?e=HRpec2
+  - session:
     title: Data transfer using Globus
     date: 2025-02-27
     time: 1-2 pm ET
     excerpt: "Data transfer to, from, and among SCINet systems (Ceres, Atlas, and Juno) using Globus"
+    materials:
+      - text: Recorded Summary
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EaeV3x3-k9pCqNvvUVreMw8BP5WgwqyyyjZ9fBRXChudZg
   - session:
     title: "Login nodes: What they are and how to use them"
     date: 2025-01-23

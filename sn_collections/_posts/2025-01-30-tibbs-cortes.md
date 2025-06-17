@@ -9,6 +9,7 @@ featured: home
 
 author: Laura Tibbs-Cortes
 affiliation: "ORISE Postdoctoral Fellow, USDA-ARS Crop Genome Informatics Laboratory, Ames, IA"
+
 ---
 
 In maize and other crops, important traits are often complex, affected by genetics, the environment, and their interaction. In addition, different crop varieties exhibit varying degrees of phenotypic plasticity, in which a given genotype displays different phenotype values in different environments.<!--excerpt--> Identifying genes influencing traits as well as their plasticity can help plant breeders to develop successful new varieties, especially in the face of changing climate.
@@ -25,5 +26,5 @@ Results have been uploaded as a track on the genome browser at MaizeGDB, a USDA-
 
 For more details, check out our open-access publication in Genome Research at [https://www.genome.org/cgi/doi/10.1101/gr.279027.124](https://www.genome.org/cgi/doi/10.1101/gr.279027.124).
  
-![Figure 1](/assets/img/posts/2025-01-tc.jpg)
+![Figure 1](/assets/img/posts/2025-01-tc.jpg)  
 *Figure 1: Environmental indices identified for the 19 traits, shown with an example of maize development. For each trait, a line segment represents the environmental index identified by CERIS-JGRA, with color denoting the environmental variable(s) used and extent on the x axis the time window. Environmental indices show biological relevance, with a clear transition from the vegetative to the reproductive stage visible.*

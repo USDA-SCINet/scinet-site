@@ -1,0 +1,29 @@
+{% assign datas = include.data %}
+{% if datas.title %}{% assign tableid = datas.title | slugify %}
+{% else %}{% assign tableid = datas.file | slugify %}{% endif %}
+{% if datas.full_path %}
+{% assign tablepath = datas.full_path %}
+{% else %}
+{% include file_path %}
+{% assign file_path = file_path %}
+{% assign tablepath = file_path | append: datas.file %}
+{% endif %}
+{% if datas.classes %}{% assign classes = datas.classes | split: " " %}{% else assign classes = nil %}{% endif %}
+{% capture tableclass %}usa-table {% unless datas.fixed %}usa-table--stacked-header{% endunless %} width-full {% if datas.sticky and datas.fixed %}usa-table--sticky-header {% endif %}{% if classes %}{% for _class in classes %}usa-table--{{ _class }}{% if _class == 'striped' %}{% unless datas.fixed %}-flex{% endunless %}{% endif %} {% endfor %}{% endif %}{% endcapture %}
+{% if datas.sortable %}{% assign sorting = true %}{% else %}{% assign sorting = "" %}{% endif %}
+{% if datas.originalcode %}
+{% if datas.loadbutton %}
+<div id="{{ tableid }}-table" class="usa-table-container{% if datas.scroll %}--scrollable{% elsif datas.fixed %}{% else %} flex-scroll{% endif %}" tabindex="0">
+    <button data-file="{{ tablepath }}" data-sorting="{{ sorting }}" data-caption="{{ datas.title }}" data-tableclass="{{ tableclass }}" data-tableid="{{ tableid }}-table" class="fetch-table usa-button">{{ datas.load_text | default: 'Load Table' }}</button>
+</div>
+{% else %}
+<div id="{{ tableid }}-table" data-tableid="{{ tableid }}-table" data-file="{{ tablepath }}" data-sorting="{{ sorting }}" data-caption="{{ datas.title }}" data-tableclass="{{ tableclass }}" class="load-table usa-table-container{% if datas.scroll %}--scrollable{% elsif datas.fixed %}{% else %} flex-scroll{% endif %}" tabindex="0">
+</div>
+{% endif %}
+{% else %}
+<div id="{{ tableid }}-table" data-tableid="{{ tableid }}-table" data-file="{{ tablepath }}" data-sorting="{{ sorting }}" data-caption="{{ datas.title }}" class="load-table usa-table-container{% if datas.scroll %}--scrollable{% elsif datas.fixed %}{% else %} flex-scroll{% endif %}" tabindex="0">
+<table class="{{ tableclass }}">
+    {% if datas.title or datas.sortable %}<caption>{{ datas.title | default: "" }}</caption>{% endif %}
+</table>
+</div>
+{% endif %}

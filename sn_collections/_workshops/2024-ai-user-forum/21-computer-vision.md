@@ -29,6 +29,7 @@ Steps to prepare for the tutorial:
     ```bash
     srun --reservation=forum -A scinet_workshop1 -t 00:30:00 -n 1 --mem 8G --pty bash 
     ```
+    {% include reservation-alert reservation="forum" project="scinet_workshop1" %}
 
 1. **Create and/or update your workshop working directory** and copy the tutorial materials into it by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the `$USER` variable. 
 
@@ -69,6 +70,7 @@ Steps to prepare for the tutorial:
         ```
 --reservation=forum-gpu --gres=gpu:1 --mem=32G --ntasks-per-node=2
 ```
+        {% include reservation-alert reservation="forum-gpu" %}
     * Working Directory: 
         
         {: .copy-code }

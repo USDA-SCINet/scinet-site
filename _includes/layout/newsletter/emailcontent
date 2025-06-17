@@ -1,0 +1,134 @@
+{% assign emailcontent = include.mycontent %}
+{%- assign emailcontent = emailcontent | replace: '<!--excerpt-->', '' %}
+{% assign blankarray = "" | split: "" %}
+{% assign emailarray = blankarray %}
+
+{% assign uljoined = 0 %}
+{% assign licount = 0 %}
+{% assign imgct = 0 %}
+{% assign ulreleased = 0 %}
+{% assign rownum = 0 %}
+{% assign colnum = 0 %}
+{% assign narrowcol = 0 %}
+
+{%- assign emailnodes = emailcontent | split: '<' %}
+{% for _node in emailnodes %}
+{% if forloop.first %}
+{% else %}
+{% assign subnode = _node | split: '>' %}
+{% assign nodedesc = subnode[0] | split: ' ' %}
+{% assign nodename = nodedesc | first %}
+
+{% case nodename %}
+{% when 'p' %}
+    {% assign emailarray = emailarray | push: '<p align="left" style="font-family: Helvetica, sans-serif; font-size: 10.5pt; color: rgb(0, 0, 0); margin-top: 0px; margin-bottom: 8pt; line-height: 130%; -ms-word-break: break-all; word-break: break-word;">' %}
+{% when '/p' %}
+    {% if imgct == 1 %}{% assign imgct = 0 %}{% endif %}
+    {% assign emailarray = emailarray | push: '</p>' %}
+{% when 'h2' %}
+    {% assign hrefid = nodedesc | shift | first | replace: 'id="', '' | replace: '"', '' | replace: '-', '' | truncate: 20 , ''%}
+    {% capture htmlconts %}<h2 align="center" style="text-align: center; line-height: 1.1; font-weight: bold; color: rgb(0, 0, 0); font-family: helvetica; font-size: 20pt; margin: 30px 0 10px; padding:5px; border-bottom:2px solid #000000;"><a id="{{ hrefid }}" name="{{ hrefid }}" style="text-decoration: none; -ms-word-break: break-all; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none;" ></a>{% endcapture %}
+    {% assign emailarray = emailarray | push: htmlconts %}
+{% when 'h3' %}
+    {% assign hrefid = nodedesc | shift | first | replace: 'id="', '' | replace: '"', '' | replace: '-', '' | truncate: 20, '' %}
+    {% capture htmlconts %}<h3 align="left" style="text-align: left; margin: 20px 0px 8px; font-family: Helvetica, sans-serif; font-weight: bold; font-size: 16pt; color: rgb(0, 0, 0);"><a id="{{ hrefid }}" name="{{ hrefid }}" style="text-decoration: none; -ms-word-break: break-all; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none;" ></a>{% endcapture %}
+    {% assign emailarray = emailarray | push: htmlconts %}
+{% when 'h4' %}
+    {% capture htmlconts %}<h4 align="left" style="text-align: left; margin: 20px 0px 8px; font-family: Helvetica, sans-serif; font-weight: bold; font-size: 14pt; color: rgb(0, 0, 0);">{% endcapture %}
+    {% assign emailarray = emailarray | push: htmlconts %}
+{% when 'em' %}
+    {% if imgct == 1 %}
+    {% assign emailarray = emailarray | push: '<p class="nl_caption" style="width: 100%; text-align: left; font-style: italic; line-height: 130%; color: #131313; margin: 8px 0; font-family: Helvetica, sans-serif; font-size: 9pt;">' %}
+    {% else %}
+    {% assign emailarray = emailarray | push: '<em>' %}
+    {% endif %}
+{% when '/em' %}
+    {% unless imgct == 1 %}
+    {% assign emailarray = emailarray | push: '</em>' %}
+    {% endunless %}
+{% when 'a' %}
+    {% capture htmlconts %}<{{ subnode[0] | replace: 'href="/', 'href="https://scinet.usda.gov/' }} style="color: #006700; text-decoration: underline; -ms-word-break: break-all; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none;">{% endcapture %}
+    {% assign emailarray = emailarray | push: htmlconts %}
+{% when 'img' %}
+    {% assign imgct = 1 %}
+    {% if narrowcol == 1 %}
+    {% capture htmlconts %}<{{ subnode[0] | replace: 'alt=', 'width="200" align="center" class="newsletter_template_image" style="max-width: 100%; width: 200px; height: auto !important;" alt=' | replace: 'src="/', 'src="https://scinet.usda.gov/' }}>{% endcapture %}
+    {% else %}
+    {% capture htmlconts %}<{{ subnode[0] | replace: 'alt="Figure', 'width="500" align="center" class="newsletter_template_image" style="max-width: 100%; width: 500px; height: auto !important;" alt="Figure' | replace: 'src="/', 'src="https://scinet.usda.gov/' }}></p>{% endcapture %}
+    {% endif %}
+    {% assign emailarray = emailarray | push: htmlconts %}
+{% when 'ul' %}
+    {% if licount == 1 %}
+        {% assign uljoined = 1 %}
+        {% assign emailarray = emailarray | push: '</p><ul style="text-align: left;margin-top:0px;margin-bottom:0px;list-style-type:circle">' %}
+    {% else %}
+        {% assign emailarray = emailarray | push: '<ul style="text-align: left;margin-top:0px;margin-bottom:0px;list-style-type:disc">' %}
+    {% endif %}
+{% when 'li' %}
+    {% assign licount = 1 %}
+    {% assign emailarray = emailarray | push: '<li style="font-family: Helvetica, sans-serif; font-size: 10.5pt; color: rgb(0, 0, 0); margin-top: 0px; margin-bottom: 8pt;"><p style="line-height: 130%; margin-top: 0px; margin-bottom: 8pt; font-family: Helvetica, sans-serif; font-size: 10.5pt; color: rgb(0, 0, 0);">' %}
+{% when '/li' %}
+    {% assign licount = 0 %}
+    {% if ulreleased == 1 %}
+        {% assign ulreleased = 0 %}
+        {% assign emailarray = emailarray | push: '</li>' %}
+    {% else %}
+        {% assign emailarray = emailarray | push: '</p></li>' %}
+    {% endif %}
+{% when '/ul' %}
+    {% if uljoined == 1 %}
+        {% assign ulreleased = 1 %}
+        {% assign uljoined = 0 %}
+    {% endif %}
+    {% assign emailarray = emailarray | push: '</ul>' %}
+{% when 'div' %}
+    {% if subnode[0] == 'div class="grid-row"' %}
+        {% assign rownum = rownum | plus: 1 %}
+        {% assign emailarray = emailarray | push:'<table cellspacing="10"><tbody><tr>' %}
+    {% elsif subnode[0] == 'div class="grid-col-4"' %}
+        {% assign colnum = colnum | plus: 1 %}
+        {% assign narrowcol = 1 %}
+        {% assign emailarray = emailarray | push:'<td width="200" style="width: 200px; height: auto;">' %}
+    {% elsif subnode[0] == 'div class="grid-col"' %}
+        {% assign colnum = colnum | plus: 1 %}
+        {% assign emailarray = emailarray | push:'<td>' %}
+    {% else %}
+    <p><b>ALARM</b></p>
+    {% endif %}
+{% when '/div' %}
+    {% if colnum == rownum %}
+    {% assign narrowcol = 0 %}
+    {% assign emailarray = emailarray | push: '</td>' %}
+    {% assign colnum = colnum | minus: 1 %}
+    {% elsif rownum > colnum %}
+    {% assign rownum = rownum | minus: 1 %}
+    {% assign emailarray = emailarray | push: '</tr></tbody></table>' %}
+    {% else %}
+    <p><b>ALARM</b></p>
+    {% endif %}
+{% when 'ol' %}
+    {% if licount == 1 %}
+    {% assign uljoined = 1 %}
+        {% assign emailarray = emailarray | push: '</p><ol style="text-align: left;margin-top:0px;margin-bottom:0px;">' %}
+    {% else %}
+        {% assign emailarray = emailarray | push: '<ol style="text-align: left;margin-top:0px;margin-bottom:0px;">' %}
+    {% endif %}
+{% when '/ol' %}
+    {% if uljoined == 1 %}
+    {% assign ulreleased = 1 %}
+    {% assign uljoined = 0 %}
+    {% endif %}
+    {% assign emailarray = emailarray | push: '</ol>' %}
+{% when 'br' %}
+    {% unless imgct == 1 %}
+        {% assign emailarray = emailarray | push: '<br>' %}
+    {% endunless %}
+{% else %}
+    {% capture thistag %}<{{ nodename }}>{% endcapture %}
+    {% assign emailarray = emailarray | push: thistag %}
+{% endcase %}
+{% if subnode[1] %}{% assign emailarray = emailarray | push: subnode[1] %}{% endif %}
+{% endif %}
+{% endfor %}
+
+{% assign emailcontent = emailarray | join: "" %}

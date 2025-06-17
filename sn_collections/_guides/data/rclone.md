@@ -1,7 +1,6 @@
 ---
 title: "Rclone: Moving Data To and From Cloud Resources"
 description: Using rclone
-# author: Jordan Hoosman
 
 categories: [Data]
 order_number: 70
@@ -15,7 +14,7 @@ subnav:
     url: '#macos-installation-'
   - title: Configuration of rclone on windows or osX
     url: '#configuration-of-rclone-on-windows-or-osx'
-  - title: rclone configuration on SciNet
+  - title: rclone configuration on SCINet
     url: '#rclone-configuration-on-scinet'
   - title: Test
     url: '#test'
@@ -30,107 +29,74 @@ published: false
 {% include images_path %}
 
 
+Rclone is already installed on all SCINet data transfer and compute nodes. Please do not use the `rclone` command from the login node. Attempting to do so will remind you to use the others.<br>
+To learn more about `rclone`, see [https://rclone.org](https://rclone.org).<!--excerpt-->
+
+## Setting up rclone 
+Before transferring files to or from cloud resources, rclone must first be configured to access cloud storage resources, e.g., an USDA-ARS Box account or AWS S3 buckets.
+
+**Please note:** Although rclone supports data transfer to and from Microsoft OneDrive accounts, rclone is not currently authorized to access USDA OneDrive accounts, so rclone cannot facilitate data transfers directly between your OneDrive account and SCINet systems. 
 
 
+### Configuring `rclone` on SCINet to access remote file storage
 
-Rclone is already installed on the DTNS and all of the compute nodes. Please do not use rclone from the headnode. Attempting to do so will remind you to use the others.<br>
-The rclone home page is [https://rclone.org](https://rclone.org).<!--excerpt-->
+Here, we illustrate setting up access to Box; the process for configuring access to other cloud resources is similar.
 
-### Getting Ready
-In order to use Rclone on Ceres its necessary to have it installed on your local machine as well.  This is needed to generate an authentication token.<br>
+You will need to be able to log on to Ceres using SSH from your local computer. Please see [https://scinet.usda.gov/guides/access/ssh-login](https://scinet.usda.gov/guides/access/ssh-login) if you need help setting that up.
 
-### rclone installation on Windows
+1. Open Windows PowerShell or macOS Terminal.
+2. Run (replace "user.name" with your SCINet username)
 
-Go to the web page at [https://rclone.org/downloads/](https://rclone.org/downloads/) and find the Windows installer. Download it and install rclone. Once installed, proceed to the configuration section below.
+   {:.copy-code}
+   ```bash
+   ssh -L localhost:53682:localhost:53682 user.name@ceres.scinet.usda.gov
+   ```
+2. This will open a new terminal session on Ceres. In the Ceres terminal, run
 
-### macOS installation 
+   {:.copy-code}
+   ```bash
+   rclone config
+   ```
 
-Download the latest version of rclone.
+3. Type `n` for "n) New remote".
+4. Enter any name you like for the new Box connection; e.g. "usdabox".
+5. For "Storage>" you can enter the appropriate number, but it is easier to just type `box`.
+6. For "client_id>", "client_secret>", "box_config_file>", and "access_token>", leave blank, just hit enter.
+7. For "box_sub_type>" enter `2` for "enterprise".
+8. For "Edit advanced config?" enter `n`.
+9. For "Use auto config?" enter `y`.
+10. Copy the URL that starts with `http://127.0.0.1:53682/auth?state=`, paste it into your web browser, and hit enter.
+11. When the web page loads, click on "Use Single Sign On (SSO)".
+12. Enter your USDA email address and click "Authorize".
+13. Login with eAuthentication, if prompted.
+14. Click on the "Grant access to Box" button.
+15. Return to the Ceres terminal session. Type `y` for "y) Yes this is OK".
+11. Type `q` to quit.
 
-```bash
-cd && curl -O https://downloads.rclone.org/rclone-current-osx-amd64.zip
-```
-
-Unzip the download and cd to the extracted folder.
-
-```bash
-unzip -a rclone-current-osx-amd64.zip && cd rclone-*-osx-amd64
-```
-
-Move rclone to your $PATH. You will be prompted for your password.
-
-```bash
-sudo mkdir -p /usr/local/bin
-sudo mv rclone /usr/local/bin/
-```
-
-(the mkdir command is safe to run, even if the directory already exists)
-Remove the leftover files.
-
-```bash
-cd .. && rm -rf rclone-*-osx-amd64 rclone-current-osx-amd64.zip
-```
-
-### Configuration of rclone on windows or osX
+You are now ready to access your Box files using `rclone` from Ceres!
 
 
-1. Open a Windows command prompt (cmd) or macOS Terminal
-2. Type
-```bash
-rclone authorize "box"
-```
-3. On the web page that shows up, click on **Use Single Sign On (SSO)**
-4. Enter your USDA email address
-5. Do the eAuthentication thing
-6. Click on the **Grant access to Box** button
-7. Go back to the command prompt window, an authentication token should be there. Copy this including the braces {“access_token”:“ABCDEF...}
+### Use rclone to access and copy files
 
-### rclone configuration on SciNet
+`rclone` supports many commands for browsing and copying files on a remote resource. For complete details, please see [https://rclone.org/docs/#subcommands](https://rclone.org/docs/#subcommands). Or, you can run `man rclone` for help. Here, we cover some key commands that will let you copy files from a remote location to Ceres.
 
-1. Type
-```bash
-rclone config
-```
-2. Type **n** for **n) New remote**
-3. For **<name>** enter any name <i>e.g.</i> **usdabox**
-4. For **Storage>** you can find the number, but it is easier to just type **box**
-5. For **client_id>**, **client_secret>**, **box_config_file**, and **access_token** leave blank, just hit enter
-6. For **box_sub_type>** enter **enterprise**
-7. For **Edit advanced config** enter **n**
-8. For **Remote config, Use auto config?** enter **n**
-9. For **result** Paste the text from the last step of the above rclone guide section "Configuration of rclone on windows and osX" and hit enter
-10. Type **y** for **y) Yes this is OK**
-11. Type **q** to quit
+1. First, you can use rclone to list the files and folders that are available on your remote location (replace "usdabox" with whatever you named your remote connection).
 
-**Please Note:** If your authentication token is expired, you will need to get a new one. This can be done using the same steps you used (above) to acquire the previous token. 
+   {:.copy-code}
+   ```bash
+   rclone lsf usdabox:
+   ```
 
+2. You can use `rclone` to copy files from the remote location to Ceres. For example:
 
-### Test
+   {:.copy-code}
+   ```bash
+   rclone copy usdabox:/scinetbackup/bogus_genome /project/bogus_genome --verbose
+   ```
 
-1. Test directory listing using the **name>** you selected earlier:
-```bash
-rclone lsd usdabox:
-```
-2. Test file listing
-```bash
-rclone lsl usdabox: | head
-```
+## Advanced commands
 
-### Commands
-
-1. For description of commands available see [https://rclone.org/docs/#subcommands](https://rclone.org/docs/#subcommands)
-2. You installed the rclone manual page earlier, so you can also do
-```bash
-man rclone
-```
-3. Acommon case might be to backup your SciNet project directory to box. You could do this with:
-```bash
-rclone copy /project/bogus_genome usdabox:/scinetbackup/bogus_genome --verbose
-```
-
-### Advanced commands
-
-This advanced guide assumes you have read the previous page and have some familiarity with rclone already.
+This advanced guide assumes you have read the previous section and have some familiarity with `rclone` already.
 
 Rclone supports "overlay" filesystems which can be then be overlayed in multiple layers. 
 
@@ -138,13 +104,12 @@ In this guide we will discuss the "crypt" and "chunk" overlays.  Using these 2 i
 
 The process here is:
 
-
 *  Create a basic store
 *  Apply a crypt overlay.  This gets you encryption and works around filename limitations.
 *  Apply a chunk overlay.  This gets around file size limitations.
 
 
-We are going to assume you have  already created a basic functional remote, In this case mine is called "google:"
+The following instructions assume you have already created a basic functional remote called "google:".
 
 First we create a folder in the remote to hold our encrypted data.  I called mine "crypt"
 
@@ -152,9 +117,9 @@ First we create a folder in the remote to hold our encrypted data.  I called min
 $ rclone mkdir google:crypt
 ```
 
-Next run rclone config choosing crypt as the remote type and then use the name of your new folder as the path.  You will want to encrypt the directory names to avoid character limitation issues in the path. 
+Next run `rclone config` choosing crypt as the remote type and then use the name of your new folder as the path.  You will want to encrypt the directory names to avoid character limitation issues in the path. 
 
-You must remember the password(s) you chose here. Your data will not be recoverable by anyone if your forget or lose it. There is no "password recovery."
+You must remember the password(s) you choose here. Your data will not be recoverable by anyone if your forget or lose it. There is no "password recovery."
 
 ```bash
 $ rclone config
@@ -336,7 +301,7 @@ $
 
 
 At this point you have a working encryption overlay.  You will want to add a "chunking" overlay on top on that.
-As before first create a folder in the encrypted overlay to hold your chunked overlay.  In this case I called mine "chunk"
+As before, first create a folder in the encrypted overlay to hold your chunked overlay.  In this case I called mine "chunk"
 
 ```bash
 $ rclone mkdir googlecrypt:chunk 
@@ -511,3 +476,4 @@ $ rclone ls googlechunk:
 
 
 You now have an encrypted chunked storage remote, that is fully md5 checksummed. 
+

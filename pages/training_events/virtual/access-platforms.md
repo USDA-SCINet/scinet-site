@@ -10,8 +10,8 @@ sidenav_append:
     url: /training/access
 
 subnav:
-  - title: AgLearn and LinkedIn Learning
-    url: '#aglearn-and-linkedin-learning'
+  - title: AgLearn
+    url: '#aglearn'
   - title: Coursera and EdX
     url: '#coursera-and-edx'
 
@@ -22,19 +22,19 @@ There are a variety of free training resources available.  Here are instructions
 
 We also have [a curated list of availale free trainings]({{ site.baseurl }}/training/free-online-training).
 
-## AgLearn and LinkedIn Learning
+## AgLearn
 
-AgLearn hosts multiple free learning courses and learning platforms including LinkedIn Learning and Skillsoft Percipio. 
+AgLearn hosts multiple free learning courses and learning platforms including Skillsoft/Percipio. 
 
-SCINet has created a number of collections and learning paths in LinkedIn Learning. Login to LinkedIn Learning and and search the keyword SCINet for all curated collections. 
+All federal USDA permanent and term employees should be able to access the courses listed on this free online training page by logging into AgLearn. 
 
-All federal USDA permanent and term employees should be able to access the courses listed on this free online training page by logging into LinkedIn Learning via AgLearn then following the posted links. 
-
-Non-federal USDA employees may access AgLearn/LinkedIn Learning using the following steps:
+{% comment %}
+Non-federal USDA employees may access AgLearn using the following steps:
 1.  Go to aglearn.usda.gov but DO NOT LOG IN
 2.  On the "Welcome to AgLearn" page, click on LinkedIn Learning
 3.  Follow the instructions to "access your LinkedIn Learning account directly" by following the link and logging in with your eAuthentication credentials. (Do not log in to AgLearn)
 4.  Find any of the AgLearn/LinkedIn trainings listed on this page by typing the title of the course in the LinkedIn Learning search bar.
+{% endcomment %}
 
 Non-federal USDA employees (contractors) may be granted access to other AgLearn courses (i.e. Percipio/Softskills) on a case-by-case basis, but this is not guaranteed due to licensing restrictions. Please have your supervisor contact your Agency [AgLearn Point of Contact](https://usda.custhelp.com/app/answers/detail/a_id/1705/) and provide a justification stating how a particular training will help the researcher carry out the mission of the agency.
 

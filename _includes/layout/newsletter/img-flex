@@ -1,0 +1,3 @@
+{% capture flexclass %}{% if include.after %}news-flex-after{% else %}news-flex-before{% endif %}{% endcapture %}
+<img class="{{ flexclass }}" src="{{ include.src }}" alt="{{ include.alt }}" width="{{ include.width | default: 73}}" height="{{ include.height | default: 'auto' }}">
+{{ include.content | markdownify }}

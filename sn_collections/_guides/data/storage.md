@@ -28,7 +28,7 @@ subnav:
 {% include images_path %}
 
 
-This guide provides detailed information about the storage options provided by SCINet and how to use them.
+This guide provides detailed information about the storage options provided by SCINet and how to use them. <!--excerpt-->
 
 ## Cluster storage
 
@@ -85,5 +85,3 @@ Project directories are not meant to be used as a data archive. Data that cannot
 ## Improving storage management 
 
 Many software applications are available on the clusters as [modules]({{ site.baseurl }}/guides/software/modules), however sometimes users need to install software by themselves. Since home directories have a small quota, it is recommended to install software, such as Python, Perl, R packages, and conda virtual environments in `/project/<project_name>`. The [Conda Guide](/guides/software/conda#example-2-installing-tensorflow-into-a-project-directory) provides instructions on how to install conda virtual environments in `/project`, while [Guide to Installing R, Python, and Perl Packages](/guides/software/r-perl-python) has examples of installing packages in a project directory.
-
-Storage quotas are based off file group ownership/association. By default, files in a home directory are associated with the user’s primary group that has the same name as the user name, while files in a project directory are associated with the project group (proj-). Sometimes when users move files from one directory to another or rsync files using "`-a`" or "`-g`" and "`-p`" options, files in the new location will retain the group from the old location and the setgid bit will not be set. (The setgid bit needs to be set so that new files and directories created in the directory in /project would be associated with the project group.) To avoid this, use "`cp`" and "`rm`" instead of "`mv`" to move data between home and project directories, and use "`-rltoD`" rsync options instead of "`-a`" or explicitly specify "`--no-p --no-g`" options.  
