@@ -20,6 +20,14 @@ archive-label: Webinar Recordings
 
 sessions:
   - session:
+    title: Detection of interactions between biomolecules with novel sequencing based tools
+    date: 2025-06-12
+    time: 1-2pm ET
+    presenter: Dr. Alon Goren
+    materials:
+      - text: webinar recording
+        url: https://usdagcc-my.sharepoint.com/:v:/r/personal/george_liu_usda_gov/Documents/publication/Hu%20Zhenbin/TOmics%20WG/20250612Recording/GMT20250612-170142_Recording_2560x1440.mp4?csf=1&web=1
+  - session:
     title: Improving Production Traits in Poultry through Genome Editing
     date: 2025-05-08
     presenter: Dr. Paula Chen
