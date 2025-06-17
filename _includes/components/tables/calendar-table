@@ -1,0 +1,17 @@
+{% assign datas = include.data %}
+{%- if datas.cal-email %}<table width="600" style="border:1px solid #333" border="1">
+{%- else %}<div class="usa-table-container"><table class="usa-table width-full">{%- if datas.caption %}
+<caption>
+{{ datas.caption }}
+</caption>
+{%- endif %}{%- endif %}
+<thead><tr>{%- for _sections in datas.tabledata %}
+<th>{{ _sections.title }}</th>{% if forloop.first %}{% assign reflength=_sections.content %}{% elsif _sections.content.size > reflength.size %}{% assign reflength=_sections.content %}{% endif %}{%- endfor %}
+</tr></thead>
+<tbody>
+{%- for _loops in reflength %}{% if forloop.first %}{%- assign lcount = 0 %}{%- endif %}<tr>
+{%- for _sections in datas.tabledata %}<td>{{ _sections.content[lcount] }}
+</td>{%- endfor %}{% assign lcount = lcount | plus: 1 %}
+</tr>{%- endfor %}
+</tbody>
+</table>{%- unless datas.cal-email %}</div>{%- endunless %}

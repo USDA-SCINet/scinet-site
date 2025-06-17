@@ -91,7 +91,8 @@ DTEND{{ tzid }}:{{ post.end_date | date: "%Y%m%dT%H%M00" }}{{ endtzid }}{% else 
 DTEND:{{ post.date | date: "%Y%m%d" }}{% endif %}{% if post.rrule %}
 RRULE:{{post.rrule}}{% endif %}
 SUMMARY:{% include collect/feed.html content=fulltitle %}
-DESCRIPTION:{%- capture mydescription -%}<p>{% if post.cal-text %}{{post.cal-text}}{% elsif post.excerpt %}{{ post.excerpt }}{% else %}{{ post.text }}{% endif %}</p>
+DESCRIPTION:{%- capture mydescription -%}<p>{% if post.cal-text %}{{ post.cal-text }}{% elsif post.excerpt %}{{ post.excerpt }}{% else %}{{ post.text }}{% endif %}</p>{%- if post.caltable %}
+{% include table type="calendar" tabledata=post.caltable cal-email=true %}{%- endif %}
 <ul>{% if post.time %}
 <li><b>Outage time:</b> {{ post.time }}</li>{% endif %}{% if post.systems %}
 <li><b>Affected Systems:</b> {{ post.systems }}</li>{% endif %}{% if post.locations %}
