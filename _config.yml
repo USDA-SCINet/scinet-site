@@ -15,7 +15,7 @@ github:
 
 
 baseurl: ""
-url: "https://scinet.usda.gov"
+url: "https://moerichert=usda.github.io/scinet-site"
 
 # Configure a separator for post excerpts
 excerpt_separator: <!--excerpt-->
@@ -30,8 +30,8 @@ site_width: 90%
 google_analytics_ua: UA-27627304-1
 
 # Configuration for DAP, add your agency ID here:
-dap_agency: USDA
-dap_subagency: ARS
+# dap_agency: USDA
+# dap_subagency: ARS
 
 # Uncomment to enable AnchorJS functionality on docs layout.
 # See https://github.com/bryanbraun/anchorjs for more information.
