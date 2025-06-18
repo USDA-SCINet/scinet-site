@@ -3,7 +3,7 @@
     {% capture optionurl %}{% if _option.internal or intlinks %}{{ _option.url | relative_url }}{% else %}{{
     _option.url }}{% endif %}{% endcapture %}
     {% assign testurl = optionurl | slice: 0 %}
-    {% unless testurl=="#" %}
+    {% unless testurl=="#" %}{%- assign optionurl = optionurl | remove: "/index" %}
     {% assign ariacontrol = _option.title | slugify %}
     <div class="usa-accordion__heading">
       <button
