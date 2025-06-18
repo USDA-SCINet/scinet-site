@@ -69,10 +69,10 @@ Step 3: Connecting to CLC Server:
 1.	File -> Connections -> CLC Server Connection
 2.	Server Name and Port
 	
-```
-Server name: galaxy.scinet.usda.gov
-Server port: 60000
-```
+	```
+	Server name: galaxy.scinet.usda.gov
+	Server port: 60000
+	```
 
 3.	Username and Password
 
