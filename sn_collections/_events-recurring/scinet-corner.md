@@ -19,6 +19,19 @@ archive-label: SCINet Corner Recordings
 
 sessions:
   - session:
+    title: Filesystem permissions
+    date: 2025-06-26
+    time: 1-2 pm ET
+    excerpt: "* Understanding permission classes: user, group, world/others.
+
+* Viewing and interpreting file permissions on the command line.
+
+* Exploring default permissions for new files.
+
+* Using *chmod* to modify and set file permissions. 
+
+* Setting file permissions for different project management scenarios."
+  - session:
     title: "Commonly used Slurm parameters and the new “ceres” partition"
     date: 2025-05-22
     time: 1-2 pm ET
