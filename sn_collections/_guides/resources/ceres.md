@@ -46,42 +46,30 @@ hardware-table:
   relabel: true
   caption: Detailed Hardware Specifications
   data:
-    - Number of Nodes: 100
-      Processors per Node: Two 18-core Intel Xeon 6240
-      Logical Cores per Node: 72
-      Memory per Node: 381 GB DDR3 ECC
-      Local Storage: 1.5 TB SSD
-      Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES19
     - Number of Nodes: 76
       Processors per Node: Two 24-core Intel Xeon 6240R
       Logical Cores per Node: 96
-      Memory per Node: 381 GB DDR3 ECC
+      Memory per Node: 384 GB DDR3 ECC
+      Local Storage: 1.5 TB SSD
+      Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES20
+    - Number of Nodes: 11
+      Processors per Node: Two 24-core Intel Xeon 6248R
+      Logical Cores per Node: 96
+      Memory per Node: 1,536 GB DDR3 ECC
       Local Storage: 1.5 TB SSD
       Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES20
     - Number of Nodes: 20
       Processors per Node: One 128-core AMD Epyc 9754
       Logical Cores per Node: 256
-      Memory per Node: 2,305 GB DDR5 ECC
-      Local Storage: 2.9 TB SSD
+      Memory per Node: 2,304 GB DDR5 ECC
+      Local Storage: 3TB SSD
       Constraint Flags: AVX, AVX2, AVX512, AMD, EPYC9754, BERGAMO, CERES24  
-    - Number of Nodes: 11
-      Processors per Node: Two 24-core Intel Xeon 6248R
-      Logical Cores per Node: 96
-      Memory per Node: 1,546 GB DDR3 ECC
-      Local Storage: 1.5 TB SSD
-      Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES20
-    - Number of Nodes: 6  
-      Processors per Node: Two 20-core Intel Xeon 6248
-      Logical Cores per Node: 80
-      Memory per Node: 1,546 GB DDR3 ECC
-      Local Storage: 1.5 TB SSD
-      Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES19
-    - Number of Nodes: 2  
-      Processors per Node: Two 20-core Intel Xeon 6248
-      Logical Cores per Node: 80
-      Memory per Node: 772 GB DDR3 ECC
-      Local Storage: 1.5 TB SSD
-      Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES19
+    - Number of Nodes: 50  
+      Processors per Node: One 128-core AMD Epyc 9745
+      Logical Cores per Node: 256
+      Memory per Node: 2,304 GB DDR5 ECC
+      Local Storage: 3TB SSD
+      Constraint Flags: AVX, AVX2, AVX512, AMD, EPYC9745, TURIN, CERES25
 
 software-table:
     local: software-data
@@ -143,13 +131,11 @@ For details on how to request a node with specific hardware, see the [SLURM Reso
 
 In addition there is a specialized data transfer node and several service nodes.
 
-In aggregate, there are more than 10,500 compute cores (21,000 logical cores) with 138 terabytes (TB) of total RAM, 350 TB of total local storage, and 5.5 petabyte (PB) of shared storage.
-
-Shared storage consists of 5.5 PB high-performance BeeGFS space and 300TB of backed-up ZFS space.
+In aggregate, there are over 13,000 compute cores (26,000 logical cores) with 202 terabytes (TB) of total RAM, 340 TB of total local storage, and 5.4 petabyte (PB) of VAST storage.
 
 
 ## System Configuration
-Since most HPC compute nodes are dedicated to running HPC cluster jobs, direct access to the nodes is discouraged. The established HPC best practice is to provide login nodes. Users access a login node to submit jobs to the cluster’s resource manager (SLURM), and access other cluster console functions. All nodes run on Linux CentOS 7.8.
+Since most HPC compute nodes are dedicated to running HPC cluster jobs, direct access to the nodes is discouraged. The established HPC best practice is to provide login nodes. Users access a login node to submit jobs to the cluster’s resource manager (SLURM), and access other cluster console functions. All nodes run on RedHat Enterprise Linux.
 
 {% include table.html local='software-table' %}
 
