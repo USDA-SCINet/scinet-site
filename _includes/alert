@@ -1,2 +1,1 @@
-{% include collect/process/hashed title=include.title text=include.text url=include.url type=include.type %}
 {% include components/alert.html alert=include %}
