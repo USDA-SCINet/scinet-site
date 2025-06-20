@@ -39,10 +39,25 @@ subnav:
 
 ---
 
-Globus Online is the recommended method for transferring data to, from, or among Ceres, Atlas, and Juno. It provides faster data transfer speeds compared to `scp`, has a graphical interface, and does not require authentication for every file transfer.  
+{% include images_path %}
 
-Given the space and access limitations of a home directory, large amounts of data or data that will be used collaboratively should be transferred to a project directory. See the User Guide section on [SCINet Storage](/guides/data/storage) for more information on home and project directory quotas.  
+Globus is the recommended method for transferring data to, from, or among Ceres, Atlas, and Juno. It provides faster data transfer speeds compared to `scp`, has a graphical interface, and does not require authentication for every file transfer.  
 
+Figure 1 below depicts a recommended workflow for managing data across SCINet storage locations. See the User Guide section on [SCINet Storage](/guides/data/storage) for more information on available storage locations and their intended use.
+
+![Figure 1]({{ images_path }}/data_management_sop-fig_1.png)
+*Figure 1. Recommended procedures for managing data on SCINet HPC infrastructure using Globus.*
+
+1. Move data to Juno
+1. Copy data to target HPC (Ceres or Atlas)
+1. Run compute tasks
+1. Copy Results to Juno
+1. Copy results to local machine, if desired
+{: class="usa-sr-only"}
+{: aria-describedby="source"}
+{: title="Diagram of Recommended Data Management Workflow - Screen Reader Text" } 
+
+To help identify the file transfer method and documentation to use, determine the scenario below that best matches your use case: 
 1. For most data transfer needs, we recommend that you use [Globus](/guides/data/transfer/globus).  
     1. If you would like to transfer data from your local machine, see [Data Transfer from Local Machine](/guides/data/transfer/local).
     1. If you are at a SCINet-X location, see [Transferring data via Café Machine](/guides/data/transfer/cafe).
