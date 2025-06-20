@@ -20,7 +20,7 @@ let resourcesPath = `./assets/uswds`;
 uswds.paths.dist.img = `${resourcesPath}/img`;
 uswds.paths.dist.fonts = `${resourcesPath}/fonts`;
 uswds.paths.dist.js = `${resourcesPath}/js`;
-uswds.paths.dist.css = `_sass`;
+uswds.paths.dist.css = `./assets/css`;
 uswds.paths.dist.sass = `${mainPath}/sass`;
 uswds.paths.dist.theme = `${mainPath}`;
 

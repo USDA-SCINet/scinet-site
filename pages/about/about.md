@@ -6,6 +6,8 @@ layout: page
 breadcrumb_title: About
 ---
 
+[No account? Signup here.]({{ site.baseurl }}/about/signup){: .usa-button .usa-button-big }
+
 The SCINet initiative is an effort by the USDA Agricultural Research Service to improve the USDA’s research capacity by providing scientists with access to high-performance computing (HPC) clusters, high-speed networking for data transfer, and training in scientific computing.
 
 SCINet supports a growing community of over 2,000 USDA research scientists and university partners to accelerate agricultural discovery through advanced computational infrastructure and scientific computing. 
@@ -33,9 +35,9 @@ To get started using SCINet, [sign up for an account](/about/signup) and visit o
 <ul>
   <li>2 High-Performance Computing Clusters
     <ul>
-      <li>320 Standard Compute Nodes</li>
-      <li>41 High-Memory Compute Nodes</li>
-      <li>9 GPU Nodes (more on the way)</li>
+      <li>304 Standard Compute Nodes</li>
+      <li>89 High-Memory Compute Nodes</li>
+      <li>21 GPU Nodes</li>
     </ul>
   </li>
 </ul>
