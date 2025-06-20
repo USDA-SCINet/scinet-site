@@ -3,7 +3,7 @@ title: Data and Storage
 description: Suggested best practices for managing data on SCINet infrastructure
 #author: Brian Stucky et al.
 
-categories: [Data]
+categories: [Storage]
 
 subnav:
   - title: Definitions

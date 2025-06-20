@@ -2,7 +2,7 @@
 title: "Rclone: Moving Data To and From Cloud Resources"
 description: Using rclone
 
-categories: [Data]
+categories: [Storage]
 order_number: 70
 
 subnav:
