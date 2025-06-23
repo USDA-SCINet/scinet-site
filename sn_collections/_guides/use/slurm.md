@@ -36,7 +36,7 @@ Interactive mode should only be used when interaction is required, for example w
 
 ## Slurm Accounts
 
- All users have been assigned Slurm accounts based on their project groups. If you don't have a project, then your default and only Slurm account is sandbox. You have to specify a Slurm account when submitting a job by using “-A <account_name>” option on salloc/srun/sbatch command or adding “#SBATCH -A <account_name>” to the job script.
+ All users have been assigned Slurm accounts based on their project groups. If you don't have a project, then your Slurm account is sandbox. You have to specify a Slurm account when submitting a job by using “-A <account_name>” option on salloc/srun/sbatch command or adding “#SBATCH -A <account_name>” to the job script.
   
 To see all your Slurm accounts and your default account at any time, use “sacctmgr -Pns show user format=account,defaultaccount”
   
@@ -125,7 +125,7 @@ Slurm permits you to restrict your jobs to only run on nodes with specific hardw
 
 If you have a software package that requires using constraints, you can specify the requirement with interactive jobs by adding the `-C constraint` option to your `salloc` or `srun` command.  For example:
 ```bash
-salloc -n 1 -n 4 -t 60 -C INTEL
+salloc -n 1 -n 4 -t 60 -C INTEL -A slurm_account_name 
 ```
 launches an interactive sessions for 60 minutes on a single node with an Intel processor with access to four CPU cores.  The same limitation to only run on Intel processors can be achieved in an sbatch script by adding the line:
 ```bash
@@ -299,7 +299,7 @@ A python script that runs every 30 minutes and requests 1 node with 4 cores and 
 Runs every hour with a timelimit of 1 minute.
 ```
 DIR=/home/user1
-#SCRON -p high
+#SCRON -p ceres
 #SCRON -A sub1
 #SCRON -t 1:00
 @hourly $DIR/date.printer.job
