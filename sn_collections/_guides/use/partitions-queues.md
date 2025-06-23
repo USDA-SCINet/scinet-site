@@ -22,9 +22,9 @@ subnav:
 
 
 
-Compute jobs are run on functional groups of nodes called partitions or queues. Each partition has different capabilities (e.g. regular memory versus high memory nodes) and resource restrictions (e.g. time limits on jobs). Nodes may appear in several partitions.<!--excerpt--> 
+Compute jobs are run on functional groups of nodes called partitions or queues. Partitions can have different capabilities (e.g. regular memory versus high memory nodes) and resource restrictions (e.g. time limits on jobs). Nodes may appear in several partitions.<!--excerpt--> 
 
-Some of the Ceres compute nodes have been purchased by individual researchers or research groups. These nodes are available to the owners in the partitions named "priority\*" but can also be used by anyone on the cluster through the "scavenher" partition. The "scavenger" partition increases usage of the priority nodes while still allowing node owners to have guaranteed fast access to priority nodes. The "scavenger" partition has a 3-week time limit, but jobs in this partition will be killed when resources are requested for the jobs in the "priority\*" partitions. Since jobs in the "scavenger" partition can be killed at any moment, running in this partition does not affect job priorities in the "ceres" partition.
+Some of the Ceres compute nodes have been purchased by individual researchers or research groups. These nodes are available to the owners in the partitions named "priority\*" but can also be used by anyone on the cluster through the "scavenger" partition. The "scavenger" partition increases usage of the priority nodes while still allowing node owners to have guaranteed fast access to priority nodes. The "scavenger" partition has a 3-week time limit, but jobs in this partition will be killed when resources are requested for the jobs in the "priority\*" partitions. Since jobs in the "scavenger" partition can be killed at any moment, running in this partition does not affect job priorities in the "ceres" partition.
 
 ## The "ceres" partition
 
@@ -41,7 +41,7 @@ The maximum time limit depends on the QOS used to submit a job. The default QOS 
 
 Name | Nodes | Logical Cores per Node | Maximum Simulation Time | Default Memory per Core | Function
 --- | --- |--- |--- |--- |---
-scavenger | 87 | 72,80 | 21 days | 3000 MB | priority nodes; scavenger jobs can be killed at any moment
+scavenger | 51 | 96 | 21 days | 3000 MB | priority nodes; scavenger jobs can be killed at any moment
 
 ## Priority partitions available only to those users who purchased nodes
 
