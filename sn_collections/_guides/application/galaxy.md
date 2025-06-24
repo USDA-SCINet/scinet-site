@@ -70,7 +70,7 @@ You will import files into Galaxy by clicking on the "Tools" sub-heading "Get Da
 
 ![screen shot of galaxy tool to download or upload data]({{ images_path }}/galaxy/galaxy-logging-on-3_1280.jpg)
 
-Galaxy offers a method to import data directly from your computer as "Choose local file" button. Feel free to experiment with this direct method, but we find it can be slower and fickler than FTP transfer. To that end, we will mainly focus on uploading files using a file transfer program, such as Globus or Filezilla. If you click on "Choose FTP file", Galaxy will look in your FTP upload folder on Ceres (/galaxy/upload/ceres_email_ID) for files you have uploaded, so you must first upload your data to that folder.
+Galaxy offers a method to import data directly from your computer as "Choose local file" button. Feel free to experiment with this direct method, but we find it can be slower than FTP transfer. To that end, we will mainly focus on uploading files using a file transfer program, such as Globus. If you click on "Choose FTP file", Galaxy will look in your FTP upload folder in your home directory on Ceres `~/galaxy` for files you have uploaded, so you must first upload your data to that folder.
 
 ## Galaxy KeyCloak Instructions
 
