@@ -24,21 +24,32 @@ Some of the Ceres compute nodes have been purchased by individual researchers or
 
 ## The "ceres" partition
 
-During the February 2025 maintenance, a new partition, named "ceres", was added to the cluster. This new partition includes all community nodes, and the change has several important benefits: 
+During the February 2025 maintenance, a new partition, named "ceres", was added to the cluster. This new partition includes all community nodes and replaces the previous multitude of community partitions ("short", "medium", "long", "long60", etc.). This change has several important benefits: 
 
 * Placing Ceres nodes into fewer partitions results in shorter wait times and better cluster utilization. 
-* Ceres is easier and less confusing to use. 
+* A simpler partition scheme makes Ceres easier and less confusing to use. 
 * The new "ceres" partition is analogous to the "atlas" partition on Atlas and makes the user experience on both systems more similar. 
 
-The new "ceres" partition has a maximum job time of 3 weeks and a default job time of 2 hours. The shorter default time will help avoid very long wait times in the queue due to accidentally submitting jobs requesting the partition's maximum job time (which was the default on Ceres' legacy partitions). This new default behavior on the "ceres" partition will ultimately improve the user experience on Ceres. However, it also means that if the work you do on Ceres requires more than 2 hours, you will need to explicitly request more time.
+The "ceres" partition has a maximum job time of 3 weeks and a default job time of 2 hours. The shorter default time will help avoid very long wait times in the queue due to accidentally submitting jobs requesting the partition's maximum job time (which was the default on Ceres' legacy partitions). This new default behavior on the "ceres" partition will ultimately improve the user experience on Ceres. However, it also means that if the work you do on Ceres requires more than 2 hours, you will need to explicitly request more time.
 
-To specify a different time limit, use `--time`, e.g.:
+To specify a different time limit, use Slurm's `--time` option. For example, to request a maximum job time of 1 day:
 
 ```
 #SBATCH --time=1-00:00:00
 ```
 
-The maximum time limit depends on the QOS used to submit a job. The default QOS has 3 weeks time limits. "debug" QOS has a 30 minutes time limit. Jobs submitted with “-q debug” on the slurm command or with "#SBATCH -q debug" in the job script file will have higher priority. In addition, "long" QOS allows to run jobs up to 60 days long. This QOS is limited to 144 cores across all running jobs. 
+For more information about how to use `--time`, please see the [official Slurm documentation](https://slurm.schedmd.com/sbatch.html#OPT_time).
+
+The maximum time limit also depends on the QOS ("quality of service") used to submit a job. There are currently three options:
+
+* The default QOS has a maximum job time of 3 weeks. In other words, you cannot request more than 3 weeks using `--time`.
+* The "debug" QOS has a maximum job time ot 30 minutes. However, jobs running with the "debug" QOS will have higher priority.
+* The "long" QOS allows jobs to run for up to 60 days, but this QOS is limited to 144 cores across all running jobs.
+
+To use a non-default QOS ("debug" or "long"), use Slurm's [`--qos` option](https://slurm.schedmd.com/sbatch.html#OPT_qos). For example:
+```
+#SBATCH --qos=debug
+```
 
 ## Alternative Partitions
 
