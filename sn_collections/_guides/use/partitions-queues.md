@@ -48,7 +48,7 @@ The maximum time limit depends on the QOS used to submit a job. The default QOS 
 
 {% include table caption="Priority partitions available only to those users who purchased nodes" content ="| Name | Nodes | Maximum Simulation Time | Default Memory per Core | Function |
 | --- | --- |--- |--- |--- |
-| priority | 40 | 2 weeks | 3000 MB | priority nodes with 384GB memory | 
+| priority | 40 | 2 weeks | 3000 MB | priority nodes with 384GB memory |
 | priority-mem | 11 | 2 weeks | 16000 MB | priority nodes with 1.5TB memory |" %}
 
 
