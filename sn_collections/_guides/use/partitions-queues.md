@@ -26,7 +26,7 @@ Some of the Ceres compute nodes have been purchased by individual researchers or
 
 During the February 2025 maintenance, a new partition, named "ceres", was added to the cluster. This new partition includes all community nodes, and the change has several important benefits: 
 
-* Placing Ceres nodes into fewer partitions will resulted in shorter wait times and better cluster utilization. 
+* Placing Ceres nodes into fewer partitions results in shorter wait times and better cluster utilization. 
 * Ceres is easier and less confusing to use. 
 * The new "ceres" partition is analogous to the "atlas" partition on Atlas and makes the user experience on both systems more similar. 
 
