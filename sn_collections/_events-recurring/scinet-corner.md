@@ -22,6 +22,9 @@ sessions:
     title: Filesystem permissions
     date: 2025-06-26
     time: 1-2 pm ET
+    materials:
+      - text: Session Recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EYNGI12GDtRLuAiaPMwBJ9MBXMY66qREM4MpbIykJB1p-Q?e=SQNDEh
     excerpt: "* Understanding permission classes: user, group, world/others.
 
 * Viewing and interpreting file permissions on the command line.
