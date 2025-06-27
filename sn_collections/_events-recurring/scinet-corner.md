@@ -19,6 +19,10 @@ archive-label: SCINet Corner Recordings
 
 sessions:
   - session:
+    title: July SCINet Corner
+    date: 2025-07-31
+    time: 1-2 pm ET
+  - session:
     title: Filesystem permissions
     date: 2025-06-26
     time: 1-2 pm ET
