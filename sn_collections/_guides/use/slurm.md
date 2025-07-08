@@ -36,27 +36,26 @@ Interactive mode should only be used when interaction is required, for example w
 
 ## Slurm Accounts
 
- All users have been assigned Slurm accounts based on their project groups. If you don't have a project, then your default and only Slurm account is sandbox. If you have more than one project, then your default Slurm account is one of the project names. You can specify a different Slurm account when submitting a job by using “-A <account_name>” option on salloc/srun/sbatch command or adding “#SBATCH -A <account_name>” to the job script.
+ All users have been assigned Slurm accounts based on their project groups. If you don't have a project, then your Slurm account is sandbox. You have to specify a Slurm account when submitting a job by using “-A <account_name>” option on salloc/srun/sbatch command or adding “#SBATCH -A <account_name>” to the job script.
   
 To see all your Slurm accounts and your default account at any time, use “sacctmgr -Pns show user format=account,defaultaccount”
   
-You can change your default Slurm account running slurm-account-selector.sh on the login node.
 
 
 ## Interactive Mode
 
 A user can request an interactive session on Ceres using SLURM's  `srun`  or  `salloc`  commands. The simplest way to request an interactive job is by entering the command  `salloc`:
 ```
-$ salloc
+$ salloc -A slurm_account_name
 ```
 
-which will place you in an interactive shell. This interactive shell has a duration of 2 days and will request a single hyper-threaded core (2 logical cores) with 6000 MB of allocated memory on one of the compute nodes.
+which will place you in an interactive shell. This interactive shell has a duration of 2 hours and will request a single hyper-threaded core (2 logical cores) with 6000 MB of allocated memory on one of the compute nodes.
 
 To prevent users from requesting interactive nodes and then not using them, there is an inactivity timeout set up. If there is no command running on a node for an hour and a half, the job will be terminated. Otherwise the interactive job is terminated when the user types exit or the allocated time runs out.
 
 For more fine grained control over the interactive environment you can use the  `srun`  command. Issue the  `srun`  command from a login node. Command syntax is:
 ```
-$ srun --pty -p queue -t hh:mm:ss -n tasks -N nodes -C constraints /bin/bash -l
+$ srun --pty -p queue -A slurm_account_name -t hh:mm:ss -n tasks -N nodes -q qos -C constraints /bin/bash -l
 ```
 
 {: .usa-table .usa-table--compact }
@@ -66,13 +65,15 @@ Option |Value
 -t	| maximum runtime
 -n	| number of cores
 -N	| number of nodes
+-A  | Slurm account (same as project name)
+-q  | QOS name (debug: 30 minutes, long: 60 days time limit)
 -C  | constraints (optional)
 
-The following example commands illustrate an interactive session where the user requests 1 hour in the short queue, using 1 compute node and 20 logical cores (half of the cores available on the original compute node), using the bash shell, followed by a BLAST search of a protein database.
+The following example commands illustrate an interactive session where the user requests 1 hour in the ceres queue, using 1 compute node and 20 logical cores, using the bash shell, followed by a BLAST search of a protein database.
 
 Start the interactive session:
 ```
-$ srun --pty -p short -t 01:00:00 -n 20 -N 1 /bin/bash -l
+$ srun --pty -p short -A slurm_account_name -t 01:00:00 -n 20 -N 1 /bin/bash -l
 ```
 
 Load NCBI-BLAST+ on the compute node:
@@ -124,7 +125,7 @@ Slurm permits you to restrict your jobs to only run on nodes with specific hardw
 
 If you have a software package that requires using constraints, you can specify the requirement with interactive jobs by adding the `-C constraint` option to your `salloc` or `srun` command.  For example:
 ```bash
-salloc -n 1 -n 4 -t 60 -C INTEL
+salloc -n 1 -n 4 -t 60 -C INTEL -A slurm_account_name 
 ```
 launches an interactive sessions for 60 minutes on a single node with an Intel processor with access to four CPU cores.  The same limitation to only run on Intel processors can be achieved in an sbatch script by adding the line:
 ```bash
@@ -145,6 +146,7 @@ Jobs can be submitted to various partitions or queues using SLURM's `sbatch` com
 #SBATCH -t 01:00:00           #time allocated for this job hours:mins:seconds
 #SBATCH --mail-user=emailAddress   #enter your email address to receive emails
 #SBATCH --mail-type=BEGIN,END,FAIL #will receive an email when job starts, ends or fails
+#SBATCH -A slurm_account_name # name of the slurm account - same as the SCINet project name
 #SBATCH -o "stdout.%j.%N"     # standard output, %j adds job number to output file name and %N adds the node name
 #SBATCH -e "stderr.%j.%N"     #optional, prints our standard error
 date                          #optional, prints out timestamp at the start of the job in stdout file
@@ -190,6 +192,7 @@ Now create a batch job script (OMPjob.sh) to test number of threads you requeste
 #SBATCH -N 1
 #SBATCH -n 20
 #SBATCH --threads-per-core=1
+#SBATCH -A slurm_account_name 
 #SBATCH -t 00:30:00
 #SBATCH -o "stdout.%j.%N"
 #SET the number of openmp threads
@@ -216,6 +219,7 @@ Create a SLURM script like this (for example, RAxMLjob.sh, but use your own alig
 #SBATCH -p short
 #SBATCH -N 2
 #SBATCH --ntasks-per-node=40
+#SBATCH -A slurm_account_name 
 #SBATCH -t 01:00:00
 #SBATCH -o "stdout.%j.%N"
 # We requested 2 nodes, 40 logical cores per node for a total of 80 logical cores for this job
@@ -288,13 +292,14 @@ A python script that runs every 30 minutes and requests 1 node with 4 cores and 
 #SCRON -o $HOME/JOB_OUTPUT.txt
 #SCRON -N 1
 #SCRON -n 4
+#SCRON -A slurm_account_name 
 30 * * * * python $HOME/PYTHON_SCRIPT.py
 </pre>
 
 Runs every hour with a timelimit of 1 minute.
 ```
 DIR=/home/user1
-#SCRON -p high
+#SCRON -p ceres
 #SCRON -A sub1
 #SCRON -t 1:00
 @hourly $DIR/date.printer.job
