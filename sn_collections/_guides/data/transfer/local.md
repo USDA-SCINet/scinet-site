@@ -17,9 +17,9 @@ order_number: 30
 subnav:
   - title: "Globus Connect Personal"
     url: '#globus-connect-personal'
-  - title: Small Data Transfer Using scp and rsync
+  - title: Small data transfer using scp and rsync
     url: '#small-data-transfer-using-scp-and-rsync'
-  - title: Other Ways to Transfer Data
+  - title: Other ways to transfer data
     url: '#other-ways-to-transfer-data'
 
 ---
@@ -65,7 +65,7 @@ You can check the status of your connection by clicking the GCP icon in your tas
 
 For more information on transferring data using Globus, see [Globus Data Transfer](/guides/data/transfer/globus#copying-data)
 
-## Small Data Transfer Using scp and rsync
+## Small data transfer using scp and rsync
 
 scp is usually available on any Linux or MacOS machine, and on Microsoft Windows 10 (in PowerShell). 
 It’s best used when you need to transfer a single file.
@@ -77,20 +77,20 @@ Below are examples of scp commands to be issued on your local machine. In these 
 
 Transfer To Ceres:
 ```
-scp <local_path_to_file/>file.ext  <SCINetID>@ceres-dtn.scinet.usda.gov:<remote_path_to_file/>dest.ext
+scp <local_path_to_file/>file.ext  <scinet_username>@ceres-dtn.scinet.usda.gov:<remote_path_to_file/>dest.ext
 ```
 Transfer To Atlas:
 ```
-scp <local_path_to_file/>file.ext <SCINetID>@atlas-dtn.hpc.msstate.edu:<remote_path_to_file/>dest.ext
+scp <local_path_to_file/>file.ext <scinet_username>@atlas-dtn.hpc.msstate.edu:<remote_path_to_file/>dest.ext
 ```
 
 Transfer From Ceres:
 ```
-scp <SCINetID>@ceres-dtn.scinet.usda.gov:<remote_path_to_file/>file.ext  <local_path_to_file/>dest.ext
+scp <scinet_username>@ceres-dtn.scinet.usda.gov:<remote_path_to_file/>file.ext  <local_path_to_file/>dest.ext
 ```
 Transfer From Atlas:
 ```
-scp <SCINetID>@atlas-dtn.hpc.msstate.edu:<remote_path_to_file/>file.ext  <local_path_to_file/>dest.ext
+scp <scinet_username>@atlas-dtn.hpc.msstate.edu:<remote_path_to_file/>file.ext  <local_path_to_file/>dest.ext
 ```
 
 
@@ -103,13 +103,13 @@ find /project/<project_name>/<dir> -exec chgrp proj-<project_name> {} + -a -type
 ```
 To learn more about `scp` command and all available options issue "`man scp`".
 
-Instead of `scp` one can use `rsync` command for bulk transfers. `rsync` synchronizes files and directories from one location to another while minimizing data transfer as only the outdated or inexistent elements are transferred. It is installed by default on macOS and is available on many Linux hosts. The following command will recursively transfer all new and updated files in the directory `<dir_name>` on the local machine into directory `/project/<project_name>/<dir_name>` on Ceres:
+Instead of `scp`, one can use `rsync` command for bulk transfers. `rsync` synchronizes files and directories from one location to another while minimizing data transfer as only the outdated or inexistent elements are transferred. It is installed by default on macOS and is available on many Linux hosts. The following command will recursively transfer all new and updated files in the directory `<dir_name>` on the local machine into directory `/project/<project_name>/<dir_name>` on Ceres:
 ```
-rsync -avz --no-p --no-g <dir_name> <SCINetID>@ceres-dtn.scinet.usda.gov:/project/<project_name>
+rsync -avz --no-p --no-g <dir_name> <scinet_username>@ceres-dtn.scinet.usda.gov:/project/<project_name>
 ```
 To learn more about `rsync` command and all available options issue "`man rsync`".
 
-## Other Ways to Transfer Data
+## Other ways to transfer data
 
 Another supported GUI method for smaller file transfers is Cyberduck ([https://cyberduck.io/](https://cyberduck.io/)). Cyberduck supports multiple protocols (including Amazon S3, iRODS, and Google Drive) and is compatible with the new phishing resistant authentication methods (i.e. SmallStepCLI).
 
