@@ -41,7 +41,17 @@ subnav:
 
 {% include images_path %}
 
-Globus is the recommended method for transferring data to, from, or among Ceres, Atlas, and Juno. It provides faster data transfer speeds compared to `scp`, has a graphical interface, and does not require authentication for every file transfer.  
+
+To help identify the file transfer method and documentation you should use, determine the scenario below that best matches your use case: 
+1. For most data transfer needs, we recommend that you use [Globus](/guides/data/transfer/globus).  
+    1. If you would like to transfer data from your local machine, see [Data Transfer from Local Machine](/guides/data/transfer/local).
+    1. If you are at a SCINet-X location, see [Transferring data via Café Machine](/guides/data/transfer/cafe).
+    1. If you would like to transfer data between SCINet infrastructure and a non-SCINet Globus endpoint, please go directly to [Globus Data Transfer](/guides/data/transfer/globus).  
+1. If you are transferring small amounts of data (10s to 100s of MB), it is typically fine to use other file transfer protocols. See [Data Transfer from Local Machine](/guides/data/transfer/local).
+1. If you are moving data to and from cloud resources, see [Rclone](/guides/data/transfer/rclone).
+1. Lastly, if you have to transfer very large amounts of data and network speed at your location is slow, please submit a request to the Virtual Research Support Core (VRSC) to ingress data from a hard drive as described in [Large Data Transfer by Shipping Hard Drives](/guides/data/transfer/shipping).
+
+<!--excerpt-->
 
 Figure 1 below depicts a recommended workflow for managing data across SCINet storage locations. See the User Guide section on [SCINet Storage](/guides/data/storage) for more information on available storage locations and their intended use.
 
@@ -56,14 +66,3 @@ Figure 1 below depicts a recommended workflow for managing data across SCINet st
 {: class="usa-sr-only"}
 {: aria-describedby="source"}
 {: title="Diagram of Recommended Data Management Workflow - Screen Reader Text" } 
-
-To help identify the file transfer method and documentation to use, determine the scenario below that best matches your use case: 
-1. For most data transfer needs, we recommend that you use [Globus](/guides/data/transfer/globus).  
-    1. If you would like to transfer data from your local machine, see [Data Transfer from Local Machine](/guides/data/transfer/local).
-    1. If you are at a SCINet-X location, see [Transferring data via Café Machine](/guides/data/transfer/cafe).
-    1. If you would like to transfer data between SCINet infrastructure and a non-SCINet Globus endpoint, please go directly to [Globus Data Transfer](/guides/data/transfer/globus).  
-1. If you are transferring small amounts of data (10s to 100s of MB), it is typically fine to use other file transfer protocols. See [Data Transfer from Local Machine](/guides/data/transfer/local).
-1. If you are moving data to and from cloud resources, see [Rclone](/guides/data/transfer/rclone).
-1. Lastly, if you have to transfer very large amounts of data and network speed at your location is slow, please submit a request to the Virtual Research Support Core (VRSC) to ingress data from a hard drive as described in [Large Data Transfer by Shipping Hard Drives](/guides/data/transfer/shipping).
-
-<!--excerpt-->
