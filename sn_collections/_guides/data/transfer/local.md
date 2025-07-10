@@ -29,30 +29,9 @@ To transfer files to your personal computer you may use Globus Connect Personal,
 
 ## Globus Connect Personal
 
-To transfer files to or from your personal computer, you may use Globus Connect Personal (GCP). For more information on using Globus and GCP, see [the Globus guide](/guides/data/transfer/globus#globus-connect-personal). 
+To transfer files to or from your personal computer, you can use Globus Connect Personal (GCP). For more information on using Globus and GCP, see [the Globus guide](/guides/data/transfer/globus#globus-connect-personal). 
 
 
-
-### Setup
-
-1. Once installed, launch the application and a Globus login popup window will open.  
-  * Select Log In.  
-  * Go to the main Firefox window that opens behind the popup and select Allow.  
-  * Select SCINET-ARS/USDA from the dropdown and complete the eAuth login. 
-1. **If you have used Globus before, select "link to" to join your globus account to this one.**  Otherwise, click continue.
-  * You can also link accounts later using the steps on the [Globus linking account instructions.](https://docs.globus.org/guides/tutorials/manage-identities/link-to-existing/)
-1. When registering, type USDA-ARS as your organization and non-profit research – agree to terms and click continue. 
-1. Next page will ask you to agree to setup and asks for a name for future reference, you can keep the default. Click allow. 
-1. Now you get a window for "Collection Details" – give it a name that will make sense to you.  For example:  your-initials and local (ABC_local).  Description is not necessary.  Do not select the "high assurance" button. Click save. 
-1. You should get a "setup successful" popup with the name of your collection. 
-  * If you want to edit your collection name, you can click "show collection details" on the right of the collection details page and select "edit attributes" to edit the collection's name.  
-  * If you are happy with it, click "Exit Setup." 
-
-You can now transfer data from your local machine using Globus when Globus Connect Personal is running. 
-You can check the status of your connection by clicking the GCP icon in your task bar.  
-![Globus Connect Personal icon in windows taskbar](../assets/taskbar_gcp_icon.png)
-
-For more information on transferring data using Globus, see [Globus Data Transfer](/guides/data/transfer/globus#copying-data)
 
 ## Small data transfer using scp and rsync
 
