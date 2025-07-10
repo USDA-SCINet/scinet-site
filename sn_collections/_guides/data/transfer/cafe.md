@@ -73,7 +73,7 @@ globusconnect
 globusconnect -restart
 ```   
 
-Now that your GCP connection is running and can access your external drive, you can go to [Globus.org](https://www.globus.org/) to perform data transfers from or to the café machine. You should find the "*_scinet_cafe" collection made [above](#setting-up-globus-connect-personal-gcp) in your list of collections, and you will be able to connect to it while the local GCP connection is running on the café machine. After selecting your café machine collection, you should see the files you have on that machine or external drive. For detailed instructions on transferring data using Globus, see [Globus Data Transfer](/guides/data/transfer/globus#copying-data). 
+Now that your GCP connection is running and can access your external drive, you can go to [Globus.org](https://www.globus.org/) to perform data transfers from or to the café machine. You should find the "*_scinet_cafe" collection made [above](#setting-up-globus-connect-personal-gcp) in your list of collections, and you will be able to connect to it while the local GCP connection is running on the café machine. After selecting your café machine collection, you should see in the Globus File Manager the files you have on the café machine or external drive. For detailed instructions on transferring data using Globus, see [Globus Data Transfer](/guides/data/transfer/globus#copying-data). 
 
 On the café machine, you can use the GCP window to disconnect your session (or reconnect after disconnecting).  When you are finished transferring data, you can close the window or hit CTRL+C in the terminal to end your session. When you stop the GCP connection, it will no longer be accessible to you.  Please stop the connection after each session. 
 

@@ -29,20 +29,9 @@ To transfer files to your personal computer you may use Globus Connect Personal,
 
 ## Globus Connect Personal
 
-To transfer files to or from your personal computer, you may use Globus Connect Personal.  
+To transfer files to or from your personal computer, you may use Globus Connect Personal (GCP). For more information on using Globus and GCP, see [the Globus guide](/guides/data/transfer/globus#globus-connect-personal). 
 
-### Installation
 
-* **If you are on a USDA-managed Windows laptop or workstation:**
-  * If your workstation has CEC support, you may be able to install Globus Connect Personal directly from the Software Center.
-* **If you are not on a USDA-managed laptop, or do not see GCP in the Software Center:**
-  * A link "Install Globus Connect Personal" can be found once you have [logged into Globus](/guides/data/transfer/globus) in the Recent tab and in the "More Options" tab in the list of Collections. Click on "Collection" box to get to the list. 
-  * The installation instructions for Globus Connect Personal are available here: 
-    * [Windows Install Instructions](https://docs.globus.org/how-to/globus-connect-personal-windows/)
-    * [Mac Install Instructions](https://docs.globus.org/how-to/globus-connect-personal-mac/)
-    * [Linux Install Instructions](https://docs.globus.org/how-to/globus-connect-personal-linux/)
-
-By default on Windows, Globus Connect Personal prompts to be installed in C:\Program Files which requires administrator rights. However, you don’t need Administrator rights to install Globus Connect Personal on your local machine. If you do not have Administrator rights, browse to a place you have write access to (e.g., your Desktop folder) or contact your local IT staff for assistance. 
 
 ### Setup
 
