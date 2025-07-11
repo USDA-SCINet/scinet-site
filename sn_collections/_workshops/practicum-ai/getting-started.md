@@ -31,9 +31,9 @@ layout: event
 
 # Practicum AI
 
-[*Practicum AI*](/training/practicum-ai) is a hands-on applied artificial intelligence (AI) curriculum intended for learners with limited coding and math background. To register for these courses, please [fill out the registration form](https://forms.office.com/g/YnnYsxX9e3). You do not need to register for all courses and may instead register for only the courses that are most relevant to your work. 
+[*Practicum AI*](/events/practicum-ai/) is a hands-on applied artificial intelligence (AI) curriculum intended for learners with limited coding and math background. To register for these courses, please [fill out the registration form]({{ page.registration.url }}). You do not need to register for all courses and may instead register for only the courses that are most relevant to your work. 
 
-## Course 1 – Getting Started with AI
+## Getting Started with AI
 
 This course provides a high-level overview of the concepts, history, and vocabulary of AI. You will get hands-on experience with simple online AI tools, experimenting with gathering data, and training a model. We will review the general process that underlies most AI application development pathways and briefly touch on ethical aspects of AI that will also help ensure more reliable AI models.  
 
