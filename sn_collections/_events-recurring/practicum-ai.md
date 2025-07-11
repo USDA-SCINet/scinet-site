@@ -11,11 +11,11 @@ registration:
 time: 2-5 PM ET
 
 course-list:
-  - title: Getting Started with AI
+  #- title: Getting Started with AI
   - title: Computing for AI
   - title: Python for AI
   - title: Deep Learning Foundations
-  - title: Computer Vision Workshop
+  #- title: Computer Vision Workshop
 
 
 ---
