@@ -15,6 +15,6 @@
 {% endunless %}
 
 <li class="usa-collection__meta-item">
-    <b>{% unless include.title == 'false' %}{% if session.title %}{{ session.title }} - {% endif %}{% endunless %}{% if session.multiday %}{{ session.multiday }}{% else %}{{ datestring }}{% endif %}{% if session.time %}, {{ session.time }} {% endif %}</b>
+    <b>{% unless include.title == 'false' %}{% if session.title %}{{ session.title }} - {% endif %}{% endunless %}{% if session.multiday %}{{ session.multiday }}{% if pagetype == "archive" or page.layout=='event' %}, {{ session.end_date | date: "%Y" }}{% endif %}{% else %}{{ datestring }}{% endif %}{% if session.time %}, {{ session.time }} {% endif %}</b>
     {% include collect/components/session-ul session=session %}
 </li>
