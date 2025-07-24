@@ -115,7 +115,9 @@ Please Note: The Café machine may be slow right after login, don’t worry if y
 1. On runs after the initial setup, it will scan for USB devices and then add any that it finds to the globus config and start the server.
 	- You can use “globusconnect -help” to see this info later.
 
-1. If you need to add USB devices after starting the server just run “globusconnect -restart” to rescan devices and restart the server. 
+1. If you need to add USB devices after starting the server just run “globusconnect -restart” to rescan devices and restart the server.
+
+If you would like to see a video demonstration of the above instructions, click [here](https://youtu.be/p4Qn2ofktcA)
 
 ## Small Data Transfer Using scp and rsync
 
