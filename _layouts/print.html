@@ -23,7 +23,7 @@ css: newsletter.css
             {% if page.title %}
             <h1 class="top-header">{{ page.title }}</h1>
             {% endif %}
-            <div class="page-contents">
+            <div class="page-contents usa-prose">
             {{ content }}
             </div>
 
@@ -57,6 +57,9 @@ css: newsletter.css
 <td>
 
 <div style="max-width: 600px; width: 100%; margin: 0 auto;">
+<div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;margin-right:100%;"> 
+{{ page.description }}
+</div>
 
 <table width="100%" align="center" style="border-collapse: collapse;" cellpadding="0" cellspacing="0">
 
