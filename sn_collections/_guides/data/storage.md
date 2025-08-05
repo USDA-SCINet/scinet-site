@@ -36,7 +36,7 @@ This guide provides detailed information about the storage locations provided by
 1. Copy data to target HPC (Ceres or Atlas)
 1. Run compute tasks
 1. Copy Results to Juno
-1. Copy results to local machine, if desired
+1. Copy results to local computer, if desired
 {: class="usa-sr-only"}
 {: aria-describedby="source"}
 {: title="Diagram of Recommended Data Management Workflow - Screen Reader Text" } 

@@ -26,7 +26,7 @@ subnav:
     url: /guides/data/transfer/cafe
     internal: true
     shows_list: subnav
-  - title: Data Transfer from Local Machine
+  - title: Data Transfer from Local Computers
     url: /guides/data/transfer/local
     internal: true
     shows_list: subnav
@@ -44,7 +44,7 @@ subnav:
 
 To help identify the file transfer method and documentation you should use, determine the scenario below that best matches your use case: 
 1. For most data transfer needs, we recommend that you use [Globus](/guides/data/transfer/globus).  
-    1. If you would like to transfer data from your local machine, see [Data Transfer from Local Machine](/guides/data/transfer/local).
+    1. If you would like to transfer data from your local computer, see [Data Transfer from Local Machine](/guides/data/transfer/local).
     1. If you are at a SCINet-X location, see [Transferring data via Café Machine](/guides/data/transfer/cafe).
     1. If you would like to transfer data between SCINet infrastructure and a non-SCINet Globus endpoint, please go directly to [Globus Data Transfer](/guides/data/transfer/globus).  
 1. If you are transferring small amounts of data (10s to 100s of MB), it is typically fine to use other file transfer protocols. See [Data Transfer from Local Machine](/guides/data/transfer/local).
@@ -62,7 +62,7 @@ Figure 1 below depicts a recommended workflow for managing data across SCINet st
 1. Copy data to target HPC (Ceres or Atlas)
 1. Run compute tasks
 1. Copy Results to Juno
-1. Copy results to local machine, if desired
+1. Copy results to local computer, if desired
 {: class="usa-sr-only"}
 {: aria-describedby="source"}
 {: title="Diagram of Recommended Data Management Workflow - Screen Reader Text" } 

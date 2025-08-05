@@ -1,6 +1,6 @@
 ---
 title: "Data Transfer from Local Machines"
-description: How to transfer data from your local machine
+description: How to transfer data from your local computer
 
 parents:
   - title: Storage and Data Management
@@ -24,24 +24,24 @@ subnav:
 
 ---
 
-To transfer files to your personal computer you may use Globus Connect Personal, or you can transfer small amounts of data using scp and rsync.<!--excerpt-->
+To transfer files to your local computer you may use Globus Connect Personal, or you can transfer small amounts of data using scp and rsync.<!--excerpt-->
 
 
 ## Globus Connect Personal
 
-To transfer files to or from your personal computer, you can use Globus Connect Personal (GCP). For more information on using Globus and GCP, see [the Globus guide](/guides/data/transfer/globus#globus-connect-personal). 
+To transfer files to or from your local computer, you can use Globus Connect Personal (GCP). For more information on using Globus and GCP, see [the Globus guide](/guides/data/transfer/globus#globus-connect-personal). 
 
 
 
 ## Small data transfer using scp and rsync
 
-scp is usually available on any Linux or MacOS machine, and on Microsoft Windows 10 (in PowerShell). 
-It’s best used when you need to transfer a single file.
+`scp` is usually available on any Linux or MacOS machine and on Microsoft Windows 10 (in PowerShell). 
+It is best used when you need to transfer a single file.
 
-Below are examples of scp commands to be issued on your local machine. In these examples
-* `<local_path_to_file/>` can be omitted, in this case current directory on your local machine will be used
-* `<remote_path_to_file/>` can be omitted, in this case home directory on Ceres or Atlas will be used
-* `dest.ext` can be omitted, in this case the name of the file being transferred will be used.
+Below are examples of `scp` commands to be issued on your local computer. In these examples:
+* `<local_path_to_file/>` can be omitted to use the current directory on your local computer.
+* `<remote_path_to_file/>` can be omitted to use your home directory on Ceres or Atlas.
+* `dest.ext` can be omitted to use the name of the file being transferred.
 
 Transfer To Ceres:
 ```
@@ -71,7 +71,7 @@ find /project/<project_name>/<dir> -exec chgrp proj-<project_name> {} + -a -type
 ```
 To learn more about `scp` command and all available options issue "`man scp`".
 
-Instead of `scp`, one can use `rsync` command for bulk transfers. `rsync` synchronizes files and directories from one location to another while minimizing data transfer as only the outdated or inexistent elements are transferred. It is installed by default on macOS and is available on many Linux hosts. The following command will recursively transfer all new and updated files in the directory `<dir_name>` on the local machine into directory `/project/<project_name>/<dir_name>` on Ceres:
+Instead of `scp`, one can use `rsync` command for bulk transfers. `rsync` synchronizes files and directories from one location to another while minimizing data transfer as only the outdated or inexistent elements are transferred. It is installed by default on macOS and is available on many Linux hosts. The following command will recursively transfer all new and updated files in the directory `<dir_name>` on the local computer into directory `/project/<project_name>/<dir_name>` on Ceres:
 ```
 rsync -avz --no-p --no-g <dir_name> <scinet_username>@ceres-dtn.scinet.usda.gov:/project/<project_name>
 ```

@@ -34,7 +34,7 @@ If you are at an ARS research location with a SCINet-X connection, you have acce
 
 ## Setting up Globus Connect Personal (GCP) 
 
-The recommended way to perform large file transfers to and from SCINet infrastructure is using Globus, and doing that from a local machine, including a SCINet café machine, first requires installing Globus Connect Personal (GCP). Instructions for installing and setting up GCP on a café machine are below, and this is a one-time setup done for each user on the café machine. (For installing GCP on other local machines, please see [these instructions]({{ site.baseurl }}/guides/data/transfer/local#globus-connect-personal)).
+The recommended way to perform large file transfers to and from SCINet infrastructure is using Globus, and doing that from a local computer, including a SCINet café machine, first requires installing Globus Connect Personal (GCP). Instructions for installing and setting up GCP on a café machine are below, and this is a one-time setup done for each user on the café machine. (For installing GCP on other local computers, please see [these instructions]({{ site.baseurl }}/guides/data/transfer/local#globus-connect-personal)).
 
 {: .usa-list }
 1. After logging in to the café machine, open a terminal by clicking the terminal icon on the bottom of the screen. 
