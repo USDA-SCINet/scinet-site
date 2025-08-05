@@ -27,15 +27,6 @@ subnav:
 
 The ARS SCINet Team developed a SCINet network solution that provides two levels of high-bandwidth services to meet the different needs of research locations.  These solutions will accelerate the expansion of high-bandwidth SCINet connectivity to all ARS locations as fast as possible while balancing economic, technological, and local constraints.  The SCINet-X project involves the SCINet Team working with each individual location in ARS to directly connect the location to SCINet. 
 
-<br> 
-
-### The following locations are actively working on establishing high-bandwidth SCINet connectivity. 
-
-{: .table-list }
-| Boise, ID | Wapato, WA | Fort Keogh (Miles City), MT | Sidney, MT | 
-| Houston, TX | Dubois, ID | Las Cruces, NM | Lincoln, NE |
-| Columbus, OH | Wooster, OH | El Reno, OK | Fort Lauderdale, FL | 
-
 <br>
 
 ### The following locations have completed implementation of their high-bandwidth SCINet connectivity. 
@@ -43,43 +34,48 @@ The ARS SCINet Team developed a SCINet network solution that provides two levels
 **Pacific West Area**
 
 {: .table-list }
-| Burns, OR | Dubois, ID | Hilo, HI |
-| Logan, UT | Maricopa, AZ | Parlier, CA |
-| Wenatchee, WA | Salinas, CA | Kimberly, ID | 
+| Boise, ID | Burns, OR | Dubois, ID |
+| Hilo, HI | Kimberly, ID | Logan, UT |
+| Maricopa, AZ | Parlier, CA | Pendleton, OR (Adams) |
+| Salinas, CA | Wapato, WA | Wenatchee, WA | 
 
 **Plains Area**
 
 {: .table-list }
-| Akron, CO | Boise, ID | Bushland, TX |
-| College Station, TX | Fargo, ND | Grand Forks, ND |
-| Kerrville, TX | Lubbock, TX | Mandan, ND |
-| Manhattan, KS | Temple, TX | Stillwater, OK |
+| Akron, CO | Brookings, SD | Bushland, TX |
+| College Station, TX | El Reno, OK | Fargo, ND |
+| Fort Keogh, MT (Miles City) | Grand Forks, ND | Kerrville, TX |
+| Lincoln, NE | Lubbock, TX | Mandan, ND |
+| Manhattan, KS | Sidney, MT | Stillwater, OK |
+| Temple, TX | Woodward, OK |
 
 **Midwest Area**
 
 {: .table-list }
 | Ames, IA (ISU Campus) | Bowling Green, KY | Columbia, MO |
-| East Lansing, MI | Madison, WI | Morris, MN |
-| Peoria, IL | St. Paul, MN | West lafayette, IN |
+| Columbus, OH | East Lansing, MI | Madison, WI |
+| Morris, MN | Peoria, IL | St. Paul, MN |
+| West Lafayette, IN | Wooster, OH |
 
 **Northeast Area**
 
 {: .table-list }
-| Boston, MA | Frederick, MD | Geneva, NY | 
-| Kearneysville, WV | Leetown, WV | Newark, DE | 
-| Wyndmoor, PA | Burlington, VT |
+| Boston, MA | Burlington, VT | Frederick, MD |
+| Geneva, NY | Ithaca, NY | Kearneysville, WV | 
+| Leetown, WV | Newark, DE | Wyndmoor, PA | 
 
 **Southeast Area**
 
 {: .table-list }
-| Athens, GA | Auburn, AL | Booneville, AR | 
-| Burlington, LA | Byron, GA | Canal Point, FL |
+| Athens, GA | Auburn, AL | Baton Rouge, LA |
+| Booneville, AR | Byron, GA | Canal Point, FL |
 | Charleston, SC | Dawson, GA | Fayetteville, AR |
-| Florence, SC | Fort Pierce, FL | Gainesville, FL |
-| Griffin, GA | Jonesboro, AR | Little Rock, AR |
-| Mayaguez, PR | Miami, FL | New Orleans, LA | 
-| Oxford, MS | Poplarville, MS | Raleigh, NC |
-| Starkville, MS | Schriever (Houma), LA | Tifton, GA | 
+| Florence, SC | Fort Lauderdale, FL (Davie) | Fort Pierce, FL |
+| Gainesville, FL | Griffin, GA | Jonesboro, AR |
+| Little Rock, AR | Mayaguez, PR | Miami, FL |
+| New Orleans, LA | Oxford, MS | Poplarville, MS |
+| Raleigh, NC | Schriever (Houma), LA | Starkville, MS |
+| Stuttgart, AR | Tifton, GA | 
 
 
 We are eager to work with the remaining ARS locations to ensure they are ready when network equipment is available for installation. Please see the steps (milestones) below to be followed in getting a location on our list. The SCINet Team is available to answer questions at any step along the way. 

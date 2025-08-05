@@ -4,6 +4,8 @@ description: Practicum AI is a hands-on applied artificial intelligence (AI) cur
 permalink: /training/practicum-ai
 layout: page
 
+published: false
+
 filter:
   other: practicumai
 

@@ -59,8 +59,8 @@ materials:
 
 ---
 
-Practicum AI’s Computer Vision Course builds on a basic understanding of Python and deep neural networks to demystify the technology that allows machines to interpret and make decisions based on visual data.<!--excerpt--> We will explore image classification, object detection, and image segmentation tasks. Each module in this course will provide hands-on experiences to create your own working models. By the end, you'll be ready to instantiate and employ a computer vision model to make predictions.
+Practicum AI's Computer Vision Course builds on a basic understanding of Python and deep neural networks to demystify the technology that allows machines to interpret and make decisions based on visual data.<!--excerpt--> We will explore image classification, object detection, and image segmentation tasks. Each module in this course will provide hands-on experiences to create your own working models. By the end, you'll be ready to instantiate and employ a computer vision model to make predictions.
 
 **Prerequisites:** This course assumes familiarity with Jupyter notebooks, basic Python programming, and a general understanding of neural networks and deep learning. The Practicum AI Beginner Series provides this foundation. 
 
-[To register, please fill out this form.](https://forms.office.com/g/B7ySZmWTKJ)
+[To register, please fill out this form.]({{ page.registration.url }})

@@ -111,3 +111,28 @@ pre {
    @include usa-table--compact;
    @include usa-table--borderless;
 }
+
+.subheader {
+   font-size: 16px;
+   max-width: units($theme-site-margins-breakpoint);
+   margin-bottom: 1rem;
+   margin-top: .5rem;
+}
+
+h1 + p.subheader {
+   font-size: 32px;
+   font-weight: 200;
+}
+h2 + p.subheader {
+   font-size: 22px;
+   font-weight: 200;
+}
+h3 + p.subheader {
+   font-size: 18px;
+}
+h4 + p.subheader {
+   font-size: 15px;
+}
+h6,h5 + p.subheader {
+   font-size: 13px;
+}
