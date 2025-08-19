@@ -19,6 +19,11 @@ archive-label: SCINet Corner Recordings
 
 sessions:
   - session:
+    title: August SCINet Corner
+    date: 2025-08-28
+    time: 1-2 pm ET
+    excerpt: "Introduction to SCINet's Galaxy interface, a web-based platform for data-intensive bioinformatics analyses."
+  - session:
     title: July SCINet Corner
     date: 2025-07-31
     time: 1-2 pm ET
