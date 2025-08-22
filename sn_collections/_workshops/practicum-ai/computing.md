@@ -20,6 +20,11 @@ sessions:
   - session:
     time: 2 - PM ET
     date: 2025-08-19 20:00:00
+    materials:
+      - text: Workshop materials
+        url: https://github.com/PracticumAI/computing-for-ai-ars
+      - text: "Session recording - USDA access only"
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EQ7nCRw08FFNkzZjtniLOzQBZZlh6HSLE9Tnyt7IAxWIaQ?e=q6CCuc
   - session:
     time: 1:00 PM - 5:00 PM ET
     multiday: "Nov 6 & Nov 8"
