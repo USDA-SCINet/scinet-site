@@ -24,6 +24,9 @@ sessions:
     end_date: 2025-12-28
     time: 2 - 5 PM ET
     multiday: "August 27 & 28"
+    materials:
+      - text: Workshop materials
+        url: https://github.com/PracticumAI/python-for-ai-ars
   - session:
     date: 2023-12-04 19:00:00
     end_date: 2023-12-06
