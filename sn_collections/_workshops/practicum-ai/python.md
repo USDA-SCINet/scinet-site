@@ -60,3 +60,8 @@ The content in this workshop is aimed at beginning coders who may have never pro
 3.	Write Python code adhering to best practices for operators, variables, and functions.
 4.	Utilize Python libraries through the import function and understand major AI libraries like TensorFlow and Keras.
 5.	Manipulate and visualize data using Pandas and Matplotlib.
+
+## Tutorial setup instructions
+
+Please follow the instructions in the [course handout](https://github.com/PracticumAI/python-for-ai-ars/blob/main/handouts/python-for-ai-Jupyter-Atlas.pdf) to prepare for the workshop!
+
