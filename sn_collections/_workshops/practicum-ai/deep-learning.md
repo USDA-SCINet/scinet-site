@@ -22,6 +22,9 @@ sessions:
     end_date: 2025-09-04
     time: 2 - 5 PM ET
     multiday: "September 3 & 4"
+    materials:
+      - text: Workshop materials
+        url: https://github.com/PracticumAI/deep_learning_pt-lightning
   - session:
     date: 2024-01-08 19:00:00
     end_date: 2024-01-10
