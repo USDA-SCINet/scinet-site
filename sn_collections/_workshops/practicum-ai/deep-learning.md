@@ -24,7 +24,7 @@ sessions:
     multiday: "September 3 & 4"
     materials:
       - text: Workshop materials
-        url: https://github.com/PracticumAI/deep_learning_pt-lightning
+        url: https://github.com/PracticumAI/deep_learning_pt-lightning_ars
   - session:
     date: 2024-01-08 19:00:00
     end_date: 2024-01-10
