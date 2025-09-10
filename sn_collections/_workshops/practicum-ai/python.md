@@ -29,6 +29,8 @@ sessions:
         url: https://github.com/PracticumAI/python-for-ai-ars
       - text: "Session 1 recording - USDA access only"
         url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EVrcYcTZfe5OubfNH3GyEmkB2BIZVWZezqYbYJah6rVwiQ?e=mL5RIi
+      - text: "Session 2 recording - USDA access only"
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EaY2Cs7IJrhFinCLa5OqWeABDG_Vl-gy1-93dH-RDgbP1g?e=3an68N
   - session:
     date: 2023-12-04 19:00:00
     end_date: 2023-12-06
