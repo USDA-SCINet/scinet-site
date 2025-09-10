@@ -27,6 +27,8 @@ sessions:
     materials:
       - text: Workshop materials
         url: https://github.com/PracticumAI/python-for-ai-ars
+      - text: "Session 1 recording - USDA access only"
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EVrcYcTZfe5OubfNH3GyEmkB2BIZVWZezqYbYJah6rVwiQ?e=mL5RIi
   - session:
     date: 2023-12-04 19:00:00
     end_date: 2023-12-06
