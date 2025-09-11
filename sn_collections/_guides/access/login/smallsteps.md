@@ -27,12 +27,12 @@ The resolutions on this page assume you have already completed the [Small Step f
 
 ## Bad owner or permissions
 If you are getting a “Bad owner or permissions” error (double \\ in path), the permissions on the .ssh/ and .step directories are too permissive and allowing Full Access to SYSTEM, Administrators, and others. This is not a problem on an account that has never used ssh on the affected computer.
-!['Screenshot of "Bad owner or permissions on C:\\Users\\First.Last/.ssh/config"']({{ images_path }}/step-ssh/bad-owner-permissions-error.png)
+!['Screenshot of "Bad owner or permissions on C: \\Users\\First.Last/.ssh/config"']({{ images_path }}/step-ssh/bad-owner-permissions-error.png)
 
 ### Resolution 
 
 **Change permissions on the .ssh and .step folders in the user profile:**  
-“C:\Users\first.last\.ssh” and “C:\Users\first.last\.step”.  
+In C:, “\Users\first.last\.ssh” and “\Users\first.last\.step”.  
 On each folder disable inheritance, remove any additional users, and restrict access to just the owner. Each folder needs to be set for READ+WRITE permissions for only the owner.
 
 {:.font-mono-3xs}
