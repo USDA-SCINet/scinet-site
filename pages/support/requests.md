@@ -45,7 +45,7 @@ When requesting a new project, you will be asked for details including:
 
 To request a new project, please fill out the request form (eAuthentication required, non-ARS users should contact their sponsor):
 
-[Request a Project](https://forms.office.com/g/wD9rYarVyn){: .usa-button .usa-button-big }
+[Request a Project](https://forms.office.com/g/wD9rYarVyn){:target="_blank" rel="noopener noreferrer"  .usa-button .usa-button-big }
 
 ### To Modify an Existing SCINet Project
 If changes need to be made to an existing SCINet project, e.g., adding a new member, the project's PI should send an email that includes:
@@ -59,7 +59,7 @@ When requesting a project quota increase on Ceres or Atlas, you will be asked to
 
 To request a project quota increase for storage on Ceres, Atlas and/or Juno, please have the project PI or manager fill out the following request form:
 
-[Request a Project Quota Increase](https://forms.office.com/g/ntnKBzJiKx){: .usa-button .usa-button-big }
+[Request a Project Quota Increase](https://forms.office.com/g/ntnKBzJiKx){:target="_blank" rel="noopener noreferrer"  .usa-button .usa-button-big }
 
 
 
@@ -83,7 +83,7 @@ To request a project quota increase for storage on Ceres, Atlas and/or Juno, ple
 ### How to send a software request
 If you've done the above but need new software installed as a module, use the software request form (eAuthentication required, non-ARS users should contact their sponsor):
 
-[Software Request Form](https://apps.gov.powerapps.us/play/e/a3bf43b2-009c-43c2-9c4f-bcb2d87972fb/a/5b3265ab-3a98-4405-8557-01c1342690f7){: .usa-button .usa-button-big }
+[Software Request Form](https://apps.gov.powerapps.us/play/e/a3bf43b2-009c-43c2-9c4f-bcb2d87972fb/a/5b3265ab-3a98-4405-8557-01c1342690f7){:target="_blank" rel="noopener noreferrer"  .usa-button .usa-button-big }
 
 **Note: doing this requires an agency-level security review and takes a few weeks.**
 
@@ -106,6 +106,6 @@ This includes requests for additional funding.
 ### To Request a New SCINet-funded AWS Project 
 Fill out an application form (eAuthentication required, non-ARS users should contact their sponsor)
 
-[Request AWS Project](https://usda-scinet.atlassian.net/servicedesk/customer/portal/4/group/13/create/63){: .usa-button .usa-button-big }
+[Request AWS Project](https://usda-scinet.atlassian.net/servicedesk/customer/portal/4/group/13/create/63){:target="_blank" rel="noopener noreferrer"  .usa-button .usa-button-big }
 
 Requests will be reviewed and projects funded based on criteria such as suitability for AWS versus other SCINet computing resources (e.g., Ceres, Atlas), resource requirements estimated from the project description, and availability of SCINet funding.

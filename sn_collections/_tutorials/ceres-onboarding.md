@@ -3,6 +3,7 @@ title: SCINet Onboarding (Intro to SCINet)
 description: Ceres basics
 author: Marina Kraeva
 excerpt: SCINet and Ceres basics for new SCINet users, including HPC beginners
+published: false
 ---
 
 Users who are new to the HPC environment may benefit from the following Ceres onboarding video: 
