@@ -47,7 +47,7 @@ subnav:
 
 Globus Online is the recommended method for transferring data to or among Ceres, Atlas, and Juno. It provides faster data transfer speeds compared to scp, has a graphical interface, and does not require authentication for every file transfer. To transfer data to or from a local computer, users will need to install Globus Connect Personal which does NOT require admin privileges. 
 
-The instructional video at [here](https://www.youtube.com/watch?v=BAodkpwOJuA) demonstrates how to transfer files using Globus as well as how to authenticate with LincPass or Login.gov.
+The [instructional video](https://www.youtube.com/watch?v=BAodkpwOJuA) demonstrates how to transfer files using Globus as well as how to authenticate with LincPass or Login.gov.
 
 ### Login
 * In a browser, navigate to [https://www.globus.org/](https://www.globus.org/), click ‘Log In’ in the upper right corner.
@@ -78,7 +78,7 @@ The installation instructions for Globus Connect Personal are available here:
 * [Mac Install Instructions](https://docs.globus.org/how-to/globus-connect-personal-mac/)
 * [Linux Install Instructions](https://docs.globus.org/how-to/globus-connect-personal-linux/)
 
-By default, Globus Connect Personal prompts to be installed in C:\Program Files which requires administrator rights. However you don't need Administrator rights to install Globus Connect Personal on your local machine. If you do not have Administrator rights browse to a place you have write access to (e.g. your Desktop folder) or contact your local IT staff for assistance.
+By default, Globus Connect Personal prompts to be installed in C: \Program Files which requires administrator rights. However you don't need Administrator rights to install Globus Connect Personal on your local machine. If you do not have Administrator rights browse to a place you have write access to (e.g. your Desktop folder) or contact your local IT staff for assistance.
 
 ### SCINet Café Machine Installation Instructions for Globus Connect Personal 
 
