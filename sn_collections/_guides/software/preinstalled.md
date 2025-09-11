@@ -76,7 +76,7 @@ You can also install and or compile software manually in your  `$HOME`  or  `$PR
 
 If you need software that you think will be useful to many SCINet users you can request that the software be installed as a module. Doing this requires an agency-level security review and takes a few weeks. Modules can be requested with the software request form (eAuthentication required, non-ARS users should contact their sponsor):
 
-[Software Request Form](https://apps.gov.powerapps.us/play/e/a3bf43b2-009c-43c2-9c4f-bcb2d87972fb/a/5b3265ab-3a98-4405-8557-01c1342690f7){: .usa-button .usa-button-big }
+[Software Request Form](https://apps.gov.powerapps.us/play/e/a3bf43b2-009c-43c2-9c4f-bcb2d87972fb/a/5b3265ab-3a98-4405-8557-01c1342690f7){:target="_blank" rel="noopener noreferrer"  .usa-button .usa-button-big }
 
 ### Ceres Command-line Software Managed by the Module System
 

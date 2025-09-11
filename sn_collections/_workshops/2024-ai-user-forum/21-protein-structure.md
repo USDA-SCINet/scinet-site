@@ -68,7 +68,7 @@ Steps to prepare for the tutorial session:
         <tbody>
           <tr class="border-top-2px">
             <th scope="row" data-label="Materials" tabindex="0">
-              <a href="/assets/pdf/workshops/2024-ai-user-forum/21-protein-structure/Introduction_Slides.pdf" target="_blank">Introduction</a>            
+              <a href="/assets/pdf/workshops/2024-ai-user-forum/21-protein-structure/Introduction_Slides.pdf" target="_blank" rel='noopener noreferrer'>Introduction</a>            
             </th>
             <td data-label="Start"> 1:30 PM </td>
             <td data-label="Est. minutes"> 10 minutes </td>
@@ -77,7 +77,7 @@ Steps to prepare for the tutorial session:
         </tr>
         <tr class="border-top-2px">
           <th scope="row" data-label="Materials" rowspan="5" tabindex="0">
-            <a href="/assets/pdf/workshops/2024-ai-user-forum/21-protein-structure/Protein_Structure_Prediction.pdf" target="_blank">Protein Structure Prediction</a>
+            <a href="/assets/pdf/workshops/2024-ai-user-forum/21-protein-structure/Protein_Structure_Prediction.pdf" target="_blank" rel='noopener noreferrer'>Protein Structure Prediction</a>
           </th>
           <td data-label="Start" rowspan="2"> 1:40 PM </td>
           <td data-label="Est. minutes" rowspan="2"> 30 minutes </td>
@@ -106,7 +106,7 @@ Steps to prepare for the tutorial session:
         </tr>
         <tr class="border-top-2px">
           <th scope="row" data-label="Materials" rowspan="2" tabindex="0">
-            <a href="/assets/pdf/workshops/2024-ai-user-forum/21-protein-structure/Protein_Structure_Search.pdf" target="_blank">Protein Structure Search</a>
+            <a href="/assets/pdf/workshops/2024-ai-user-forum/21-protein-structure/Protein_Structure_Search.pdf" target="_blank" rel='noopener noreferrer'>Protein Structure Search</a>
           </th>
           <td data-label="Start" rowspan="2"> 3:00 PM </td>
           <td data-label="Est. minutes" rowspan="2"> 30 minutes </td>
@@ -119,7 +119,7 @@ Steps to prepare for the tutorial session:
         </tr>
         <tr class="border-top-2px">
           <th scope="row" data-label="Materials" rowspan="3" tabindex="0">
-            <a href="/assets/pdf/workshops/2024-ai-user-forum/21-protein-structure/Variant_Effect_Scores.pdf" target="_blank">Missense Variant Effect Predictions</a>
+            <a href="/assets/pdf/workshops/2024-ai-user-forum/21-protein-structure/Variant_Effect_Scores.pdf" target="_blank" rel='noopener noreferrer'>Missense Variant Effect Predictions</a>
           </th>
           <td data-label="Start" rowspan="3"> 3:30 PM </td>
           <td data-label="Est. minutes" rowspan="3"> 30 minutes </td>
@@ -136,7 +136,7 @@ Steps to prepare for the tutorial session:
         </tr>
         <tr class="border-top-2px">
           <th scope="row" data-label="Materials" rowspan="2" tabindex="0">
-            <a href="/assets/pdf/workshops/2024-ai-user-forum/21-protein-structure/Protein_Binder_Prediction.pdf" target="_blank">Protein Binder Predictions</a>
+            <a href="/assets/pdf/workshops/2024-ai-user-forum/21-protein-structure/Protein_Binder_Prediction.pdf" target="_blank" rel='noopener noreferrer'>Protein Binder Predictions</a>
           </th>
           <td data-label="Start" rowspan="2"> 4:00 PM </td>
           <td data-label="Est. minutes" rowspan="2"> 30 minutes </td>
@@ -152,5 +152,5 @@ Steps to prepare for the tutorial session:
 </div>
 
 Additional Resources:
-* <a href="/assets/pdf/workshops/2024-ai-user-forum/21-protein-structure/Tool_Descriptions.pdf" target="_blank">Tool Descriptions</a>
-* <a href="/assets/pdf/workshops/2024-ai-user-forum/21-protein-structure/Conda_Environments.pdf" target="_blank">Conda Environments</a>
+* <a href="/assets/pdf/workshops/2024-ai-user-forum/21-protein-structure/Tool_Descriptions.pdf" target="_blank" rel='noopener noreferrer'>Tool Descriptions</a>
+* <a href="/assets/pdf/workshops/2024-ai-user-forum/21-protein-structure/Conda_Environments.pdf" target="_blank" rel='noopener noreferrer'>Conda Environments</a>
