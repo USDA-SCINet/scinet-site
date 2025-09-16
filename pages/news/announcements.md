@@ -9,7 +9,27 @@ collecting:
   yml: news
 
 news:
-
+  - title: "Increased memory on Ceres nodes"
+    date: 2025-08-06
+    excerpt: "32 TB of memory from the recently decommissioned ceres19 nodes were installed in 76 operational ceres20 nodes to increase overall available memory. The minimum amount of memory per node on Ceres has now increased from 384 to 768 GB. See the [Ceres technical overview](/guides/resources/ceres#technical-overview) for current detailed hardware specifications."
+  - title: "New Atlas storage system"
+    date: 2025-07-08
+    excerpt: "Atlas’s July 8 maintenance included replacing Atlas’s original data storage hardware with a completely new data storage system. This new system brings several important improvements, including: nearly 2.7 times more storage space (increased from ~2.2 PB to ~6 PB); all solid-state storage that provides read/write performance superior to the previous storage system, which is especially beneficial for data-intensive GPU workloads; and significant power and space savings compared to the previous storage system."
+  - title: "New GPU node limits on Atlas"
+    date: 2025-07-08
+    excerpt: "To help promote resource sharing, jobs submitted to each of the GPU partitions (“gpu-v100”, “gpu-a100”, “gpu-a100-mig7”, and “gpu-l40s”) now have a maximum running time of 2 days and a maximum number of GPUs of 25% of all GPUs of the same type (e.g., there are 48 L40S GPUs, so one user can be using up to 12 L40S GPUs at once)."
+  - title: "New GPUs available on Atlas"
+    date: 2025-06-25
+    excerpt: "Twelve new GPU nodes with a total of 48 GPUs are now available to all SCINet users on SCINet’s Atlas supercomputer. These nodes each have 4 NVIDIA L40S GPUs, 64 CPU cores, and 1.5 TB of memory. The L40S GPU features 48 GB of GPU memory and was designed for general-purpose workloads, including deep learning and AI applications. These new nodes are available in the “gpu-l40s” partition/queue on Atlas."
+  - title: "Job submission changes on Ceres"
+    date: 2025-06-20
+    excerpt: "When submitting jobs, it is now required to explicitly specify a Slurm account (Slurm accounts have the same names as SCINet projects). For example, to use the account/project “myproject” when submitting an sbatch script, add the following line to the script file: #SBATCH --account=myproject"
+  - title: "Partition/queue changes on Ceres"
+    date: 2025-06-20
+    excerpt: "During Ceres’ June maintenance, legacy community partitions (“short”, “medium”, “long”, “long60”, etc.) were removed, and nearly all compute jobs on Ceres should now be submitted to the “ceres” partition. Note that compute jobs in the “ceres” partition are limited to 3 weeks of run time by default. If you require very long run times, you may submit jobs using the “long” QOS (“quality of service”) specification. This will allow jobs to run for up to 60 days, but they will be limited to using no more than 144 CPU cores. See the [February 18 update](announcements/2025-02-18-ceres-partition) below for more information about the “ceres” partition and its benefits."
+  - title: "New image annotation software on Atlas"
+    date: 2025-03-31
+    excerpt: "You can now easily create computer vision model training datasets directly on Atlas without needing to transfer image files to and from local laptops or workstations for annotation. Labelme, an image annotation application, is now available as an interactive app on Open OnDemand on Atlas. Labelme supports a variety of annotation types, including bounding boxes and custom polygons, and it also supports automated and semi-automated annotation using pretrained, general computer vision AI models."
   - title: "CLC Workbench and Server upgraded"
     date: 2025-02-18
     excerpt: "CLC Workbench and Server, a bioinformatics application available on the Ceres cluster's Open OnDemand interface, has been upgraded to version 25."
