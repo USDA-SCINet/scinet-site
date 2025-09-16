@@ -21,7 +21,7 @@ registration:
 sessions: 
   - session:
     date: 2025-08-27 20:00:00
-    end_date: 2025-12-28
+    end_date: 2025-08-28
     time: 2 - 5 PM ET
     multiday: "August 27 & 28"
     materials:
