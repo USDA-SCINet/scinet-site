@@ -1,5 +1,5 @@
 ---
-title: The Carpentries Unix, Git, and R Workshop
+title: The Carpentries Unix, Git, and Python Workshop
 type: workshop
 cal-titles: show
 display: basic
