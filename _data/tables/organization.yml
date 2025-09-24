@@ -84,13 +84,13 @@ SAC:
   - Person: Adrienne Narrowe
     Area: Northeast
     Role: Representative
-    Subcommittees: TBD
+    Subcommittees: Membership/Communications
     Term expires: 2027
   - Person: Harlan Svoboda
     Area: Northeast
     Role: Representative
-    Subcommittees: TBD
-    Term expires: 2027
+    Subcommittees: Membership/Communications
+    Term expires: 2028
   - Person: Geoff Waldbieser
     Area: Southeast
     Role: Representative
@@ -103,34 +103,34 @@ SAC:
     Term expires: 2026
   - Person: Hye-Seon Kim
     Area: Midwest
-    Role: Representative
-    Subcommittees:  
+    Role: Chair
+    Subcommittees: Membership/Communications
     Term expires: 2025
-  - Person: Erin Scully
+  - Person: Kelly Thorp 
     Area: Plains
     Role: Representative
-    Subcommittees: Education, Membership
-    Term expires: 2025
-  - Person: Pat Clark
-    Area: Pacific West
-    Role: Representative
-    Subcommittees: Education
-    Term expires: 2025
-  - Person: Peter Olsoy
+    Subcommittees: TBD
+    Term expires: 2028
+  - Person: Michael Branstetter
     Area: Pacific West
     Role: Representative
     Subcommittees: TBD
+    Term expires: 2028
+  - Person: Peter Olsoy
+    Area: Pacific West
+    Role: Secretary
+    Subcommittees: ""
     Term expires: 2027
   - Person: Quentin Read
     Area: Statistician
-    Role: Representative
-    Subcommittees: TBD
+    Role: Chair
+    Subcommittees: Education
     Term expires: 2027
   - Person: Christopher Owen
     Area: At-Large
     Role: Representative
     Subcommittees: TBD
-    Term expires: 2025
+    Term expires: 2028
   - Person: Brian Stucky
     Area: A-CSIO
     Role: Ex Officio
