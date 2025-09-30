@@ -38,11 +38,21 @@ To transfer files between your local computer and SCINet storage locations, ther
 
 
 ## Open OnDemand
+The Open OnDemand interface includes a file manager that allows you to upload and download files between a SCINet cluster and your local computer via your web browser. To upload or download files using the Open OnDemand file manager: 
+1. Click the "Files" dropdown menu from the top navigation bar.
+1. Click one of the listed directory shortcuts that appear below to start your navigation to the location on the cluster in which you want to start a file transfer.
+1. Use the file browser to navigate to the subdirectory to or from which to transfer files.
+1. Click either the "Upload" or "Download" buttons in the top right corner of the file browser to open a pop-up window to complete your upload or download. 
+  * Uploads support either dragging and dropping files or folders on the pop-up window or browsing your local file system. 
+  * Downloads will initiate a download via your web browser to your browser's default download location.  
 
+To read more about accessing Open OnDemand and its other features, see the [Open OnDemand Interface guide](/guides/use/open-ondemand). 
+
+**Please note:** Using Open OnDemand for file transfer is only for transfers between your local computer and Ceres or Atlas. Transfers to and from Juno are not supported as Open OnDemand software is intended for compute clusters and is not available on Juno. 
 
 ## Globus Connect Personal
 
-To transfer files to or from your local computer, you can use Globus Connect Personal (GCP). For more information on using Globus and GCP, see [the Globus guide](/guides/data/transfer/globus#globus-connect-personal). 
+To transfer files between your local computer and either Ceres, Atlas, or Juno, you can use Globus Connect Personal (GCP). For more information on using Globus and GCP, see [the Globus guide](/guides/data/transfer/globus#globus-connect-personal). 
 
 
 
