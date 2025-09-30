@@ -46,7 +46,15 @@ This guide provides detailed information about the storage locations provided by
 
 There are multiple places to store files on the Ceres and Atlas clusters and those locations serve different purposes. These storage options are co-located with compute nodes and are best suited for files needed during computational work on the clusters. 
 
-{% include alert type="warning" title="Warning" text="Cluster storage is not backed up and should not be relied on for long-term storage purposes. Please use Juno permanent storage for storing your files long term." %}
+
+<div class="usa-alert usa-alert--warning">
+<div class="usa-alert__body" markdown="1">
+<h4 class="usa-alert__heading">Warning</h4>
+
+Cluster storage is not backed up and should not be relied on for long-term storage purposes. Please use [Juno permanent storage](#juno-permanent-storage) for storing your files long term.
+
+</div>
+</div>
 
 ### Home directories  
 
