@@ -34,7 +34,7 @@ subnav:
     url: /guides/data/transfer/cafe
     internal: true
     shows_list: subnav
-  - title: Large Data Transfer by Shipping Hard Drives
+  - title: Large Data Transfer by Shipping External Drives
     url: /guides/data/transfer/shipping
     internal: true
 
@@ -50,7 +50,7 @@ To help identify the file transfer method and documentation you should use, dete
     * If you would like to transfer data to and from your local computer, see [Globus Connect Personal](/guides/data/transfer/globus#globus-connect-personal).
     * If you are on a SCINet café machine at a [SCINet-X location](/news/scinet-x), see [Data Transfer via Café Machine](/guides/data/transfer/cafe).
     * If you would like to transfer data between SCINet infrastructure and a non-SCINet Globus endpoint, please go directly to [Globus Data Transfer](/guides/data/transfer/globus).  
-1. Lastly, if you have to transfer very large amounts of data and network speed at your location is slow, please submit a request to the Virtual Research Support Core (VRSC) to ingress data from a hard drive as described in [Large Data Transfer by Shipping Hard Drives](/guides/data/transfer/shipping).
+1. Lastly, if you have to transfer very large amounts of data and network speed at your location is slow, please submit a request to the Virtual Research Support Core (VRSC) to ingress data from a hard drive as described in [Large Data Transfer by Shipping External Drives](/guides/data/transfer/shipping).
 
 <!--excerpt-->
 
