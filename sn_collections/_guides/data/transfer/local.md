@@ -58,7 +58,7 @@ To transfer files between your local computer and either Ceres, Atlas, or Juno, 
 
 ## `scp` or `rsync`
 
-`scp` is usually available on any Linux or MacOS machine and on Microsoft Windows 10 (in PowerShell). 
+`scp` is usually available on any Linux or MacOS computer and on Microsoft Windows 10 (in PowerShell). 
 It is best used when you need to transfer a single file.
 
 Below are examples of `scp` commands to be issued on your local computer. In these examples:
@@ -111,7 +111,7 @@ Another supported GUI method for smaller file transfers is Cyberduck ([https://c
 
 To transfer files to and from the clusters using Cyberduck:
 1. Download Cyberduck from [https://cyberduck.io/](https://cyberduck.io/) and install it.
-    * This may require local IT assistance if you are on a USDA-managed machine.
+    * This may require local IT assistance if you are on a USDA-managed computer.
 2. [SSH into SCINet via the command line](https://scinet.usda.gov/guides/access/ssh-login).
     * This authentication is valid for 16 hours.
 3. Open Cyberduck.
