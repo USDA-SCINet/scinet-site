@@ -25,6 +25,10 @@ sessions:
     materials:
       - text: Workshop materials
         url: https://github.com/PracticumAI/deep_learning_pt-lightning_ars
+      - text: "Session 1 recording - USDA access only"
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/Eb7Eq7A9w1NMm-vep_7T5LIBjEO72IHGboYFt1bSrZmQMQ?e=S5VKWd
+      - text: "Session 2 recording - USDA access only"
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EclRep1hBBpLiBzX1oCPRpsB_N3WVRAQsgN32d-cQiQSag?e=6z0tvz
   - session:
     date: 2024-01-08 19:00:00
     end_date: 2024-01-10
