@@ -10,7 +10,7 @@ layout: "guides"
 class: "guide-nav"
 
 
-short_title: Storage and Project Management
+short_title: Storage and Projects
 
 ---
 

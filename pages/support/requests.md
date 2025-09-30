@@ -28,16 +28,12 @@ subnav:
 
 Below are instructions for how to make a request for a SCINet project, new software, or AWS resources.
 
-## Project Request
+## Project request
 ---
 
-When a user applies for a SCINet account, they are allocated space on Ceres and Atlas in a home directory (/home/\<username>/). Each user is allowed 30 GB of data in their home directory.
+SCINet projects provide a structured way for ARS researchers to request storage space, work with collaborators, and submit computational jobs on SCINet infrastructure. To learn more about SCINet projects, see the [SCINet Project Management guide](/guides/data/project-management). 
 
-Users are advised to request additional storage space with a SCINet project. SCINet project storage allocations are located in project directories: /project/\<projectname>/ on Ceres and Atlas and /LTS/project/\<projectname>/ on Juno. Project storage allocation sizes, or storage 'quotas', can be requested to be as large as you need to support your work and can be different on each system, e.g., larger on Juno than Ceres or Atlas if you have more data to store long term than process at a given time. SCINet projects also come with a /90daydata directory (/90daydata/\<projectname>/) that is useful for storing intermediate files.
-
-Requests for new projects or changes to existing projects must be submitted by the project’s Principal Investigator (PI) who needs to be a full-time ARS employee. 
-
-### To Request a New SCINet Project
+### To request a new SCINet project
 When requesting a new project, you will be asked for details including:
 * a project summary, 
 * requested storage amounts, and
@@ -47,17 +43,19 @@ To request a new project, please fill out the request form (eAuthentication requ
 
 [Request a Project](https://forms.office.com/g/wD9rYarVyn){: .usa-button .usa-button-big }
 
-### To Modify an Existing SCINet Project
-If changes need to be made to an existing SCINet project, e.g., adding a new member, the project's PI should send an email that includes:
+**Please note:** Requests for new SCINet projects must be submitted by the project’s Principal Investigator (PI) who needs to be a full-time ARS employee.
+
+### To modify an existing SCINet project
+If changes need to be made to an existing SCINet project, e.g., adding a new member, the project's PI or manager should send an email that includes:
 * the name of the project directory (/project/\<projectname>/) and 
 * the requested changes 
 
 to the SCINet Virtual Research Support Core (VRSC) [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=modify%20project%20allocation).
 
-### To Request a Quota Increase for an Existing SCINet Project
-When requesting a project quota increase on Ceres or Atlas, you will be asked to briefly explain why using /90daydata and/or permanent storage on Juno does not cover your storage needs.  
+### To request a quota increase for an existing SCINet project
+When requesting a project quota increase on Ceres or Atlas, you will be asked to briefly explain why using `/90daydata` and/or permanent storage on Juno does not cover your storage needs.  
 
-To request a project quota increase for storage on Ceres, Atlas and/or Juno, please have the project PI or manager fill out the following request form:
+To request a project quota increase for storage on Ceres, Atlas and/or Juno, please have the project PI or manager fill out the following request form (eAuthentication required, non-ARS users should contact their sponsor):
 
 [Request a Project Quota Increase](https://forms.office.com/g/ntnKBzJiKx){: .usa-button .usa-button-big }
 
@@ -65,13 +63,13 @@ To request a project quota increase for storage on Ceres, Atlas and/or Juno, ple
 
 <br>
 
-## Software Request
+## Software request
 ---
 ### Before sending VRSC a software request do the following:
 
 1. Make sure the software isn't already available as a module by checking the lists of module software on the [Preinstalled Software List]({{ site.baseurl }}/guides/software/preinstalled) page.
 
-   If you only need a different version of a software package that is already installed on CERES please email [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=software%20request%20-%20add%20different%20version).
+   If you only need a different version of a software package that is already installed on Ceres please email [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=software%20request%20-%20add%20different%20version).
 
 2. Consider whether you should install the software yourself in your home or project directory - see the [Preinstalled Software List]({{ site.baseurl }}/guides/software/preinstalled) for more details.
 
@@ -89,11 +87,11 @@ If you've done the above but need new software installed as a module, use the so
 
 <br>
 
-## AWS Request
+## AWS request
 ---
 SCINet provides AWS at no cost to SCINet users with suitable workloads. A limited amount of funding is available annually. Interested SCINet users must submit a SCINet AWS Project Request to be considered for AWS funding.
 
-### To Add/Modify AWS Resources for an Existing SCINet Project 
+### To add/modify AWS resources for an existing SCINet project 
 Send an email that includes:
 * the name of the project directory (/project/\<projectname>/) and 
 * the requested changes
@@ -103,7 +101,7 @@ to the SCINet Virtual Research Support Core [scinet_vrsc@USDA.GOV](mailto:scinet
 This includes requests for additional funding.
 
 
-### To Request a New SCINet-funded AWS Project 
+### To request a new SCINet-funded AWS project 
 Fill out an application form (eAuthentication required, non-ARS users should contact their sponsor)
 
 [Request AWS Project](https://usda-scinet.atlassian.net/servicedesk/customer/portal/4/group/13/create/63){: .usa-button .usa-button-big }

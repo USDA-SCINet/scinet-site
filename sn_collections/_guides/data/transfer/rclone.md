@@ -15,15 +15,15 @@ subnav:
   - title: Setting up rclone
     url: '#setting-up-rclone'
     subnav:
-      - title: Installation on a local machine
-        url: '#installation-on-a-local-machine'
+      - title: Installation on a local computer
+        url: '#installation-on-a-local-computer'
         subnav:
           - title: Installation on Windows
             url: '#installation-on-windows'
           - title: Installation on macOS 
             url: '#installation-on-macos'
-      - title: Configuration of rclone on a local machine
-        url: '#configuration-of-rclone-on-a-local-machine'
+      - title: Configuration of rclone on a local computer
+        url: '#configuration-of-rclone-on-a-local-computer'
       - title: Configuration of rclone on SCINet
         url: '#configuration-of-rclone-on-scinet'
       - title: Test rclone
@@ -43,12 +43,12 @@ Rclone is already installed on all SCINet data transfer and compute nodes. Pleas
 To learn more about `rclone`, see [https://rclone.org](https://rclone.org).<!--excerpt-->
 
 ## Setting up rclone 
-Before transferring files to or from cloud resources, rclone must first be configured to access cloud storage resources, e.g., an USDA-ARS Box account or AWS S3 buckets. If authentication with eAuth is required to access the cloud resource (e.g., your Box account), you will need to also install and configure rclone on your local machine for authenticating with eAuth and generating an authentication token to use on SCINet systems. 
+Before transferring files to or from cloud resources, rclone must first be configured to access cloud storage resources, e.g., an USDA-ARS Box account or AWS S3 buckets. If authentication with eAuth is required to access the cloud resource (e.g., your Box account), you will need to also install and configure rclone on your local computer for authenticating with eAuth and generating an authentication token to use on SCINet systems. 
 
 **Please note:** Although rclone supports data transfer to and from Microsoft OneDrive accounts, rclone is not currently authorized to access USDA OneDrive accounts, so rclone cannot facilitate data transfers directly between your OneDrive account and SCINet systems. 
 
-### Installation on a local machine
-In order to use `rclone` on SCINet systems, it is necessary to have it installed on your local machine as well. This is needed to generate an authentication token.<br>
+### Installation on a local computer
+In order to use `rclone` on SCINet systems, it is necessary to have it installed on your local computer as well. This is needed to generate an authentication token.<br>
 
 #### Installation on Windows
 
@@ -86,7 +86,7 @@ Remove the leftover files.
 cd .. && rm -rf rclone-*-osx-amd64 rclone-current-osx-amd64.zip
 ```
 
-### Configuration of `rclone` on a local machine
+### Configuration of `rclone` on a local computer
 
 1. Open a Windows command prompt (cmd) or macOS Terminal.
 2. Type

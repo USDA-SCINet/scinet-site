@@ -1,6 +1,6 @@
 ---
-title: "Large data tranfer by shipping hard drives"
-description: Large data transfer by shipping hard drives
+title: "Large Data Transfer by Shipping External Drives"
+description: Large data transfer by shipping external drives
 
 parents:
   - title: Storage and Project Management
@@ -15,23 +15,23 @@ fetched: "data-transfer"
 order_number: 50
 ---
 
-Large data transfers will be facilitated by the VRSC and involves users shipping hard disk drives (not thumb drives) with their data on it to the VRSC in Ames, Iowa.  The VRSC will then upload the data directly and put it in a project directory specified by the user.  <!--excerpt-->
+Large data transfers will be facilitated by the VRSC and involves users shipping external drives (not thumb drives) with their data on it to the VRSC in Ames, Iowa.  The VRSC will then upload the data directly and put it in a project directory specified by the user.  <!--excerpt-->
 
-You can send hard drives containing data to the VRSC if you have very large amounts of data (typically greater than 50 GB) to transfer to Ceres or if the network speed at your location is slow. Please follow these instructions:
+You can send external drives containing data to the VRSC if you have very large amounts of data (typically greater than 50 GB) to transfer to Ceres or if the network speed at your location is slow. Please follow these instructions:
 
-1. Submit an email request to the VRSC [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=large%20data%20transfer%20request) for a data transfer with the following information:  
+1. Submit an email request to the VRSC [scinet_vrsc@usda.gov](mailto:scinet_vrsc@usda.gov?subject=large%20data%20transfer%20request) for a data transfer with the following information:  
    * Amount of data.
    * Target project directory.
-   * Type of filesystem the data is coming from (Windows, Mac, or Linux).    
+   * Type of filesystem the data are coming from (Windows, Mac, or Linux).    
 
-   If you don't already have a project directory, please request one first: [Request Project Storage](https://forms.office.com/g/wD9rYarVyn) (eAuthentication required)  
+   If you don't already have a project directory, please request one first: [Request Project Storage](/support/request#project-request).  
 
 2. Copy the data onto a SATA hard drive or solid-state drive (SSD)  
    * You will be responsible for purchasing your own drive(s).
-   * Any type of hard drive (not a USB drive) is fine, but SSDs will be more tolerant of the postal system.
-   * Disks must be EXT4, NTFS, HFS, XFS, or FAT formatted.  
+   * Any type of external drive (not a USB drive) is fine, but SSDs will be more tolerant of the postal system.
+   * Drives must be formatted as EXT4, NTFS, HFS, XFS, or FAT.  
 
-3. Ship the disk to the following address and email the tracking information to scinet_vrsc@USDA.GOV. Include a print out of your email containing the data transfer request to VRSC in your package. Send to:  
+3. Ship the external drive to the following address and email the tracking information to scinet_vrsc@usda.gov. Include a print out of your email containing the data transfer request to VRSC in your package. Send to:  
    * Nathan Humeston  
       74 Durham  
       613 Morrill Rd  
