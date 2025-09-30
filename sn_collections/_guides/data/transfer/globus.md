@@ -66,6 +66,13 @@ To transfer files to or from your local computer, you can use Globus Connect Per
 
 By default on Windows, GCP prompts to be installed in `C:\Program Files` which requires administrator rights. However, you don’t need administrator rights to install GCP on your local computer. If you do not have administrator rights, browse to a place to which you have write access (e.g., your Desktop folder) when prompted for an installation location. If you encounter further permission issues, contact your local IT staff for assistance. 
 
+**Please note:** GCP defaults to access your user "Documents" folder on your local computer, but you can change that to another folder (e.g., a "globus" subfolder within your "Documents") to limit Globus's access to your local files. To make this change:
+1. Right-click on the GCP icon in your local machine's system taskbar (or menu bar or system tray, depending on your operating system).
+1. Select "Options" or "Preferences" (the term used depends on your operating system), which will open a pop-up window.
+1. Navigate to the "Access" tab in the new pop-up.
+1. If you want to remove access to your "Documents" or other folder, select the fodler and then click the "-" button.
+1. To add a new folder Globus can access, click on the "+" button and select a folder in the file browser pop-up that appears.
+
 ### Setup
 
 1. Once GCP is installed, launch the application and a Globus Connect Personal Setup pop-up window will appear. Click "Log In".  
