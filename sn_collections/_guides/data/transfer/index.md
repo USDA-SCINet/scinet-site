@@ -46,7 +46,7 @@ To help identify the file transfer method and documentation you should use, dete
 1. If you are transferring small amounts of data (less than 1 GB), it is typically fine to use other file transfer protocols. See [Data Transfer from Local Machines](/guides/data/transfer/local).
 1. If you are moving data to and from cloud resources, see [Rclone](/guides/data/transfer/rclone).
 1. For most other data transfer needs, we recommend that you use [Globus](/guides/data/transfer/globus).  
-    * If you would like to transfer data from your local computer, see [Data Transfer from Local Machine](/guides/data/transfer/local).
+    * If you would like to transfer data from your local computer, see [Globus Connect Personal](/guides/data/transfer/globus#globus-connect-personal).
     * If you are at a SCINet-X location, see [Transferring Data via Café Machine](/guides/data/transfer/cafe).
     * If you would like to transfer data between SCINet infrastructure and a non-SCINet Globus endpoint, please go directly to [Globus Data Transfer](/guides/data/transfer/globus).  
 1. Lastly, if you have to transfer very large amounts of data and network speed at your location is slow, please submit a request to the Virtual Research Support Core (VRSC) to ingress data from a hard drive as described in [Large Data Transfer by Shipping Hard Drives](/guides/data/transfer/shipping).
