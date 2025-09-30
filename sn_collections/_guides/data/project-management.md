@@ -19,23 +19,18 @@ subnav:
 
 {% include images_path %}
 
+SCINet projects provide a structured way for ARS researchers to request storage space, work with collaborators, and submit computational jobs on SCINet infrastructure. Within a SCINet project, you have dedicated space to store and share files and software with other SCINet users that are a member of your project. Project storage allocation sizes, or [storage 'quotas'](#storage-quotas), can be requested to be as large as you need to support your work and can be different on each system, e.g., larger on Juno than Ceres or Atlas if you have more data to store long term than process at a given time. To read more about storage location options associated with SCINet projects, see the [Storage Locations guide](/guides/data/storage). When you submit jobs to run a SCINet cluster, you specify your relevant SCINet project for each job (see the [Slurm Resource Manager guide](/guides/use/slurm#slurm-accounts) for more details). By managing SCINet's storage and computational resources with these projects, we keep track of SCINet's use in and impact on ARS research, including ensuring fair access to storage and computational resources across ARS.
 
-## Request a project directory 
+To request a new SCINet project or to increase an existing project's storage quota, see our [Request Resources page](/support/request#project-request).
 
-To request a new project directory or quota increase, see our [Request Resources page](/support/request#project-request) or select one of the following forms (eAuthentication required):  
-* [Request a project directory](https://forms.office.com/g/wD9rYarVyn)  
-* [Request a project quota increase](https://forms.office.com/g/ntnKBzJiKx) 
-
-
-**Please Note**: Only full-time ARS employees are able to submit these requests. Any requests sent by other individuals will be declined. ORISE participants and term ARS employees are not authorized to have their own project allocations, but they can be added to projects requested by project PIs or managers.
 
 ## Storage quotas
 
-Project directories in `/project` on Ceres and Atlas and `/LTS/project` on [Juno](/guides/data/storage#juno-permanent-storage) have quotas, i.e., storage limits.  Note that quotas for project directories on Ceres and Atlas may differ depending on the storage allocations requested when submitting either the new project or storage quota increase [request forms](/support/request#project-request).  
+Project directories in `/project` on Ceres and Atlas and `/LTS/project` on [Juno](/guides/data/storage#juno-permanent-storage) have quotas, i.e., storage limits.  Note that quotas for project directories on Ceres and Atlas may differ depending on the storage allocations requested when submitting either the new project or storage quota increase [request forms](/support/request#project-request). 
 
-To see the current usage and quotas for your home and project directories on Ceres, as well as on Juno, issue the `my_quotas` command on Ceres. 
+To see the current usage and quotas for your project directories (as well as your home directory) on Ceres or Atlas, run the `my_quotas` command on the respective cluster. Juno project directory usage is included in the output of `my_quotas` on Ceres.  
 
-**If the storage quota of a project directory is exceeded**, there will be a 14-day grace period to reduce storage below the project’s quota. During this grace period, you are able to still write to your project space while the project’s usage is only 10% or 10 TB, whichever is less, over its quota. Once you exceed 14 days or meet the 10%/10 TB threshold, you will not be able to write to your project space. During the time a project’s quota is exceeded, every project member will receive a daily email notification of the current project storage usage and how many days remain to get under the storage quota. To reduce your project’s usage below its quota, files can be moved to Juno for long-term storage, unneeded files can be deleted, or a storage quota increase can be requested. Please see the [Storage Locations guide](guides/data/storage) for advice on managing project storage among `/project`, `/90daydata`, and on Juno.
+**If the storage quota of a project directory is exceeded**, there will be a 14-day grace period to reduce storage below the project’s quota. During this grace period, you are able to still write to your project space while the project’s usage is only 10% or 10 TB, whichever is less, over its quota. Once you exceed 14 days or meet the 10%/10 TB threshold, you will not be able to write to your project space. During the time a project’s quota is exceeded, every project member will receive a daily email notification of the current project storage usage and how many days remain to get under the storage quota. To reduce your project’s usage below its quota, files can be moved to Juno for long-term storage, unneeded files can be deleted, or a storage quota increase can be requested. Please see the [Storage Locations guide](/guides/data/storage) for advice on managing project storage among `/project`, `/90daydata`, and on Juno.
 
 ## Manage project membership
 
@@ -60,7 +55,7 @@ ipa group-remove-member proj-<project_name> --users=<scinet_username> 
   * Once the user name appears on the right side under "Prospective", click on the "Add" button in the bottom right corner of the pop-up window. 
   * To revoke user access, check-mark next to the user name and click on the "Delete" button.  
 
-After being added to the `proj-<project_name>` project group, users will be able to access `/project/<project_name>` and `/90daydata/<project_name>` both on Ceres and Atlas, as well as `/LTS/project/<project_name>` on Juno. 
+After being added to the `proj-<project_name>` project group, users will be able to access `/project/<project_name>` and `/90daydata/<project_name>` both on Ceres and Atlas, as well as `/LTS/project/<project_name>` on Juno. **Please note:** it can take time for project membership to sync across systems. 
 
 
 
