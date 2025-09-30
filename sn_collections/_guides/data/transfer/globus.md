@@ -53,6 +53,8 @@ To transfer files to or from your local computer, you can use Globus Connect Per
 
 ### Installation
 
+* ***If you are on a SCINet-X location's café machine:**
+  * Please see the [GCP setup instructions specific to café machines](/guides/data/transfer/cafe). 
 * **If you are on a USDA-managed Windows laptop or workstation:**
   * If your workstation has CEC support, you may be able to install GCP directly from the Software Center.
 * **If you are not on a USDA-managed laptop, do not have Software Center, or do not see GCP in the Software Center:**
