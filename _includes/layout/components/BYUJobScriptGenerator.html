@@ -240,6 +240,7 @@ BYUScriptGen.prototype.createForm = function(doc) {
 	this.inputs.lic2_name = this.newInput({});
 	this.inputs.lic2_count = this.newInput({size:3, maxLength:4});
 	this.inputs.job_name = this.newInput({});
+	this.inputs.account = this.newInput({});
 	this.inputs.email_begin = this.newCheckbox({checked:0, id:"email-begin"});
 	this.inputs.email_end = this.newCheckbox({checked:0, id:"email-end"});
 	this.inputs.email_abort = this.newCheckbox({checked:0, id:"email-abort"});
@@ -257,6 +258,7 @@ BYUScriptGen.prototype.createForm = function(doc) {
 	table.appendChild(this.returnNewRow("byu_sg_row_numcores", REQUIRED + "<b>Number of processor cores per node</b>:<br /><i>Limited to 48 per node.<br />Each processor core can simultaneously execute 2 application threads.</i>", this.inputs.ncores_per_node));
 //	table.appendChild(this.returnNewRow("byu_sg_row_numgpus", "Number of GPUs: ", this.inputs.num_gpus));
 			  table.appendChild(this.returnNewRow("byu_sg_row_walltime", REQUIRED + "<b>Walltime limit</b>:<br /><i>Maximum time the job may run. Shorter jobs may start running sooner.</i>", this.newSpan(null, wallhoursGr, " : " , wallminsGr, " : ", wallsecsGr)));
+	table.appendChild(this.returnNewRow("byu_sg_row_account", REQUIRED + "<b>Account</b>:<br /><i>Account to run under.</i>", this.inputs.account));
 	table.appendChild(this.returnNewRow("byu_sg_row_mempercore", "<b>Max memory per compute node</b> (1 GB == 1024 MB):<br /><i>Default memory is 2 GB per processor core requested.</i>", this.newSpan(null, memGr)));
 //	table.appendChild(this.returnNewRow("byu_sg_row_testjob", "Job is a <b>test</b> job: ", this.inputs.is_test));
 //	table.appendChild(this.returnNewRow("byu_sg_row_preemptable", "Job is preemptable: ", this.inputs.is_preemptable));
@@ -395,6 +397,7 @@ BYUScriptGen.prototype.retrieveValues = function() {
     this.values.nodes = this.inputs.nodes.value;
 	this.values.gpus = this.inputs.num_gpus.value
 	this.values.job_name = this.inputs.job_name.value;
+	this.values.account = this.inputs.account.value;
 	this.values.sendemail = {};
 	this.values.sendemail.begin = this.inputs.email_begin.checked;
 	this.values.sendemail.end = this.inputs.email_end.checked;
@@ -422,6 +425,8 @@ BYUScriptGen.prototype.retrieveValues = function() {
         jobnotes.push("WARNING: this job can run on a standard compute node(s). Consider using compute node type \"standard\"");
     if (this.values.walltime_in_seconds <= 0)
         jobnotes.push("ERROR: walltime limit must be > 00:00:00");
+    if (!this.values.account)
+        jobnotes.push("ERROR: account must be specified");
 
     // rudimentary email validation
     // source: http://stackoverflow.com/questions/46155/validate-email-address-in-javascript
@@ -575,7 +580,11 @@ BYUScriptGen.prototype.generateScriptSLURM = function () {
 	if(this.inputs.job_name.value && this.inputs.job_name.value != "") {
 		sbatch("--job-name=\"" + this.inputs.job_name.value + "\"");
 	}
-	
+
+	if(this.inputs.account.value && this.inputs.account.value != "") {
+		sbatch("--account=\"" + this.inputs.account.value + "\"");
+	}
+
 	if(this.inputs.email_begin.checked || this.inputs.email_end.checked || this.inputs.email_abort.checked) {
 		sbatch("--mail-user=" + this.values.email_address + "   # email address");
 		if(this.inputs.email_begin.checked)
