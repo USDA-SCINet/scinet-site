@@ -587,12 +587,14 @@ BYUScriptGen.prototype.generateScriptSLURM = function () {
 
 	if(this.inputs.email_begin.checked || this.inputs.email_end.checked || this.inputs.email_abort.checked) {
 		sbatch("--mail-user=" + this.values.email_address + "   # email address");
+    var mail_types = [];
 		if(this.inputs.email_begin.checked)
-			sbatch("--mail-type=BEGIN");
+        mail_types.push("BEGIN");
 		if(this.inputs.email_end.checked)
-			sbatch("--mail-type=END");
+        mail_types.push("END");
 		if(this.inputs.email_abort.checked)
-			sbatch("--mail-type=FAIL");
+        mail_types.push("FAIL");
+    sbatch("--mail-type=" + mail_types.join(","));
 	}
 
     if (this.values.job_script_template == "rstudio-server")
