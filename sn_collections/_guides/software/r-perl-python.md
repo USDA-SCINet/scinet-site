@@ -46,16 +46,16 @@ Then when R is started from the directory `<path/to/the/project/directory>`, the
 
 Load an environment module for the desired version of R and start R:
 ```
-$ module load r/4.0.3
+$ module load r/4.4.1 # or simply use 'r' to load the latest version
 $ R
-R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
+R version 4.4.1 (2024-06-14) -- "Race for Your Life"
 ```
 
-To install A3 package issue the  `install.packages()`  command and answer "y" to both questions:
+To install 'abc' package issue the  `install.packages()`  command and answer "y" to both questions:
 ```
-> install.packages("A3",repos="http://cran.r-project.org")
-Warning in install.packages("A3") :
-'lib = "/lustre/project/software/7/apps/r/4.0.3/lib64/R/library"' is not writable
+> install.packages("abc", repos="http://cran.r-project.org")
+Warning in install.packages("abc", repos = "http://cran.r-project.org") :
+'lib = "/lustre/project/software/7/apps/r/4.4.1/lib64/R/library"' is not writable
 Would you like to use a personal library instead? (yes/No/cancel) yes
 Would you like to create a personal library
 <path/to/the/project/directory>/R_packages/4.0
@@ -66,7 +66,7 @@ To see the library paths, issue  `.libPaths()`  command from within R:
 ```
 > .libPaths();
 [1] "<path/to/the/project/directory>/R_packages/4.0"
-[2] "/lustre/project/software/7/apps/r/4.0.3/lib64/R/library"
+[2] "/lustre/project/software/7/apps/r/4.4.1/lib64/R/library"
 ```
 
 ## Python
@@ -74,34 +74,32 @@ To see the library paths, issue  `.libPaths()`  command from within R:
 Users can install python packages(via pip) to their home directory. This creates a "site-packages" directory within the user's home directory.
 ```
 $ module load python_3
-$ pip3 install --user <package.name>
+$ python -m pip install --user <package.name>
 ```
 
-By default the packages for python 3.5 are stored in ~/.local/lib/python3.5/site-packages
+By default the packages for python 3.3 and above are stored in ~/.local/lib/python<version>/site-packages
 
-If users intend to share the python environment with users working on the same project (or to install packages in a non-standard location), using **virtualenv** is a much better way to deal with managing python packages.
+However, installing packages in the default user location is **discouraged**, as it may lead to conflicts when working with multiple Python environments.
+
+A better approach, especially when working on shared projects or installing packages in non-standard locations, is to use a virtual environment.
 
 After loading the python module, create a virtual environment by:
 ```
-$ virtualenv <path/to/the/project/directory/name.of.the.project>
-```
-
-This creates a directory in your current project directory. This example below shows a virtualenv "virt_test" being created and activated.
-```
-$ virtualenv virt_test
-Using base prefix '/software/apps/python_3/gcc/64/3.5.0'
-New python executable in /root/virt_test/bin/python3.5
-Also creating executable in /root/virt_test/bin/python
-Installing setuptools, pip, wheel...done.
-$ source virt_test/bin/activate
-$ source virt_test/bin/activate
-(virt_test) $ pip3 list
-pip (9.0.1)
-setuptools (36.0.1)
-wheel (0.29.0)
+$ python -m venv <path/to/the/project/directory/name.of.the.project>
 ```
 
 Note that this virtual environment starts clean without using any global python site-packages that are already installed. Use  **`--system-site-packages`**  if you want to use global site-packages.
+
+This creates a directory in your current project directory. This example below shows a virtualenv "virt_test" being created and activated.
+```
+$ python -m venv virt_test
+$ source virt_test/bin/activate
+(virt_test) $ pip3 list
+Package    Version
+---------- -------
+pip        24.0
+setuptools 65.5.0
+```
 
 To exit this environment, run deactivate:
 ```
@@ -129,10 +127,14 @@ $ export PERL5LIB=$HOME/perl5/lib/perl5:$PERL5LIB
 
 Perl modules can also be installed in other directories. For example, the user can have the modules available to the rest of the project members so that everyone involved works in the same environment.
 
+If **local::lib** is not already installed, you can bootstrap it using the following command:
+```
+$ cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+```
+
 **local::lib** provides the flexibility for users to install modules in any custom location (as long as they have write permissions).
 ```
-$ eval "$(perl -I/path/to/the/project/dir/perl5/lib/perl5 -
-Mlocal::lib=/path/to/the/project/dir/perl5)"
+$ eval "$(perl -I/path/to/the/project/dir/perl5/lib/perl5 -Mlocal::lib=/path/to/the/project/dir/perl5)"
 ```
 
 In addition to creating "perl5" directory within the specified project directory, the above
@@ -145,48 +147,4 @@ $ cpanm Test::More
 
 Note: The package source files will still be downloaded to your home directory (~/.cpanm/sources)
 
-Note: All users working on the project can access modules that were installed using local:lib and perlbrew, but only the original user can perform perl module installs.
-
-**perlbrew** is another tool that can create perl environments. perlbrew offers a lot of flexibility to users as they can install different versions of perl based on the requirements of the project.
-```
-$ module load perl
-$ perlbrew availableperl-5.27.1
-perl-5.26.0
-perl-5.24.1
-......
-```
-
-Set the **PERLBREW_ROOT** variable to a preferred location.
-```
-$ export PERLBREW_ROOT=/path/to/project/dir/perlbrew
-$ perlbew init
-```
-
-To install the latest stable release
-```
-$ perlbrew --notest install stable
-```
-
-To install a specific version of perl
-```
-$ perlbrew --notest install perl-5.24.0
-$ perlbrew list
-perl-5.26.0
-perl-5.24.0
-```
-
-To use the latest perl,
-```
-$ perlbrew use 5.26.0
-```
-
-Users can then use cpanm to install modules based on their requirements.
-
-It is also possible to switch between different perl installs(if you have them installed)
-```
-$ perlbrew switch 5.24.0
-```
-
-This switches from 5.26.0 to 5.24.0
-
-Note: All users working on the project can access modules that were installed using local:lib and perlbrew, but only the original user can perform perl module installs.
+Note: All users working on the project can access modules that were installed using local:lib, but only the original user can perform perl module installs.
