@@ -73,7 +73,7 @@ The following example commands illustrate an interactive session where the user 
 
 Start the interactive session:
 ```
-$ srun --pty -p short -A slurm_account_name -t 01:00:00 -n 20 -N 1 /bin/bash -l
+$ srun --pty -p ceres -A slurm_account_name -t 01:00:00 -n 20 -N 1 /bin/bash -l
 ```
 
 Load NCBI-BLAST+ on the compute node:
@@ -140,7 +140,7 @@ Jobs can be submitted to various partitions or queues using SLURM's `sbatch` com
 ```bash
 #!/bin/bash
 #SBATCH --job-name="blastp"   #name of this job
-#SBATCH -p short              #name of the partition (queue) you are submitting to
+#SBATCH -p ceres              #name of the partition (queue) you are submitting to
 #SBATCH -N 1                  #number of nodes in this job
 #SBATCH -n 40                 #number of cores/tasks in this job, you get all 20 physical cores with 2 threads per core with hyper-threading
 #SBATCH -t 01:00:00           #time allocated for this job hours:mins:seconds
@@ -188,7 +188,7 @@ Now create a batch job script (OMPjob.sh) to test number of threads you requeste
 ```bash
 #!/bin/bash
 #SBATCH --job-name=OpenMP
-#SBATCH -p short
+#SBATCH -p ceres
 #SBATCH -N 1
 #SBATCH -n 20
 #SBATCH --threads-per-core=1
@@ -216,7 +216,7 @@ Create a SLURM script like this (for example, RAxMLjob.sh, but use your own alig
 ```bash
 #!/bin/bash
 #SBATCH --job-name=raxmlMPI
-#SBATCH -p short
+#SBATCH -p ceres
 #SBATCH -N 2
 #SBATCH --ntasks-per-node=40
 #SBATCH -A slurm_account_name 
