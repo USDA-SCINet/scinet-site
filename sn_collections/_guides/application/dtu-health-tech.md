@@ -20,3 +20,5 @@ You will be notified once you have access to these apps.
 
 ## List of apps available on the clusters
 * SignalP - 6.0h
+
+If you are interested in using apps not listed above - please refer to the documentation on [requesting new apps](https://scinet.usda.gov/guides/software/preinstalled#option-2-request-a-new-module-be-installed) 
