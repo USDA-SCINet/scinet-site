@@ -1,4 +1,5 @@
 ---
+published: false
 title: The Carpentries Unix, Git, and Python Workshop
 type: workshop
 cal-titles: show
