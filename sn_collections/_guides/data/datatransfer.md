@@ -67,6 +67,11 @@ The [instructional video](https://www.youtube.com/watch?v=BAodkpwOJuA) demonstra
 * Once you have logged in on both panes you will need to navigate to the data you want to copy in one pane (source pane) and navigate to the location you want it copied to on the other pane (destination pane). You can either click on directory names or type the full path in the Path box (under the Collection box).
 * **If you are attempting to access 90 Day Data on Atlas, you will use the following path: /project/90daydata/yourprojectname. If you do not include /project/, you will receieve an error.**
 * Before you start your copy, look at the Transfer & Sync Options at the bottom of the page (click on arrow to see available options). To see a short description of each option click on "i" next to the option.
+* The top suggested option to select before starting your transfers are:
+  -  preserve source file modification times
+  -  skip files on source with errors
+  -  Fail on quota errors
+  -  We also recommend "Do NOT verify file integrity after transfer" which approximately double the effective transfer speed.
 * To start the transfer click the blue box with the arrow at the bottom of the page pointing in the direction of the destination pane.
 * You may now click ‘Activity’ at the left to see a list of current and prior transfers. Click on "File Manager" at the top left of the page to get back to the main page.
 
