@@ -19,6 +19,11 @@ archive-label: SCINet Corner Recordings
 
 sessions:
   - session:
+    title: Open Q&A
+    date: 2025-12-04
+    time: 1-2 pm ET
+    excerpt: The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.
+  - session:
     title: August SCINet Corner
     date: 2025-08-28
     time: 1-2 pm ET
