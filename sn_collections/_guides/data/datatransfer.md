@@ -71,7 +71,7 @@ The [instructional video](https://www.youtube.com/watch?v=BAodkpwOJuA) demonstra
   -  preserve source file modification times
   -  skip files on source with errors
   -  Fail on quota errors
-  -  We also recommend "Do NOT verify file integrity after transfer" which approximately double the effective transfer speed.
+  -  We also recommend "Do NOT verify file integrity after transfer" which approximately doubles the effective transfer speed.
 * To start the transfer click the blue box with the arrow at the bottom of the page pointing in the direction of the destination pane.
 * You may now click ‘Activity’ at the left to see a list of current and prior transfers. Click on "File Manager" at the top left of the page to get back to the main page.
 
