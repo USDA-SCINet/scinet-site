@@ -14,6 +14,7 @@ course-list:
   - title: Computing for AI
   - title: Python for AI
   - title: Deep Learning Foundations
+  - title: Transfer Learning
 
 
 ---
