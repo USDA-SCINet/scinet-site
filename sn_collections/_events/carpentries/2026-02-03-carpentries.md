@@ -1,11 +1,10 @@
 ---
-published: false
 title: The Carpentries Unix, Git, and Python Workshop
 type: workshop
 cal-titles: show
 display: basic
 no-caldate: true
-end_date: 2025-11-05 
+end_date: 2026-02-13 
 provider: Carpentries
 description: Event - Workshop for basic programming tools and concepts for the Unix command line, version control with Git, and Python programming.
 
@@ -14,11 +13,11 @@ sessions:
   - session:
     title: Unix command line and version control with Git
     time: 1:00 PM - 5:00 PM ET
-    multiday: "October 27 & 29"
+    multiday: "February 3 & 5"
   - session:
     title: Programming with Python
     time: 1:00 PM - 5:00 PM ET
-    multiday: "November 3 & 5"
+    multiday: "February 11 & 13"
     registration: 
       url: https://forms.office.com/g/viLFLk2sch
 
