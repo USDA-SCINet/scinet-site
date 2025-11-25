@@ -21,7 +21,7 @@ sessions:
     time: 1:00 PM - 5:00 PM ET
     multiday: "April 22, 24"
     date: 2025-04-22 19:00:00
-    end_date: 2026-04-24
+    end_date: 2025-04-24
     materials:
       - text: Day 1 Recording
         url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EabbrNojUy1CtAIVOaxNL9YBEvDjSGF_JTb5qsQuyZ6C2Q?e=DRKbeE
@@ -40,6 +40,10 @@ subnav:
 
 categories: [Practicum AI] 
 layout: event
+
+parent: 
+  title: Practicum AI
+  url: /events/practicum-ai/
 ---
 
 This workshop provides the foundational concepts and practical applications of transfer learning, a powerful technique in deep learning that allows AI models to leverage pretrained knowledge to improve performance on new tasks. The sessions will cover different types of transfer learning techniques, such as feature extraction and fine-tuning. This includes hands-on experience in applying these techniques to computer vision and language models. <!--excerpt-->
