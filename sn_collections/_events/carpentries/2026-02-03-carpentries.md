@@ -32,3 +32,5 @@ The SCINet Office, in collaboration with ARS’s certified Carpentries instructo
 This workshop will provide an interactive, hands-on experience that will help you learn valuable skills for data management and analysis.  
 
 Please note that you may register for either week 1, week 2, or both, depending on which skills you’d like to learn.
+
+At this time, registration is closed as we have reached maximum capacity for all workshops. However, you may [complete the registration form](https://forms.office.com/g/viLFLk2sch) to be added to our waitlist for future offerings. 
