@@ -13,11 +13,11 @@ sessions:
   - session:
     title: Unix command line and version control with Git
     time: 1:00 PM - 5:00 PM ET
-    multiday: "February 3 & 5"
+    multiday: "Feb 3 & 5"
   - session:
     title: Programming with Python
     time: 1:00 PM - 5:00 PM ET
-    multiday: "February 11 & 13"
+    multiday: "Feb 11 & 13"
     registration: 
       url: https://forms.office.com/g/viLFLk2sch
 
