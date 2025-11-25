@@ -18,10 +18,12 @@ sessions:
     title: Programming with Python
     time: 1:00 PM - 5:00 PM ET
     multiday: "Feb 11 & 13"
-    registration: 
+    registration:    
+      text: Join the waitlist
       url: https://forms.office.com/g/viLFLk2sch
 
 registration: 
+  text: Join the waitlist
   url: https://forms.office.com/g/viLFLk2sch
 ---
 
