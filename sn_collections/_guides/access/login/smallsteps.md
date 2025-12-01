@@ -16,6 +16,7 @@ subnav:
 
 fetched: "login-help"
 order_number: 40
+unfetch_sidenav: true
 ---
 
 {% include images_path %}
