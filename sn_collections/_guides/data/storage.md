@@ -99,7 +99,7 @@ This storage is useful for workflows that extensively use disk space reading and
 
 ## Juno permanent storage
 
-Project directories are not meant to be used for long-term storage. Data that cannot be easily reproduced should be manually backed up to Juno. Juno is a large, multi-petabyte ARS storage device at the National Agricultural Library in Maryland. For instructions on how to transfer data to and from Juno, see the [File Transfer Methods](/guides/data/transfer) guide.
+Project directories are not meant to be used for long-term storage. Data that cannot be easily reproduced should be manually backed up to Juno. Juno is a large, multi-petabyte SCINet storage device at the National Agricultural Library in Maryland. For instructions on how to transfer data to and from Juno, see the [File Transfer Methods](/guides/data/transfer) guide.
 
 ## Improving storage management 
 

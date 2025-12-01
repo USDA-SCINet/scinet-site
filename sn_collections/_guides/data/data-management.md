@@ -37,7 +37,7 @@ This page describes recommended procedures for managing data on SCINet HPC and s
 <!--excerpt-->
 
 ## Definitions
-* **Juno:** Large, multi-petabyte ARS storage device at the National Agricultural Library in Beltsville,Maryland, accessed by users; periodically backed up to tape device.  Includes periodic file system snapshots that allow users to recover accidentally deleted files.
+* **Juno:** Large, multi-petabyte SCINet storage device at the National Agricultural Library in Beltsville,Maryland, accessed by users; periodically backed up to tape device.  Includes periodic file system snapshots that allow users to recover accidentally deleted files.
 * **Tape backup:** Off-site backup of Juno, located at Mississippi State University and accessible by VRSC staff for disaster recovery following major system data loss.
 * **Co-located storage:** Storage on either of the HPC clusters, local to computing resources. This storage is for storing code, data, and intermediate results that support on-going computational work. This storage is not backed up. Two storage locations are available on each HPC cluster, `/project` and `/90daydata`. Space in `/project` has a SCINet project-specific quota, while `/90daydata` does not have a quota and is best suited for intermediate results.
 
