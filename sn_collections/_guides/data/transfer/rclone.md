@@ -36,7 +36,7 @@ subnav:
 
 
 fetched: "data-transfer"
-order_number: 40
+order_number: 20
 ---
 
 Rclone is already installed on all SCINet data transfer and compute nodes. Please do not use the `rclone` command from the login node. Attempting to do so will remind you to use the others.<br>

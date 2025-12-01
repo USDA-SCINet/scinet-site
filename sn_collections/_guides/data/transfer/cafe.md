@@ -20,7 +20,7 @@ subnav:
     url: "#transferring-data"
 
 fetched: "data-transfer"
-order_number: 20
+order_number: 40
 ---
 
 If you are at an ARS research location with a SCINet-X connection, you have access to a SCINet café machine - a dedicated computer for high-speed data transfer to and from SCINet’s supercomputers and long-term storage system. <!--excerpt--> However, you do not need to use the café machine to use SCINet’s computing systems - computing work should be done from your regular workstation or laptop. Please note that using the café machines requires a LincPass. 

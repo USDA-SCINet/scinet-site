@@ -20,7 +20,7 @@ subnav:
     url: '#globus-connect-personal'
 
 fetched: "data-transfer"
-order_number: 10
+order_number: 30
 ---
 
 Globus is the recommended method for transferring data to, from, or among Ceres, Atlas, and Juno. It provides faster data transfer speeds compared to `scp`, has a graphical interface, and does not require authentication for every file transfer. To transfer data to or from a local computer, users will need to install Globus Connect Personal which does NOT require admin privileges. <!--excerpt-->

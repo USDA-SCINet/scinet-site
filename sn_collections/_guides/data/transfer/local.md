@@ -12,7 +12,7 @@ parents:
     class: "emph-nav"
 
 fetched: "data-transfer"
-order_number: 30
+order_number: 10
 
 subnav:
   - title: Open OnDemand
