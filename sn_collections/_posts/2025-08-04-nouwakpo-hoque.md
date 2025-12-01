@@ -1,0 +1,32 @@
+---
+title: "Advancing Irrigation Mapping Through AI and Remote Sensing "
+description: "Researchers at the USDA-ARS Northwest Irrigation and Soils Research Laboratory are developing an irrigation methods mapping tool by leveraging AI and public satellite imagery."
+categories: [Stories]
+
+excerpt: "Accurate mapping of irrigation methods is essential for tackling water scarcity across large regions, boosting agricultural productivity, and informing conservation practices.  Researchers at the USDA-ARS Northwest Irrigation and Soils Research Laboratory at Kimberly, Idaho are spearheading the development of an irrigation methods mapping tool by leveraging Artificial Intelligence (AI) and publicly available satellite imagery."
+
+feature-img-src: /assets/img/posts/Irrigation_mapping_figure_July2025.png
+feature-img-alt: "Graphical presentation of spatial data included in IrrMap, the first large-scale dataset to aid in the development of irrigation classifiers."
+featured: home
+
+author: "S. Kossi Nouwakpo<sup>1</sup> and Oishee Hoque<sup>2</sup>" 
+affiliation: "<sup>1</sup>Northwest Irrigation and Soils Research Laboratory, Agricultural Research Service Kimberly, Idaho, United States of America  <br><sup>2</sup>Department of Computer Science, University of Virginia, Charlottesville, VA, United States of America"
+
+---
+
+Efficient irrigation practices are critical to sustain profitable agriculture in many water-limited regions of the United States and beyond. However, irrigation types, whether sprinkler, surface, or drip irrigation, can vary widely in their efficiency and their influence on both water and soil resources. Accurate mapping of irrigation methods is essential for tackling water scarcity across large regions, boosting agricultural productivity, and informing conservation practices.  
+
+Researchers at the USDA-ARS Northwest Irrigation and Soils Research Laboratory at Kimberly, Idaho are spearheading the development of an irrigation methods mapping tool by leveraging Artificial Intelligence (AI) and publicly available satellite imagery. This project has greatly benefited from the contribution of Ms. Oishee Hoque, who was a 2023 ARS Artificial Intelligence Center of Excellence (AI-COE) / SCINet graduate student intern affiliated with the AI Institute for Next Generation Food Systems (AIFS). Ms. Hoque is a Ph.D. candidate in Computer Science at the University of Virginia whose expertise in AI enabled the creation of a large-scale dataset, the design of novel deep learning models, and the implementation of knowledge-informed frameworks for robust irrigation classification.  
+
+The team’s journey began with the development of IrrNet, the first deep learning model designed specifically for irrigation type mapping from satellite imagery. IrrNet tackles the difficulty of segmenting agricultural fields – especially when different irrigation types coexist in close proximity – by using a progressive patch size training strategy. The model starts with small image patches to capture fine-grained details and gradually increases patch size to generalize across broader spatial patterns. This simple yet effective approach improves semantic segmentation accuracy by up to 20% over standard models like U-Net and DeepLabv3+. IrrNet also demonstrated the importance of leveraging non-RGB spectral bands from Landsat imagery, such as near-infrared and thermal channels, for better irrigation-type differentiation.  
+
+Building on this momentum, the researchers introduced IrrMap, the first large-scale, ML-ready dataset tailored to irrigation method mapping (Figure 1). IrrMap includes over 1.1 million 224×224 patches extracted from Landsat and Sentinel imagery, with precise labels distinguishing sprinkler, flood, drip, and other irrigation methods. The dataset spans four U.S. states – Arizona, Colorado, Utah, and Washington – covering 14 million acres and 1.7 million farms. It integrates crop type, land use, and vegetation indices to provide rich contextual information. IrrMap includes supporting software and benchmark models that lower the barrier for others to build and evaluate irrigation classifiers.  
+
+To further improve generalization across regions and data modalities, the team developed KIIM (Knowledge-Informed Irrigation Mapping). KIIM combines vision transformer models for image segmentation with structured agronomic knowledge, such as crop-irrigation likelihoods . KIIM includes innovative model components that enhance the fusion of disparate RGB and vegetation index input data. KIIM achieves state-of-the-art performance, with over 70% intersection over union (IoU) improvement compared to a baseline Swin Transformer model for hard-to-classify drip irrigation in certain states, and requires only 40% of the training data to match baseline accuracy—demonstrating strong data efficiency.  
+
+Most recently, the team released IRRISIGHT, a multimodal dataset and scalable pipeline to support irrigation and water availability research. Covering 20 U.S. states and more than 1.4 million patches, IRRISIGHT integrates satellite data with soil, hydrology, evapotranspiration, and climate variables. It includes natural language prompts generated from soil properties, enabling experimentation with vision-language models for agricultural monitoring tasks. IRRISIGHT provides a new frontier for modeling irrigation decisions, drought resilience, and sustainable water use.  
+
+From IrrNet to IRRISIGHT, this body of work has significantly advanced the science of irrigation mapping. With openly released models, datasets, and code, it empowers the broader research community to tackle water sustainability at scale. More information can be found at the following links: [IrrNet](https://openaccess.thecvf.com/content/CVPR2024W/Vision4Ag/papers/Hoque_IrrNet_Advancing_Irrigation_Mapping_with_Incremental_Patch_Size_Training_on_CVPRW_2024_paper.pdf); IrrMap – [paper](https://arxiv.org/pdf/2505.08273 "IrrMap paper"), [codes](https://huggingface.co/Nibir/IrrMap "IrrMap codes"); KIIM – [paper](https://arxiv.org/pdf/2505.08302 "KIIM paper"), [codes](https://github.com/Nibir088/KIIM "KIIM codes"); [IRRISIGHT](https://huggingface.co/datasets/OBH30/IRRISIGHT).  
+
+![Figure 1](/assets/img/posts/Irrigation_mapping_figure_July2025.png)
+*Figure 1. Graphical presentation of spatial data included in IrrMap, the first large-scale dataset to aid in the development of irrigation classifiers.* 

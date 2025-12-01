@@ -14,20 +14,34 @@ parent:
 
 registration:
     text: Practicum AI Registration
-    url: https://forms.office.com/g/YnnYsxX9e3
+    url: https://forms.office.com/g/LRgw4gGWKq
 
 sessions: 
+  - session:
+    date: 2025-09-03 20:00:00
+    end_date: 2025-09-04
+    time: 2 - 5 PM ET
+    multiday: "September 3 & 4"
+    materials:
+      - text: Workshop materials
+        url: https://github.com/PracticumAI/deep_learning_pt-lightning_ars
+      - text: "Session 1 recording - USDA access only"
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/Eb7Eq7A9w1NMm-vep_7T5LIBjEO72IHGboYFt1bSrZmQMQ?e=S5VKWd
+      - text: "Session 2 recording - USDA access only"
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EclRep1hBBpLiBzX1oCPRpsB_N3WVRAQsgN32d-cQiQSag?e=6z0tvz
   - session:
     date: 2024-01-08 19:00:00
     end_date: 2024-01-10
     time: 1:00 PM - 5:00 PM ET
     multiday: "Jan 8 & Jan 10"
-    prerequisites:
-      - text: Have a SCINet account and be able to login 
-        url: /about/signup
-      - text: Understanding git and GitHub
-      - text: Navigating Jupyter notebooks on Atlas
-      - text: Basics of Python coding and Pandas
+
+prerequisites:
+  - text: Have a SCINet account and be able to login 
+    url: /about/signup
+  - text: Understanding git and GitHub
+  - text: Navigating Jupyter notebooks on Atlas
+  - text: Basics of Python coding and Pandas
+
 
 
 categories: [Practicum AI] 
@@ -38,9 +52,9 @@ layout: event
 
 # Practicum AI
 
-[*Practicum AI*](/training/practicum-ai) is a hands-on applied artificial intelligence (AI) curriculum intended for learners with limited coding and math background. To register for these courses, please [fill out the registration form](https://forms.office.com/g/YnnYsxX9e3). You do not need to register for all courses and may instead register for only the courses that are most relevant to your work.  You will need a SCINet account for this course. If you do not have a SCINet account, you may [request one](/about/signup).
+[*Practicum AI*](/events/practicum-ai/) is a hands-on applied artificial intelligence (AI) curriculum intended for learners with limited coding and math background. To register for these courses, please [fill out the registration form]({{ page.registration.url }}). You do not need to register for all courses and may instead register for only the courses that are most relevant to your work.  You will need a SCINet account for this course. If you do not have a SCINet account, you may [request one](/about/signup).
 
-## Course 4 – Deep Learning Foundations
+## Deep Learning Foundations
 
 Deep learning is the focus of modern AI. Models have many layers and millions, or now approaching a trillion, parameters! This course breaks things down and introduces you to a small AI model to provide a conceptual understanding of how AI models are built, trained, and deployed.
 

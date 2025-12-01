@@ -14,14 +14,24 @@ parent:
 
 registration:
     text: Practicum AI Registration
-    url: https://forms.office.com/g/YnnYsxX9e3
+    url: https://forms.office.com/g/LRgw4gGWKq
 
 sessions: 
+  - session:
+    time: 2 - PM ET
+    date: 2025-08-19 20:00:00
+    materials:
+      - text: Workshop materials
+        url: https://github.com/PracticumAI/computing-for-ai-ars
+      - text: "Session recording - USDA access only"
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EQ7nCRw08FFNkzZjtniLOzQBZZlh6HSLE9Tnyt7IAxWIaQ?e=q6CCuc
   - session:
     time: 1:00 PM - 5:00 PM ET
     multiday: "Nov 6 & Nov 8"
     date: 2023-11-06 19:00:00
     end_date: 2023-11-08
+
+
 
 prerequisites:
   - text: Have a SCINet account and be able to login 
@@ -35,12 +45,12 @@ layout: event
 
 # Practicum AI
 
-[*Practicum AI*](/training/practicum-ai) is a hands-on applied artificial intelligence (AI) curriculum intended for learners with limited coding and math background. To register for these courses, please [fill out the registration form](https://forms.office.com/g/YnnYsxX9e3). You do not need to register for all courses and may instead register for only the courses that are most relevant to your work.  You will need a SCINet account for this course. If you do not have a SCINet account, you may [request one](/about/signup).
+[*Practicum AI*](/events/practicum-ai/) is a hands-on applied artificial intelligence (AI) curriculum intended for learners with limited coding and math background. To register for these courses, please [fill out the registration form]({{ page.registration.url }}). You do not need to register for all courses and may instead register for only the courses that are most relevant to your work.  You will need a SCINet account for this course. If you do not have a SCINet account, you may [request one](/about/signup).
 
 
-## Course 2 – Computing for AI
+## Computing for AI
 
-This course is the second in the Practicum AI series. This course can also be taken on its own to familiarize yourself with some of the important tools used in data science and scientific computing.
+This course is part of the [Practicum AI](/events/practicum-ai/) series. This course can also be taken on its own to familiarize yourself with some of the important tools used in data science and scientific computing.
 
 In this course, you will learn about some of the tools recommended for building, testing, tweaking, and deploying AI models. You will learn about Jupyter Notebooks, Git, GitHub, and high-performance computing (HPC) environments. These are the key technologies that have become the industry standards for hands-on applied AI research and development.
 

@@ -1,10 +1,6 @@
 ---
-published: false
 title: Transfer Learning
-end_date: 2025-04-24 17:00
-type: workshop
-layout_type: workshop
-display: basic
+type: training
 no-caldate: true
 provider: University of Florida
 hideprovider: true
@@ -13,17 +9,28 @@ description: This workshop provides foundational concepts and practical applicat
 tags: Artificial-Intelligence Machine-Learning
 
 registration: 
-  url: https://forms.office.com/g/c1bTdxKqJi
-time: 1 – 5 PM ET
-multiday: April 22, 24
+  url: https://forms.office.com/g/A9Dc5YXPXD
+
+sessions: 
+  - session:
+    time: 1:00 PM - 5:00 PM ET
+    multiday: "Feb 24, 26"
+    date: 2026-02-24 19:00:00
+    end_date: 2026-02-26
+  - session:
+    time: 1:00 PM - 5:00 PM ET
+    multiday: "April 22, 24"
+    date: 2025-04-22 19:00:00
+    end_date: 2025-04-24
+    materials:
+      - text: Day 1 Recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EabbrNojUy1CtAIVOaxNL9YBEvDjSGF_JTb5qsQuyZ6C2Q?e=DRKbeE
+      - text: Day 2 Recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EXBMpt5cw4xJo-x3rolundQBimPFZvEgOaXgyS6-58uFrQ?e=Pdx23Q
 
 materials:
   - text: Workshop materials
     url: https://github.com/PracticumAI/transfer_learning
-  - text: Day 1 Recording
-    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EabbrNojUy1CtAIVOaxNL9YBEvDjSGF_JTb5qsQuyZ6C2Q?e=DRKbeE
-  - text: Day 2 Recording
-    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EXBMpt5cw4xJo-x3rolundQBimPFZvEgOaXgyS6-58uFrQ?e=Pdx23Q
 
 materialsdesc: "Workshop materials available at the links below."
 
@@ -31,9 +38,12 @@ subnav:
   - title: Tutorial setup instructions
   - title: Workshop Materials
 
+categories: [Practicum AI] 
+layout: event
+
 parent: 
-  title: AI Workshop Series
-  url: /events/2025-ai
+  title: Practicum AI
+  url: /events/practicum-ai/
 ---
 
 This workshop provides the foundational concepts and practical applications of transfer learning, a powerful technique in deep learning that allows AI models to leverage pretrained knowledge to improve performance on new tasks. The sessions will cover different types of transfer learning techniques, such as feature extraction and fine-tuning. This includes hands-on experience in applying these techniques to computer vision and language models. <!--excerpt-->

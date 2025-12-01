@@ -12,10 +12,19 @@ scripts: /assets/js/external.js
   {% if site.google_analytics_ua or site.dap_agency %}
   {% include layout/analytics.html %}
   {% endif %}
+  <style id="pageBody">body{display:none !important;}</style>
+  <script type="text/javascript">
+      if (self === top) {
+          var noFrames = document.getElementById("pageBody");
+          noFrames.parentNode.removeChild(noFrames);
+      } else {
+          top.location = self.location;
+      }
+  </script>
   <script>0</script>
 </head>
 
-<body class="{% if site.site_width %}site-{{ site.site_width }}{% endif %}">
+<body id="pageBody" class="{% if site.site_width %}site-{{ site.site_width }}{% endif %}">
 
   {% include layout/skipnav.html %}
   {% include layout/header.html %}

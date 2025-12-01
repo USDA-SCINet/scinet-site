@@ -48,7 +48,7 @@ published: false
 
 Globus Online is the recommended method for transferring data to or among Ceres, Atlas, and Juno. It provides faster data transfer speeds compared to scp, has a graphical interface, and does not require authentication for every file transfer. To transfer data to or from a local computer, users will need to install Globus Connect Personal which does NOT require admin privileges. 
 
-The instructional video at [here](https://www.youtube.com/watch?v=BAodkpwOJuA) demonstrates how to transfer files using Globus as well as how to authenticate with LincPass or Login.gov.
+The [instructional video](https://www.youtube.com/watch?v=BAodkpwOJuA) demonstrates how to transfer files using Globus as well as how to authenticate with LincPass or Login.gov.
 
 ### Login
 * In a browser, navigate to [https://www.globus.org/](https://www.globus.org/), click ‘Log In’ in the upper right corner.
@@ -68,10 +68,15 @@ The instructional video at [here](https://www.youtube.com/watch?v=BAodkpwOJuA) d
 * Once you have logged in on both panes you will need to navigate to the data you want to copy in one pane (source pane) and navigate to the location you want it copied to on the other pane (destination pane). You can either click on directory names or type the full path in the Path box (under the Collection box).
 * **If you are attempting to access 90 Day Data on Atlas, you will use the following path: /project/90daydata/yourprojectname. If you do not include /project/, you will receieve an error.**
 * Before you start your copy, look at the Transfer & Sync Options at the bottom of the page (click on arrow to see available options). To see a short description of each option click on "i" next to the option.
+* The top suggested option to select before starting your transfers are:
+  -  preserve source file modification times
+  -  skip files on source with errors
+  -  Fail on quota errors
+  -  We also recommend "Do NOT verify file integrity after transfer" which approximately doubles the effective transfer speed.
 * To start the transfer click the blue box with the arrow at the bottom of the page pointing in the direction of the destination pane.
 * You may now click ‘Activity’ at the left to see a list of current and prior transfers. Click on "File Manager" at the top left of the page to get back to the main page.
 
-### Globus Connect Personal
+## Globus Connect Personal
 To transfer files to your personal computer you may use Globus Connect Personal. A link “Install Globus Connect Personal” can be found in the Recent tab and in the "More Options" tab in the list of Collections. Click on "Collection" box to get to the list.  
 
 The installation instructions for Globus Connect Personal are available here:
@@ -79,8 +84,46 @@ The installation instructions for Globus Connect Personal are available here:
 * [Mac Install Instructions](https://docs.globus.org/how-to/globus-connect-personal-mac/)
 * [Linux Install Instructions](https://docs.globus.org/how-to/globus-connect-personal-linux/)
 
-By default, Globus Connect Personal prompts to be installed in C:\Program Files which requires administrator rights. However you don't need Administrator rights to install Globus Connect Personal on your local machine. If you do not have Administrator rights browse to a place you have write access to (e.g. your Desktop folder) or contact your local IT staff for assistance.
+By default, Globus Connect Personal prompts to be installed in C: \Program Files which requires administrator rights. However you don't need Administrator rights to install Globus Connect Personal on your local machine. If you do not have Administrator rights browse to a place you have write access to (e.g. your Desktop folder) or contact your local IT staff for assistance.
 
+### SCINet Café Machine Installation Instructions for Globus Connect Personal 
+
+
+Please Note: The Café machine may be slow right after login, don’t worry if you are met with a black screen for an extended period of time.
+
+**Step One:** 
+- Log in to the machine using your SCINET username (first.last) and your LincPass/PIN.
+	- When you get to the start screen, you should see icons along the bottom for Firefox, files (cabinet), and terminal.  If you don’t see this, go to ‘activities’ in the upper left of the screen and it will toggle from the full window so you can access this dock.
+
+**Step Two:** 
+1. Run the command `globusconnect` in a terminal. 
+	- Please Note: This is a script that automates installing, setting up and running globuspersonalconnect.  If you would rather run globuspersonalconnect without the extra assistance, please feel free to do so. 
+
+	- The first time you run `globuconnect` it will download, install, and start the setup process for Globus Connect Personal.
+
+	- The setup process usually, but not always, requires you to login (this process may vary depending on how you login).
+
+1. A globus login popup window will open.  Select Log In.  Go to the main Firefox window that opens behind the popup and select Allow.  You will get a window asking you to login, select SCINET-ARS/USDA from the dropdown instead of ORCID and complete the eauth login. 
+	- If the system does not automatically open a browser window for you, you can simply copy and past the link that will appear in the terminal session into the browswer to continue the process. 
+
+1. IMPORTANT: If you haven’t used Globus before, click continue.  Otherwise, select ‘link to’ to join your existing Globus account to this one.
+
+1. When registering, type 'SCINet - ARS/USDA' as your organization and non-profit research. Select agree to terms and click continue.
+
+1. The next page will ask you to agree to setup and asks for a name for future reference. It is recommednded to keep the default (it should be the name of your SCINet café). Click allow.
+
+1. You will then see a window for ‘Collection Details’ – give it a name that will make sense to you.
+	- For example:  your-initials and scinet-café ( ABC_scinet_cafe).  A description is not necessary.  **Do not select the ‘high assurance’ button.** Click save.
+
+1. You should get a ‘setup successful’ popup with the name of your collection.  Click exit setup.
+	- If you have a collection name that is generic like ‘scinet_cafe’ you can click ‘show collection details’.  On the right of the collection details page, select ‘edit attributes’ which will allow you to edit the collection's name. If you are happy with it, click exit setup.  
+
+1. On runs after the initial setup, it will scan for USB devices and then add any that it finds to the globus config and start the server.
+	- You can use “globusconnect -help” to see this info later.
+
+1. If you need to add USB devices after starting the server just run “globusconnect -restart” to rescan devices and restart the server.
+
+If you would like to see a video demonstration of the above instructions, click [here](https://youtu.be/p4Qn2ofktcA)
 
 ## Small Data Transfer Using scp and rsync
 
@@ -140,22 +183,19 @@ You can send hard drives containing data to the VRSC if you have very large amou
 
    If you don't already have a project directory please request one first: [Request Project Storage](https://forms.office.com/g/wD9rYarVyn) (eAuthentication required)
 
-2. Copy the data onto a SATA hard drive or SSD
+   VRSC will review request and get back with further instructions.
+
+3. Upon approval by VRSC, copy the data onto a SATA hard drive or SSD
 
    * You will be responsible for purchasing your own drive(s)
    * Any type of hard drive (not a USB drive) is fine but SSDs will be more tolerant of the postal system
    * Disks must be EXT4, NTFS, HFS, XFS, or FAT formatted
 
-3. Ship the disk to the following address and email the tracking information to scinet_vrsc@usda.gov. Include a print out of your email containing the data transfer request to VRSC in your package. Send to:
+4. Ship the disk to the address provided by VRSC and email the tracking information to scinet_vrsc@usda.gov. Include a print out of your email containing the data transfer request to VRSC in your package.
 
-   Nathan Humeston<br>
-   74 Durham<br>
-   613 Morrill Rd<br>
-   Ames, IA 50011-2100  
+5. Once we receive the data we will copy it over to the appropriate project directory and notify you once it is complete.
 
-4. Once we receive the data we will copy it over to the appropriate project directory and notify you once it is complete.
-
-5. Please include a prepaid return shipping label so that we can send the drive(s) back to you after the data transfer is complete. Otherwise the drive(s) will not be returned.
+6. Please include a prepaid return shipping label so that we can send the drive(s) back to you after the data transfer is complete. Otherwise the drive(s) will not be returned.
 
 
 ## Other Ways to Transfer Data

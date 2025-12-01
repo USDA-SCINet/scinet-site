@@ -16,19 +16,32 @@ parent:
 
 registration:
     text: Practicum AI Registration
-    url: https://forms.office.com/g/YnnYsxX9e3
+    url: https://forms.office.com/g/LRgw4gGWKq
 
 sessions: 
+  - session:
+    date: 2025-08-27 20:00:00
+    end_date: 2025-08-28
+    time: 2 - 5 PM ET
+    multiday: "August 27 & 28"
+    materials:
+      - text: Workshop materials
+        url: https://github.com/PracticumAI/python-for-ai-ars
+      - text: "Session 1 recording - USDA access only"
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EVrcYcTZfe5OubfNH3GyEmkB2BIZVWZezqYbYJah6rVwiQ?e=mL5RIi
+      - text: "Session 2 recording - USDA access only"
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EaY2Cs7IJrhFinCLa5OqWeABDG_Vl-gy1-93dH-RDgbP1g?e=3an68N
   - session:
     date: 2023-12-04 19:00:00
     end_date: 2023-12-06
     time: 1:00 PM - 5:00 PM ET
     multiday: "Dec 4 & Dec 6"
-    prerequisites:
-      - text: Have a SCINet account and be able to login 
-        url: /about/signup
-      - text: Understanding git and GitHub
-      - text: Navigating Jupyter notebooks on Atlas
+
+prerequisites:
+  - text: Have a SCINet account and be able to login 
+    url: /about/signup
+  - text: Understanding git and GitHub
+  - text: Navigating Jupyter notebooks on Atlas
 
 
 categories: [Practicum AI] 
@@ -39,9 +52,9 @@ layout: event
 
 # Practicum AI
 
-[*Practicum AI*](/training/practicum-ai) is a hands-on applied artificial intelligence (AI) curriculum intended for learners with limited coding and math background. To register for these courses, please [fill out the registration form](https://forms.office.com/g/YnnYsxX9e3). You do not need to register for all courses and may instead register for only the courses that are most relevant to your work.  You will need a SCINet account for this course. If you do not have a SCINet account, you may [request one](/about/signup).
+[*Practicum AI*](/events/practicum-ai/) is a hands-on applied artificial intelligence (AI) curriculum intended for learners with limited coding and math background. To register for these courses, please [fill out the registration form]({{ page.registration.url }}). You do not need to register for all courses and may instead register for only the courses that are most relevant to your work.  You will need a SCINet account for this course. If you do not have a SCINet account, you may [request one](/about/signup).
 
-## Course 3 – Python for AI 
+## Python for AI 
 
 Most hands-on artificial intelligence work is currently done using the Python programming language. As such, some understanding of Python and computer programming is needed to be successful in applying AI. That said, it is truly astounding how much complex AI research can be accomplished with a few lines of code!
 
@@ -54,3 +67,10 @@ The content in this workshop is aimed at beginning coders who may have never pro
 3.	Write Python code adhering to best practices for operators, variables, and functions.
 4.	Utilize Python libraries through the import function and understand major AI libraries like TensorFlow and Keras.
 5.	Manipulate and visualize data using Pandas and Matplotlib.
+
+
+## Tutorial setup instructions
+
+Please follow the instructions in the [course handout](https://github.com/PracticumAI/python-for-ai-ars/blob/main/handouts/python-for-ai-Jupyter-Atlas.pdf) to prepare for the workshop!
+
+

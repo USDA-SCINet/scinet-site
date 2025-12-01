@@ -24,7 +24,7 @@ By: Pat Clark and Rowan Gaffney
 ---
 ### **Machine Learning**
 * Classification
-* Clustering: [Python Notebook Example]({{ site.baseurl }}/tutorials/geospatial-analysis-neon-hyperspectral)
+* Clustering{% comment %}<!-- removing tutorial section from site -->: [Python Notebook Example]({{ site.baseurl }}/tutorials/geospatial-analysis-neon-hyperspectral){% endcomment %}
 * Regression
 
 ### **Modeling**
@@ -72,6 +72,7 @@ The following tools/software are currently available on SCINet. (See the [Preins
 
 ### Other
 * [**SCINet Remote Sensing Container Image**](https://hub.docker.com/r/rowangaffney/data_science_im_rs): Python+R geospatial libraries and JupyterLab IDE (R, IDL, and Python kernels).
+{% comment %}<!-- removing tutorial section from site -->
     * [User Tutorial]({{ site.baseurl }}/tutorials/geospatial-analysis-with-python-on-ceres) for JupyterLab+Dask Distrubuted using:
       * container: /project/geospatial_tutorials/data_science_im_rs_latest.sif
       * sbatch script: /project/geospatial_tutorials/data_science_nb_dask.sbatch
@@ -79,3 +80,4 @@ The following tools/software are currently available on SCINet. (See the [Preins
 ```bash
 singularity pull docker://rowangaffney/data_science_im_rs
 ```
+{% endcomment %}

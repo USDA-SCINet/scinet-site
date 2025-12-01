@@ -19,9 +19,26 @@ archive-label: SCINet Corner Recordings
 
 sessions:
   - session:
+    title: Open Q&A
+    date: 2025-12-04
+    time: 1-2 pm ET
+    excerpt: The SCINet Corner is a recurring virtual gathering to provide a space for people to meet and discuss SCINet-related items.
+  - session:
+    title: August SCINet Corner
+    date: 2025-08-28
+    time: 1-2 pm ET
+    excerpt: "Introduction to SCINet's Galaxy interface, a web-based platform for data-intensive bioinformatics analyses."
+  - session:
+    title: July SCINet Corner
+    date: 2025-07-31
+    time: 1-2 pm ET
+  - session:
     title: Filesystem permissions
     date: 2025-06-26
     time: 1-2 pm ET
+    materials:
+      - text: Session Recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EYNGI12GDtRLuAiaPMwBJ9MBXMY66qREM4MpbIykJB1p-Q?e=SQNDEh
     excerpt: "* Understanding permission classes: user, group, world/others.
 
 * Viewing and interpreting file permissions on the command line.

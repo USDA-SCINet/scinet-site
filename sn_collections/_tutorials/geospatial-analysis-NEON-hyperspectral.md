@@ -264,6 +264,7 @@ plt.figure(figsize=(16,12))
 d_final2.isel(x=slice(5000,6000,1),y=slice(5000,6000,1)).kmean_clust.plot()
 
 <matplotlib.collections.QuadMesh at 0x2ad73d753198>"
+published: false
 ---
 
 [link to tutorial](/assets/html/Tutorial1_Example2_Hyperspectral.html)
