@@ -60,4 +60,4 @@ This page describes recommended procedures for managing data on SCINet HPC and s
 Given the space and access limitations of a home directory, large amounts of data or data that will be used collaboratively should be transferred to a project directory. See the User Guide section on [SCINet Storage](/guides/storage) for more information on home and project directory quotas.  
 
 
-If you have issues with or questions about transferring data, please contact the VRSC at scinet_vrsc@USDA.GOV. 
+If you have issues with or questions about transferring data, please contact the VRSC at scinet_vrsc@usda.gov. 

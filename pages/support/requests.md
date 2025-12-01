@@ -50,7 +50,7 @@ If changes need to be made to an existing SCINet project, e.g., adding a new mem
 * the name of the project directory (/project/\<projectname>/) and 
 * the requested changes 
 
-to the SCINet Virtual Research Support Core (VRSC) [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=modify%20project%20allocation).
+to the SCINet Virtual Research Support Core (VRSC) [scinet_vrsc@usda.gov](mailto:scinet_vrsc@usda.gov?subject=modify%20project%20allocation).
 
 ### To request a quota increase for an existing SCINet project
 When requesting a project quota increase on Ceres or Atlas, you will be asked to briefly explain why using `/90daydata` and/or permanent storage on Juno does not cover your storage needs.  
@@ -69,13 +69,13 @@ To request a project quota increase for storage on Ceres, Atlas and/or Juno, ple
 
 1. Make sure the software isn't already available as a module by checking the lists of module software on the [Preinstalled Software List]({{ site.baseurl }}/guides/software/preinstalled) page.
 
-   If you only need a different version of a software package that is already installed on Ceres please email [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=software%20request%20-%20add%20different%20version).
+   If you only need a different version of a software package that is already installed on Ceres please email [scinet_vrsc@usda.gov](mailto:scinet_vrsc@usda.gov?subject=software%20request%20-%20add%20different%20version).
 
 2. Consider whether you should install the software yourself in your home or project directory - see the [Preinstalled Software List]({{ site.baseurl }}/guides/software/preinstalled) for more details.
 
    You may want to use Conda for package, dependency, and environment management- see this [guide about how to use conda on SCINet]({{ site.baseurl }}/guides/software/conda).
 
-   If you're not sure whether you should install software yourself or if you need help, email [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=help%20with%20software). Software that will be useful to many SCINet users should be installed as a module by the VRSC.
+   If you're not sure whether you should install software yourself or if you need help, email [scinet_vrsc@usda.gov](mailto:scinet_vrsc@usda.gov?subject=help%20with%20software). Software that will be useful to many SCINet users should be installed as a module by the VRSC.
 
 
 ### How to send a software request
@@ -96,7 +96,7 @@ Send an email that includes:
 * the name of the project directory (/project/\<projectname>/) and 
 * the requested changes
 
-to the SCINet Virtual Research Support Core [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=add%20AWS%20to%20SCINet%20project). 
+to the SCINet Virtual Research Support Core [scinet_vrsc@usda.gov](mailto:scinet_vrsc@usda.gov?subject=add%20AWS%20to%20SCINet%20project). 
 
 This includes requests for additional funding.
 

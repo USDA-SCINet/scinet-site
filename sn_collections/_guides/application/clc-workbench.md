@@ -2,7 +2,7 @@
 title: CLC Genomics Workbench
 description: Using CLC Server
 ## author: VRSC
-excerpt: "Before You Begin, email scinet_vrsc@USDA.GOV so that the admins can setup the import/export directories and permissions for access."
+excerpt: "Before You Begin, email scinet_vrsc@usda.gov so that the admins can setup the import/export directories and permissions for access."
 
 redirect_from: 
   - /guides/analysis/clc-workbench
@@ -31,7 +31,7 @@ subnav:
 
 ## Before You Begin
 
-Email [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=CLC%20setup) so that the admins can setup the import/export directories and permissions for access.
+Email [scinet_vrsc@usda.gov](mailto:scinet_vrsc@usda.gov?subject=CLC%20setup) so that the admins can setup the import/export directories and permissions for access.
 
 We need the following information:
 1.	Path to your project directory.
