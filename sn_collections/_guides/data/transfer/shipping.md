@@ -22,7 +22,7 @@ You can send external drives containing data to the VRSC if you have very large 
 1. Submit an email request to the VRSC [scinet_vrsc@usda.gov](mailto:scinet_vrsc@usda.gov?subject=large%20data%20transfer%20request) for a data transfer with the following information:  
    * Amount of data.
    * Target project directory.
-   * Type of filesystem the data are coming from (Windows, Mac, or Linux).    
+   * Type of file system the data are coming from (Windows, Mac, or Linux).    
 
    If you don't already have a project directory, please request one first: [Request Project Storage](/support/request#project-request).  
 

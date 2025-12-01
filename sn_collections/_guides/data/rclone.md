@@ -98,7 +98,7 @@ You are now ready to access your Box files using `rclone` from Ceres!
 
 This advanced guide assumes you have read the previous section and have some familiarity with `rclone` already.
 
-Rclone supports "overlay" filesystems which can be then be overlayed in multiple layers. 
+Rclone supports "overlay" file systems which can be then be overlayed in multiple layers. 
 
 In this guide we will discuss the "crypt" and "chunk" overlays.  Using these 2 in combination can overcome virtually all of the limitations of any of the remote services.  i.e.. no 5, 10, or 15GB limit per file, no restrictions on special characters in filenames, etc. The overlays also provide some data protection by doing md5 checksums on the files transferred, if desired.  You should very much desire this.
 

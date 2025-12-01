@@ -136,7 +136,7 @@ You can send hard drives containing data to the VRSC if you have very large amou
 
    * Amount of data
    * Target project directory.
-   * Type of filesystem the data is coming from (Window, Mac, Linux)
+   * Type of file system the data is coming from (Window, Mac, Linux)
 
    If you don't already have a project directory please request one first: [Request Project Storage](https://forms.office.com/g/wD9rYarVyn) (eAuthentication required)
 

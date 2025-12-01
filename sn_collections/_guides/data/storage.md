@@ -80,7 +80,7 @@ If faster data throughput is needed during a compute job, you can use the storag
 
 To use this local storage, the following workflow should be used.  These steps may be taken interactively (when using `salloc` or `srun`) or in batch mode. In batch mode, the copy commands below should be added to the job script.
 
-1.	Copy calculation input to the local filesystem, e.g., 
+1.	Copy calculation input to the local file system, e.g., 
 ```
 cp /project/<project_name>/<input_files> $TMPDIR
 ``` 
