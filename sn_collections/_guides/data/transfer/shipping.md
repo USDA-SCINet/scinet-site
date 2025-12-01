@@ -26,16 +26,14 @@ You can send external drives containing data to the VRSC if you have very large 
 
    If you don't already have a project directory, please request one first: [Request Project Storage](/support/request#project-request).  
 
-2. Copy the data onto a SATA hard drive or solid-state drive (SSD)  
+   VRSC will review request and get back with further instructions.
+
+2. Upon approval by VRSC, copy the data onto a SATA hard drive or solid-state drive (SSD)  
    * You will be responsible for purchasing your own drive(s).
    * Any type of external drive (not a USB drive) is fine, but SSDs will be more tolerant of the postal system.
    * Drives must be formatted as EXT4, NTFS, HFS, XFS, or FAT.  
 
-3. Ship the external drive to the following address and email the tracking information to scinet_vrsc@usda.gov. Include a print out of your email containing the data transfer request to VRSC in your package. Send to:  
-   * Nathan Humeston  
-      74 Durham  
-      613 Morrill Rd  
-      Ames, IA 50011-2100  
+3. Ship the disk to the address provided by VRSC and email the tracking information to scinet_vrsc@usda.gov. Include a print out of your email containing the data transfer request to VRSC in your package.
 
 4. Once we receive the data, we will copy it over to the appropriate project directory and notify you once it is complete.  
 

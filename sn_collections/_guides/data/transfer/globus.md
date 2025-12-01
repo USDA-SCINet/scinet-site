@@ -44,6 +44,11 @@ The [instructional video here](https://www.youtube.com/watch?v=BAodkpwOJuA) demo
   * To transfer data between the Ceres and Atlas clusters, log in to SCINet-Ceres in one panel and to SCINet-Atlas in the other panel. Similarly, to transfer data to/from Juno, log into SCINet-Juno in one of the panels.
 1. Once you have a selected a Collection on both panels, you will need to navigate to the files you want to copy in one panel (source panel) and navigate to the location to which you want them copied on the other panel (destination panel). You can either click on directory names or type the full path in the "Path" box (under the "Collection" box).
 1. Before you start your copy, look at the "Transfer & Timer Options" near the top of the page between the two panels (click on the down arrow to see available options). To see a short description of each option, click on the "i" next to the option. Select any options applicable to your transfer. 
+  * The top suggested option to select before starting your transfers are:
+    -  Preserve source file modification times
+    -  Skip files on source with errors
+    -  Fail on quota errors
+    -  We also recommend "Do NOT verify file integrity after transfer" which approximately doubles the effective transfer speed.
 1. To start copying files, click the blue box with the arrow at the bottom of the page pointing in the direction of the destination pane.
 1. You may now click "Activity" on the left-side menu to see a list of current and prior transfers. Click on "File Manager" at the top left of the page to get back to the main page.
 
