@@ -171,7 +171,7 @@ No, any data that includes personal identifiable information (PII), controlled u
 ## Data Transfer
 ---
 ### How do I get my data onto and off of Ceres?
-SCP, SFTP, lftp (to/from Box accounts) Globus, and hard drive shipment are supported. This is described in the [File Transfers section of the User Guides]({{ site.baseurl }}/guides/data/datatransfer). If you work near Beltsville, you may also use the SCINet lab located at the National Agricultural Library (NAL). Two computers with 10GB Internet2 SCINet connections are available.
+SCP, SFTP, lftp (to/from Box accounts) Globus, and hard drive shipment are supported. This is described in the [File Transfers section of the User Guides]({{ site.baseurl }}/guides/data/transfer). If you work near Beltsville, you may also use the SCINet lab located at the National Agricultural Library (NAL). Two computers with 10GB Internet2 SCINet connections are available.
 
 ### How do I get my data onto Ceres via SCINet Galaxy?
 See [Getting Started with Galaxy on Ceres]({{ site.baseurl }}/guides/analysis/galaxy).

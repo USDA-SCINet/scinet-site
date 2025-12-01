@@ -23,7 +23,7 @@ subnav:
     url: /guides/access/
     internal: true
   - title: Data Transfer
-    url: /guides/data/datatransfer
+    url: /guides/data/transfer/
     internal: true
   - title: Modules
     url: /guides/software/modules

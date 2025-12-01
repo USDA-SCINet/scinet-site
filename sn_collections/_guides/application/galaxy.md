@@ -101,7 +101,7 @@ Going forward, Keycloak is the only supported login method. Legacy auth will be 
 
 You need to move or copy your data files to the Galaxy folder in your home directory on Ceres to make them "visible" to Galaxy. Then, you will be able to upload/import the files using Galaxy. Remember, the default quota in SCINet galaxy is only 100 GB. Please contact us to increase your default quota.
 
-We recommend using Globus to move files to your Galaxy folder on Ceres. For instructions please see the [Transferring Files Guide]({{ site.baseurl }}/guides/data/datatransfer).
+We recommend using Globus to move files to your Galaxy folder on Ceres. For instructions please see the [Transferring Files Guide]({{ site.baseurl }}/guides/data/transfer/globus).
 
 **NOTE:** If you already have data on Ceres, simply copy files into your Galaxy folder on Ceres either via command-line (*cp* command) or by using a Filezilla-like tool. These files will appear as if you had uploaded them via FTP and can be imported using the approach described below.
 
