@@ -5,6 +5,8 @@ no-caldate: true
 provider: University of Florida
 hideprovider: true
 description: This workshop provides foundational concepts and practical applications of transfer learning
+redirect_from: 
+  - /events/2025-04-22-transfer-learning
 
 tags: Artificial-Intelligence Machine-Learning
 
