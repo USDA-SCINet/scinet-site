@@ -1,0 +1,9 @@
+{% capture linebreak %}
+{% endcapture %}
+{% for fellow in page.fellows %}
+<img class="fellow_img margin-right-2" style="width: 200px; padding: 5px" align="left" src="/news/newsletter/{{ fellow.img }}" />
+{% assign bfellow = fellow.bio | split: linebreak %}
+{% for _b in bfellow %}
+<p>{% if forloop.first %}<strong>{{ fellow.name }} </strong>{% endif %}{{ _b }}</p>
+{% endfor %}
+{% endfor %}
