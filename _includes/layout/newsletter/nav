@@ -20,6 +20,25 @@
         {%- endfor %}
 </td>
 </tr>
+{%- if page.alerts %}
+{%- for _alert in page.alerts %}
+<tr>
+  <td>
+    <table align="center" class="nl_table" style="width: 90%; border-collapse: collapse; background-color: #f0f0f0;" cellpadding="20" bgcolor="#f0f0f0" id="Alert">
+      <tbody>
+        <tr>
+          <td style="width: 90%; text-align:left; padding: 10px; margin: 10px; font-style: italic; line-height: 130%; color: #131313;" align="left">
+            {{ _alert.text }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </td>
+</tr>
+{%- endfor %}
+<tr><td style="padding: 5px 20px 30px;">
+</td></tr>
+{%- endif %}
 <tr>
   <td>
 <table align="center" class="nl_table" style="width: 90%; border-collapse: collapse; background-color: #f0f0f0;" cellpadding="20" bgcolor="#f0f0f0" id="Table of Contents">
