@@ -15,40 +15,40 @@
 
 <div class="usa-table-container {{ tablediv }}">
 <table class="{{ tableclass }}">
-    {%- if datas.caption %}
-    <caption>
-      {{ datas.caption }}
-    </caption>
-    {%- endif %}
-    <thead>
-      <tr>
-        {% for _title in titles %}
-        <th scope="col"{{ sortable }}>{{_title | strip }}</th>
-        {% endfor %}
-      </tr>
-    </thead>
-    <tbody>
-        {% for _node in nodes %}
-        {% unless rowcount < 2 %}
-        {% assign colcount = 0 %}
-        {% assign rowdata = _node | split: "|" %}
-        <tr>
-          {% for _col in rowdata %}
-          {% if forloop.first %}
-          <th data-label="{{ titles[colcount] | strip }}" scope="row"{% if datas.sortable %} role="rowheader"{% endif %} >
-            {{ _col | strip | markdownify }}
-          </th>
-          {% else %}
-          <td data-label="{{ titles[colcount] | strip }}">
-            {{ _col | strip | markdownify }}
-          </td>
-          {% endif %}
-          {% assign colcount = colcount | plus: 1 %}
-          {% endfor %}
-        </tr>
-      {% endunless %}
-      {% assign rowcount = rowcount | plus: 1 %}
-      {% endfor %}
-    </tbody>
+{%- if datas.caption %}
+<caption>
+{{ datas.caption }}
+</caption>
+{%- endif %}
+<thead>
+<tr>
+{% for _title in titles %}
+<th scope="col"{{ sortable }}>{{_title | strip }}</th>
+{% endfor %}
+</tr>
+</thead>
+<tbody>
+{% for _node in nodes %}
+{% unless rowcount < 2 %}
+{% assign colcount = 0 %}
+{% assign rowdata = _node | split: "|" %}
+<tr>
+{% for _col in rowdata %}
+{% if forloop.first %}
+<th data-label="{{ titles[colcount] | strip }}" scope="row"{% if datas.sortable %} role="rowheader"{% endif %} >
+{{ _col | strip | markdownify }}
+</th>
+{% else %}
+<td data-label="{{ titles[colcount] | strip }}">
+{{ _col | strip | markdownify }}
+</td>
+{% endif %}
+{% assign colcount = colcount | plus: 1 %}
+{% endfor %}
+</tr>
+{% endunless %}
+{% assign rowcount = rowcount | plus: 1 %}
+{% endfor %}
+</tbody>
 </table>
 </div>
