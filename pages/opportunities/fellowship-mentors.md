@@ -25,7 +25,7 @@ All fellows will receive a competitive stipend and travel support. Fellowships a
 
 All proposals must be submitted using the [online submission form](https://forms.office.com/g/Gy1HHQ2mjN). The PI's RL or supervisor must approve the proposal prior to submission (approval will be indicated on the submission form).
 
-All proposals must use [the fellowships proposal template](https://usdagcc.sharepoint.com/:w:/s/REE-ARS-SCINetOffice/EXfbBIAM9vpPrFGXowAYsSwBYJBAwCtwI3UDWWprN0yM-w?e=uznaVH). Please follow the instructions in the template and do not change the section headings or document formatting. The final proposal must be **no more than 750 words, including the headings**.
+All proposals must use [the fellowships proposal template](https://usdagcc.sharepoint.com/:w:/s/REE-ARS-SCINetOffice/Eb3IXP3pPedGn5ygXZ463m8BRkK_PDDyFMsSJ7G_fJRS7A?e=Jpkk0r). Please follow the instructions in the template and do not change the section headings or document formatting. The final proposal must be **no more than 750 words, including the headings**.
  
 **Deadline for proposal submission:** Close of business on Friday, February 6, 2026.
  
