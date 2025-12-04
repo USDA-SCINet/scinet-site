@@ -1,0 +1,2 @@
+{%- assign fellows = include.fellows | default: page.fellows -%}
+{%- include layout/newsletter/fellows fellows=fellows -%}
