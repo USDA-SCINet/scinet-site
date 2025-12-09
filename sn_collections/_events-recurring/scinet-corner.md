@@ -19,6 +19,11 @@ archive-label: SCINet Corner Recordings
 
 sessions:
   - session:
+    title: Introduction to SCINet
+    date: 2026-01-22
+    time: 1-2 pm ET
+    excerpt: An overview of SCINet and the computing and training resources we offer.
+  - session:
     title: Open Q&A
     date: 2025-12-04
     time: 1-2 pm ET
