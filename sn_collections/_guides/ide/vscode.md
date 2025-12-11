@@ -126,12 +126,10 @@ These instructions assume you are using your USDA email, but using a Github acco
    launch-vscode-tunnel.sh -A <account_name> -t 04:00:00
    ```  
    By default, this script will request two CPU cores, on the "short" partition of the cluster, for four hours. You will have 8 GB of RAM available. These settings should be sufficient for debugging and testing purposes. If you need more resources, you can request them by passing sbatch arguments to the script. However, be aware that the more resources you request, the longer it will take for the cluster to be able to allocate them for you. 
-1. You should see a message to open a web browser and go to https://microsoft.com/devicelogin and enter a code.  
-   Do as instructed. 
-1. After entering the code, you will be asked to either log in or select an account to register the tunnel with.  
-   Register it to your USDA account, unless you used a different account when setting up your local VS Code.
+1. You should see a message to open a web browser and go to https://microsoft.com/devicelogin and enter a code. Do as instructed. 
+1. After entering the code, you will be asked to either log in or select an account to register the tunnel with. Register it to your USDA account, unless you used a different account when setting up your local VS Code.
 
-#### Connect to your tunnel on Ceres
+#### Connect to the tunnel on Ceres
 
 1. Return to your local VS Code instance. 
 1. Registered tunnels will show up in the Remote Explorer sidebar. It should say something similar to "ceres20-compute-55 running".  
@@ -155,7 +153,7 @@ When you are done using a tunnel, it is important to close it to free up those r
 2. Run the following command, where <JobID> is the slurm job number that was displayed when you launched the tunnel: `scancel <JobID> `
    * If you have forgotten the slurm job number, you can find it by running the following command:
      ```
-     squeue -u <username>
+     squeue -u <user_name>
      ```
      Look for a job named "vscode-tunnel".
 
