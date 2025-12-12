@@ -2,8 +2,6 @@
 title: Visual Studio Code
 description: Using VS Code with SCINet
 
-#published: false ## remove when ready to go live
-
 categories: [IDE]
 
 subnav:
