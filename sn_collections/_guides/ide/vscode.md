@@ -5,8 +5,6 @@ description: Using VS Code with SCINet
 categories: [IDE]
 
 subnav:
-  - title: SCINet Options for VS Code
-    url: '#scinet-options-for-vs-code'
   - title: VS Code in Open OnDemand
     url: '#vs-code-in-open-ondemand'
     subnav:
@@ -83,7 +81,7 @@ OOD VS Code stores your extensions in your home directory by default, which can 
 
 ## Registered Tunnel for VS Code
 (local VS Code)
-{:subheader}
+{:.subheader}
 
 VS Code has a registered tunnel extension that allows users to securely work on projects hosted on remote machines without SSH. The tunnel extension creates a secure and encrypted connection between your local computer and a remote machine.  
 
