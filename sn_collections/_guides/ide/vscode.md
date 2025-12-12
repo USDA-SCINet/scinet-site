@@ -9,13 +9,13 @@ categories: [IDE]
 subnav:
   - title: SCINet Options for VS Code
     url: '#scinet-options-for-vs-code'
-  - title: VS Code Server in Open OnDemand
-    url: '#vs-code-server-in-open-ondemand'
+  - title: VS Code in Open OnDemand
+    url: '#vs-code-in-open-ondemand'
     subnav:
       - title: Managing extensions
-        url: "#managing-extensions"
-      - title: Moving files to and from the local machine
-        url: '#moving-files-to-and-from-the-local-machine'
+        url: '#managing-extensions'
+      - title: Moving files to and from the local computer
+        url: '#moving-files-to-and-from-the-local-computer'
   - title: Registered Tunnel for VS Code
     url: '#registered-tunnel-for-vs-code'
     subnav:
@@ -29,20 +29,18 @@ subnav:
 
 {% include images_path %}
 
+Microsoft's Visual Studio Code (VS Code) is a popular source-code editor and development environment with support for many different programming languages. 
 
+There are two main ways to use VS Code on SCINet clusters. One is to use the VS Code interactive application in Open OnDemand (OOD VS Code).  The second is to use the Microsoft "Remote – Tunnels” extension that connects to the cluster from your local VS Code session via a secure tunnel, allowing you to execute your code on the cluster from within your local VS Code session (local VS Code). <!--excerpt--> 
 
-Visual Studio Code (VS Code) is a source-code editor. <!--excerpt-->
-
-## SCINet Options for VS Code
-
-Microsoft's Visual Studio Code (VS Code) is a popular source code editor and development environment with support for many different programming languages.  VS Code software includes a tool called VS Code Server that acts as a gateway from the VS Code session on your computer to the cluster so you execute your code on the cluster from within your local VS Code session.
-
-## VS Code Server in Open OnDemand
+## VS Code in Open OnDemand
+(OOD VS Code)
+{:.subheader}
 
 1. Go to [Ceres Open Ondemand](http://ceres-ood.scinet.usda.gov/) and login. 
-1. From the Interactive Apps menu at the top select "VS Code Server"
+1. From the Interactive Apps menu at the top, select "VS Code Server"
    ![ood vscode interactiv app]({{ images_path }}/vscode/ood_vscode.png)
-1. Select the Slurm partition, as well as any other desired options. The defaults are usually sufficient, but if you want to run from a project rather than your home directory, be sure to update your working directory path.
+1. Select the account you would like to use to run this job, as well as any other desired options. The defaults are usually sufficient, but if you want to run from a project rather than your home directory, be sure to update your working directory path.
    Click "Launch"
    ![selecting options and path]({{ images_path }}/vscode/choose_path.png)
 1. A new VS Code session will automatically be created on one of Ceres' compute nodes. This may take a few minutes depending on cluster demand. Once the session has been created, click "Connect to VS Code".
@@ -50,12 +48,12 @@ Microsoft's Visual Studio Code (VS Code) is a popular source code editor and dev
 
 ### Managing extensions
 
-VS Code stores your extensions in your home directory by default, which can cause you to exceed your storage quota.  To overcome this issue, you can move your extension directory from your home directory to a project directory and create a symbolic link to the new location.
+OOD VS Code stores your extensions in your home directory by default, which can cause you to exceed your storage quota.  To overcome this issue, you can move your extension directory from your home directory to a project directory and create a symbolic link to the new location.
 
-1. Create a symbolic link to store extensions. This only needs to be done the first time you run VS Code via Open OnDemand. 
+1. Create a symbolic link to store extensions. This only needs to be done the first time you run OOD VS Code. 
    *  Open the terminal window by going to:  
       "File" -> "View" -> "Terminal"
-   *  In the terminal type the following commands, replacing `<project_name>` with your project name and `<scinet_username>` with your user name.
+   *  In the terminal type the following commands, replacing `<project_name>` with your project name and `<scinet_username>` with your username.
       *  Create a folder in your project directory for the VSCode extensions:    
           ```
           mkdir -p /project/<project_name>/<scinet_username>/.local/share/code-server
@@ -64,30 +62,32 @@ VS Code stores your extensions in your home directory by default, which can caus
           ```
           mv ~/.local/share/code-server/ /project/<project_name>/<scinet_username>/.local/share/code-server
           ```
-      *  Create a symbolic link between the old extensions directory and the new one:
+      *  Create a symbolic link between the old extension directory and the new one:
           ```
           ln -s /project/<project_name>/<scinet_username>/.local/share/code-server  ~/.local/share/code-server
           ```  
-1. Install any desired extensions from the Extensions sidebar on the left-hand side. Once an extension is installed, it will automatically be available for future VS Code sessions.
+1. Install any desired extensions from the Extensions sidebar on the left-hand side. Once an extension is installed, it will automatically be available for future OOD VS Code sessions.
    ![installing exentions button]({{ images_path }}/vscode/extensions.png)
 
 
 
-### Moving files to and from the local machine
+### Moving files to and from the local computer
 
-1. Open the File Explorer sidebar on the left-hand side of VS Code.
+1. Open the File Explorer sidebar on the left-hand side of OOD VS Code.
    ![file explorer button]({{ images_path }}/vscode/file explorer.png)
-2. To Download Files:
-   * Right-click on the file you would like to download from VS Code OnDemand to your local computer and select "Download…" from the menu. The file download will automatically start.
-3. To Upload Files:
+2. To download files:
+   * Right-click on the file you would like to download from the cluster to your local computer and select "Download…" from the menu. The file download will automatically start.
+3. To upload files:
    * Right-click on the folder where you would like to upload the file to and select "Upload…" from the menu.
    * Select the file on your local computer in the File Upload dialog that appears and then click "Open"
 
 
 
 ## Registered Tunnel for VS Code
+(local VS Code)
+{:subheader}
 
-Visual Studio Code has a registered tunnel extension that allows users to securely work on projects hosted on remote machines without SSH. The tunnel extension creates a secure and encrypted connection between your local machine and a remote machine.  
+VS Code has a registered tunnel extension that allows users to securely work on projects hosted on remote machines without SSH. The tunnel extension creates a secure and encrypted connection between your local computer and a remote machine.  
 
 **Why use a registered tunnel for VS Code?**
 
@@ -95,13 +95,13 @@ Visual Studio Code has a registered tunnel extension that allows users to secure
 *  **Secure:** This extension protects your code/projects by using an encrypted connection and prohibits unauthorized access. 
 *  **Offers flexibility:** Users can securely access their projects and work from anywhere. 
 
-This guide will show you how to set up a registered tunnel for VSCode.  
+This guide will show you how to set up a registered tunnel for VS Code.  
 
 ### Opening a Registered Tunnel
 
-To use registered tunnels, you must have either a Microsoft or Github account. Most users will want to use a Microsoft account, as their USDA Office 365 email is a Microsoft account that may be used. 
+To use registered tunnels, you must have either a Microsoft or GitHub account. USDA employees should use a Microsoft account, as their USDA Office 365 email is a Microsoft account that may be used. 
 
-These instructions assume you are using your USDA email, but using a Github account will be very similar.
+These instructions assume you are using your USDA email, but using a GitHub account will be very similar.
 
 #### Set up local VS Code
 **(Only needed the first time)**
@@ -125,7 +125,7 @@ These instructions assume you are using your USDA email, but using a Github acco
    ```
    launch-vscode-tunnel.sh -A <account_name> -t 04:00:00
    ```  
-   By default, this script will request two CPU cores, on the "short" partition of the cluster, for four hours. You will have 8 GB of RAM available. These settings should be sufficient for debugging and testing purposes. If you need more resources, you can request them by passing sbatch arguments to the script. However, be aware that the more resources you request, the longer it will take for the cluster to be able to allocate them for you. 
+   By default, this script will request two CPU cores, on the "ceres" partition of the cluster, for four hours. You will have 8 GB of RAM available. These settings should be sufficient for debugging and testing purposes. If you need more resources, you can request them by passing sbatch arguments to the script. However, be aware that the more resources you request, the longer it will take for the cluster to be able to allocate them for you. 
 1. You should see a message to open a web browser and go to https://microsoft.com/devicelogin and enter a code. Do as instructed. 
 1. After entering the code, you will be asked to either log in or select an account to register the tunnel with. Register it to your USDA account, unless you used a different account when setting up your local VS Code.
 
@@ -144,7 +144,6 @@ These instructions assume you are using your USDA email, but using a Github acco
         “Terminal” -> “New Terminal”
       * In the terminal, run the command: `hostname` 
       * The command should respond with something similar to "ceres20-compute-55". 
-      * If the command returns with "ceres.scinet.usda.gov" you have connected to the wrong server and you will need to edit your settings to correct this. 
  
 ### Closing a Registered Tunnel  
 
@@ -160,5 +159,4 @@ When you are done using a tunnel, it is important to close it to free up those r
 ## Troubleshooting
 
 **The VS Code OnDemand window stopped responding.**
-  * Most likely your OnDemand session timed out. Return to the Ceres OnDemand webpage and request a new session.
-  * If your session hasn’t timed out, the server may be time slicing (i.e. pausing your session to let other small jobs through). To prevent this, make sure you request the `ceres` partition when creating your OnDemand session.
+  * Most likely your Open OnDemand session timed out. Return to the Ceres Open OnDemand webpage and request a new session.
