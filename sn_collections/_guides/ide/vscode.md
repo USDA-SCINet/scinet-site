@@ -37,10 +37,10 @@ There are two main ways to use VS Code on SCINet clusters. One is to use the VS 
 (OOD VS Code)
 {:.subheader}
 
-1. Go to [Ceres Open Ondemand](http://ceres-ood.scinet.usda.gov/) and login. 
+1. Go to [Ceres Open Ondemand](http://ceres-ood.scinet.usda.gov/) and log in. 
 1. From the Interactive Apps menu at the top, select "VS Code Server"
    ![ood vscode interactiv app]({{ images_path }}/vscode/ood_vscode.png)
-1. Select the account you would like to use to run this job, as well as any other desired options. The defaults are usually sufficient, but if you want to run from a project rather than your home directory, be sure to update your working directory path.
+1. Select the account you would like to use to run this job, as well as any other desired options. The defaults are usually sufficient, but if you want to run from a project rather than your home directory, be sure to update your working directory path.  
    Click "Launch"
    ![selecting options and path]({{ images_path }}/vscode/choose_path.png)
 1. A new VS Code session will automatically be created on one of Ceres' compute nodes. This may take a few minutes depending on cluster demand. Once the session has been created, click "Connect to VS Code".
@@ -53,8 +53,8 @@ OOD VS Code stores your extensions in your home directory by default, which can 
 1. Create a symbolic link to store extensions. This only needs to be done the first time you run OOD VS Code. 
    *  Open the terminal window by going to:  
       "File" -> "View" -> "Terminal"
-   *  In the terminal type the following commands, replacing `<project_name>` with your project name and `<scinet_username>` with your username.
-      *  Create a folder in your project directory for the VSCode extensions:    
+   *  In the terminal, type the following commands, replacing `<project_name>` with your project name and `<scinet_username>` with your username.
+      *  Create a folder in your project directory for the VS Code extensions:    
           ```
           mkdir -p /project/<project_name>/<scinet_username>/.local/share/code-server
           ```
@@ -120,7 +120,7 @@ These instructions assume you are using your USDA email, but using a GitHub acco
 
 #### Start a tunnel on Ceres
 
-1. Open a terminal on the Ceres login node either via Ceres OnDemand or by using SSH to connect to ceres.scinet.usda.gov. 
+1. Open a terminal on the Ceres login node either via Ceres Open OnDemand or by using SSH to connect to ceres.scinet.usda.gov. 
 1. At the terminal, run the following command, replacing `<account_name>` with the account you are using to run this job: 
    ```
    launch-vscode-tunnel.sh -A <account_name> -t 04:00:00
@@ -148,8 +148,8 @@ These instructions assume you are using your USDA email, but using a GitHub acco
 ### Closing a Registered Tunnel  
 
 When you are done using a tunnel, it is important to close it to free up those resources for other users to use. To do this: 
-1. Open a terminal on the Ceres login node either via Ceres OnDemand or by using SSH to connect to ceres.scinet.usda.gov 
-2. Run the following command, where <job_id> is the slurm job number that was displayed when you launched the tunnel: `scancel <job_id> `
+1. Open a terminal on the Ceres login node either via Ceres Open OnDemand or by using SSH to connect to ceres.scinet.usda.gov. 
+2. Run the following command, where `<job_id>` is the slurm job number that was displayed when you launched the tunnel: `scancel <job_id> `
    * If you have forgotten the slurm job number, you can find it by running the following command:
      ```
      squeue -u <scinet_username>
