@@ -5,7 +5,7 @@ cal-titles: show
 display: basic
 no-caldate: true
 end_date: 2026-02-13 
-provider: Carpentries
+provider: SCINet and ARS-certified Carpentries Instructors
 description: Event - Workshop for basic programming tools and concepts for the Unix command line, version control with Git, and Python programming.
 
 tags: [Unix,Git,R-Project]
