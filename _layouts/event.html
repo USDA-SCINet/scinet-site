@@ -13,9 +13,9 @@ main:
   <li>
   <b>Provided by:</b> 
   {% for _p in page.provider %}
-  {% assign _provider = site.data.tables.providers.providers | where:"tag", _p  %}
-  {% if _provider.size > 0 %}
-  <a href="{% if _provider.external %}{{ _provider.url }}{% else %}{{ _provider.url | relative_url }}{% endif %}">{% if _provider.title %}{{ _provider.title }}{% else %}{{ _p }}{% endif %}</a>
+  {% assign _provider = site.data.tables.providers.providers | where: "tag", _p  %}
+  {% if _provider.first %}
+  <a href="{% if _provider[0].external %}{{ _provider[0].url }}{% else %}{{ _provider[0].url | relative_url }}{% endif %}">{% if _provider[0].title %}{{ _provider[0].title }}{% else %}{{ _p }}{% endif %}</a>
   {% else %}
   {{ _p }}{% unless forloop.last %}, {% endunless %}
   {% endif %}
