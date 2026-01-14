@@ -7,7 +7,7 @@ excerpt: Geneious Software Use Guide
 categories: [Application]
 
 redirect_from: 
-  - /guides/analysis/geneious
+  - /guides/application/geneious
 ---
 
 {% include images_path %}
