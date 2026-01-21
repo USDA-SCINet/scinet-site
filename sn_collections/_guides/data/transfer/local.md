@@ -85,7 +85,7 @@ scp <scinet_username>@atlas-dtn.hpc.msstate.edu:<remote_path_to_file/>file.ext  
 ```
 
 It is not advised to use the `scp -r` command to transfer directories to SCINet, since the setgid bit on directories at the destination is not inherited. 
-This is not a problem if directories are copied to `/home/$USER` but is a problem when copying to `/project` areas and usually results in quota exceeded errors.
+This is not a problem if directories are copied to /home/$USER but is a problem when copying to /project area and may result in access issues for other group members.
 
 If you decide to use `scp` to transfer directories to `/project`, you will have to manually set the setgid bit on the directory and all its subdirectories after the transfer using the `chmod g+s <dir_name>` command. The following command will set ownership of the files in a directory in `/project` to the project group and set the setgid bit:
 ```
