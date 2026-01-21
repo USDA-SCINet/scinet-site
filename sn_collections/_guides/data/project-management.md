@@ -42,7 +42,7 @@ To reduce your project’s usage below its quota, files can be moved to Juno for
 
 Project directories are shared among group members working on the same project. Each project directory has at least one manager (usually the PI of the SCINet project who initially requested the project directory). Project managers can give and revoke access to the project directory to other SCINet users by either:
 
-* Emailing the VRSC at scinet_vrsc@usda.gov. Please include the project name and a list of SCINet users to add or remove from the project (include SCINet user name and full name).
+* Emailing the VRSC at scinet_vrsc@usda.gov. Please include the project name and a list of SCINet users to add or remove from the project (include SCINet username and full name).
 * Issuing FreeIPA commands on either Ceres or Atlas:  
 ```
 ipa group-add-member proj-<project_name> --users=<scinet_username>  
@@ -57,9 +57,9 @@ ipa group-remove-member proj-<project_name> --users=<scinet_username> 
   * Login using your SCINet username and password. 
   * Click on "Groups" and search for your project.
   * After clicking on the project group (group-), you will see the list of users in the group. To add a new member, click on "+Add". This will open a pop-up window where you can search for the user. 
-  * After selecting the user name, click on ">". 
-  * Once the user name appears on the right side under "Prospective", click on the "Add" button in the bottom right corner of the pop-up window. 
-  * To revoke user access, check-mark next to the user name and click on the "Delete" button.  
+  * After selecting the username, click on ">". 
+  * Once the username appears on the right side under "Prospective", click on the "Add" button in the bottom right corner of the pop-up window. 
+  * To revoke user access, check-mark next to the username and click on the "Delete" button.  
 
 After being added to the `proj-<project_name>` project group, users will be able to access `/project/<project_name>` and `/90daydata/<project_name>` on both Ceres and Atlas, as well as `/LTS/project/<project_name>` on Juno. **Please note:** it can take time for project membership to sync across systems. 
 
