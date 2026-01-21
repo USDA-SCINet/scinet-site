@@ -21,16 +21,14 @@ subnav:
   - title: Improving storage management
     url: '#improving-storage-management'
 
-
-
 ---
 
 {% include images_path %}
 
-This guide provides detailed information about the storage locations provided by SCINet and how to use them. <!--excerpt--> In Figure 1 below, the relationship between these storage are depicted. To learn more about how to transfer files among them, please see the [File Transfer Methods](/guides/data/transfer) guide.
+This guide provides detailed information about the storage locations provided by SCINet and how to use them. <!--excerpt--> Figure 1 below illustrates how these storage locations are related. To learn more about how to transfer files among them, please see the [File Transfer Methods](/guides/data/transfer) guide.
 
 ![Figure 1]({{ images_path }}/data_management_sop-fig_1.png)
-*Figure 1. Recommended procedures for managing data on SCINet HPC infrastructure using Globus.*
+*Figure 1. Recommended procedures for managing data on SCINet infrastructure.*
 
 1. Move data to Juno
 1. Copy data to target HPC (Ceres or Atlas)
@@ -60,7 +58,7 @@ Cluster storage is not backed up and should not be relied on for long-term stora
 
 Home directories (`/home/<scinet_username>`) are private directories that are only accessible to the user (and the system administrators when necessary). When a user logs in to Ceres or Atlas, they automatically start in their home directory. 
 
-Home directories have 30 GB quotas and are intended to be mainly used for configuration and login files. Code, data, and software are best suited for [project directories](#project-directories). See the [Improving storage management](#improving-storage-management) section below for guidance on how to avoid installing software in your home directory.  
+Home directories have 30 GB quotas and are intended to be mainly used for configuration and login files. Code, data, and software are best suited for [project directories](#project-directories). See the [Storage management for software installation](#storage-management-for-software-installation) section below for guidance on how to avoid installing software in your home directory.  
 
 ### Project directories
 
@@ -70,37 +68,41 @@ Project directories (`/project/<project_name>`) are typically associated with AR
 
 Large short-term storage (`/90daydata`) does not have a storage quota (i.e., there is not an imposed limit to how much space you can consume at a time), but **files older than 90 days will be automatically deleted.** This is permanent and the files cannot be recovered. 
 
-`/90daydata/shared` is open to all users on Ceres and Atlas. Anyone can create a directory in `/90daydata/shared` and put files which will be readable by everyone on the system unless the file owner limits access using the `chmod` command. 
+Each SCINet project will have a dedicated project directory in `/90daydata` at `/90daydata/<project_name>`. In addition, `/90daydata/shared` is open to all users on Ceres and Atlas. Anyone can create a directory in `/90daydata/shared` and store files there which will be readable by everyone on the system unless the file owner limits access using the `chmod` command. 
 
-**Please Note:** If you download archived files, they may contain files with an access date from long ago. This date will still trigger deletion, so make sure that the files have a new access date. For example, when you untar a .tar or .tgz file, use the `-m` flag. If you use `rsync` to transfer files to the space, do not use the `-a` flag, as that preserves date stamps."
+**Please Note:** If you download archived files, they may contain files with an access date from long ago. This date will still trigger deletion, so make sure that the files have a new access date. For example, when you untar a .tar or .tgz file, use the `-m` flag. If you use `rsync` to transfer files to `/90daydata`, do not use the `-a` flag, as that preserves date stamps.
 
 ### Temporary local node storage
 
-If faster data throughput is needed during a compute job, you can use the storage space on the disk drive on each of the compute nodes (1.5+ TB) by reading and writing to `$TMPDIR`. This is temporary storage that can be used only during the execution of your job. Only processes executing on a node have access to this space.  Multiple jobs running on the same node share this space, so an individual job may be able to use less than total available space. If all local space is needed for a job, request the whole node.
+If faster data throughput is needed during a compute job, you can use the storage space on the disk drive on each of the compute nodes (1.5+ TB) by reading and writing to `$TMPDIR`. This is temporary storage that can be used only during the execution of your job. Only processes executing on a node have access to this space.  Multiple jobs running on the same node share this space, so an individual job might not be able to use the full capacity of the disk drive. If all local space is needed for a job, request the whole node.
 
 To use this local storage, the following workflow should be used.  These steps may be taken interactively (when using `salloc` or `srun`) or in batch mode. In batch mode, the copy commands below should be added to the job script.
 
-1.	Copy calculation input to the local file system, e.g., 
+1. Copy any required input files to the local file system, e.g., 
 ```
 cp /project/<project_name>/<input_files> $TMPDIR
 ``` 
 where `<project_name>` is the name of your project directory and `<input_files>` is the remainder of the path to the files to be used by your job (to copy a whole folder, use the `-r` option).
 
-2.	Run your code, getting input from files located in `$TMPDIR` and writing output to `$TMPDIR`.
+2. Run your code, using input files located in `$TMPDIR` and writing output to `$TMPDIR`.
 
-3.	Copy final results to storage location, e.g.:
+3. Copy final results to the desired storage location, e.g.:
 ```
 cp $TMPDIR/<final_results> /project/<project_name>/<final_results>
 ```
 
 Note that files in `$TMPDIR` will disappear at the conclusion of your job.  Any files which are not copied out of `$TMPDIR` cannot be recovered after your job has finished.
 
-This storage is useful for workflows that extensively use disk space reading and writing multiple small files.
+This storage is useful for workflows that require very high disk read/write throughput, such as reading and writing large numbers of small files.
+
 
 ## Juno permanent storage
 
-Project directories are not meant to be used for long-term storage. Data that cannot be easily reproduced should be manually backed up to Juno. Juno is a large, multi-petabyte SCINet storage device at the National Agricultural Library in Maryland. For instructions on how to transfer data to and from Juno, see the [File Transfer Methods](/guides/data/transfer) guide.
+Project directories on Ceres and Atlas are not meant to be used for long-term storage. Data that cannot be easily reproduced should be manually backed up to Juno. Juno is a large, multi-petabyte SCINet storage device at the National Agricultural Library in Maryland. For instructions on how to transfer data to and from Juno, see the [File Transfer Methods](/guides/data/transfer) guide.
 
-## Improving storage management 
+_Please only store original data or results on Juno that are not archived or available elsewhere._ For example, DNA sequence data downloaded from NCBI should not be stored on Juno.
 
-Many software applications are available on the clusters as [modules]({{ site.baseurl }}/guides/software/modules); however, sometimes users need to install software by themselves. Since software often default to installing in home directories and home directories have a small quota, it is recommended to install software in [project directories](#project-directories). The [Installing R, Python, and Perl Packages](/guides/software/r-perl-python) and [Conda](/guides/software/conda#example-2-installing-tensorflow-into-a-project-directory) guides have examples of installing packages and environments in a project directory.
+
+## Storage management for software installation
+
+Many software applications are available on the clusters as [modules]({{ site.baseurl }}/guides/software/modules); however, sometimes users need to install software by themselves. Since software packages often default to installing in home directories and home directories have a small quota, it is recommended to install software in [project directories](#project-directories). The [Installing R, Python, and Perl Packages](/guides/software/r-perl-python) and [Conda](/guides/software/conda#example-2-installing-tensorflow-into-a-project-directory) guides have examples of installing packages and environments in a project directory.
