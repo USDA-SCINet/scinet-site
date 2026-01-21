@@ -17,6 +17,15 @@
       {% if breadcrumb_set %}
         {% assign sidenav = breadcrumb_set %}
       {% endif %}
+      {% if page.parents %}
+      {% for _link in sidenav %}
+        {% unless _link.url == page.url or _link.url == page.permalink %}
+          {% assign linkurl = _link.url | remove: 'index' %}
+          {% assign linktitle = _link.shortname | default: _link.title %}
+          {% include layout/components/breadcrumb.html title=linktitle url=linkurl %}
+        {% endunless %}
+      {% endfor %}
+      {% else %}
       {% for _link in sidenav limit:1 %}
         {% unless _link.url == page.url or _link.url == page.permalink %}
           {% assign linkurl = _link.url | remove: 'index' %}
@@ -24,6 +33,7 @@
           {% include layout/components/breadcrumb.html title=linktitle url=linkurl %}
         {% endunless %}
       {% endfor %}
+      {% endif %}
     {% else %}
 
     {% if show_bc_section %}

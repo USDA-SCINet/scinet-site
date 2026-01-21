@@ -164,11 +164,14 @@ Please fill out an application form at [Request Project Storage]({{ site.baseurl
 ### How do I request access to a project directory?
 Only project directory managers can request access to their project space for other users. 
 
+### Can I store sensitive data on SCINet infrastructure?
+No, any data that includes personal identifiable information (PII), controlled unclassified information (CUI), or other sensitive information should not be stored on Atlas, Ceres, Juno, or café machines. 
+
 
 ## Data Transfer
 ---
 ### How do I get my data onto and off of Ceres?
-SCP, SFTP, lftp (to/from Box accounts) Globus, and hard drive shipment are supported. This is described in the [File Transfers section of the User Guides]({{ site.baseurl }}/guides/data/datatransfer). If you work near Beltsville, you may also use the SCINet lab located at the National Agricultural Library (NAL). Two computers with 10GB Internet2 SCINet connections are available.
+SCP, SFTP, lftp (to/from Box accounts) Globus, and hard drive shipment are supported. This is described in the [File Transfers section of the User Guides]({{ site.baseurl }}/guides/data/transfer). If you work near Beltsville, you may also use the SCINet lab located at the National Agricultural Library (NAL). Two computers with 10GB Internet2 SCINet connections are available.
 
 ### How do I get my data onto Ceres via SCINet Galaxy?
 See [Getting Started with Galaxy on Ceres]({{ site.baseurl }}/guides/application/galaxy).

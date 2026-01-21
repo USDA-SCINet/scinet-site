@@ -2,7 +2,7 @@
 title: SCINet File Transfer
 description: Best practices for file transfer
 excerpt: "<p>Data Transfer best practices.</p><p>Globus Online is the recommended method for transferring data to and from the HPC clusters.</p>"
-categories: [Data]
+categories: [Storage]
 order_number: 60
 
 subnav:
@@ -27,6 +27,7 @@ subnav:
     url: '#data-transfer-to-ncbi'
 
 
+published: false
 
 ---
 
@@ -40,7 +41,7 @@ subnav:
 * Globus Online is the recommended method for transferring data to or among Ceres, Atlas, and Juno. It provides faster data transfer speeds compared to scp, has a graphical interface, and does not require authentication for every file transfer.
 * Given the space and access limitations of a home directory, large amounts of data or data that will be used collaboratively should be transferred to a project directory. See the User Manual section [Storage Quotas]({{ site.baseurl }}/guides/data/storage#quotas) for more information on home and project directory quotas.
 * If you have to transfer very large amounts of data or if network speed at your location is slow, please submit a request to the Virtual Research Support Core (VRSC) to ingress data from a hard drive as described below (section [Large Data Transfer by Shipping Hard Drives](#large-data-transfer-by-shipping-hard-drives)).
-* If you have issues with transferring data, please contact the VRSC at [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=help%20with%20transferring%20data).
+* If you have issues with transferring data, please contact the VRSC at [scinet_vrsc@usda.gov](mailto:scinet_vrsc@usda.gov?subject=help%20with%20transferring%20data).
 
 
 ## Globus Data Transfer
@@ -174,11 +175,11 @@ Large data transfers will be facilitated by the VRSC and involves users shipping
 
 You can send hard drives containing data to the VRSC if you have very large amounts of data (typically greater than 50GB) to transfer to Ceres or if the network speed at your location is slow. Please follow these instructions:
 
-1. Submit an email request to the VRSC [scinet_vrsc@USDA.GOV](mailto:scinet_vrsc@USDA.GOV?subject=large%20data%20transfer%20request) for a data transfer with the following information:
+1. Submit an email request to the VRSC [scinet_vrsc@usda.gov](mailto:scinet_vrsc@usda.gov?subject=large%20data%20transfer%20request) for a data transfer with the following information:
 
    * Amount of data
    * Target project directory.
-   * Type of filesystem the data is coming from (Window, Mac, Linux)
+   * Type of file system the data is coming from (Window, Mac, Linux)
 
    If you don't already have a project directory please request one first: [Request Project Storage](https://forms.office.com/g/wD9rYarVyn) (eAuthentication required)
 
@@ -190,7 +191,7 @@ You can send hard drives containing data to the VRSC if you have very large amou
    * Any type of hard drive (not a USB drive) is fine but SSDs will be more tolerant of the postal system
    * Disks must be EXT4, NTFS, HFS, XFS, or FAT formatted
 
-4. Ship the disk to the address provided by VRSC and email the tracking information to scinet_vrsc@USDA.GOV. Include a print out of your email containing the data transfer request to VRSC in your package.
+4. Ship the disk to the address provided by VRSC and email the tracking information to scinet_vrsc@usda.gov. Include a print out of your email containing the data transfer request to VRSC in your package.
 
 5. Once we receive the data we will copy it over to the appropriate project directory and notify you once it is complete.
 

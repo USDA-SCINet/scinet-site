@@ -12,6 +12,7 @@ parents:
 
 fetched: "login-help"
 order_number: 50
+unfetch_sidenav: true
 ---
 
 {% include images_path %}

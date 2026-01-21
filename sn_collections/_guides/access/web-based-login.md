@@ -21,8 +21,7 @@ GUIs:
     url: /guides/application/galaxy
     internal: true
   - title: Globus Online
-    url: /guides/data/datatransfer#globus-data-transfer
-    excerpt: "Globus Online is the recommended method for transferring data to or among Ceres, Atlas, and Juno. It provides faster data transfer speeds compared to scp, has a graphical interface, and does not require authentication for every file transfer. To transfer data to or from a local computer, users will need to install Globus Connect Personal which does NOT require admin privileges."
+    url: /guides/data/transfer/globus
     internal: true
 
 subnav:

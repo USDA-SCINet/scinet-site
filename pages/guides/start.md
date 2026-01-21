@@ -35,14 +35,13 @@ subnav:
     url: /guides/access/
     internal: true
     shows_list: subnav
-  - title: Data Storage
+  - title: Storage Locations
     url: /guides/data/storage
     internal: true
     shows_list: subnav
-  - title: Data Transfer
-    url: /guides/data/datatransfer
+  - title: File Transfer Methods
+    url: /guides/data/transfer/
     internal: true
-    shows_list: subnav
   - title: Software
     url: /guides/software/
     internal: true
