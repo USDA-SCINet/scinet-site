@@ -87,7 +87,7 @@ To transfer files to or from your local computer, you can use Globus Connect Per
 By default on Windows, GCP prompts to be installed in `C:\Program Files` which requires administrator rights. However, you don’t need administrator rights to install GCP on your local computer. If you do not have administrator rights, browse to a place to which you have write access (e.g., your Desktop folder) when prompted for an installation location. If you encounter further permission issues, contact your local IT staff for assistance. 
 
 **Please note:** GCP defaults to access your user "Documents" folder on your local computer, but you can change that to another folder (e.g., a "globus" subfolder within your "Documents") to limit Globus's access to your local files. To make this change:  
-1. Right-click on the GCP icon in your local machine's system taskbar (or menu bar or system tray, depending on your operating system).
+1. Right-click on the GCP icon in your local computer's system taskbar (or menu bar or system tray, depending on your operating system).
 1. Select "Options" or "Preferences" (the term used depends on your operating system), which will open a pop-up window.
 1. Navigate to the "Access" tab in the new pop-up window.
 1. If you want to remove access to your "Documents" or other folder, select the folder and then click the "-" button.
@@ -113,4 +113,4 @@ By default on Windows, GCP prompts to be installed in `C:\Program Files` which r
 You can check the status of your GCP connection by clicking the GCP icon in your task bar.  
   ![Globus Connect Personal icon in windows taskbar](../assets/taskbar_gcp_icon.png) 
 
-You can now transfer data from your local computer using [Globus.org](https://www.globus.org/) while Globus Connect Personal is running. You should find the GCP collection made above in your list of collections, and you will be able to connect to it while the local GCP connection is running on your local computer. After selecting your local computer collection, you should see in the Globus File Manager the files you have on your local machine. See the [copying data](#copying-data) section for more information about copying data using Globus. 
+You can now transfer data from your local computer using [Globus.org](https://www.globus.org/) while Globus Connect Personal is running. You should find the GCP collection made above in your list of collections, and you will be able to connect to it while the local GCP connection is running on your local computer. After selecting your local computer collection, you should see in the Globus File Manager the files you have on your local computer. See the [copying data](#copying-data) section for more information about copying data using Globus. 
