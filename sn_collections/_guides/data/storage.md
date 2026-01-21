@@ -62,7 +62,11 @@ Home directories have 30 GB quotas and are intended to be mainly used for config
 
 ### Project directories
 
-Project directories (`/project/<project_name>`) are typically associated with ARS research projects and allow for collaboration and larger storage allocations. While it's possible to perform computational work on Ceres or Atlas using only home directories and [Large Short-term Storage](#large-short-term-storage) in `/90daydata/shared`, it is highly recommended to request a project directory. Having a project directory will allow you to install software packages in `/project` and keep important data on [Juno Permanent Storage](#juno-permanent-storage). To learn more about SCINet projects, see the [SCINet Project Management](/guides/data/project-management) guide.
+Project directories (`/project/<project_name>`) are typically associated with ARS research projects and allow for collaboration and larger storage allocations. 
+
+While it's possible to perform computational work on Ceres or Atlas using only home directories and [Large Short-term Storage](#large-short-term-storage) in `/90daydata/shared`, it is highly recommended to request a project directory. Having a project directory will allow you to install software packages in `/project` and keep important data on [Juno Permanent Storage](#juno-permanent-storage). 
+
+To learn more about SCINet projects, see the [SCINet Project Management](/guides/data/project-management) guide.
 
 ### Large short-term storage
 
