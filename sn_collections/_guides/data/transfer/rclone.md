@@ -28,7 +28,7 @@ fetched: "data-transfer"
 order_number: 20
 ---
 
-Rclone is already installed on all SCINet data transfer and compute nodes. Please do not use the `rclone` command from the login node. Attempting to do so will remind you to use a data transfer or compute node instead.<br>
+Rclone is already installed on all SCINet data transfer and compute nodes. Please do not perform `rclone` transfers from the login node. Attempting to do so can result in errors.<br>
 To learn more about `rclone`, see [https://rclone.org](https://rclone.org).<!--excerpt-->
 
 ## Setting up rclone 
