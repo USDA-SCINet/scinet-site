@@ -58,7 +58,7 @@ Floating licenses for [Geneious Prime]({{ site.baseurl }}/guides/application/gen
 
 Additionally, GUI server licenses for [CLC Workbench]({{ site.baseurl }}/guides/application/clc-workbench) are also available. 
 
-A [Galaxy]({{ site.baseurl }}/guides/analysis/galaxy) instance is also available on Ceres, allowing users to run popular command line tools through a GUI.
+A [Galaxy]({{ site.baseurl }}/guides/application/galaxy) instance is also available on Ceres, allowing users to run popular command line tools through a GUI.
 <br><br><br>
 
 **SCINet users can also install other freely-available software to suit their research needs or request system-wide installation by contacting the [Virtual Research Support Core]({{ site.baseurl }}/support/contact).** 

@@ -9,7 +9,7 @@ alerts:
   - alert:
     type: info
     title: "For New Users:"
-    text: "After <a href='/about/signup' class='usa-link'>signing up for SCINet</a>, you will recieve your login credentials in an email. If you have not received your login credentials, please email the Virtual Research Support Core at <a href='mailto:scinet_vrsc@usda.gov?subject=account%20access' class='usa-link'>scinet_vrsc@usda.gov.</a>"
+    text: "After <a href='/about/signup' class='usa-link'>signing up for SCINet</a>, you will receive your login credentials in an email. If you have not received your login credentials, please email the Virtual Research Support Core at <a href='mailto:scinet_vrsc@usda.gov?subject=account%20access' class='usa-link'>scinet_vrsc@usda.gov.</a>"
 
 subnav:
   - title: Small Step Installation

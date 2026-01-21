@@ -2,6 +2,8 @@
 {%- assign emailcontent = emailcontent | replace: '<!--excerpt-->', '' %}
 {% assign blankarray = "" | split: "" %}
 {% assign emailarray = blankarray %}
+{% capture linebreak %}
+{% endcapture %}
 
 {% assign uljoined = 0 %}
 {% assign licount = 0 %}
@@ -10,6 +12,12 @@
 {% assign rownum = 0 %}
 {% assign colnum = 0 %}
 {% assign narrowcol = 0 %}
+{% assign currenttable = 0 %}
+{% assign currenttablediv = 0 %}
+{% assign codeblockend = 0 %}
+{% assign codeblockstart = 0 %}
+{% assign fellowimg = 0 %}
+{% assign tablebody = 0 %}
 
 {%- assign emailnodes = emailcontent | split: '<' %}
 {% for _node in emailnodes %}
@@ -18,6 +26,8 @@
 {% assign subnode = _node | split: '>' %}
 {% assign nodedesc = subnode[0] | split: ' ' %}
 {% assign nodename = nodedesc | first %}
+
+{% if subnode[1] %}{% assign nodecontent = subnode[1] %}{% endif %}
 
 {% case nodename %}
 {% when 'p' %}
@@ -53,8 +63,10 @@
     {% assign imgct = 1 %}
     {% if narrowcol == 1 %}
     {% capture htmlconts %}<{{ subnode[0] | replace: 'alt=', 'width="200" align="center" class="newsletter_template_image" style="max-width: 100%; width: 200px; height: auto !important;" alt=' | replace: 'src="/', 'src="https://scinet.usda.gov/' }}>{% endcapture %}
+    {% elsif fellowimg == 1 %}
+    {% capture htmlconts %}<{{ subnode[0] | replace: 'padding: 5px;', 'padding: 5px; height: auto !important;' | replace: 'src="/', 'src="https://scinet.usda.gov/' }}>{% endcapture %}
     {% else %}
-    {% capture htmlconts %}<{{ subnode[0] | replace: 'alt="Figure', 'width="500" align="center" class="newsletter_template_image" style="max-width: 100%; width: 500px; height: auto !important;" alt="Figure' | replace: 'src="/', 'src="https://scinet.usda.gov/' }}></p>{% endcapture %}
+    {% capture htmlconts %}<{{ subnode[0] | replace: 'alt="Figure', 'width="500" align="center" class="newsletter_template_image" style="max-width: 100%; width: 500px; height: auto !important; align: center;" alt="Figure' | replace: 'src="/', 'src="https://scinet.usda.gov/' }}></p>{% endcapture %}
     {% endif %}
     {% assign emailarray = emailarray | push: htmlconts %}
 {% when 'ul' %}
@@ -81,8 +93,31 @@
         {% assign uljoined = 0 %}
     {% endif %}
     {% assign emailarray = emailarray | push: '</ul>' %}
+{% when 'table' %}
+    {% if currenttablediv > currenttable %}
+        {% assign emailarray = emailarray | push:'<table cellspacing="0" cellpadding="10" style="border: 1px solid #000000; border-collapse: collapse;">' %}
+        {% assign currenttable = currenttable | plus: 1 %}
+    {% endif %}
+{% when '/table' %}
+    {% if currenttablediv > 0 and currenttablediv == currenttable %}
+        {% assign emailarray = emailarray | push:'</table>' %}
+        {% assign currenttable = currenttable | minus: 1 %}
+    {% endif %}
+{% when 'tbody' %}
+    {% assign emailarray = emailarray | push: '<tbody>' %}
+    {% assign tablebody = 1 %}
+{% when '/tbody' %}
+    {% assign emailarray = emailarray | push: '</tbody>' %}
+    {% assign tablebody = 0 %}
+{% when 'td' %}
+    {% assign emailarray = emailarray | push: '<td style="border: 1px solid #000000; padding: 10px;" >' %}
+{% when 'th' %}
+    {% capture thconts %}<th style="border: 1px solid #000000; padding: 10px; {%- if tablebody == 0 %}background-color: #f1f3f6;" bgcolor="#f1f3f6"{% else %}"{%- endif %} >{% endcapture %}
+    {% assign emailarray = emailarray | push: thconts %}
 {% when 'div' %}
-    {% if subnode[0] == 'div class="grid-row"' %}
+    {% if subnode[0] == 'div class="fellows"' %}
+        {% assign fellowimg = 1 %}
+    {% elsif subnode[0] == 'div class="grid-row"' %}
         {% assign rownum = rownum | plus: 1 %}
         {% assign emailarray = emailarray | push:'<table cellspacing="10"><tbody><tr>' %}
     {% elsif subnode[0] == 'div class="grid-col-4"' %}
@@ -92,11 +127,27 @@
     {% elsif subnode[0] == 'div class="grid-col"' %}
         {% assign colnum = colnum | plus: 1 %}
         {% assign emailarray = emailarray | push:'<td>' %}
+    {% elsif subnode[0] == 'div class="language-plaintext highlighter-rouge"' %}
+        {% assign rownum = rownum | plus: 1 %}
+        {% assign emailarray = emailarray | push:'<table cellspacing="10"><tbody><tr>' %}
+    {% elsif subnode[0] == 'div class="highlight"' %}
+        {% assign emailarray = emailarray | push:'<td bgcolor="#f1f3f6" style="padding: 10px; background-color: #f1f3f6; border: 2px solid #e6e6e6; font-family: monospace, serif; font-size: 10pt; color: rgb(0, 0, 0); line-height: 130%; -ms-word-break: break-all; word-break: break-word;">' %}
+        {% assign codeblockstart = 1 %}
+    {% elsif subnode[0] == 'div class="usa-table-container flex-scroll"' %}
+        {% assign currenttable = 0 %}
+        {% assign currenttablediv = currenttablediv | plus: 1 %}
     {% else %}
-    <p><b>ALARM</b></p>
+    <p><b>ALARM</b></p><code>{{ subnode }}</code>
     {% endif %}
 {% when '/div' %}
-    {% if colnum == rownum %}
+    {% if fellowimg == 1 %}
+        {% assign fellowimg = 0 %}
+    {% elsif codeblockend == 1 %}
+        {% assign emailarray = emailarray | push: '</td>' %}
+        {% assign codeblockend = 0 %}
+    {% elsif currenttable < currenttablediv %}
+        {% assign currenttablediv = 0 %}
+    {% elsif colnum == rownum %}
     {% assign narrowcol = 0 %}
     {% assign emailarray = emailarray | push: '</td>' %}
     {% assign colnum = colnum | minus: 1 %}
@@ -104,7 +155,7 @@
     {% assign rownum = rownum | minus: 1 %}
     {% assign emailarray = emailarray | push: '</tr></tbody></table>' %}
     {% else %}
-    <p><b>ALARM</b></p>
+    <p><b>ALARM</b></p><code>{{ subnode }}</code>
     {% endif %}
 {% when 'ol' %}
     {% if licount == 1 %}
@@ -119,15 +170,31 @@
     {% assign uljoined = 0 %}
     {% endif %}
     {% assign emailarray = emailarray | push: '</ol>' %}
+{% when 'code' %}
+    {% assign nodecontent = blankarray %}
+    {% assign splitcode = subnode[1] | split: linebreak %}
+    {% for _sc in splitcode %}
+    {% assign nodecontent = nodecontent | push: _sc %}
+    {% unless forloop.last %}
+    {% assign nodecontent = nodecontent | push: '<br>' %}
+    {% endunless %}
+    {% endfor %}
+{% when '/code' %}  
 {% when 'br' %}
     {% unless imgct == 1 %}
         {% assign emailarray = emailarray | push: '<br>' %}
     {% endunless %}
+{% when 'pre' %}
+{% when '/pre' %}
+    {% if codeblockstart == 1 %}
+        {% assign codeblockstart = 0 %}
+        {% assign codeblockend = 1 %}
+    {% endif %}
 {% else %}
     {% capture thistag %}<{{ nodename }}>{% endcapture %}
     {% assign emailarray = emailarray | push: thistag %}
 {% endcase %}
-{% if subnode[1] %}{% assign emailarray = emailarray | push: subnode[1] %}{% endif %}
+{% if subnode[1] %}{% assign emailarray = emailarray | push: nodecontent %}{% endif %}
 {% endif %}
 {% endfor %}
 

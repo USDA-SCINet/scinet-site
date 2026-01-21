@@ -2,6 +2,8 @@ providers:
   - title: Carpentries
     tag: Carpentries
     url: /training/carpentries
+  - tag: ARS-certified Carpentries Instructors
+    url: /training/carpentries
   - title: Geospatial Research Working Group
     tag: Geospatial Working Group
     url: /research/working-groups/geospatial

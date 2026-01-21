@@ -26,7 +26,7 @@ graphical-table:
   data:
     - Software: Galaxy Server
       Information: SCINet Runs its own <a href='https://galaxy.scinet.usda.gov'>Galaxy Server</a>.  Galaxy is an open source, web-based platform for data intensive bioinformatic research.
-      url: /guides/analysis/galaxy
+      url: /guides/application/galaxy
     - Software: CLC Server
       Information: SCINet has a license key to <a href='https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/enterprise-ngs-solutions/qiagen-clc-genomics-server/'>CLC Server</a>
       url: /guides/application/clc-workbench
