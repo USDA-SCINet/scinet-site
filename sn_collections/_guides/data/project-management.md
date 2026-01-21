@@ -42,7 +42,7 @@ Project directories are shared among group members working on the same project. 
 ipa group-add-member proj-<project_name> --users=<scinet_username>  
 ipa group-remove-member proj-<project_name> --users=<scinet_username>  
 ```
-**Please Note**: If you try to run the commands above and get "ipa: ERROR: Ticket expired", run the "kinit" command, enter your SCINet password, and try again.
+**Please Note**: If you try to run the commands above and get "ipa: ERROR: Ticket expired", run the `kinit` command, enter your SCINet password, and try again.
 
 * Using the FreeIPA graphical user interface (GUI) via Open OnDemand:
   * Connect to [Ceres Open OnDemand](http://ceres-ood.scinet.usda.gov/). 
