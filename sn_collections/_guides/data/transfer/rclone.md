@@ -15,21 +15,10 @@ subnav:
   - title: Setting up rclone
     url: '#setting-up-rclone'
     subnav:
-      - title: Installation on a local computer
-        url: '#installation-on-a-local-computer'
-        subnav:
-          - title: Installation on Windows
-            url: '#installation-on-windows'
-          - title: Installation on macOS 
-            url: '#installation-on-macos'
-      - title: Configuration of rclone on a local computer
-        url: '#configuration-of-rclone-on-a-local-computer'
-      - title: Configuration of rclone on SCINet
-        url: '#configuration-of-rclone-on-scinet'
-      - title: Test rclone
-        url: '#test-rclone'
-  - title: Transferring files with rclone
-    url: '#transferring-files-with-rclone'
+      - title: Configuring rclone
+        url: '#configuring-rclone-on-scinet-to-access-remote-file-storage'
+      - title: Access and copy files
+        url: '#use-rclone-to-access-and-copy-files'
   - title: Advanced commands
     url: '#advanced-commands'
 

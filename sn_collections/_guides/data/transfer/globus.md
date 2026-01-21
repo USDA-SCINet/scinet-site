@@ -18,6 +18,11 @@ subnav:
     url: '#copying-data'
   - title: Globus Connect Personal
     url: '#globus-connect-personal'
+    subnav:
+      - title: Installation
+        url: '#installation'
+      - title: Setup
+        url: '#setup'    
 
 fetched: "data-transfer"
 order_number: 30

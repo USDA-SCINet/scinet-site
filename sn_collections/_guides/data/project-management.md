@@ -6,8 +6,6 @@ excerpt: SCINet projects allow users to store their files in a project directory
 categories: [Storage]
 
 subnav:
-  - title: Request a project directory
-    url: '#request-a-project-directory'
   - title: Storage quotas
     url: '#storage-quotas'
   - title: Manage project membership
