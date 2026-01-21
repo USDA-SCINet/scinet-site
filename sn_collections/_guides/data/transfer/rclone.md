@@ -32,7 +32,7 @@ Rclone is already installed on all SCINet data transfer and compute nodes. Pleas
 To learn more about `rclone`, see [https://rclone.org](https://rclone.org).<!--excerpt-->
 
 ## Setting up rclone 
-Before transferring files to or from cloud resources, rclone must first be configured to access cloud storage resources, e.g., a USDA-ARS Box account or AWS S3 buckets. If authentication with eAuth is required to access the cloud resource (e.g., your Box account), you will need to also install and configure rclone on your local computer for authenticating with eAuth and generating an authentication token to use on SCINet systems. 
+Before transferring files to or from cloud resources, rclone must first be configured to access cloud storage resources, e.g., a USDA-ARS Box account or AWS S3 buckets.
 
 **Please note:** Although rclone supports data transfer to and from Microsoft OneDrive accounts, rclone is not currently authorized to access USDA OneDrive accounts, so rclone cannot facilitate data transfers directly between your OneDrive account and SCINet systems. 
 
