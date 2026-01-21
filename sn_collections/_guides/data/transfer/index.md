@@ -40,7 +40,7 @@ subnav:
 
 
 To help identify the file transfer method and documentation you should use, determine the scenario below that best matches your use case: 
-1. If you are transferring small amounts of data (less than 1 GB), it is typically fine to use other file transfer protocols. See [Data Transfer to and from Local Computers](/guides/data/transfer/local).
+1. If you are transferring small amounts of data (less than 1 GB), there are multiple file transfer protocols and options that should work well. See [Data Transfer to and from Local Computers](/guides/data/transfer/local).
 1. If you are moving data to and from cloud resources, see [Rclone](/guides/data/transfer/rclone).
 1. For most other data transfer needs, we recommend that you use [Globus](/guides/data/transfer/globus).  
     * If you would like to transfer data to and from your local computer, see [Globus Connect Personal](/guides/data/transfer/globus#globus-connect-personal).
