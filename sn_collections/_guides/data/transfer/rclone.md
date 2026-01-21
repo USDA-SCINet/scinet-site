@@ -53,6 +53,7 @@ Here, we illustrate setting up access to Box; the process for configuring access
 
 You will need to be able to log on to Ceres using SSH from your local computer. Please see [https://scinet.usda.gov/guides/access/ssh-login](https://scinet.usda.gov/guides/access/ssh-login) if you need help setting that up.
 
+{: .usa-list }
 1. Open Windows PowerShell or macOS Terminal.
 2. Run (replace "user.name" with your SCINet username)
 

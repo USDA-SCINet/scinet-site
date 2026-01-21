@@ -43,8 +43,8 @@ The Open OnDemand interface includes a file manager that allows you to upload an
 1. Click one of the listed directory shortcuts that appear below to start your navigation to the location on the cluster in which you want to start a file transfer.
 1. Use the file browser to navigate to the subdirectory to or from which to transfer files.
 1. Click either the "Upload" or "Download" buttons in the top right corner of the file browser to open a pop-up window to complete your upload or download. 
-  * Uploads support either dragging and dropping files or folders on the pop-up window or browsing your local file system. 
-  * Downloads will initiate a download via your web browser to your browser's default download location.  
+   * Uploads support either dragging and dropping files or folders on the pop-up window or browsing your local file system. 
+   * Downloads will initiate a download via your web browser to your browser's default download location.  
 
 To read more about accessing Open OnDemand and its other features, see the [Open OnDemand Interface guide](/guides/use/open-ondemand). 
 
@@ -112,16 +112,16 @@ Another supported GUI method for smaller file transfers is Cyberduck ([https://c
 
 To transfer files to and from Ceres or Atlas using Cyberduck:
 1. Download Cyberduck from [https://cyberduck.io/](https://cyberduck.io/) and install it.
-    * This may require local IT assistance if you are on a USDA-managed computer.
+   * This may require local IT assistance if you are on a USDA-managed computer.
 2. [SSH into SCINet via the command line](https://scinet.usda.gov/guides/access/ssh-login).
-    * This authentication is valid for 16 hours.
+   * This authentication is valid for 16 hours.
 3. Open Cyberduck.
 4. Click "Open Connection" in the menu bar.
 5. In the "Open Connection" window that appears, enter the following information:
-    * **Protocol:**  `SFTP (SSH File Transfer Protocol)`
-    * **Server:** `ceres-dtn.scinet.usda.gov` for accessing Ceres or `atlas-dtn.hpc.msstate.edu` for accessing Atlas
-    * **Username:** Your SCINet username.
-    * **Password:** Leave blank! You have already authenticated with SmallStepCLI in step 2.
+   * **Protocol:**  `SFTP (SSH File Transfer Protocol)`
+   * **Server:** `ceres-dtn.scinet.usda.gov` for accessing Ceres or `atlas-dtn.hpc.msstate.edu` for accessing Atlas
+   * **Username:** Your SCINet username.
+   * **Password:** Leave blank! You have already authenticated with SmallStepCLI in step 2.
 6. Click the "Connect" button.
 7. You may receive a warning about an "Unknown Fingerprint." If you do, click "Allow."
 8. To upload a file:
@@ -132,6 +132,7 @@ To transfer files to and from Ceres or Atlas using Cyberduck:
    1. In Cyberduck, navigate to the remote directory where the file is stored.
    2. Right click on the file you want to downlad.
    3. From the context menu that opens, select "Download."
+{: .usa-list }
 
 ## Data Transfer to NCBI
 

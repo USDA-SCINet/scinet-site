@@ -19,6 +19,7 @@ If you need to transfer large amounts of data (typically greater than 50 GB) to 
 
 If you'd like to transfer data to SCINet storage by shipping external drives, please follow these instructions:
 
+{: .usa-list }
 1. Submit an email request to the VRSC [scinet_vrsc@usda.gov](mailto:scinet_vrsc@usda.gov?subject=large%20data%20transfer%20request) for a data transfer with the following information:  
    * Amount of data.
    * Target project directory.
