@@ -18,8 +18,8 @@ subnav:
         url: '#temporary-local-node-storage'
   - title: Juno permanent storage
     url: '#juno-permanent-storage'
-  - title: Improving storage management
-    url: '#improving-storage-management'
+  - title: Storage management for software installation
+    url: '#storage-management-for-software-installation'
 
 ---
 
