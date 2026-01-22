@@ -8,7 +8,8 @@ subnav:
   - title: How and When to Contact the VRSC
     url: '#how-and-when-to-contact-the-vrsc'
 
-
+redirect_from: 
+  - /support/
 
 ---
 
