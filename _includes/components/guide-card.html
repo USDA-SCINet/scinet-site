@@ -4,7 +4,7 @@
         {% capture optionurl %}{% if _option.internal and page.guidegroup.base_links %}{{ site.baseurl }}{{ _option.url }}{% elsif _option.internal or intlinks %}{{ _option.url | relative_url }}{% else %}{{
         _option.url }}{% endif %}{% endcapture %}
         {% assign testurl = optionurl | slice: 0 %}
-        {% unless testurl=="#" %}
+        {% unless testurl=="#" %}{%- assign optionurl = optionurl | remove: "/index" %}
         <li class="tablet:grid-col-12 margin-y-1">
             <div class="usa-card__container sharp-card">
                 {% if _option.url %}<a class="sharp" href="{{ optionurl }}">{% endif %}
@@ -77,7 +77,7 @@
                             {% assign alt_buttons = page.alt_calendar.buttons %}
                             {% for _section in guide %}
                             <li class="tablet:grid-col-12 featured_posts margin-y-1">
-                                <a {% if _section.class=="usa-link--external" %}class="ext-nested tablet:grid-col-12"{% endif %} href="{% if _option.shows_list == 'subnav' or compiled %}{{ optionurl | append: _section.url }}{% else %}{{ _section.url | relative_url }}{% endif %}">
+                                <a {% if _section.class=="usa-link--external" %}class="ext-nested tablet:grid-col-12"{% endif %} href="{% if _option.shows_list == 'subnav' or compiled %}{%- assign _sectionurl = _section.url | remove: '/index' %}{{ optionurl | append: _sectionurl }}{% else %}{{ _section.url | relative_url }}{% endif %}">
                                     <div class="usa-card__container display-flex flex-row padding-2">
                                         <div class="overflow-hidden desktop:grid-col-fill">
                                             <h4 class="margin-0{% if _section.class %} {{ _section.class }}{% else %} arrow{% endif %}">{{ _section.title }}</h4>

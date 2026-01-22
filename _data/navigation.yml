@@ -56,7 +56,7 @@ primary:
             url: /guides/access
           - title: Computing Resources
             url: /guides/resources
-          - title: Data Management
+          - title: Storage and Projects
             url: /guides/data
           - title: Cluster Use
             url: /guides/use

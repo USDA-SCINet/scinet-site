@@ -1,42 +1,40 @@
 ---
-title: "Rclone: Moving Data To and From Cloud Resources"
+title: "Rclone: Moving Data to and from Cloud Resources"
 description: Using rclone
 
-categories: [Storage]
-order_number: 70
+parents:
+  - title: Storage and Data Management
+    url: /guides/data
+    class: "guide-nav"
+    shortname: Data
+  - title: SCINet File Transfer
+    url: /guides/data/transfer
+    class: "emph-nav"
 
 subnav:
-  - title: Getting Ready
-    url: '#getting-ready'
-  - title: rclone installation on Windows
-    url: '#rclone-installation-on-windows'
-  - title: macOS installation 
-    url: '#macos-installation-'
-  - title: Configuration of rclone on windows or osX
-    url: '#configuration-of-rclone-on-windows-or-osx'
-  - title: rclone configuration on SCINet
-    url: '#rclone-configuration-on-scinet'
-  - title: Test
-    url: '#test'
-  - title: Commands
-    url: '#commands'
+  - title: Setting up rclone
+    url: '#setting-up-rclone'
+    subnav:
+      - title: Configuring rclone
+        url: '#configuring-rclone-on-scinet-to-access-remote-file-storage'
+      - title: Access and copy files
+        url: '#use-rclone-to-access-and-copy-files'
   - title: Advanced commands
     url: '#advanced-commands'
 
-published: false
+
+
+fetched: "data-transfer"
+order_number: 20
 ---
 
-{% include images_path %}
-
-
-Rclone is already installed on all SCINet data transfer and compute nodes. Please do not use the `rclone` command from the login node. Attempting to do so will remind you to use the others.<br>
+Rclone is already installed on all SCINet data transfer and compute nodes. Please do not perform `rclone` transfers from the login node. Attempting to do so can result in errors.<br>
 To learn more about `rclone`, see [https://rclone.org](https://rclone.org).<!--excerpt-->
 
 ## Setting up rclone 
-Before transferring files to or from cloud resources, rclone must first be configured to access cloud storage resources, e.g., an USDA-ARS Box account or AWS S3 buckets.
+Before transferring files to or from cloud resources, rclone must first be configured to access cloud storage resources, e.g., a USDA-ARS Box account or AWS S3 buckets.
 
 **Please note:** Although rclone supports data transfer to and from Microsoft OneDrive accounts, rclone is not currently authorized to access USDA OneDrive accounts, so rclone cannot facilitate data transfers directly between your OneDrive account and SCINet systems. 
-
 
 ### Configuring `rclone` on SCINet to access remote file storage
 
@@ -44,12 +42,13 @@ Here, we illustrate setting up access to Box; the process for configuring access
 
 You will need to be able to log on to Ceres using SSH from your local computer. Please see [https://scinet.usda.gov/guides/access/ssh-login](https://scinet.usda.gov/guides/access/ssh-login) if you need help setting that up.
 
+{: .usa-list }
 1. Open Windows PowerShell or macOS Terminal.
-2. Run (replace "scinet_username" with your SCINet username)
+2. Run (replace "user.name" with your SCINet username)
 
    {:.copy-code}
    ```bash
-   ssh -L localhost:53682:localhost:53682 scinet_username@ceres.scinet.usda.gov
+   ssh -L localhost:53682:localhost:53682 user.name@ceres.scinet.usda.gov
    ```
 2. This will open a new terminal session on Ceres. In the Ceres terminal, run
 
@@ -93,6 +92,7 @@ You are now ready to access your Box files using `rclone` from Ceres!
    ```bash
    rclone copy usdabox:/scinetbackup/bogus_genome /project/bogus_genome --verbose
    ```
+
 
 ## Advanced commands
 
@@ -473,7 +473,6 @@ e/n/d/r/c/s/q> q
 $ rclone ls googlechunk:
 
 ```
-
 
 You now have an encrypted chunked storage remote, that is fully md5 checksummed. 
 
