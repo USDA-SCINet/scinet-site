@@ -29,37 +29,31 @@ subnav:
 
 ## General Information
 ---
-### What is the difference between Ceres and SCINet?
-SCINet is a high-speed network connecting equipment like compute servers, data transfer nodes, scientific instruments, and workstations. Ceres is a high-performance compute cluster at the Ames location that is accessible to all SCINet users.
+### What is the difference between Ceres (or Atlas or Juno) and SCINet?
+SCINet is an initiative to provide state-of-the-art resources for agricultural research, including computing infrastructure, technical support and training resources, and research support services. Ceres and Atlas are high-performance computing clusters that are accessible to all SCINet users, and Juno is a system for long-term storage of scientific data.
 
 ### Who is eligible for a SCINet account?
-ARS employees and those collaborators that are covered under a formal agreement with the ARS.
+ARS employees and their collaborators that are covered under a formal agreement with the ARS.
 
-### How do I find documentation on Ceres and SCINet?
-The most up-to-date documentation is available on this website although some information is still in the process of being posted. If you can’t find what you need here, please also check the [SCINet Forum](https://forum.scinet.usda.gov) (must have SCINet account to access).
+### How do I find documentation on SCINet's computing and other resources?
+The most up-to-date documentation is available on this website. If you can’t find what you need here, please also check the [SCINet Forum](https://forum.scinet.usda.gov) (must have SCINet account to access).
 
-### How much does a Ceres account cost?
-Ceres is currently free to USDA-ARS researchers and collaborators.
-
-### How much does Amazon Web Services (AWS) cost?
-SCINet provides AWS at no cost to SCINet users with suitable workloads. A limited amount of funding is available annually. Interested SCINet users must submit a [SCINet AWS Project Request]({{ site.baseurl }}/support/request#aws-request) to be considered for AWS funding.
+### How much does a SCINet account cost?
+SCINet accounts are currently free to USDA-ARS researchers and collaborators.
 
 ### Who manages SCINet?
-Day to day operations and user support are provided by the Virtual Research Support Core (see [What is the Virtual Research Support Core (VRSC)?](#what-is-the-virtual-research-support-core-vrsc)). Higher level policy and development are managed by the SCINet Executive Committee, including the SCINet program manager Rob Butler, with input from the Scientific Advisory Committee (SAC; see [What is the Scientific Advisory Committee (SAC)?](#what-is-the-scientific-advisory-committee-sac))
+Day to day operations and user support are provided by the Virtual Research Support Core (see [What is the Virtual Research Support Core (VRSC)?](#what-is-the-virtual-research-support-core-vrsc)). Higher level policy and development are managed by the SCINet Executive Committee, including the SCINet program manager, Rob Butler, with input from the Scientific Advisory Committee (SAC; see [What is the Scientific Advisory Committee (SAC)?](#what-is-the-scientific-advisory-committee-sac)) and ARS's SCINet Office.
 
 ### Who can I contact for help using SCINet?
-Single user operational questions should be emailed to the VRSC scinet_vrsc@usda.gov (see also [How do I contact the VRSC for assistance?](#how-do-i-contact-the-vrsc-for-assistance)).
+Single-user technical questions should be emailed to the VRSC at [scinet_vrsc@usda.gov](mailto:scinet_vrsc@usda.gov) (see also [How do I contact the VRSC for assistance?](#how-do-i-contact-the-vrsc-for-assistance)).
 
-Discussion that is relevant to other SCINet users such as questions about the best practices for research computations should be posted on the SCINet VRSC Forum. Access to [SCINet Forum](https://forum.scinet.usda.gov) is provided during the SCINet account application process.
+Discussion that is relevant to other SCINet users such as questions about the best practices for research computations should be posted on the SCINet Forum. Anyone with a SCINet account has access to the [SCINet Forum](https://forum.scinet.usda.gov).
 
-Policy and development questions should be directed to the SCINet program manager, Rob Butler, or to your area representatives on the SCINet Scientific Advisory Committee (SAC), see the [SCINet Organization]({{ site.baseurl }}/about/organization) page.
-
-### How do I use Basecamp?
-Basecamp  has been replaced by [SCINet Forum](https://forum.scinet.usda.gov). SCINet documentation previously available on Basecamp can now be found in the User Guides section of the [SCINet website]({{ site.baseurl }})/guides.
+Policy and development questions should be directed to the SCINet program manager, Rob Butler, or to your area representatives on the SCINet Scientific Advisory Committee (SAC). See the [SCINet Organization]({{ site.baseurl }}/about/organization) page for more information.
 
 ### How do I acknowledge SCINet in my publications?
 
-Add the following sentence as an acknowledgment for using SCINet/Ceres as a resource in your manuscripts or datasets meant for publication:
+Add the following sentence as an acknowledgment for using SCINet resources in your manuscripts or datasets meant for publication:
 
 “This research used resources provided by the SCINet project and/or the AI Center of Excellence of the USDA Agricultural Research Service, ARS project numbers 0201-88888-003-000D and 0201-88888-002-000D.”
 
@@ -67,14 +61,14 @@ Add the following sentence as an acknowledgment for using SCINet/Ceres as a reso
 ## Accounts & Login
 ---
 ### How do I get an account (I am an ARS employee)?
-Please fill out the [SCINet Account Request Form]({{ site.baseurl }}/about/signup). The request will be forwarded to your supervisor for approval. You may want to notify your supervisor so they are aware of the incoming email that requires a response. Once your supervisor has granted approval, an account will be created for you and you will receive an email from the Virtual Research Support Core (VRSC) with logon information.
+Please fill out the [SCINet Account Request Form]({{ site.baseurl }}/about/signup). The request will be forwarded to your supervisor for approval. You may want to notify your supervisor so they are aware that the incoming email requires a response. Once your supervisor has granted approval, an account will be created for you and you will receive an email from the Virtual Research Support Core (VRSC) with logon information.
 
 ### How do I get an account for non-ARS collaborators, students, or postdocs?
-All students, postdocs, visiting scientists, and collaborators must have an ARS sponsor. All requests must also be approved by the Research Leader.
+All students, postdocs, visiting scientists, and collaborators must have an ARS sponsor. All requests must also be approved by your supervisor.
 
-Please fill out the [Non-ARS SCINet Account Request Form]({{ site.baseurl }}/about/signup). The request will be forwarded to the sponsor’s supervisor for approval. You may want to notify your supervisor so they are aware of the incoming email that requires a response.
+Please fill out the [Non-ARS SCINet Account Request Form]({{ site.baseurl }}/about/signup). The request will be forwarded to your supervisor for approval. You may want to notify your supervisor so they are aware that the incoming email requires a response.
 
-Collaborators also have access to this website for user guides and upon account approval, access to the VRSC for operational assistance and the [SCINet VRSC Forum](https://forum.scinet.usda.gov) user forum for user discussion. 
+Upon account approval and creation, collaborators will also have access to the VRSC for technical assistance and the [SCINet Forum](https://forum.scinet.usda.gov) for user discussion.
 
 ### How do I reactivate my account?
 Users whose accounts have been deactivated for inactivity will need to submit a new [SCINet account request form]({{ site.baseurl }}/about/signup).
@@ -108,7 +102,7 @@ If you have forgotten your login password, please email the VRSC: scinet_vrsc@us
 2. Your last 24 passwords cannot be reused.
 
 ### How do I login to SCINet?
-We offer web-based access to SCINet (Open OnDemand and Galaxy) and command-line access via SSH. See our [login guide](/guides/access) for more information.
+We offer several web-based interfaces to access SCINet and command-line access via SSH. Please see our [SCINet access guide](/guides/access) for more information.
 
 
 ### I took my onboarding a long time ago, how do I get a refresher course?
@@ -138,10 +132,10 @@ Alternatively, one can use Singularity to run software container images (includi
 Ceres has development libraries available on all nodes. There is a system version of gcc which is well maintained by CentOS. The VRSC also makes available modules with newer versions of gcc and the intel compilers. See the [Preinstalled Software List]({{ site.baseurl }}/guides/software/preinstalled) for available versions or use  ```module avail intel```  or  ```module avail gcc```  at the command line to see all of the versions that are available at any given time to make use of them. To access the software use  ```module load gcc```  or  ```module load intel``` . Note that after using these compilers you will probably need to load the modules again in the future to run the code you compiled as well.
 
 ### What is Galaxy?
-Galaxy is a web-based interface to software on Ceres in which users can build analysis workflows. See [Getting Started with Galaxy on SCINet]({{ site.baseurl }}/guides/application/galaxy). General information about Galaxy as well as training guides can be found at [galaxyproject.org](https://galaxyproject.org/).
+Galaxy is a web-based interface to software on Ceres in which users can build analysis workflows. See [Getting Started with Galaxy on SCINet]({{ site.baseurl }}/guides/analysis/galaxy). General information about Galaxy as well as training guides can be found at [galaxyproject.org](https://galaxyproject.org/).
 
 ### How do I login to SCINet Galaxy?
-Go to [galaxy.scinet.usda.gov](https://galaxy.scinet.usda.gov/). Enter your email address and SCINet password followed by Verification code. See [Getting Started with Galaxy on SCINet]({{ site.baseurl }}/guides/application/galaxy) for more details.
+Go to [galaxy.scinet.usda.gov](https://galaxy.scinet.usda.gov/). Enter your email address and SCINet password followed by Verification code. See [Getting Started with Galaxy on SCINet]({{ site.baseurl }}/guides/analysis/galaxy) for more details.
 
 ### How do I request software to be loaded onto SCINet Galaxy?
 Please submit software install request at https://e.arsnet.usda.gov/sites/OCIO/scinet/Pages/SCINet-New-Application.aspx and check next to Galaxy Application.
@@ -149,10 +143,10 @@ Please submit software install request at https://e.arsnet.usda.gov/sites/OCIO/s
 
 ## Storage Space
 ---
-### How much data can I store on Ceres?
-Each user is allowed 10GB of data in the home directory. 
+### How much data can I store on Ceres or Atlas?
+Each user is allowed 30GB of data in the home directory. 
 
-Additional storage can be provided on Ceres and/or Atlas in /project directories. To request more storage see [How do I request an increase in storage space?](#how-do-i-request-an-increase-in-storage-space). Project directory storage is large, fast, not backed up, and can be requested up to 1TB or larger if justified. Project directory storage is good for fast I/O to large data files from compute nodes. Keep directory storage is smaller and slower, but is backed up nightly and can be requested up to 100GB or larger if justified. Keep directory storage is good for medium-term storage of analysis results and project software/scripts.   
+Additional storage can be provided on Ceres and/or Atlas in `/project` directories. To request more storage see [How do I request an increase in storage space?](#how-do-i-request-an-increase-in-storage-space). Project directory storage is large, fast, not backed up, and can be requested up to 1TB or larger if justified. Project directory storage is good for fast I/O to large data files from compute nodes. Keep directory storage is smaller and slower, but is backed up nightly and can be requested up to 100GB or larger if justified. Keep directory storage is good for medium-term storage of analysis results and project software/scripts.   
 
 When requesting additional data storage you will be asked for a project summary, a project end date, and to detail your long-term plan for data in your project/keep directories after your project end date.
 
@@ -164,14 +158,17 @@ Please fill out an application form at [Request Project Storage]({{ site.baseurl
 ### How do I request access to a project directory?
 Only project directory managers can request access to their project space for other users. 
 
+### Can I store sensitive data on SCINet infrastructure?
+No, any data that includes personal identifiable information (PII), controlled unclassified information (CUI), or other sensitive information should not be stored on Atlas, Ceres, Juno, or café machines. 
+
 
 ## Data Transfer
 ---
 ### How do I get my data onto and off of Ceres?
-SCP, SFTP, lftp (to/from Box accounts) Globus, and hard drive shipment are supported. This is described in the [File Transfers section of the User Guides]({{ site.baseurl }}/guides/data/datatransfer). If you work near Beltsville, you may also use the SCINet lab located at the National Agricultural Library (NAL). Two computers with 10GB Internet2 SCINet connections are available.
+SCP, SFTP, lftp (to/from Box accounts) Globus, and hard drive shipment are supported. This is described in the [File Transfers section of the User Guides]({{ site.baseurl }}/guides/data/transfer). If you work near Beltsville, you may also use the SCINet lab located at the National Agricultural Library (NAL). Two computers with 10GB Internet2 SCINet connections are available.
 
 ### How do I get my data onto Ceres via SCINet Galaxy?
-See [Getting Started with Galaxy on Ceres]({{ site.baseurl }}/guides/application/galaxy).
+See [Getting Started with Galaxy on Ceres]({{ site.baseurl }}/guides/analysis/galaxy).
 
 
 ## Support, Policy, O&M
