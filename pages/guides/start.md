@@ -35,14 +35,13 @@ subnav:
     url: /guides/access/
     internal: true
     shows_list: subnav
-  - title: Data Storage
+  - title: Storage Locations
     url: /guides/data/storage
     internal: true
     shows_list: subnav
-  - title: Data Transfer
-    url: /guides/data/datatransfer
+  - title: File Transfer Methods
+    url: /guides/data/transfer/
     internal: true
-    shows_list: subnav
   - title: Software
     url: /guides/software/
     internal: true
@@ -69,7 +68,7 @@ SCINet is the USDA-ARS's initiative for scientific computing. It consists of:
 3. Support for computing through the Virtual Research Support Core (VRSC). See [VRSC Support]({{ site.baseurl }}/about/vrsc) for more detail.
 4. Training and workshop opportunities in multiple areas of scientific computing. See [our event calendar]({{ site.baseurl }}/events) for more information.
 
-Users who are new to the HPC environment may benefit from the [SCINet/Ceres onboarding video](https://www.youtube.com/watch?v=d7oKSL4aitw) which covers most of the material contained in this guide. Note that /KEEP storage discussed in the video at 16:20 is no longer available. Instead data that cannot be easily reproduced should be manually backed up to [Juno]({{ site.baseurl }}/guides/data/storage#juno-archive-storage). The instructional video at [https://www.youtube.com/watch?v=I3lnsCAfx3Q](https://www.youtube.com/watch?v=I3lnsCAfx3Q) demonstrates how to transfer files between local computer, Ceres, Atlas and Juno using Globus.
+Users who are new to the HPC environment may benefit from the [SCINet/Ceres onboarding video](https://www.youtube.com/watch?v=d7oKSL4aitw) which covers most of the material contained in this guide. Note that /KEEP storage discussed in the video at 16:20 is no longer available. Instead data that cannot be easily reproduced should be manually backed up to [Juno]({{ site.baseurl }}/guides/data/storage#juno-permanent-storage). The instructional video at [https://www.youtube.com/watch?v=I3lnsCAfx3Q](https://www.youtube.com/watch?v=I3lnsCAfx3Q) demonstrates how to transfer files between local computer, Ceres, Atlas and Juno using Globus.
 
 ## User Guides
 

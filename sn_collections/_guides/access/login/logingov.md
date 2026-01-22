@@ -12,6 +12,7 @@ parents:
 
 fetched: "login-help"
 order_number: 10
+unfetch_sidenav: true
 
 published: false
 ---
