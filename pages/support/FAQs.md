@@ -132,10 +132,10 @@ Alternatively, one can use Singularity to run software container images (includi
 Ceres has development libraries available on all nodes. There is a system version of gcc which is well maintained by CentOS. The VRSC also makes available modules with newer versions of gcc and the intel compilers. See the [Preinstalled Software List]({{ site.baseurl }}/guides/software/preinstalled) for available versions or use  ```module avail intel```  or  ```module avail gcc```  at the command line to see all of the versions that are available at any given time to make use of them. To access the software use  ```module load gcc```  or  ```module load intel``` . Note that after using these compilers you will probably need to load the modules again in the future to run the code you compiled as well.
 
 ### What is Galaxy?
-Galaxy is a web-based interface to software on Ceres in which users can build analysis workflows. See [Getting Started with Galaxy on SCINet]({{ site.baseurl }}/guides/analysis/galaxy). General information about Galaxy as well as training guides can be found at [galaxyproject.org](https://galaxyproject.org/).
+Galaxy is a web-based interface to software on Ceres in which users can build analysis workflows. See [Getting Started with Galaxy on SCINet]({{ site.baseurl }}/guides/application/galaxy). General information about Galaxy as well as training guides can be found at [galaxyproject.org](https://galaxyproject.org/).
 
 ### How do I login to SCINet Galaxy?
-Go to [galaxy.scinet.usda.gov](https://galaxy.scinet.usda.gov/). Enter your email address and SCINet password followed by Verification code. See [Getting Started with Galaxy on SCINet]({{ site.baseurl }}/guides/analysis/galaxy) for more details.
+Go to [galaxy.scinet.usda.gov](https://galaxy.scinet.usda.gov/). Enter your email address and SCINet password followed by Verification code. See [Getting Started with Galaxy on SCINet]({{ site.baseurl }}/guides/application/galaxy) for more details.
 
 ### How do I request software to be loaded onto SCINet Galaxy?
 Please submit software install request at https://e.arsnet.usda.gov/sites/OCIO/scinet/Pages/SCINet-New-Application.aspx and check next to Galaxy Application.
@@ -168,7 +168,7 @@ No, any data that includes personal identifiable information (PII), controlled u
 SCP, SFTP, lftp (to/from Box accounts) Globus, and hard drive shipment are supported. This is described in the [File Transfers section of the User Guides]({{ site.baseurl }}/guides/data/transfer). If you work near Beltsville, you may also use the SCINet lab located at the National Agricultural Library (NAL). Two computers with 10GB Internet2 SCINet connections are available.
 
 ### How do I get my data onto Ceres via SCINet Galaxy?
-See [Getting Started with Galaxy on Ceres]({{ site.baseurl }}/guides/analysis/galaxy).
+See [Getting Started with Galaxy on Ceres]({{ site.baseurl }}/guides/application/galaxy).
 
 
 ## Support, Policy, O&M
