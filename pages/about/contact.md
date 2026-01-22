@@ -6,6 +6,9 @@ author: Kerrie Geil
 layout: page
 alt_nav: About
 
+
+redirect_from: 
+  - /contact/
 ---
 
 
