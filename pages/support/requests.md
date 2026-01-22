@@ -14,6 +14,8 @@ subnav:
         url: '#to-modify-an-existing-scinet-project'
       - title: Request a Quota Increase for an Existing SCINet Project
         url: '#to-request-a-quota-increase-for-an-existing-scinet-project'
+  - title: Globus guest collection request
+    url: '#globus-guest-collection-request'
   - title: Software Request
     url: '#software-request'
   - title: AWS Request
@@ -58,7 +60,18 @@ To request a project quota increase for storage on Ceres, Atlas and/or Juno, ple
 
 [Request a Project Quota Increase](https://forms.office.com/g/ntnKBzJiKx){:target="_blank" rel="noopener noreferrer"  .usa-button .usa-button-big }
 
+<br>
 
+## Globus guest collection request
+---
+Globus guest collections allow SCINet project owners to share a subdirectory in their project space with external collaborators who do not have SCINet accounts. The subdirectory is shared using Globus (see the [Globus guide](/guides/data/transfer/globus) for more details on using Globus). When requesting a guest collection, you will be asked for details including:  
+  *	a summary of why a Globus guest collection is critical for your project,
+  *	the subdirectory you would like to share, and
+  *	with whom the subdirectory will be shared.
+
+If you are working with a limited number of external collaborators and they need to be able to directly contribute to your research project, consider requesting sponsored SCINet accounts for them instead. To request a guest collection, please fill out the request form (eAuthentication required):
+
+[Request Globus guest collection](https://forms.office.com/g/4auZYdvkrH){:target="_blank" rel="noopener noreferrer"  .usa-button .usa-button-big }
 
 <br>
 

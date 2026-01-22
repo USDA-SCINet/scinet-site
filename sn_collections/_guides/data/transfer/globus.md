@@ -23,6 +23,15 @@ subnav:
         url: '#installation'
       - title: Setup
         url: '#setup'    
+  - title: Globus guest collections
+    url: '#globus-guest-collections'
+    subnav:
+      - title: Request
+        url: '#request-a-globus-guest-collection'
+      - title: Create
+        url: '#create-a-guest-collection'
+      - title: Share
+        url: '#share-a-guest-collection-with-collaborators'     
 
 fetched: "data-transfer"
 order_number: 30
@@ -114,3 +123,66 @@ You can check the status of your GCP connection by clicking the GCP icon in your
   ![Globus Connect Personal icon in windows taskbar](../assets/taskbar_gcp_icon.png) 
 
 You can now transfer data from your local computer using [Globus.org](https://www.globus.org/) while Globus Connect Personal is running. You should find the GCP collection made above in your list of collections, and you will be able to connect to it while the local GCP connection is running on your local computer. After selecting your local computer collection, you should see in the Globus File Manager the files you have on your local computer. See the [copying data](#copying-data) section for more information about copying data using Globus. 
+
+
+## Globus guest collections
+
+Globus guest collections allow SCINet project owners to share a subdirectory in their project space with external collaborators who do not have SCINet accounts. The subdirectory is shared using Globus, and the collaborators will need Globus accounts.
+
+### Request a Globus guest collection
+
+1. To share files externally using Globus, you will first need to request access to create a shared guest collection. Visit the [resource request page](/support/request#globus-guest-collection-request) and submit the request form. Please allow a few business days for review and processing of your request.
+2. After your request has been reviewed, you will receive an email indicating whether it was approved. Once your request is approved, you may proceed with creating a guest collection. The email you receive will include the approved settings of the guest collection for you to reference as you create your guest collection.
+
+
+### Create a guest collection
+
+{: .usa-list }
+1. Log in to www.globus.org. If you need help accessing and navigating Globus, please see the [Globus data transfer instructions](#globus-data-transfer).
+2. Navigate to the SCINet system collection (e.g., SCINet-Juno) and project space (e.g., /LTS/project/your_project_name) for which your guest collection was approved.
+   ![Screenshot of Globus File Manager with collection selected](../assets/glb1_ProjectSearch.png) 
+3. If the subdirectory approved for sharing already exists, navigate to and select it. If the approved subdirectory does not yet exist, create it by clicking the "New Folder" button in the center of the page, then select it. 
+4. Click on "Share" in the center of the page.  
+   ![Screenshot of share button highlighted in the Globus selection menu](glb2_Share.png) 
+5. You should now see a "Collections" page. Click the "Add Guest Collection" button in the top right corner.  
+   ![Add Guest Collection button highlighted](../assets/glb3_AddGuestCollections.png) 
+6. You should now see a "Create new Guest Collection" page. 
+   * The "directory" field should be prepopulated with the approved subdirectory path. If it is not, use the "Browse" button to navigate to and select the approved subdirectory path.
+   * Enter a descriptive "Display Name" for the guest collection. This name is what your collaborators will see as the guest collection name, and a descriptive name can help them easily find the collection (see the [Share your guest collection with collaborators](URL) section below for more on how collaborators access your guest collection). 
+   * Providing additional details is optional, but more information can be helpful when sharing with others.
+     * You can click on "view more fields" for additional kinds of information to provide.
+     * Filling in "Contact Email" is recommended so your collaborators know whom to contact if there are questions about the files available in the guest collection.
+     * "Default Directory" specifies the directory that a user will see when they first connect to your Guest Collection. Note that, in this case, the root directory ("/") means the root of the collection, which will point to the subdirectory in your project folder that you are sharing. We recommend leaving this as "/" unless you want users to start in a subdirectory of the collection.
+   * Note that the information provided on this page will be accessible to anyone who has access to this guest collection. 
+     ![Create new Guest Collection screen](../assets/glb4_CollectionDescription.png) 
+7. When all desired details are provided and settings chosen, click the "Create Collection" button.
+8. You should now see a "Permissions" page for your guest collection. Permissions are how you define who can see what in your guest collection. Click on the "Add Permissions – Share With" button in the top right corner. 
+   * Note that you can create multiple sets of permissions. For example, if you are approved to share with multiple collaborators, you can share different subsets of your guest collection with different collaborators by adding multiple permissions. 
+     !["Add permissions - Share with" button on the right of the screen](../assets/glb5_AddPermissions.png) 
+9. You should now see an "Add Permissions – Share With" page. 
+   * "Path" will be prepopulated with the default directory you chose when you created the guest collection. This can be modified to be a subdirectory within your guest collection if you would like this set of permissions to have access to only a subset of your guest collection. In most cases, this can be left as the default. 
+   * What you may select for "Share With" depends on the level of access for which you are approved as indicated in your approval notification email. 
+     * **If you are approved for restricted read access: you must select "user" or "group".** Groups of Globus users can be defined using the "Groups" tab on the far left of the page. In most cases, it is easier to select "user" and give specific users permission to access the guest collection instead of creating a group, adding users to it, then giving the group permission to access the guest collection. No matter which option you select, you may only add the Globus usernames listed in the approval notification email. (If you need additional collaborators approved, please email scinet_vrsc@usda.gov.)
+     * **If you are approved for unrestricted read access: you may select "all users".** Note that although the "public (anonymous)" option appears available, Globus authentication is required for SCINet guest collections. 
+   * Currently, only "read" access is allowed for SCINet guest collections.  
+
+   ![Add permission form with selection filled out](../assets/glb6_AddingPermissions.png) 
+ 
+### Share a guest collection with collaborators
+
+How you can inform your collaborators about your guest collection depends on the approved level of access as indicated in your approval notification email.
+
+#### Unrestricted access
+
+{: .usa-list }
+* After you add permissions to a guest collection, you return to the "Permissions" page for the guest collection. (You can also later navigate to it by clicking on "Collections" in the left navigation bar, clicking "Sharable by You", clicking the guest collection from the list of sharable collections, and then clicking the "Permissions" tab.) For each path you share, there is a "Show link for sharing" option. You can click on that option to see a URL that you can share with collaborators which will let them access your guest collection.
+* Alternatively, Globus users can use the Collections search page to find the display name you chose when creating the guest collection.
+  ![Click the show link for sharing button to get the collection URL](../assets/glb7_LinkforSharing.png)
+
+#### Restricted access
+
+{: .usa-list }
+* The unrestricted access options work for restricted access as well.
+* Additionally, when you give your collaborators permissions to your guest collection, a link is automatically sent to them via email, and clicking on that link will take them to the Globus "File Manager" page with the guest collection open.
+* Collaborators can also find the guest collection by clicking on the "Shared with You" tab on the Collection search page.
+  ![Shared with you tab under collection search in Globus File Manager](../assets/glb8_SharedTab.png)
