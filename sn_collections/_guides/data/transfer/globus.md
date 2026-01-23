@@ -143,7 +143,7 @@ Globus guest collections allow SCINet project owners to share a subdirectory in 
    ![Screenshot of Globus File Manager with collection selected](../assets/glb1_ProjectSearch.png) 
 3. If the subdirectory approved for sharing already exists, navigate to and select it. If the approved subdirectory does not yet exist, create it by clicking the "New Folder" button in the center of the page, then select it. 
 4. Click on "Share" in the center of the page.  
-   ![Screenshot of share button highlighted in the Globus selection menu](glb2_Share.png) 
+   ![Screenshot of share button highlighted in the Globus selection menu](../assets/glb2_Share.png) 
 5. You should now see a "Collections" page. Click the "Add Guest Collection" button in the top right corner.  
    ![Add Guest Collection button highlighted](../assets/glb3_AddGuestCollections.png) 
 6. You should now see a "Create new Guest Collection" page. 
@@ -158,7 +158,7 @@ Globus guest collections allow SCINet project owners to share a subdirectory in 
 7. When all desired details are provided and settings chosen, click the "Create Collection" button.
 8. You should now see a "Permissions" page for your guest collection. Permissions are how you define who can see what in your guest collection. Click on the "Add Permissions – Share With" button in the top right corner. 
    * Note that you can create multiple sets of permissions. For example, if you are approved to share with multiple collaborators, you can share different subsets of your guest collection with different collaborators by adding multiple permissions. 
-     !["Add permissions - Share with" button on the right of the screen](../assets/glb5_AddPermissions.png) 
+     !["Add permissions - Share with" button on the right of the screen](../assets/glb5_AddPermission.png) 
 9. You should now see an "Add Permissions – Share With" page. 
    * "Path" will be prepopulated with the default directory you chose when you created the guest collection. This can be modified to be a subdirectory within your guest collection if you would like this set of permissions to have access to only a subset of your guest collection. In most cases, this can be left as the default. 
    * What you may select for "Share With" depends on the level of access for which you are approved as indicated in your approval notification email. 
