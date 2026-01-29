@@ -9,11 +9,11 @@ subnav:
     url: '#project-request'
     subnav:
       - title: Request a New SCINet Project
-        url: '#to-request-a-new-scinet-project'
+        url: '#request-a-new-scinet-project'
       - title: Modify an Existing SCINet Project
-        url: '#to-modify-an-existing-scinet-project'
+        url: '#modify-an-existing-scinet-project'
       - title: Request a Quota Increase for an Existing SCINet Project
-        url: '#to-request-a-quota-increase-for-an-existing-scinet-project'
+        url: '#request-a-quota-increase-for-an-existing-scinet-project'
   - title: Globus guest collection request
     url: '#globus-guest-collection-request'
   - title: Software Request
@@ -22,9 +22,9 @@ subnav:
     url: '#aws-request'
     subnav: 
       - title: Add/Modify AWS Resources 
-        url: '#to-add/modify-aws-resources-for-an-existing-scinet-project'
+        url: '#add/modify-aws-resources-for-an-existing-scinet-project'
       - title: Request a New AWS Project 
-        url: '#to-request-a-new-scinet-funded-aws-project'
+        url: '#request-a-new-scinet-funded-aws-project'
 
 ---
 
@@ -35,7 +35,7 @@ Below are instructions for how to make a request for a SCINet project, new softw
 
 SCINet projects provide a structured way for ARS researchers to request storage space, work with collaborators, and submit computational jobs on SCINet infrastructure. To learn more about SCINet projects, see the [SCINet Project Management guide](/guides/data/project-management). 
 
-### To request a new SCINet project
+### Request a new SCINet project
 When requesting a new project, you will be asked for details including:
 * a project summary, 
 * requested storage amounts, and
@@ -47,16 +47,25 @@ To request a new project, please fill out the request form (eAuthentication requ
 
 **Please note:** Requests for new SCINet projects must be submitted by the project’s Principal Investigator (PI), who must be a full-time ARS employee.
 
-### To modify an existing SCINet project
+### Modify an existing SCINet project
 To modify an existing SCINet project (e.g., adding a new member), the project's PI or manager should send an email to the SCINet Virtual Research Support Core (VRSC) [scinet_vrsc@usda.gov](mailto:scinet_vrsc@usda.gov?subject=modify%20project%20allocation) that includes:
 * the name of the project directory (/project/\<projectname>/) and 
 * the requested changes.
 
 
-### To request a quota increase for an existing SCINet project
-When requesting a project quota increase on Ceres or Atlas, you will be asked to briefly explain why using `/90daydata` and/or permanent storage on Juno does not cover your storage needs.  
+### Request a quota increase for an existing SCINet project
 
-To request a project quota increase for storage on Ceres, Atlas and/or Juno, please have the project PI or manager fill out the following request form (eAuthentication required, non-ARS users should contact their sponsor):
+To request a project quota increase for storage on Ceres, Atlas, and/or Juno, the project PI or manager will need to fill out the request form. They will need to provide:
+
+* The SCINet project name (e.g., as indicated by the project path /project/project_name).
+* The current project usage and quota on Ceres, Atlas, and Juno (e.g., currently using X GB out of a Y-GB quota).  
+  Quota information can be found by running the command `my_quotas` while logged onto each cluster. Juno's quota information is provided in the `my_quotas` output on Ceres.
+* For which system(s) a quota increase is desired and by how much (in GB).
+* A brief explanation of why you need more storage.
+  * If requesting more storage on Ceres or Atlas: why using /90daydata and/or permanent storage on Juno does not cover your storage needs.
+  * If requesting more storage on Juno: if your current files on Juno are already compressed, and if not, why.
+
+PIs or project managers can find the request form below (eAuthentication required, non-ARS users should contact their sponsor):
 
 [Request a Project Quota Increase](https://forms.office.com/g/ntnKBzJiKx){:target="_blank" rel="noopener noreferrer"  .usa-button .usa-button-big }
 
@@ -102,7 +111,7 @@ If you've completed the steps above and need new software installed as a module,
 ---
 SCINet can provide access to AWS resources to SCINet users with suitable workloads. A limited amount of funding is available annually. _SCINet AWS funding is intended only for research projects that require cloud-based computational resources._ Interested SCINet users must submit a SCINet AWS Project Request to be considered for AWS funding.
 
-### To add/modify AWS resources for an existing SCINet project 
+### Add/modify AWS resources for an existing SCINet project 
 Send an email that includes:
 * the name of the project directory (/project/\<projectname>/) and 
 * the requested changes
@@ -112,7 +121,7 @@ to the SCINet Virtual Research Support Core [scinet_vrsc@usda.gov](mailto:scinet
 This includes requests for additional funding.
 
 
-### To request a new SCINet-funded AWS project 
+### Request a new SCINet-funded AWS project 
 Fill out an application form (eAuthentication required, non-ARS users should contact their sponsor):
 
 [Request AWS Project](https://usda-scinet.atlassian.net/servicedesk/customer/portal/4/group/13/create/63){:target="_blank" rel="noopener noreferrer"  .usa-button .usa-button-big }
