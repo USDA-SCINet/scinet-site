@@ -66,7 +66,7 @@ To help minimize technical issues and delays at the start of the workshop, pleas
 ## Feb 3: The Unix Shell 
 Steps to prepare for the tutorial session: 
 
-* **Login to Ceres Open OnDemand.** For more information on login procedures for web-based SCINet access, see the SCINet access user guide. 
+* **Login to Ceres Open OnDemand.** For more information on login procedures for web-based SCINet access, see the [SCINet access user guide](/guides/access/web-based-login). 
 * **Open a command-line session** by clicking on “Clusters” -> “Ceres Shell Access” on the top menu. This will open a new tab with a command-line session on Ceres’ login node. 
 * **Request resources** on a compute node by running the following command. 
   ```
@@ -79,6 +79,7 @@ Steps to prepare for the tutorial session:
   ```
   mkdir -p /90daydata/shared/$USER/carpentries_workshop 
   cd /90daydata/shared/$USER/carpentries_workshop  
+  cp -r /90daydata/scinet_workshop2/shell-lesson . 
   ```
   {:.copy-code}
 
@@ -97,7 +98,16 @@ Link to Carpentries curriculum: [Introduction to Git](https://librarycarpentry.g
  
 
 ## Feb 11 & 13: Plotting and Programming in Python 
-Launch JupyterLab Server: 
+* **Login to Ceres Open OnDemand.** 
+* **Open a command-line session** by clicking on “Clusters” -> “Ceres Shell Access” on the top menu.
+* **Copy workshop datafiles** to your working directory: 
+  ```
+  cd /90daydata/shared/$USER/carpentries_workshop  
+  cp -r /project/scinet_workshop2/carpentries_workshop_feb2026/python-lesson . 
+  ```
+  {:.copy-code}
+
+* **Launch JupyterLab Server:** 
   * Back on the main Ceres OOD tab, click on the top or side navigation bar: “Interactive Apps” > “JupyterLab Server”.  
   * Fill the input fields with the following (input fields not listed below can be left at their default values):  
       * Account: `scinet_workshop2` or replace with your project account name
