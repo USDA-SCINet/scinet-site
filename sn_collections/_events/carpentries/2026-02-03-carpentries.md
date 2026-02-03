@@ -34,7 +34,7 @@ subnav:
   - title: Introduction to Git 
     url: '#feb-5-introduction-to-git'
   - title: Plotting and Programming in Python
-    url: '#feb-11-13-plotting-and-programming-in-python'
+    url: '#feb-11--13-plotting-and-programming-in-python'
 ---
 
 The SCINet Office, in collaboration with ARS’s certified Carpentries instructors, is offering a Carpentries workshop that will teach participants the Unix command line, version control with Git, and Python programming.<!--excerpt--> The workshop will span two weeks:
