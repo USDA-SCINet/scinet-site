@@ -25,6 +25,16 @@ sessions:
 registration: 
   text: Join the waitlist
   url: https://forms.office.com/g/viLFLk2sch
+
+subnav:
+  - title: Pre-Workshop Instructions
+    url: '#pre-workshop-instructions'
+  - title: The Unix Shell
+    url: '#feb-3-the-unix-shell'
+  - title: Introduction to Git 
+    url: '#feb-5-introduction-to-git'
+  - title: Plotting and Programming in Python
+    url: '#feb-11--13-plotting-and-programming-in-python'
 ---
 
 The SCINet Office, in collaboration with ARS’s certified Carpentries instructors, is offering a Carpentries workshop that will teach participants the Unix command line, version control with Git, and Python programming.<!--excerpt--> The workshop will span two weeks:
