@@ -106,7 +106,12 @@ Link to Carpentries curriculum: [Introduction to Git](https://librarycarpentry.g
   cp -r /project/scinet_workshop2/carpentries_workshop_feb2026/python-lesson . 
   ```
   {:.copy-code}
-
+* **Setup the kernel for JupyterLab.** You will create a kernel called python_workshop to access from JupyterLab Server. Run the following commands to activate the workshop’s virtual environment and create a new kernelspec from it:
+  ```
+  source /project/scinet_workshop2/carpentries_workshop_feb2026/venv_workshop/bin/activate
+  python -m ipykernel install --user --name "python_workshop"
+  ```
+  {:.copy-code}
 * **Launch JupyterLab Server:** 
   * Back on the main Ceres OOD tab, click on the top or side navigation bar: “Interactive Apps” > “JupyterLab Server”.  
   * Fill the input fields with the following (input fields not listed below can be left at their default values):  
@@ -121,6 +126,7 @@ Link to Carpentries curriculum: [Introduction to Git](https://librarycarpentry.g
       * Working Directory: /90daydata/shared/$USER/carpentries_workshop
   * Click the “Launch” button.
   * Wait a moment for the job card to update from “Queued” to “Running”.
-  * Please confirm that clicking on the “Connect to JupyterLab Server” button opens a new tab with the JupyterLab Server interface.  
+  * Please confirm that clicking on the “Connect to JupyterLab Server” button opens a new tab with the JupyterLab Server interface.
+  * Select the python_workshop kernel for the notebook.
 
 Link to curriculum: [Plotting and Programming in Python](https://swcarpentry.github.io/python-novice-gapminder/) 
