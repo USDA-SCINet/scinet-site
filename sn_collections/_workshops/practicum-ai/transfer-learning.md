@@ -106,9 +106,9 @@ exit
 
 1. **Launch a JupyterLab Server session.** Under the *Interactive Apps* menu, select *JupyterLab Server*.
   * Specify the following input values on the page:
-      * Account: scinet_workshop1
       * Partition: gpu-a100-mig7
-      * QOS: normal 14-00:00:00
+      * Account: scinet_workshop1
+      * QOS: normal
       * Number of hours: 4
       * Number of nodes: 1
       * Number of tasks: 4
