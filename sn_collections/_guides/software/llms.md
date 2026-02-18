@@ -11,9 +11,11 @@ subnav:
     url: '#scinet-chat'
   - title: API queries
     url: '#api-queries'
+
+<!-- 
   - title: Model weights
     url: '#model-weights'
-
+-->
 
 ---
 Generative large language models (LLMs) can accelerate and augment multiple facets of agricultural research across a wide range of scientific disciplines. USDA policy allows for the use of generative AI (including LLMs) for scientific research, and, since SCINet is intended exclusively for scientific research, the use of locally hosted LLMs is allowed on SCINet. 
