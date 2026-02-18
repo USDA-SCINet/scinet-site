@@ -48,7 +48,7 @@ Once logged in, you will see a page with a chat interface. You can click on the 
 ## API queries
 For greater flexibility and automation in using the locally hosted LLM service (e.g., for batch text processing), you can write scripts to programmatically access the API directly instead of using the SCINet Chat user interface. The API follows OpenAI’s API specification. 
 
-To use the local LLM API, you will need to log in to (SCINet Chat)[#scinet-chat] at least once to register your SCINet account with the API service (you don’t need to do anything besides logging in). After that, you will need the following pieces of information when accessing the API: 
+To use the local LLM API, you will need to log in to [SCINet Chat](#scinet-chat) at least once to register your SCINet account with the API service (you don’t need to do anything besides logging in). After that, you will need the following pieces of information when accessing the API: 
 
 * Endpoint URL: `https://atlas-llm.hpc.msstate.edu/v1` 
 * Model id: `openai/gpt-oss-120b` 
