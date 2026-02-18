@@ -19,7 +19,7 @@ usecases:
       svg: true
     url: /research/uses/hydrology
     title: Hydrology
-    text: Advanced computing capabilities to run watershed, erosion, and hydrodyanmic simulation models.
+    text: Advanced computing capabilities to run watershed, erosion, and hydrodynamic simulation models.
   - image:
       src: /plant.svg
       alt: ""
