@@ -30,8 +30,11 @@ SCINet is an excellent environment for research applications of LLMs, and we pro
 LLMs on SCINet infrastructure are available in a variety of access modes: 
 
 * For a familiar web-based graphical user interface, [SCINet Chat](https://atlas-llm.hpc.msstate.edu/)  can be used for chat sessions, including using retrieval-augmented generation (RAG), in which a user can specify a constrained knowledge base (i.e., chat with your data). See the [SCINet Chat](#scinet-chat) section below for more details on how to access and use SCINet Chat. 
-* For programmatic access, there is an OpenAI-compatible API available to query the locally hosted LLM service. The API is available at `https://atlas-llm.hpc.msstate.edu/v1` and can be queried, for example, using the Python library LangChain. See the [API queries](#api-queries) section below for more details on how to query the API. 
+* For programmatic access, there is an OpenAI-compatible API available to query the locally hosted LLM service. The API is available at `https://atlas-llm.hpc.msstate.edu/v1` and can be queried, for example, using the Python library LangChain. See the [API queries](#api-queries) section below for more details on how to query the API.
+
+<!--  
 * Model weights for several open-weight LLMs are available in the `/reference/llms` directory on both clusters and can be used with a variety of software tools and packages. See the [Model weights](#model-weights) section below for more details on the LLM models supported and how to use the weights.  
+-->
 
 Please note that *all* access to LLMs on SCINet, including via the web-based interface and API, requires a SCINet account. 
 
@@ -52,6 +55,8 @@ To use the local LLM API, you will need to log in to [SCINet Chat](#scinet-chat)
 
 * Endpoint URL: `https://atlas-llm.hpc.msstate.edu/v1` 
 * Model id: `openai/gpt-oss-120b` 
- 
+
+<!-- 
 ## Model weights
 All LLM weights curated on SCINet infrastructure are from U.S. model developers (e.g., OpenAI, Meta, and Google) and include model families such at `gpt-oss`, `llama`, `gemma`, and `olmo`. Model weights are available in the `/reference/llms` directory on both Ceres and Atlas in safetensors and  GGUF formats. GGUF is a convenient, single-file format that is readable by llama.cpp software which is available as the `llama.cpp` module on Ceres and Atlas, and it can also be used with various Python packages, such as LangChain. 
+-->
