@@ -31,7 +31,7 @@ LLMs on SCINet infrastructure are available in a variety of access modes:
 
 * For a familiar web-based graphical user interface, [SCINet Chat](https://atlas-llm.hpc.msstate.edu/)  can be used for chat sessions, including using retrieval-augmented generation (RAG), in which a user can specify a constrained knowledge base (i.e., chat with your data). See the [SCINet Chat](#scinet-chat) section below for more details on how to access and use SCINet Chat. 
 * For programmatic access, there is an OpenAI-compatible API available to query the locally hosted LLM service. The API is available at `https://atlas-llm.hpc.msstate.edu/v1` and can be queried, for example, using the Python library LangChain. See the [API queries](#api-queries) section below for more details on how to query the API. 
-* Model weights for several open-weight LLMs are available in the `/reference/llms` directory on both clusters and can be used with a variety of software tools and packages. See the [Model weights available](#model-weights) section below for more details on the LLM models supported and how to use the weights.  
+* Model weights for several open-weight LLMs are available in the `/reference/llms` directory on both clusters and can be used with a variety of software tools and packages. See the [Model weights](#model-weights) section below for more details on the LLM models supported and how to use the weights.  
 
 Please note that *all* access to LLMs on SCINet, including via the web-based interface and API, requires a SCINet account. 
 
@@ -41,7 +41,7 @@ AI and machine learning tools on SCINet should only be used in support of scient
 It is strongly recommended that all users take generative AI fundamentals, security and ethics training prior to using LLM services. For USDA employees, the [Using Generative AI at Work](https://aglearn.usda.gov/enrol/index.php?id=73547) course is available in AgLearn, along with many others.
 
 ## SCINet Chat
-To access SCINet Chat, go to [https://atlas-llm.hpc.msstate.edu/](https://atlas-llm.hpc.msstate.edu/). You can also find an “atlas-llm" icon on the top navigation bar in [Atlas Open OnDemand](https://atlas-ood.hpc.msstate.edu). When you first load SCINet Chat, you will be prompted to log in. Click on the "Continue with SCINet” button which will authenticate your SCINet account like any other [SCINet web-based interface](guides/access/web-based-login#accessing-web-based-interfaces). 
+To access SCINet Chat, go to [https://atlas-llm.hpc.msstate.edu/](https://atlas-llm.hpc.msstate.edu/). You can also find an “SCINet Chat" option on the top navigation bar in [Atlas Open OnDemand](https://atlas-ood.hpc.msstate.edu). When you first load SCINet Chat, you will be prompted to log in. Click on the "Continue with SCINet” button which will authenticate your SCINet account like any other [SCINet web-based interface](guides/access/web-based-login#accessing-web-based-interfaces). 
  
 Once logged in, you will see a page with a chat interface. You can click on the "+” button in the central dialog box for options to attach context to your chat such as files on your local computer or the text of webpages via their URLs. Chat conversations are saved automatically and will appear on the left-side navigation bar.  
 
