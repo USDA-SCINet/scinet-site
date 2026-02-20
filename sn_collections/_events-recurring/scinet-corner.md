@@ -23,6 +23,10 @@ sessions:
     date: 2026-01-22
     time: 1-2 pm ET
     excerpt: An overview of SCINet and the computing and training resources we offer.
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/IQAx59GqUts8QoAND9aTP3zxASkfnZ-jTACy8DzeFprXDmU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=PQqf65
+    materials:
+      - text: Session recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/IQAx59GqUts8QoAND9aTP3zxASkfnZ-jTACy8DzeFprXDmU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=PQqf65
   - session:
     title: Open Q&A
     date: 2025-12-04
