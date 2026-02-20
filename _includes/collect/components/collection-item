@@ -4,17 +4,19 @@
 {% endif %}
 
 {% capture thisdate %}{% if fixdate %}{{ fixdate }}{% elsif session.date %}{{ session.date }}{% else %}{{ post.date }}{% endif %}{% endcapture %}
-{% unless session.multiday %}
-{% if session.end_date %}
-{% capture em %}{{session.end_date | date: "%B" }}{% endcapture %}
-{% capture sm %}{{ thisdate | date: "%B" }}{% endcapture %}
-{% capture datestring %}{% if em == sm %}{{ thisdate | date: "%B %-d" }}-{{ session.end_date | date: "%-d"}}{% else %}{{ thisdate | date: "%B %-d" }} - {{ session.end_date | date: "%B %-d"}}{% endif %}{% if pagetype == "archive" or page.layout=='event' %}, {{ session.end_date | date: "%Y" }}{% endif %}{% endcapture %}
+{% if session.multiday %}{% assign enddates = session.end_date | default: post.end_date %}
+{% capture datestring %}{{ session.multiday }}, {{ enddates | date: "%Y" }}{% endcapture %}
 {% else %}
-{% capture datestring %}{{ thisdate | date: "%A, %B %-d" }}{% if pagetype == "archive" or page.layout=='event' %}, {{ thisdate | date: "%Y" }}{% endif %}{% endcapture %}
+{% if session.end_date %}
+{% capture em %}{{ session.end_date | date: "%B" }}{% endcapture %}
+{% capture sm %}{{ thisdate | date: "%B" }}{% endcapture %}
+{% capture datestring %}{% if em == sm %}{{ thisdate | date: "%B %-d" }}-{{ session.end_date | date: "%-d"}}{% else %}{{ thisdate | date: "%B %-d" }} - {{ session.end_date | date: "%B %-d"}}{% endif %}, {{ session.end_date | date: "%Y" }}{% endcapture %}
+{% else %}
+{% capture datestring %}{{ thisdate | date: "%A, %B %-d" }}, {{ thisdate | date: "%Y" }}{% endcapture %}
 {% endif %}
-{% endunless %}
+{% endif %}
 
 <li class="usa-collection__meta-item">
-    <b>{% unless include.title == 'false' %}{% if session.title %}{{ session.title }} - {% endif %}{% endunless %}{% if session.multiday %}{{ session.multiday }}{% if pagetype == "archive" or page.layout=='event' %}, {{ session.end_date | date: "%Y" }}{% endif %}{% else %}{{ datestring }}{% endif %}{% if session.time %}, {{ session.time }} {% endif %}</b>
+    <b>{% unless include.title == 'false' %}{% if session.title %}{{ session.title }} - {% endif %}{% endunless %}{{ datestring }}{% if session.time %}, {{ session.time }} {% endif %}</b>
     {% include collect/components/session-ul session=session %}
 </li>

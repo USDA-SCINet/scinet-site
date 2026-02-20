@@ -16,12 +16,12 @@ registration:
 sessions: 
   - session:
     time: 1:00 PM - 5:00 PM ET
-    multiday: "Feb 24, 26"
+    multiday: "Feb 24 and 26"
     date: 2026-02-24 19:00:00
     end_date: 2026-02-26
   - session:
     time: 1:00 PM - 5:00 PM ET
-    multiday: "April 22, 24"
+    multiday: "April 22 and 24"
     date: 2025-04-22 19:00:00
     end_date: 2025-04-24
     materials:
