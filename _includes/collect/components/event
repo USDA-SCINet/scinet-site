@@ -99,8 +99,8 @@
         {% if post.tags or post.type or post.provider %}
         <ul class="usa-collection__meta" aria-label="Tags">
             {% unless page.hide-provider %}
-            {% if post.provider %}
-            <li class="usa-collection__meta-item usa-tag">{{ post.provider }}</li>
+            {% if post.provider %}{% for _provider in post.provider %}
+            <li class="usa-collection__meta-item usa-tag">{{ _provider }}</li>{% endfor %}
             {% endif %}
             {% endunless %}
             {% if post.type %}
