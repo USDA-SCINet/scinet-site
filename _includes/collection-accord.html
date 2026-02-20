@@ -1,0 +1,20 @@
+{% assign post = include.post %}
+
+{% if post.categories contains page.title or post.type contains page.posttype or post.categories == page.categories or page.filter %}
+
+    {% assign currentdate = post.date | date: "%Y" %}
+    {% if currentdate != date %}
+      {% unless forloop.first %}</ul></div>{% endunless %}
+      <div class="usa-accordion__heading">
+        <button
+          type="button"
+          class="usa-accordion__button"
+          {% if forloop.first %}aria-expanded="true"{% else %}aria-expanded="false"{% endif %}
+          aria-controls="y{{post.date | date: '%Y'}}"
+        >{{ currentdate }}</button></div>
+        <div id="y{{post.date | date: '%Y'}}" class="usa-accordion__content usa-prose" {% unless forloop.first %}hidden{% endunless %}><ul>
+      {% assign date = currentdate %}
+    {% endif %}
+    {% include collect/components/event %}
+  {% if forloop.last %}</ul></div>{% endif %}
+{% endif %}
