@@ -7,6 +7,7 @@ filter: check
 collecting: 
   collections: announcements
   yml: news
+  collapse: year
 
 news:
   - title: "Increased memory on Ceres nodes"

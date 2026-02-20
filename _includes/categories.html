@@ -66,6 +66,19 @@
   {% include collect/components/calendar myevents=myposts pagetype="future" post_type=post_type %}
   {% include collect/components/calendar myevents=myposts pagetype="archive" post_type=post_type %}
 {% else %}
+{% if include.collect.collapse or include.collapse %}
+<div class="usa-accordion margin-y-2">
+{% if flow == 'reverse' %}
+{% for _post in myposts reversed %} 
+  {% include collection-accord.html collapse=mycollect.collapse post=_post %}
+{% endfor %}
+{% else %}
+{% for _post in myposts %} 
+{% include collection-accord.html collapse=mycollect.collapse post=_post %}
+{% endfor %}
+{% endif %}
+</div>
+{% else %}
 <ul class="usa-list usa-list--unstyled">
 {% if flow == 'reverse' %}
 {% for _post in myposts reversed %} 
@@ -77,7 +90,7 @@
   {% include collection.html post=_post %}
 {% endfor %}
 {% endif %}
-</ul>
+</ul>{% endif %}
 {% endif %}
 
 <br>
