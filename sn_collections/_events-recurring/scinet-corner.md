@@ -25,8 +25,8 @@ sessions:
     excerpt: "Learn more about what SCINet/AI-COE fellows are working on!"  
     details: 
       - text: <b>Modeling environmental determinants of subsistence plant harvests in Alaska</b> - Sire Kassama, Ph.D  
-      - text: <b>Deciphering the Gene Networks Underlying Resistance and Susceptibility in Nile Tilapia</b> - John Konvalina, Ph.D  
-      - text: "<b>Towards Precision Pest Monitoring: Integrated AI Approaches for Differentiating Pest and Non-Pest Weevils</b> - Adama Tukuli, Ph.D"
+      - text: <b>Deciphering the gene networks underlying resistance and susceptibility in Nile tilapia</b> - John Konvalina, Ph.D  
+      - text: "<b>Towards precision pest monitoring: Integrated AI approaches for differentiating pest and non-pest weevils</b> - Adama Tukuli, Ph.D"
       - text: <b>Engineering agricultural products by molecular modeling and simulation</b> - Austin Weigle, Ph.D
   - session:
     title: Introduction to SCINet
