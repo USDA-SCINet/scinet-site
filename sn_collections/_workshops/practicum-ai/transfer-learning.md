@@ -111,7 +111,7 @@ exit
       * QOS: normal
       * Number of hours: 4
       * Number of nodes: 1
-      * Number of tasks: 4
+      * Number of tasks: 3
       * Additional Slurm Parameters:
   
           {: .copy-code } 
