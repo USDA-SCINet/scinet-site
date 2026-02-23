@@ -19,6 +19,6 @@ Applications developed and published by [DTU Health Tech](https://services.healt
 You will be notified once you have access to these applications.
 
 ## List of applications available on the clusters
-* SignalP - 6.0h
+* SignalP - 6.0i
 
 If you are interested in using applications not listed above, please refer to the documentation on [requesting new applications](https://scinet.usda.gov/guides/software/preinstalled#option-2-request-a-new-module-be-installed) 
