@@ -82,8 +82,26 @@ main:
 {% endfor %}
 
 {% else %}
-
+<div class="usa-accordion margin-y-2">
 {% for _down in all_downtime reversed %}
-  {% include components/collection-downtime.html post=_down %}
+{% assign cddate = _down.date | date: "%Y" %}
+{% if cddate != ddate %}
+{% unless forloop.first %}</ul></div>{% endunless %}
+<div class="usa-accordion__heading">
+  <button
+    type="button"
+    class="usa-accordion__button"
+    {% if forloop.first %}aria-expanded="true"{% else %}aria-expanded="false"{% endif %}
+    aria-controls="y{{ _down.date | date: '%Y'}}"
+  >{{ cddate }}</button></div>
+  <div id="y{{ _down.date | date: '%Y'}}" class="usa-accordion__content usa-prose" {% unless forloop.first %}hidden{% endunless %}><ul>
+  {% assign ddate = cddate %}
+{% endif %}
+
+{% include components/collection-downtime.html post=_down %}
+
+{% if forloop.last %}</ul></div>{% endif %}
+
   {% endfor %}
+</div>
 {% endif %}

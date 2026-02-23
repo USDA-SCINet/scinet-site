@@ -53,11 +53,21 @@ main:
   {% if page.collecting %}
   
   {% include collect/merge %}
-  <ul class="usa-list usa-list--unstyled">
-    
+  
+  {% if page.collecting.collapse %}
+  <div class="usa-accordion margin-y-2">
   {% for _post in merge reversed %}
-    {% include collection.html post=_post.post %}
+  {% include collection-accord.html post=_post.post %}
+  {% endfor %}  
+  </div>
+  {% else %}
+  <ul class="usa-list usa-list--unstyled">
+  {% for _post in merge reversed %}
+  {% include collection.html post=_post.post %}
   {% endfor %}
   </ul>
+  {% endif %}
+    
+
 
   {% endif %}
