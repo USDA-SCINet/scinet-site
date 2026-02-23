@@ -19,6 +19,16 @@ archive-label: SCINet Corner Recordings
 
 sessions:
   - session:
+    title: SCINet lightning talks
+    date: 2026-02-26
+    time: 1-2 pm ET 
+    excerpt: "Learn more about what SCINet/AI-COE fellows are working on!"  
+    details: 
+      - text: <b>Modeling environmental determinants of subsistence plant harvests in Alaska</b> - Sire Kassama, Ph.D  
+      - text: <b>Deciphering the Gene Networks Underlying Resistance and Susceptibility in Nile Tilapia</b> - John Konvalina, Ph.D  
+      - text: "<b>Towards Precision Pest Monitoring: Integrated AI Approaches for Differentiating Pest and Non-Pest Weevils</b> - Adama Tukuli, Ph.D"
+      - text: <b>Engineering agricultural products by molecular modeling and simulation</b> - Austin Weigle, Ph.D
+  - session:
     title: Introduction to SCINet
     date: 2026-01-22
     time: 1-2 pm ET
