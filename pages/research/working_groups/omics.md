@@ -43,7 +43,7 @@ By fostering a dynamic environment for interaction and cooperation, we believe t
 
 If you are interested in and would like to join the group, please fill out the following survey: [Translational Omics Working Group Survey](https://forms.office.com/g/a7VFhG0AJD).
 
-For more information, please contact George Liu ([George.Liu@usda.gov](mailto:George.Liu@usda.gov)) or Zhenbin Hu ([Zhenbin.Hu@usda.gov](mailto:Zhenbin.Hu@usda.gov)).
+For more information, please contact George Liu ([George.Liu@usda.gov](mailto:George.Liu@usda.gov)) or Wenli Li ([Wenli.Li@usda.gov](Wenli.Li@usda.gov))..
 
 
 ## Meeting Materials
