@@ -4,11 +4,11 @@ permalink: /
 type: future
 description: SCINet is a USDA-ARS initiative providing high-performance computing, data transfer and storage, and computing support and training for agricultural research.
 
-alerts:
- - alert:
-   title: Ceres partial outage
-   type: warning
-   text: SCINet's Ceres high-performance computing cluster is currently operating at reduced capacity. Please <a href="https://forum.scinet.usda.gov/t/ceres-emergency-outage-2026-03-09/2116" class="usa-link">see the SCINet Forum</a> for more information.
+#alerts:
+# - alert:
+#  title: Ceres partial outage
+#  type: warning
+#  text: SCINet's Ceres high-performance computing cluster is currently operating at reduced capacity. Please <a href="https://forum.scinet.usda.gov/t/ceres-emergency-outage-2026-03-09/2116" class="usa-link">see the SCINet Forum</a> for more information.
 
 layout: scinet_home
 
