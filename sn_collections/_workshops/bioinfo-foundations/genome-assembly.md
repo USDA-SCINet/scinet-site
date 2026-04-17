@@ -140,7 +140,7 @@ time hifiasm -o 06_Assembly/chr2_hifi.asm -t 8 -m 10 -f 0 01_Data/mapped_reads.c
 
 While you wait for `hifiasm` to run, review the theory behind the String Graph methodology and phase variations.
 
-## 1. Checking Assembly Output
+## 4. Checking Assembly Output
 
 ### Converting the String Graph (GFA to FASTA)
 `hifiasm` output generates a graphical format. We must extract the linear sequence.
@@ -167,7 +167,7 @@ less 06_Assembly/chr2_AssemblyStats.txt
 
 ---
 
-## 2. Quality Assessment
+## 5. Quality Assessment
 
 **BUSCO Analysis with compleasm**
 
@@ -217,7 +217,7 @@ Since we're only assembling chromosome 2 (not the complete genome), the high "Mi
 
 ---
 
-## 3. Reference-Free Assessment (`meryl` and `merqury`)
+## 6. Reference-Free Assessment (`meryl` and `merqury`)
 
 We evaluate how thoroughly our assembly represents the K-mers contained within the input raw reads themselves.
 
@@ -241,7 +241,7 @@ merqury.sh ../08_AT_HiFi.meryl \
 
 ---
 
-## 4. Preparation for Scaffolding (`Juicer`)
+## 7. Preparation for Scaffolding (`Juicer`)
 
 Connecting overlapping contigs properly into whole chromosome-length scaffolds requires conformational capture (Hi-C) mapping. We must prepare a directory for `Juicer` to perform this mapping.
 
@@ -304,7 +304,7 @@ JUICER juicer.sh -d $(pwd) -p chrom.sizes -s none -z references/HiCGenome.fasta 
 
 Once submitted, the `aligned/merged_nodups.txt` map table will be generated! 
 
-## 5: Completing Your Genome
+## 8: Completing Your Genome
 
 ---
 
@@ -347,7 +347,7 @@ bash run-asm-pipeline.sh HiCGenome.fasta merged_nodups.txt
 
 No automated Hi-C scaffolder is perfect. Reviewing the initial output manually is highly recommended.
 
-### Setting Up 
+#### Setting Up 
 Start Ceres Desktop open on demand with 12 cores and 200G of memory for 2 hours. Open the terminal emulator at the bottom of the screen and navigate to your Juicer directory.
 
 **Download and run [Juicebox]**
@@ -373,7 +373,7 @@ Select **Assembly -> Export Assembly**. Juicebox will generate a `.assembly.revi
 
 *(To reload your progress later, re-load the Hi-C file, re-import the unedited `.assembly`, and then select **Assembly -> Load Modified Assembly** and target your `.review.assembly` file).*
 
-### Finalization
+### E. Finalization
 Once satisfied, return to the HPC:
 ```bash
 bash run-asm-pipeline-post-review.sh --sort-output -s seal -g 100 -r HiCGenome.0.review.assembly HiCGenome.fasta merged_nodups.txt
@@ -388,7 +388,7 @@ HiCGenome.FINAL.assembly -- final .assembly that you can load into Juicebox to v
 
 ---
 
-### D. Gene Space Completeness Evaluation
+### F. Gene Space Completeness Evaluation
 
 To prove your assembly represents biological truth, we test for the presence of widespread, conserved orthologs (`BUSCO/compleasm` and OMArk). 
 
