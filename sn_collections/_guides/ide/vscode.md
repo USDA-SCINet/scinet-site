@@ -85,6 +85,8 @@ OOD VS Code stores your extensions in your home directory by default, which can 
 
 VS Code has a registered tunnel extension that allows users to securely work on projects hosted on remote machines without SSH. The tunnel extension creates a secure and encrypted connection between your local computer and a remote machine.  
 
+If you're unfamiliar with Remote Tunnels, see the [VS Code Remote Tunnels documentation](https://code.visualstudio.com/docs/remote/tunnels/)
+
 **Why use a registered tunnel for VS Code?**
 
 *  **Easy access:** There is no need for SSH keys or network configuration to connect to development environments remotely.  
@@ -126,6 +128,7 @@ Start a new VS Code session with the resources you need. Once the session is run
 
 1. Return to your local VS Code instance. 
 1. Registered tunnels will show up in the Remote Explorer sidebar. It should say something similar to "ceres20-compute-74 running".
+
    ![vs code remote explorer tunnel]({{ images_path }}/vscode/vscode_remote_explorer_tunnel.png)
 
    If you do not see your tunnel:
