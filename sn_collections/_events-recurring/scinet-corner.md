@@ -19,6 +19,16 @@ archive-label: SCINet Corner Recordings
 
 sessions:
   - session:
+    title: "Working with Slurm, part 2: monitoring and analyzing Slurm jobs"
+    date: 2026-05-26
+    time: 1-2 pm ET
+    excerpt: This SCINet Corner will demonstrate how to monitor the progress and resource usage of running jobs and how to analyze the resource efficiency of completed jobs.
+  - session:
+    title: "Working with Slurm, part 1: Introduction and understanding partitions"
+    date: 2026-04-30
+    time: 1-2 pm ET
+    excerpt: This SCINet Corner will provide an overview of Slurm and discuss how to use Slurm commands to view key information about the partitions on an HPC cluster like Ceres or Atlas.
+  - session:
     title: SCINet working groups overview
     date: 2026-03-26
     time: 1-2 pm ET
