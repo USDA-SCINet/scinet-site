@@ -59,7 +59,7 @@ All LLM weights curated on SCINet infrastructure are from U.S. model developers 
 To quickly interact with one of these models, you can use the `llama-cli` program with its GGUF file. For example, running the following commands will let you query the Gemma 4 31B model using an A100 GPU:
 
 ```bash
-srun --account <project_name> --partition gpu-a100 --mem=32G --gres=gpu:1 --pty bash
+srun --account <project_name> --partition gpu-a100 --mem=32G --ntasks=8 --gres=gpu:1 --pty bash
 module load llama.cpp
 llama-cli -m /reference/llms/gemma-4/gemma-4-31b-it-bf16.gguf
 ```
