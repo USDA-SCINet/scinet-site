@@ -39,31 +39,37 @@ Additionally, participants will explore the RNA-seq analysis pipeline in the abs
 We will also introduce pseudoalignment techniques for rapid quantification of transcript abundance without base-by-base alignment. 
 
 
-{% comment %}
 ## Tutorial Setup Instructions  
 
 Steps to prepare for the tutorial session:  
 
-* Login to [Ceres Open OnDemand](http://ceres-ood.scinet.usda.gov/). For more information on login procedures for web-based SCINet access, see the [SCINet access user guide]({{site.baseurl}}/guides/access/web-based-login).  
+* Login to [Ceres Open OnDemand](http://ceres-ood.scinet.usda.gov/). For more information on login procedures for web-based SCINet access, see the [SCINet access user guide]({{site.baseurl}}/guides/access/web-based-login).
+ 
+
 * Open a command-line session by clicking on "Clusters" -> "Ceres Shell Access" on the top menu. This will open a new tab with a command-line session on Ceres' login node.
-* Request resources on a compute node by running the following command.   
-
-    {:.copy-code} 
-```bash 
-srun --reservation=wk3_workshop -A scinet_workshop2 -t 05:00:00 -N 1 –c 8  --pty bash   
-```
-    {% include reservation-alert reservation="wk3_workshop" project="scinet_workshop2" %}
-
 
 * Create a workshop working directory by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the $USER variable.  
 
-    {:.copy-code}
-```bash
-mkdir -p /90daydata/shared/$USER/intro_rnaseq 
-cd /90daydata/shared/$USER/intro_rnaseq  
-cp /project/scinet_workshop2/Bioinformatics_series/wk3_workshop/day1/*.sh .
-cp /project/scinet_workshop2/Bioinformatics_series/wk3_workshop/day1/DESeq2.R .
-```
+  ```bash
+  mkdir -p /90daydata/shared/$USER/intro_rnaseq 
+  cd /90daydata/shared/$USER/intro_rnaseq
+  cp /project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis/files .
+  ```
+  {:.copy-code}
+
+* Launch VS Code:
+  * Under the Interactive Apps menu, select VS Code
+  * Specify the following input values on the page:
+    * Account: scinet_workshop2
+    * Queue: ceres
+    * QoS: 400thread
+    * Number of cores: 2
+    * Memory required: 6 G
+    * Number of hours: 5
+    * Optional Slurm Parameters: `--reservation=foundations_workshop`
+    * Working Directory:  `/90daydata/shared/$USER/intro_rnaseq`
+  * Click Launch. The screen will update to the *Interactive Sessions* page. When your VS Code session is ready, the top card will update from *Queued* to *Running* and a *Connect to VS Code* button will appear. Click *Connect to VS Code.*
+
 -----
 
 ## RNA-Seq Data Analysis
@@ -87,39 +93,14 @@ This experiment compares wild type (WT) and *atrx-1* mutant to analyze how the l
 ### Getting Data
 
 #### The Raw sequence data
-The files needed for this tutorial have already been downloaded. This will allow us to get started right away with our analyses without waiting on downloads or dealing with connectivity issues. However, for your own work, you may need to download data from public repositories. There are two common tools used for this: `wget` and `curl`. While this is not needed for the tutorial, here's how you would download files yourself:  
-
-* Using `wget`: 
-  * `wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR442/003/SRR4420293/SRR4420293_1.fastq.gz` 
-* Using `curl` 
-  * `curl - 0 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR442/003/SRR4420293/SRR4420293_1.fastq.gz`  
-    `-0` capital O: tells `curl` to save the file with its original name.  
+The files needed for this tutorial have already been downloaded. This will allow us to get started right away with our analyses without waiting on downloads or dealing with connectivity issues. 
 
 #### The Reference Genome: 
 
 We will also need the genome file and associated GTF/GFF file for *Arabidopsis*. These can be downloaded directly from [NCBI](https://www.ncbi.nlm.nih.gov/datasets/genome/?taxon=3701), or [plants Ensembl website](http://plants.ensembl.org/info/website/ftp/index.html), or the [Phytozome website\*](https://phytozome.jgi.doe.gov/pz/portal.html#!bulk?org=Org_Gmax).  
 **The Phytozome needs logging in and selecting the files.* 
 
-For this tutorial, we have already downloaded the following files from NCBI: 
-
-* You can use `wget` to fetch both the Genome (Fasta) file and the Annotation (GFF) file: 
-  For this tutorial, the steps below are optional
-
-  {:.copy-code}
-  ```bash
-mkdir 00_Genome
-cd 00_Genome
-wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/735/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_genomic.fna.gz 
-wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/735/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_genomic.gtf.gz 
-``` 
-
-* We unzipped these files so that they can be used later in our analysis pipeline. To do this we used `gunzip` 
-
-  {:.copy-code}
-  ```bash
-gunzip GCF_000001735.4_TAIR10.1_genomic.fna.gz 
-gunzip GCF_000001735.4_TAIR10.1_genomic.gtf.gz 
-```
+For this tutorial, we have already downloaded the following files from NCBI.
 
 </li> 
 <li class="usa-process-list__item" markdown="1">
@@ -129,17 +110,27 @@ gunzip GCF_000001735.4_TAIR10.1_genomic.gtf.gz
 
 We use `fastqc`, a tool that provides a simple way to do quality control checks on raw sequence data coming from high-throughput sequencing pipelines ([FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)). 
  
-* Script for fastqc (already included)  
+* Script for fastqc
   Ensure that you are in `/90daydata/shared/$USER/intro_rnaseq`
-  `cat fastqc.sh` 
+
+  ```bash
+  mkdir 00_Scripts
+    
+  touch 00_Scripts/01_fastqc.sl
+  ```
+  {:.copy-code}
+
+  Open `01_fastqc.sl` in the VS Code editor and copy and paste the script below:
 
   ```bash 
   #!/bin/bash 
   #SBATCH -N1 
   #SBATCH -c8 
+  #SBATCH --account=scinet_workshop2
+  #SBATCH --reservation=foundations_workshop
   #SBATCH -J fastqc  
-  #SBATCH -o fastqc_%j.out 
-  #SBATCH -e fastqc_%j.err 
+  #SBATCH -o slurm_logs/fastqc_%j.out 
+  #SBATCH -e slurm_logs/fastqc_%j.err 
   #SBATCH -t 01:00:00 
 
   # Load required modules 
@@ -147,7 +138,7 @@ We use `fastqc`, a tool that provides a simple way to do quality control checks 
   module load multiqc 
 
   # Define Directories: 
-  RAW_DIR="/project/scinet_workshop2/Bioinformatics_series/wk3_workshop/day1/00_RawData/" 
+  RAW_DIR="/90daydata/shared/$USER/intro_rnaseq/00_RawData" 
   OUT_DIR="$SLURM_SUBMIT_DIR/01_FastqC" 
   # make output directories 
   mkdir -p $OUT_DIR 
@@ -155,42 +146,53 @@ We use `fastqc`, a tool that provides a simple way to do quality control checks 
   fastqc -t 8 -o $OUT_DIR $RAW_DIR/*gz 
   multiqc -p -o 01a_MultiQC/ $OUT_DIR --title "Arabidopsis_RNAseq" 
   ``` 
+  {:.copy-code}
 
 * Submit the script 
 
-  {:.copy-code}
   ```bash 
-sbatch fastqc.sh  
-``` 
+  sbatch 00_Scripts/01_fastqc.sl 
+  ``` 
+  {:.copy-code}
 
-#### What to do if your reads need trimming? 
+</li> 
+<li class="usa-process-list__item" markdown="1">
 
-In this section of the tutorial we will use a different set of reads to demonstrate what you would do if, after quality check, you decided to trim your reads. Read trimming is the process of removing poor-quality bases before downstream analysis. and there are a few tools which helps with this.  
+{:.usa-process-list__heading}
+### Read Quality Trimming
 
- 
 When would you trim?  
 
 * To remove bases of poor quality  
 * To remove adapter sequences 
-* Reads for demonstrating trimming 
+* Reads for demonstrating trimming
 
-The reads for this demonstration are from the [ENA](https://www.ebi.ac.uk/ena/browser/view/SRX9312090). 
 We will use BBDUK: Decontamination using kmers ([BBDUK Guide](https://archive.jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/bbduk-guide/)) 
 
 {:.copy-code}
 ```bash  
-FFPE="/project/scinet_workshop2/Bioinformatics_series/wk3_workshop/day1/Poor_Data/FFPE" 
+#!/bin/bash 
+#SBATCH -N1 
+#SBATCH -c8 
+#SBATCH --account=scinet_workshop2
+##SBATCH --reservation=foundations_workshop
+#SBATCH -J bbduk
+#SBATCH -o slurm_logs/bbduk_%j.out 
+#SBATCH -e slurm_logs/bbduk_%j.err 
+#SBATCH -t 01:00:00 
 
 module load bbtools
+module load parallel
 
-mkdir Trimmed
+mkdir -p 02_Trimmed
 # Define adapters variables 
 adapters="/software/el9/apps/bbtools/39.01/resources/adapters.fa"
-# Run bbduk:
 
-bbduk.sh in1=SRR12844918_1.fastq.gz in2=SRR12844918_2.fastq.gz \
-out1=Trimmed/SRR12844918_1.fastq.gz out2=Trimmed/SRR12844918_2.fastq.gz \
-ref=$adapters ktrim=r k=23 mink=11 hdist=1 qtrim=rl trimq=20 minlength=50 tpe tbo
+# Run bbduk in parallel:
+ls 00_RawData/*_1.fastq.gz | parallel -j6 "bbduk.sh -Xmx4g in1={} in2={= s/_1.fastq.gz/_2.fastq.gz/ =} \
+out1=02_Trimmed/{= s:.*/::; s/_1.fastq.gz/_trimmed_1.fastq.gz/ =} \
+out2=02_Trimmed/{= s:.*/::; s/_1.fastq.gz/_trimmed_2.fastq.gz/ =} \
+ref=$adapters ktrim=r k=23 mink=11 hdist=1 qtrim=rl trimq=20 minlength=50 tpe tbo"
 ``` 
 
 **Explanation of options:** 
@@ -205,20 +207,34 @@ ref=$adapters ktrim=r k=23 mink=11 hdist=1 qtrim=rl trimq=20 minlength=50 tpe tb
 * minlength=50: Discard reads shorter than 50 bases after trimming. 
 * tpe: Trim both reads of a pair if one is trimmed. 
 * tbo: Trim adapters based on pair overlap detection. 
- 
-#### Run a quality check on the timmed reads
 
-We will run this quickly on the interactive node.
+#### Run a quality check on the trimmed reads
+
 
 {:.copy-code}
 ```bash 
-cd Trimmed 
+#!/bin/bash 
+#SBATCH -N1 
+#SBATCH -c8 
+#SBATCH --account=scinet_workshop2
+##SBATCH --reservation=foundations_workshop
+#SBATCH -J fastqc  
+#SBATCH -o slurm_logs/fastqc_%j.out 
+#SBATCH -e slurm_logs/fastqc_%j.err 
+#SBATCH -t 01:00:00 
 
-mkdir Fastqc 
-mkdir Multiqc 
+# Load required modules 
+module load fastqc 
+module load multiqc 
 
-time fastqc -o Fastqc/ -t 2 SRR12844918_* 
-time multiqc -p -o Multiqc/ Fastqc --title "SRR12844918_Trim_Quality 
+# Define Directories: 
+RAW_DIR="/90daydata/shared/$USER/rna_seq/02_Trimmed" 
+OUT_DIR="$SLURM_SUBMIT_DIR/03_FastqC" 
+# make output directories 
+mkdir -p $OUT_DIR 
+# The main command 
+fastqc -t 8 -o $OUT_DIR $RAW_DIR/*gz 
+multiqc -p -o 03a_MultiQC/ $OUT_DIR --title "Arabidopsis_RNAseq_TrimmedData"
 ``` 
 
 </li> 
@@ -227,7 +243,7 @@ time multiqc -p -o Multiqc/ Fastqc --title "SRR12844918_Trim_Quality
 {:.usa-process-list__heading}
 ### Mapping reads to the genome using HISAT2  
 
-There are several mapping programs available for aligning RNAseq reads to the genome. Generic aligners such as `BWA`, `bowtie2`, `BBMap`, etc., are not suitable for mapping RNAseq reads because they are not splice-aware. RNAseq reads are mRNA reads that only contain exonic regions, hence mapping them back to the genome requires splitting the individual reads that span an intron. It can be done only by splice-aware mappers. In this tutorial, we will use [HISAT2](https://ccb.jhu.edu/software/hisat2/index.shtml), a successor of `Tophat2`. 
+There are several mapping programs available for aligning RNAseq reads to the genome. Generic aligners such as `BWA`, `bowtie2`, `BBMap`, etc., are not suitable for mapping RNAseq reads because they are not splice-aware. Because RNA-seq primarily targets mature mRNA, many reads consist of spliced exonic regions. Mapping these specific 'junction reads' back to the genome requires splice-aware aligners to split and bridge them across intronic gaps. In this tutorial, we will use [HISAT2](https://ccb.jhu.edu/software/hisat2/index.shtml), a successor of `Tophat2`. 
  
 
 #### Build genome index 
@@ -236,17 +252,18 @@ For `HiSat2` mapping, you first need to index the genome and then use the read p
 
   * To go back to the main working directory:
 
-    {:.copy-code}
     ```bash
     cd /90daydata/shared/$USER/intro_rnaseq
     ```
+    {:.copy-code}
+
   * Run hisat2-build:
 
-    {:.copy-code}
     ```bash
     DATA_DIR=/project/scinet_workshop2/Bioinformatics_series/wk3_workshop/day1/00_Genome/
     { time hisat2-build -p8 $DATA_DIR/GCF_000001735.4_TAIR10.1_genomic.fna 02_Hisat2/Arabidopsis_TAIR10.1 >& hs2build.log; } 2> hs2build.time &
     ```
+    {:.copy-code}
 
 Once complete, you should see several files with the .ht2 extension. These are the index files. 
 
@@ -418,47 +435,48 @@ Using the following commands, we can produce a single count table. This count ta
 
 * From `03_FeatCounts` edit the count files "in-place" 
 
-  {:.copy-code}
+  
   ```bash
-for f in *.txt  
-    do sed -i '/^#/d' "$f" 
-        sed -i 's|02_Hisat2/BAM/||g' "$f" 
-        sed -i 's|\.bam||g' "$f" 
-        done 
-``` 
+  for f in *.txt  
+      do sed -i '/^#/d' "$f" 
+          sed -i 's|02_Hisat2/BAM/||g' "$f" 
+          sed -i 's|\.bam||g' "$f" 
+          done 
+  ``` 
+  {:.copy-code}
 
 * Make directory called `Processed` and make a combined count table with the first column as "Gene_IDs" and 6 other columns one for each sample's gene counts. 
 
-  {:.copy-code}
   ```bash
-mkdir Processed  
-awk 'BEGIN {OFS="\t"} {print $1,$7}' SRR4420293.gene.txt > col1.txt 
-awk 'BEGIN {OFS="\t"} {print $7}' SRR4420294.gene.txt > col2.txt 
-awk 'BEGIN {OFS="\t"} {print $7}' SRR4420295.gene.txt > col3.txt 
-awk 'BEGIN {OFS="\t"} {print $7}' SRR4420296.gene.txt > col4.txt 
-awk 'BEGIN {OFS="\t"} {print $7}' SRR4420297.gene.txt > col5.txt 
-awk 'BEGIN {OFS="\t"} {print $7}' SRR4420298.gene.txt > col6.txt 
-paste col1.txt col2.txt col3.txt col4.txt col5.txt col6.txt > Arabidopsis_RNAseq_Counts.txt 
-``` 
+  mkdir Processed  
+  awk 'BEGIN {OFS="\t"} {print $1,$7}' SRR4420293.gene.txt > col1.txt 
+  awk 'BEGIN {OFS="\t"} {print $7}' SRR4420294.gene.txt > col2.txt 
+  awk 'BEGIN {OFS="\t"} {print $7}' SRR4420295.gene.txt > col3.txt 
+  awk 'BEGIN {OFS="\t"} {print $7}' SRR4420296.gene.txt > col4.txt 
+  awk 'BEGIN {OFS="\t"} {print $7}' SRR4420297.gene.txt > col5.txt 
+  awk 'BEGIN {OFS="\t"} {print $7}' SRR4420298.gene.txt > col6.txt 
+  paste col1.txt col2.txt col3.txt col4.txt col5.txt col6.txt > Arabidopsis_RNAseq_Counts.txt 
+  ``` 
+  {:.copy-code}
 
   `head Arabidopsis_RNAseq_Counts.txt ` 
 
 * The Combined count file... a sneak peek: 
 
-  {:.copy-code}
   ```bash
-Geneid  SRR4420293  SRR4420294  SRR4420295  SRR4420296  SRR4420297  SRR4420298 
-AT1G01010   11  1   10  28  11  13 
-AT1G01020   37  3   26  88  22  17 
-AT1G03987   0   0   0   0   0   0 
-``` 
+  Geneid  SRR4420293  SRR4420294  SRR4420295  SRR4420296  SRR4420297  SRR4420298 
+  AT1G01010   11  1   10  28  11  13 
+  AT1G01020   37  3   26  88  22  17 
+  AT1G03987   0   0   0   0   0   0 
+  ``` 
+  {:.copy-code}
 
 * Convert to and save as CSV file 
 
-  {:.copy-code}
   ```bash
-sed 's|        |,|g' Arabidopsis_RNAseq_Counts.txt > Arabidopsis_RNAseq_Counts.csv
-```
+  sed 's|        |,|g' Arabidopsis_RNAseq_Counts.txt > Arabidopsis_RNAseq_Counts.csv
+  ```
+  {:.copy-code}
 
 This file is ready to be imported to R for DESeq2.  
  
@@ -485,6 +503,7 @@ This file is ready to be imported to R for DESeq2.
 We have saved the entire R script for DESeq2 (`DESeq2.R`). The script is partly based on [Stephen Turner's template](https://gist.github.com/stephenturner/f60c1934405c127f09a6). We have displayed the R script here largely for reference.   
 
 <div class="usa-accordion usa-accordion--bordered padding-top-2">
+
   <div class="usa-accordion__heading">
     <button
       type="button"
@@ -495,7 +514,8 @@ We have saved the entire R script for DESeq2 (`DESeq2.R`). The script is partly 
       DESeq2 R code
     </button>
   </div>
-<div id="deseq2r" class="usa-accordion__content usa-prose" markdown="1">
+
+<div id="deseq2r" class="usa-accordion__content usa-prose" markdown=1 hidden>
  
    
 ```R
@@ -510,21 +530,26 @@ BiocManager::install(version = "3.20")
 ## Install libraries needed: 
 
 BiocManager::install("DESeq2") 
-library("DESeq2") 
+
+## Load the libraries:
 library(readr) 
 library(DESeq2) 
 
 # Read the data in
-df1 <- read_csv("Arabidopsis_RNAseq_Counts.csv") 
-typeof(df1) 
-df1 
+df1 <- read_csv("Arabidopsis_RNAseq_Counts.csv")
+
+#Check the type of variable
+typeof(df1)
+
+#Find out the dimensions of the dataframe:
 dim(df1) 
 
-# Saving the gene IDs as a vector 
+# Save the gene IDs as a vector 
 AT_genes <- df1[1] 
 df1 <- df1[,-1] 
 
-# Some diagnoses 
+# Some diagnoses:
+ 
 # Total reads per sample 
 colSums(df1) 
 
@@ -706,10 +731,24 @@ pheatmap(exprs_scaled,
          cluster_cols = TRUE, 
          cluster_rows = TRUE, 
          color=colorRampPalette(c("navy","white","firebrick3"))(100)) 
+ 
+ ``` 
+</div>
 
-# Functional annotation  
+  <div class="usa-accordion__heading">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="functionalr"
+    >
+      Functional annotation R code
+    </button>
+  </div>
+<div id="functionalr" class="usa-accordion__content usa-prose" markdown=1 hidden>
 
-#species: Arabidopsis thaliana (thale cress) 
+```R
+ #species: Arabidopsis thaliana (thale cress) 
 
 #get packages  
 BiocManager::install("org.At.tair.db") 
@@ -780,11 +819,174 @@ dotplot(go_res2, showCategory = 15, title="GO BP: Arabidopsis Thaliana")
 ekegg<- enrichKEGG(gene = sig_gene_names, 
                    organism = "ath", 
                    pvalueCutoff = 0.05) 
-barplot(ekegg, showCategory = 15, title="KEGG: Arabidopsis thaliana") 
- ``` 
+barplot(ekegg, showCategory = 15, title="KEGG: Arabidopsis thaliana")
+```
 </div>
 </div>
-</li>
-</ol>
 
-{% endcomment %}
+</li>
+<li class="usa-process-list__item" markdown="1">
+
+{:.usa-process-list__heading}
+### Quantification using Pseudoalignment 
+
+RNA-seq analysis usually involves mapping sequencing reads to a reference genome to quantify gene expression levels. When a high-quality reference genome is unavailable, the transcriptome is typically assembled from the sequencing reads, allowing for the estimation of transcript abundance without performing a full alignment. 
+
+Pseudoalignment is a technique that determines which transcripts a read could originate from without aligning each base of the read to the genome. One example of a pseudoaligner is Kallisto.  
+
+Kallisto is a fast, alignment-free method for estimating transcript abundance from RNA-seq data. Instead of traditional base-by-base alignment, kallisto uses k-mer matching, which involves identifying short, fixed-length sequences (k-mers) shared between reads and transcripts to quickly assign reads to compatible transcripts. Kallisto then applies probabilistic models—statistical frameworks that account for uncertainty and variability in the assignment process—to estimate transcript abundance. 
+
+We will explore how kallisto works by using a transcriptome for *Arabidopsis* which we downloaded from Ensembl. 
+
+* Relaunch VS Code and navigate to the working directory: 
+
+  ```bash
+  /90daydata/shared/$USER/intro_rnaseq
+  ```
+  {:.copy-code}
+
+* Load the software
+
+  ```bash
+  module load kallisto
+  ```
+  {:.copy-code}
+
+  ```bash
+  kallisto version
+  ```
+  {:.copy-code}
+
+#### Build an index 
+
+* Create working directories 
+
+  ```bash
+  mkdir -p intro_rnaseq/{index, results}
+  ```
+  {:.copy-code}
+
+  Directory details: 
+  index - stores the kallisto index
+  results - stores the outputs
+
+* To build the index:  
+  Code Format: `kallisto index -i [index name.idx] [transcriptome path]`
+
+  * `kallisto index` - builds index
+  * `-i`: location of index file 
+  * `.fa`: transcript sequences
+  * `.idx` - structure that allows Kallisto to run quickly
+
+  ```bash
+  kallisto index -i Arabidopsis_thali.idx files/00_Transcriptome/Arabidopsis_thaliana.TAIR10.cdna.all.fa.gz
+  ```
+  {:.copy-code}
+
+* Quantification  
+  Run Kallisto on one sample first: 
+
+  kallisto quant options:
+  * -i #index file
+  * -o #output folder
+  * -b #bootstrap runs / confidence esimations
+  * -t # number of CPUS threads/spped
+  * paired read 1
+  * paired read 2
+
+  ```bash
+  time kallisto quant -i Arabidopsis_thali.idx -o /project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis/kallisto_test/outputs -b 100 -t 4 /project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis/files/00_RawData/SRR4420293_1.fastq.gz /project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis/files/00_RawData/SRR4420293_2.fastq.gz
+  ```
+  {:.copy-code}
+
+* Expected output: 
+* abundance.tsv
+* abundance.h5
+* run_info 
+
+  ```bash
+  head abundance.tsv
+  ```
+
+  ```bash
+  cat run_info
+  ```
+  {:.copy-code}
+
+We will run the script below to complete quantification on all reads: 
+
+{:.copy-code}
+```bash
+#!/bin/bash
+#SBATCH --job-name=kallisto_quant
+#SBATCH --output=kallisto_%j.out
+#SBATCH --error=kallisto_%j.err
+#SBATCH --time=04:00:00
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=16G
+
+#Load kallisto
+module load kallisto 
+
+#navigate to main analysis folder
+
+cd /project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis
+
+
+#Set paths 
+INDEX="/project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis/kallisto_test/index/Arabidopsis_thali.idx"
+
+RAW_DIR="/project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis/files/00_RawData"
+RESULTS_DIR="/project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis/kallisto_test/outputs"
+
+#find all read 1 files that end with _1.fastq.gz
+for r1 in ${FASTQ_DIR}/*_1.fastq.gz
+
+do 
+
+#get sample name only
+sample=$(basename "$read1" _1.fastq.gz)
+
+#find matching read 2
+r2="${FASTQ_DIR}/${sample}_2.fastq.gz"
+done 
+
+#echo the sample being processed
+echo "Currently processing: ${sample}"
+
+###Run kallisto
+
+kallisto quant -i ${INDEX} -o {RESULTS_DIR}/${sample} -b 100 -t ${SLURM_CPUS_PER_TASK} ${r1} ${r2}
+
+#Print completion message
+echo "Finished with ${sample}
+
+done
+
+echo "All runs complete" 
+```
+
+{:.copy-code}
+```bash
+sbatch kallisto_quant.sh
+```
+
+Now that we have transcript levels expression estimates for each sample, we need to combine before DESEQ.
+
+Kallisto estimates expression at the transcript level. tximport is necessary for importing Kalisto results into R and can summarize transcript-level estimates to the gene level if we provide a tracript-to-gene mapping file. The official tximport vignette notes that Kallisto output only provides transcript IDs, so a two-solcumn tx2gene table is needed for gene-level summarization. 
+
+* Launch R Studio
+
+</li>
+<li class="usa-process-list__item" markdown="1">
+
+{:.usa-process-list__heading}
+### De Novo Transcriptome Assembly and Quantification 
+
+De novo RNA-seq analysis is used when a reference genome is not available. In this case, instead of aligning reads to a reference genome, sequence reads are assembled into transcript sequences to generate a sample-specific transcriptome using only the information available in the RNA-seq reads. 
+
+Expression is then quantified by mapping reads to the assembled transcriptome using alignment-free methods. 
+
+</li>
+
+</ol>
