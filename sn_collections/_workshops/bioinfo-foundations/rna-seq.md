@@ -114,8 +114,6 @@ We use `fastqc`, a tool that provides a simple way to do quality control checks 
   Ensure that you are in `/90daydata/shared/$USER/intro_rnaseq`
 
   ```bash
-  mkdir 00_Scripts
-    
   touch 00_Scripts/01_fastqc.sl
   ```
   {:.copy-code}
@@ -175,7 +173,7 @@ We will use BBDUK: Decontamination using kmers ([BBDUK Guide](https://archive.jg
 #SBATCH -N1 
 #SBATCH -c8 
 #SBATCH --account=scinet_workshop2
-##SBATCH --reservation=foundations_workshop
+#SBATCH --reservation=foundations_workshop
 #SBATCH -J bbduk
 #SBATCH -o slurm_logs/bbduk_%j.out 
 #SBATCH -e slurm_logs/bbduk_%j.err 
@@ -217,7 +215,7 @@ ref=$adapters ktrim=r k=23 mink=11 hdist=1 qtrim=rl trimq=20 minlength=50 tpe tb
 #SBATCH -N1 
 #SBATCH -c8 
 #SBATCH --account=scinet_workshop2
-##SBATCH --reservation=foundations_workshop
+#SBATCH --reservation=foundations_workshop
 #SBATCH -J fastqc  
 #SBATCH -o slurm_logs/fastqc_%j.out 
 #SBATCH -e slurm_logs/fastqc_%j.err 
@@ -248,30 +246,49 @@ There are several mapping programs available for aligning RNAseq reads to the ge
 
 #### Build genome index 
 
-For `HiSat2` mapping, you first need to index the genome and then use the read pairs to map the indexed genome (one set at a time). For indexing the genome, we use the `hisat2-build` command. We can run this in an interactive node.
+For `HiSat2` mapping, you first need to index the genome and then use the read pairs to map the indexed genome (one set at a time). For indexing the genome, we use the `hisat2-build` command.
 
-  * To go back to the main working directory:
+  * Create the empty script file:
 
     ```bash
-    cd /90daydata/shared/$USER/intro_rnaseq
+    touch 00_Scripts/04a_hisat2_build.sl
     ```
     {:.copy-code}
 
-  * Run hisat2-build:
+  * Open the file `04a_hisat2_build.sl` in the VS Code editor and copy and paste the script below:
 
     ```bash
-    DATA_DIR=/project/scinet_workshop2/Bioinformatics_series/wk3_workshop/day1/00_Genome/
-    { time hisat2-build -p8 $DATA_DIR/GCF_000001735.4_TAIR10.1_genomic.fna 02_Hisat2/Arabidopsis_TAIR10.1 >& hs2build.log; } 2> hs2build.time &
+    #!/bin/bash 
+    #SBATCH -N1 
+    #SBATCH -c8 
+    #SBATCH --account=scinet_workshop2
+    #SBATCH --reservation=foundations_workshop
+    #SBATCH -J hisat2_build
+    #SBATCH -o slurm_logs/hisat2_build_%j.out 
+    #SBATCH -e slurm_logs/hisat2_build_%j.err 
+    #SBATCH -t 01:00:00 
+    
+    module load hisat2
+    DATA_DIR=/90daydata/shared/$USER/intro_rnaseq/00_Genome
+    mkdir -p 04_Hisat2_Index/
+    
+    hisat2-build -p8 $DATA_DIR/GCF_000001735.4_TAIR10.1_genomic.fna 04_Hisat2_Index/Arabidopsis_TAIR10.1
     ```
     {:.copy-code}
 
-Once complete, you should see several files with the .ht2 extension. These are the index files. 
+  * Open the file `04a_hisat2_build.sl` in the VS Code editor and copy and paste the script below:
+
+    ```bash
+    sbatch 00_Scripts/04a_hisat2_build.sl
+    ```
+    {:.copy-code}
+
+Once complete, you should see several files with the .ht2 extension in the `04_Hisat2_Index` folder. These are the index files. 
 
 #### Mapping Reads to the index: 
-We will do this using `parallel` within a Slurm batch script. First we will need two executablescripts (included): 
+We will do this using `parallel` within a Slurm batch script. First we will need two executable scripts (included): 
 
-* Run Hisat2  
-  `cat run_hisat2.sh` 
+* `run_hisat2.sh` (Do not copy; file already included. Contents are below for reference.)
   ```bash 
   #!/bin/bash 
   R1=$1 
@@ -279,7 +296,7 @@ We will do this using `parallel` within a Slurm batch script. First we will need
   SAMPLE=$(basename "$R1" _1.fastq.gz) 
   hisat2 -p 4 -x Arabidopsis_TAIR10.1 -1 "$R1" -2 "$R2" 2> LOG/"${SAMPLE}".log -S SAM/"${SAMPLE}".sam 
   ``` 
-* Run samtools  
+* `run_samtools.sh`  (Do not copy; file already included. Contents are below for reference.)
   `cat run_samtools.sh` 
   ```bash 
   #!/bin/bash 
@@ -289,63 +306,79 @@ We will do this using `parallel` within a Slurm batch script. First we will need
   samtools view -@ 7 -bS $SAMFILE | samtools sort -@ 7 -o BAM/${SAMPLE}.bam 
   ```  
 
-The two scripts above will be run within a slurm batch script (also included)  
-* `cat hisat2_samtools_slurm.sh` 
+The two executable shell scripts will be called within a slurm batch script. We will create that as follows:
+* Slurm Script for hisat2 alignment 
+
+  Ensure that you are in `/90daydata/shared/$USER/intro_rnaseq`
+  ```bash
+  touch 00_Scripts/04_hisat2_samtools.sl
+  ```
+  {:.copy-code}
+
+Open the file `00_Scripts/04_hisat2_samtools.sl` in the VS Code editor and copy and paste the script below:
+
   ```bash 
   #!/bin/bash 
+  #SBATCH --account=scinet_workshop2
+  #SBATCH --reservation=foundations_workshop 
   #SBATCH -N1 
-  #SBATCH -c16 
+  #SBATCH -c24
   #SBATCH -J hisat2  
-  #SBATCH -o slurm_logs/hisat2_%j.out 
-  #SBATCH -e slurm_logs/hisat2_%j.err 
+  #SBATCH -o slurm_logs/hisat2_samtools%j.out 
+  #SBATCH -e slurm_logs/hisat2_samtools%j.err 
   #SBATCH -t 08:00:00 
-
+  
   # Load required modules 
   module load hisat2 
   module load samtools 
   module load parallel 
-
+  
   # Define Directories: 
-  RAW_DIR="/project/scinet_workshop2/Bioinformatics_series/wk3_workshop/day1/00_RawData/" 
-  INDEX_DIR="/project/scinet_workshop2/Bioinformatics_series/wk3_workshop/day1/02_Hisat2/" 
-  OUT_DIR="$SLURM_SUBMIT_DIR/02_Hisat2" 
+  RAW_DIR="/90daydata/shared/$USER/intro_rnaseq/02_Trimmed" 
+  INDEX_DIR="/90daydata/shared/$USER/intro_rnaseq/04_Hisat2_Index" 
+  OUT_DIR="$SLURM_SUBMIT_DIR/04_Hisat2_Aligned"
+  SCRIPTS="/90daydata/shared/$USER/intro_rnaseq/00_Scripts" 
   mkdir -p $OUT_DIR 
-
+  
   # change to compute node's local dir 
   cd $TMPDIR 
-
+  
   # Set Permissions 
   chgrp -R proj-scinet_workshop2 $TMPDIR 
   chmod -R g+s $TMPDIR 
-
+  
   # make output directories 
   mkdir SAM 
   mkdir BAM 
   mkdir LOG 
-
-  # copy input data and script to the node's scratch dir 
+  
+  # copy input data and shell scripts to the node's scratch dir 
   cp --preserve=ownership $RAW_DIR/*gz . 
   cp --preserve=ownership $INDEX_DIR/Arabidopsis_TAIR10.1*h* .  
-  cp --preserve=ownership $SLURM_SUBMIT_DIR/run_hisat2.sh . 
-  cp --preserve=ownership $SLURM_SUBMIT_DIR/run_samtools.sh . 
-
+  cp --preserve=ownership $SCRIPTS/run_hisat2.sh . 
+  cp --preserve=ownership $SCRIPTS/run_samtools.sh . 
+  
   # Check if folders are in TMPDIR 
   echo "Files in TMPDIR:"
   find . -type f 
-
+  
   # The main command (run the two executable scripts) 
-  parallel -j 4 "./run_hisat2.sh {1} {2}" ::: *_1.fastq.gz :::+ *_2.fastq.gz 
-  parallel -j 4 "./run_samtools.sh {}" ::: SAM/*.sam 
-
-  # Move the output directories back to your folder 
+  parallel -j 6 "./run_hisat2.sh {1} {2}" ::: *_1.fastq.gz :::+ *_2.fastq.gz 
+  parallel -j 6 "./run_samtools.sh {}" ::: SAM/*.sam 
+  
+  # Move the output directories back to the output folder 
   mv BAM $OUT_DIR 
-  mv LOG $OUT_DIR 
+  mv LOG $OUT_DIR  
   ``` 
+  {:.copy-code}
 
 Submit the slurm script:  
-`sbatch hisat2_samtools_slurm.sh` 
+  ```bash
+  sbatch 00_Scripts/04_hisat2_samtools.sl
+  ```
+  {:.copy-code}
 
-This will take about 30 minutes to complete.  
+This will take about 15-30 minutes to complete.  
 
 </li>
 <li class="usa-process-list__item" markdown="1">
@@ -353,128 +386,113 @@ This will take about 30 minutes to complete.
 {:.usa-process-list__heading}
 ### Abundance Estimation 
 
-For quantifying transcript abundance from RNA-seq data, there are many programs available. The two most popular tools are featureCounts and HTSeq. We will need a file with aligned sequencing reads (SAM/BAM files generated in previous step) and a list of genomic features (from the GFF file). featureCounts is a highly efficient general-purpose read summarization program that counts mapped reads for genomic features such as genes, exons, promoter, gene bodies, genomic bins and chromosomal locations. It also outputs statistics for the overall summarization of results, including the number of successfully assigned reads and the number of reads that failed to be assigned due to various reasons. We can run featureCounts on all SAM/BAM files at the same time or individually. 
+For quantifying transcript abundance from RNA-seq data, there are many programs available. The two most popular tools are featureCounts and HTSeq. We will need a file with aligned sequencing reads (BAM files generated in previous step) and a list of genomic features (from the GFF file). featureCounts is a highly efficient general-purpose read summarization program that counts mapped reads for genomic features such as genes, exons, promoter, gene bodies, genomic bins and chromosomal locations. It also outputs statistics for the overall summarization of results, including the number of successfully assigned reads and the number of reads that failed to be assigned due to various reasons. We can run featureCounts on all SAM/BAM files at the same time or individually. 
 
-`pwd` 
-`cd /90daydata/shared/$USER/intro_rnaseq` 
+You will need to have the [subread](http://subread.sourceforge.net/) and `parallel` modules loaded. They are included in the script below.
 
-You will need [subread](http://subread.sourceforge.net/) and `parallel` modules loaded. They are included in the script below: 
+Open the file `00_Scripts/05_featurecounts.sl` in the VS Code editor and copy and paste the script below:
 
 ```bash 
 #!/bin/bash 
+#SBATCH --account=scinet_workshop2
+#SBATCH --reservation=foundations_workshop 
 #SBATCH -N 1 
 #SBATCH -c 16 
 #SBATCH -t 01:00:00 
-#SBATCH -J FeatCounts 
-#SBATCH -o slurm_logs/FeatCounts.%j.out 
-#SBATCH -e slurm_logs/FeatCounts.%j.err 
+#SBATCH -J featCounts 
+#SBATCH -o slurm_logs/featCounts.%j.out 
+#SBATCH -e slurm_logs/featCounts.%j.err 
 
 # Load required modules 
 module purge 
 module load subread 
 module load parallel 
 
-ulimit -s unlimited 
-
 # Define inputs 
- ANNOT_GTF="/project/scinet_workshop2/Bioinformatics_series/wk3_workshop/day1/00_Genome/GCF_000001735.4_TAIR10.1_genomic.gtf" 
-INDIR="02_Hisat2/BAM" 
-OUTDIR="03_FeatCounts" 
-[[ -d ${OUTDIR} ]] || mkdir -p ${OUTDIR} 
+ANNOT_GTF="/90daydata/shared/$USER/intro_rnaseq/00_Genome/GCF_000001735.4_TAIR10.1_genomic.gtf" 
+BAMDIR="/90daydata/shared/$USER/intro_rnaseq/04_Hisat2_Aligned/BAM" 
+OUTDIR="05_FeatCounts" 
+mkdir -p ${OUTDIR} 
 
 # FeatureCounts command 
-parallel -j 4 "featureCounts -T 4 -s 2 -p --countReadPairs -t gene -g gene_id -a ${ANNOT_GFF} -o ${OUTDIR}/{/.}.gene.txt {}" ::: ${INDIR}/*.bam 
+parallel -j 4 "featureCounts -T 4 -s 2 -p --countReadPairs -t exon -g gene_id -a ${ANNOT_GTF} -o ${OUTDIR}/{/.}.txt {}" ::: ${BAMDIR}/*.bam 
 
 scontrol show job ${SLURM_JOB_ID} 
 ``` 
+{:.copy-code}
 
 **Submit the batch script:**  
 
 {:.copy-code}
 ```bash 
-sbatch featureCounts_slurm_script.sh  
+sbatch 05_featurecounts.sl 
 ``` 
 
 This creates the following set of files in the specified output folder: 
 
 * Count Files: 
   ``` 
-  SRR4420298.gene.txt 
-  SRR4420293.gene.txt 
-  SRR4420297.gene.txt 
-  SRR4420296.gene.txt 
-  SRR4420295.gene.txt 
-  SRR4420294.gene.txt 
-  ``` 
-  Each file has a commented line starting with a # which gives the command used to create the count table and the relevant seven columns as follows, for example: 
-    * `head SRR4420298.gene.txt` 
-      ``` 
-      # Program:featureCounts v1.5.2; Command:"featureCounts" "-T" "4" "-s" "2" "-p" "-t" "gene" "-g" "ID" "-a" "/path/to/GCF_000001735.3_TAIR10_genomic.gff" "-o" "/path/to/counts/SRR4420298.gene.txt" "SRR4420298.bam" 
-
-      Geneid  Chr     Start   End     Strand  Length  SRR4420298.bam 
-      gene0   NC_003070.9     3631    5899    +       2269    13 
-      gene1   NC_003070.9     6788    9130    -       2343    17 
-      gene2   NC_003070.9     11101   11372   +       272     0 
-      gene3   NC_003070.9     11649   13714   -       2066    13 
-      gene4   NC_003070.9     23121   31227   +       8107    32 
-      gene5   NC_003070.9     23312   24099   -       788     0 
-      gene6   NC_003070.9     28500   28706   +       207     0 
-      gene7   NC_003070.9     31170   33171   -       2002    45 
-      ``` 
-* Additionally, Summary Files are produced. These give the summary of reads that were either ambiguous, multi mapped, mapped to no features, or unmapped among other statistics. We can refer to these to further tweak our analyses etc. 
-  ``` 
-  SRR4420298.gene.txt.summary 
-  SRR4420293.gene.txt.summary 
-  SRR4420295.gene.txt.summary 
-  SRR4420296.gene.txt.summary 
-  SRR4420294.gene.txt.summary 
-  SRR4420297.gene.txt.summary 
+  SRR4420298_trimmed.txt 
+  SRR4420293_trimmed.txt 
+  SRR4420297_trimmed.txt 
+  SRR4420296_trimmed.txt 
+  SRR4420295_trimmed.txt 
+  SRR4420294_trimmed.txt
   ``` 
 
-Using the following commands, we can produce a single count table. This count table will be loaded into R for differential expression analysis. 
+* Additionally, summary files are produced. These give the summary of reads that were either ambiguous, multi mapped, mapped to no features, or unmapped among other statistics. We can refer to these to further tweak our analyses etc. 
+  ``` 
+  SRR4420298_trimmed.txt.summary 
+  SRR4420293_trimmed.txt.summary 
+  SRR4420295_trimmed.txt.summary 
+  SRR4420296_trimmed.txt.summary 
+  SRR4420294_trimmed.txt.summary 
+  SRR4420297_trimmed.txt.summary 
+  ``` 
 
-* From `03_FeatCounts` edit the count files "in-place" 
+Using the following Linux commands, we can edit the outputs to produce a single count table. This count table will be loaded into R for differential expression analysis. 
 
-  
+* **Step 1**: From `/90daydata/shared/$USER/rna_seq/05_FeatCounts` edit the count files "in-place" using `sed`
+
   ```bash
-  for f in *.txt  
-      do sed -i '/^#/d' "$f" 
-          sed -i 's|02_Hisat2/BAM/||g' "$f" 
-          sed -i 's|\.bam||g' "$f" 
-          done 
+  for f in *txt do
+    sed -i '/^#/d' "$f"
+    sed -i 's|/90day.*BAM/||g' $f
+    sed -i 's|_.*bam||g' $f
+    done
   ``` 
   {:.copy-code}
 
-* Make directory called `Processed` and make a combined count table with the first column as "Gene_IDs" and 6 other columns one for each sample's gene counts. 
+* **Step 2**: Make directory called `06_Combined_Counts` and make a combined count table with the first column as "Gene_IDs" and 6 other columns one for each sample's gene counts. 
 
   ```bash
-  mkdir Processed  
-  awk 'BEGIN {OFS="\t"} {print $1,$7}' SRR4420293.gene.txt > col1.txt 
-  awk 'BEGIN {OFS="\t"} {print $7}' SRR4420294.gene.txt > col2.txt 
-  awk 'BEGIN {OFS="\t"} {print $7}' SRR4420295.gene.txt > col3.txt 
-  awk 'BEGIN {OFS="\t"} {print $7}' SRR4420296.gene.txt > col4.txt 
-  awk 'BEGIN {OFS="\t"} {print $7}' SRR4420297.gene.txt > col5.txt 
-  awk 'BEGIN {OFS="\t"} {print $7}' SRR4420298.gene.txt > col6.txt 
+  cd 06_Combined_Counts
+  COUNTS="/90daydata/shared/$USER/rna_seq/05_FeatCounts"
+  
+  awk 'BEGIN {OFS="\t"} {print $1,$7}' $COUNTS/SRR4420293_trimmed.txt > col1.txt
+  awk 'BEGIN {OFS="\t"} {print $7}' $COUNTS/SRR4420294_trimmed.txt > col2.txt
+  awk 'BEGIN {OFS="\t"} {print $7}' $COUNTS/SRR4420295_trimmed.txt > col3.txt 
+  awk 'BEGIN {OFS="\t"} {print $7}' $COUNTS/SRR4420296_trimmed.txt > col4.txt 
+  awk 'BEGIN {OFS="\t"} {print $7}' $COUNTS/SRR4420297_trimmed.txt > col5.txt 
+  awk 'BEGIN {OFS="\t"} {print $7}' $COUNTS/SRR4420298_trimmed.txt > col6.txt 
   paste col1.txt col2.txt col3.txt col4.txt col5.txt col6.txt > Arabidopsis_RNAseq_Counts.txt 
   ``` 
   {:.copy-code}
 
-  `head Arabidopsis_RNAseq_Counts.txt ` 
-
-* The Combined count file... a sneak peek: 
+* The combined count file... a sneak peek: 
 
   ```bash
-  Geneid  SRR4420293  SRR4420294  SRR4420295  SRR4420296  SRR4420297  SRR4420298 
-  AT1G01010   11  1   10  28  11  13 
-  AT1G01020   37  3   26  88  22  17 
-  AT1G03987   0   0   0   0   0   0 
+  head -4 Arabidopsis_RNAseq_Counts.txt 
+  Geneid  SRR4420293      SRR4420294      SRR4420295      SRR4420296      SRR4420297      SRR4420298
+  AT1G01010       10      1       8       25      10      13
+  AT1G01020       36      3       24      80      21      14
+  AT1G03987       0       0       0       0       0       0
   ``` 
-  {:.copy-code}
 
 * Convert to and save as CSV file 
 
   ```bash
-  sed 's|        |,|g' Arabidopsis_RNAseq_Counts.txt > Arabidopsis_RNAseq_Counts.csv
+  sed 's|\t|,|g' Arabidopsis_RNAseq_Counts.txt > Arabidopsis_RNAseq_Counts.csv
   ```
   {:.copy-code}
 
@@ -485,6 +503,14 @@ This file is ready to be imported to R for DESeq2.
 
 {:.usa-process-list__heading}
 ### Differential Gene Expression Analysis  
+
+Make a directory called `07_DESeq2` and copy the R Script to the new directory:
+
+```bash
+mkdir 07_DESeq2
+cp 00_Scripts/DESeq2.R 07_DESeq2
+```
+{:.copy-code}
 
 * RStudio Server: Back on the main Ceres OOD tab, click on the top or side navigation bar: "Interactive Apps" > "RStudio Server". 
 * Fill the input fields with the following (input fields not listed below can be left at their default values): 
@@ -520,16 +546,19 @@ We have saved the entire R script for DESeq2 (`DESeq2.R`). The script is partly 
    
 ```R
 ## Set working directory in R 
-setwd("/90daydata/shared/$USER/intro_rnaseq") 
+setwd("/90daydata/shared/$USER/intro_rnaseq/07_DESeq2/") 
 
 ## Get the latest version of Bioconductor 
 if (!require("BiocManager", quietly = TRUE)) 
-    install.packages("BiocManager") 
+  install.packages("BiocManager") 
 BiocManager::install(version = "3.20") 
 
 ## Install libraries needed: 
 
 BiocManager::install("DESeq2") 
+library("DESeq2") 
+library(readr) 
+library(DESeq2) 
 
 ## Load the libraries:
 library(readr) 
