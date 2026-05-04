@@ -499,6 +499,7 @@ Using the following Linux commands, we can edit the outputs to produce a single 
 This file is ready to be imported to R for DESeq2.  
  
 </li>
+{% comment %}
 <li class="usa-process-list__item" markdown="1">
 
 {:.usa-process-list__heading}
@@ -1017,5 +1018,6 @@ De novo RNA-seq analysis is used when a reference genome is not available. In th
 Expression is then quantified by mapping reads to the assembled transcriptome using alignment-free methods. 
 
 </li>
+{% endcomment %}
 
 </ol>
