@@ -53,7 +53,7 @@ Steps to prepare for the tutorial session:
   ```bash
   mkdir -p /90daydata/shared/$USER/intro_rnaseq 
   cd /90daydata/shared/$USER/intro_rnaseq
-  cp /project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis/files .
+  cp -r /project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis/files/* .
   ```
   {:.copy-code}
 
@@ -110,8 +110,8 @@ For this tutorial, we have already downloaded the following files from NCBI.
 
 We use `fastqc`, a tool that provides a simple way to do quality control checks on raw sequence data coming from high-throughput sequencing pipelines ([FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)). 
  
-* Script for fastqc
-  Ensure that you are in `/90daydata/shared/$USER/intro_rnaseq`
+Script for fastqc
+  Ensure that you are in `/90daydata/shared/$USER/intro_rnaseq`. Create the empty script file:
 
   ```bash
   touch 00_Scripts/01_fastqc.sl
@@ -146,7 +146,7 @@ We use `fastqc`, a tool that provides a simple way to do quality control checks 
   ``` 
   {:.copy-code}
 
-* Submit the script 
+  Submit the script:
 
   ```bash 
   sbatch 00_Scripts/01_fastqc.sl 
@@ -166,6 +166,15 @@ When would you trim?
 * Reads for demonstrating trimming
 
 We will use BBDUK: Decontamination using kmers ([BBDUK Guide](https://archive.jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/bbduk-guide/)) 
+
+Script for bbduk:
+Ensure that you are in `/90daydata/shared/$USER/intro_rnaseq`. Create the empty script file:
+
+{:.copy-code}
+  ```bash
+  touch 00_Scripts/02_bbduk.sl
+  ```
+Open `02_bbduk.sl` in the VS Code editor and copy and paste the script below:
 
 {:.copy-code}
 ```bash  
@@ -195,19 +204,36 @@ ref=$adapters ktrim=r k=23 mink=11 hdist=1 qtrim=rl trimq=20 minlength=50 tpe tb
 
 **Explanation of options:** 
 
-* ref=adapters.fa: Reference file containing adapter sequences to be trimmed. 
-* ktrim=r: Trim adapters from the right end of reads. 
-* k=23: K-mer length for matching adapters. 
-* mink=11: Minimum k-mer length for adapter matching. 
-* hdist=1: Allow one mismatch in k-mer matching. 
-* qtrim=rl: Trim both ends of reads based on quality. 
-* trimq=20: Quality threshold for trimming. 
-* minlength=50: Discard reads shorter than 50 bases after trimming. 
-* tpe: Trim both reads of a pair if one is trimmed. 
-* tbo: Trim adapters based on pair overlap detection. 
+- ref=adapters.fa: Reference file containing adapter sequences to be trimmed. 
+- ktrim=r: Trim adapters from the right end of reads. 
+- k=23: K-mer length for matching adapters. 
+- mink=11: Minimum k-mer length for adapter matching. 
+- hdist=1: Allow one mismatch in k-mer matching. 
+- qtrim=rl: Trim both ends of reads based on quality. 
+- trimq=20: Quality threshold for trimming. 
+- minlength=50: Discard reads shorter than 50 bases after trimming. 
+- tpe: Trim both reads of a pair if one is trimmed. 
+- tbo: Trim adapters based on pair overlap detection.
+
+
+Submit the script:
+
+ {:.copy-code}
+  ```bash 
+  sbatch 00_Scripts/02_bbduk.sl
+  ``` 
 
 #### Run a quality check on the trimmed reads
 
+Script for fastqc:
+Create the empty script file:
+
+ {:.copy-code}
+```bash
+touch 00_Scripts/03_fastqc.sl
+```
+
+Open `03_fastqc.sl` in the VSCode editor and copy and paste the script below:
 
 {:.copy-code}
 ```bash 
@@ -226,7 +252,7 @@ module load fastqc
 module load multiqc 
 
 # Define Directories: 
-RAW_DIR="/90daydata/shared/$USER/rna_seq/02_Trimmed" 
+RAW_DIR="/90daydata/shared/$USER/intro_rnaseq/02_Trimmed" 
 OUT_DIR="$SLURM_SUBMIT_DIR/03_FastqC" 
 # make output directories 
 mkdir -p $OUT_DIR 
@@ -235,10 +261,18 @@ fastqc -t 8 -o $OUT_DIR $RAW_DIR/*gz
 multiqc -p -o 03a_MultiQC/ $OUT_DIR --title "Arabidopsis_RNAseq_TrimmedData"
 ``` 
 
+Submit the script:
+
+ {:.copy-code}
+  ```bash 
+  sbatch 00_Scripts/03_fastqc.sl
+  ``` 
+ 
 </li> 
 <li class="usa-process-list__item" markdown="1">
 
 {:.usa-process-list__heading}
+
 ### Mapping reads to the genome using HISAT2  
 
 There are several mapping programs available for aligning RNAseq reads to the genome. Generic aligners such as `BWA`, `bowtie2`, `BBMap`, etc., are not suitable for mapping RNAseq reads because they are not splice-aware. Because RNA-seq primarily targets mature mRNA, many reads consist of spliced exonic regions. Mapping these specific 'junction reads' back to the genome requires splice-aware aligners to split and bridge them across intronic gaps. In this tutorial, we will use [HISAT2](https://ccb.jhu.edu/software/hisat2/index.shtml), a successor of `Tophat2`. 
@@ -248,15 +282,16 @@ There are several mapping programs available for aligning RNAseq reads to the ge
 
 For `HiSat2` mapping, you first need to index the genome and then use the read pairs to map the indexed genome (one set at a time). For indexing the genome, we use the `hisat2-build` command.
 
-  * Create the empty script file:
+Create the empty script file:
 
     ```bash
     touch 00_Scripts/04a_hisat2_build.sl
     ```
     {:.copy-code}
 
-  * Open the file `04a_hisat2_build.sl` in the VS Code editor and copy and paste the script below:
+Open the file `04a_hisat2_build.sl` in the VS Code editor and copy and paste the script below:
 
+{:.copy-code}
     ```bash
     #!/bin/bash 
     #SBATCH -N1 
@@ -274,21 +309,22 @@ For `HiSat2` mapping, you first need to index the genome and then use the read p
     
     hisat2-build -p8 $DATA_DIR/GCF_000001735.4_TAIR10.1_genomic.fna 04_Hisat2_Index/Arabidopsis_TAIR10.1
     ```
-    {:.copy-code}
+    
 
-  * Open the file `04a_hisat2_build.sl` in the VS Code editor and copy and paste the script below:
+Submit the script:
 
+ {:.copy-code}
     ```bash
     sbatch 00_Scripts/04a_hisat2_build.sl
     ```
-    {:.copy-code}
+   
 
 Once complete, you should see several files with the .ht2 extension in the `04_Hisat2_Index` folder. These are the index files. 
 
 #### Mapping Reads to the index: 
 We will do this using `parallel` within a Slurm batch script. First we will need two executable scripts (included): 
 
-* `run_hisat2.sh` (Do not copy; file already included. Contents are below for reference.)
+* `run_hisat2.sh` (Do not copy; file already included. Contents below are for reference.)
   ```bash 
   #!/bin/bash 
   R1=$1 
@@ -296,7 +332,7 @@ We will do this using `parallel` within a Slurm batch script. First we will need
   SAMPLE=$(basename "$R1" _1.fastq.gz) 
   hisat2 -p 4 -x Arabidopsis_TAIR10.1 -1 "$R1" -2 "$R2" 2> LOG/"${SAMPLE}".log -S SAM/"${SAMPLE}".sam 
   ``` 
-* `run_samtools.sh`  (Do not copy; file already included. Contents are below for reference.)
+* `run_samtools.sh`  (Do not copy; file already included. Contents below are for reference.)
   `cat run_samtools.sh` 
   ```bash 
   #!/bin/bash 
@@ -306,77 +342,75 @@ We will do this using `parallel` within a Slurm batch script. First we will need
   samtools view -@ 7 -bS $SAMFILE | samtools sort -@ 7 -o BAM/${SAMPLE}.bam 
   ```  
 
-The two executable shell scripts will be called within a slurm batch script. We will create that as follows:
-* Slurm Script for hisat2 alignment 
+The two executable shell scripts will be called within a slurm batch script. We will create the slurm script as follows:
 
-  Ensure that you are in `/90daydata/shared/$USER/intro_rnaseq`
+Create the empty script:
   ```bash
   touch 00_Scripts/04_hisat2_samtools.sl
   ```
-  {:.copy-code}
-
 Open the file `00_Scripts/04_hisat2_samtools.sl` in the VS Code editor and copy and paste the script below:
 
-  ```bash 
-  #!/bin/bash 
-  #SBATCH --account=scinet_workshop2
-  #SBATCH --reservation=foundations_workshop 
-  #SBATCH -N1 
-  #SBATCH -c24
-  #SBATCH -J hisat2  
-  #SBATCH -o slurm_logs/hisat2_samtools%j.out 
-  #SBATCH -e slurm_logs/hisat2_samtools%j.err 
-  #SBATCH -t 08:00:00 
+ {:.copy-code}
+ ```bash 
+ #!/bin/bash 
+ #SBATCH --account=scinet_workshop2
+ #SBATCH --reservation=foundations_workshop 
+ #SBATCH -N1 
+ #SBATCH -c24
+ #SBATCH -J hisat2  
+ #SBATCH -o slurm_logs/hisat2_samtools%j.out 
+ #SBATCH -e slurm_logs/hisat2_samtools%j.err 
+ #SBATCH -t 08:00:00 
   
-  # Load required modules 
-  module load hisat2 
-  module load samtools 
-  module load parallel 
+ # Load required modules 
+ module load hisat2 
+ module load samtools 
+ module load parallel 
   
-  # Define Directories: 
-  RAW_DIR="/90daydata/shared/$USER/intro_rnaseq/02_Trimmed" 
-  INDEX_DIR="/90daydata/shared/$USER/intro_rnaseq/04_Hisat2_Index" 
-  OUT_DIR="$SLURM_SUBMIT_DIR/04_Hisat2_Aligned"
-  SCRIPTS="/90daydata/shared/$USER/intro_rnaseq/00_Scripts" 
-  mkdir -p $OUT_DIR 
+ # Define Directories: 
+ RAW_DIR="/90daydata/shared/$USER/intro_rnaseq/02_Trimmed" 
+ INDEX_DIR="/90daydata/shared/$USER/intro_rnaseq/04_Hisat2_Index" 
+ OUT_DIR="$SLURM_SUBMIT_DIR/04_Hisat2_Aligned"
+ SCRIPTS="/90daydata/shared/$USER/intro_rnaseq/00_Scripts" 
+ mkdir -p $OUT_DIR 
   
-  # change to compute node's local dir 
-  cd $TMPDIR 
+ # change to compute node's local dir 
+ cd $TMPDIR 
   
-  # Set Permissions 
-  chgrp -R proj-scinet_workshop2 $TMPDIR 
-  chmod -R g+s $TMPDIR 
+ # Set Permissions 
+ chgrp -R proj-scinet_workshop2 $TMPDIR 
+ chmod -R g+s $TMPDIR 
   
-  # make output directories 
-  mkdir SAM 
-  mkdir BAM 
-  mkdir LOG 
+ # make output directories 
+ mkdir SAM 
+ mkdir BAM 
+ mkdir LOG 
   
-  # copy input data and shell scripts to the node's scratch dir 
-  cp --preserve=ownership $RAW_DIR/*gz . 
-  cp --preserve=ownership $INDEX_DIR/Arabidopsis_TAIR10.1*h* .  
-  cp --preserve=ownership $SCRIPTS/run_hisat2.sh . 
-  cp --preserve=ownership $SCRIPTS/run_samtools.sh . 
+ # copy input data and shell scripts to the node's scratch dir 
+ cp --preserve=ownership $RAW_DIR/*gz . 
+ cp --preserve=ownership $INDEX_DIR/Arabidopsis_TAIR10.1*h* .  
+ cp --preserve=ownership $SCRIPTS/run_hisat2.sh . 
+ cp --preserve=ownership $SCRIPTS/run_samtools.sh . 
   
-  # Check if folders are in TMPDIR 
-  echo "Files in TMPDIR:"
-  find . -type f 
+ # Check if folders are in TMPDIR 
+ echo "Files in TMPDIR:"
+ find . -type f 
   
-  # The main command (run the two executable scripts) 
-  parallel -j 6 "./run_hisat2.sh {1} {2}" ::: *_1.fastq.gz :::+ *_2.fastq.gz 
-  parallel -j 6 "./run_samtools.sh {}" ::: SAM/*.sam 
+ # The main command (run the two executable scripts) 
+ parallel -j 6 "./run_hisat2.sh {1} {2}" ::: *_1.fastq.gz :::+ *_2.fastq.gz 
+ parallel -j 6 "./run_samtools.sh {}" ::: SAM/*.sam 
   
-  # Move the output directories back to the output folder 
-  mv BAM $OUT_DIR 
-  mv LOG $OUT_DIR  
-  ``` 
-  {:.copy-code}
+ # Move the output directories back to the output folder 
+ mv BAM $OUT_DIR 
+ mv LOG $OUT_DIR  
+ ``` 
 
-Submit the slurm script:  
+Submit the script: 
+  {:.copy-code}
   ```bash
   sbatch 00_Scripts/04_hisat2_samtools.sl
   ```
-  {:.copy-code}
+  
 
 This will take about 15-30 minutes to complete.  
 
