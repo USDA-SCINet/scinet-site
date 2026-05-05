@@ -264,9 +264,9 @@ multiqc -p -o 03a_MultiQC/ $OUT_DIR --title "Arabidopsis_RNAseq_TrimmedData"
 Submit the script:
 
  {:.copy-code}
-  ```bash 
+```bash 
   sbatch 00_Scripts/03_fastqc.sl
-  ``` 
+``` 
  
 </li> 
 <li class="usa-process-list__item" markdown="1">
@@ -284,15 +284,18 @@ For `HiSat2` mapping, you first need to index the genome and then use the read p
 
 Create the empty script file:
 
-    ```bash
-    touch 00_Scripts/04a_hisat2_build.sl
-    ```
-    {:.copy-code}
+{:.copy-code}
+    
+```bash
+touch 00_Scripts/04a_hisat2_build.sl
+```
+    
 
 Open the file `04a_hisat2_build.sl` in the VS Code editor and copy and paste the script below:
 
 {:.copy-code}
-    ```bash
+    
+  ```bash
     #!/bin/bash 
     #SBATCH -N1 
     #SBATCH -c8 
@@ -308,15 +311,16 @@ Open the file `04a_hisat2_build.sl` in the VS Code editor and copy and paste the
     mkdir -p 04_Hisat2_Index/
     
     hisat2-build -p8 $DATA_DIR/GCF_000001735.4_TAIR10.1_genomic.fna 04_Hisat2_Index/Arabidopsis_TAIR10.1
-    ```
-    
+  ```
+
 
 Submit the script:
 
  {:.copy-code}
-    ```bash
-    sbatch 00_Scripts/04a_hisat2_build.sl
-    ```
+ 
+ ```bash
+  sbatch 00_Scripts/04a_hisat2_build.sl
+  ```
    
 
 Once complete, you should see several files with the .ht2 extension in the `04_Hisat2_Index` folder. These are the index files. 
