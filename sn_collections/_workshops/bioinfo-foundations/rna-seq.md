@@ -417,6 +417,7 @@ Submit the script:
   
 
 This will take about 15-30 minutes to complete.  
+
 ---
 
 **Exploring a BAM file:**
@@ -546,9 +547,9 @@ Using the following Linux commands, we can edit the outputs to produce a single 
 * **Step 1**: From `/90daydata/shared/$USER/rna_seq/05_FeatCounts` edit the count files "in-place" using `sed`
 
   ```bash
-  for f in *txt do
+  for f in *.txt; do
     sed -i '/^#/d' "$f"
-    sed -i 's|/90day.*BAM/||g' $f
+    sed -i 's|/90day.*BAM/||g' "$f"
     sed -i 's|_.*bam||g' $f
     done
   ``` 
@@ -743,10 +744,10 @@ b. featureCounts adjustments:
 -s 0                       # unstranded counting if you're unsure annotation strand is reliable
 ```
 
-For a poorly annotated genome, use the RNA-seq data to improve the annotation rather than just accept it.
+For a poorly annotated genome, use the RNA-seq data to improve the annotation rather than just accept it. One potential option is for us to use downstream transcriptome assembly). The steps below serve as a guide:
 
 HISAT2 (with --dta flag)
-- StringTie (assemble transcripts per sample)
+- StringTie (to assemble transcripts per sample)
 - StringTie --merge (create a consensus annotation across samples)
 - compare with MAKER or GFFCompare against existing annotation
 - use improved GTF for featureCounts
@@ -803,7 +804,7 @@ We have saved the entire R script for DESeq2 (`DESeq2.R`). The script is partly 
    
 ```R
 ## Set working directory in R 
-setwd("/90daydata/shared/$USER/intro_rnaseq/07_DESeq2/") 
+setwd(file.path("/90daydata/shared", Sys.getenv("USER"), "intro_rnaseq/07_DESeq2"))
 
 ## Get the latest version of Bioconductor 
 if (!require("BiocManager", quietly = TRUE)) 
@@ -817,208 +818,181 @@ library("DESeq2")
 library(readr) 
 library(DESeq2) 
 
-## Load the libraries:
-library(readr) 
-library(DESeq2) 
+# ============================================================
+# DESeq2 Differential Expression Analysis — Arabidopsis RNAseq
+# ============================================================
 
-# Read the data in
-df1 <- read_csv("Arabidopsis_RNAseq_Counts.csv")
+# ── 0. Libraries ─────────────────────────────────────────────
+# Install any missing packages before loading
+if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
+BiocManager::install(c("DESeq2", "EnhancedVolcano"), update = FALSE, ask = FALSE)
+install.packages(c("pheatmap", "ggplot2", "RColorBrewer"), repos = "https://cloud.r-project.org")
 
-#Check the type of variable
-typeof(df1)
+library(DESeq2)
+library(EnhancedVolcano)
+library(pheatmap)
+library(ggplot2)
+library(RColorBrewer)
+library(tidyverse)
+library(dplyr)
 
-#Find out the dimensions of the dataframe:
-dim(df1) 
 
-# Save the gene IDs as a vector 
-AT_genes <- df1[1] 
-df1 <- df1[,-1] 
+# ── 1. Load Data ─────────────────────────────────────────────
+raw <- read_csv("../06_Combined_Counts/Arabidopsis_RNAseq_Counts.csv")
 
-# Some diagnoses:
- 
-# Total reads per sample 
-colSums(df1) 
+gene_ids <- raw[[1]]                      # Save gene IDs
+counts   <- as.matrix(raw[, -1])          # Count matrix (genes × samples)
+rownames(counts) <- gene_ids
 
-# SRR4420293 SRR4420294 SRR4420295 SRR4420296 SRR4420297 SRR4420298  
-# 3703248    1081388    3793357   14588240    4095513    3235033  
 
-# Boxplot of log counts per sample 
-boxplot(log10(df1 + 1), las=2, main="Raw log10(counts+1) per sample", col="lightblue") 
+# ── 2. Diagnostics on Raw Counts ────────────────────────────
+cat("Total reads per sample:\n")
+print(colSums(counts))
 
-#DESeq2 Pipeline 
+par(mar = c(12, 4, 4, 2))
+boxplot(log10(counts + 1), las = 2,
+        main = "Raw log10(counts+1) per sample", col = "lightblue")
 
-#Metadata 
-# Assign condition (first three are WT, next three are mutants) 
-condition <- factor(c(rep("WT",3),rep("Mut",3))) 
-condition=relevel(condition,ref = "WT") 
 
-# Create a metadata frame: its rows correspond to columns of dat (i.e., matrix representing the countData) 
-metadata <- data.frame(row.names=colnames(df1), condition) 
-head(metadata) 
+# ── 3. Metadata & DESeqDataSet ───────────────────────────────
+condition <- factor(c(rep("WT", 3), rep("Mut", 3)), levels = c("WT", "Mut"))
 
-#               condition 
-# SRR4420293        WT 
-# SRR4420294        WT 
-# SRR4420295        WT 
-# SRR4420296       Mut 
-# SRR4420297       Mut 
-# SRR4420298       Mut 
+metadata <- data.frame(row.names = colnames(counts), condition)
 
-# Create the DeSEQDataSet object  
-# This will store the raw count matirx, sample metadata and experimental design 
+dds <- DESeqDataSetFromMatrix(
+  countData = counts,
+  colData   = metadata,
+  design    = ~ condition
+)
 
-dds1 <- DESeqDataSetFromMatrix(countData = df1, colData = metadata,design=~ condition) 
 
-#- countData: gene x sample matrix we created from all_counts.txt 
-# - colData: sample metadata with rownames matching colnames  
-# - design = ~condition: the experimental design formula where ~condition means you want to test for differential gene expression  between the condition variables (e.g treated vs control) 
+# ── 4. Run DESeq2 ────────────────────────────────────────────
+dds <- DESeq(dds)
 
-#Run DESeq2 pipeline 
+cat("\nSample info:\n");  print(colData(dds))
+cat("\nAvailable coefficients:\n"); print(resultsNames(dds))
+plotDispEsts(dds)
 
-dds1 <- DESeq(dds1) 
-#check sample info 
-colData(dds1) 
-#check dispersion estimates 
-plotDispEsts(dds1) 
-#extract results  
-head(results(dds1)) 
-#summary 
-summary(results(dds1)) 
-#check available coefficients 
-resultsNames(dds1)  
-# Extract normalized counts 
-norm_counts <- counts(dds1, normalized=TRUE) 
 
-# Boxplot of normalized log counts 
-boxplot(log10(norm_counts + 1), las=2, main="Normalized log10(counts+1)", col="lightgreen") 
+# ── 5. Extract & Filter Results ──────────────────────────────
+# Extract results once; reuse throughout
+diff_res <- as.data.frame(
+  results(dds, contrast = c("condition", "WT", "Mut"))
+)
+diff_res$Geneid <- gene_ids
 
-#Get differential expression results 
+cat("\nDE results summary:\n")
+summary(results(dds, contrast = c("condition", "WT", "Mut")))
 
-#summary table of results: 
-table(results(dds1,contrast = c("condition", "WT", "Mut"))$padj<=0.05) 
+cat("\nGenes with padj ≤ 0.05:\n")
+print(table(diff_res$padj <= 0.05))
 
-#store results as a variable 
-diff_res <- results(dds1, contrast=c("condition", "WT", "Mut")) 
+# Significant DEGs: padj < 0.05 and |log2FC| > 1
+res_sig <- subset(diff_res, padj < 0.05 & abs(log2FoldChange) > 1)
+cat("\nSignificant DEGs (padj<0.05, |LFC|>1):", nrow(res_sig), "\n")
 
-#filter for significant DEGs 
-res_sig<- diff_res[which(diff_res$padj <0.05 & abs(diff_res$log2FoldChange)>1),] 
 
-# Merge with normalized counts 
-results_data<- as.data.frame(res_sig) 
-results_data$gene <- rownames(results_data) 
-norm_counts_df<- as.data.frame(norm_counts) 
-norm_counts_df$gene <- rownames(norm_counts_df) 
+# ── 6. Normalized Counts ─────────────────────────────────────
+norm_counts <- as.data.frame(round(counts(dds, normalized = TRUE), 2))
+norm_counts$Geneid <- gene_ids
 
-merged_data<- merge(results_data, norm_counts_df, by = "gene") 
-head(merged_data) 
-merged_ordered<- merged_data[order(merged_data$padj, abs(merged_data$log2FoldChange)),] 
-head(merged_ordered) 
+boxplot(log10(norm_counts[, -ncol(norm_counts)] + 1), las = 2,
+        main = "Normalized log10(counts+1)", col = "lightgreen")
 
-# Write Results 
+# Combined results + normalized counts table
+diff_res_norm <- merge(
+  norm_counts,
+  diff_res[, c("Geneid", "log2FoldChange", "padj")],
+  by = "Geneid"
+)
 
-write.csv(merged_ordered, "DESeq2_results_norm_counts.csv") 
+write.csv(diff_res_norm, "DESeq2_results_norm_counts.csv", row.names = FALSE)
 
-# Visualize Results 
-install.packages("pheatmap") 
-BiocManager::install("EnhancedVolcano") 
-install.packages("ggplot2") 
-install.packages("RColorBrewer") 
 
-library(RColorBrewer) 
-library(pheatmap) 
-library(ggplot2) 
-library(EnhancedVolcano) 
+# ── 7. Exploratory Plots ─────────────────────────────────────
 
-#histogram of Log2FC 
-hist(merged_ordered$log2FoldChange, breaks=50, col="skyblue", main="Distribution of Log2FC", xlab="Log2FC") 
+# Histogram: Log2FC distribution
+hist(diff_res$log2FoldChange, breaks = 50, col = "skyblue",
+     main = "Distribution of Log2FC", xlab = "Log2FC")
 
-hist(log10(rowMeans(norm_counts)+1), breaks=50, 
+# Histogram: Average expression
+hist(log10(rowMeans(norm_counts[, -ncol(norm_counts)]) + 1), breaks = 50,
+     main = "Average gene expression (log10)", xlab = "log10(normalized count + 1)")
 
-     main = "Distribution of average gene expression (log10)", xlab="log10(normalized count + 1)") 
+# MA plot
+plotMA(dds, ylim = c(-5, 5), main = "MA Plot")
 
-# MA plot (built-in) 
 
-plotMA(dds1, ylim = c(-5, 5), main = "MA plot") 
+# ── 8. Volcano Plots ─────────────────────────────────────────
 
-# Volcano plot 
+# Basic ggplot volcano
+diff_res$padj_plot <- ifelse(is.na(diff_res$padj), 1, diff_res$padj)
+diff_res$sig       <- diff_res$padj_plot < 0.05
 
-res <- results(dds1) 
-res$padj[is.na(res$padj)] <- 1  # Replace NAs 
-res_df <- as.data.frame(res) 
-res_df$gene <- rownames(res_df) 
-res_df$sig <- res_df$padj < 0.05 
+ggplot(diff_res, aes(log2FoldChange, -log10(padj_plot), color = sig)) +
+  geom_point(alpha = 0.4) +
+  scale_color_manual(values = c("gray", "red")) +
+  theme_minimal() +
+  labs(title = "Volcano Plot", x = "log2 Fold Change", y = "-log10 Adjusted p-value")
 
-ggplot(res_df, aes(log2FoldChange, -log10(padj), color = sig)) + 
-  geom_point(alpha = 0.4) + 
-  scale_color_manual(values = c("gray", "red")) + 
-  theme_minimal() + 
-  labs(title = "Volcano plot", x = "log2 Fold Change", y = "-log10 Adjusted p-value") 
-  
+# Enhanced volcano — all genes labeled
+EnhancedVolcano(diff_res,
+                lab      = diff_res$Geneid,
+                x        = "log2FoldChange",
+                y        = "padj",
+                pCutoff  = 0.05,
+                FCcutoff = 1,
+                title    = "Volcano Plot: WT vs Mut")
 
-#Transform data for visualization  
-#variance-stabilized transformation for PCA  
-vsdata<- vst(dds1, blind=FALSE) 
+# Enhanced volcano — top 10 significant genes labeled
+top10_genes <- head(diff_res[order(diff_res$padj), "Geneid"], 10)
 
-#plot PCA 
-plotPCA(vsdata, intgroup="condition") 
+EnhancedVolcano(diff_res,
+                lab       = diff_res$Geneid,
+                x         = "log2FoldChange",
+                y         = "padj",
+                pCutoff   = 0.05,
+                FCcutoff  = 1,
+                title     = "Volcano Plot: Top 10 Significant DEGs",
+                xlab      = "Log2FC",
+                ylab      = "-log10 adj. p-value",
+                selectLab = top10_genes)
 
-#Better PCA using ggplot2 
-pcaData<-plotPCA(vsdata, intgroup="condition", returnData=TRUE) 
-percentVar <- round(100 * attr(pcaData, "percentVar")) 
-ggplot(pcaData, aes(PC1, PC2, color = condition, label=name)) +  
-geom_point(size =3)+  
-xlab(paste0("PC1: ", percentVar[1], "%"))+ 
-ylab(paste0("PC2: ", percentVar[2], "%")) 
 
-# VOLCANO PLOT  
+# ── 9. PCA ───────────────────────────────────────────────────
+vsd <- vst(dds, blind = FALSE)
 
-library(EnhancedVolcano) 
+# Quick built-in PCA
+plotPCA(vsd, intgroup = "condition")
 
-EnhancedVolcano(merged_ordered,  
-                lab=merged_ordered$gene,  
-                x="log2FoldChange", 
-                y="padj",  
-                pCutoff=0.05,  
-                FCcutoff=1) 
+# Polished ggplot PCA
+pca_data   <- plotPCA(vsd, intgroup = "condition", returnData = TRUE)
+pct_var    <- round(100 * attr(pca_data, "percentVar"))
 
-# Volcano Plot with Labeled Significant Genes 
-#look at top 10 
-top10 <- head(merged_ordered,10) 
-head(top10) 
-top10$gene[1:10] 
+ggplot(pca_data, aes(PC1, PC2, color = condition, label = name)) +
+  geom_point(size = 3) +
+  geom_text(vjust = -0.8, size = 3) +
+  xlab(paste0("PC1: ", pct_var[1], "%")) +
+  ylab(paste0("PC2: ", pct_var[2], "%")) +
+  theme_minimal() +
+  labs(title = "PCA — Variance-Stabilized Counts")
 
-EnhancedVolcano(merged_ordered,  
-                lab=merged_ordered$gene,  
-                x="log2FoldChange", 
-                y="padj",  
-                pCutoff=0.05,  
-                FCcutoff=1, 
-                title='Volcano Plot: Top 10 Significant DEGs', 
-                xlab='Log2FC', 
-                ylab='-Log10 adjpval', 
-                selectLab = top10$gene) 
 
-library(pheatmap) 
-library(RColorBrewer) 
-#select expression columns only  
-top50 <- head(merged_ordered,50) 
-rownames(top50)<-top50$gene 
-expression<- as.matrix(top50[,grep("^SRR", colnames(top50))]) 
-head(expression) 
+# ── 10. Heatmap (Top 50 DEGs by padj) ───────────────────────
+rownames(vsd) <- gene_ids
 
-#Scale each gene across samples 
-exprs_scaled<-t(scale(t(expression))) 
-head(exprs_scaled) 
+top50_genes <- head(diff_res[order(diff_res$padj), "Geneid"], 50)
 
-#Plot heatmap 
+mat        <- assay(vsd)[top50_genes, ]
+mat_scaled <- t(scale(t(mat)))
+mat_scaled <- mat_scaled[complete.cases(mat_scaled), ]
 
-pheatmap(exprs_scaled, 
-         show_rownames=TRUE, 
-         cluster_cols = TRUE, 
-         cluster_rows = TRUE, 
-         color=colorRampPalette(c("navy","white","firebrick3"))(100)) 
- 
- ``` 
+pheatmap(mat_scaled,
+         annotation_col         = as.data.frame(colData(dds)[, "condition", drop = FALSE]),
+         clustering_distance_rows = "correlation",
+         color = colorRampPalette(c("navy", "white", "firebrick3"))(100),
+         main  = "Top 50 DEGs (scaled VST counts)")
+
 </div>
 
   <div class="usa-accordion__heading">
