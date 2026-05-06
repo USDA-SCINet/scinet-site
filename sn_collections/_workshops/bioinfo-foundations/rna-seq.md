@@ -816,78 +816,226 @@ pheatmap(exprs_scaled,
 <div id="functionalr" class="usa-accordion__content usa-prose" markdown=1 hidden>
 
 ```R
- #species: Arabidopsis thaliana (thale cress) 
+###########################################################################
+### Functional Annotation 
+##Goal: Run GO enrichment analysis & KEGG Pathway analysis
+###########################################################################
 
-#get packages  
-BiocManager::install("org.At.tair.db") 
-BiocManager::install(c("AnnotationDbi", "clusterProfiler")) 
-#load libraries 
-library(org.At.tair.db) 
-library(clusterProfiler) 
+#1. Install and Load Required Packages
+###########################################################################
+####install packages 
+BiocManager::install("org.At.tair.db")
+BiocManager::install(c("AnnotationDbi", "clusterProfiler", "pheatmap"))
 
-# get names of the significant genes 
-sig_gene_names<- merged_ordered$gene 
-head(sig_gene_names) 
+####load libraries
+library(org.At.tair.db) #provides Arabidopsis gene annotation
+library(clusterProfiler) #performs funcitonal enrichment analysis
+library(AnnotationDbi) #helps convert between gene ID types
+library(pheatmap) #creates clustered heatmaps 
 
-#convert TAIR IDs to entrez IDs for annotation  
+###########################################################################
+#2. Gather significant DEGs
+###########################################################################
+##### get names of the significant genes
+sig_gene_names<- merged_ordered$gene
 
-entrez_ids <- mapIds(org.At.tair.db, keys = sig_gene_names, column="ENTREZID", keytype = "TAIR", multiVals = "first") 
 
-#get rid of the missing mappings 
+#preview:
+head(sig_gene_names)
 
-entrez_ids <- na.omit(entrez_ids) 
+length(sig_gene_names)
 
-go_res<- enrichGO(gene = entrez_ids, 
-                  OrgDb = org.At.tair.db, 
-                  keyType = "ENTREZID", 
-                  ont = "BP", #options: BP, MF, CC 
-                  pAdjustMethod = "BH", 
-                  qvalueCutoff = 0.05, 
-                  readable = TRUE) 
+#Remove missing values and duplicates
+sig_gene_names <- unique(na.omit(sig_gene_names))
 
-go_res 
+#check how many genes remain: 
+length (sig_gene_names)
 
-#Plot results 
-dotplot(go_res, showCategory = 15, title="GO BP: Arabidopsis Thaliana") 
+###########################################################################
+# 3. Convert TAIR IDs to Entrez IDs for annotation 
+#Some annotation tools require Entrez IDs
+###########################################################################
 
-#Option to relax thresholds: 
+entrez_ids <- mapIds(org.At.tair.db, keys = sig_gene_names, 
+                     column="ENTREZID", 
+                     keytype = "TAIR", multiVals = "first")
 
-go_res<- enrichGO(gene = entrez_ids, 
-                  OrgDb = org.At.tair.db, 
-                  keyType = "ENTREZID", 
-                  ont = "BP", #options: BP, MF, CC 
-                  pAdjustMethod = "BH", 
-                  qvalueCutoff = 0.2, 
-                  pvalueCutoff = 0.1, 
-                  readable = TRUE) 
+#keys=your input gene list
+#keytype = type of input ID
+#column = what you want to convert to
+#multiVals = how to handle multiple mappings (take first)
 
-dotplot(go_res, showCategory = 15, title="GO BP: Arabidopsis Thaliana") 
+### Remove the genes that could not be mapped:
+entrez_ids <- na.omit(entrez_ids)
 
-### USING SYMBOL instead of using ENTREZ_ID 
+#preview:
+head(entrez_ids)
+length(entrez_ids)
 
-symbols <- mapIds(org.At.tair.db, keys = sig_gene_names, column="SYMBOL", keytype = "TAIR", multiVals = "first") 
+###########################################################################
+# 4. GO enrichment analysis
+###########################################################################
 
-#get rid of the missing mappings 
-symbols <- na.omit(symbols) 
 
-go_res2<- enrichGO(gene = symbols, 
-                  OrgDb = org.At.tair.db, 
-                  keyType = "SYMBOL", 
-                  ont = "BP", #options: BP, MF, CC 
-                  pAdjustMethod = "BH", 
-                  qvalueCutoff = 0.05, 
-                  readable = TRUE) 
+go_res<- enrichGO(gene = entrez_ids,
+                  OrgDb = org.At.tair.db,
+                  keyType = "ENTREZID",
+                  ont = "BP", #options: BP, MF, CC
+                  pAdjustMethod = "BH",
+                  pvalueCutoff = 0.05,
+                  qvalueCutoff = 0.05,
+                  readable = TRUE)
 
-dotplot(go_res2, showCategory = 15, title="GO BP: Arabidopsis Thaliana") 
+go_res
 
-### KEGG Enrichment  
+####Plot results
+dotplot(go_res, showCategory = 15, title="GO BP: Arabidopsis thaliana")
 
-#enrichKEGG identifies over represented KEGG pathways for Arabidopsis.  
 
-ekegg<- enrichKEGG(gene = sig_gene_names, 
-                   organism = "ath", 
-                   pvalueCutoff = 0.05) 
+####If few/no GO results, relax thresholds:
+
+go_res<- enrichGO(gene = entrez_ids,
+                  OrgDb = org.At.tair.db,
+                  keyType = "ENTREZID",
+                  ont = "BP", #options: BP, MF, CC
+                  pAdjustMethod = "BH",
+                  qvalueCutoff = 0.2,
+                  pvalueCutoff = 0.1,
+                  readable = TRUE)
+
+
+dotplot(go_res, showCategory = 15, title="GO BP: Arabidopsis thaliana")
+
+#MF = molecular function 
+#What molecular activities are enriched?
+go_res_MF<- enrichGO(gene = entrez_ids,
+                     OrgDb = org.At.tair.db,
+                     keyType = "ENTREZID",
+                     ont = "MF", #options: BP, MF, CC
+                     pAdjustMethod = "BH",
+                     qvalueCutoff = 0.2,
+                     pvalueCutoff = 0.1,
+                     readable = TRUE)
+
+
+dotplot(go_res_MF, showCategory = 15, title="GO MF: Arabidopsis thaliana")
+
+
+###########################################################################
+# 5. USING SYMBOL instead of using ENTREZ_ID
+###########################################################################
+
+symbols <- mapIds(org.At.tair.db, keys = sig_gene_names, 
+                  column="SYMBOL", keytype = "TAIR", multiVals = "first")
+
+####get rid of the missing mappings
+symbols <- na.omit(symbols)
+
+go_res2<- enrichGO(gene = symbols,
+                   OrgDb = org.At.tair.db,
+                   keyType = "SYMBOL",
+                   ont = "BP", #options: BP, MF, CC
+                   pAdjustMethod = "BH",
+                   qvalueCutoff = 0.05,
+                   pvalueCutoff = 0.05,
+                   readable = TRUE)
+
+dotplot(go_res2, showCategory = 15, title="GO BP: Arabidopsis thaliana")
+
+#CC = cellular component
+#Where in the cell are these gene products enriched?
+go_res_CC<- enrichGO(gene = entrez_ids,
+                     OrgDb = org.At.tair.db,
+                     keyType = "ENTREZID",
+                     ont = "CC", #options: BP, MF, CC
+                     pAdjustMethod = "BH",
+                     qvalueCutoff = 0.2,
+                     pvalueCutoff = 0.1,
+                     readable = TRUE)
+
+
+dotplot(go_res_CC, showCategory = 15, title="GO CC: Arabidopsis thaliana")
+
+
+###########################################################################
+# 6. USING SYMBOL instead of using ENTREZ_ID
+###########################################################################
+
+symbols <- mapIds(org.At.tair.db, keys = sig_gene_names, 
+                  column="SYMBOL", keytype = "TAIR", multiVals = "first")
+
+####get rid of the missing mappings
+symbols <- na.omit(symbols)
+
+go_res2<- enrichGO(gene = symbols,
+                   OrgDb = org.At.tair.db,
+                   keyType = "SYMBOL",
+                   ont = "BP", #options: BP, MF, CC
+                   pAdjustMethod = "BH",
+                   qvalueCutoff = 0.05,
+                   pvalueCutoff = 0.05,
+                   readable = TRUE)
+
+dotplot(go_res2, showCategory = 15, title="GO BP: Arabidopsis thaliana")
+
+###########################################################################
+# 7. KEGG Enrichment 
+###########################################################################
+
+####enrichKEGG identifies over represented KEGG pathways for Arabidopsis. 
+
+ekegg<- enrichKEGG(gene = sig_gene_names,
+                   organism = "ath",
+                   pvalueCutoff = 0.05)
+
+
 barplot(ekegg, showCategory = 15, title="KEGG: Arabidopsis thaliana")
+
+###########################################################################
+# 8. Optional: GO enrichment for upregulated vs downregulated genes
+###########################################################################
+
+#upregulated genes
+upreg_genes<- merged_ordered$gene[
+  merged_ordered$padj <0.05 & merged_ordered$log2FoldChange > 0 
+]
+
+#downregulated genes
+downreg_genes<- merged_ordered$gene[
+  merged_ordered$padj <0.05 & merged_ordered$log2FoldChange < 0 
+]
+
+#clean up gene lists 
+
+upreg_genes<-unique(na.omit(upreg_genes))
+downreg_genes<-unique(na.omit(downreg_genes))
+
+#GO BP enrichment for upregulated genes 
+go_res_up<- enrichGO(gene = upreg_genes,
+                     OrgDb = org.At.tair.db,
+                     keyType = "SYMBOL",
+                     ont = "BP", #options: BP, MF, CC
+                     pAdjustMethod = "BH",
+                     qvalueCutoff = 0.05,
+                     pvalueCutoff = 0.05,
+                     readable = TRUE)
+
+dotplot(go_res_up, showCategory = 15, title="GO BP Enrichment - Upregulated")
+
+
+#GO BP enrichment for downregulated genes
+
+#GO BP enrichment for upregulated genes 
+go_res_down<- enrichGO(gene = downreg_genes,
+                     OrgDb = org.At.tair.db,
+                     keyType = "SYMBOL",
+                     ont = "BP", #options: BP, MF, CC
+                     pAdjustMethod = "BH",
+                     qvalueCutoff = 0.05,
+                     pvalueCutoff = 0.05,
+                     readable = TRUE)
+
+dotplot(go_res_down, showCategory = 15, title="GO BP Enrichment - Downregulated")
 ```
 </div>
 </div>
@@ -907,24 +1055,21 @@ We will explore how kallisto works by using a transcriptome for *Arabidopsis* wh
 Relaunch VS Code and navigate to the working directory: 
 
 {:.copy-code}
+
 ```bash
 /90daydata/shared/$USER/intro_rnaseq
 ```
 
-* Load the software
+*Load the software
+
 {:.copy-code}
 ```bash
 module load kallisto
 ```
 
-{:.copy-code}
-```bash
-kallisto version
-```
-
 #### Build an index 
 
-*Create working directories 
+*Create working directories:
 
 {:.copy-code}
 ```bash
@@ -953,18 +1098,20 @@ kallisto index -i index/Arabidopsis_thaliana.idx ${TRANS}/Arabidopsis_thaliana.T
 ```
 * Quantification
 
-kallisto quant options:
-*-i #index file
-*-o #output folder
-*-b #bootstrap runs / confidence estimations
-*-t # number of CPUS threads/spped
-* paired read 1
-* paired read 2
+`kallisto quant` options:
+
+*`-i : index file
+*`-o`: output folder
+*`-b`:bootstrap runs / confidence estimations
+*`-t`: number of CPU threads
+* `paired read 1`
+* `paired read 2`
 
 Expected output: 
-* abundance.tsv: quantification file
-* abundance.h5: binary HDF5 format of the quantification results
-* run_info: summary file with information about the job run
+
+* `abundance.tsv`: quantification file
+* `abundance.h5`: binary HDF5 format of the quantification results
+* `run_info`: summary file with information about the job run
 
 Navigate to main working directory: 
 {:.copy-code}
@@ -1042,6 +1189,19 @@ cat run_info
 Now that we have transcript level expression estimates for each sample, we need to combine them before running DESeq2 for differential gene expression analysis. We will do this in R.
 
 * Launch R Studio
+
+
+  <div class="usa-accordion__heading">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="deseq2kallisto"
+    >
+      DESeq2 workflow after Kallisto R code
+    </button>
+  </div>
+<div id="deseq2kallisto" class="usa-accordion__content usa-prose" markdown=1 hidden>
 
 {:.copy-code}
 ```R
@@ -1299,7 +1459,8 @@ write.csv(
 
 ###Next step: Functional annotation of DEGs
 ```
-
+</div>
+</div>
 
 </li>
 <li class="usa-process-list__item" markdown="1">
