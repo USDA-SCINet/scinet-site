@@ -16,6 +16,8 @@ subnav:
     url: '#singularity-images'
   - title: Executing Containers
     url: '#executing-containers'
+  - title: BioContainers
+    url: '#biocontainers'
   - title: Ceres Container Repository
     url: '#ceres-container-repository'
   - title: Support
@@ -25,7 +27,7 @@ subnav:
 ---
 Some software packages may not be available for the version of Linux running on the HPC cluster. In this case, users may want to run containers. Containers are self-contained application execution environments that contain all necessary software to run an application or workflow, so users don't need to worry about installing all the dependencies. There are many pre-built container images for scientific applications available for download and use.
 
-Apptainer (formerly Singularity) [https://apptainer.org](https://apptainer.org/) is an application for running containers on an HPC cluster. Containers are self-contained application execution environments that contain all necessary software to run an application or workflow, so you don't need to worry about installing all the dependencies. There are many pre-built container images for scientific applications available for download and use, see section [Container Images](#3-container-images).
+[Apptainer](https://apptainer.org) (formerly Singularity) is an application for running containers on an HPC cluster. Containers are self-contained application execution environments that contain all necessary software to run an application or workflow, so you don't need to worry about installing all the dependencies. There are many pre-built container images for scientific applications available for download and use, see section [Container Images](#3-container-images).
 <!--excerpt-->
 
 ## Prerequisites
@@ -49,13 +51,13 @@ NOTE: salloc by default runs on a single hyper-threaded core (2 logical cores) w
 
 ## Container Images
 
-Apptainer executes a container from an Apptainer/Singularity container image either created by the user or downloaded from Singularity Library [https://cloud.sylabs.io/library](https://cloud.sylabs.io/library), and can also import and execute Docker [https://www.docker.com/](https://www.docker.com/) container images, either directly uploaded by the user, or downloaded from Docker Hub [https://hub.docker.com/](https://hub.docker.com/).
+Apptainer executes a container from an Apptainer/Singularity container image either created by the user or downloaded from [Singularity Library](https://cloud.sylabs.io/library), and can also import and execute [Docker](https://www.docker.com/) container images, either directly uploaded by the user, or downloaded from [Docker Hub](https://hub.docker.com/).
 
 BioContainers is a "community-driven project that provides the infrastructure and basic guidelines to create, manage and distribute Bioinformatics [Docker] containers with special focus in Proteomics, Genomics, Transcriptomics and Metabolomics."
 
-BioContainers can be obtained either via docker [https://hub.docker.com/u/biocontainers/](https://hub.docker.com/u/biocontainers/) or via Quay [https://quay.io/](https://quay.io/)
+BioContainers can be obtained either via [Docker Hub](https://hub.docker.com/u/biocontainers/) or via [Quay](https://quay.io/) (see the [BioContainers section](#biocontainers) below for details).
 
-For leveraging GPU using containers, Nvidia provides a container library NGC. [https://ngc.nvidia.com/catalog/all](https://ngc.nvidia.com/catalog/all) 
+For leveraging GPU using containers, Nvidia provides a container library [NGC](https://ngc.nvidia.com/catalog/all).
 
 > NGC offers a comprehensive catalog of GPU-accelerated software for deep learning, machine learning, and HPC. NGC containers deliver powerful and easy-to-deploy software proven to deliver the fastest results. By taking care of the plumbing, NGC enables users to focus on building lean models, producing optimal solutions and gathering faster insights.
 
@@ -71,7 +73,7 @@ Getting image source signatures
 Copying blob 1fcd5305bc72 done
  ...
 INFO:    Creating SIF file...
-INFO:    Build complete: r-base_latest.sif  
+INFO:    Build complete: r-base_latest.sif
 ```
 
 The resulting singularity image (r-base.img) contains a complete environment (operating system, libraries, R installation) for running R.
@@ -83,7 +85,7 @@ While pulling/building the containers, pay attention to the home directory as th
 Since the home directory has a limited amount of space, this can fill up quite easily. Users can change where the files will be cached by setting APPTAINER_CACHEDIR and APPTAINER_TMPDIR environment variables. On Ceres we set APPTAINER_TMPDIR to $TMPDIR. We also set APPTAINER_CACHEDIR to $TMPDIR for all Slurm jobs if it's not set by the user. As of January 13, 2022, these variables are not automatically set on Atlas. We recommend adding the following two commands to the job scripts that use apptainer:
 
 ```
-export APPTAINER_CACHEDIR=$TMPDIR 
+export APPTAINER_CACHEDIR=$TMPDIR
 export APPTAINER_TMPDIR=$TMPDIR
 ```
 One can also use --disable-cache option to avoid saving cached image blobs (e.g., `apptainer pull --disable-cache docker://r-base:3.3.3` ).
@@ -100,9 +102,11 @@ images from Docker Hub, except replace the "docker://" URI prefix with "library:
 
 #### Creating Your Own Apptainer Images
 
-Root access is needed to create an Apptainer image from a bootstrap file. As Ceres users do not have root access, to create your own Singularity image, you can paste the bootstrap file to Singualrity cloud builder [https://cloud.sylabs.io/builder](https://cloud.sylabs.io/builder). 
+Most containers can be built without requiring admin privileges - users can build their own containers using the definition file on the cluster compute nodes.
 
-Bootstrap examples - https://github.com/sylabs/singularity/tree/master/examples
+For cases where that is not possible, container images can also be built using the [Singularity Cloud Builder](https://cloud.sylabs.io/builder).
+
+See [example Singularity definition files](https://github.com/sylabs/singularity/tree/master/examples).
 
 
 ## Executing Containers
@@ -193,6 +197,32 @@ Apptainer r-base.img:~> exit
 exit
 [user.name@ceres20-compute-44 ~]$
 ```
+
+## BioContainers
+[BioContainers](https://biocontainers.pro/) is a way to use BioConda packages without having to deal with conda environments.
+
+All packages available via BioConda channel are automatically containerized and available through the [BioContainers registry](https://biocontainers.pro/registry).
+
+Users need to simply search for the package they need to use and follow the instructions for links to the container images. These images are hosted in multiple registries, including:
+- [Quay](https://quay.io/)
+- [Galaxy Singularity depot](https://depot.galaxyproject.org/singularity/)
+
+On Linux based clusters like Ceres and Atlas, use Apptainer to work with these images.
+
+### Example
+For example, to run [minimap2](https://biocontainers.pro/tools/minimap2):
+```bash
+module load apptainer
+apptainer run https://depot.galaxyproject.org/singularity/minimap2:2.28--h577a1d6_4 minimap2
+```
+
+To cache the container image locally, users can pull and execute it with:
+```bash
+apptainer pull minimap2.sif https://depot.galaxyproject.org/singularity/minimap2:2.28--h577a1d6_4
+apptainer run minimap2.sif minimap2
+```
+
+If you are looking for specific versions of the application, click on “**Packages and Containers**” tab and use the links for the specific version you are looking for.
 
 ## Ceres Container Repository
 
