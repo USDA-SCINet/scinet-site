@@ -1042,6 +1042,7 @@ dotplot(go_res_down, showCategory = 15, title="GO BP Enrichment - Downregulated"
 
 </li>
 <li class="usa-process-list__item" markdown="1">
+{% comment %}
 
 {:.usa-process-list__heading}
 ### Quantification using Pseudoalignment 
@@ -1474,5 +1475,6 @@ Expression is then quantified by mapping reads to the assembled transcriptome us
 
 </li>
 
-
+{% endcomment %}
 </ol>
+
