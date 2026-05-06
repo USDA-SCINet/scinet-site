@@ -537,7 +537,7 @@ Using the following Linux commands, we can edit the outputs to produce a single 
 This file is ready to be imported to R for DESeq2.  
  
 </li>
-{% comment %}
+
 <li class="usa-process-list__item" markdown="1">
 
 {:.usa-process-list__heading}
@@ -816,234 +816,629 @@ pheatmap(exprs_scaled,
 <div id="functionalr" class="usa-accordion__content usa-prose" markdown=1 hidden>
 
 ```R
- #species: Arabidopsis thaliana (thale cress) 
+###########################################################################
+### Functional Annotation 
+##Goal: Run GO enrichment analysis & KEGG Pathway analysis
+###########################################################################
 
-#get packages  
-BiocManager::install("org.At.tair.db") 
-BiocManager::install(c("AnnotationDbi", "clusterProfiler")) 
-#load libraries 
-library(org.At.tair.db) 
-library(clusterProfiler) 
+#1. Install and Load Required Packages
+###########################################################################
+####install packages 
+BiocManager::install("org.At.tair.db")
+BiocManager::install(c("AnnotationDbi", "clusterProfiler", "pheatmap"))
 
-# get names of the significant genes 
-sig_gene_names<- merged_ordered$gene 
-head(sig_gene_names) 
+####load libraries
+library(org.At.tair.db) #provides Arabidopsis gene annotation
+library(clusterProfiler) #performs funcitonal enrichment analysis
+library(AnnotationDbi) #helps convert between gene ID types
+library(pheatmap) #creates clustered heatmaps 
 
-#convert TAIR IDs to entrez IDs for annotation  
+###########################################################################
+#2. Gather significant DEGs
+###########################################################################
+##### get names of the significant genes
+sig_gene_names<- merged_ordered$gene
 
-entrez_ids <- mapIds(org.At.tair.db, keys = sig_gene_names, column="ENTREZID", keytype = "TAIR", multiVals = "first") 
 
-#get rid of the missing mappings 
+#preview:
+head(sig_gene_names)
 
-entrez_ids <- na.omit(entrez_ids) 
+length(sig_gene_names)
 
-go_res<- enrichGO(gene = entrez_ids, 
-                  OrgDb = org.At.tair.db, 
-                  keyType = "ENTREZID", 
-                  ont = "BP", #options: BP, MF, CC 
-                  pAdjustMethod = "BH", 
-                  qvalueCutoff = 0.05, 
-                  readable = TRUE) 
+#Remove missing values and duplicates
+sig_gene_names <- unique(na.omit(sig_gene_names))
 
-go_res 
+#check how many genes remain: 
+length (sig_gene_names)
 
-#Plot results 
-dotplot(go_res, showCategory = 15, title="GO BP: Arabidopsis Thaliana") 
+###########################################################################
+# 3. Convert TAIR IDs to Entrez IDs for annotation 
+#Some annotation tools require Entrez IDs
+###########################################################################
 
-#Option to relax thresholds: 
+entrez_ids <- mapIds(org.At.tair.db, keys = sig_gene_names, 
+                     column="ENTREZID", 
+                     keytype = "TAIR", multiVals = "first")
 
-go_res<- enrichGO(gene = entrez_ids, 
-                  OrgDb = org.At.tair.db, 
-                  keyType = "ENTREZID", 
-                  ont = "BP", #options: BP, MF, CC 
-                  pAdjustMethod = "BH", 
-                  qvalueCutoff = 0.2, 
-                  pvalueCutoff = 0.1, 
-                  readable = TRUE) 
+#keys=your input gene list
+#keytype = type of input ID
+#column = what you want to convert to
+#multiVals = how to handle multiple mappings (take first)
 
-dotplot(go_res, showCategory = 15, title="GO BP: Arabidopsis Thaliana") 
+### Remove the genes that could not be mapped:
+entrez_ids <- na.omit(entrez_ids)
 
-### USING SYMBOL instead of using ENTREZ_ID 
+#preview:
+head(entrez_ids)
+length(entrez_ids)
 
-symbols <- mapIds(org.At.tair.db, keys = sig_gene_names, column="SYMBOL", keytype = "TAIR", multiVals = "first") 
+###########################################################################
+# 4. GO enrichment analysis
+###########################################################################
 
-#get rid of the missing mappings 
-symbols <- na.omit(symbols) 
 
-go_res2<- enrichGO(gene = symbols, 
-                  OrgDb = org.At.tair.db, 
-                  keyType = "SYMBOL", 
-                  ont = "BP", #options: BP, MF, CC 
-                  pAdjustMethod = "BH", 
-                  qvalueCutoff = 0.05, 
-                  readable = TRUE) 
+go_res<- enrichGO(gene = entrez_ids,
+                  OrgDb = org.At.tair.db,
+                  keyType = "ENTREZID",
+                  ont = "BP", #options: BP, MF, CC
+                  pAdjustMethod = "BH",
+                  pvalueCutoff = 0.05,
+                  qvalueCutoff = 0.05,
+                  readable = TRUE)
 
-dotplot(go_res2, showCategory = 15, title="GO BP: Arabidopsis Thaliana") 
+go_res
 
-### KEGG Enrichment  
+####Plot results
+dotplot(go_res, showCategory = 15, title="GO BP: Arabidopsis thaliana")
 
-#enrichKEGG identifies over represented KEGG pathways for Arabidopsis.  
 
-ekegg<- enrichKEGG(gene = sig_gene_names, 
-                   organism = "ath", 
-                   pvalueCutoff = 0.05) 
+####If few/no GO results, relax thresholds:
+
+go_res<- enrichGO(gene = entrez_ids,
+                  OrgDb = org.At.tair.db,
+                  keyType = "ENTREZID",
+                  ont = "BP", #options: BP, MF, CC
+                  pAdjustMethod = "BH",
+                  qvalueCutoff = 0.2,
+                  pvalueCutoff = 0.1,
+                  readable = TRUE)
+
+
+dotplot(go_res, showCategory = 15, title="GO BP: Arabidopsis thaliana")
+
+#MF = molecular function 
+#What molecular activities are enriched?
+go_res_MF<- enrichGO(gene = entrez_ids,
+                     OrgDb = org.At.tair.db,
+                     keyType = "ENTREZID",
+                     ont = "MF", #options: BP, MF, CC
+                     pAdjustMethod = "BH",
+                     qvalueCutoff = 0.2,
+                     pvalueCutoff = 0.1,
+                     readable = TRUE)
+
+
+dotplot(go_res_MF, showCategory = 15, title="GO MF: Arabidopsis thaliana")
+
+
+###########################################################################
+# 5. USING SYMBOL instead of using ENTREZ_ID
+###########################################################################
+
+symbols <- mapIds(org.At.tair.db, keys = sig_gene_names, 
+                  column="SYMBOL", keytype = "TAIR", multiVals = "first")
+
+####get rid of the missing mappings
+symbols <- na.omit(symbols)
+
+go_res2<- enrichGO(gene = symbols,
+                   OrgDb = org.At.tair.db,
+                   keyType = "SYMBOL",
+                   ont = "BP", #options: BP, MF, CC
+                   pAdjustMethod = "BH",
+                   qvalueCutoff = 0.05,
+                   pvalueCutoff = 0.05,
+                   readable = TRUE)
+
+dotplot(go_res2, showCategory = 15, title="GO BP: Arabidopsis thaliana")
+
+#CC = cellular component
+#Where in the cell are these gene products enriched?
+go_res_CC<- enrichGO(gene = entrez_ids,
+                     OrgDb = org.At.tair.db,
+                     keyType = "ENTREZID",
+                     ont = "CC", #options: BP, MF, CC
+                     pAdjustMethod = "BH",
+                     qvalueCutoff = 0.2,
+                     pvalueCutoff = 0.1,
+                     readable = TRUE)
+
+
+dotplot(go_res_CC, showCategory = 15, title="GO CC: Arabidopsis thaliana")
+
+###########################################################################
+# 6. KEGG Enrichment 
+###########################################################################
+
+####enrichKEGG identifies over represented KEGG pathways for Arabidopsis. 
+
+ekegg<- enrichKEGG(gene = sig_gene_names,
+                   organism = "ath",
+                   pvalueCutoff = 0.05)
+
+
 barplot(ekegg, showCategory = 15, title="KEGG: Arabidopsis thaliana")
+
+###########################################################################
+# 7. Optional: GO enrichment for upregulated vs downregulated genes
+###########################################################################
+
+#upregulated genes
+upreg_genes<- merged_ordered$gene[
+  merged_ordered$padj <0.05 & merged_ordered$log2FoldChange > 0 
+]
+
+#downregulated genes
+downreg_genes<- merged_ordered$gene[
+  merged_ordered$padj <0.05 & merged_ordered$log2FoldChange < 0 
+]
+
+#clean up gene lists 
+
+upreg_genes<-unique(na.omit(upreg_genes))
+downreg_genes<-unique(na.omit(downreg_genes))
+
+#GO BP enrichment for upregulated genes 
+go_res_up<- enrichGO(gene = upreg_genes,
+                     OrgDb = org.At.tair.db,
+                     keyType = "SYMBOL",
+                     ont = "BP", #options: BP, MF, CC
+                     pAdjustMethod = "BH",
+                     qvalueCutoff = 0.05,
+                     pvalueCutoff = 0.05,
+                     readable = TRUE)
+
+dotplot(go_res_up, showCategory = 15, title="GO BP Enrichment - Upregulated")
+
+
+#GO BP enrichment for downregulated genes
+
+go_res_down<- enrichGO(gene = downreg_genes,
+                     OrgDb = org.At.tair.db,
+                     keyType = "SYMBOL",
+                     ont = "BP", #options: BP, MF, CC
+                     pAdjustMethod = "BH",
+                     qvalueCutoff = 0.05,
+                     pvalueCutoff = 0.05,
+                     readable = TRUE)
+
+dotplot(go_res_down, showCategory = 15, title="GO BP Enrichment - Downregulated")
 ```
 </div>
 </div>
 
 </li>
 <li class="usa-process-list__item" markdown="1">
+{% comment %}
 
 {:.usa-process-list__heading}
 ### Quantification using Pseudoalignment 
 
 RNA-seq analysis usually involves mapping sequencing reads to a reference genome to quantify gene expression levels. When a high-quality reference genome is unavailable, the transcriptome is typically assembled from the sequencing reads, allowing for the estimation of transcript abundance without performing a full alignment. 
 
-Pseudoalignment is a technique that determines which transcripts a read could originate from without aligning each base of the read to the genome. One example of a pseudoaligner is Kallisto.  
-
-Kallisto is a fast, alignment-free method for estimating transcript abundance from RNA-seq data. Instead of traditional base-by-base alignment, kallisto uses k-mer matching, which involves identifying short, fixed-length sequences (k-mers) shared between reads and transcripts to quickly assign reads to compatible transcripts. Kallisto then applies probabilistic models—statistical frameworks that account for uncertainty and variability in the assignment process—to estimate transcript abundance. 
+Kallisto is a fast, alignment-free method for estimating transcript abundance from RNA-seq data. Instead of traditional base-by-base alignment, kallisto uses k-mer matching, which involves identifying short, fixed-length sequences (k-mers) shared between reads and transcripts to quickly assign reads to compatible transcripts. 
 
 We will explore how kallisto works by using a transcriptome for *Arabidopsis* which we downloaded from Ensembl. 
 
-* Relaunch VS Code and navigate to the working directory: 
+Relaunch VS Code and navigate to the working directory: 
 
-  ```bash
-  /90daydata/shared/$USER/intro_rnaseq
-  ```
-  {:.copy-code}
+{:.copy-code}
 
-* Load the software
+```bash
+/90daydata/shared/$USER/intro_rnaseq
+```
 
-  ```bash
-  module load kallisto
-  ```
-  {:.copy-code}
+*Load the software
 
-  ```bash
-  kallisto version
-  ```
-  {:.copy-code}
+{:.copy-code}
+```bash
+module load kallisto
+```
 
 #### Build an index 
 
-* Create working directories 
+*Create working directories:
 
-  ```bash
-  mkdir -p intro_rnaseq/{index, results}
-  ```
-  {:.copy-code}
+{:.copy-code}
+```bash
+mkdir 08_Kallisto
 
-  Directory details: 
-  index - stores the kallisto index
-  results - stores the outputs
+cd 08_Kallisto
 
-* To build the index:  
-  Code Format: `kallisto index -i [index name.idx] [transcriptome path]`
+mkdir -p index results
+```
 
-  * `kallisto index` - builds index
-  * `-i`: location of index file 
-  * `.fa`: transcript sequences
-  * `.idx` - structure that allows Kallisto to run quickly
+*To build the index: 
 
-  ```bash
-  kallisto index -i Arabidopsis_thali.idx files/00_Transcriptome/Arabidopsis_thaliana.TAIR10.cdna.all.fa.gz
-  ```
-  {:.copy-code}
+Code Format: `kallisto index -i [index name.idx] [transcriptome path]`
 
-* Quantification  
-  Run Kallisto on one sample first: 
+* `kallisto index`:  builds index
+* `-i`: location of index file 
+* `.fa`: transcript sequences
+* `.idx`: structure that allows Kallisto to run quickly
 
-  kallisto quant options:
-  * -i #index file
-  * -o #output folder
-  * -b #bootstrap runs / confidence esimations
-  * -t # number of CPUS threads/spped
-  * paired read 1
-  * paired read 2
+{:.copy-code}
+```bash
 
-  ```bash
-  time kallisto quant -i Arabidopsis_thali.idx -o /project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis/kallisto_test/outputs -b 100 -t 4 /project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis/files/00_RawData/SRR4420293_1.fastq.gz /project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis/files/00_RawData/SRR4420293_2.fastq.gz
-  ```
-  {:.copy-code}
+TRANS="/90daydata/shared/$USER/intro_rnaseq/00_Transcriptome"
 
-* Expected output: 
-* abundance.tsv
-* abundance.h5
-* run_info 
+kallisto index -i index/Arabidopsis_thaliana.idx ${TRANS}/Arabidopsis_thaliana.TAIR10.cdna.all.fa.gz
+```
+* Quantification
 
-  ```bash
-  head abundance.tsv
-  ```
+`kallisto quant` options:
 
-  ```bash
-  cat run_info
-  ```
-  {:.copy-code}
+*`-i : index file
+*`-o`: output folder
+*`-b`:bootstrap runs / confidence estimations
+*`-t`: number of CPU threads
+* `paired read 1`
+* `paired read 2`
 
-We will run the script below to complete quantification on all reads: 
+Expected output: 
+
+* `abundance.tsv`: quantification file
+* `abundance.h5`: binary HDF5 format of the quantification results
+* `run_info`: summary file with information about the job run
+
+Navigate to main working directory: 
+{:.copy-code}
+```bash
+/90daydata/shared/$USER/intro_rnaseq
+```
+
+{:.copy-code}
+```bash
+ touch 00_Scripts/08_kallisto_quant.sl
+```
+
+Open the file `00_Scripts/08_kallisto_quant.sl` in the VS Code editor and copy and paste the script below:
+
 
 {:.copy-code}
 ```bash
 #!/bin/bash
+#SBATCH --account=scinet_workshop2
+#SBATCH --reservation=foundations_workshop 
 #SBATCH --job-name=kallisto_quant
-#SBATCH --output=kallisto_%j.out
-#SBATCH --error=kallisto_%j.err
+#SBATCH --output=slurm_logs/kallisto_%j.out
+#SBATCH --error=slurm_logs/kallisto_%j.err
 #SBATCH --time=04:00:00
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=16G
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=50G
 
 #Load kallisto
 module load kallisto 
 
-#navigate to main analysis folder
-
-cd /project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis
-
-
 #Set paths 
-INDEX="/project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis/kallisto_test/index/Arabidopsis_thali.idx"
-
-RAW_DIR="/project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis/files/00_RawData"
-RESULTS_DIR="/project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis/kallisto_test/outputs"
+INDEX="/90daydata/shared/$USER/intro_rnaseq/08_Kallisto/index/Arabidopsis_thaliana.idx"
+RAW_DIR="/90daydata/shared/$USER/intro_rnaseq/00_RawData"
+RESULTS_DIR="/90daydata/shared/$USER/intro_rnaseq/08_Kallisto/results"
 
 #find all read 1 files that end with _1.fastq.gz
-for r1 in ${FASTQ_DIR}/*_1.fastq.gz
+for r1 in ${RAW_DIR}/*_1.fastq.gz
 
 do 
 
 #get sample name only
-sample=$(basename "$read1" _1.fastq.gz)
+sample=$(basename "$r1" _1.fastq.gz)
 
 #find matching read 2
-r2="${FASTQ_DIR}/${sample}_2.fastq.gz"
-done 
-
+r2="${RAW_DIR}/${sample}_2.fastq.gz"
+ 
 #echo the sample being processed
 echo "Currently processing: ${sample}"
 
 ###Run kallisto
 
-kallisto quant -i ${INDEX} -o {RESULTS_DIR}/${sample} -b 100 -t ${SLURM_CPUS_PER_TASK} ${r1} ${r2}
+kallisto quant -i ${INDEX} -o ${RESULTS_DIR}/${sample} -b 100 -t ${SLURM_CPUS_PER_TASK} ${r1} ${r2}
 
 #Print completion message
-echo "Finished with ${sample}
+echo "Finished with ${sample}"
 
 done
 
 echo "All runs complete" 
 ```
-
+Submit the slurm script:  
 {:.copy-code}
 ```bash
-sbatch kallisto_quant.sh
+sbatch 00_Scripts/08_kallisto_quant.sl
 ```
-
-Now that we have transcript levels expression estimates for each sample, we need to combine before DESEQ.
-
-Kallisto estimates expression at the transcript level. tximport is necessary for importing Kalisto results into R and can summarize transcript-level estimates to the gene level if we provide a tracript-to-gene mapping file. The official tximport vignette notes that Kallisto output only provides transcript IDs, so a two-solcumn tx2gene table is needed for gene-level summarization. 
+Let's take a look at the output files: 
+{:.copy-code}
+```bash
+head abundance.tsv
+```
+{:.copy-code}
+```bash
+cat run_info
+```
+Now that we have transcript level expression estimates for each sample, we need to combine them before running DESeq2 for differential gene expression analysis. We will do this in R.
 
 * Launch R Studio
+
+
+  <div class="usa-accordion__heading">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="deseq2kallisto"
+    >
+      DESeq2 workflow after Kallisto R code
+    </button>
+  </div>
+<div id="deseq2kallisto" class="usa-accordion__content usa-prose" markdown=1 hidden>
+
+{:.copy-code}
+```R
+
+###########################################################################
+#Using Kallisto Results for DESeq2 Workflow 
+#Goal: run differential gene expression analysis and visualize results
+###########################################################################
+
+###########################################################################
+#1. Set your working directory to the folder with the results from Kallisto
+
+#setwd("/90daydata/shared/$USER//intro_rnaseq/08_Kallisto/results")
+
+#replace $USER with your SCINet account username
+
+setwd("/90daydata/shared/lavida.rogers/intro_rnaseq/08_Kallisto/results")
+
+
+############################################################################
+#2. Install and load required packages
+
+BiocManager::install(c("tximport","biomaRt", "DESeq2"))
+
+#Load libraries:
+
+library(tximport) 
+#used to import kallisto output files into R 
+#helps to summarize transcript-level results to gene-level counts
+
+library(DESeq2) #performs differential gene expression analysis
+#library(GenomicFeatures)
+#library(readr)
+library(biomaRt) 
+#used to retrieve transcript-to-gene annotations from Ensembl Plants
+
+############################################################################
+#3. Find Kallisto outputs
+############################################################################
+#Get a list of directories (sample folders) in the current working directory
+#Each directory corresponds to one sample and contains abundance.tsv 
+
+samples <-list.dirs(path = ".", recursive = FALSE)
+samples
+
+#Create full paths to each sample's abundance.tsv file
+#file path() combines folder names with the file name
+quant_files<-file.path(samples, "abundance.tsv")
+
+#Use folder names as sample names:
+names(quant_files) <- basename(samples)
+#These names become the sample names in the count matrix
+
+#Confirm we identified the correct files
+quant_files
+
+###############################################################################
+#4.  Get the transcript-to-gene mapping file 
+#This file connects transcript IDs to gene IDs
+###############################################################################
+#We have to connect to Ensembl Plants
+#Arabidopsis is in Ensembl Plants
+#Load biomaRt/install if needed: 
+
+
+#list of BioMart databases we can connect to:
+listMarts(host="https://plants.ensembl.org")
+
+#Connect to Ensembl Plants
+mart<-useMart(
+  biomart = "plants_mart", 
+  host = "https://plants.ensembl.org")
+
+#Find the Arabidopsis dataset
+datasets<- listDatasets(mart)
+head(datasets)
+
+#Look for Arabidopsis
+datasets[grep("thaliana", datasets$description, ignore.case=TRUE),]
+
+#Connect to the dataset
+
+mart<-useMart(
+  biomart = "plants_mart", 
+  dataset = "athaliana_eg_gene",
+  host = "https://plants.ensembl.org"
+)
+
+#Get transcript to gene mapping
+#Retrieves transcript IDs and their corresponding gene IDs
+
+tx2gene<-getBM(attributes = c("ensembl_transcript_id","ensembl_gene_id"),
+               mart=mart)
+
+
+#Rename columns for tximport
+colnames(tx2gene) <- c("transcript","gene")
+
+
+
+#Convert tx2gene into a two-column dataframe
+tx2gene_update<-data.frame(transcript=as.character(tx2gene[[1]]),
+                           gene=as.character(tx2gene[[2]]))
+
+
+#preview
+head(tx2gene_update)
+
+#We have successfully pulled a mapping between transcript IDs and gene IDs.
+
+#We used biomaRt to pull the transcript-to-gene mappings directly
+#did not need to build a database from the GTF file
+
+##############################################################################
+# 5. Test if IDs match 
+##############################################################################
+#here we will compare kallisto transcript IDs to tx2gene transcript IDs
+
+#Look at transcript IDs from the first sample 
+kallisto_ids<- read.delim(quant_files[1])$target_id
+head(kallisto_ids)
+
+
+head(tx2gene_update$transcript)
+
+#check for overlap
+
+#count how many kallisto transcript IDs match tx2gene
+sum(kallisto_ids %in% tx2gene_update$transcript)
+
+##############################################################################
+#6. Import Kallisto output with tximport
+##############################################################################
+#tximport uses tx2gene_update to summarize transcript-level estimates
+#to gene-level counts so we can run Deseq2
+
+#import kallisto results and summarize to gene level
+txi<-tximport(
+  quant_files,
+  type = "kallisto",
+  tx2gene = tx2gene_update,
+  ignoreAfterBar = TRUE
+)
+
+#preview:
+head(txi$counts)
+#dimensions: genes x samples
+dim(txi$counts)
+
+#############################################################################
+#7.Create sample meta data
+#############################################################################
+#Let's create sample tble describing each sample
+sampleTable <- data.frame(sampleName=names(quant_files), 
+                          condition=c("WT","WT","WT","MUT","MUT","MUT"))
+
+#set row names to sample names
+#Deseq2 will use the rownames to match the metadata table to count columns
+rownames(sampleTable)<-sampleTable$sampleName
+
+#preview
+sampleTable
+
+#############################################################################
+#8.Create Deseq2 object 
+#############################################################################
+
+dds_kallisto<- DESeqDataSetFromTximport(
+  txi, #imported gene level counts
+  colData=sampleTable, #sample information
+  design = ~condition #variable to test/used for comparing samples
+)
+
+#filter low-count genes to remove noise
+#dds_kallisto<-dds_kallisto[rowSums(counts(dds_kallisto))>10,]
+
+#############################################################################
+#### 9.Run DESeq2 analysis
+#############################################################################
+
+dds_kallisto <- DESeq(dds_kallisto)
+
+####check sample info
+colData(dds_kallisto)
+
+####check dispersion estimates
+plotDispEsts(dds_kallisto)
+
+####extract results 
+head(results(dds_kallisto))
+
+####summary
+summary(results(dds_kallisto))
+
+####check available coefficients
+resultsNames(dds_kallisto) 
+
+#### Extract normalized counts
+norm_counts_k <- counts(dds_kallisto, normalized=TRUE)
+
+#### Boxplot of normalized log counts
+boxplot(log10(norm_counts_k + 1), las=2, main="Normalized log10(counts+1)", col="lightgreen")
+
+
+#### Get differential expression results
+
+####summary table of results:
+table(results(dds_kallisto,contrast = c("condition", "WT", "MUT"))$padj<=0.05)
+
+#219 genes are statistically different and 5968 are not
+
+#store results as variable
+dds_results<-results(dds_kallisto)
+
+#############################################################################
+#volcano plot
+#############################################################################
+
+plot(dds_results$log2FoldChange,
+     -log10(dds_results$padj),
+     main="Volcano Plot using Kallisto Counts",
+     xlab="Log2FC",
+     ylab="-log10 adjusted p-val")
+
+#highlight significant genes
+significant_genes<- dds_results$padj <0.05
+
+plot(dds_results$log2FoldChange,
+     -log10(dds_results$padj),
+     pch=20,
+     col=ifelse(significant_genes,"red","gray"),
+     main="Volcano Plot using Kallisto Counts",
+     xlab="Log2FC",
+     ylab="-log10 adjusted p-val")
+
+#############################################################################
+#PCA plot
+#############################################################################
+vsd<-vst(dds_kallisto) #stabilizes variance across count levels 
+
+#create pca plot to see how samples cluster
+plotPCA(vsd, intgroup="condition")
+
+#############################################################################
+#Save results
+#############################################################################
+
+DEGs<-significant_genes[which(significant_genes$padj <0.05),]
+
+#Save to file 
+write.csv(
+  as.dataframe(DEGs),
+  file = "Arabidopsis_significant_DEGs_Kallisto.csv")
+)
+
+###Next step: Functional annotation of DEGs
+```
+</div>
+</div>
 
 </li>
 <li class="usa-process-list__item" markdown="1">
@@ -1056,6 +1451,7 @@ De novo RNA-seq analysis is used when a reference genome is not available. In th
 Expression is then quantified by mapping reads to the assembled transcriptome using alignment-free methods. 
 
 </li>
-{% endcomment %}
 
+{% endcomment %}
 </ol>
+
