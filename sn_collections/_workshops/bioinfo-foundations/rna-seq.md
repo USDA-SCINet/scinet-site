@@ -417,8 +417,61 @@ Submit the script:
   
 
 This will take about 15-30 minutes to complete.  
+---
+
+**Exploring a BAM file:**
+
+Use the code below as a guide
+
+```bash
+# Look at the header — what genome was used? what aligner?
+samtools view -H sample.bam | head -30
+
+# View first 10 alignments in human-readable form
+samtools view sample.bam | head -10
+
+# How many reads total? mapped? properly paired?
+samtools flagstat sample.bam
+
+# Alignment summary statistics
+samtools stats sample.bam | grep ^SN | cut -f 2-
+
+# Pull only reads mapping to one gene region (e.g. a known highly expressed gene)
+samtools view sample.bam chr1:1000000-1001000
+
+# Filter to only properly paired, primary alignments (the reads featureCounts actually uses)
+samtools view -f 2 -F 256 sample.bam | head -10
+
+# Check insert size distribution (sanity check on library)
+samtools stats sample.bam | grep ^IS | cut -f 2-3 | head -20
+```
+
+**Exploring the Hisat2 LOGS:**
+
+The code below is just an example to explore the log file
+
+```bash
+cat SRR4420293_trimmed.log 
+14930965 reads; of these:
+  14930965 (100.00%) were paired; of these:
+    343736 (2.30%) aligned concordantly 0 times
+    6243732 (41.82%) aligned concordantly exactly 1 time
+    8343497 (55.88%) aligned concordantly >1 times
+    ----
+    343736 pairs aligned concordantly 0 times; of these:
+      16257 (4.73%) aligned discordantly 1 time
+    ----
+    327479 pairs aligned 0 times concordantly or discordantly; of these:
+      654958 mates make up the pairs; of these:
+        383410 (58.54%) aligned 0 times
+        75880 (11.59%) aligned exactly 1 time
+        195668 (29.87%) aligned >1 times
+98.72% overall alignment rate
+```
 
 </li>
+
+
 <li class="usa-process-list__item" markdown="1">
 
 {:.usa-process-list__heading}
@@ -535,6 +588,171 @@ Using the following Linux commands, we can edit the outputs to produce a single 
   {:.copy-code}
 
 This file is ready to be imported to R for DESeq2.  
+
+Before venturing into DESeq2. Let's talk about some common scenarios in biological RNAseq data:
+
+**1. Low Coverage** 
+We don't have enough reads to confidently place every read, so you need to be more permissive at the alignment stage but more stringent at the counting stage.
+
+a. HISAT2 adjustments:
+
+```bash
+#Be more sensitive — allow more mismatches, don't penalize gaps as heavily
+--score-min L,-0.6,-0.6   # default is L,-0.2,-0.2; relaxing this recovers more alignments
+--no-mixed                 # REMOVE this flag if you had it; you want to keep singleton pairs
+--no-discordant            # similarly, REMOVE — discordant pairs are still signal at low coverage
+
+# Allow more multimappers through — at low coverage you can't afford to discard them
+-k 5                       # report up to 5 alignments per read instead of default 1
+```
+
+b. featureCounts adjustments:
+```bash
+# Accept multi-mapping reads — at low coverage every read counts
+-M                         # count multi-mapping reads
+--fraction                 # distribute multi-mapper counts fractionally across loci
+
+# Be permissive about read-to-feature overlap
+--minOverlap 1             # default is 1 but make sure it isn't set higher
+--fracOverlap 0            # don't require any minimum fraction of read to overlap
+
+# Don't require both pairs to map
+-p                         # paired-end flag — keep it
+--countReadPairs           # but consider switching to counting reads not pairs if coverage is very low
+```
+
+
+**2. Very High Coverage**
+You have so many reads that multi-mappers and ambiguous counts overwhelm your results, and runtime becomes painful.
+
+a. HISAT2 adjustments:
+
+```bash
+# Be more stringent — only accept high-confidence alignments
+--score-min L,0,−0.2       # stricter than default; fewer but more reliable alignments
+
+# Limit multimappers aggressively
+-k 1                        # only report the single best alignment (faster too)
+--no-discordant             # discard discordant pairs — at high coverage you can afford to
+--no-mixed                  # discard singletons — same reasoning
+
+# Practical: use more threads
+-p 16                       # or however many cores you have; runtime matters at high coverage
+
+# Downstream: you may want to mark and remove duplicates after alignment
+# samtools markdup or Picard MarkDuplicates
+samtools markdup -r input.bam output.bam   # -r actually removes rather than just marking
+```
+
+b. featureCounts adjustments:
+```bash
+# Be stringent about what counts
+-Q 30                      # only count reads with MAPQ >= 30 (high-confidence placements)
+--ignoreDup                # ignore reads flagged as PCR duplicates by markdup
+
+# Require meaningful overlap — at high coverage you can afford to be strict
+--minOverlap 10            # require at least 10 bp overlap with feature
+--fracOverlap 0.5          # require at least 50% of read to overlap the feature
+
+# Don't count multi-mappers — at high coverage you have enough primary alignments
+# simply omit -M flag
+```
+
+**3. Polyploid Data**
+
+This is the most conceptually difficult scenario because the genome itself contains multiple copies of nearly identical sequences, so multi-mapping is not a technical artifact — it's biologically real and expected.
+
+a. HISAT2 adjustments:
+
+```bash
+# You must allow multimappers — the homeologs are real
+-k 10                      # report up to 10 alignments; in hexaploids (wheat) go higher
+--no-spliced-alignment     # consider this if your annotation is subgenome-specific and clean
+                           # otherwise leave spliced alignment on
+
+# For allopolyploids with subgenome-specific references (e.g. AtAt, CaCa in Brassica):
+# Build separate indices per subgenome and align to each, then reconcile
+# OR align to the combined polyploid reference and use subgenome-specific annotation
+
+# Score penalty tuning for homeolog discrimination
+--mp 4,2                   # mismatch penalty: max 4, min 2 (default 6,2)
+                           # slightly more tolerant of homeolog-level mismatches
+--rdg 3,2                  # read gap penalty — relax slightly
+```
+b. featureCounts adjustments:
+
+```bash
+# Multi-mapper handling is the central decision
+-M --fraction              # fractional counting — splits counts equally among homeologs
+                           # this is the most conservative and commonly recommended approach
+
+# If your GTF has subgenome-specific gene IDs (e.g. TraesCS1A vs TraesCS1B in wheat):
+-g gene_id                 # default — works if annotation distinguishes subgenomes
+
+# If you want to collapse homeologs intentionally:
+-g gene_name               # use gene name instead of ID if homeologs share a name in GTF
+
+# Require higher overlap to reduce homeolog cross-assignment
+--minOverlap 25            # longer overlap = more discriminating placement
+--fracOverlap 0.5
+```
+**4. Poorly Annotated Plant Genome**
+
+Sometimes, we have to deal with a draft genome with fragmented assembly, a GFF3 converted from another species, or a genome where most genes are annotated by ab initio prediction rather than transcript evidence.
+
+a. HISAT2 adjustments:
+
+```bash
+# Use a splice-site aware strategy but don't trust the annotation blindly
+# First: generate a splice site file FROM your own RNA-seq data, not just the GTF
+hisat2_extract_splice_sites.py annotation.gtf > known_splice_sites.txt
+hisat2_extract_exons.py annotation.gtf > known_exons.txt
+
+# Build index with known sites as a guide, but allow novel junction discovery
+hisat2-build --ss known_splice_sites.txt --exon known_exons.txt genome.fa genome_index
+
+# During alignment: allow novel splicing
+# (this is actually the default — just don't use --no-spliced-alignment)
+--dta                      # downstream transcriptome assembly flag
+                           # produces output better suited for StringTie if you plan to
+                           # improve the annotation using your own reads
+
+# Be more permissive about alignment score — annotation gaps mean some real reads
+# will align "imperfectly"
+
+--score-min L,-0.6,-0.6
+```
+
+b. featureCounts adjustments:
+
+```bash
+# Poorly annotated genomes often have fragmented gene models
+# A read spanning two annotation fragments of the same real gene gets discarded by default
+-f                         # count at exon level instead of gene level
+                           # then you can aggregate manually and catch fragmented models
+
+# Allow reads that partially overlap annotated regions
+--fracOverlap 0.25         # lower threshold — partial overlaps are meaningful here
+--minOverlap 5
+
+# Don't require both ends of a pair to map to the same feature
+# (fragmented annotation means mates may land in annotated and unannotated space)
+-p but omit --requireBothEndsMapped
+
+# Relaxed strandedness — poorly converted annotations often have strand errors
+-s 0                       # unstranded counting if you're unsure annotation strand is reliable
+```
+
+For a poorly annotated genome, use the RNA-seq data to improve the annotation rather than just accept it.
+
+HISAT2 (with --dta flag)
+- StringTie (assemble transcripts per sample)
+- StringTie --merge (create a consensus annotation across samples)
+- compare with MAKER or GFFCompare against existing annotation
+- use improved GTF for featureCounts
+
+ BUSCO on the resulting transcript set gives you a completeness metric to report.
+
  
 </li>
 
@@ -1106,6 +1324,7 @@ Open the file `00_Scripts/08_kallisto_quant.sl` in the VS Code editor and copy a
 
 
 {:.copy-code}
+
 ```bash
 #!/bin/bash
 #SBATCH --account=scinet_workshop2
@@ -1446,9 +1665,104 @@ write.csv(
 {:.usa-process-list__heading}
 ### De Novo Transcriptome Assembly and Quantification 
 
-De novo RNA-seq analysis is used when a reference genome is not available. In this case, instead of aligning reads to a reference genome, sequence reads are assembled into transcript sequences to generate a sample-specific transcriptome using only the information available in the RNA-seq reads. 
+Let's now assume that Arabidopsis doesn't have a sequenced genome. We start with the RNA-seq reads and assemble them into de novo transcripts — a fundamentally harder problem than when you have the genome alignment because we have no map to work from. One such de novo assembler is Trinity. Before understanding what Trinity does, it helps to understand why naive assembly fails for RNA-seq data. Unlike a genome, a transcriptome has wildly unequal coverage — a highly expressed gene might have 10,000× more reads than a lowly expressed one. Standard genome assemblers assume roughly uniform coverage and break down completely under these conditions. Trinity was designed specifically to handle this.
 
-Expression is then quantified by mapping reads to the assembled transcriptome using alignment-free methods. 
+Trinity's uses de Bruijn graph to partition and assemble reads. Rather than trying to assemble reads directly, Trinity breaks every read into short overlapping substrings of length k (k-mers), and builds a graph where each unique k-mer is a node and edges represent overlaps. Paths through this graph represent candidate transcripts. The appeal of this approach is that it doesn't require a reference — the reads wire up the graph themselves.
+
+Trinity then works in three sequential stages:
+
+**1. Inchworm** traverses the de Bruijn graph greedily, following the most abundant k-mer paths first. This produces a set of unique transcript sequences — essentially the dominant isoform at each locus. It is fast but ignores complexity: alternatively spliced isoforms and paralogous genes are collapsed or missed at this stage.
+
+**2. Chrysalis** takes the Inchworm contigs and clusters them into groups that share k-mers, then builds a separate, smaller de Bruijn graph for each cluster. This is the key architectural decision that makes Trinity tractable — instead of one enormous graph for the whole transcriptome (which would be computationally expensive), you get thousands of small, manageable graphs, each representing the transcriptional complexity at a single locus or gene family.
+
+**3. Butterfly** then processes each small graph independently. It traces all the paths through the graph that are supported by read evidence, resolving alternative splicing events, paralog distinctions, and sequencing errors. The output is a FASTA file of assembled <u>transcript sequences</u>, potentially many per locus.
+
+A few things worth keeping in mind about de novo assembly:
+
+* k-mer size (25): Larger k gives more specificity but requires higher coverage; smaller k is more sensitive but generates more spurious connections in the graph. 
+
+* Output is transcripts (multiple isoforms per locus), and it has no way of knowing which are real biological isoforms versus assembly artifacts. Downstream tools like BUSCO (completeness assessment) and TransDecoder (ORF prediction) are essential next steps.
+
+* Coverage depth: De novo assembly generally requires deeper sequencing than genome-guided approaches — 50–100M reads per sample is a more comfortable starting point than the 20–30M that suffices for HISAT2 alignment.
+
+There is no ground truth. Unlike genome-guided assembly where you can check your mapping rate against a known reference, de novo assembly quality is harder to assess. BUSCO scores and the N50 of your assembly are your primary sanity checks.
+
+Trinity's output is a hypothesis about what transcripts exist in your sample. Every downstream analysis — quantification, differential expression, annotation — is testing and refining that hypothesis.
+
+---
+For Trinity assembly, we will first create the empty script file:
+
+{:.copy-code}
+    
+```bash
+touch 00_Scripts/09_trinity_slurm.sl
+```
+Open the file `00_Scripts/09_trinity_slurm.sl` in the VS Code editor and copy and paste the script below:
+
+
+
+
+{:.copy-code}
+```bash
+#!/bin/bash
+#SBATCH --account=scinet_workshop2
+#SBATCH --reservation=foundations_workshop
+#SBATCH -N1
+#SBATCH -c72
+#SBATCH -J trinity
+#SBATCH -o slurm_logs/trinity_%j.out
+#SBATCH -e slurm_logs/trinity_%j.err
+#SBATCH -t 24:00:00
+
+echo "Started Job: $(date)"
+
+# Load required modules
+module load trinityrnaseq
+
+# Define Directories:
+RAW_DIR="/90daydata/shared/$USER/intro_rnaseq/00_RawData"
+OUT_DIR="$SLURM_SUBMIT_DIR/09a_Trinity"
+
+mkdir -p $OUT_DIR
+
+#####################
+echo "Trinity Started: $(date)"
+# running Trinity
+
+# Trinity requires that the each set of reads are concatenated into a file each. make combined left and right reads.
+
+cat $RAW_DIR/*1.*gz > $OUT_DIR/left_1.gz
+cat $RAW_DIR/*2.*gz > $OUT_DIR/right_2.gz
+
+cd  $OUT_DIR
+Trinity --seqType fq \
+ --max_memory 150G \
+ --CPU 64 \
+ --normalize_by_read_set \
+ --output Trinity_At \
+ --left left_1.gz \
+ --right right_2.gz \
+ --trimmomatic
+
+echo "Trinity ended: $(date)"
+
+scontrol show job $SLURM_JOB_ID
+echo "Completed job: $(date)"
+```
+
+Submit the script:
+
+ {:.copy-code}
+ 
+ ```bash
+  sbatch 00_Scripts/09_trinity_slurm.sl
+  ```
+
+  * Explain the output
+  * Align and Estimate/ Salmon and then...?
+  * Busco completeness?
+  * Any other estimate?
+  * 
 
 </li>
 
