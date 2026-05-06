@@ -956,30 +956,8 @@ go_res_CC<- enrichGO(gene = entrez_ids,
 
 dotplot(go_res_CC, showCategory = 15, title="GO CC: Arabidopsis thaliana")
 
-
 ###########################################################################
-# 6. USING SYMBOL instead of using ENTREZ_ID
-###########################################################################
-
-symbols <- mapIds(org.At.tair.db, keys = sig_gene_names, 
-                  column="SYMBOL", keytype = "TAIR", multiVals = "first")
-
-####get rid of the missing mappings
-symbols <- na.omit(symbols)
-
-go_res2<- enrichGO(gene = symbols,
-                   OrgDb = org.At.tair.db,
-                   keyType = "SYMBOL",
-                   ont = "BP", #options: BP, MF, CC
-                   pAdjustMethod = "BH",
-                   qvalueCutoff = 0.05,
-                   pvalueCutoff = 0.05,
-                   readable = TRUE)
-
-dotplot(go_res2, showCategory = 15, title="GO BP: Arabidopsis thaliana")
-
-###########################################################################
-# 7. KEGG Enrichment 
+# 6. KEGG Enrichment 
 ###########################################################################
 
 ####enrichKEGG identifies over represented KEGG pathways for Arabidopsis. 
@@ -992,7 +970,7 @@ ekegg<- enrichKEGG(gene = sig_gene_names,
 barplot(ekegg, showCategory = 15, title="KEGG: Arabidopsis thaliana")
 
 ###########################################################################
-# 8. Optional: GO enrichment for upregulated vs downregulated genes
+# 7. Optional: GO enrichment for upregulated vs downregulated genes
 ###########################################################################
 
 #upregulated genes
@@ -1025,7 +1003,6 @@ dotplot(go_res_up, showCategory = 15, title="GO BP Enrichment - Upregulated")
 
 #GO BP enrichment for downregulated genes
 
-#GO BP enrichment for upregulated genes 
 go_res_down<- enrichGO(gene = downreg_genes,
                      OrgDb = org.At.tair.db,
                      keyType = "SYMBOL",
