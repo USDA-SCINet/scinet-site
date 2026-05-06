@@ -349,9 +349,11 @@ We will do this using `parallel` within a Slurm batch script. First we will need
 The two executable shell scripts will be called within a slurm batch script. We will create the slurm script as follows:
 
 Create the empty script:
-  ```bash
-  touch 00_Scripts/04_hisat2_samtools.sl
-  ```
+  
+{:.copy-code}
+```bash
+touch 00_Scripts/04_hisat2_samtools.sl
+```
 Open the file `00_Scripts/04_hisat2_samtools.sl` in the VS Code editor and copy and paste the script below:
 
  {:.copy-code}
@@ -471,8 +473,6 @@ cat SRR4420293_trimmed.log
 ```
 
 </li>
-
-
 <li class="usa-process-list__item" markdown="1">
 
 {:.usa-process-list__heading}
@@ -481,6 +481,12 @@ cat SRR4420293_trimmed.log
 For quantifying transcript abundance from RNA-seq data, there are many programs available. The two most popular tools are featureCounts and HTSeq. We will need a file with aligned sequencing reads (BAM files generated in previous step) and a list of genomic features (from the GFF file). featureCounts is a highly efficient general-purpose read summarization program that counts mapped reads for genomic features such as genes, exons, promoter, gene bodies, genomic bins and chromosomal locations. It also outputs statistics for the overall summarization of results, including the number of successfully assigned reads and the number of reads that failed to be assigned due to various reasons. We can run featureCounts on all SAM/BAM files at the same time or individually. 
 
 You will need to have the [subread](http://subread.sourceforge.net/) and `parallel` modules loaded. They are included in the script below.
+
+Create the empty script:
+{:.copy-code}
+```bash
+touch 00_Scripts/05_featurecounts.sl
+```
 
 Open the file `00_Scripts/05_featurecounts.sl` in the VS Code editor and copy and paste the script below:
 
@@ -517,7 +523,7 @@ scontrol show job ${SLURM_JOB_ID}
 
 {:.copy-code}
 ```bash 
-sbatch 05_featurecounts.sl 
+sbatch 00_Scripts/05_featurecounts.sl 
 ``` 
 
 This creates the following set of files in the specified output folder: 
@@ -544,20 +550,21 @@ This creates the following set of files in the specified output folder:
 
 Using the following Linux commands, we can edit the outputs to produce a single count table. This count table will be loaded into R for differential expression analysis. 
 
-* **Step 1**: From `/90daydata/shared/$USER/rna_seq/05_FeatCounts` edit the count files "in-place" using `sed`
+* **Step 1**: From `/90daydata/shared/$USER/intro_rnaseq/05_FeatCounts` edit the count files "in-place" using `sed`
 
   ```bash
-  for f in *.txt; do
+  for f in *txt; do
     sed -i '/^#/d' "$f"
     sed -i 's|/90day.*BAM/||g' "$f"
-    sed -i 's|_.*bam||g' $f
+    sed -i 's|_.*bam||g' "$f"
     done
   ``` 
   {:.copy-code}
 
-* **Step 2**: Make directory called `06_Combined_Counts` and make a combined count table with the first column as "Gene_IDs" and 6 other columns one for each sample's gene counts. 
+* **Step 2**: Make directory called `06_Combined_Counts` in `/90daydata/shared/$USER/intro_rnaseq/` and make a combined count table with the first column as "Gene_IDs" and 6 other columns one for each sample's gene counts. 
 
   ```bash
+  mkdir 06_Combined_Counts
   cd 06_Combined_Counts
   COUNTS="/90daydata/shared/$USER/rna_seq/05_FeatCounts"
   
@@ -762,7 +769,7 @@ HISAT2 (with --dta flag)
 {:.usa-process-list__heading}
 ### Differential Gene Expression Analysis  
 
-Make a directory called `07_DESeq2` and copy the R Script to the new directory:
+Make a directory called `07_DESeq2` and copy the R Script to the new directory. This is more for our own convenience, so that when we open RStudio and set `/90daydata/shared/$USER/intro_rnaseq/07_DESeq2` as the working directory, we will have the R script in the same directory.
 
 ```bash
 mkdir 07_DESeq2
@@ -825,10 +832,10 @@ library(DESeq2)
 # ── 0. Libraries ─────────────────────────────────────────────
 # Install any missing packages before loading
 if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
-BiocManager::install(c("DESeq2", "EnhancedVolcano"), update = FALSE, ask = FALSE)
+BiocManager::install(EnhancedVolcano", update = FALSE, ask = FALSE)
 install.packages(c("pheatmap", "ggplot2", "RColorBrewer"), repos = "https://cloud.r-project.org")
 
-library(DESeq2)
+#library(DESeq2)
 library(EnhancedVolcano)
 library(pheatmap)
 library(ggplot2)
