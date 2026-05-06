@@ -537,7 +537,6 @@ Using the following Linux commands, we can edit the outputs to produce a single 
 This file is ready to be imported to R for DESeq2.  
  
 </li>
-{% comment %}
 <li class="usa-process-list__item" markdown="1">
 
 {:.usa-process-list__heading}
@@ -984,6 +983,7 @@ We will explore how kallisto works by using a transcriptome for *Arabidopsis* wh
 We will run the script below to complete quantification on all reads: 
 
 {:.copy-code}
+
 ```bash
 #!/bin/bash
 #SBATCH --job-name=kallisto_quant
@@ -1051,11 +1051,105 @@ Kallisto estimates expression at the transcript level. tximport is necessary for
 {:.usa-process-list__heading}
 ### De Novo Transcriptome Assembly and Quantification 
 
-De novo RNA-seq analysis is used when a reference genome is not available. In this case, instead of aligning reads to a reference genome, sequence reads are assembled into transcript sequences to generate a sample-specific transcriptome using only the information available in the RNA-seq reads. 
+Let's now assume that Arabidopsis doesn't have a sequenced genome. We start with the RNA-seq reads and assemble them into de novo transcripts — a fundamentally harder problem than when you have the genome alignment because we have no map to work from. One such de novo assembler is Trinity. Before understanding what Trinity does, it helps to understand why naive assembly fails for RNA-seq data. Unlike a genome, a transcriptome has wildly unequal coverage — a highly expressed gene might have 10,000× more reads than a lowly expressed one. Standard genome assemblers assume roughly uniform coverage and break down completely under these conditions. Trinity was designed specifically to handle this.
 
-Expression is then quantified by mapping reads to the assembled transcriptome using alignment-free methods. 
+Trinity's uses de Bruijn graph to partition and assemble reads. Rather than trying to assemble reads directly, Trinity breaks every read into short overlapping substrings of length k (k-mers), and builds a graph where each unique k-mer is a node and edges represent overlaps. Paths through this graph represent candidate transcripts. The appeal of this approach is that it doesn't require a reference — the reads wire up the graph themselves.
+
+Trinity then works in three sequential stages:
+
+**1. Inchworm** traverses the de Bruijn graph greedily, following the most abundant k-mer paths first. This produces a set of unique transcript sequences — essentially the dominant isoform at each locus. It is fast but ignores complexity: alternatively spliced isoforms and paralogous genes are collapsed or missed at this stage.
+
+**2. Chrysalis** takes the Inchworm contigs and clusters them into groups that share k-mers, then builds a separate, smaller de Bruijn graph for each cluster. This is the key architectural decision that makes Trinity tractable — instead of one enormous graph for the whole transcriptome (which would be computationally expensive), you get thousands of small, manageable graphs, each representing the transcriptional complexity at a single locus or gene family.
+
+**3. Butterfly** then processes each small graph independently. It traces all the paths through the graph that are supported by read evidence, resolving alternative splicing events, paralog distinctions, and sequencing errors. The output is a FASTA file of assembled <u>transcript sequences</u>, potentially many per locus.
+
+A few things worth keeping in mind about de novo assembly:
+
+* k-mer size (25): Larger k gives more specificity but requires higher coverage; smaller k is more sensitive but generates more spurious connections in the graph. 
+
+* Output is transcripts (multiple isoforms per locus), and it has no way of knowing which are real biological isoforms versus assembly artifacts. Downstream tools like BUSCO (completeness assessment) and TransDecoder (ORF prediction) are essential next steps.
+
+* Coverage depth: De novo assembly generally requires deeper sequencing than genome-guided approaches — 50–100M reads per sample is a more comfortable starting point than the 20–30M that suffices for HISAT2 alignment.
+
+There is no ground truth. Unlike genome-guided assembly where you can check your mapping rate against a known reference, de novo assembly quality is harder to assess. BUSCO scores and the N50 of your assembly are your primary sanity checks.
+
+Trinity's output is a hypothesis about what transcripts exist in your sample. Every downstream analysis — quantification, differential expression, annotation — is testing and refining that hypothesis.
+
+---
+For Trinity assembly, we will first create the empty script file:
+
+{:.copy-code}
+    
+```bash
+touch 00_Scripts/09_trinity_slurm.sl
+```
+Open the file `00_Scripts/09_trinity_slurm.sl` in the VS Code editor and copy and paste the script below:
+
+
+
+
+{:.copy-code}
+```bash
+#!/bin/bash
+#SBATCH --account=scinet_workshop2
+#SBATCH --reservation=foundations_workshop
+#SBATCH -N1
+#SBATCH -c72
+#SBATCH -J trinity
+#SBATCH -o slurm_logs/trinity_%j.out
+#SBATCH -e slurm_logs/trinity_%j.err
+#SBATCH -t 24:00:00
+
+echo "Started Job: $(date)"
+
+# Load required modules
+module load trinityrnaseq
+
+# Define Directories:
+RAW_DIR="/90daydata/shared/$USER/intro_rnaseq/00_RawData"
+OUT_DIR="$SLURM_SUBMIT_DIR/09a_Trinity"
+
+mkdir -p $OUT_DIR
+
+#####################
+echo "Trinity Started: $(date)"
+# running Trinity
+
+# Trinity requires that the each set of reads are concatenated into a file each. make combined left and right reads.
+
+cat $RAW_DIR/*1.*gz > $OUT_DIR/left_1.gz
+cat $RAW_DIR/*2.*gz > $OUT_DIR/right_2.gz
+
+cd  $OUT_DIR
+Trinity --seqType fq \
+ --max_memory 150G \
+ --CPU 64 \
+ --normalize_by_read_set \
+ --output Trinity_At \
+ --left left_1.gz \
+ --right right_2.gz \
+ --trimmomatic
+
+echo "Trinity ended: $(date)"
+
+scontrol show job $SLURM_JOB_ID
+echo "Completed job: $(date)"
+```
+
+Submit the script:
+
+ {:.copy-code}
+ 
+ ```bash
+  sbatch 00_Scripts/09_trinity_slurm.sl
+  ```
+
+  * Explain the output
+  * Align and Estimate/ Salmon and then...?
+  * Busco completeness?
+  * Any other estimate?
+  * 
 
 </li>
-{% endcomment %}
 
 </ol>
