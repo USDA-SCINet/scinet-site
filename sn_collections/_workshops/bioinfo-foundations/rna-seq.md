@@ -1036,10 +1036,10 @@ cp /project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis/files/00_Sc
 ```R
 ###########################################################################
 ### Functional Annotation 
-##Goal: Run GO enrichment analysis & KEGG Pathway analysis
+### Goal: Run GO enrichment analysis & KEGG Pathway analysis
 ###########################################################################
 
-#1. Install and Load Required Packages
+# 1. Install and Load Required Packages
 ###########################################################################
 ####install packages 
 BiocManager::install("org.At.tair.db")
@@ -1051,7 +1051,7 @@ library(clusterProfiler) #performs functional enrichment analysis
 library(AnnotationDbi) #helps convert between gene ID types
 
 ###########################################################################
-#2. Gather significant DEGs
+# 2. Gather significant DEGs
 ###########################################################################
 ##### get names of the significant genes
 sig_gene_names<- res_sig$Geneid
@@ -1241,7 +1241,6 @@ go_res_down<- enrichGO(gene = down_entrez_ids,
                      readable = TRUE)
 
 dotplot(go_res_down, showCategory = 15, title="GO BP Enrichment - Downregulated")
- 
 ```
 </div>
 </div>
@@ -1263,7 +1262,7 @@ Relaunch VS Code and navigate to the working directory:
 {:.copy-code}
 
 ```bash
-/90daydata/shared/$USER/intro_rnaseq
+cd /90daydata/shared/$USER/intro_rnaseq
 ```
 
 * Load the software
@@ -1288,7 +1287,7 @@ mkdir -p index results
 
 * To build the index: 
 
-Code Format: `kallisto index -i [index name.idx] [transcriptome path]`
+The basic format of the `kallisto` command we'll use is: `kallisto index -i [index name.idx] [transcriptome path]`
 
 * `kallisto index`:  builds index
 * `-i`: location of index file 
@@ -1304,7 +1303,7 @@ kallisto index -i index/Arabidopsis_thaliana.idx ${TRANS}/Arabidopsis_thaliana.T
 
 * Quantification
 
-`kallisto quant` options:
+For this step, we'll use `kallisto quant` with these options:
 
 * `-i : index file
 * `-o`: output folder
@@ -1313,7 +1312,7 @@ kallisto index -i index/Arabidopsis_thaliana.idx ${TRANS}/Arabidopsis_thaliana.T
 * `paired read 1`
 * `paired read 2`
 
-Expected output: 
+Because this process is computationally intensive, we'll run `kallisto quant` using a separate Slurm job so that we can give it more memory and CPUs to work with. After the job completes, we should expect the following output files: 
 
 * `abundance.tsv`: quantification file
 * `abundance.h5`: binary HDF5 format of the quantification results
@@ -1323,12 +1322,12 @@ Navigate to main working directory:
 
 {:.copy-code}
 ```bash
-/90daydata/shared/$USER/intro_rnaseq
+cd /90daydata/shared/$USER/intro_rnaseq
 ```
 
 {:.copy-code}
 ```bash
- touch 00_Scripts/08_kallisto_quant.sl
+touch 00_Scripts/08_kallisto_quant.sl
 ```
 
 Open the file `00_Scripts/08_kallisto_quant.sl` in the VS Code editor and copy and paste the script below:
@@ -1345,33 +1344,33 @@ Open the file `00_Scripts/08_kallisto_quant.sl` in the VS Code editor and copy a
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=50G
 
-#Load kallisto
+# Load kallisto
 module load kallisto 
 
-#Set paths 
+# Set paths 
 INDEX="/90daydata/shared/$USER/intro_rnaseq/08_Kallisto/index/Arabidopsis_thaliana.idx"
 RAW_DIR="/90daydata/shared/$USER/intro_rnaseq/00_RawData"
 RESULTS_DIR="/90daydata/shared/$USER/intro_rnaseq/08_Kallisto/results"
 
-#find all read 1 files that end with _1.fastq.gz
+# find all read 1 files that end with _1.fastq.gz
 for r1 in ${RAW_DIR}/*_1.fastq.gz
 
 do 
 
-#get sample name only
+# get sample name only
 sample=$(basename "$r1" _1.fastq.gz)
 
-#find matching read 2
+# find matching read 2
 r2="${RAW_DIR}/${sample}_2.fastq.gz"
  
-#echo the sample being processed
+# echo the sample being processed
 echo "Currently processing: ${sample}"
 
-###Run kallisto
+# Run kallisto
 
 kallisto quant -i ${INDEX} -o ${RESULTS_DIR}/${sample} -b 100 -t ${SLURM_CPUS_PER_TASK} ${r1} ${r2}
 
-#Print completion message
+# Print completion message
 echo "Finished with ${sample}"
 
 done
@@ -1398,9 +1397,18 @@ head abundance.tsv
 cat run_info
 ```
 
-Now that we have transcript-level expression estimates for each sample, we need to combine them before running DESeq2 for differential gene expression analysis. We will do this in R.
+Now that we have transcript-level expression estimates for each sample, we need to combine them before running DESeq2 for differential gene expression analysis. We will do this in R. We have included the entire R script for this in the workshop materials as the file `kallisto_deseq.R`.
+Let’s copy the script to our current working directory:
 
-* Launch R Studio
+{:.copy-code}
+```bash
+cd /90daydata/shared/$USER/intro_rnaseq
+cp /project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis/files/00_Scripts 00_Scripts/
+```
+
+Next, launch R Studio and run the script.
+
+The script contents are also provided below for reference.
 
 <div class="usa-accordion usa-accordion--bordered padding-top-2">
   <div class="usa-accordion__heading">
@@ -1714,7 +1722,6 @@ touch 00_Scripts/09_trinity_slurm.sl
 ```
 Open the file `00_Scripts/09_trinity_slurm.sl` in the VS Code editor and copy and paste the script below:
 
-
 {:.copy-code}
 ```bash
 #!/bin/bash
@@ -1786,7 +1793,7 @@ cd 09_Trinity
 TRINITY /usr/local/bin/util/TrinityStats.pl Trinity_At.Trinity.fasta > Trinity_At.stats
 ```
 
-Open the file `Trinity_At.stats` VSCode editor and examine.
+Open the file `Trinity_At.stats` in the VSCode editor and examine the following:
 
 * `Genes` vs `Transcripts`
 * N50 Values
@@ -1802,9 +1809,7 @@ touch 00_Scripts/09_trinity_busco.sl
 ```
 Open the file `00_Scripts/09_trinity_busco.sl` in the VS Code editor and copy and paste the script below:
 
-
 {:.copy-code}
-
 ```bash
 #!/bin/bash
 #SBATCH --account=scinet_workshop2
