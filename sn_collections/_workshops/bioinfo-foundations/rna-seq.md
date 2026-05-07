@@ -1772,11 +1772,10 @@ echo "Completed job: $(date)"
 
 Submit the script:
 
- {:.copy-code}
- 
- ```bash
-  sbatch 00_Scripts/09_trinity_slurm.sl
-  ```
+{:.copy-code}
+```bash
+sbatch 00_Scripts/09_trinity_slurm.sl
+```
 
 This would likely take longer than 2 hours to run. The output folder will have, among others, the following important files
 
@@ -1837,11 +1836,10 @@ busco \
 
 Submit the script:
 
- {:.copy-code}
- 
- ```bash
-  sbatch 00_Scripts/09_trinity_busco.sl
-  ```
+{:.copy-code} 
+```bash
+sbatch 00_Scripts/09_trinity_busco.sl
+```
 
 
 Examine `short_summary.specific.eukaryota_odb12.01_TRINITY-BUSCO.txt`
@@ -1968,11 +1966,10 @@ TRINITY /usr/local/bin/util/align_and_estimate_abundance.pl \
 
 Submit the script:
 
- {:.copy-code}
- 
- ```bash
-  sbatch 00_Scripts/09_trinity_salmon.sl
-  ```
+{:.copy-code} 
+```bash
+sbatch 00_Scripts/09_trinity_salmon.sl
+```
 
 </li>
 
