@@ -1678,7 +1678,7 @@ write.csv(
 <li class="usa-process-list__item" markdown="1">
 
 {:.usa-process-list__heading}
-### De Novo Transcriptome Assembly and Quantification 
+### De Novo Transcriptome Assembly
 
 Let's now assume that Arabidopsis doesn't have a sequenced genome. We start with the RNA-seq reads and assemble them into de novo transcripts — a fundamentally harder problem than when you have the genome alignment because we have no map to work from. One such de novo assembler is Trinity. Before understanding what Trinity does, it helps to understand why naive assembly fails for RNA-seq data. Unlike a genome, a transcriptome has wildly unequal coverage — a highly expressed gene might have 10,000× more reads than a minimally expressed one. Standard genome assemblers assume roughly uniform coverage and break down completely under these conditions. Trinity was designed specifically to handle this.
 
@@ -1734,7 +1734,7 @@ module load trinityrnaseq
 
 # Define Directories:
 RAW_DIR="/90daydata/shared/$USER/intro_rnaseq/00_RawData"
-OUT_DIR="$SLURM_SUBMIT_DIR/09a_Trinity"
+OUT_DIR="$SLURM_SUBMIT_DIR/09_Trinity"
 
 mkdir -p $OUT_DIR
 
@@ -1770,6 +1770,76 @@ Submit the script:
  ```bash
   sbatch 00_Scripts/09_trinity_slurm.sl
   ```
+
+This would likely take longer than 2 hours to run. The output folder will have, among others, the following important files
+
+1. Trinity_At.Trinity.fasta: The primary assembly file
+2. Trinity_At.Trinity.fasta.gene_trans_map: A mapping between Trinity genes and the corresponding transcripts
+
+**Assembly Statistics**
+
+We can take a quick look at the assembly stats. From the terminal run the following line:
+
+{:.copy-code}
+```bash
+cd 09_Trinity
+TRINITY /usr/local/bin/util/TrinityStats.pl Trinity_At.Trinity.fasta > Trinity_At.stats
+```
+
+Open the file `Trinity_At.stats` VSCode editor and examine.
+
+* `Genes` vs `Transcripts`
+* N50 Values
+* GC content
+
+**BUSCO**
+    
+```bash
+touch 00_Scripts/09_trinity_busco.sl
+```
+Open the file `00_Scripts/09_trinity_busco.sl` in the VS Code editor and copy and paste the script below:
+
+
+{:.copy-code}
+
+```bash
+#!/bin/bash
+#SBATCH --account=scinet_workshop2
+#SBATCH --reservation=foundations_workshop
+#SBATCH -N1
+#SBATCH -c16
+#SBATCH -J busco
+#SBATCH -o slurm_logs/busco_%j.out
+#SBATCH -e slurm_logs/busco_%j.err
+#SBATCH -t 4:00:00
+
+module purge 
+module load busco6
+ASSEMBLY_DIR="/90daydata/shared/$USER/intro_rnaseq/09_Trinity"
+EUK_ODB12="/90daydata/shared/$USER/intro_rnaseq_practice/09_Trinity/eukaryota_odb12"
+busco \
+  -i $ASSEMBLY_DIR/Trinity_At.Trinity.fasta \
+  -l $EUK_ODB12 \
+  -o 01_TRINITY-BUSCO \
+  --out_path $ASSEMBLY_DIR \
+  -m transcriptome \
+  -c 16 \
+  --offline
+```
+
+Examine `short_summary.specific.eukaryota_odb12.01_TRINITY-BUSCO.txt`
+
+```bash
+        C:90.7%[S:37.2%,D:53.5%],F:4.7%,M:4.7%,n:129       
+        117     Complete BUSCOs (C)                        
+        48      Complete and single-copy BUSCOs (S)        
+        69      Complete and duplicated BUSCOs (D)         
+        6       Fragmented BUSCOs (F)                      
+        6       Missing BUSCOs (M)                         
+        129     Total BUSCO groups searched                
+
+```
+
 
 
 </li>
