@@ -424,7 +424,7 @@ This will take about 15-30 minutes to complete.
 
 **Exploring a BAM file:**
 
-Use the code below as a guide
+Use the code below as a guide.
 
 ```bash
 # Look at the header — what genome was used? what aligner?
@@ -449,9 +449,9 @@ samtools view -f 2 -F 256 sample.bam | head -10
 samtools stats sample.bam | grep ^IS | cut -f 2-3 | head -20
 ```
 
-**Exploring the Hisat2 LOGS:**
+**Exploring the Hisat2 logs:**
 
-The code below is just an example to explore the log file
+The code below is an example of exploring the log file.
 
 ```bash
 cat SRR4420293_trimmed.log 
@@ -478,7 +478,7 @@ cat SRR4420293_trimmed.log
 {:.usa-process-list__heading}
 ### Abundance Estimation 
 
-For quantifying transcript abundance from RNA-seq data, there are many programs available. The two most popular tools are featureCounts and HTSeq. We will need a file with aligned sequencing reads (BAM files generated in previous step) and a list of genomic features (from the GFF file). featureCounts is a highly efficient general-purpose read summarization program that counts mapped reads for genomic features such as genes, exons, promoter, gene bodies, genomic bins and chromosomal locations. It also outputs statistics for the overall summarization of results, including the number of successfully assigned reads and the number of reads that failed to be assigned due to various reasons. We can run featureCounts on all SAM/BAM files at the same time or individually. 
+There are many programs available for quantifying transcript abundance from RNA-seq data. The two most popular tools are featureCounts and HTSeq. We will need a file with aligned sequencing reads (BAM files generated in the previous step) and a list of genomic features (from the GFF file). featureCounts is a highly efficient, general-purpose read summarization program that counts mapped reads for genomic features such as genes, exons, promoter, gene bodies, genomic bins, and chromosomal locations. It also outputs statistics for the overall summarization of results, including the number of successfully assigned reads and the number of reads that failed to be assigned for various reasons. We can run featureCounts on all SAM/BAM files at the same time or individually. 
 
 You will need to have the [subread](http://subread.sourceforge.net/) and `parallel` modules loaded. They are included in the script below.
 
@@ -538,7 +538,7 @@ This creates the following set of files in the specified output folder:
   SRR4420294_trimmed.txt
   ``` 
 
-* Additionally, summary files are produced. These give the summary of reads that were either ambiguous, multi mapped, mapped to no features, or unmapped among other statistics. We can refer to these to further tweak our analyses etc. 
+* Additionally, summary files are produced. These give the summary of reads that were either ambiguous, multi mapped, mapped to no features, or unmapped, among other statistics. We can refer to these to fine-tune our analyses. 
   ``` 
   SRR4420298_trimmed.txt.summary 
   SRR4420293_trimmed.txt.summary 
@@ -588,7 +588,7 @@ Using the following Linux commands, we can edit the outputs to produce a single 
   AT1G03987       0       0       0       0       0       0
   ``` 
 
-* Convert to and save as CSV file 
+* Convert to and save as a CSV file. 
 
   ```bash
   sed 's|\t|,|g' Arabidopsis_RNAseq_Counts.txt > Arabidopsis_RNAseq_Counts.csv
@@ -597,10 +597,10 @@ Using the following Linux commands, we can edit the outputs to produce a single 
 
 This file is ready to be imported to R for DESeq2.  
 
-Before venturing into DESeq2. Let's talk about some common scenarios in biological RNAseq data:
+Before venturing into DESeq2, let's discuss some common scenarios in biological RNAseq data:
 
 **1. Low Coverage** 
-We don't have enough reads to confidently place every read, so you need to be more permissive at the alignment stage but more stringent at the counting stage.
+We don't have enough reads to confidently place every read, so we need to be more permissive at the alignment stage but more stringent at the counting stage.
 
 a. HISAT2 adjustments:
 
@@ -631,7 +631,7 @@ b. featureCounts adjustments:
 
 
 **2. Very High Coverage**
-You have so many reads that multi-mappers and ambiguous counts overwhelm your results, and runtime becomes painful.
+You have so many reads that multi-mappers and ambiguous counts overwhelm your results, and running times become excessive.
 
 a. HISAT2 adjustments:
 
@@ -704,7 +704,8 @@ b. featureCounts adjustments:
 --minOverlap 25            # longer overlap = more discriminating placement
 --fracOverlap 0.5
 ```
-**4. Poorly Annotated Plant Genome**
+
+**4. Poorly Annotated Genome**
 
 Sometimes, we have to deal with a draft genome with fragmented assembly, a GFF3 converted from another species, or a genome where most genes are annotated by ab initio prediction rather than transcript evidence.
 
@@ -791,7 +792,7 @@ cp 00_Scripts/DESeq2.R 07_DESeq2
 * Wait a moment for the job card to update from "Queued" to "Running". 
 * Please confirm that clicking on the "Connect to RStudio Server" button opens a new tab with the RStudio Server interface. 
 
-We have saved the entire R script for DESeq2 (`DESeq2.R`). The script is partly based on [Stephen Turner's template](https://gist.github.com/stephenturner/f60c1934405c127f09a6). We have displayed the R script here largely for reference.   
+We have included the entire R script for DESeq2 in the workshop materials as the file `DESeq2.R`. The script is partly based on [Stephen Turner's template](https://gist.github.com/stephenturner/f60c1934405c127f09a6). We provide the R script here largely for reference.   
 
 <div class="usa-accordion usa-accordion--bordered padding-top-2">
 
@@ -1217,8 +1218,8 @@ dotplot(go_res_down, showCategory = 15, title="GO BP Enrichment - Downregulated"
 </div>
 
 </li>
-<li class="usa-process-list__item" markdown="1">
 {% comment %}
+<li class="usa-process-list__item" markdown="1">
 
 {:.usa-process-list__heading}
 ### Quantification using Pseudoalignment 
@@ -1237,7 +1238,7 @@ Relaunch VS Code and navigate to the working directory:
 /90daydata/shared/$USER/intro_rnaseq
 ```
 
-*Load the software
+* Load the software
 
 {:.copy-code}
 ```bash
@@ -1246,7 +1247,7 @@ module load kallisto
 
 #### Build an index 
 
-*Create working directories:
+* Create working directories:
 
 {:.copy-code}
 ```bash
@@ -1257,7 +1258,7 @@ cd 08_Kallisto
 mkdir -p index results
 ```
 
-*To build the index: 
+* To build the index: 
 
 Code Format: `kallisto index -i [index name.idx] [transcriptome path]`
 
@@ -1268,19 +1269,19 @@ Code Format: `kallisto index -i [index name.idx] [transcriptome path]`
 
 {:.copy-code}
 ```bash
-
 TRANS="/90daydata/shared/$USER/intro_rnaseq/00_Transcriptome"
 
 kallisto index -i index/Arabidopsis_thaliana.idx ${TRANS}/Arabidopsis_thaliana.TAIR10.cdna.all.fa.gz
 ```
+
 * Quantification
 
 `kallisto quant` options:
 
-*`-i : index file
-*`-o`: output folder
-*`-b`:bootstrap runs / confidence estimations
-*`-t`: number of CPU threads
+* `-i : index file
+* `-o`: output folder
+* `-b`:bootstrap runs / confidence estimations
+* `-t`: number of CPU threads
 * `paired read 1`
 * `paired read 2`
 
@@ -1291,6 +1292,7 @@ Expected output:
 * `run_info`: summary file with information about the job run
 
 Navigate to main working directory: 
+
 {:.copy-code}
 ```bash
 /90daydata/shared/$USER/intro_rnaseq
@@ -1303,9 +1305,7 @@ Navigate to main working directory:
 
 Open the file `00_Scripts/08_kallisto_quant.sl` in the VS Code editor and copy and paste the script below:
 
-
 {:.copy-code}
-
 ```bash
 #!/bin/bash
 #SBATCH --account=scinet_workshop2
@@ -1350,25 +1350,31 @@ done
 
 echo "All runs complete" 
 ```
+
 Submit the slurm script:  
+
 {:.copy-code}
 ```bash
 sbatch 00_Scripts/08_kallisto_quant.sl
 ```
-Let's take a look at the output files: 
+
+Let's take a look at the output files:
+
 {:.copy-code}
 ```bash
 head abundance.tsv
 ```
+
 {:.copy-code}
 ```bash
 cat run_info
 ```
-Now that we have transcript level expression estimates for each sample, we need to combine them before running DESeq2 for differential gene expression analysis. We will do this in R.
+
+Now that we have transcript-level expression estimates for each sample, we need to combine them before running DESeq2 for differential gene expression analysis. We will do this in R.
 
 * Launch R Studio
 
-
+<div class="usa-accordion usa-accordion--bordered padding-top-2">
   <div class="usa-accordion__heading">
     <button
       type="button"
@@ -1646,15 +1652,15 @@ write.csv(
 {:.usa-process-list__heading}
 ### De Novo Transcriptome Assembly and Quantification 
 
-Let's now assume that Arabidopsis doesn't have a sequenced genome. We start with the RNA-seq reads and assemble them into de novo transcripts — a fundamentally harder problem than when you have the genome alignment because we have no map to work from. One such de novo assembler is Trinity. Before understanding what Trinity does, it helps to understand why naive assembly fails for RNA-seq data. Unlike a genome, a transcriptome has wildly unequal coverage — a highly expressed gene might have 10,000× more reads than a lowly expressed one. Standard genome assemblers assume roughly uniform coverage and break down completely under these conditions. Trinity was designed specifically to handle this.
+Let's now assume that Arabidopsis doesn't have a sequenced genome. We start with the RNA-seq reads and assemble them into de novo transcripts — a fundamentally harder problem than when you have the genome alignment because we have no map to work from. One such de novo assembler is Trinity. Before understanding what Trinity does, it helps to understand why naive assembly fails for RNA-seq data. Unlike a genome, a transcriptome has wildly unequal coverage — a highly expressed gene might have 10,000× more reads than a minimally expressed one. Standard genome assemblers assume roughly uniform coverage and break down completely under these conditions. Trinity was designed specifically to handle this.
 
-Trinity's uses de Bruijn graph to partition and assemble reads. Rather than trying to assemble reads directly, Trinity breaks every read into short overlapping substrings of length k (k-mers), and builds a graph where each unique k-mer is a node and edges represent overlaps. Paths through this graph represent candidate transcripts. The appeal of this approach is that it doesn't require a reference — the reads wire up the graph themselves.
+Trinity uses de Bruijn graphs to partition and assemble reads. Rather than trying to assemble reads directly, Trinity breaks every read into short overlapping substrings of length k (k-mers), and builds a graph where each unique k-mer is a node and edges represent overlaps. Paths through this graph represent candidate transcripts. The appeal of this approach is that it doesn't require a reference — the reads wire up the graph themselves.
 
 Trinity then works in three sequential stages:
 
 **1. Inchworm** traverses the de Bruijn graph greedily, following the most abundant k-mer paths first. This produces a set of unique transcript sequences — essentially the dominant isoform at each locus. It is fast but ignores complexity: alternatively spliced isoforms and paralogous genes are collapsed or missed at this stage.
 
-**2. Chrysalis** takes the Inchworm contigs and clusters them into groups that share k-mers, then builds a separate, smaller de Bruijn graph for each cluster. This is the key architectural decision that makes Trinity tractable — instead of one enormous graph for the whole transcriptome (which would be computationally expensive), you get thousands of small, manageable graphs, each representing the transcriptional complexity at a single locus or gene family.
+**2. Chrysalis** takes the Inchworm contigs and clusters them into groups that share k-mers, then builds a separate, smaller de Bruijn graph for each cluster. This is the key architectural decision that makes Trinity tractable — instead of one enormous graph for the whole transcriptome (which would be computationally expensive), Trinity generates thousands of small, manageable graphs, each representing the transcriptional complexity at a single locus or gene family.
 
 **3. Butterfly** then processes each small graph independently. It traces all the paths through the graph that are supported by read evidence, resolving alternative splicing events, paralog distinctions, and sequencing errors. The output is a FASTA file of assembled <u>transcript sequences</u>, potentially many per locus.
 
@@ -1666,7 +1672,7 @@ A few things worth keeping in mind about de novo assembly:
 
 * Coverage depth: De novo assembly generally requires deeper sequencing than genome-guided approaches — 50–100M reads per sample is a more comfortable starting point than the 20–30M that suffices for HISAT2 alignment.
 
-There is no ground truth. Unlike genome-guided assembly where you can check your mapping rate against a known reference, de novo assembly quality is harder to assess. BUSCO scores and the N50 of your assembly are your primary sanity checks.
+There is no ground truth. Unlike genome-guided assembly where you can check your mapping rate against a known reference, de novo assembly quality is harder to assess. BUSCO scores and the N50 of your assembly are your primary quality checks.
 
 Trinity's output is a hypothesis about what transcripts exist in your sample. Every downstream analysis — quantification, differential expression, annotation — is testing and refining that hypothesis.
 
@@ -1679,8 +1685,6 @@ For Trinity assembly, we will first create the empty script file:
 touch 00_Scripts/09_trinity_slurm.sl
 ```
 Open the file `00_Scripts/09_trinity_slurm.sl` in the VS Code editor and copy and paste the script below:
-
-
 
 
 {:.copy-code}
