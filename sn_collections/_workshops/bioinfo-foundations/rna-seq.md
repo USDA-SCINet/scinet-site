@@ -1678,7 +1678,7 @@ write.csv(
 <li class="usa-process-list__item" markdown="1">
 
 {:.usa-process-list__heading}
-### De Novo Transcriptome Assembly
+### De Novo Transcriptome Assembly and Quantification
 
 Let's now assume that Arabidopsis doesn't have a sequenced genome. We start with the RNA-seq reads and assemble them into de novo transcripts — a fundamentally harder problem than when you have the genome alignment because we have no map to work from. One such de novo assembler is Trinity. Before understanding what Trinity does, it helps to understand why naive assembly fails for RNA-seq data. Unlike a genome, a transcriptome has wildly unequal coverage — a highly expressed gene might have 10,000× more reads than a minimally expressed one. Standard genome assemblers assume roughly uniform coverage and break down completely under these conditions. Trinity was designed specifically to handle this.
 
@@ -1755,7 +1755,7 @@ Trinity --seqType fq \
  --output Trinity_At \
  --left left_1.gz \
  --right right_2.gz \
- --trimmomatic
+ --trimmomatic 
 
 echo "Trinity ended: $(date)"
 
@@ -1793,7 +1793,10 @@ Open the file `Trinity_At.stats` VSCode editor and examine.
 * GC content
 
 **BUSCO**
-    
+
+Create the empty script file:
+
+{:.copy-code}    
 ```bash
 touch 00_Scripts/09_trinity_busco.sl
 ```
@@ -1827,6 +1830,15 @@ busco \
   --offline
 ```
 
+Submit the script:
+
+ {:.copy-code}
+ 
+ ```bash
+  sbatch 00_Scripts/09_trinity_busco.sl
+  ```
+
+
 Examine `short_summary.specific.eukaryota_odb12.01_TRINITY-BUSCO.txt`
 
 ```bash
@@ -1839,8 +1851,123 @@ Examine `short_summary.specific.eukaryota_odb12.01_TRINITY-BUSCO.txt`
         129     Total BUSCO groups searched                
 
 ```
+**Salmon Quantification**
+
+Create the empty script file:
+
+{:.copy-code}    
+```bash
+touch 00_Scripts/09_trinity_salmon.sl
+```
+Open the file `00_Scripts/09_trinity_salmon.sl` in the VS Code editor and copy and paste the script below:
 
 
+{:.copy-code}
+
+```bash
+#!/bin/bash
+#SBATCH --account=scinet_workshop2
+#SBATCH --reservation=foundations_workshop
+#SBATCH -N1
+#SBATCH -c24
+#SBATCH -J align_estimate
+#SBATCH -o slurm_logs/align_estimate_%j.out
+#SBATCH -e slurm_logs/align_estimate_%j.err
+#SBATCH -t 24:00:00
+
+ASSEMBLY=/90daydata/shared/$USER/intro_rnaseq/09_Trinity/
+RAWDATA=/90daydata/shared/$USER/intro_rnaseq/00_RawData
+OUTDIR=/90daydata/shared/$USER/intro_rnaseq/10_Trinity_Salmon
+
+mkdir -p $OUTDIR
+module load trinityrnaseq
+
+### PREP REFERENCE (Indexing)
+
+TRINITY \
+/usr/local/bin/util/align_and_estimate_abundance.pl \
+    --transcripts $ASSEMBLY/Trinity_At.Trinity.fasta \
+    --est_method salmon \
+    --trinity_mode \
+    --prep_reference
+
+### ALIGN and ESTIMATE
+
+cd $ASSEMBLY
+# SRR4420293
+TRINITY /usr/local/bin/util/align_and_estimate_abundance.pl \
+--transcripts $ASSEMBLY/Trinity_At.Trinity.fasta \
+--seqType fq \
+--left $RAWDATA/SRR4420293_1.fastq.gz \
+--right $RAWDATA/SRR4420293_2.fastq.gz \
+--est_method salmon \
+--trinity_mode \
+--output_dir $OUTDIR/SRR4420293 \
+--thread_count 24
+
+# SRR4420294
+TRINITY /usr/local/bin/util/align_and_estimate_abundance.pl \
+--transcripts $ASSEMBLY/Trinity_At.Trinity.fasta \
+--seqType fq \
+--left $RAWDATA/SRR4420294_1.fastq.gz \
+--right $RAWDATA/SRR4420294_2.fastq.gz \
+--est_method salmon \
+--trinity_mode \
+--output_dir $OUTDIR/SRR4420294 \
+--thread_count 24
+
+# SRR4420295
+TRINITY /usr/local/bin/util/align_and_estimate_abundance.pl \
+--transcripts $ASSEMBLY/Trinity_At.Trinity.fasta \
+--seqType fq \
+--left $RAWDATA/SRR4420295_1.fastq.gz \
+--right $RAWDATA/SRR4420295_2.fastq.gz \
+--est_method salmon \
+--trinity_mode \
+--output_dir $OUTDIR/SRR4420295 \
+--thread_count 24
+
+# SRR4420296
+TRINITY /usr/local/bin/util/align_and_estimate_abundance.pl \
+--transcripts $ASSEMBLY/Trinity_At.Trinity.fasta \
+--seqType fq \
+--left $RAWDATA/SRR4420296_1.fastq.gz \
+--right $RAWDATA/SRR4420296_2.fastq.gz \
+--est_method salmon \
+--trinity_mode \
+--output_dir $OUTDIR/SRR4420296 \
+--thread_count 24
+
+# SRR4420297
+TRINITY /usr/local/bin/util/align_and_estimate_abundance.pl \
+--transcripts $ASSEMBLY/Trinity_At.Trinity.fasta \
+--seqType fq \
+--left $RAWDATA/SRR4420297_1.fastq.gz \
+--right $RAWDATA/SRR4420297_2.fastq.gz \
+--est_method salmon \
+--trinity_mode \
+--output_dir $OUTDIR/SRR4420297 \
+--thread_count 24
+
+# SRR4420298
+TRINITY /usr/local/bin/util/align_and_estimate_abundance.pl \
+--transcripts $ASSEMBLY/Trinity_At.Trinity.fasta \
+--seqType fq \
+--left $RAWDATA/SRR4420298_1.fastq.gz \
+--right $RAWDATA/SRR4420298_2.fastq.gz \
+--est_method salmon \
+--trinity_mode \
+--output_dir $OUTDIR/SRR4420298 \
+--thread_count 24
+```
+
+Submit the script:
+
+ {:.copy-code}
+ 
+ ```bash
+  sbatch 00_Scripts/09_trinity_salmon.sl
+  ```
 
 </li>
 
