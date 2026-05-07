@@ -1001,8 +1001,25 @@ pheatmap(mat_scaled,
          color = colorRampPalette(c("navy", "white", "firebrick3"))(100),
          main  = "Top 50 DEGs (scaled VST counts)")
 
+```
 </div>
+</div>
+</li>
 
+<li class="usa-process-list__item" markdown="1">
+
+{:.usa-process-list__heading}
+### Functional Annotation
+We have included the entire R script for GOseq in the workshop materials as the file `functional_annot.R`.
+
+Let's copy the script to our current working directory:
+
+```bash
+cp /project/scinet_workshop2/foundations_bioinf_2026/rnaseq_analysis/files/00_Scripts/functional_annot.R 00_Scripts/
+```
+{:.copy-code}
+
+<div class="usa-accordion usa-accordion--bordered padding-top-2">
   <div class="usa-accordion__heading">
     <button
       type="button"
@@ -1015,6 +1032,7 @@ pheatmap(mat_scaled,
   </div>
 <div id="functionalr" class="usa-accordion__content usa-prose" markdown=1 hidden>
 
+
 ```R
 ###########################################################################
 ### Functional Annotation 
@@ -1025,19 +1043,18 @@ pheatmap(mat_scaled,
 ###########################################################################
 ####install packages 
 BiocManager::install("org.At.tair.db")
-BiocManager::install(c("AnnotationDbi", "clusterProfiler", "pheatmap"))
+BiocManager::install(c("AnnotationDbi", "clusterProfiler"))
 
 ####load libraries
 library(org.At.tair.db) #provides Arabidopsis gene annotation
-library(clusterProfiler) #performs funcitonal enrichment analysis
+library(clusterProfiler) #performs functional enrichment analysis
 library(AnnotationDbi) #helps convert between gene ID types
-library(pheatmap) #creates clustered heatmaps 
 
 ###########################################################################
 #2. Gather significant DEGs
 ###########################################################################
 ##### get names of the significant genes
-sig_gene_names<- merged_ordered$gene
+sig_gene_names<- res_sig$Geneid
 
 
 #preview:
@@ -1120,7 +1137,19 @@ go_res_MF<- enrichGO(gene = entrez_ids,
 
 dotplot(go_res_MF, showCategory = 15, title="GO MF: Arabidopsis thaliana")
 
+#CC = cellular component
+#Where in the cell are these gene products enriched?
+go_res_CC<- enrichGO(gene = entrez_ids,
+                     OrgDb = org.At.tair.db,
+                     keyType = "ENTREZID",
+                     ont = "CC", #options: BP, MF, CC
+                     pAdjustMethod = "BH",
+                     qvalueCutoff = 0.2,
+                     pvalueCutoff = 0.1,
+                     readable = TRUE)
 
+
+dotplot(go_res_CC, showCategory = 15, title="GO CC: Arabidopsis thaliana")
 ###########################################################################
 # 5. USING SYMBOL instead of using ENTREZ_ID
 ###########################################################################
@@ -1142,19 +1171,7 @@ go_res2<- enrichGO(gene = symbols,
 
 dotplot(go_res2, showCategory = 15, title="GO BP: Arabidopsis thaliana")
 
-#CC = cellular component
-#Where in the cell are these gene products enriched?
-go_res_CC<- enrichGO(gene = entrez_ids,
-                     OrgDb = org.At.tair.db,
-                     keyType = "ENTREZID",
-                     ont = "CC", #options: BP, MF, CC
-                     pAdjustMethod = "BH",
-                     qvalueCutoff = 0.2,
-                     pvalueCutoff = 0.1,
-                     readable = TRUE)
 
-
-dotplot(go_res_CC, showCategory = 15, title="GO CC: Arabidopsis thaliana")
 
 ###########################################################################
 # 6. KEGG Enrichment 
@@ -1174,13 +1191,13 @@ barplot(ekegg, showCategory = 15, title="KEGG: Arabidopsis thaliana")
 ###########################################################################
 
 #upregulated genes
-upreg_genes<- merged_ordered$gene[
-  merged_ordered$padj <0.05 & merged_ordered$log2FoldChange > 0 
+upreg_genes<- res_sig$Geneid[
+  res_sig$padj <0.05 & res_sig$log2FoldChange > 0 
 ]
 
 #downregulated genes
-downreg_genes<- merged_ordered$gene[
-  merged_ordered$padj <0.05 & merged_ordered$log2FoldChange < 0 
+downreg_genes<- res_sig$Geneid[
+  res_sig$padj <0.05 & res_sig$log2FoldChange < 0 
 ]
 
 #clean up gene lists 
@@ -1188,10 +1205,21 @@ downreg_genes<- merged_ordered$gene[
 upreg_genes<-unique(na.omit(upreg_genes))
 downreg_genes<-unique(na.omit(downreg_genes))
 
+#convert to entrez ids
+up_entrez_ids <- mapIds(org.At.tair.db, keys = upreg_genes, 
+                     column="ENTREZID", 
+                     keytype = "TAIR", multiVals = "first")
+
+
+
+down_entrez_ids <- mapIds(org.At.tair.db, keys = downreg_genes, 
+                        column="ENTREZID", 
+                        keytype = "TAIR", multiVals = "first")
+
 #GO BP enrichment for upregulated genes 
-go_res_up<- enrichGO(gene = upreg_genes,
+go_res_up<- enrichGO(gene = up_entrez_ids,
                      OrgDb = org.At.tair.db,
-                     keyType = "SYMBOL",
+                     keyType = "ENTREZID",
                      ont = "BP", #options: BP, MF, CC
                      pAdjustMethod = "BH",
                      qvalueCutoff = 0.05,
@@ -1203,9 +1231,9 @@ dotplot(go_res_up, showCategory = 15, title="GO BP Enrichment - Upregulated")
 
 #GO BP enrichment for downregulated genes
 
-go_res_down<- enrichGO(gene = downreg_genes,
+go_res_down<- enrichGO(gene = down_entrez_ids,
                      OrgDb = org.At.tair.db,
-                     keyType = "SYMBOL",
+                     keyType = "ENTREZID",
                      ont = "BP", #options: BP, MF, CC
                      pAdjustMethod = "BH",
                      qvalueCutoff = 0.05,
@@ -1213,12 +1241,12 @@ go_res_down<- enrichGO(gene = downreg_genes,
                      readable = TRUE)
 
 dotplot(go_res_down, showCategory = 15, title="GO BP Enrichment - Downregulated")
+ 
 ```
 </div>
 </div>
 
 </li>
-{% comment %}
 <li class="usa-process-list__item" markdown="1">
 
 {:.usa-process-list__heading}
@@ -1743,14 +1771,8 @@ Submit the script:
   sbatch 00_Scripts/09_trinity_slurm.sl
   ```
 
-  * Explain the output
-  * Align and Estimate/ Salmon and then...?
-  * Busco completeness?
-  * Any other estimate?
-  * 
 
 </li>
 
-{% endcomment %}
 </ol>
 
