@@ -1001,7 +1001,9 @@ pheatmap(mat_scaled,
          color = colorRampPalette(c("navy", "white", "firebrick3"))(100),
          main  = "Top 50 DEGs (scaled VST counts)")
 
+```
 </div>
+
 
   <div class="usa-accordion__heading">
     <button
@@ -1218,7 +1220,6 @@ dotplot(go_res_down, showCategory = 15, title="GO BP Enrichment - Downregulated"
 </div>
 
 </li>
-{% comment %}
 <li class="usa-process-list__item" markdown="1">
 
 {:.usa-process-list__heading}
@@ -1743,14 +1744,8 @@ Submit the script:
   sbatch 00_Scripts/09_trinity_slurm.sl
   ```
 
-  * Explain the output
-  * Align and Estimate/ Salmon and then...?
-  * Busco completeness?
-  * Any other estimate?
-  * 
 
 </li>
 
-{% endcomment %}
 </ol>
 
