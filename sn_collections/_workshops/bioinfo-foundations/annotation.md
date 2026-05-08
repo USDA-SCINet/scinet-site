@@ -19,7 +19,8 @@ sessions:
     date: 2026-05-11    
     end_date: 2026-05-13 
     multiday: May 11 & 13
-
+workshop: foundations_workshop
+files: "/project/scinet_workshop2/foundations_bioinf_2026/genome_annotation/files/"
 registration:
     url: https://forms.office.com/g/T2teMegYSW
 tags: bioinformatics
@@ -37,30 +38,39 @@ Genome annotation takes raw genome assemblies and adds biologically meaningful g
 
 By the end of the workshop, participants will have a clear understanding of how gene models are generated, how different annotation strategies compare, and how to interpret and assign function to genes in a biologically meaningful way.
 
-{% comment %}
-## Tutorial Setup Instructions
 
-Steps to prepare for the tutorial session:
+## Tutorial Setup Instructions  
+
+Steps to prepare for the tutorial session:  
 
 * Login to [Ceres Open OnDemand](http://ceres-ood.scinet.usda.gov/). For more information on login procedures for web-based SCINet access, see the [SCINet access user guide]({{site.baseurl}}/guides/access/web-based-login).
-* Open a command-line session by clicking on “Clusters” -> “Ceres Shell Access” on the top menu. This will open a new tab with a command-line session on Ceres' login node.
-* Request resources on a compute node by running the following command.
+ 
 
-    {:.copy-code}
-```bash
-srun --reservation=wk3_workshop -A scinet_workshop2 -t 05:00:00 -N1 -c2 --pty bash
-```
-    {% include reservation-alert reservation="wk3_workshop" project="scinet_workshop2" %}
+* Open a command-line session by clicking on "Clusters" -> "Ceres Shell Access" on the top menu. This will open a new tab with a command-line session on Ceres' login node.
 
 * Create a workshop working directory by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the $USER variable.  
 
-    {:.copy-code}
-```bash
-mkdir -p /90daydata/shared/$USER/genome_annotation 
-cd /90daydata/shared/$USER/genome_annotation
-cp -p /project/scinet_workshop2/Bioinformatics_series/wk3_workshop/day2/repeats.sl .
-cp -p /project/scinet_workshop2/Bioinformatics_series/wk3_workshop/day2/braker.sl .
-```
+  ```bash
+  mkdir -p /90daydata/shared/$USER/genome_annotation 
+  cd /90daydata/shared/$USER/genome_annotation
+  cp -r {{ page.files }}* .
+  ```
+  {:.copy-code}
+
+* Launch VS Code:
+  * Under the Interactive Apps menu, select VS Code
+  * Specify the following input values on the page:
+    * Account: scinet_workshop2
+    * Queue: ceres
+    * QoS: 400thread
+    * Number of cores: 8
+    * Memory required: 50G
+    * Number of hours: 5
+    * Optional Slurm Parameters: `--reservation={{ page.workshop }}`
+    * Working Directory:  `/90daydata/shared/$USER/genome_annotation`
+  
+  * Click Launch. The screen will update to the *Interactive Sessions* page. When your VS Code session is ready, the top card will update from *Queued* to *Running* and a *Connect to VS Code* button will appear. Click *Connect to VS Code.*
+
 -----
 
 ## Genome Annotation
@@ -105,7 +115,7 @@ For this step we will use the repeatmodeler and repeatmasker module in the scrip
 #SBATCH -N1
 #SBATCH -c16
 #SBATCH -J repeats
-#SBATCH --reservation=wk3_workshop # FYI: This reservation expires May 16, 2025
+#SBATCH --reservation={{ page.workshop }}
 #SBATCH -A scinet_workshop2
 #SBATCH -o LOG/repeats_%j.out
 #SBATCH -e LOG/repeats_%j.err
@@ -122,7 +132,7 @@ module load repeatmasker
 # Define Variable
 #################
 
-TAIR_REF="/project/scinet_workshop2/Bioinformatics_series/wk3_workshop/day2/01_Files/TAIR_Assembly/chr2.fa"
+TAIR_REF="/{{ page.files }}/chr2.fa"
 BASENAME="chr2"
 DBNAME="ATNDB"
 
@@ -226,7 +236,7 @@ In this step we will use the `braker` module as described in the script below (i
 #SBATCH -c16
 #SBATCH -p ceres
 #SBATCH -t 12:00:00
-#SBATCH --reservation=wk3_workshop # FYI: Reservation expires on May 16, 2025
+#SBATCH --reservation={{ page.workshop }}
 #SBATCH -A scinet_workshop2
 #SBATCH -o "LOG/Braker_%j.out"
 #SBATCH -e "LOG/Braker_%j.err"
@@ -240,9 +250,9 @@ chmod -R g+s $TMPDIR
 ############################
 # VARIABLES #
 ############################
-BAM=/project/scinet_workshop2/Bioinformatics_series/wk3_workshop/day2/02_Hisat2/CHR2/chr2.bam
-MASKED_GENOME=/project/scinet_workshop2/Bioinformatics_series/wk3_workshop/day2/03_Repeats/RepeatMaskOut/chr2.fa.masked
-PROTEINS=/project/scinet_workshop2/Bioinformatics_series/wk3_workshop/day2/01_Files/TAIR_Assembly/chr2_proteins.fasta
+BAM={{ page.files }}02_Hisat2/CHR2/chr2.bam
+MASKED_GENOME={{ page.files }}03_Repeats/RepeatMaskOut/chr2.fa.masked
+PROTEINS={{ page.files }}day2/01_Files/TAIR_Assembly/chr2_proteins.fasta
 BASENAME="chr2"
 
 ##############################
@@ -352,7 +362,5 @@ jbrowse-desktop
 
 
 </li>
+
 </ol>
-
-
-{% endcomment %}
