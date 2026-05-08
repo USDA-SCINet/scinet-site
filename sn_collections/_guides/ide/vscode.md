@@ -85,6 +85,8 @@ OOD VS Code stores your extensions in your home directory by default, which can 
 
 VS Code has a registered tunnel extension that allows users to securely work on projects hosted on remote machines without SSH. The tunnel extension creates a secure and encrypted connection between your local computer and a remote machine.  
 
+If you're unfamiliar with Remote Tunnels, see the [VS Code Remote Tunnels documentation](https://code.visualstudio.com/docs/remote/tunnels/)
+
 **Why use a registered tunnel for VS Code?**
 
 *  **Easy access:** There is no need for SSH keys or network configuration to connect to development environments remotely.  
@@ -115,20 +117,20 @@ These instructions assume you are using your USDA email, but using a GitHub acco
 1. You should receive a page telling you that you are signed in and can close your web browser. 
 
 #### Start a tunnel on Ceres
+In Open OnDemand select the VS Code Tunnel app under Interactive Apps:
 
-1. Open a terminal on the Ceres login node either via Ceres Open OnDemand or by using SSH to connect to ceres.scinet.usda.gov. 
-1. At the terminal, run the following command, replacing `<account_name>` with the account you are using to run this job: 
-   ```
-   launch-vscode-tunnel.sh -A <account_name> -t 04:00:00
-   ```  
-   By default, this script will request two CPU cores, on the "ceres" partition of the cluster, for four hours. You will have 8 GB of RAM available. These settings should be sufficient for debugging and testing purposes. If you need more resources, you can request them by passing sbatch arguments to the script. However, be aware that the more resources you request, the longer it will take for the cluster to be able to allocate them for you. 
+Start a new VS Code session with the resources you need. Once the session is running, you will be given instructions to authenticate your device:
+![ood vs code tunnel app]({{ images_path }}/vscode/ood_vscode_tunnel.png)
 1. You should see a message to open a web browser and go to https://microsoft.com/devicelogin and enter a code. Do as instructed. 
 1. After entering the code, you will be asked to either log in or select an account to register the tunnel with. Register it to your USDA account, unless you used a different account when setting up your local VS Code.
 
 #### Connect to the tunnel on Ceres
 
 1. Return to your local VS Code instance. 
-1. Registered tunnels will show up in the Remote Explorer sidebar. It should say something similar to "ceres20-compute-55 running".  
+1. Registered tunnels will show up in the Remote Explorer sidebar. It should say something similar to "ceres20-compute-74 running".
+
+   ![vs code remote explorer tunnel]({{ images_path }}/vscode/vscode_remote_explorer_tunnel.png)
+
    If you do not see your tunnel:
    *  You can refresh the list by pressing the refresh button next to “Remotes (Tunnels/SSH)”.
    *  If you still do not see it, open the Welcome screen and connect to the tunnel from there:  
@@ -139,18 +141,12 @@ These instructions assume you are using your USDA email, but using a GitHub acco
       * Open a terminal from the menu:  
         “Terminal” -> “New Terminal”
       * In the terminal, run the command: `hostname` 
-      * The command should respond with something similar to "ceres20-compute-55". 
- 
-### Closing a Registered Tunnel  
+      * The command should respond with something similar to "ceres20-compute-74".
 
-When you are done using a tunnel, it is important to close it to free up those resources for other users to use. To do this: 
-1. Open a terminal on the Ceres login node either via Ceres Open OnDemand or by using SSH to connect to ceres.scinet.usda.gov. 
-2. Run the following command, where `<job_id>` is the slurm job number that was displayed when you launched the tunnel: `scancel <job_id> `
-   * If you have forgotten the slurm job number, you can find it by running the following command:
-     ```
-     squeue -u <scinet_username>
-     ```
-     Look for a job named "vscode-tunnel".
+### Closing a Registered Tunnel
+When you are done using a tunnel, it is important to close it to free up those resources for other users to use. To do this:
+1. On Open OnDemand, go to *My Interactive Sessions*.
+2. Find your VS Code session and click **Cancel**.
 
 ## Troubleshooting
 
