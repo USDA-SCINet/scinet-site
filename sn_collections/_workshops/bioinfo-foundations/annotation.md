@@ -19,8 +19,10 @@ sessions:
     date: 2026-05-11    
     end_date: 2026-05-13 
     multiday: May 11 & 13
-workshop: foundations_workshop
-files: "/project/scinet_workshop2/foundations_bioinf_2026/genome_annotation/files/"
+
+workshop_name: foundations_workshop
+workshop_files: "/project/scinet_workshop2/foundations_bioinf_2026/genome_annotation/files/"
+
 registration:
     url: https://forms.office.com/g/T2teMegYSW
 tags: bioinformatics
@@ -53,7 +55,7 @@ Steps to prepare for the tutorial session:
   ```bash
   mkdir -p /90daydata/shared/$USER/genome_annotation 
   cd /90daydata/shared/$USER/genome_annotation
-  cp -r {{ page.files }}* .
+  cp -r {{ page.workshop_files }}* .
   ```
   {:.copy-code}
 
@@ -66,7 +68,7 @@ Steps to prepare for the tutorial session:
     * Number of cores: 8
     * Memory required: 50G
     * Number of hours: 5
-    * Optional Slurm Parameters: `--reservation={{ page.workshop }}`
+    * Optional Slurm Parameters: `--reservation={{ page.workshop_name }}`
     * Working Directory:  `/90daydata/shared/$USER/genome_annotation`
   
   * Click Launch. The screen will update to the *Interactive Sessions* page. When your VS Code session is ready, the top card will update from *Queued* to *Running* and a *Connect to VS Code* button will appear. Click *Connect to VS Code.*
@@ -115,7 +117,7 @@ For this step we will use the repeatmodeler and repeatmasker module in the scrip
 #SBATCH -N1
 #SBATCH -c16
 #SBATCH -J repeats
-#SBATCH --reservation={{ page.workshop }}
+#SBATCH --reservation={{ page.workshop_name }}
 #SBATCH -A scinet_workshop2
 #SBATCH -o LOG/repeats_%j.out
 #SBATCH -e LOG/repeats_%j.err
@@ -132,7 +134,7 @@ module load repeatmasker
 # Define Variable
 #################
 
-TAIR_REF="/{{ page.files }}/chr2.fa"
+TAIR_REF="/{{ page.workshop_files }}/chr2.fa"
 BASENAME="chr2"
 DBNAME="ATNDB"
 
@@ -236,7 +238,7 @@ In this step we will use the `braker` module as described in the script below (i
 #SBATCH -c16
 #SBATCH -p ceres
 #SBATCH -t 12:00:00
-#SBATCH --reservation={{ page.workshop }}
+#SBATCH --reservation={{ page.workshop_name }}
 #SBATCH -A scinet_workshop2
 #SBATCH -o "LOG/Braker_%j.out"
 #SBATCH -e "LOG/Braker_%j.err"
@@ -250,9 +252,9 @@ chmod -R g+s $TMPDIR
 ############################
 # VARIABLES #
 ############################
-BAM={{ page.files }}02_Hisat2/CHR2/chr2.bam
-MASKED_GENOME={{ page.files }}03_Repeats/RepeatMaskOut/chr2.fa.masked
-PROTEINS={{ page.files }}day2/01_Files/TAIR_Assembly/chr2_proteins.fasta
+BAM={{ page.workshop_files }}02_Hisat2/CHR2/chr2.bam
+MASKED_GENOME={{ page.workshop_files }}03_Repeats/RepeatMaskOut/chr2.fa.masked
+PROTEINS={{ page.workshop_files }}day2/01_Files/TAIR_Assembly/chr2_proteins.fasta
 BASENAME="chr2"
 
 ##############################
@@ -320,12 +322,12 @@ sbatch braker.sl
     - Open an OOD interactive desktop session
     - Launch a terminal and load the module
     - Run the program
-
-        {:.copy-code}
-        ```bash
-module load jbrowse
-jbrowse-desktop
-```
+    
+      ```bash
+      module load jbrowse
+      jbrowse-desktop
+      ```
+      {:.copy-code}
 
 1. **Create a New Session**  
     When JBrowse 2 Desktop launches, you will be prompted to "Create a New Session".
