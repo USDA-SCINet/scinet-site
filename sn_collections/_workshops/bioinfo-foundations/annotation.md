@@ -64,8 +64,8 @@ Steps to prepare for the tutorial session:
     * Account: scinet_workshop2
     * Queue: ceres
     * QoS: 400thread
-    * Number of cores: 8
-    * Memory required: 50G
+    * Number of cores: 4
+    * Memory required: 10G
     * Number of hours: 5
     * Optional Slurm Parameters: `--reservation={{ page.workshop }}`
     * Working Directory:  `/90daydata/shared/$USER/genome_annotation`
@@ -144,17 +144,10 @@ module load repeatmasker
 # Define Variable
 #################
 
-TAIR_REF="/{{ page.files }}/chr2.fa"
+TAIR_REF="{{ page.base_dir }}TAIR_Assembly/chr2.fa"
 BASENAME="chr2"
 DBNAME="ATNDB"
 
-####################
-# Exercise for Later
-####################
-
-#OUR_REF="{{ page.files }}Our_Assembly/Arabidopsis_chr2.fa"
-#BASENAME="Arabidopsis_chr2"
-#DBNAME="ATNDB"
 
 #############
 # Permissions
@@ -176,7 +169,7 @@ cd "$TMPDIR"
 
 BuildDatabase -engine ncbi -name "$DBNAME" "$BASENAME.fa"
 RepeatModeler -database "$DBNAME" -engine ncbi -threads 16
-RepeatMasker -pa 4 -gff -xsmall -nolow -engine ncbi -lib RM*/consensi.fa.classified -dir RepeatMaskOut "$BASENAME.fa"
+RepeatMasker -pa 16 -gff -xsmall -nolow -engine ncbi -lib RM*/consensi.fa.classified -dir RepeatMaskOut "$BASENAME.fa"
 
 ##############################################
 # Move the output folders to working directory
@@ -190,7 +183,7 @@ Submit the script:
 
 {:.copy-code}
 ```bash 
-sbatch repeats.sl  
+sbatch 00_Scripts/01_repeats.sl 
 ``` 
 
 #### Best Practices
@@ -238,9 +231,20 @@ Evidence types in BRAKER:
 
 
 #### Using the module
-In this step we will use the `braker` module as described in the script below (included)
+In this step we will use the `braker` module as described below:
 
-**braker.sl**
+
+Ensure that you are in `{{ page.base_dir}}`. Create the empty script file:
+
+  ```bash
+  touch 00_Scripts/02_braker.sl
+  ```
+  {:.copy-code}
+
+  Open `02_braker.sl` in the VS Code editor and copy and paste the script below:
+
+
+{:.copy-code}
 
 ```bash
 #!/bin/bash
@@ -262,9 +266,9 @@ chmod -R g+s $TMPDIR
 ############################
 # VARIABLES #
 ############################
-BAM={{ page.files }}02_Hisat2/CHR2/chr2.bam
-MASKED_GENOME={{ page.files }}03_Repeats/RepeatMaskOut/chr2.fa.masked
-PROTEINS={{ page.files }}day2/01_Files/TAIR_Assembly/chr2_proteins.fasta
+BAM={{ page.base_dir }}TAIR_Assembly/chr2.bam
+MASKED_GENOME=<to be filled by user>
+PROTEINS=<to be filled by user>
 BASENAME="chr2"
 
 ##############################
@@ -318,7 +322,7 @@ Submit the script:
 
 {:.copy-code}
 ```bash 
-sbatch braker.sl  
+sbatch 00_Scripts/02_braker.sl  
 ``` 
 </li> 
 <li class="usa-process-list__item" markdown="1">
