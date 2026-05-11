@@ -1,6 +1,6 @@
 ---
 title: "From reads to variants: GATK & Deepvariant"
-date: 2025-06-03 13:00
+date: 2025-06-19 13:00
 type: workshop
 display: basic
 provider: [ISU, SCINet Office]
@@ -36,6 +36,127 @@ prerequisites:
 This workshop will introduce participants to variant calling using two methods: Genome analysis toolkit (GATK) and Deep Variant. We will develop a complete workflow for calling variants from whole-genome data for multiple individuals.<!--excerpt--> The workflow will include trimming and filtering raw reads, mapping them to a reference assembly, calling variants for each individual, merging the variants of all individuals into a single variant call format file (.vcf), and filtering the resulting variant file. In addition, we will discuss strategies for reducing compute time and the comparative strengths and weaknesses of GATK and DeepVariant.   
  
 {% comment %}
+
+## Overview
+
+A hands-on workshop covering the GATK best practices pipeline for germline and somatic variant calling. Designed to pair with a follow-up DeepVariant workshop, with explicit framing of how the two approaches relate.
+
+**Duration:** 4 hours  
+**Dataset:** Downsampled chr20 slice from Genome in a Bottle (HG001/NA12878)  
+**Environment:** `broadinstitute/gatk:latest` Docker image
+
+---
+
+## Hour 1 — Foundations (60 min)
+
+### Why Variant Calling Matters (15 min)
+- From raw reads to biological insight
+- Clinical vs. research contexts
+- SNPs, indels, CNVs — what you're looking for and why
+
+### The GATK Ecosystem (20 min)
+- Brief history: GATK3 → GATK4, Broad Institute context
+- Key tools in the toolkit (HaplotypeCaller, Mutect2, CNVkit, etc.)
+- GATK vs. other callers — where it sits in the landscape (good to frame the DeepVariant contrast early)
+
+### Pre-GATK: Getting Your Data Ready (25 min)
+- Reference genomes: GRCh37 vs. GRCh38, choosing wisely
+- BWA-MEM alignment
+- MarkDuplicates (Picard/GATK)
+- BAM sorting and indexing
+- Read groups — why they matter and what breaks without them
+
+---
+
+## Hour 2 — The GATK Best Practices Pipeline (60 min)
+
+### Base Quality Score Recalibration (BQSR) (20 min)
+- Why sequencer quality scores are biased
+- Known variant sites (dbSNP, Mills indels)
+- `BaseRecalibrator` → `ApplyBQSR`
+- How to assess before/after
+
+### HaplotypeCaller Deep Dive (30 min)
+- Local de novo assembly — what makes GATK's approach distinctive
+- GVCF mode vs. direct calling — when to use which
+- Key parameters to understand (`-ERC GVCF`, `--sample-ploidy`, intervals)
+- Handling non-human genomes
+
+### Hands-On Exercise (10 min)
+- Run HaplotypeCaller on a small example BAM
+- Inspect the GVCF output
+
+---
+
+## Hour 3 — Joint Genotyping & Filtering (60 min)
+
+### Joint Genotyping (20 min)
+- Why joint calling improves sensitivity (the N+1 problem)
+- `GenomicsDBImport` → `GenotypeGVCFs`
+- Cohort size considerations and scaling
+
+### Variant Filtering (30 min)
+- Hard filtering vs. VQSR — when to use each (sample size thresholds)
+- VQSR: tranches, truth sets, the annotation space (QD, MQ, FS, SOR, etc.)
+- CNNScoreVariants as an alternative for small cohorts
+- Practical filtering thresholds and how to tune them
+
+### Hands-On Exercise (10 min)
+- Joint genotype a small multi-sample GVCF
+- Apply hard filters and inspect the VCF
+
+---
+
+## Hour 4 — Practical Skills & Transition to DeepVariant (60 min)
+
+### Somatic Variant Calling with Mutect2 (20 min)
+- Germline vs. somatic calling — key differences in the model
+- Tumor-normal pairs vs. tumor-only mode
+- Panel of Normals (PoN), `GetPileupSummaries`, `FilterMutectCalls`
+- Common pitfalls
+
+### Evaluating Your Results (20 min)
+- `hap.py` for benchmarking against truth sets (Genome in a Bottle)
+- Key metrics: precision, recall, F1 by variant type
+- IGV for manual inspection — what a good vs. bad call looks like
+- Common failure modes (strand bias, low complexity regions, mapping artifacts)
+
+### Framing DeepVariant (20 min)
+- GATK's probabilistic model vs. DeepVariant's image-based CNN approach
+- Where each tends to excel (indels, low-coverage, non-human genomes)
+- Shared concepts your colleagues' workshop will build on:
+  - BQSR
+  - GVCF-style outputs (DeepVariant also produces GVCFs)
+  - `hap.py` benchmarking
+- Questions to keep in mind as you move to the next workshop
+
+---
+
+## GATK vs. DeepVariant — Quick Reference
+
+| Feature | GATK HaplotypeCaller | DeepVariant |
+|---|---|---|
+| Approach | Probabilistic / HMM | Deep learning (CNN) |
+| SNP accuracy | High | Very high |
+| Indel accuracy | Good | Generally better |
+| Non-human genomes | Well supported | Requires retraining |
+| Small cohorts | Good (hard filter / CNN) | Strong |
+| Large cohorts | Excellent (VQSR) | Improving |
+| GVCF output | Yes | Yes |
+| Somatic calling | Yes (Mutect2) | No (germline only) |
+| Interpretability | High | Lower (black box) |
+
+---
+
+## Logistics & Tips
+
+- **Pacing:** Hours 2 and 3 are the densest — build in buffer or trim the somatic section if running long
+- **Dataset:** A downsampled chr20 slice from NA12878 is small enough to run live and well-characterized for benchmarking
+- **Environment:** Distribute a pre-built Docker image (`broadinstitute/gatk:latest`) to save setup time
+- **Handoff:** End with the comparison table above so participants arrive at the DeepVariant workshop with a clear mental model of what changes and what stays the same
+
+
+
 ## Pre-workshop instructions
 
 To help minimize technical issues and delays at the start of the workshop, please try the following tests prior to the workshop.  
