@@ -54,7 +54,7 @@ Steps to prepare for the tutorial session:
   ```bash
   mkdir -p /90daydata/shared/$USER/genome_annotation 
   cd /90daydata/shared/$USER/genome_annotation
-  cp -r {{ page.workshop_files }}* .
+  cp -r /project/scinet_workshop2/foundations_bioinf_2026/genome_annotation/files/* .
   ```
   {:.copy-code}
 
@@ -67,7 +67,7 @@ Steps to prepare for the tutorial session:
     * Number of cores: 4
     * Memory required: 10G
     * Number of hours: 5
-    * Optional Slurm Parameters: `--reservation={{ page.workshop_name }}`
+    * Optional Slurm Parameters: `--reservation=foundations_workshop`
     * Working Directory:  `/90daydata/shared/$USER/genome_annotation`
   
   * Click Launch. The screen will update to the *Interactive Sessions* page. When your VS Code session is ready, the top card will update from *Queued* to *Running* and a *Connect to VS Code* button will appear. Click *Connect to VS Code.*
