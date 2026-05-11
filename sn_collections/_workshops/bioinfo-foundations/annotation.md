@@ -140,7 +140,7 @@ DBNAME="ATNDB"
 # Exercise for Later
 ####################
 
-#OUR_REF="/project/scinet_workshop2/Bioinformatics_series/wk3_workshop/day2/01_Files/Our_Assembly/Arabidopsis_chr2.fa"
+#OUR_REF="{{ page.files }}Our_Assembly/Arabidopsis_chr2.fa"
 #BASENAME="Arabidopsis_chr2"
 #DBNAME="ATNDB"
 
@@ -334,7 +334,7 @@ jbrowse-desktop
 
 1. **Load Genome Assembly**  
     - Click "File → Open" and choose "Add assembly".
-    - Browse to your FASTA file (e.g., chr2.fasta) and load it. If the fasta index is missing, JBrowse will generate it.
+    - Browse to your FASTA file (e.g., chr2.fasta) and load it. We also have the associated fasta index in the same folder.
 
 1. **Add Annotation Tracks**  
     Add GFF3, BED, or GTF files that represent different BRAKER runs:
