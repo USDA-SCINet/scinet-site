@@ -54,7 +54,7 @@ Steps to prepare for the tutorial session:
   ```bash
   mkdir -p /90daydata/shared/$USER/genome_annotation 
   cd /90daydata/shared/$USER/genome_annotation
-  cp -r {{ page.files }}* .
+  cp -r {{ page.workshop_files }}* .
   ```
   {:.copy-code}
 
@@ -67,7 +67,7 @@ Steps to prepare for the tutorial session:
     * Number of cores: 4
     * Memory required: 10G
     * Number of hours: 5
-    * Optional Slurm Parameters: `--reservation={{ page.workshop }}`
+    * Optional Slurm Parameters: `--reservation={{ page.workshop_name }}`
     * Working Directory:  `/90daydata/shared/$USER/genome_annotation`
   
   * Click Launch. The screen will update to the *Interactive Sessions* page. When your VS Code session is ready, the top card will update from *Queued* to *Running* and a *Connect to VS Code* button will appear. Click *Connect to VS Code.*
@@ -127,7 +127,7 @@ For this step we will use the repeatmodeler and repeatmasker module.
 #SBATCH -N1
 #SBATCH -c16
 #SBATCH -J repeats
-#SBATCH --reservation={{ page.workshop }}
+#SBATCH --reservation={{ page.workshop_name }}
 #SBATCH -A scinet_workshop2
 #SBATCH -o LOG/repeats_%j.out
 #SBATCH -e LOG/repeats_%j.err
@@ -252,7 +252,7 @@ Ensure that you are in `{{ page.base_dir}}`. Create the empty script file:
 #SBATCH -c16
 #SBATCH -p ceres
 #SBATCH -t 12:00:00
-#SBATCH --reservation={{ page.workshop }}
+#SBATCH --reservation={{ page.workshop_name }}
 #SBATCH -A scinet_workshop2
 #SBATCH -o "LOG/Braker_%j.out"
 #SBATCH -e "LOG/Braker_%j.err"
@@ -336,12 +336,12 @@ sbatch 00_Scripts/02_braker.sl
     - Open an OOD interactive desktop session
     - Launch a terminal and load the module
     - Run the program
-
-        {:.copy-code}
-        ```bash
-module load jbrowse
-jbrowse-desktop
-```
+    
+      ```bash
+      module load jbrowse
+      jbrowse-desktop
+      ```
+      {:.copy-code}
 
 1. **Create a New Session**  
     When JBrowse 2 Desktop launches, you will be prompted to "Create a New Session".
