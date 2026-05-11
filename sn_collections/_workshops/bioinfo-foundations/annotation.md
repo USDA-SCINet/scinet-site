@@ -21,6 +21,7 @@ sessions:
     multiday: May 11 & 13
 workshop: foundations_workshop
 files: "/project/scinet_workshop2/foundations_bioinf_2026/genome_annotation/files/"
+base_dir: "/90daydata/shared/$USER/genome_annotation/"
 registration:
     url: https://forms.office.com/g/T2teMegYSW
 tags: bioinformatics
@@ -106,9 +107,20 @@ RepeatMasker uses a library of known or *de novo* identified repeats (e.g., from
 
 #### Using the modules
 
-For this step we will use the repeatmodeler and repeatmasker module in the script below (included)
+For this step we will use the repeatmodeler and repeatmasker module.
 
-`repeats.sl`
+
+  Ensure that you are in `{{ page.base_dir}}`. Create the empty script file:
+
+  ```bash
+  touch 00_Scripts/01_repeats.sl
+  ```
+  {:.copy-code}
+
+  Open `01_repeats.sl` in the VS Code editor and copy and paste the script below:
+
+
+{:.copy-code}
 
 ```bash
 #!/bin/bash
