@@ -33,6 +33,9 @@ sessions:
     date: 2026-03-26
     time: 1-2 pm ET
     excerpt: Learn more about our working groups!
+    materials:
+      - text: Session recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/IQD1GtG709xtQo_Yc6lvGzckAewJDYCPSEn1p3V7EDhLj4s?e=gK8cJe&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
     details: 
       - text: <b>Animal Behavior AI Working Group</b> - John Park  
       - text: <b>Geospatial Research Working Group</b> - Amy Hudson and Heather Savoy
