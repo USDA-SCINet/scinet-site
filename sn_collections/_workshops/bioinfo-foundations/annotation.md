@@ -505,10 +505,8 @@ Results are written to:
 {{ page.base_dir }}BRAKER4_Test_Data/BRAKER4/output/O_tauri
 ```
 
-Key output files:
-
-| File | Description |
-|---|---|
+{% include table caption="Key output files" content="| File | Description |
+| --- | --- |
 | `braker.gtf.gz` | Gene predictions (GTF) |
 | `braker.gff3.gz` | Gene predictions (GFF3) |
 | `braker.aa.gz` | Protein sequences (FASTA) |
@@ -516,7 +514,7 @@ Key output files:
 | `braker_utr.gtf.gz` | Gene predictions with UTR features |
 | `genome.fa.gz` | Repeat-masked genome assembly (pipeline-generated) |
 | `hintsfile.gff.gz` | All extrinsic evidence hints |
-| `gene_support.tsv` | Per-gene evidence support statistics |
+| `gene_support.tsv` | Per-gene evidence support statistics |" %}
 
 Quick checks:
 
@@ -573,7 +571,7 @@ bash run_braker4_slurm_pwd.sh >& run_braker4_slurm_pwd.log &
 
 ### EDTA: Transposable Element Annotation
 
-### What is EDTA?
+**What is EDTA?**
 
 [EDTA](https://github.com/oushujun/EDTA) (*Extensive de-novo TE Annotator*) is a pipeline for automated whole-genome de-novo TE annotation. From the repository:
 
@@ -651,10 +649,9 @@ EDTA.pl \
   --threads 48
 ```
 
-Key flags:
 
-| Flag | Description |
-|---|---|
+{% include table caption="Key flags" content="| Flag | Description |
+| --- | --- |
 | `--genome` | Input genome FASTA |
 | `--species` | Organism group (`rice`, `Maize`, `others`) |
 | `--step` | Which steps to run (`all` runs the full pipeline) |
@@ -662,7 +659,7 @@ Key flags:
 | `--sensitive 1` | Use RepeatModeler for improved sensitivity |
 | `--overwrite 0` | Skip steps that already have output files |
 | `--force 1` | Continue past missing intermediate results |
-| `--threads` | Number of CPU threads |
+| `--threads` | Number of CPU threads |" %}
 
 #### Full run command (with annotations and sensitive mode)
 
@@ -691,12 +688,12 @@ time EDTA.pl \
 
 After a successful run, the main outputs under `<genome>.mod.EDTA.raw/` include:
 
-| File | Description |
-|---|---|
+{% include table caption="Key output files" content="| File | Description |
+| --- | --- |
 | `<genome>.mod.EDTA.TElib.fa` | Final non-redundant TE library |
 | `<genome>.mod.EDTA.TEanno.gff3` | Whole-genome TE annotation in GFF3 format |
 | `<genome>.mod.EDTA.TEanno.sum` | Summary statistics of TE annotations |
-| `<genome>.mod.out` | RepeatMasker-format output |
+| `<genome>.mod.out` | RepeatMasker-format output |" %}
 
 ---
 </li>
@@ -706,7 +703,7 @@ After a successful run, the main outputs under `<genome>.mod.EDTA.raw/` include:
 {:.usa-process-list__heading}
 ### OMArk: Proteome Quality Assessment
 
-#### What is OMArk?
+**What is OMArk?**
 
 [OMArk](https://github.com/DessimozLab/OMArk) is a software tool for proteome quality assessment. It evaluates:
 
@@ -767,22 +764,22 @@ OMArk can be run via the [web server](https://omark.omabrowser.org) (no installa
 
 ![OMArk Results](/assets/img/events/bioinfo/Genome_Annotation/omark.png)
 
-| Metric | Count | Percentage |
-|---|---|---|
+{% include table content="| Metric | Count | Percentage |
+| --- | --- | --- |
 | Ancestral clade | Brassicaceae | – |
 | Conserved HOGs assessed | 17,996 | – |
 | **Completeness** | 3,391 | **18.84%** |
 | &nbsp;&nbsp;Single-copy | 2,465 | 13.70% |
 | &nbsp;&nbsp;Duplicated (expected) | 124 | 0.69% |
 | &nbsp;&nbsp;Duplicated (unexpected) | 802 | 4.46% |
-| Missing | 14,605 | 81.16% |
+| Missing | 14,605 | 81.16% |" %}
 
 > The low completeness (~19%) is **expected** because we submitted only chromosome 2 proteins (~6,000 out of ~39,000 total). A full-proteome run would show completeness >95% for a high-quality *Arabidopsis* annotation.
 
 **Whole-proteome consistency**
 
-| Category | Count | Percentage |
-|---|---|---|
+{% include table content="| Category | Count | Percentage |
+| --- | --- | --- |
 | **Consistent lineage placement** | 5,770 | **93.71%** |
 | &nbsp;&nbsp;partial hits | 160 | 2.60% |
 | &nbsp;&nbsp;fragmented | 65 | 1.06% |
@@ -790,7 +787,7 @@ OMArk can be run via the [web server](https://omark.omabrowser.org) (no installa
 | &nbsp;&nbsp;partial hits | 17 | 0.28% |
 | &nbsp;&nbsp;fragmented | 10 | 0.16% |
 | Contamination | 0 | 0.00% |
-| Total Unknown | 355 | 5.77% |
+| Total Unknown | 355 | 5.77% |" %}
 
 The high consistency score (93.71%) and zero contamination confirm that the chromosome 2 proteins are correctly assigned to Brassicaceae with no foreign sequences present.
 
@@ -804,10 +801,10 @@ The comparison view allows side-by-side evaluation of multiple proteomes or anno
 
 #### Summary
 
-| Tool | Input | Key Output |
-|---|---|---|
+{% include table content="| Tool | Input | Key Output |
+| --- | --- | --- |
 | EDTA | Assembled genome (FASTA) | TE library, GFF3 annotation, masked genome |
-| OMArk | Predicted proteome (FASTA) | Completeness, consistency, and contamination scores |
+| OMArk | Predicted proteome (FASTA) | Completeness, consistency, and contamination scores |" %}
 
 Together, EDTA and OMArk provide a comprehensive picture of both the repetitive landscape and the protein-coding gene space of a newly assembled genome.
 
