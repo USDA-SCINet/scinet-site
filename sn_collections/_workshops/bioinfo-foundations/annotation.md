@@ -766,7 +766,7 @@ OMArk can be run via the [web server](https://omark.omabrowser.org) (no installa
 
 **Completeness assessment:**
 
-![OMArk Results](omark.png)
+![OMArk Results](/assets/img/events/bioinfo/Genome_Annotation/{omark.png})
 
 | Metric | Count | Percentage |
 |---|---|---|
@@ -797,7 +797,7 @@ The high consistency score (93.71%) and zero contamination confirm that the chro
 
 **Comparison view**
 
-![OMArk Comparison View](omark_comparison.png)
+![OMArk Comparison View](/assets/img/events/bioinfo/Genome_Annotation/{omark_comparison.png})
 
 The comparison view allows side-by-side evaluation of multiple proteomes or annotation versions, useful for benchmarking gene prediction pipelines.
 
