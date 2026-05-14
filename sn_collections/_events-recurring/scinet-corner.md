@@ -20,7 +20,7 @@ archive-label: SCINet Corner Recordings
 sessions:
   - session:
     title: "Working with Slurm, part 2: monitoring and analyzing Slurm jobs"
-    date: 2026-05-26
+    date: 2026-05-28
     time: 1-2 pm ET
     excerpt: This SCINet Corner will demonstrate how to monitor the progress and resource usage of running jobs and how to analyze the resource efficiency of completed jobs.
   - session:
