@@ -1,5 +1,5 @@
 ---
-title: Automating Bioinformatics Pipelines with Nextflow
+title: Automating Bioinformatics Pipelines with Snakemake
 type: workshop
 display: basic
 provider: [ISU, SCINet Office]
