@@ -13,6 +13,9 @@ course-list:
   - title: Introduction to RNA-seq Analysis
   - title: Genome Annotation
   - title: "From reads to variants: GATK & Deepvariant"
+  - title: RNAseq and Variant calling pipelines in Galaxy
+  - title: Automating Bioinformatics Pipelines with Nextflow
+  - title: Automating Bioinformatics Pipelines with Snakemake
   
 ---
 
