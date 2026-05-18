@@ -19,6 +19,11 @@ sessions:
     multiday: "Feb 24 and 26"
     date: 2026-02-24 19:00:00
     end_date: 2026-02-26
+    materials:
+      - text: Day 1 Recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/IQA5tSqnzkRbR71tl8_Z6bisAX4fwP-xTemaEX7t8WmVE1o?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=jLXo3k
+      - text: Day 2 Recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/IQBhrV2iSlXCSq0nEcLQIdAcAQH8nuKpLHhXGGbkw-3fOqY?e=4EHl9O&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
   - session:
     time: 1:00 PM - 5:00 PM ET
     multiday: "April 22 and 24"
