@@ -39,7 +39,7 @@ sessions:
     details: 
       - text: <b>Animal Behavior AI Working Group</b> - John Park  
       - text: <b>Geospatial Research Working Group</b> - Amy Hudson and Heather Savoy
-      - text: <b>Protein Function and Phenotype Prediction Working Group</b> - Hye-Seon Kim and Carson Andorf
+      - text: <b>Protein Science Working Group</b> - Hye-Seon Kim and Carson Andorf
       - text: <b>Translational Omics Working Group</b> - George Liu and Wenli Li
   - session:
     title: SCINet lightning talks
