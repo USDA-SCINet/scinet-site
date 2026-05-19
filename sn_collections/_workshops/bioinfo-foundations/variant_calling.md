@@ -70,7 +70,7 @@ Steps to prepare for the tutorial session:
     * Memory required: 50 G
     * Number of hours: 6
     * Optional Slurm Parameters: `--reservation=foundations_workshop`
-    * Working Directory:  `/90daydata/shared/$USER/intro_rnaseq`
+    * Working Directory:  `/90daydata/shared/$USER/variant_calling`
   * Click Launch. The screen will update to the *Interactive Sessions* page. When your VS Code session is ready, the top card will update from *Queued* to *Running* and a *Connect to VS Code* button will appear. Click *Connect to VS Code.*
 
 
@@ -139,7 +139,7 @@ workshop/
 
 ```bash
 # Load modules (HPC)
-module load bwa-mem2
+module load bwa_mem2
 module load samtools
 module load gatk
 module load bcftools
