@@ -33,9 +33,16 @@ prerequisites:
 
 ---
 
+This workshop will introduce participants to variant calling using two methods: Genome analysis toolkit (GATK) and Deep Variant. We will develop a complete workflow for calling variants from whole-genome data for multiple individuals.<!--excerpt-->
+
 On day 1 we will have a hands-on workshop taking attendees through the complete GATK germline variant calling pipeline using *Arabidopsis thaliana* as the dataset. The heavy computational steps (alignment, MarkDuplicates, BQSR, per-sample GVCF generation) are **pre-computed by the instructor** and provided as ready-to-use files. Attendees run HaplotypeCaller on one sample themselves, then perform joint genotyping on all 6 pre-built GVCFs. Toward the end we will introduce Deepvariant which will be then covered in detail on Day2.
 
-## Tutorial Setup Instructions Day 1 
+
+## Day 1: GATK germline variant calling pipeline using *Arabidopsis thaliana* 
+3 Hours | Single-Sample Hands-On Guide  
+*by Sivanandan Chudalayandi*  
+
+### Tutorial Setup Instructions
 
 Steps to prepare for the tutorial session:  
 
@@ -66,12 +73,9 @@ Steps to prepare for the tutorial session:
     * Working Directory:  `/90daydata/shared/$USER/intro_rnaseq`
   * Click Launch. The screen will update to the *Interactive Sessions* page. When your VS Code session is ready, the top card will update from *Queued* to *Running* and a *Connect to VS Code* button will appear. Click *Connect to VS Code.*
 
------
-## *Arabidopsis thaliana* | 3 Hours | Single-Sample Hands-On Guide
-*by Sivanandan Chudalayandi* 
----
 
-## Overview
+
+### Overview
 
 This guide walks through the complete GATK germline variant calling pipeline using
 *Arabidopsis thaliana* (TAIR10) and a single sample (SRR1945435) from the
@@ -84,7 +88,7 @@ You are encouraged to run the commands yourself during or after the workshop.
 
 ---
 
-## Directory Structure
+#### Directory Structure
 
 ```
 workshop/
@@ -102,7 +106,7 @@ workshop/
 
 ---
 
-## Environment Setup
+#### Environment Setup
 
 ```bash
 # Load modules (HPC)
@@ -127,16 +131,14 @@ CHRS=(NC_003070.9 NC_003071.7 NC_003074.8 NC_003075.7 NC_003076.8)
 
 ---
 
----
+
+### Reference Preparation, Alignment & BQSR
+
 <ol class="usa-process-list">
 <li class="usa-process-list__item" markdown="1">
 
 {:.usa-process-list__heading}
-### Reference Preparation, Alignment & BQSR
-
----
-
-#### 1.1 Reference Genome Indexing
+#### Reference Genome Indexing
 
 Three separate indexes are required by different tools. Each is built once
 and reused for all samples.
@@ -188,9 +190,11 @@ bwa-mem2 index 00_Reference/TAIR10.fna
 ls -lh 00_Reference/TAIR10.fna*
 ```
 
----
+</li>
+<li class="usa-process-list__item" markdown="1">
 
-#### 1.2 Known Sites VCF Preparation
+{:.usa-process-list__heading}
+#### Known Sites VCF Preparation
 
 BQSR requires a set of known variant sites to distinguish true variants
 from sequencing errors. We use the 1001 Genomes Project SNP VCF.
@@ -247,19 +251,22 @@ tabix -p vcf known_sites/1001genomes_snps_pass.vcf.gz
 tabix known_sites/1001genomes_snps_pass.vcf.gz NC_003075.7:1-100000 | head -5
 ```
 
----
+</li>
+<li class="usa-process-list__item" markdown="1">
 
-#### 1.3 Alignment
+{:.usa-process-list__heading}
+#### Alignment
 
 Align raw reads to the reference with read groups. Read groups are
 mandatory for GATK — without them HaplotypeCaller will refuse to run.
 
-| Tag | Meaning | Required |
-|-----|---------|---------|
+
+{% include table content="| Tag | Meaning | Required |
+| ----- | --------- | --------- |
 | ID | Read group identifier — must be unique | Yes |
 | SM | Sample name — used by GATK to identify the individual | Yes |
 | PL | Sequencing platform | Recommended |
-| LB | Library — used by MarkDuplicates | Recommended |
+| LB | Library — used by MarkDuplicates | Recommended |" %}
 
 ```bash
 bwa-mem2 mem \
@@ -293,9 +300,11 @@ samtools depth -r NC_003075.7 02_Align/${SAMPLE}.sorted.bam | \
   awk '{sum+=$3; n++} END {printf "Mean depth chr4: %.1fx\n", sum/n}'
 ```
 
----
+</li>
+<li class="usa-process-list__item" markdown="1">
 
-#### 1.4 Mark Duplicates
+{:.usa-process-list__heading}
+#### Mark Duplicates
 
 PCR duplicates inflate variant counts and must be flagged before calling.
 Duplicates are marked, not removed — they remain in the BAM but are
@@ -322,9 +331,11 @@ cat 03_Markdup/${SAMPLE}.markdup_metrics.txt
 Key metric: `PERCENT_DUPLICATION` — values above 30% suggest
 over-amplification during library preparation.
 
----
+</li>
+<li class="usa-process-list__item" markdown="1">
 
-#### 1.5 Base Quality Score Recalibration (BQSR)
+{:.usa-process-list__heading}
+#### Base Quality Score Recalibration (BQSR)
 
 Sequencers systematically mis-estimate base quality scores. BQSR corrects
 this by modelling errors against known variant sites.
@@ -334,14 +345,14 @@ quality scores. Two steps: model the errors, then apply the correction.
 
 **Phred quality score for reference**
 
-| Phred Score | Error Rate | Accuracy | 1 error in... |
-|-------------|-----------|----------|--------------|
+{% include table content="| Phred Score | Error Rate | Accuracy | 1 error in... |
+| ------------- | ----------- | ---------- | -------------- |
 | Q10 | 10% | 90% | 10 bases |
 | Q20 | 1% | 99% | 100 bases |
 | Q23 | 0.50% | 99.50% | 200 bases |
 | Q28.7 | 0.135% | 99.865% | 740 bases |
 | Q30 | 0.10% | 99.90% | 1,000 bases |
-| Q40 | 0.01% | 99.99% | 10,000 bases |
+| Q40 | 0.01% | 99.99% | 10,000 bases |" %}
 
 **Step 1 — BaseRecalibrator (build the model)**
 
@@ -423,17 +434,17 @@ gatk AnalyzeCovariates \
 ```
 
 Open `${SAMPLE}.AnalyzeCovariates.pdf` — the reported vs empirical quality plot should show points much closer to the diagonal after recalibration.
-
+</li>
+</ol>
 ---
-</li> 
+
+### HaplotypeCaller & Per-Sample GVCF
+
+<ol class="usa-process-list">
 <li class="usa-process-list__item" markdown="1">
 
 {:.usa-process-list__heading}
-### HaplotypeCaller & Per-Sample GVCF
-
----
-
-#### 2.1 HaplotypeCaller — Concepts
+#### HaplotypeCaller — Concepts
 
 HaplotypeCaller's core differentiator is **local de novo assembly**:
 
@@ -443,24 +454,28 @@ HaplotypeCaller's core differentiator is **local de novo assembly**:
 4. **PairHMM likelihoods** — computes genotype likelihoods for each haplotype pair
 5. **Genotype assignment** — assigns most likely genotype using Bayes' theorem
 
----
+</li>
+<li class="usa-process-list__item" markdown="1">
 
-#### 2.2 GVCF Mode
+{:.usa-process-list__heading}
+#### GVCF Mode
 
 GVCF mode (`-ERC GVCF`) records evidence at **every site** — not just
 variant sites. This is essential for joint genotyping.
 
-| Format | Records | Use case |
-|--------|---------|---------|
+{% include table content="| Format | Records | Use case |
+| -------- | --------- | --------- |
 | VCF | Variant sites only | Final output |
-| GVCF | All sites including reference blocks | Joint genotyping input |
+| GVCF | All sites including reference blocks | Joint genotyping input |" %}
 
 A reference block (`<NON_REF>`) confirms a site is homozygous reference —
 it is not missing data. This distinction is critical.
 
----
+</li>
+<li class="usa-process-list__item" markdown="1">
 
-#### 2.3 Run HaplotypeCaller — Single Sample
+{:.usa-process-list__heading}
+#### Run HaplotypeCaller — Single Sample
 
 **This is the command you run yourself.** Pre-built GVCFs are available as a fallback if needed.
 
@@ -503,17 +518,19 @@ CHROM  POS  ID  REF  ALT          QUAL  FILTER  INFO      FORMAT          SAMPLE
 Chr4   100  .   A    T,<NON_REF>  .     .       .         GT:AD:DP:GQ:PL  0/1:15,12,0:27:99:350,0,480,395,516,911
 ```
 
-| Field | Meaning |
-|-------|---------|
+{% include table content="| Field | Meaning |
+| ------- | --------- |
 | GT | Genotype — 0/0 ref, 0/1 het, 1/1 hom-alt |
 | AD | Allele depth — reads supporting each allele |
 | DP | Total depth at this site |
 | GQ | Genotype quality — confidence in the GT call |
-| PL | Phred-scaled likelihoods for each possible genotype |
+| PL | Phred-scaled likelihoods for each possible genotype |" %}
 
----
+</li>
+<li class="usa-process-list__item" markdown="1">
 
-#### 2.4 Run HaplotypeCaller — All Chromosomes
+{:.usa-process-list__heading}
+#### Run HaplotypeCaller — All Chromosomes
 
 Run one job per chromosome in parallel, then merge into a single GVCF.
 
@@ -539,8 +556,11 @@ for CHR in "${CHRS[@]}"; do
   echo "${CHR}: ${N} variant records"
 done
 ```
+</li>
+<li class="usa-process-list__item" markdown="1">
 
-### Merge per-chromosome GVCFs into one
+{:.usa-process-list__heading}
+#### Merge per-chromosome GVCFs into one
 
 ```bash
 gatk MergeVcfs \
@@ -557,17 +577,18 @@ zcat 05_GVCF/${SAMPLE}.g.vcf.gz | grep -v "^#" | \
   grep -v "<NON_REF>" | wc -l
 ```
 
----
-</li> 
+</li>
+</ol>
 
+---
+
+### Joint Genotyping & Variant Filtering
+
+<ol class="usa-process-list">
 <li class="usa-process-list__item" markdown="1">
 
 {:.usa-process-list__heading}
-### Joint Genotyping & Variant Filtering
-
----
-
-#### 3.1 Joint Genotyping — Concepts
+#### Joint Genotyping — Concepts
 
 **We are better off with separate GVCFs:**
 
@@ -587,9 +608,12 @@ We will do this in a two-step process
 6 × .g.vcf.gz  →  GenomicsDBImport  →  GenotypeGVCFs  →  cohort.vcf.gz
 ```
 
----
+</li> 
 
-#### 3.2 GenomicsDBImport
+<li class="usa-process-list__item" markdown="1">
+
+{:.usa-process-list__heading}
+#### GenomicsDBImport
 
 Consolidates all 6 GVCFs into an efficient database. This step is
 **pre-computed** — it is slow and provided ready for you.
@@ -613,9 +637,12 @@ gatk GenomicsDBImport \
   > logs/genomicsdb.log 2>&1
 ```
 
----
+</li> 
 
-#### 3.3 GenotypeGVCFs
+<li class="usa-process-list__item" markdown="1">
+
+{:.usa-process-list__heading}
+#### GenotypeGVCFs
 
 **This is the command you run yourself.**
 
@@ -656,9 +683,12 @@ Chr4   500  A    T    GT:AD:GQ  0/1:10,8:99  1/1:0,20:99  0/0:15,0:99
 Each sample has its own genotype column — this is what joint genotyping
 produces. A `0/0` call is a *confirmed* reference genotype, not missing data.
 
----
+</li> 
 
-#### 3.4 Variant Filtering
+<li class="usa-process-list__item" markdown="1">
+
+{:.usa-process-list__heading}
+#### Variant Filtering
 
 Raw calls need filtering to remove false positives caused by strand bias,
 low depth, and mapping artifacts. With 6 samples we use **hard filtering**
@@ -666,14 +696,14 @@ low depth, and mapping artifacts. With 6 samples we use **hard filtering**
 
 **Key annotation thresholds for Arabidopsis**
 
-| Annotation | Meaning | SNP filter | Indel filter |
-|-----------|---------|-----------|-------------|
+{% include table content="| Annotation | Meaning | SNP filter | Indel filter |
+| ----------- | --------- | ----------- | ------------- |
 | QD | Quality by depth — normalises QUAL by depth | < 2.0 | < 2.0 |
 | FS | Fisher strand bias — phred-scaled p-value | > 60.0 | > 200.0 |
 | MQ | Mapping quality of reads supporting variant | < 40.0 | — |
 | SOR | Strand odds ratio — alternative strand bias metric | > 3.0 | > 10.0 |
 | MQRankSum | Mapping quality difference ref vs alt reads | < -12.5 | — |
-| ReadPosRankSum | Position of alt allele in reads | < -8.0 | < -20.0 |
+| ReadPosRankSum | Position of alt allele in reads | < -8.0 | < -20.0 |" %}
 
 **Filter SNPs**
 
@@ -741,9 +771,12 @@ bcftools query \
   sort
 ```
 
----
+</li> 
 
-### 3.5 Inspect Results in IGV
+<li class="usa-process-list__item" markdown="1">
+
+{:.usa-process-list__heading}
+#### Inspect Results in IGV
 
 ```bash
 # Extract PASS variants for IGV
@@ -763,9 +796,12 @@ Load in IGV:
 - A good SNP call: reads clearly split between two alleles, balanced strand representation, high mapping quality
 - A filtered call: strand bias (all alt reads on one strand), soft-clipped reads at the variant site, low depth
 
----
+</li> 
 
-### 3.6 Transition/Transversion Ratio (Ti/Tv)
+<li class="usa-process-list__item" markdown="1">
+
+{:.usa-process-list__heading}
+#### Transition/Transversion Ratio (Ti/Tv)
 
 A useful quality metric for SNP calls. For Arabidopsis whole-genome data
 the expected Ti/Tv ratio is ~2.0–2.5. Values well below 2.0 suggest
@@ -776,6 +812,9 @@ bcftools stats -f PASS \
   06_Joint/cohort_filtered.vcf.gz | \
   grep "Ts/Tv"
 ```
+
+</li>
+</ol>
 
 ---
 
@@ -825,25 +864,25 @@ bcftools view cohort_filtered.vcf.gz NC_003075.7:1-100000 | grep -v "^#" | head
 
 ---
 
-## Further Reading
+### Further Reading
 
 - [GATK Best Practices](https://gatk.broadinstitute.org/hc/en-us/sections/360007226651)
 - [1001 Genomes Project](https://1001genomes.org)
 - [TAIR10 Reference](https://www.arabidopsis.org)
 - Next workshop: DeepVariant — A different variant calling approach
 
-</li>
 
 
-## Day2: Deep Variant  
 
-## Pre-workshop instructions
+## Day 2: Deep Variant  
+
+### Pre-workshop instructions
 
 To help minimize technical issues and delays at the start of the workshop, please try the following tests prior to the workshop.  
 * **Logging on to [Atlas Open OnDemand (OOD)](https://atlas-ood.hpc.msstate.edu/):** Please confirm you can successfully log in to Atlas OOD with your SCINet account ([see instructions here](/guides/access/web-based-login)). If you are successful, you will be able to see the Atlas OOD home page.
 * **Atlas Shell Access:** When on Atlas OOD, click on the top navigation bar: "Clusters" > "Atlas Shell Access". A new tab will appear that looks like a shell terminal (e.g., like PowerShell). Please confirm you do not receive any error messages or requests to re-authenticate and that the final line looks like "[firstname.lastname@atlas-login-1 ~]$".
 
-## Tutorial Setup Instructions 
+### Tutorial Setup Instructions 
 
 Steps to prepare for the tutorial session: 
 
@@ -892,9 +931,12 @@ module load apptainer
 source activate /project/scinet_workshop1/deepvariant/Software/condaenvs/deepvariant
 ``` 
 
-## Tutorial Instructions
 
-### Step 1: trimming 
+<ol class="usa-process-list">
+<li class="usa-process-list__item" markdown="1">
+
+{:.usa-process-list__heading}
+### Trimming 
 
 {: .copy-code }
 ```
@@ -907,7 +949,11 @@ trim_galore --paired \
         PE_directory/samplename_R2.fastq.gz 
 ```
 
-### Step 2: mapping 
+</li>
+<li class="usa-process-list__item" markdown="1">
+
+{:.usa-process-list__heading}
+### Mapping 
 
 {: .copy-code }
 ```
@@ -925,7 +971,11 @@ bwa-mem2 mem –t 48 assembly.fasta \
       samtools sort -@ 48  –o Mapped/samplename.bam 
 ```
 
-### Step 3: call variants 
+</li>
+<li class="usa-process-list__item" markdown="1">
+
+{:.usa-process-list__heading}
+### Call variants 
 
 {: .copy-code }
 ```
@@ -943,7 +993,11 @@ apptainer exec Software/sifs/deepvariant_1.6.0.sif \
           --dry_run 
 ```
 
-### Step 4: Joint Genotyping
+</li>
+<li class="usa-process-list__item" markdown="1">
+
+{:.usa-process-list__heading}
+### Joint Genotyping
 
 {: .copy-code }
 ```
@@ -987,8 +1041,11 @@ bcftools annotate --threads 48 - -Ov -x FORMAT/RNC -o Variants/cohort.clean.vcf
 
 # End
 ```
+</li>
+<li class="usa-process-list__item" markdown="1">
 
-### Step 5: Variant Filtration
+{:.usa-process-list__heading}
+### Variant Filtration
 
 {: .copy-code }
 ```
@@ -1068,6 +1125,10 @@ plink2 \
 # End
 ```
 
+</li>
+<li class="usa-process-list__item" markdown="1">
+
+{:.usa-process-list__heading}
 ### Merge and Filter  
 
 {: .copy-code }
@@ -1101,3 +1162,6 @@ head -n 20 cohort.clean.diploid.Atranspose.traw
 
 
 **Stop the interactive job** on the compute node by running the command exit. 
+
+</li>
+</ol>
