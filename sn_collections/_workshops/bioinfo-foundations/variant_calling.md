@@ -894,9 +894,9 @@ Steps to prepare for the tutorial session:
   
     {: .copy-code }
     ```
-    srun --reservation=workshop -A scinet_workshop1 -t 05:00:00 -n 1 --mem 8G --pty bash
+    srun --reservation=foundations_workshop -A scinet_workshop1 -t 05:00:00 -n 1 --mem 8G --pty bash
     ``` 
-    {% include reservation-alert reservation="workshop" project="scinet_workshop1" %}
+    {% include reservation-alert reservation="foundations_workshop" project="scinet_workshop1" %}
 
 1. **Create a workshop working directory** and copy the workshop materials into it by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the $USER variable. 
 
@@ -1020,7 +1020,7 @@ module load miniconda3
 module load bcftools
 module load htslib
 
-conda activate /project/ai_forum/deepvariant/Software/condaenvs/glnexus
+conda activate /project/scinet_workshop1/deepvariant/Software/condaenvs/glnexus
 
 # Scalable gVCF merging and joint variant calling 
 glnexus_cli \
