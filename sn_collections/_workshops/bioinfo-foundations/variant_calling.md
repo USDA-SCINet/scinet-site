@@ -56,7 +56,7 @@ Steps to prepare for the tutorial session:
   ```bash
   mkdir -p /90daydata/shared/$USER/variant_calling
   cd /90daydata/shared/$USER/variant_calling
-  cp -r /project/scinet_workshop2/foundations_bioinf_2026/variant_Calling/files/* .
+  cp -r /project/scinet_workshop2/foundations_bioinf_2026/variant_calling/files/* .
   ```
   {:.copy-code}
 
@@ -91,6 +91,35 @@ You are encouraged to run the commands yourself during or after the workshop.
 #### Directory Structure
 
 ```
+playground/
+├── 10_Reference
+├── 11_Raw
+|
+├── 12_Align
+├── 13_Markdup
+├── 14_BQSR
+├── 15a_GVCF
+│   ├── SRR1945435.chr4a.g.vcf.gz
+│   ├── SRR1945435.chr4a.g.vcf.gz.tbi
+│   ├── SRR1945436.chr4a.g.vcf.gz
+│   ├── SRR1945436.chr4a.g.vcf.gz.tbi
+│   ├── SRR1945437.chr4a.g.vcf.gz
+│   ├── SRR1945437.chr4a.g.vcf.gz.tbi
+│   ├── SRR1945438.chr4a.g.vcf.gz
+│   ├── SRR1945438.chr4a.g.vcf.gz.tbi
+│   ├── SRR1945439.chr4a.g.vcf.gz
+│   ├── SRR1945439.chr4a.g.vcf.gz.tbi
+│   ├── SRR1945440.chr4a.g.vcf.gz
+│   └── SRR1945440.chr4a.g.vcf.gz.tbi
+├── 15_GVCF
+│   ├── SRR1945435.chr4.g.vcf.gz
+│   └── SRR1945435.chr4.g.vcf.gz.tbi
+├── 16_Joint
+├── known_sites
+│   ├── 1001genomes_snps_indels_chr4.vcf.gz
+│   └── 1001genomes_snps_indels_chr4.vcf.gz.tbi
+
+#### General Structure:
 workshop/
 ├── 00_Reference/          # TAIR10 reference genome and indexes
 ├── 01_Raw/                # Raw FASTQ files
@@ -161,11 +190,11 @@ Required by GATK and Picard. Records chromosome names and lengths.
 
 ```bash
 gatk CreateSequenceDictionary \
-  -R 00_Reference/TAIR10.fna \
-  -O 00_Reference/TAIR10.fna.dict
+  -R 10_Reference/TAIR10.Chr4.fna \
+  -O 10_Reference/TAIR.Chr4.dict
 
 # Output
-# 00_Reference/TAIR10.fna.dict
+# 00_Reference/TAIR10.dict
 ```
 
 **bwa-mem2 index — alignment search structure**
@@ -174,21 +203,22 @@ Required by bwa-mem2 for alignment. Different from the bwa index —
 index files must share the reference filename as prefix.
 
 ```bash
-bwa-mem2 index 00_Reference/TAIR10.fna
+bwa-mem2 index 10_Reference/TAIR10.Chr4.fna
 
 # Output — all must be present
-# 00_Reference/TAIR10.fna.0123
-# 00_Reference/TAIR10.fna.amb
-# 00_Reference/TAIR10.fna.ann
-# 00_Reference/TAIR10.fna.bwt.2bit.64
-# 00_Reference/TAIR10.fna.pac
+# 10_Reference/TAIR10.Chr4.0123
+# 10_Reference/TAIR10.Chr4.amb
+# 10_Reference/TAIR10.Chr4.ann
+# 10_Reference/TAIR10.Chr4.bwt.2bit.64
+# 10_Reference/TAIR10.Chr4.pac
 ```
 
 **Verify all index files**
 
 ```bash
-ls -lh 00_Reference/TAIR10.fna*
+ls -lh 00_Reference/TAIR10.Chr4.fna*
 ```
+
 
 </li>
 <li class="usa-process-list__item" markdown="1">
@@ -199,9 +229,9 @@ ls -lh 00_Reference/TAIR10.fna*
 BQSR requires a set of known variant sites to distinguish true variants
 from sequencing errors. We use the 1001 Genomes Project SNP VCF.
 
-> **Arabidopsis caveat:** No curated truth set like dbSNP exists for
-> Arabidopsis. The 1001 Genomes VCF was itself called with GATK — there
-> is a circularity here. It is acceptable in practice but worth noting.
+**Arabidopsis caveat:** No curated truth set like dbSNP exists for
+Arabidopsis. The 1001 Genomes VCF was itself called with GATK — there
+is a circularity here. It is acceptable in practice but something that is worth noting.
 
 **Check contig naming**
 
@@ -268,35 +298,31 @@ mandatory for GATK — without them HaplotypeCaller will refuse to run.
 | PL | Sequencing platform | Recommended |
 | LB | Library — used by MarkDuplicates | Recommended |" %}
 
-```bash
-bwa-mem2 mem \
-  -t 8 \
-  -R "@RG\tID:${SAMPLE}\tSM:${SAMPLE}\tPL:ILLUMINA\tLB:${SAMPLE}_lib1\tPU:${SAMPLE}_unit1" \
-  ${REF} \
-  01_Raw/${SAMPLE}_1.fastq.gz \
-  01_Raw/${SAMPLE}_2.fastq.gz \
-  2> logs/${SAMPLE}.bwa.log | \
-samtools sort \
-  -@ 4 \
-  -T tmp/${SAMPLE}_sort \
-  -o 02_Align/${SAMPLE}.sorted.bam \
-  2> logs/${SAMPLE}.sort.log
+**bwa alignment**
 
-# Index the sorted BAM
-samtools index 02_Align/${SAMPLE}.sorted.bam
+```bash
+bwa-mem2 mem -t8 \
+-R '@RG\tID:SRR1945435\tSM:SRR1945435\tPL:ILLUMINA\tLB:lib1' \
+10_Reference/TAIR10.Chr4 \
+11_Raw/SRR1945435_1.fastq.gz 11_Raw/SRR1945435_2.fastq.gz \
+| samtools sort -@8 -o 12_Align/SRR1945435.bam
+
+#Index the sorted BAM
+samtools index 12_Align/SRR1945435.bam
+
 ```
 
 **Verify alignment**
 
 ```bash
 # Overall alignment statistics
-samtools flagstat 02_Align/${SAMPLE}.sorted.bam
+samtools flagstat 12_Align/SRR1945435.bam
 
 # Check read groups are present
-samtools view -H 02_Align/${SAMPLE}.sorted.bam | grep "^@RG"
+samtools view -H 12_Align/SRR1945435.bam | grep "^@RG"
 
 # Check mean coverage
-samtools depth -r NC_003075.7 02_Align/${SAMPLE}.sorted.bam | \
+samtools depth -r NC_003075.7 12_Align/SRR1945435.bam | \
   awk '{sum+=$3; n++} END {printf "Mean depth chr4: %.1fx\n", sum/n}'
 ```
 
@@ -312,20 +338,18 @@ excluded by HaplotypeCaller.
 
 ```bash
 gatk MarkDuplicates \
-  -I 02_Align/${SAMPLE}.sorted.bam \
-  -O 03_Markdup/${SAMPLE}.markdup.bam \
-  -M 03_Markdup/${SAMPLE}.markdup_metrics.txt \
-  --TMP_DIR tmp/ \
-  > logs/${SAMPLE}.markdup.log 2>&1
+-I 12_Align/SRR1945435.bam \
+-O 13_Markdup/SRR194543.markdup.bam \
+-M 13_Markdup/SRR194543.metrics.txt
 
 # Index
-samtools index 03_Markdup/${SAMPLE}.markdup.bam
+samtools index 13_Markdup/${SAMPLE}.markdup.bam
 ```
 
 **Inspect duplication metrics**
 
 ```bash
-cat 03_Markdup/${SAMPLE}.markdup_metrics.txt
+cat 13_Markdup/SRR194543.metrics.txt
 ```
 
 Key metric: `PERCENT_DUPLICATION` — values above 30% suggest
@@ -356,7 +380,43 @@ quality scores. Two steps: model the errors, then apply the correction.
 
 **Step 1 — BaseRecalibrator (build the model)**
 
-Run per chromosome for speed, then gather into one table.
+```bash
+gatk BaseRecalibrator \
+-I 13_Markdup/SRR194543.markdup.bam \
+-R 10_Reference/TAIR10.Chr4.fna \
+--known-site known_sites/1001genomes_snps_indels_chr4.vcf.gz \
+-O 14_BQSR/SRR1945435.recal.table
+```
+Step 1 takes about 30 mins
+
+**Step 2 — ApplyBQSR (apply the correction)**
+
+```bash
+gatk ApplyBQSR \
+-I 13_Markdup/SRR194543.markdup.bam \
+-R 10_Reference/TAIR10.Chr4.fna \
+--bqsr-recal-file 14_BQSR/SRR1945435.recal.table \
+--tmp-dir tmp/ \
+-O 14_BQSR/SRR1945435.recal.bam
+# index the recal bam file
+samtools index 14_BQSR/SRR1945435.recal.bam
+```
+Step 1 takes about 30 mins
+
+<u>A Note</u>: The code below runs BQSR (both step 1 and step2) in parallel across all 5 chromosomes — adapt it to your own samples by updating the paths at the top of the script.
+
+<div class="usa-accordion usa-accordion--bordered padding-top-2">
+  <div class="usa-accordion__heading">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="deseq2kallisto"
+    >
+      Script to run on each chromosome in parallel and gather into a single table
+    </button>
+  </div>
+<div id="deseq2kallisto" class="usa-accordion__content usa-prose" markdown=1 hidden>
 
 ```bash
 # Run one job per chromosome
@@ -381,22 +441,10 @@ gatk GatherBQSRReports \
   -I 04_BQSR/${SAMPLE}.recal.NC_003076.8.table \
   -O 04_BQSR/${SAMPLE}.recal.table
 ```
+</div>
+</div>
 
-**Step 2 — ApplyBQSR (apply the correction)**
-
-```bash
-gatk ApplyBQSR \
-  -I 03_Markdup/${SAMPLE}.markdup.bam \
-  -R ${REF} \
-  --bqsr-recal-file 04_BQSR/${SAMPLE}.recal.table \
-  --tmp-dir tmp/ \
-  -O 04_BQSR/${SAMPLE}.recal.bam \
-  > logs/${SAMPLE}.applybqsr.log 2>&1
-
-samtools index 04_BQSR/${SAMPLE}.recal.bam
-```
-
-**Step 3 — AnalyzeCovariates (visualise before/after)**
+**Step 3 — AnalyzeCovariates (visualize before/after)**
 
 For plotting we need R in the path
 
@@ -404,36 +452,26 @@ For plotting we need R in the path
 module load r/4.4.1
 R --vanilla -e "install.packages('gsalib', repos='http://cran.r-project.org')
 ```
+* First we need to run BaseRecalibrator on the recalibrated BAM (second pass)
+
 ```bash
-# Second pass on recalibrated BAM
-for CHR in "${CHRS[@]}"; do
-  gatk BaseRecalibrator \
-    -I 04_BQSR/${SAMPLE}.recal.bam \
-    -R ${REF} \
-    --known-sites ${KNOWN} \
-    -L ${CHR} \
-    --tmp-dir tmp/ \
-    -O 04_BQSR/${SAMPLE}.recal2.${CHR}.table \
-    > logs/${SAMPLE}.${CHR}.bqsr2.log 2>&1 &
-done
-wait
-
-gatk GatherBQSRReports \
-  -I 04_BQSR/${SAMPLE}.recal2.NC_003070.9.table \
-  -I 04_BQSR/${SAMPLE}.recal2.NC_003071.7.table \
-  -I 04_BQSR/${SAMPLE}.recal2.NC_003074.8.table \
-  -I 04_BQSR/${SAMPLE}.recal2.NC_003075.7.table \
-  -I 04_BQSR/${SAMPLE}.recal2.NC_003076.8.table \
-  -O 04_BQSR/${SAMPLE}.recal2.table
-
-# Generate before/after plot 
-gatk AnalyzeCovariates \
-  -before 04_BQSR/${SAMPLE}.recal.table \
-  -after  04_BQSR/${SAMPLE}.recal2.table \
-  -plots  04_BQSR/${SAMPLE}.AnalyzeCovariates.pdf
+gatk BaseRecalibrator \
+-I 14_BQSR/SRR1945435.recal.bam \
+-R 10_Reference/TAIR10.Chr4.fna \
+--known-sites known_sites/1001genomes_snps_indels_chr4.vcf.gz \
+-O 14_BQSR/SRR1945435.recal2.table
 ```
 
-Open `${SAMPLE}.AnalyzeCovariates.pdf` — the reported vs empirical quality plot should show points much closer to the diagonal after recalibration.
+* Generate before/after plot 
+
+```bash
+gatk AnalyzeCovariates \
+  -before 14_BQSR/SRR1945435.recal.table \
+  -after  14_BQSR/SRR1945435.recal2.table \
+  -plots  14_BQSR/SRR1945435.AnalyzeCovariates.pdf
+```
+
+Open `SRR1945435.AnalyzeCovariates.pdf` — the reported vs empirical quality plot should show points much closer to the diagonal after recalibration.
 </li>
 </ol>
 ---
@@ -479,37 +517,36 @@ it is not missing data. This distinction is critical.
 
 **This is the command you run yourself.** Pre-built GVCFs are available as a fallback if needed.
 
-**Quick test — chromosome 4 only (~5-10 minutes)**
+**Quick test — run on a 2 MB region of chromosome 4 only (~10-20 minutes)**
 
 ```bash
 gatk HaplotypeCaller \
-  -R ${REF} \
-  -I 04_BQSR/${SAMPLE}.recal.bam \
+  -R 10_Reference/TAIR10.Chr4.fna \
+  -I 14_BQSR/SRR1945435.recal.bam \
+  -L NC_003075.7:1000000-3000000
   -ERC GVCF \
-  -L NC_003075.7 \
   --native-pair-hmm-threads 4 \
   --tmp-dir tmp/ \
-  -O 05_GVCF/${SAMPLE}.chr4.g.vcf.gz \
-  2>&1 | tee logs/${SAMPLE}.chr4.hc.log
+  -O 15_GVCF/SRR1945435.chr4.g.vcf.gz
 ```
 
 **Inspect the GVCF**
 
 ```bash
 # Look at the header
-zcat 05_GVCF/${SAMPLE}.chr4.g.vcf.gz | grep "^#" | tail -10
+zcat 05_GVCF/SRR1945435.chr4.g.vcf.gz | grep "^#" | tail -10
 
 # Look at variant records
-zcat 05_GVCF/${SAMPLE}.chr4.g.vcf.gz | grep -v "^#" | \
-  grep -v "<NON_REF>" | head -10
+zcat 05_GVCF/SRR1945435.chr4.g.vcf.gz | grep -v "^#" | \
+  | grep -v "END="  | head 
 
 # Look at a reference block
-zcat 05_GVCF/${SAMPLE}.chr4.g.vcf.gz | grep -v "^#" | \
-  grep "<NON_REF>" | head -5
+zcat 05_GVCF/$SRR1945435.chr4.g.vcf.gz | grep -v "^#" | \
+  | grep "END=" | head 
 
 # Count variant records
-zcat 05_GVCF/${SAMPLE}.chr4.g.vcf.gz | grep -v "^#" | \
-  grep -v "<NON_REF>" | wc -l
+zcat 05_GVCF/SRR1945435.chr4.g.vcf.gz | grep -v "^#" | \
+  | grep -v "END="  | wc -l
 ```
 
 **Understand the GVCF fields**
@@ -532,6 +569,7 @@ Chr4   100  .   A    T,<NON_REF>  .     .       .         GT:AD:DP:GQ:PL  0/1:15
 {:.usa-process-list__heading}
 #### Run HaplotypeCaller — All Chromosomes
 
+**This is for all chromosomes; don't run it during workshop**
 Run one job per chromosome in parallel, then merge into a single GVCF.
 
 ```bash
@@ -574,7 +612,7 @@ gatk MergeVcfs \
 
 # Verify
 zcat 05_GVCF/${SAMPLE}.g.vcf.gz | grep -v "^#" | \
-  grep -v "<NON_REF>" | wc -l
+  grep -v "END" | wc -l
 ```
 
 </li>
@@ -647,29 +685,42 @@ gatk GenomicsDBImport \
 **This is the command you run yourself.**
 
 ```bash
+gatk GenomicsDBImport \
+-V 15a_GVCF/SRR1945435.chr4a.g.vcf.gz   \
+-V 15a_GVCF/SRR1945436.chr4a.g.vcf.gz   \
+-V 15a_GVCF/SRR1945437.chr4a.g.vcf.gz   \
+-V 15a_GVCF/SRR1945438.chr4a.g.vcf.gz   \
+-V 15a_GVCF/SRR1945439.chr4a.g.vcf.gz   \
+-V 15a_GVCF/SRR1945440.chr4a.g.vcf.gz   \
+--genomicsdb-workspace-path 16_Joint/arabidopsis_db   \
+-L NC_003071.7   \
+--tmp-dir tmp/
+```
+
+```bash
 gatk GenotypeGVCFs \
-  -R ${REF} \
-  -V gendb://06_Joint/arabidopsis_db \
-  -O 06_Joint/cohort_raw.vcf.gz \
-  --tmp-dir tmp/ \
-  > logs/genotype.log 2>&1
+-R 10_Reference/TAIR10.Chr4.fna   \
+-V gendb://16_Joint/arabidopsis_db   \
+-O 16_Joint/cohort_raw.vcf.gz   \
+--tmp-dir tmp/
+
 ```
 
 **Inspect the raw cohort VCF**
 
 ```bash
 # Summary statistics
-bcftools stats 06_Joint/cohort_raw.vcf.gz | grep "^SN"
+bcftools stats cohort_raw.vcf.gz | grep "^SN"
 
 # Total variant count
-zcat 06_Joint/cohort_raw.vcf.gz | grep -v "^#" | wc -l
+zcat cohort_raw.vcf.gz | grep -v "^#" | wc -l
 
 # SNPs vs indels
-bcftools view -v snps  06_Joint/cohort_raw.vcf.gz | grep -v "^#" | wc -l
-bcftools view -v indels 06_Joint/cohort_raw.vcf.gz | grep -v "^#" | wc -l
+bcftools view -v snps  cohort_raw.vcf.gz | grep -v "^#" | wc -l
+bcftools view -v indels cohort_raw.vcf.gz | grep -v "^#" | wc -l
 
 # Look at the multi-sample genotype columns
-zcat 06_Joint/cohort_raw.vcf.gz | grep -v "^#" | head -5 | \
+zcat cohort_raw.vcf.gz | grep -v "^#" | head -5 | \
   cut -f1-9,10-15
 ```
 
