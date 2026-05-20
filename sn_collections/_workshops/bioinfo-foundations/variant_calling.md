@@ -992,11 +992,11 @@ source activate /project/scinet_workshop1/deepvariant/Software/condaenvs/deepvar
 {: .copy-code }
 ```
 # Trim adapter artifacts from your reads 
-trim_galore --paired \ 
-        --basename samplename \ 
-        --output_dir Trimmed \ 
-        --cores 24 \ 
-        PE_directory/samplename_R1.fastq.gz \ 	 
+trim_galore --paired
+        --basename samplename
+        --output_dir Trimmed
+        --cores 24
+        PE_directory/samplename_R1.fastq.gz	 
         PE_directory/samplename_R2.fastq.gz 
 ```
 
@@ -1015,10 +1015,10 @@ bwa-mem2 index assembly.fasta
 samtools faidx assembly.fasta >assembly.fasta.fai 
 
 # For each of your trimmed and paired reads:  
-bwa-mem2 mem –t 48 assembly.fasta \ 	 
-      Trimmed/samplename_val_1.fq.gz \ 	 
-      Trimmed/samplename_val_2.fq.gz | \ 
-      samblaster | \ 	 
+bwa-mem2 mem –t 48 assembly.fasta	 
+      Trimmed/samplename_val_1.fq.gz	 
+      Trimmed/samplename_val_2.fq.gz |
+      samblaster |	 
       samtools sort -@ 48  –o Mapped/samplename.bam 
 ```
 
@@ -1030,16 +1030,16 @@ bwa-mem2 mem –t 48 assembly.fasta \
 
 {: .copy-code }
 ```
-apptainer exec Software/sifs/deepvariant_1.6.0.sif \ 
-          python3 Software/deepvariant/scripts/run_deepvariant.py \ 	 
-          --num_shards=48 \ 
-          --model_type WGS \ 
-          --output_vcf Variants/samplename.vcf.gz \ 
-          --output_gvcf Variants/samplename.g.vcf.gz \ 
-          --ref assembly.fasta \ 
-          --reads Mapped/samplename.bam \ 
-          --sample_name samplename \ 
-          --intermediate_results_dir Int/samplename_int \ 
+apptainer exec Software/sifs/deepvariant_1.6.0.sif
+          python3 Software/deepvariant/scripts/run_deepvariant.py	 
+          --num_shards=48
+          --model_type WGS
+          --output_vcf Variants/samplename.vcf.gz
+          --output_gvcf Variants/samplename.g.vcf.gz
+          --ref assembly.fasta
+          --reads Mapped/samplename.bam
+          --sample_name samplename
+          --intermediate_results_dir Int/samplename_int
           --make_examples_extra_args "normalize_reads=true” \\ 
           --dry_run 
 ```
@@ -1197,8 +1197,8 @@ glnexus_cli --threads 48 --config DeepVariantWGS *.g.vcf.gz > cohort.bcf
 bcftools convert -Oz -o cohort.vcf.gz cohort.bcf 
 
 # Fill tags and drop DP<=1 calls 
-bcftools +setGT cohort.bcf --threads 46 -Ob -- -t q -n . -e 'FMT/DP>=1' | \ 
-bcftools +fill-tags --threads 46 - -Ob -- -t AF,AN,AC | \ 
+bcftools +setGT cohort.bcf --threads 46 -Ob -- -t q -n . -e 'FMT/DP>=1' |
+bcftools +fill-tags --threads 46 - -Ob -- -t AF,AN,AC |
 bcftools annotate --threads 46 - -Ov -x FORMAT/RNC -o cohort.clean.vcf 
 
 # Filter 
