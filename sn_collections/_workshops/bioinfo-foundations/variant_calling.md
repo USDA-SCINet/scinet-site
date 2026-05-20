@@ -992,12 +992,7 @@ source activate /project/scinet_workshop1/deepvariant/Software/condaenvs/deepvar
 {: .copy-code }
 ```
 # Trim adapter artifacts from your reads 
-trim_galore --paired \ 
-        --basename samplename \ 
-        --output_dir Trimmed \ 
-        --cores 24 \ 
-        PE_directory/samplename_R1.fastq.gz \ 	 
-        PE_directory/samplename_R2.fastq.gz 
+trim_galore --paired --basename samplename --output_dir Trimmed --cores 24 PE_directory/samplename_R1.fastq.gz PE_directory/samplename_R2.fastq.gz
 ```
 
 </li>
