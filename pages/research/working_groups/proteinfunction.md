@@ -1,5 +1,5 @@
 ---
-title: Protein Function and Phenotype Prediction Working Group
+title: Protein Science Working Group
 description: The focus of the group is to facilitate community and collaboration for use of SCINet resources to advance research activity in protein function, structure, and phenotype prediction.
 permalink: /research/working-groups/proteinfunction
 author: Ryan Lucas
@@ -10,7 +10,7 @@ layout: page
 
 This working group was formed as the result of a December 2021 SCINet-sponsored symposium, AI at the Frontiers of Protein Science for Agriculture. The focus of the group is to facilitate community and collaboration for use of SCINet resources to advance research activity in protein function, structure, and phenotype prediction.  The group is comprised of scientists already using SCINet resources and scientists interested in utilizing SCINet for their research. This group will provide collaborate on workflows, present results, and create training and workbook resources for ARS scientists.
 
-If you are interested in and would like to join the group, please fill out the following survey and click the registration link at the end: [Protein Function and Phenotype Prediction Working Group Signup](https://forms.office.com/g/VUAJW6kzgd).
+If you are interested in and would like to join the group, please fill out the following survey and click the registration link at the end: [Protein Science Working Group Signup](https://forms.office.com/g/VUAJW6kzgd).
 
 For more information, please contact Hye-Seon Kim ([hyeseon.kim@usda.gov](hyeseon.kim@usda.gov)) or Carson Andorf ([carson.andorf@usda.gov](carson.andorf@usda.gov)).
 
