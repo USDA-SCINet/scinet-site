@@ -68,7 +68,7 @@ llama-cli -m /reference/llms/gemma-4/gemma-4-31b-it-bf16.gguf
 
 The following models are currently available in `/reference/llms`.
 
-| Model family | Model name (linked) | Parameters (billions) | Max. context length (tokens) | Reasoning | Developer |
+| Model family | Model name | Parameters (billions) | Max. context length (tokens) | Reasoning | Developer |
 |--------------|----------------------|-----------------------|----------------|-----------|-----------|
 | Gemma 3      | [Gemma 3 27B](https://deepmind.google/models/gemma/gemma-3/) | 27.4 | 131,072 | N | Google Deepmind |
 | Gemma 3      | [Gemma 3 12B](https://deepmind.google/models/gemma/gemma-3/) | 12.2 | 131,072 | N | Google Deepmind |
