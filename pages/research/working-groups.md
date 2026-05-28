@@ -30,7 +30,7 @@ subnav:
   # - title: Pollinator
   #   url: /research/working-groups/pollinator
   #   internal: link
-  # - title: Protein Function and Phenotype Prediction
+  # - title: Protein Science
   #   url: /research/working-groups/proteinfunction
   #   internal: link
   # - title: Translational Omics
@@ -54,7 +54,7 @@ SCINet working groups (WGs) support ARS researchers and their collaborators in u
 * [Geospatial Research Working Group]({{ site.baseurl }}/research/working-groups/geospatial)
 * [Microbiome Working Group]({{ site.baseurl }}/research/working-groups/microbiome)
 * [SCINet-Longterm Agroecosystem Research (LTAR) Phenology Working Group]({{ site.baseurl }}/research/working-groups/LTARphenology)
-* [Protein Function and Phenotype Prediction Working Group]({{ site.baseurl }}/research/working-groups/proteinfunction)
+* [Protein Science Working Group]({{ site.baseurl }}/research/working-groups/proteinfunction)
 * [Translational Omics Working Group]({{ site.baseurl }}/research/working-groups/omics)
 
 <br>
