@@ -66,10 +66,8 @@ module load llama.cpp
 llama-cli -m /reference/llms/gemma-4/gemma-4-31b-it-bf16.gguf
 ```
 
-The following models are currently available in `/reference/llms`.
-
-| Model family | Model name | Parameters (billions) | Max. context length (tokens) | Reasoning | Developer |
-|--------------|----------------------|-----------------------|----------------|-----------|-----------|
+{% include table caption="Models currently available in /reference/llms" content="| Model family | Model name | Parameters (billions) | Max. context length (tokens) | Reasoning | Developer |
+| ------------ | -------------------- | --------------------- | -------------- | --------- | --------- |
 | Gemma 3      | [Gemma 3 27B](https://deepmind.google/models/gemma/gemma-3/) | 27.4 | 131,072 | N | Google Deepmind |
 | Gemma 3      | [Gemma 3 12B](https://deepmind.google/models/gemma/gemma-3/) | 12.2 | 131,072 | N | Google Deepmind |
 | Gemma 3      | [Gemma 3 4B](https://deepmind.google/models/gemma/gemma-3/) | 4.3 | 131,072 | N | Google Deepmind |
@@ -89,7 +87,7 @@ The following models are currently available in `/reference/llms`.
 | Olmo 3       | [Olmo 3 32B Think](https://allenai.org/olmo) | 32.2 | 65,536 | Y | Allen AI Institute |
 | Olmo 3       | [Olmo 3 7B Think](https://allenai.org/olmo) | 7.3 | 65,536 | Y | Allen AI Institute |
 | Olmo 3.1     | [Olmo 3.1 32B Instruct](https://allenai.org/olmo) | 32.2 | 65,536 | N | Allen AI Institute |
-| Olmo 3.1     | [Olmo 3.1 32B Think](https://allenai.org/olmo) | 32.2 | 65,536 | Y | Allen AI Institute |
+| Olmo 3.1     | [Olmo 3.1 32B Think](https://allenai.org/olmo) | 32.2 | 65,536 | Y | Allen AI Institute |" %}
 
 \* The Nemotron 3 models have a maximum context length of 262,144 tokens by default, but this can be extended up to 1,000,000 tokens with properly configured model serving software.
 
