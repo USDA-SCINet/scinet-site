@@ -956,30 +956,38 @@ Steps to prepare for the tutorial session:
 mkdir -p /90daydata/shared/$USER/deepvariant 
 cd /90daydata/shared/$USER/deepvariant
 
-cp /project/scinet_workshop1/deepvariant/Sample_Data/assembly.fasta . 
+# Create a directory to hold raw data:
+mkdir PE_directory
 
-mkdir PE_directory 
-cd PE_directory 
-cp -r /project/scinet_workshop1/deepvariant/Sample_Data/samplename_R*.fastq.gz .  
-cd ..
+# Copy raw data to your PE_directory:
+cp /project/scinet_workshop1/deepvariant/Sample_Data/small_R*.fastq.gz PE_directory/.
 
-# Create a directory for trimmed reads 
-mkdir Trimmed 
+# Copy reference genome:
+cp /project/scinet_workshop1/deepvariant/Sample_Data/chr2.fasta .
 
-# Create a directory for mapped reads 
-mkdir Mapped 
+# Copy slurm scripts:
+cp /project/scinet_workshop1/deepvariant/step*slurm .
 
-# Create a directory for variants 
-mkdir Variants 
 
-# Create a directory for intermediate files 
-mkdir Int 
+# Place paired reads in a directory called PE_directory
+# Create a directory for trimmed reads
+	mkdir Trimmed
 
-# Activate your conda environment 
-module load miniconda3 
-module load samtools 
-module load apptainer 
-source activate /project/scinet_workshop1/deepvariant/Software/condaenvs/deepvariant
+# Create a directory for mapped reads
+	mkdir Mapped
+
+# Create a directory for variants
+	mkdir Variants
+
+# Create a directory for intermediate files
+	mkdir Int
+
+# Activate your conda environment
+	module load miniconda3
+	module load samtools
+	module load apptainer
+	source activate /project/scinet_workshop1/deepvariant/Software/condaenvs/deepvariant
+
 ``` 
 
 
@@ -992,7 +1000,15 @@ source activate /project/scinet_workshop1/deepvariant/Software/condaenvs/deepvar
 {: .copy-code }
 ```
 # Trim adapter artifacts from your reads 
-trim_galore --paired --basename samplename --output_dir Trimmed --cores 24 PE_directory/samplename_R1.fastq.gz PE_directory/samplename_R2.fastq.gz
+trim_galore --paired --basename small --output_dir Trimmed --cores 24 PE_directory/small_R1.fastq.gz PE_directory/small_R2.fastq.gz
+
+#Review the slurm script for trimming
+less step1_trimming.slurm
+
+#Edit the slurm script for trimming using a text editor to replace the basenames of the files from samplename to small. This tutorial has been updated to run on smaller datasets:
+
+vi step1_trimming.slurm
+
 ```
 
 </li>
@@ -1004,17 +1020,26 @@ trim_galore --paired --basename samplename --output_dir Trimmed --cores 24 PE_di
 {: .copy-code }
 ```
 # Index your reference assembly 
-bwa-mem2 index assembly.fasta 
+bwa-mem2 index chr2.fasta 
 
 # Index reference assembly using Samtools (for later) 
-samtools faidx assembly.fasta >assembly.fasta.fai 
+samtools faidx chr2.fasta >chr2.fasta.fai 
 
 # For each of your trimmed and paired reads:  
-bwa-mem2 mem –t 48 assembly.fasta \ 	 
-      Trimmed/samplename_val_1.fq.gz \ 	 
-      Trimmed/samplename_val_2.fq.gz | \ 
+bwa-mem2 mem –t 24 chr2.fasta \ 	 
+      Trimmed/small_val_1.fq.gz \ 	 
+      Trimmed/small_val_2.fq.gz | \ 
       samblaster | \ 	 
-      samtools sort -@ 48  –o Mapped/samplename.bam 
+      samtools sort -@ 24  –o Mapped/small.bam
+
+#Review the slurm script for mapping
+less step2_trimming.slurm
+
+#Edit the slurm script for mapping using a text editor to replace the basenames of the files from samplename to small
+
+#Edit the slurm script for mapping to update the reference file from assembly.fasta to chr2.fasta to match the files needed used in this tutorial. This tutorial has been updated to run on smaller datasets:
+
+vi step2_mapping.slurm
 ```
 
 </li>
