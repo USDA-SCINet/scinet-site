@@ -1088,22 +1088,20 @@ if [ ! -d Mapped ] ; then
 mkdir Mapped
 fi
 
-# Index your reference assembly 
+if [ ! -s "chr2.fasta.bwt.2bit.64" ] ; then
 bwa-mem2 index chr2.fasta 
-
-# Index reference assembly using Samtools (for later) 
 samtools faidx chr2.fasta >chr2.fasta.fai 
+fi
 
-# For each of your trimmed and paired reads:  
 bwa-mem2 mem –t 24 chr2.fasta \ 	 
       Trimmed/small_val_1.fq.gz \ 	 
       Trimmed/small_val_2.fq.gz | \ 
       samblaster | \ 	 
       samtools sort -@ 24  –o Mapped/small.bam
 
-samtools index Mapped/samplename.bam
+samtools index Mapped/small.bam
 
-samtools flagstats Mapped/samplename.bam >Mapped/samplename.flagstats
+samtools flagstats Mapped/small.bam >Mapped/small.flagstats
 
 ```
 
