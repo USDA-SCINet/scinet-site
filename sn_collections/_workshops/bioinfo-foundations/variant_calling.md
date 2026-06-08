@@ -997,19 +997,53 @@ cp /project/scinet_workshop1/deepvariant/step*slurm .
 {:.usa-process-list__heading}
 ### Trimming 
 
-{: .copy-code }
-```
-# Trim adapter artifacts from your reads 
+Ensure that you are in `/90daydata/shared/$USER/deepvariant`. 
+
+Create an empty script file:
+
+  ```bash
+  touch step1_trimming.slurm
+  ```
+  {:.copy-code}
+
+Open `step1_trimming.slurm` in a text editor and copy and paste the script below:
+
+  ```bash 
+#!/bin/bash
+
+#SBATCH --time=08:00:00   # walltime limit (HH:MM:SS)
+#SBATCH --nodes=1   # number of nodes
+#SBATCH --ntasks-per-node=24   # 20 processor core(s) per node X 2 threads per core
+#SBATCH --partition=atlas    # standard node(s)
+#SBATCH --job-name="step1:trimming"
+#SBATCH --mail-user=$USER@usda.gov   # email address
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+#SBATCH --output="trimgalore-std-%j-%N.out" # job standard output file (%j replaced by job id)
+#SBATCH --error="trimgalore-std-%j-%N.err" # job standard error file (%j replaced by job id)
+#SBATCH --account=scinet_workshop1
+
+module load miniconda3
+
+source activate /project/scinet_workshop1/deepvariant/Software/condaenvs/deepvariant/
+
+if [ ! -d Trimmed ] ; then
+mkdir Trimmed
+fi
+
 trim_galore --paired --basename small --output_dir Trimmed --cores 24 PE_directory/small_R1.fastq.gz PE_directory/small_R2.fastq.gz
 
-#Review the slurm script for trimming
-less step1_trimming.slurm
+  ``` 
+  {:.copy-code}
 
-#Edit the slurm script for trimming using a text editor to replace the basenames of the files from samplename to small. This tutorial has been updated to run on smaller datasets:
+To submit the script:
 
-vi step1_trimming.slurm
+  ```bash 
+  sbatch step1_trimming.slurm
+  ``` 
+  {:.copy-code}
 
-```
 
 </li>
 <li class="usa-process-list__item" markdown="1">
@@ -1017,8 +1051,43 @@ vi step1_trimming.slurm
 {:.usa-process-list__heading}
 ### Mapping 
 
-{: .copy-code }
-```
+Ensure that you are in `/90daydata/shared/$USER/deepvariant`. 
+
+Create an empty script file:
+
+  ```bash
+  touch step2_mapping.slurm
+  ```
+  {:.copy-code}
+
+Open `step2_mapping.slurm` in a text editor and copy and paste the script below:
+
+  ```bash
+
+#!/bin/bash
+
+#SBATCH --time=08:00:00   # walltime limit (HH:MM:SS)
+#SBATCH --nodes=1   # number of nodes
+#SBATCH --ntasks-per-node=48   # 20 processor core(s) per node X 2 threads per core
+#SBATCH --partition=atlas    # standard node(s)
+#SBATCH --job-name="step2:mapping"
+#SBATCH --mail-user=$USER@usda.gov   # email address
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+#SBATCH --output="bwamem2-std-%j-%N.out" # job standard output file (%j replaced by job id)
+#SBATCH --error="bwamem2-std-%j-%N.err" # job standard error file (%j replaced by job id)
+#SBATCH --account=scinet_workshop1
+
+module load miniconda3
+module load samtools
+
+source activate /project/scinet_workshop1/deepvariant/Software/condaenvs/deepvariant/
+
+if [ ! -d Mapped ] ; then
+mkdir Mapped
+fi
+
 # Index your reference assembly 
 bwa-mem2 index chr2.fasta 
 
@@ -1032,15 +1101,20 @@ bwa-mem2 mem –t 24 chr2.fasta \
       samblaster | \ 	 
       samtools sort -@ 24  –o Mapped/small.bam
 
-#Review the slurm script for mapping
-less step2_trimming.slurm
+samtools index Mapped/samplename.bam
 
-#Edit the slurm script for mapping using a text editor to replace the basenames of the files from samplename to small
+samtools flagstats Mapped/samplename.bam >Mapped/samplename.flagstats
 
-#Edit the slurm script for mapping to update the reference file from assembly.fasta to chr2.fasta to match the files needed used in this tutorial. This tutorial has been updated to run on smaller datasets:
-
-vi step2_mapping.slurm
 ```
+
+{:.copy-code}
+
+To submit the script:
+
+  ```bash 
+  sbatch step2_mapping.slurm
+  ``` 
+  {:.copy-code}
 
 </li>
 <li class="usa-process-list__item" markdown="1">
@@ -1048,21 +1122,154 @@ vi step2_mapping.slurm
 {:.usa-process-list__heading}
 ### Call variants 
 
-{: .copy-code }
+Ensure that you are in `/90daydata/shared/$USER/deepvariant`. 
+
+Create an empty script file:
+
+  ```bash
+  touch step3_variant_calling.slurm
+  ```
+  {:.copy-code}
+
+Open `step3_variant_calling.slurm` in a text editor and copy and paste the script below:
+
+  ```bash
+#!/bin/bash
+
+#SBATCH --time=08:00:00   # walltime limit (HH:MM:SS)
+#SBATCH --nodes=1   # number of nodes
+#SBATCH --ntasks-per-node=48   # 20 processor core(s) per node X 2 threads per core
+#SBATCH --partition=atlas    # standard node(s)
+#SBATCH --job-name="step3:variantcalling"
+#SBATCH --mail-user=$USER@usda.gov   # email address
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+#SBATCH --output="deepvariant-std-%j-%N.out" # job standard output file (%j replaced by job id)
+#SBATCH --error="deepvariant-std-%j-%N.err" # job standard error file (%j replaced by job id)
+#SBATCH --account=scinet_workshop1
+
+module load miniconda3
+module load apptainer
+
+source activate /project/scinet_workshop1/deepvariant/Software/condaenvs/deepvariant/
+
+if [ ! -d Variants ] ; then
+mkdir Variants
+fi
+
+if [ ! -d Int ] ; then
+mkdir Int
+fi
+
+apptainer exec Software/sifs/deepvariant_1.6.0.sif \​
+
+python3 Software/deepvariant/scripts/run_deepvariant.py \ ​
+
+--num_shards=48 \​
+
+--model_type WGS \​
+
+--output_vcf Variants/small.vcf.gz \​
+
+--output_gvcf Variants/small.g.vcf.gz \​
+
+--ref chr2.fasta \​
+
+--reads Mapped/small.bam \​
+
+--sample_name small \​
+
+--intermediate_results_dir Int/small_int \​
+
+--make_examples_extra_args "normalize_reads=true” \\​
+
+--dry_run
 ```
-apptainer exec Software/sifs/deepvariant_1.6.0.sif \ 
-          python3 Software/deepvariant/scripts/run_deepvariant.py \ 	 
-          --num_shards=48 \ 
-          --model_type WGS \ 
-          --output_vcf Variants/samplename.vcf.gz \ 
-          --output_gvcf Variants/samplename.g.vcf.gz \ 
-          --ref assembly.fasta \ 
-          --reads Mapped/samplename.bam \ 
-          --sample_name samplename \ 
-          --intermediate_results_dir Int/samplename_int \ 
-          --make_examples_extra_args "normalize_reads=true” \\ 
-          --dry_run 
+{:.copy-code}
+
+To submit the script:
+
+  ```bash 
+  sbatch step2_mapping.slurm
+  ``` 
+  {:.copy-code}
+
+We can also run trimming, mapping and variant calling by using one script that combines all the scripts we've created so far. 
+
+Ensure that you are in `/90daydata/shared/$USER/deepvariant`. 
+
+Create an empty script file:
+
+  ```bash
+  touch step123.slurm
+  ```
+  {:.copy-code}
+
+Open `step123.slurm` in a text editor and copy and paste the script below:
+
+  ```bash
+#!/bin/bash
+
+#SBATCH --time=08:00:00   # walltime limit (HH:MM:SS)
+#SBATCH --nodes=1   # number of nodes
+#SBATCH --ntasks-per-node=48   # 20 processor core(s) per node X 2 threads per core
+#SBATCH --partition=atlas    # standard node(s)
+#SBATCH --job-name="steps123"
+#SBATCH --mail-user=$USER@usda.gov   # email address
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+#SBATCH --output="deepvariantpipeline-std-%j-%N.out" # job standard output file (%j replaced by job id)
+#SBATCH --error="deepvariantpipeline-std-%j-%N.err" # job standard error file (%j replaced by job id)
+#SBATCH --account=scinet_workshop1
+
+module load miniconda3
+
+source activate /project/scinet_workshop1/deepvariant/Software/condaenvs/deepvariant/
+
+sample='small'
+
+if [ ! -d Trimmed ] ; then
+mkdir Trimmed
+fi
+
+trim_galore --paired --basename ${sample} --output_dir Trimmed --cores 48 PE_directory/${sample}_R1.fastq.gz melon_all/${sample}_R2.fastq.gz
+
+if [ ! -d Mapped ] ; then
+mkdir Mapped
+fi
+
+if [ ! -s "chr2.fasta.bwt.2bit.64" ] ; then
+bwa-mem2 index chr2.fasta
+samtools faidx chr2.fasta >chr2.fasta.fai
+fi
+
+bwa-mem2 mem -t $(nproc) chr2.fasta Trimmed/${sample}_val_1.fq.gz Trimmed/${sample}_val_2.fq.gz | samblaster | samtools sort -@ $(nproc) -o Mapped/${sample}.bam -
+
+samtools index Mapped/${sample}.bam
+
+samtools flagstats Mapped/${sample}.bam >Mapped/${sample}.flagstats
+
+if [ ! -d Variants ] ; then
+mkdir Variants
+fi
+
+if [ ! -d Int ] ; then
+mkdir Int
+fi
+
+apptainer exec /project/scinet_workshop1/deepvariant/Software/sifs/deepvariant_1.6.0.sif python3 /project/scinet_workshop1/deepvariant/Software/deepvariant/scripts/run_deepvariant.py --num_shards=$(nproc) --model_type WGS --output_vcf Variants/${sample}.vcf.gz --output_gvcf Variants/${sample}.g.vcf.gz --ref chr2.fasta --reads Mapped/${sample}.bam --sample_name ${sample} --intermediate_results_dir Int/${sample}_int
+
 ```
+{:.copy-code}
+
+To submit the script:
+
+  ```bash 
+  sbatch step123.slurm
+  ``` 
+  {:.copy-code}
 
 </li>
 <li class="usa-process-list__item" markdown="1">
