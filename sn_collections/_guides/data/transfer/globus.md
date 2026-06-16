@@ -93,7 +93,7 @@ To transfer files to or from your local computer, you can use Globus Connect Per
     * [Mac Install Instructions](https://docs.globus.org/how-to/globus-connect-personal-mac/)
     * [Linux Install Instructions](https://docs.globus.org/how-to/globus-connect-personal-linux/)
 
-By default on Windows, GCP prompts to be installed in `C:\Program Files` which requires administrator rights. However, you don’t need administrator rights to install GCP on your local computer. If you do not have administrator rights, browse to a place to which you have write access (e.g., your Desktop folder) when prompted for an installation location. If you encounter further permission issues, contact your local IT staff for assistance. 
+By default on Windows, GCP prompts to be installed in `C: \ Program Files` which requires administrator rights. However, you don’t need administrator rights to install GCP on your local computer. If you do not have administrator rights, browse to a place to which you have write access (e.g., your Desktop folder) when prompted for an installation location. If you encounter further permission issues, contact your local IT staff for assistance. 
 
 **Please note:** GCP defaults to access your user "Documents" folder on your local computer, but you can change that to another folder (e.g., a "globus" subfolder within your "Documents") to limit Globus's access to your local files. To make this change:  
 1. Right-click on the GCP icon in your local computer's system taskbar (or menu bar or system tray, depending on your operating system).
