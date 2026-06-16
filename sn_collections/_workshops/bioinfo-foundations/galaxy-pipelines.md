@@ -49,6 +49,7 @@ Please confirm you can successfully log in to Galaxy on SCINet with your SCINet 
 </li>
 
 <li class="usa-process-list__item" markdown="1">
+  
 {:.usa-process-list__heading}
 #### Create a new history and set up your workspace:
 
@@ -70,8 +71,9 @@ We will use this history for quality control and preprocessing.
 </li>
 
 <li class="usa-process-list__item" markdown="1">
+  
 {:.usa-process-list__heading}
-### Importing data to Galaxy
+#### Importing data to Galaxy
 
 Data can be uploaded to Galaxy from a local machine, from remote sources (URLs and Ceres Galaxy folder), or from a shared history. 
 
