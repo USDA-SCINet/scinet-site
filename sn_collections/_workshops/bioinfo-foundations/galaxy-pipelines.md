@@ -39,9 +39,18 @@ We will also explore ways in which you can share your history and workflows with
 ## Pre-Workshop Instructions: 
 To help minimize technical issues and delays at the start of the workshop, please try the following tests prior to the workshop. 
 
-* **Logging on to [Galaxy](https://galaxy.scinet.usda.gov):**
-  * Please confirm you can successfully log in to Galaxy on SCINet with your SCINet account [(see Galaxy login instructions here)](/guides/application/galaxy#logging-on). If you are successful, you will be able to see the standard Galaxy home screen. 
-* **Set up your workspace:**
+<ol class="usa-process-list">
+<li class="usa-process-list__item" markdown="1">
+
+{:.usa-process-list__heading}
+#### Logging on to [Galaxy](https://galaxy.scinet.usda.gov):
+
+Please confirm you can successfully log in to Galaxy on SCINet with your SCINet account [(see Galaxy login instructions here)](/guides/application/galaxy#logging-on). If you are successful, you will be able to see the standard Galaxy home screen. 
+</li>
+
+<li class="usa-process-list__item" markdown="1">
+{:.usa-process-list__heading}
+#### Create a new history and set up your workspace:
 
 When you login to Galaxy, your History panel will be empty or contain previous work (if you attended the pre-workshop help session or have used Galaxy before). The Galaxy history is a workspace that stores data, tool outputs, and intermediate results so your work can be reviewed, shared, or rerun at anytime.
 
@@ -58,7 +67,10 @@ We will begin by creating a new history:
 
 We will use this history for quality control and preprocessing.
 
+</li>
 
+<li class="usa-process-list__item" markdown="1">
+{:.usa-process-list__heading}
 ### Importing data to Galaxy
 
 Data can be uploaded to Galaxy from a local machine, from remote sources (URLs and Ceres Galaxy folder), or from a shared history. 
@@ -81,6 +93,8 @@ Why are we working with two histories?
 
 Galaxy does not allow histories to be merged. Instead, datasets can be copied between histories as needed as we move through workflows. Using multiple histories helps keep our main analysis and quality control, logs, and preprocessing steps separate.
 
+</li>
+</ol>
 
 #### Job statuses in Galaxy
 
