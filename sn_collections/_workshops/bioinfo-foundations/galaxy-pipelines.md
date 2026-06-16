@@ -94,6 +94,32 @@ To understand the stages of your jobs as we progress through the tutorials, you 
 
 Now that we know what job status is represented by each color used in Galaxy, we can get started!
 
+## RNA-Seq Data Analysis with Galaxy
+*by Siva Chudalayandi and Lavida Rogers*
+
+RNA-seq experiments are designed to comprehend transcriptomic changes in organisms in response to a certain treatment. They are also designed to understand the cause and/or effect of a mutation by measuring the resulting gene expression changes. Robust algorithms specifically designed to map short stretches of nucleotide sequences to a genome while being aware of the process of RNA splicing have led to many advances in RNAseq analysis. An overview of RNA-seq analysis is summarized in Figure 1.
+
+![**Figure 1.**: Overview of the RNAseq workflow](/assets/img/events/bioinfo/galaxy/rnaseq/RNAseq_1.png)
+
+This tutorial  will guide you through a basic RNAseq analysis with Galaxy, beginning at quality checking of the RNA-seq reads through to differential gene expression analysis. We will complete the following tasks: 
+
+1. Quality Control 
+2. Read alignment 
+3. Abundance estimation
+4. Differential gene expression analysis
+5. Visualization and biological interpretation
+
+We have downloaded an *Arabidopsis* dataset from NCBI for this purpose. Check the [BioProject](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA348194) page for more information.
+
+### Background Information: Experimental design
+
+This experiment compares wild type (WT) and *atrx-1* mutant *Arabidopsis* to analyze how the loss of function of ATRX protein results in changes in gene expression. The **ATRX** protein is a histone chaperone known to be an important player in the regulation of gene expression. RNA was isolated from three WT replicates and three mutant replicates. The transcriptome was enriched/isolated using the plant RiboMinus kit for obtaining total RNA. RNA-seq was carried out on Illumina Hiseq 2500. The sequencing reads are paired-end data, hence we have 2 files per replicate.
+
+{% include table content="| Condition | replicate 1 | replicate 2 | replicate 3 |
+| --- | --- | --- | --- |
+| WT | SRR4420293_1.fastq.gz <br> SRR4420293_2.fastq.gz | SRR4420294_1.fastq.gz <br> SRR4420294_2.fastq.gz | SRR4420295_1.fastq.gz <br> SRR4420295_2.fastq.gz |
+| atrx-1 | SRR4420296_1.fastq.gz <br> SRR4420296_2.fastq.gz| SRR4420297_1.fastq.gz <br> SRR4420297_2.fastq.gz| SRR4420298_1.fastq.gz <br> SRR4420298_2.fastq.gz |" %}
+
 ## Preparing the data for downstream analysis
 
 While still in the `RNA-seq_analysis` history, we will start by organizing our sequencing data so that read pairing is preserved and sample identity (mutant vs wildtype) is clear. 
@@ -167,36 +193,7 @@ Steps:
 </li> 
 </ol>
 
-
-## RNA-Seq Data Analysis with Galaxy
-*by Siva Chudalayandi and Lavida Rogers*
-
-RNA-seq experiments are designed to comprehend transcriptomic changes in organisms in response to a certain treatment. They are also designed to understand the cause and/or effect of a mutation by measuring the resulting gene expression changes. Robust algorithms specifically designed to map short stretches of nucleotide sequences to a genome while being aware of the process of RNA splicing have led to many advances in RNAseq analysis. An overview of RNA-seq analysis is summarized in Figure 1.
-
-![**Figure 1.**: Overview of the RNAseq workflow](/assets/img/events/bioinfo/galaxy/rnaseq/RNAseq_1.png)
-
-This tutorial  will guide you through a basic RNAseq analysis with Galaxy, beginning at quality checking of the RNA-seq reads through to differential gene expression analysis. We will complete the following tasks: 
-
-1. Quality Control 
-2. Read alignment 
-3. Abundance estimation
-4. Differential gene expression analysis
-5. Visualization and biological interpretation
-
-We have downloaded an *Arabidopsis* dataset from NCBI for this purpose. Check the [BioProject](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA348194) page for more information.
-
-### Background Information: Experimental design
-
-This experiment compares wild type (WT) and *atrx-1* mutant *Arabidopsis* to analyze how the loss of function of ATRX protein results in changes in gene expression. The **ATRX** protein is a histone chaperone known to be an important player in the regulation of gene expression. RNA was isolated from three WT replicates and three mutant replicates. The transcriptome was enriched/isolated using the plant RiboMinus kit for obtaining total RNA. RNA-seq was carried out on Illumina Hiseq 2500. The sequencing reads are paired-end data, hence we have 2 files per replicate.
-
-{% include table content="| Condition | replicate 1 | replicate 2 | replicate 3 |
-| --- | --- | --- | --- |
-| WT | SRR4420293_1.fastq.gz <br> SRR4420293_2.fastq.gz | SRR4420294_1.fastq.gz <br> SRR4420294_2.fastq.gz | SRR4420295_1.fastq.gz <br> SRR4420295_2.fastq.gz |
-| atrx-1 | SRR4420296_1.fastq.gz <br> SRR4420296_2.fastq.gz| SRR4420297_1.fastq.gz <br> SRR4420297_2.fastq.gz| SRR4420298_1.fastq.gz <br> SRR4420298_2.fastq.gz |" %}
-
-
-
-### Quality Control 
+## Quality Control 
 
 We use [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/), a tool that provides a simple way to do quality control checks on raw sequence data coming from high-throughput sequencing pipelines.
 
