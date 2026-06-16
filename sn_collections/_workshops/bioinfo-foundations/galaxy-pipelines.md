@@ -39,11 +39,6 @@ We will also explore ways in which you can share your history and workflows with
 ## Pre-Workshop Instructions: 
 To help minimize technical issues and delays at the start of the workshop, please try the following tests prior to the workshop. 
 
-* **Logging on to [Ceres Open OnDemand (OOD)](http://ceres-ood.scinet.usda.gov/):** 
-  * Please confirm you can successfully log in to Ceres OOD with your SCINet account [(see OOD login instructions here)](/guides/access/web-based-login). If you are successful, you will be able to see the Ceres OOD home page.   
-* **Ceres Shell Access:** 
-  * When on Ceres OOD, click on the top navigation bar: “Clusters” > “Ceres Shell Access”. A new tab will appear that looks like a shell terminal (e.g., like PowerShell). 
-  * Please confirm you do not receive any error messages or requests to re-authenticate and that the final line looks like “[firstname.lastname@ceres ~]$”.  
 * **Logging on to [Galaxy](https://galaxy.scinet.usda.gov):**
   * Please confirm you can successfully log in to Galaxy on SCINet with your SCINet account [(see Galaxy login instructions here)](/guides/application/galaxy#logging-on). If you are successful, you will be able to see the standard Galaxy home screen. 
 * **Set up your workspace:**
