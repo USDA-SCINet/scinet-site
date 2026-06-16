@@ -94,7 +94,7 @@ To understand the stages of your jobs as we progress through the tutorials, you 
 
 Now that we know what job status is represented by each color used in Galaxy, we can get started!
 
-### Preparing the data for downstream analysis
+## Preparing the data for downstream analysis
 
 While still in the `RNA-seq_analysis` history, we will start by organizing our sequencing data so that read pairing is preserved and sample identity (mutant vs wildtype) is clear. 
 
