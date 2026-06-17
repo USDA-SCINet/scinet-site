@@ -43,7 +43,7 @@ To help minimize technical issues and delays at the start of the workshop, pleas
 <li class="usa-process-list__item" markdown="1">
 
 {:.usa-process-list__heading}
-#### Logging on to [Galaxy](https://galaxy.scinet.usda.gov):
+### Logging on to [Galaxy](https://galaxy.scinet.usda.gov)
 
 Please confirm you can successfully log in to Galaxy on SCINet with your SCINet account [(see Galaxy login instructions here)](/guides/application/galaxy#logging-on). If you are successful, you will be able to see the standard Galaxy home screen. 
 </li>
@@ -51,7 +51,7 @@ Please confirm you can successfully log in to Galaxy on SCINet with your SCINet 
 <li class="usa-process-list__item" markdown="1">
   
 {:.usa-process-list__heading}
-#### Create a new history and set up your workspace:
+### Create a new history and set up your workspace
 
 When you login to Galaxy, your History panel will be empty or contain previous work (if you attended the pre-workshop help session or have used Galaxy before). The Galaxy history is a workspace that stores data, tool outputs, and intermediate results so your work can be reviewed, shared, or rerun at anytime.
 
@@ -73,7 +73,7 @@ We will use this history for quality control and preprocessing.
 <li class="usa-process-list__item" markdown="1">
   
 {:.usa-process-list__heading}
-#### Importing data to Galaxy
+### Importing data to Galaxy
 
 Data can be uploaded to Galaxy from a local machine, from remote sources (URLs and Ceres Galaxy folder), or from a shared history. 
 
@@ -98,7 +98,7 @@ Galaxy does not allow histories to be merged. Instead, datasets can be copied be
 </li>
 </ol>
 
-#### Job statuses in Galaxy
+### Job statuses in Galaxy
 
 To understand the stages of your jobs as we progress through the tutorials, you will need to understand how Galaxy displays job statuses. 
 
@@ -127,7 +127,7 @@ This tutorial  will guide you through a basic RNAseq analysis with Galaxy, begin
 
 We have downloaded an *Arabidopsis* dataset from NCBI for this purpose. Check the [BioProject](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA348194) page for more information.
 
-### Background Information: Experimental design
+**Background Information: Experimental design**
 
 This experiment compares wild type (WT) and *atrx-1* mutant *Arabidopsis* to analyze how the loss of function of ATRX protein results in changes in gene expression. The **ATRX** protein is a histone chaperone known to be an important player in the regulation of gene expression. RNA was isolated from three WT replicates and three mutant replicates. The transcriptome was enriched/isolated using the plant RiboMinus kit for obtaining total RNA. RNA-seq was carried out on Illumina Hiseq 2500. The sequencing reads are paired-end data, hence we have 2 files per replicate.
 
@@ -136,7 +136,7 @@ This experiment compares wild type (WT) and *atrx-1* mutant *Arabidopsis* to ana
 | WT | SRR4420293_1.fastq.gz <br> SRR4420293_2.fastq.gz | SRR4420294_1.fastq.gz <br> SRR4420294_2.fastq.gz | SRR4420295_1.fastq.gz <br> SRR4420295_2.fastq.gz |
 | atrx-1 | SRR4420296_1.fastq.gz <br> SRR4420296_2.fastq.gz| SRR4420297_1.fastq.gz <br> SRR4420297_2.fastq.gz| SRR4420298_1.fastq.gz <br> SRR4420298_2.fastq.gz |" %}
 
-## Preparing the data for downstream analysis
+### Preparing the data for downstream analysis
 
 While still in the `RNA-seq_analysis` history, we will start by organizing our sequencing data so that read pairing is preserved and sample identity (mutant vs wildtype) is clear. 
 
@@ -209,7 +209,7 @@ Steps:
 </li> 
 </ol>
 
-## Quality Control 
+### Quality Control 
 
 We use [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/), a tool that provides a simple way to do quality control checks on raw sequence data coming from high-throughput sequencing pipelines.
 
@@ -359,6 +359,7 @@ To run GOSeq, we need three inputs:
 
 {:.usa-process-list__heading}
 #### Prepare the first input for GOseq
+
 The purpose of this step is to convert the DESeq2 results table into a binary indicator identifying whether each gene is differentially expressed. In this step we will be generating a boolean (TRUE/FALSE) variable based on the adjusted p-value threshold `(p<0.05)`.  
 
 Steps: 
