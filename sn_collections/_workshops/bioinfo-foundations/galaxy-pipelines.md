@@ -35,45 +35,80 @@ In this workshop, participants will work through a complete RNA-seq analysis and
 
 We will also explore ways in which you can share your history and workflows with other SCINet users in Galaxy and how it can be a powerful tool for collaborations.
 
-{% comment %}
+
 ## Pre-Workshop Instructions: 
 To help minimize technical issues and delays at the start of the workshop, please try the following tests prior to the workshop. 
 
-* **Logging on to [Ceres Open OnDemand (OOD)](http://ceres-ood.scinet.usda.gov/):** 
-  * Please confirm you can successfully log in to Ceres OOD with your SCINet account [(see OOD login instructions here)](/guides/access/web-based-login). If you are successful, you will be able to see the Ceres OOD home page.   
-* **Ceres Shell Access:** 
-  * When on Ceres OOD, click on the top navigation bar: “Clusters” > “Ceres Shell Access”. A new tab will appear that looks like a shell terminal (e.g., like PowerShell). 
-  * Please confirm you do not receive any error messages or requests to re-authenticate and that the final line looks like “[firstname.lastname@ceres ~]$”.  
-* **Logging on to [Galaxy](https://galaxy.scinet.usda.gov):**
-  * Please confirm you can successfully log in to Galaxy on SCINet with your SCINet account [(see Galaxy login instructions here)](/guides/application/galaxy#logging-on). If you are successful, you will be able to see the standard Galaxy home screen. 
-* **Importing data to Galaxy**
-  * While on Ceres Shell Access, navigate to your Galaxy folder in your home directory on Ceres
-    
-    {: .copy-code }
-    ```
-    cd /home/$USER/galaxy
-    ```
-  * Copy workshop data to your Galaxy folder on Ceres by copying the commands below and running them in the Ceres terminal.
-    
-    ```
-    cp /90daydata/shared/galaxy_workshop/GCF_000001735.4_TAIR10.1_genomic.fna . 
-    cp /90daydata/shared/galaxy_workshop/GCF_000001735.4_TAIR10.1_genomic.gtf .
-    cp /90daydata/shared/galaxy_workshop/*.gz . 
-    ```
-    {: .copy-code }
+<ol class="usa-process-list">
+<li class="usa-process-list__item" markdown="1">
 
-  * After copying the files to your Galaxy folder, return to the Galaxy tab in your web browser. (If you are not already logged on to Galaxy, please see “Logging on to Galaxy”, above.)  
-  * You will import files into Galaxy by clicking on “Upload” in the left panel of the Galaxy home screen. The following download/upload screen should appear:  
-    ![Galaxy upload data modal](/assets/img/events/bioinfo/galaxy/upload_modal.png)
-  * Click on “Choose remote files.” This will show you the files in your Galaxy folder on Ceres.  
-    ![Modal displaying ist of remote files on Ceres](/assets/img/events/bioinfo/galaxy/remote_files.png)
-  * Select the files you want to transfer.
-    ![Modal with queued files](/assets/img/events/bioinfo/galaxy/remote_queue.png)
-  * Click “Start” and wait for the files to be imported into Galaxy. The files will appear in the History pane on the right of your home screen. 
+{:.usa-process-list__heading}
+### Logging on to [Galaxy](https://galaxy.scinet.usda.gov)
 
-**For more information on importing data to Galaxy, see the [SCINet Galaxy user guide](/guides/application/galaxy#importing-data-to-galaxy).** 
+Please confirm you can successfully log in to Galaxy on SCINet with your SCINet account [(see Galaxy login instructions here)](/guides/application/galaxy#logging-on). If you are successful, you will be able to see the standard Galaxy home screen. 
+</li>
 
+<li class="usa-process-list__item" markdown="1">
+  
+{:.usa-process-list__heading}
+### Create a new history and set up your workspace
 
+When you login to Galaxy, your History panel will be empty or contain previous work (if you attended the pre-workshop help session or have used Galaxy before). The Galaxy history is a workspace that stores data, tool outputs, and intermediate results so your work can be reviewed, shared, or rerun at anytime.
+
+We will begin by creating a new history: 
+
+1. Locate the history panel on the right side of the Galaxy interface, click the `+` to create a new history.
+2. Click the history title (default: Unnamed history)
+3. Rename the history to `RNA-seq_QCandLogs`
+4. Save changes
+
+![**Figure 2.**: Creating a new history](/assets/img/events/bioinfo/galaxy/rnaseq/galaxy_history_1.png)
+
+![**Figure 3.**: Renaming a new history](/assets/img/events/bioinfo/galaxy/rnaseq/galaxy_history_2.png)
+
+We will use this history for quality control and preprocessing.
+
+</li>
+
+<li class="usa-process-list__item" markdown="1">
+  
+{:.usa-process-list__heading}
+### Importing data to Galaxy
+
+Data can be uploaded to Galaxy from a local machine, from remote sources (URLs and Ceres Galaxy folder), or from a shared history. 
+
+**For more information on importing data to Galaxy, see the [SCINet Galaxy user guide](/guides/application/galaxy#importing-data-to-galaxy).**  
+
+For this workshop, we will import data via a shared Galaxy history that we created prior to the workshop. Here is [the link to a Galaxy history with all the files needed for the workshop](https://galaxy.scinet.usda.gov/u/lavidarogers/h/galaxy-workshop-files-1).
+
+Sharing data via histories is also a great option for working with collaborators.
+
+After clicking the shared history link, you will see "Import this History." Click on it to import the files. Galaxy imports shared histories as new histories. This new history will now contain 12 FASTQ files, the *Arabidopsis* genome (.fa), the annotation file (.gtf), and a gene categories file (.txt).
+
+![**Figure 4.**: Importing a new history](/assets/img/events/bioinfo/galaxy/rnaseq/history_import.png)
+
+Let's rename the imported history to `RNA-seq_analysis`.
+
+![**Figure 5.**: Renaming the imported history](/assets/img/events/bioinfo/galaxy/rnaseq/galaxy_history_3.png)
+
+Why are we working with two histories? 
+
+Galaxy does not allow histories to be merged. Instead, datasets can be copied between histories as needed as we move through workflows. Using multiple histories helps keep our main analysis and quality control, logs, and preprocessing steps separate.
+
+</li>
+</ol>
+
+### Job statuses in Galaxy
+
+To understand the stages of your jobs as we progress through the tutorials, you will need to understand how Galaxy displays job statuses. 
+
+- **Grey**: The job is queued. 
+- **Yellow**: The job is running.
+- **Green**: The job has completed successfully.
+- **Red**: The job has failed. 
+- **Light Blue**: The job is paused. 
+
+Now that we know what job status is represented by each color used in Galaxy, we can get started!
 
 ## RNA-Seq Data Analysis with Galaxy
 *by Siva Chudalayandi and Lavida Rogers*
@@ -92,7 +127,7 @@ This tutorial  will guide you through a basic RNAseq analysis with Galaxy, begin
 
 We have downloaded an *Arabidopsis* dataset from NCBI for this purpose. Check the [BioProject](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA348194) page for more information.
 
-### Background Information: Experimental design
+**Background Information: Experimental design**
 
 This experiment compares wild type (WT) and *atrx-1* mutant *Arabidopsis* to analyze how the loss of function of ATRX protein results in changes in gene expression. The **ATRX** protein is a histone chaperone known to be an important player in the regulation of gene expression. RNA was isolated from three WT replicates and three mutant replicates. The transcriptome was enriched/isolated using the plant RiboMinus kit for obtaining total RNA. RNA-seq was carried out on Illumina Hiseq 2500. The sequencing reads are paired-end data, hence we have 2 files per replicate.
 
@@ -101,94 +136,13 @@ This experiment compares wild type (WT) and *atrx-1* mutant *Arabidopsis* to ana
 | WT | SRR4420293_1.fastq.gz <br> SRR4420293_2.fastq.gz | SRR4420294_1.fastq.gz <br> SRR4420294_2.fastq.gz | SRR4420295_1.fastq.gz <br> SRR4420295_2.fastq.gz |
 | atrx-1 | SRR4420296_1.fastq.gz <br> SRR4420296_2.fastq.gz| SRR4420297_1.fastq.gz <br> SRR4420297_2.fastq.gz| SRR4420298_1.fastq.gz <br> SRR4420298_2.fastq.gz |" %}
 
-### Preparation
-
-If you missed the pre-workshop help session, see the [pre-workshop instructions](#pre-workshop-instructions) to get started with using Galaxy on SCINet. 
-
-#### Setting up your workspace
-
-When you login to Galaxy, your History panel will be empty or contain previous work (if you attended the pre-workshop help session or have used Galaxy before). The Galaxy history is a workspace that stores data, tool outputs, and intermediate results so your work can be reviewed, shared, or rerun at anytime.
-
-We will begin by creating a new history: 
-
-1. Locate the history panel on the right side of the Galaxy interface, click the `+` to create a new history.
-2. Click the history title (default: Unnamed history)
-3. Rename the history to `RNA-seq_QCandLogs`
-4. Save changes
-
-![**Figure 2.**: Creating a new history](/assets/img/events/bioinfo/galaxy/rnaseq/galaxy_history_1.png)
-
-![**Figure 3.**: Renaming a new history](/assets/img/events/bioinfo/galaxy/rnaseq/galaxy_history_2.png)
-
-We will use this history for quality control and preprocessing.
-
-#### Importing data to Galaxy
-
-Data can be uploaded to Galaxy from a local machine, from remote sources (URLs and Ceres Galaxy folder), or from a shared history. 
-
-Instructions to upload data to Galaxy via Ceres can be found in the [pre-workshop instructions](#pre-workshop-instructions).
-
-For this workshop, we will import data via a shared Galaxy history that we created prior to the workshop. Here is [the link to a Galaxy history with all the files needed for the workshop](https://galaxy.scinet.usda.gov/u/lavidarogers/h/galaxy-workshop-files-1).
-
-Sharing data via histories is also a great option for working with collaborators.
-
-After clicking the shared history link, you will see "Import this History." Click on it to import the files. Galaxy imports shared histories as new histories. This new history will now contain 12 FASTQ files, the *Arabidopsis* genome (.fa), the annotation file (.gtf), and a gene categories file (.txt).
-
-![**Figure 4.**: Importing a new history](/assets/img/events/bioinfo/galaxy/rnaseq/history_import.png)
-
-Let's rename the imported history to `RNA-seq_analysis`.
-
-![**Figure 5.**: Renaming the imported history](/assets/img/events/bioinfo/galaxy/rnaseq/galaxy_history_3.png)
-
-Why are we working with two histories? Galaxy does not allow histories to be merged. Instead, datasets can be copied between histories as needed as we move through workflows. Using multiple histories helps keep our main analysis and quality control, logs, and preprocessing steps separate.
-
-
-##### Job statuses in Galaxy
-
-To understand the stages of your jobs as we progress through the tutorials, you will need to understand how Galaxy displays job statuses. 
-
-- **Grey**: The job is queued. 
-- **Yellow**: The job is running.
-- **Green**: The job has completed successfully.
-- **Red**: The job has failed. 
-- **Light Blue**: The job is paused. 
-
-Now that we know what job status is represented by each color used in Galaxy, we can get started!
-
 ### Preparing the data for downstream analysis
 
 While still in the `RNA-seq_analysis` history, we will start by organizing our sequencing data so that read pairing is preserved and sample identity (mutant vs wildtype) is clear. 
 
-This preparation involves renaming the datasets, creating paired dataset lists, and flattening collections as needed.
+This preparation involves creating paired dataset lists and flattening collections as needed.
 
 <ol class="usa-process-list">
-<li class="usa-process-list__item" markdown="1">
-
-{:.usa-process-list__heading}
-#### Renaming datasets in Galaxy
-
-First, we'll rename the data files so that it is easier to see which files represent mutant or WT samples.
-- In the history panel, locate the 12 FASTQ datasets. 
-- Click on the pencil icon to edit attributes of `SRR4420293_1.fastq.gz` and rename this file to `WT_SRR4420293_1`
-- Save changes. 
-- Rename the remaining files as follows:  
-
-  {:.usa-table}
-  | Original File Name    | New Name                  |
-  |-----------------------|---------------------------|
-  | SRR4420293_2.fastq.gz | WT_SRR4420293_2.fastq.gz  |
-  | SRR4420294_1.fastq.gz | WT_SRR4420294_1.fastq.gz  |
-  | SRR4420294_2.fastq.gz | WT_SRR4420294_2.fastq.gz  |
-  | SRR4420295_1.fastq.gz | WT_SRR4420295_1.fastq.gz  |
-  | SRR4420295_2.fastq.gz | WT_SRR4420295_2.fastq.gz  |
-  | SRR4420296_1.fastq.gz | MUT_SRR4420296_1.fastq.gz |
-  | SRR4420296_2.fastq.gz | MUT_SRR4420296_2.fastq.gz |
-  | SRR4420297_1.fastq.gz | MUT_SRR4420297_1.fastq.gz |
-  | SRR4420297_2.fastq.gz | MUT_SRR4420297_2.fastq.gz |
-  | SRR4420298_1.fastq.gz | MUT_SRR4420298_1.fastq.gz |
-  | SRR4420298_2.fastq.gz | MUT_SRR4420298_2.fastq.gz |
-
-</li>
 <li class="usa-process-list__item" markdown="1">
 
 {:.usa-process-list__heading}
@@ -196,7 +150,7 @@ First, we'll rename the data files so that it is easier to see which files repre
 
 The data we are working with are paired-end sequencing reads, so we will create paired dataset lists. Paired lists preserve the relationship between forward and reverse reads.  Galaxy automatically detects paired reads based on file name patterns. 
 
-Commmon pairing patterns: 
+Common pairing patterns: 
 - _R1 and _R2
 - _1 and _2
 
@@ -255,7 +209,6 @@ Steps:
 </li> 
 </ol>
 
-
 ### Quality Control 
 
 We use [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/), a tool that provides a simple way to do quality control checks on raw sequence data coming from high-throughput sequencing pipelines.
@@ -281,7 +234,7 @@ We use [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/), a to
 {:.usa-process-list__heading}
 #### MultiQC
 
-After running fastqc on multiple datsets, we can use [MultiQC](https://github.com/MultiQC/MultiQC) to combine all QC reports into a single summary report. This allows you to produce a report that compares results from all samples. 
+After running fastqc on multiple datasets, we can use [MultiQC](https://github.com/MultiQC/MultiQC) to combine all QC reports into a single summary report. This allows you to produce a report that compares results from all samples. 
 
 1. Go to the tools panel and search for multiQC.
 2. Which tool was used generate logs? Select FASTQC.
@@ -358,13 +311,14 @@ Steps for running featureCounts in Galaxy:
     - Alignment file : dataset collection 
     - Specify strand information * RF
     - Gene annotation file: A GFF/GTF file in your history - automatically selects the annotation file, but always double check. 
+    - Create gene-length file: Yes
     - Does the input have read pairs? Yes, paired end, but count them as a single fragment 
 3. Run the tool.
 
 
 ### Differential Gene Expression Analysis
 
-After read alignment and read counting, differental expression analysis is performed with [DESeq2](https://bioconductor.org/packages//release/bioc/html/DESeq2.html). This identifies genes whose expression differ significantly between factors (mutant vs. wildtype samples)
+After read alignment and read counting, differential expression analysis is performed with [DESeq2](https://bioconductor.org/packages//release/bioc/html/DESeq2.html). This identifies genes whose expression differ significantly between factors (mutant vs. wildtype samples)
 
 DESeq2 normalizes count data, estimates dispersion across replicates, and tests for differential expression between defined conditions. In Galaxy, we will use the tool DESeq2 and manually assign samples to experimental conditions. 
 
@@ -385,7 +339,7 @@ DESeq2 normalizes count data, estimates dispersion across replicates, and tests 
 ### Functional enrichment with GOseq
 We have identified differentially expressed genes and now we want to biologically interpret what these results mean. Biological interpretation requires asking:
 
-*Are there any biolgical functions or processes that are overrepresented among these genes?*
+*Are there any biological functions or processes that are overrepresented among these genes?*
 
 [Gene ontology (GO)](https://geneontology.org/) enrichment analysis helps us answer this question by testing whether genes associated with specific biological processes (BP), molecular functions (MF), or cellular components (CC) occur more frequently than expected by chance. 
 
@@ -405,6 +359,7 @@ To run GOSeq, we need three inputs:
 
 {:.usa-process-list__heading}
 #### Prepare the first input for GOseq
+
 The purpose of this step is to convert the DESeq2 results table into a binary indicator identifying whether each gene is differentially expressed. In this step we will be generating a boolean (TRUE/FALSE) variable based on the adjusted p-value threshold `(p<0.05)`.  
 
 Steps: 
@@ -744,4 +699,4 @@ Galaxy workflows are not just automation tools. They function as:
 - Shareable computational protocols
 
 Once a workflow is shared, the analysis becomes transparent, repeatable, and extensible.
-{% endcomment %}
+
