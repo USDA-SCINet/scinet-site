@@ -8,8 +8,8 @@ order_number: 20
 subnav:
   - title: The "ceres" partition
     url: '#the-ceres-partition'
-  - title: Alternative Partitions
-    url: '#alternative-partitions'
+  - title: Alternative Partition
+    url: '#alternative-partition'
 
 ---
 
@@ -53,7 +53,7 @@ To use a non-default QOS ("debug" or "long"), use Slurm's [`--qos` option](https
 
 ## Alternative Partition
 
-{% include table caption= content="| Name | Nodes | Logical Cores per Node | Maximum Simulation Time | Default Memory per Core | Function |
+{% include table content="| Name | Nodes | Logical Cores per Node | Maximum Simulation Time | Default Memory per Core | Function |
 | --- | --- |--- |--- |--- |--- |
 | scavenger | 51 | 96 | 21 days | 3000 MB | scavenger jobs can be killed at any moment |" %}
 
