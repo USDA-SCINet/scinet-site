@@ -309,7 +309,7 @@ Steps for running featureCounts in Galaxy:
 1. Search for the tool featurecounts.
 2. Set the parameters:
     - Alignment file : dataset collection 
-    - Specify strand information * RF
+    - Specify strand information: Stranded Reverse
     - Gene annotation file: A GFF/GTF file in your history - automatically selects the annotation file, but always double check. 
     - Create gene-length file: Yes
     - Does the input have read pairs? Yes, paired end, but count them as a single fragment 
