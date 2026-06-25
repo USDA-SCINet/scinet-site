@@ -808,7 +808,7 @@ bcftools filter -e 'QUAL < 20 || DP < 5' raw.vcf > filtered.vcf
 
 ---
 
-## Where to Go Next
+**Next Steps**
 
 PCA / population structure → plink, SNPRelate  
 Phylogenetics → VCF2Phylip + IQ-TREE  
