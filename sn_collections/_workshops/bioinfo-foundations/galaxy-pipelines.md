@@ -700,3 +700,117 @@ Galaxy workflows are not just automation tools. They function as:
 
 Once a workflow is shared, the analysis becomes transparent, repeatable, and extensible.
 
+## Variant calling using Freebayes in Galaxy
+**FreeBayes in Galaxy | Arabidopsis Samples| Chr 4**
+
+---
+
+**Outline**
+
+| Block | Topic |
+|-------|------|-------|
+| 1 | Intro & pipeline overview |
+| 2 | FastQC + Trimmomatic  |
+| 3 | FreeBayes theory |
+| 4 | Extract workflow + build on canvas |
+| 5 | VCF filtering & wrap-up |
+
+---
+
+### The Overall Pipeline
+
+```
+FASTQ → FastQC → Trimmomatic → BWA-MEM → sort → markdup → index → FreeBayes (Chr4) → bcftools filter → VCF
+```
+
+**Hybrid approach:** Run FastQC + Trimmomatic, then workflow from history → add BWA-MEM, samtools, FreeBayes, filter on canvas.
+
+---
+
+### FastQC & Trimmomatic
+
+**FastQC** — check per-base quality (Q > 30), adapter contamination, GC content (~36% for *A. thaliana*)
+
+**Trimmomatic** — defaults are fine for workshop purposes, but:
+- Switch to **paired-end mode** first (defaults assume single-end)
+- Run on a collection or a single sample and if necessary — scale to all samples via the workflow
+
+---
+
+### FreeBayes Concepts
+
+FreeBayes is a **haplotype-based Bayesian variant caller** — it does joint calling across all the BAMs in a single run.
+
+**Bayesian model:** `P(genotype | reads) ∝ P(reads | genotype) × P(genotype)`
+
+**Key parameters to set in Galaxy:**
+
+| Parameter | Value | Why |
+|-----------|-------|-----|
+| `--ploidy` | 2 | *A. thaliana* is diploid |
+| `--region` | Chr4 | Keeps memory/runtime workshop-friendly |
+| `--min-mapping-quality` | 20 | Ignore poorly mapped reads |
+| `--min-base-quality` | 20 | Ignore low-quality bases |
+| `--min-alternate-count` | 2 | ≥ 2 reads must support ALT |
+| `--min-alternate-fraction` | 0.05 | ALT must be ≥ 5% of reads at that site |
+| BAM input | all 6 BAMs | Joint calling in one pass |
+
+**VCF output fields:** QUAL = confidence, GT = genotype (0/0, 0/1, 1/1), DP = depth, AD = allelic depth
+
+---
+
+### Building the Workflow
+
+#### Step A: Extract from History
+1. History menu ⚙️ → **Extract Workflow**
+2. ☑ FastQC, ☑ Trimmomatic, ☐ MultiQC (uncheck to keep canvas clean)
+3. Click **Create Workflow** → opens on canvas with those steps pre-filled
+
+#### Step B: Add on Canvas
+Connect forward from Trimmomatic's `fastq_out_paired` output:
+
+```
+BWA-MEM → samtools sort → samtools markdup → samtools index → FreeBayes → bcftools filter
+```
+
+- **BWA-MEM:** set TAIR10 reference + unique read group SM tag per sample
+- **FreeBayes:** set `--region Chr4` and parameters above
+- `fastq_out_unpaired` from Trimmomatic — leave unconnected
+- When running: point at the **dataset collection** of 6 samples; Galaxy iterates automatically
+
+> **Read groups are critical.** Missing or duplicate SM tags → FreeBayes treats all samples as one sample. Check with: `samtools view -H sample.bam | grep @RG`
+
+---
+
+### VCF Filtering & Wrap-up
+
+**Hard filter (bcftools):**
+```
+bcftools filter -e 'QUAL < 20 || DP < 5' raw.vcf > filtered.vcf
+```
+
+**Sanity check — Ti/Tv ratio** (run bcftools stats):
+- Expected ~2.0–2.5 for *A. thaliana* SNPs
+- < 1.5 → too many false positives → tighten filters
+- \> 3.0 → over-filtered → loosen filters
+
+---
+
+**Troubleshooting**
+
+| Problem | Fix |
+|---------|-----|
+| VCF has 0 variants | Wrong chr name — check `samtools view -H bam \| grep @SQ` (Chr4 vs 4 vs NC_003075.7) |
+| All samples same genotype | Missing/duplicate SM tags — re-run BWA-MEM with unique SM: per sample |
+| FreeBayes out of memory | Pre-filter BAMs before FreeBayes |
+| FreeBayes won't start | BAI index missing — run `samtools index` on all BAMs first |
+| Ti/Tv < 1.5 | Increase `--min-alternate-fraction` to 0.2–0.3 |
+
+---
+
+**Next Steps**
+
+PCA / population structure → plink, SNPRelate  
+Phylogenetics → VCF2Phylip + IQ-TREE  
+Functional annotation → SnpEff  
+GWAS → GEMMA or plink (requires phenotype data)
