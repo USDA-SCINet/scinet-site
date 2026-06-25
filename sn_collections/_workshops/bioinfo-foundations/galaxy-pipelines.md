@@ -700,7 +700,7 @@ Galaxy workflows are not just automation tools. They function as:
 
 Once a workflow is shared, the analysis becomes transparent, repeatable, and extensible.
 
-## Arabidopsis Variant Calling Workshop
+## Variant calling using Freebayes in Galaxy
 **FreeBayes in Galaxy | Arabidopsis Samples| Chr 4**
 
 ---
@@ -717,7 +717,7 @@ Once a workflow is shared, the analysis becomes transparent, repeatable, and ext
 
 ---
 
-### The overall Pipeline
+### The Overall Pipeline
 
 ```
 FASTQ → FastQC → Trimmomatic → BWA-MEM → sort → markdup → index → FreeBayes (Chr4) → bcftools filter → VCF
