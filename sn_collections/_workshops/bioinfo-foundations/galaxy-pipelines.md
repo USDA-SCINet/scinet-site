@@ -18,6 +18,9 @@ sessions:
     date: 2026-06-22
     end_date: 2026-06-25
     multiday: June 22, 24-25
+    materials:
+      - text: Day 1 recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/IQDpDse_W4pwSpcVN_LPIbdgAbbfKlzg6UNKYuEs7FvAR3g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=cI6SPC
     registration:
       url: https://forms.office.com/g/xU75HyHQKi
 
