@@ -61,17 +61,15 @@ Steps to prepare for the tutorial session:
 **Create a workshop working directory by running the following commands.**  
 Note: you do not have to edit the commands with your username as it will be determined by the $USER variable.  
 
-  {:.copy-code}
-
-  ```bash
-  mkdir -p /90daydata/shared/$USER/nextflow 
-  cd /90daydata/shared/$USER/nextflow
-  ```
+{:.copy-code}
+```bash
+mkdir -p /90daydata/shared/$USER/nextflow 
+cd /90daydata/shared/$USER/nextflow
+```
 
 **Soft link the tutorial data**
 
 {:.copy-code}
-
 ```bash
 ln -s  /project/scinet_workshop2/foundations_bioinf_2026/nextflow_data/* .
 ls 
@@ -105,7 +103,6 @@ Raw reads ──► FastQC (quality control)
 <li class="usa-process-list__item" markdown="1">
 
 {:.usa-process-list__heading}
-
 ### Load Nextflow
 
 ```bash
@@ -121,14 +118,14 @@ You're ready to go.
 
 Nextflow code mixes several naming styles on purpose: the style of a name tells you *what kind of thing* it is. Knowing the conventions before you start makes every script on this page easier to read. You'll see all of these today.
 
-| Thing                          | Convention                                                        | Examples (used in this workshop)                                   |
-|--------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------|
+{% include table caption="Naming conventions" content="| Thing                          | Convention                                                        | Examples (used in this workshop)                                   |
+| -------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | **Process names**              | `PascalCase` (capitalized words, no spaces)                       | `FastQC`, `Fastp`, `ReadLenDist`, `FastQC_Trimmed`                |
 | **Parameters**                 | `snake_case`, lowercase with underscores, always via `params.`    | `params.reads`, `params.output_qc`, `params.output_trim`          |
 | **Channels & variables**       | `snake_case`, often with a `_ch` suffix                           | `fastqc_ch`, `read_pairs`, `trimmed_output_ch`                    |
 | **Script / config files**      | `.nf` for pipelines, `nextflow.config` for config                 | `10_implementation_full.nf`, `nextflow.config`                    |
 | **Output / publish directories** | numbered prefix so results sort in pipeline order               | `01_data/`, `02_illuminaQC/`, `03_trimmed/`, `04_read_len_dist/`  |
-| **Paired-end read files**      | shared sample name + `_{R1,R2}` token                             | `bio_sample_01_R1.fastq.gz`, `bio_sample_01_R2.fastq.gz`          |
+| **Paired-end read files**      | shared sample name + `_{R1,R2}` token                             | `bio_sample_01_R1.fastq.gz`, `bio_sample_01_R2.fastq.gz`          |" %}
 
 > 💡 The numbered output directories (`01_…`, `02_…`) are *our* workshop convention, not a Nextflow rule — they keep results in the order the pipeline produces them. Process and parameter casing, however, are strong community conventions you should follow.
 
@@ -153,7 +150,7 @@ Forgetting the backslash is the single most common beginner error — Nextflow w
 
 **Goal for today:** understand the building blocks — processes, the work directory, publishing outputs, inputs, and parameters — by writing five small pipelines. Every concept is introduced one at a time, building on the previous script.
 
-> All scripts referenced below live in `pipelines/`. The full annotated walkthrough for Day 1 is in [hello_part1.md](hello_part1.md) and [hello_part2.md](hello_part2.md).
+> All scripts referenced below live in `pipelines/`. The full annotated walkthrough for Day 1 is in "hello_part1.md" and "hello_part2.md".
 
 **Why Nextflow?**
 
@@ -824,7 +821,6 @@ touch pipelines/10_implementation_full.nf
 **Script contents:**
 
 {:.copy-code}
-
 ```nextflow
 #!/usr/bin/env nextflow
 
