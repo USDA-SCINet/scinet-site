@@ -470,6 +470,10 @@ nextflow run pipelines/05_hello_default.nf -resume    # note the "cached" tasks
 
 ---
 
+</li>
+<li class="usa-process-list__item" markdown="1">
+
+{:.usa-process-list__heading}
 ### FastQC: your first real process
 
 **Create the file:** 
