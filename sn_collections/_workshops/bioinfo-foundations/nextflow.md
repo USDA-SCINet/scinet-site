@@ -59,11 +59,12 @@ For more information on login procedures for web-based SCINet access, see the [S
 
 * Open a command-line session by clicking on "Clusters" -> "Ceres Shell Access" on the top menu. This will open a new tab with a command-line session on Ceres' login node.
 
-* Create a workshop working directory by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the $USER variable.  
+* Create a workshop working directory (and the `pipelines/bin/` subdirectory you'll write scripts into) by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the $USER variable.  
 
   ```bash
   mkdir -p /90daydata/shared/$USER/nextflow 
   cd /90daydata/shared/$USER/nextflow
+  mkdir -p pipelines/bin
   ```
   {:.copy-code}
 
@@ -185,7 +186,14 @@ A typical analysis run by hand means bash scripts with nested loops, manual file
 ### Hello World: your first process
 
 **Concept:**   
-A Nextflow script has two parts — a **process** (what to do) and a **workflow** (when to do it). A process captures its output into a **channel**; the `.view()` operator prints a channel's contents.
+A Nextflow script has two parts — a **process** (what to do) and a **workflow** (which processes to run, and in what order).
+
+The glue between them is the **channel**. A channel is an asynchronous stream — think of it as a queue — of data items that flows through your pipeline. Channels are *how data moves* in Nextflow, and there are only two rules to remember:
+
+- **Every process output is emitted into a channel.**
+- **Every process input is read from a channel.**
+
+So a channel is the "wiring" that connects one step to the next: one process's output channel becomes the next process's input channel. In this first script the `hello` process emits its text into an output channel, and the `.view()` operator simply prints whatever is flowing through a channel (handy for debugging). Right now we're only looking at a channel *coming out* of a process — later, in the FastQC section, you'll see the other side: building a channel of input files and feeding it *into* a process.
 
 
 #### Execution
@@ -525,6 +533,9 @@ Add a second parameter `params.output_name` and use it to name the output file. 
 {:.usa-process-list__heading}
 ### Checkpoints and the `-resume` feature
 
+**Concept:**   
+Nextflow caches the result of every task it runs. When you re-run a pipeline with `-resume`, Nextflow reuses the cached result of any task whose script, inputs, and parameters are unchanged, and re-runs only the tasks that actually changed. This checkpointing is what makes long pipelines easier to iterate on and safe to restart after a failure — you never redo work you've already completed.
+
 You now understand processes, the work directory, publishing, inputs, and parameters. Before the break, try Nextflow's caching:
 
 {:.copy-code}
@@ -550,7 +561,7 @@ Why is this so valuable when a pipeline fails on sample 95 of 100?
 ### FastQC: our first bioinformatics process
 
 **Concept:**   
-`Channel.fromPath(params.reads)` emits one item per matching file; the process runs once per item, **in parallel**. The `tag` directive labels each task in the log.
+This is the first time we feed a channel *into* a process. `Channel.fromPath(params.reads)` scans the filesystem for every file matching the glob pattern and creates an **input channel** that emits one item per file. When you hand that channel to a process, Nextflow launches a **separate, independent task for each item** — so ten FASTQ files become ten FastQC tasks that run **in parallel**, each in its own isolated work directory. You never write a loop: the channel *is* the loop, and Nextflow schedules the tasks across available cores for you. We point the `--reads` flag at more files and the pipeline scales automatically, with no code changes. The `tag` directive simply labels each task with its filename so you can tell the parallel tasks apart in the log.
 
 
 #### Execution
@@ -712,7 +723,9 @@ Temporarily uncomment a `read_pairs.view()` line in the workflow to see the tupl
 ### Two processes in parallel
 
 **Concept:**   
-From the **same** input you can build **two differently shaped channels** — `fromPath` (individual files, for FastQC) and `fromFilePairs` (pairs, for Fastp) — and run both processes simultaneously. The pipe operator (`ch | Process`) reads cleanly.
+From the **same** input you can build **two differently shaped channels** — `fromPath` (individual files, for FastQC) and `fromFilePairs` (pairs, for Fastp) — and run both processes simultaneously. 
+
+The **pipe operator** `|` feeds a channel into a process: `fastqc_ch | FastQC` takes the items flowing through `fastqc_ch` and uses them as the input to `FastQC`. `fastqc_ch | FastQC` syntax is an alternative to `FastQC(fastqc_ch)`; because it reads left-to-right, as *data → process → next process*, it is intuitive (you'll see it chained in the full pipeline later).
 
 
 #### Execution
@@ -864,6 +877,13 @@ Some tools need **all** files at once (a combined report). `.collect()` gathers 
     ```
     {:.copy-code}
 
+  * **Make the helper script executable:** Nextflow only adds a script in `bin/` to the task `PATH` if it is executable — without this step the process fails with "permission denied".
+
+    ```bash
+    chmod +x pipelines/bin/read_length_dist.py
+    ```
+    {:.copy-code}
+
   * **Create the nextflow script:**
 
     ```bash
@@ -936,7 +956,7 @@ Remove `.collect()` and re-run. How many times does `ReadLenDist` run now, and w
 ### The full pipeline & channel transformation
 
 **Concept:**   
-Chain everything. Fastp's output tuple `(sample_id, R1, R2)` is reshaped with `.map { sample_id, r1, r2 -> [r1, r2] }`, then `.collect()`ed and fed to `ReadLenDist`. This is a common pattern in production pipelines: **transform a channel's shape to fit the next process.**
+Chain everything. Fastp's output tuple `(sample_id, R1, R2)` is reshaped with `.map { sample_id, r1, r2 -> [r1, r2] }`, then `.collect()`ed and fed to `ReadLenDist`. Reshaping a channel so it matches what the next process expects is a move you'll reach for again and again in your own pipelines: **transform a channel's shape to fit the next process.**
 
 
 #### Execution
