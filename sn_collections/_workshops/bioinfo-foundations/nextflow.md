@@ -186,6 +186,7 @@ A typical analysis run by hand means bash scripts with nested loops, manual file
 
 **Create a file:** 
 
+{:.copy-code}
 ```bash
 touch pipelines/01_hello_screen.nf
 ```
@@ -565,7 +566,12 @@ ls 02_illuminaQC/
 {:.usa-process-list__heading}
 ### Paired-end reads with Fastp
 
-**Create the file:** `pipelines/07_implementation_fastp.nf`
+**Create the file:** 
+
+{:.copy-code}
+```bash
+touch pipelines/07_implementation_fastp.nf
+```
 
 **Concept:** Paired-end data comes as R1/R2 pairs that must travel together. `Channel.fromFilePairs(params.reads, flat: true)` groups them and emits a **tuple** `(sample_id, R1, R2)`, unpacked in the process with `tuple val(sample_id), path(read1), path(read2)`.
 
