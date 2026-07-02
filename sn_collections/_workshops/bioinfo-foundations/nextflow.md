@@ -1,4 +1,4 @@
- ---
+---
 title: Automating Bioinformatics Pipelines with Nextflow
 type: workshop
 display: basic
@@ -44,7 +44,7 @@ portable integration of tools via containers and modules, and production-ready p
 Steps to prepare for the tutorial session:  
 
 <ol class="usa-process-list">
-<li class="usa-process-list__item" markdown="1">
+<li class="usa-process-list__item usa-prose" markdown="1">
 
 {:.usa-process-list__heading}
 ### Login to [Ceres Open OnDemand](http://ceres-ood.scinet.usda.gov/). 
@@ -52,7 +52,7 @@ Steps to prepare for the tutorial session:
 For more information on login procedures for web-based SCINet access, see the [SCINet access user guide]({{site.baseurl}}/guides/access/web-based-login).
 
 </li> 
-<li class="usa-process-list__item" markdown="1">
+<li class="usa-process-list__item usa-prose" markdown="1">
   
 {:.usa-process-list__heading}
 ### Set up your working directory
@@ -78,7 +78,7 @@ For more information on login procedures for web-based SCINet access, see the [S
   You should see a small set of paired-end FASTQ files (`*_R1.fastq.gz` / `*_R2.fastq.gz`).
 
 </li>
-<li class="usa-process-list__item" markdown="1">
+<li class="usa-process-list__item usa-prose" markdown="1">
   
 {:.usa-process-list__heading}
 ### Launch VS Code
@@ -122,7 +122,7 @@ Raw reads ──► FastQC (quality control)
 ```
 
 <ol class="usa-process-list">
-<li class="usa-process-list__item" markdown="1">
+<li class="usa-process-list__item usa-prose" markdown="1">
 
 {:.usa-process-list__heading}
 ### Load Nextflow
@@ -179,57 +179,60 @@ A typical analysis run by hand means bash scripts with nested loops, manual file
 ---
 
 </li>
-<li class="usa-process-list__item" markdown="1">
+<li class="usa-process-list__item usa-prose" markdown="1">
 
 {:.usa-process-list__heading}
 ### Hello World: your first process
 
-**Create a file:** 
+**Concept:**   
+A Nextflow script has two parts — a **process** (what to do) and a **workflow** (when to do it). A process captures its output into a **channel**; the `.view()` operator prints a channel's contents.
 
-{:.copy-code}
-```bash
-touch pipelines/01_hello_screen.nf
-```
 
-**Concept:** A Nextflow script has two parts — a **process** (what to do) and a **workflow** (when to do it). A process captures its output into a **channel**; the `.view()` operator prints a channel's contents.
+#### Execution
+* **Create a file:** 
 
-Open `01_hello_screen.nf` in the VS Code editor and copy and paste the script below:
- 
-**Script contents:**
+  ```bash
+  touch pipelines/01_hello_screen.nf
+  ```
+  {:.copy-code}
 
-{:.copy-code}
-```bash
-#!/usr/bin/env nextflow
+* **Script contents:**
+  Open `01_hello_screen.nf` in the VS Code editor and copy and paste the script below:
+  
+  ```bash
+  #!/usr/bin/env nextflow
 
-/*
- * Use echo to print a message to the screen
- */
+  /*
+   * Use echo to print a message to the screen
+   */
 
-process hello {
+  process hello {
 
-    output:
-    stdout
+      output:
+      stdout
 
-    script:
-    """
-    echo "Welcome to the world of Nextflow!"
-    """
-}
+      script:
+      """
+      echo "Welcome to the world of Nextflow!"
+      """
+  }
 
-workflow {
-    // Run the hello process
-    hello().view()
-}
-```
+  workflow {
+      // Run the hello process
+      hello().view()
+  }
+  ```
+  {:.copy-code}
 
-**Run the script:**
+* **Run the script:**
 
-{:.copy-code}
-```bash
-nextflow run pipelines/01_hello_screen.nf
-```
+  ```bash
+  nextflow run pipelines/01_hello_screen.nf
+  ```
+  {:.copy-code}
 
-**What to expect:**
+
+#### What to expect
 
 ```
 executor >  local (1)
@@ -237,102 +240,114 @@ executor >  local (1)
 Welcome to the world of Nextflow!
 ```
 
-**Reading the output:**
+
+#### Reading the output
 - `[9c/4c931d]` is the task hash → the work subdirectory `work/9c/4c931d…/`.
 - `1 of 1 ✔` means one task ran and succeeded.
 - The last line is the process's stdout, shown because of `.view()`.
 
-> ✏️ **Your turn:** Change the message in the `script:` block and re-run. Where does the new text appear?
+
+#### Your turn
+Change the message in the `script:` block and re-run. Where does the new text appear?
 
 ---
 
 </li>
-<li class="usa-process-list__item" markdown="1">
+<li class="usa-process-list__item usa-prose" markdown="1">
 
 {:.usa-process-list__heading}
 ### Writing to files & the work directory
 
-**Create a file:** 
+**Concept:**   
+Nextflow pipelines usually save results to files. Switch `output: stdout` to `output: path 'result.txt'` and use a bash redirect operator (`>`) inside the script to write to the file. Every task runs in its own isolated **work directory**.
 
-{:.copy-code}
-```bash
-touch pipelines/02_hello_redirect.nf
-```
 
-**Concept:** Nextflow pipelines usually save results to files. Switch `output: stdout` to `output: path 'result.txt'` and use a bash redirect operator (`>`) inside the script to write to the file. Every task runs in its own isolated **work directory**.
+#### Execution
+* **Create a file:** 
 
-Open `02_hello_redirect.nf` in the VS Code editor and copy and paste the script below:
+  ```bash
+  touch pipelines/02_hello_redirect.nf
+  ```
+  {:.copy-code}
 
-**Script contents:**
+* **Script contents:**
+  Open `02_hello_redirect.nf` in the VS Code editor and copy and paste the script below:
 
-{:.copy-code}
-```nextflow
-#!/usr/bin/env nextflow
+  ```nextflow
+  #!/usr/bin/env nextflow
 
-/*
- * Hello redirect: write greeting to file
- */
+  /*
+  * Hello redirect: write greeting to file
+  */
 
-process hello {
-    output:
-    path 'result.txt'
+  process hello {
+      output:
+      path 'result.txt'
 
-    script:
-        """
-        echo "Welcome to the world of Nextflow!" > result.txt
-        """
-}
+      script:
+          """
+          echo "Welcome to the world of Nextflow!" > result.txt
+          """
+  }
 
-workflow {
-    hello()
-}
-```
+  workflow {
+      hello()
+  }
+  ```
+  {:.copy-code}
 
-{:.copy-code}
-```bash
-nextflow run pipelines/02_hello_redirect.nf
-tree -a work        # or: find work -type f
-```
+  ```bash
+  nextflow run pipelines/02_hello_redirect.nf
+  tree -a work        # or: find work -type f
+  ```
+  {:.copy-code}
 
-**What to expect:** no text is printed (the result was written to a file instead of the console). Inside `work/xx/xxxx…/` you'll find `result.txt` alongside Nextflow's bookkeeping files.
 
-**Reading the output — the `.command.*` files:**
+#### What to expect
+No text is printed (the result was written to a file instead of the console). Inside `work/xx/xxxx…/` you'll find `result.txt` alongside Nextflow's bookkeeping files.
+
+
+#### Reading the output
+**the `.command.*` files:**
 - `.command.sh` — the exact script Nextflow ran (great for debugging).
 - `.command.out` / `.command.err` — stdout / stderr.
 - `.exitcode` — `0` means success.
 
-> ✏️ **Your turn:** Open `.command.sh` for this task. How does it differ from what you wrote in the `script:` block?
+
+#### Your turn
+Open `.command.sh` for this task. How does it differ from what you wrote in the `script:` block?
 
 ---
 
 </li>
-<li class="usa-process-list__item" markdown="1">
+<li class="usa-process-list__item usa-prose" markdown="1">
 
 {:.usa-process-list__heading}
 ### Publishing outputs
 
-**Create a file:** 
+**Concept:**   
+Work-directory hashes are great for Nextflow, terrible for humans. `publishDir` copies (or links) outputs to a more human-friendly location.
 
-{:.copy-code}
-```bash
-touch pipelines/03_hello_publishdir.nf
-```
 
-**Concept:** Work-directory hashes are great for Nextflow, terrible for humans. `publishDir` copies (or links) outputs to a more human-friendly location.
+#### Execution
+* **Create a file:** 
 
-Open `03_hello_publishdir.nf` in the VS Code editor and copy and paste the script below:
+  ```bash
+  touch pipelines/03_hello_publishdir.nf
+  ```
+  {:.copy-code}
 
-**Script contents:**
+* **Script contents:**
+  Open `03_hello_publishdir.nf` in the VS Code editor and copy and paste the script below:
 
-{:.copy-code}
-```nextflow
-#!/usr/bin/env nextflow
+  ```nextflow
+  #!/usr/bin/env nextflow
 
-/*
-* Create an output directory where the output will be saved
-*/
+  /*
+  * Create an output directory where the output will be saved
+  */
 
-process hello {
+  process hello {
   publishDir 'output', mode: 'copy'
 
   output:
@@ -342,151 +357,170 @@ process hello {
   """
   echo "Hello Nextflow World!" > result.txt
   """
-}
+  }
 
-workflow {
+  workflow {
   // Run the hello process
   hello()
-}
-```
+  }
+  ```
+  {:.copy-code}
 
-**Run the script:**
+* **Run the script:**
 
-{:.copy-code}
-```bash
-nextflow run pipelines/03_hello_publishdir.nf
-cat output/result.txt
-```
+  ```bash
+  nextflow run pipelines/03_hello_publishdir.nf
+  cat output/result.txt
+  ```
+  {:.copy-code}
 
-**What to expect:** the result now appears in `output/result.txt` *and* still exists in the work directory (needed for `-resume`).
 
-**Modes worth knowing:** `copy` (safe, default choice), `symlink` (saves space, breaks if you clean `work/`), `move` (saves space, blocks resume).
+#### What to expect
+The result now appears in `output/result.txt` *and* still exists in the work directory (needed for `-resume`).
 
-> ✏️ **Your turn:** Change `mode: 'copy'` to `mode: 'symlink'` and inspect `output/` with `ls -l`. What's different?
+
+#### Modes worth knowing
+* `copy` (safe, default choice)
+* `symlink` (saves space, breaks if you clean `work/`)
+* `move` (saves space, blocks resume).
+
+
+#### Your turn
+Change `mode: 'copy'` to `mode: 'symlink'` and inspect `output/` with `ls -l`. What's different?
 
 ---
 
 </li>
-<li class="usa-process-list__item" markdown="1">
+<li class="usa-process-list__item usa-prose" markdown="1">
 
 {:.usa-process-list__heading}
 ### Process inputs
 
-**Create a file:** 
-
-{:.copy-code}
-```bash 
-touch pipelines/04_hello_input.nf 
-```
-
-**Concept:** Scripts with hard-coded inputs aren't easily reusable. An `input:` block lets a process accept data. `val` passes a simple value (string/number) and assigns it to a variable. For example, if the `input` block for a process includes `val var1`, the script can access the value passed to the process as `$var1`.
-
-Open `04_hello_input.nf` in the VS Code editor and copy and paste the script below:
+**Concept:**   
+Scripts with hard-coded inputs aren't easily reusable. An `input:` block lets a process accept data. `val` passes a simple value (string/number) and assigns it to a variable. For example, if the `input` block for a process includes `val var1`, the script can access the value passed to the process as `$var1`.
 
 
-**Script contents:**
+#### Execution
+  * **Create a file:** 
 
-{:.copy-code}
-```nextflow
-#!/usr/bin/env nextflow
+    ```bash 
+    touch pipelines/04_hello_input.nf 
+    ```
+    {:.copy-code}
 
-process hello {
-    publishDir 'output', mode: 'copy'
+  * **Script contents:**    
+    Open `04_hello_input.nf` in the VS Code editor and copy and paste the script below:
 
-    input:
-    val welcome
+    ```nextflow
+    #!/usr/bin/env nextflow
 
-    output:
-    path 'result.txt'
+    process hello {
+        publishDir 'output', mode: 'copy'
 
-    script:
-    """
-    echo "$welcome" > result.txt
-    """
-}
+        input:
+        val welcome
 
-workflow {
-    hello("Hello, welcome to the world of Nextflow!")
-}
-```
+        output:
+        path 'result.txt'
 
-**Run the script**
+        script:
+        """
+        echo "$welcome" > result.txt
+        """
+    }
 
-{:.copy-code}
-```bash
-nextflow run pipelines/04_hello_input.nf
-cat output/result.txt
-```
+    workflow {
+        hello("Hello, welcome to the world of Nextflow!")
+    }
+    ```
+    {:.copy-code}
 
-**What to expect:** the message now comes from the workflow call `hello("…")`, not from inside the process.
+  * **Run the script**
 
-> ✏️ **Your turn:** Call `hello()` twice in the workflow with two different strings. How many tasks run, and what happens to `output/result.txt`? (This previews why naming outputs uniquely matters.)
+    ```bash
+    nextflow run pipelines/04_hello_input.nf
+    cat output/result.txt
+    ```
+    {:.copy-code}
+
+
+#### What to expect
+The message now comes from the workflow call `hello("…")`, not from inside the process.
+
+
+#### Your turn
+Call `hello()` twice in the workflow with two different strings. How many tasks run, and what happens to `output/result.txt`? (This previews why naming outputs uniquely matters.)
 
 ---
 
 </li>
-<li class="usa-process-list__item" markdown="1">
+<li class="usa-process-list__item usa-prose" markdown="1">
 
 {:.usa-process-list__heading}
 ### Parameters
 
-**Create a file:** 
-
-{:.copy-code}
-```bash
-touch pipelines/05_hello_default.nf
-```
-
-**Concept:** `params` make a pipeline configurable *without editing code*. You can set default values in the script and override them on the command line.
-
-Open `05_hello_default.nf` in the VS Code editor and copy and paste the script below:
+**Concept:**   
+`params` make a pipeline configurable *without editing code*. You can set default values in the script and override them on the command line.
 
 
-**Script contents:**
+#### Execution
+  * **Create a file:**
 
-{:.copy-code}
-```nextflow
-#!/usr/bin/env nextflow
+    ```bash
+    touch pipelines/05_hello_default.nf
+    ```
+    {:.copy-code}
 
-process hello {
-    publishDir 'output', mode: 'copy'
+  * **Script contents:**  
+    Open `05_hello_default.nf` in the VS Code editor and copy and paste the script below:
 
-    input:
-    val welcome
+    ```nextflow
+    #!/usr/bin/env nextflow
 
-    output:
-    path 'result.txt'
+    process hello {
+        publishDir 'output', mode: 'copy'
 
-    script:
-    """
-    echo "$welcome" > result.txt
-    """
-}
+        input:
+        val welcome
 
-params.welcome = "Hello, welcome to the world of Nextflow!"
+        output:
+        path 'result.txt'
 
-workflow {
-    hello(params.welcome)
-}
-```
+        script:
+        """
+        echo "$welcome" > result.txt
+        """
+    }
 
-**Run the script**
+    params.welcome = "Hello, welcome to the world of Nextflow!"
 
-{:.copy-code}
-```bash
-nextflow run pipelines/05_hello_default.nf
-nextflow run pipelines/05_hello_default.nf --welcome "Greetings from the command line!"
-cat output/result.txt
-```
+    workflow {
+        hello(params.welcome)
+    }
+    ```
+    {:.copy-code}
 
-**What to expect:** the second run overrides the default. **Priority:** command line > config file > script default.
+  * **Run the script**
 
-> ✏️ **Your turn:** Add a second parameter `params.output_name` and use it to name the output file. Override both from the command line.
+    ```bash
+    nextflow run pipelines/05_hello_default.nf
+    nextflow run pipelines/05_hello_default.nf --welcome "Greetings from the command line!"
+    cat output/result.txt
+    ```
+    {:.copy-code}
+
+
+#### What to expect
+The second run overrides the default. **Priority:** command line > config file > script default.
+
+
+#### Your turn
+Add a second parameter `params.output_name` and use it to name the output file. Override both from the command line.
 
 ---
 
 </li>
-<li class="usa-process-list__item" markdown="1">
+<li class="usa-process-list__item usa-prose" markdown="1">
 
 {:.usa-process-list__heading}
 ### Checkpoints and the `-resume` feature
@@ -499,490 +533,526 @@ nextflow run pipelines/05_hello_default.nf
 nextflow run pipelines/05_hello_default.nf -resume    # note the "cached" tasks
 ```
 
-**Reading the output:** with `-resume`, unchanged tasks show as `cached` and are skipped. Nextflow decides this from a hash of the script, inputs, and parameters — change any one and the task re-runs.
 
-> 💬 **Discussion:** Why is this so valuable when a pipeline fails on sample 95 of 100?
+#### Reading the output
+With `-resume`, unchanged tasks show as `cached` and are skipped. Nextflow decides this from a hash of the script, inputs, and parameters — change any one and the task re-runs.
+
+
+#### Discussion
+Why is this so valuable when a pipeline fails on sample 95 of 100?
 
 ---
 
 </li>
-<li class="usa-process-list__item" markdown="1">
+<li class="usa-process-list__item usa-prose" markdown="1">
 
 {:.usa-process-list__heading}
 ### FastQC: our first bioinformatics process
 
-**Create the file:** 
-
-{:.copy-code}
-```bash
-touch pipelines/06_implementation_fastqc.nf
-```
-
-**Concept:** `Channel.fromPath(params.reads)` emits one item per matching file; the process runs once per item, **in parallel**. The `tag` directive labels each task in the log.
-
-Open `06_implementation_fastqc.nf` in the VS Code editor and copy and paste the script below:
+**Concept:**   
+`Channel.fromPath(params.reads)` emits one item per matching file; the process runs once per item, **in parallel**. The `tag` directive labels each task in the log.
 
 
-**Script contents:**
+#### Execution
+  * **Create a file:**
 
-{:.copy-code}
-```nextflow
-#!/usr/bin/env nextflow
+    ```bash
+    touch pipelines/06_implementation_fastqc.nf
+    ```
+    {:.copy-code}
 
-params.reads = "01_data/*fastq.gz"
-params.output_qc = "02_illuminaQC"
+  * **Script contents:**  
+    Open `06_implementation_fastqc.nf` in the VS Code editor and copy and paste the script below:
 
-process FastQC {
-    tag "${sample_id}"
+    ```nextflow
+    #!/usr/bin/env nextflow
 
-    publishDir params.output_qc, mode: 'copy'
+    params.reads = "01_data/*fastq.gz"
+    params.output_qc = "02_illuminaQC"
 
-    input:
-    path sample_id
+    process FastQC {
+        tag "${sample_id}"
 
-    output:
-    path "*.html"
-    path "*.zip"
+        publishDir params.output_qc, mode: 'copy'
 
-    script:
-    """
-    module load fastqc
-    fastqc -o . -t 2 ${sample_id}
-    """
-}
+        input:
+        path sample_id
 
-workflow {
-    Channel
-    .fromPath(params.reads)
-    .set { illumina_reads }
+        output:
+        path "*.html"
+        path "*.zip"
 
-    FastQC(illumina_reads)
-}
-```
+        script:
+        """
+        module load fastqc
+        fastqc -o . -t 2 ${sample_id}
+        """
+    }
 
-**Run the script**
+    workflow {
+        Channel
+        .fromPath(params.reads)
+        .set { illumina_reads }
 
-{:.copy-code}
-```bash
-nextflow run pipelines/06_implementation_fastqc.nf
-ls 02_illuminaQC/
-```
+        FastQC(illumina_reads)
+    }
+    ```
+    {:.copy-code}
 
-**What to expect:** an `.html` and `.zip` report per input FASTQ in `02_illuminaQC/`. In the log you'll see one `FastQC` task per file, each tagged with its filename.
+  * **Run the script**
 
-**Reading the output:** open one `_fastqc.html` in the VS Code file browser — FastQC's per-base quality and adapter-content plots tell you whether trimming is needed.
+    ```bash
+    nextflow run pipelines/06_implementation_fastqc.nf
+    ls 02_illuminaQC/
+    ```
+    {:.copy-code}
 
-> ✏️ **Your turn:** Override the input glob to QC only the R1 files: `--reads "01_data/*_R1.fastq.gz"`. How many tasks run now?
+
+#### What to expect
+An `.html` and `.zip` report per input FASTQ in `02_illuminaQC/`. In the log you'll see one `FastQC` task per file, each tagged with its filename.
+
+
+#### Reading the output
+Open one `_fastqc.html` in the VS Code file browser — FastQC's per-base quality and adapter-content plots tell you whether trimming is needed.
+
+
+#### Your turn
+Override the input glob to QC only the R1 files: `--reads "01_data/*_R1.fastq.gz"`. How many tasks run now?
 
 ---
 </li>
-<li class="usa-process-list__item" markdown="1">
+<li class="usa-process-list__item usa-prose" markdown="1">
 
 {:.usa-process-list__heading}
 ### Paired-end reads with Fastp
 
-**Create the file:** 
-
-{:.copy-code}
-```bash
-touch pipelines/07_implementation_fastp.nf
-```
-
-**Concept:** Paired-end data comes as R1/R2 pairs that must travel together. `Channel.fromFilePairs(params.reads, flat: true)` groups them and emits a **tuple** `(sample_id, R1, R2)`, unpacked in the process with `tuple val(sample_id), path(read1), path(read2)`.
-
-Open `07_implementation_fastp.nf` in the VS Code editor and copy and paste the script below:
+**Concept:**   
+Paired-end data comes as R1/R2 pairs that must travel together. `Channel.fromFilePairs(params.reads, flat: true)` groups them and emits a **tuple** `(sample_id, R1, R2)`, unpacked in the process with `tuple val(sample_id), path(read1), path(read2)`.
 
 
-**Script contents:**
+#### Execution
+  * **Create a file:**
 
-{:.copy-code}
-```nextflow
-#!/usr/bin/env nextflow
+    ```bash
+    touch pipelines/07_implementation_fastp.nf
+    ```
+    {:.copy-code}
 
-//-- Configurable params
-params.reads = '01_data/*_{R1,R2}.fastq.gz'
-params.output_trim = '03_trimmed'
+  * **Script contents:**  
+    Open `07_implementation_fastp.nf` in the VS Code editor and copy and paste the script below:
 
-process Fastp {
-  tag "${sample_id}"
+    ```nextflow
+    #!/usr/bin/env nextflow
 
-  publishDir params.output_trim, mode: 'copy'
+    //-- Configurable params
+    params.reads = '01_data/*_{R1,R2}.fastq.gz'
+    params.output_trim = '03_trimmed'
 
-  input:
-  tuple val(sample_id), path(read1), path(read2)
+    process Fastp {
+    tag "${sample_id}"
 
-  output:
-  tuple val(sample_id), 
-      path("${sample_id}_1.trimmed.fastq.gz"),
-      path("${sample_id}_2.trimmed.fastq.gz")
+    publishDir params.output_trim, mode: 'copy'
 
-  script:
-  """
-  module load miniconda
-  source activate /90daydata/scinet_workshop2/nextflow_env
+    input:
+    tuple val(sample_id), path(read1), path(read2)
 
-  fastp \
-    -i ${read1} \
-    -I ${read2} \
-    -o ${sample_id}_1.trimmed.fastq.gz \
-    -O ${sample_id}_2.trimmed.fastq.gz
-  """
-}
+    output:
+    tuple val(sample_id), 
+        path("${sample_id}_1.trimmed.fastq.gz"),
+        path("${sample_id}_2.trimmed.fastq.gz")
 
-workflow {
-  Channel
-    .fromFilePairs(params.reads, flat: true)
-    .set { read_pairs }
+    script:
+    """
+    module load miniconda
+    source activate /90daydata/scinet_workshop2/nextflow_env
 
-  Fastp(read_pairs)
-}
-```
+    fastp \
+        -i ${read1} \
+        -I ${read2} \
+        -o ${sample_id}_1.trimmed.fastq.gz \
+        -O ${sample_id}_2.trimmed.fastq.gz
+    """
+    }
 
-**Run the script**
+    workflow {
+    Channel
+        .fromFilePairs(params.reads, flat: true)
+        .set { read_pairs }
 
-{:.copy-code}
-```bash
-nextflow run pipelines/07_implementation_fastp.nf
-ls 03_trimmed/
-```
+    Fastp(read_pairs)
+    }
+    ```
+    {:.copy-code}
 
-**What to expect:** trimmed pairs in `03_trimmed/`, e.g. `bio_sample_01_1.trimmed.fastq.gz` and `..._2.trimmed.fastq.gz`, one pair per sample.
+  * **Run the script**
 
-**Reading the output:** Fastp prints a JSON/HTML summary (reads before/after, % passing filter) — a quick sanity check that trimming did something reasonable.
+    ```bash
+    nextflow run pipelines/07_implementation_fastp.nf
+    ls 03_trimmed/
+    ```
+    {:.copy-code}
 
-> ✏️ **Your turn:** Temporarily uncomment a `read_pairs.view()` line in the workflow to see the tuple structure before it reaches the process. What does `flat: true` change?
+
+#### What to expect
+Trimmed pairs in `03_trimmed/`, e.g. `bio_sample_01_1.trimmed.fastq.gz` and `..._2.trimmed.fastq.gz`, one pair per sample.
+
+
+#### Reading the output
+Fastp prints a JSON/HTML summary (reads before/after, % passing filter) — a quick sanity check that trimming did something reasonable.
+
+
+#### Your turn
+Temporarily uncomment a `read_pairs.view()` line in the workflow to see the tuple structure before it reaches the process. What does `flat: true` change?
 
 ---
 </li>
-<li class="usa-process-list__item" markdown="1">
+<li class="usa-process-list__item usa-prose" markdown="1">
 
 {:.usa-process-list__heading}
 ### Two processes in parallel
 
-**Create the file:**
-
-{:.copy-code}
-```bash
-touch pipelines/08_implementation_fastqc_fastp.nf
-```
-
-**Concept:** From the **same** input you can build **two differently shaped channels** — `fromPath` (individual files, for FastQC) and `fromFilePairs` (pairs, for Fastp) — and run both processes simultaneously. The pipe operator (`ch | Process`) reads cleanly.
-
-Open `08_implementation_fastqc_fastp.nf` in the VS Code editor and copy and paste the script below:
+**Concept:**   
+From the **same** input you can build **two differently shaped channels** — `fromPath` (individual files, for FastQC) and `fromFilePairs` (pairs, for Fastp) — and run both processes simultaneously. The pipe operator (`ch | Process`) reads cleanly.
 
 
-**Script contents:**
+#### Execution
+  * **Create a file:**
 
-{:.copy-code}
-```nextflow
-#!/usr/bin/env nextflow
+    ```bash
+    touch pipelines/08_implementation_fastqc_fastp.nf
+    ```
+    {:.copy-code}
 
-//-- Configurable params
-params.reads = '01_data/*_{R1,R2}.fastq.gz'
-params.output_qc = '02_illuminaQC'
-params.output_trim = '03_trimmed'
+  * **Script contents:**  
+    Open `08_implementation_fastqc_fastp.nf` in the VS Code editor and copy and paste the script below:
 
-process FastQC {
+    ```nextflow
+    #!/usr/bin/env nextflow
+
+    //-- Configurable params
+    params.reads = '01_data/*_{R1,R2}.fastq.gz'
+    params.output_qc = '02_illuminaQC'
+    params.output_trim = '03_trimmed'
+
+    process FastQC {
+        tag "${sample_id}"
+
+        publishDir params.output_qc, mode: 'copy'
+
+        input:
+        path sample_id
+
+        output:
+        path "*.html"
+        path "*.zip"
+
+        script:
+        """
+        module load fastqc
+        fastqc -t 2 ${sample_id}
+        """
+    }
+
+    process Fastp {
     tag "${sample_id}"
 
-    publishDir params.output_qc, mode: 'copy'
+    publishDir params.output_trim, mode: 'copy'
 
     input:
-    path sample_id
+    tuple val(sample_id), path(read1), path(read2)
 
     output:
-    path "*.html"
-    path "*.zip"
+    tuple val(sample_id), 
+        path("${sample_id}_1.trimmed.fastq.gz"),
+        path("${sample_id}_2.trimmed.fastq.gz")
 
     script:
     """
-    module load fastqc
-    fastqc -t 2 ${sample_id}
+    module load miniconda
+    source activate /90daydata/scinet_workshop2/nextflow_env
+
+    fastp \
+        -i ${read1} \
+        -I ${read2} \
+        -o ${sample_id}_1.trimmed.fastq.gz \
+        -O ${sample_id}_2.trimmed.fastq.gz
     """
-}
+    }
 
-process Fastp {
-  tag "${sample_id}"
+    workflow {
+        fastqc_ch = Channel.fromPath(params.reads)
+        // fastqc_ch.view()
+        trim_ch = Channel.fromFilePairs(params.reads, flat:true)
+        // trim_ch.view()
 
-  publishDir params.output_trim, mode: 'copy'
+        fastqc_ch | FastQC
+        trim_ch | Fastp 
+    }
+    ```
+    {:.copy-code}
 
-  input:
-  tuple val(sample_id), path(read1), path(read2)
+  * **Run the script**
 
-  output:
-  tuple val(sample_id), 
-      path("${sample_id}_1.trimmed.fastq.gz"),
-      path("${sample_id}_2.trimmed.fastq.gz")
+    ```bash
+    nextflow run pipelines/08_implementation_fastqc_fastp.nf
+    ```
+    {:.copy-code}
 
-  script:
-  """
-  module load miniconda
-  source activate /90daydata/scinet_workshop2/nextflow_env
 
-  fastp \
-    -i ${read1} \
-    -I ${read2} \
-    -o ${sample_id}_1.trimmed.fastq.gz \
-    -O ${sample_id}_2.trimmed.fastq.gz
-   """
-}
+#### What to expect
+FastQC and Fastp run at the same time; outputs land in `02_illuminaQC/` and `03_trimmed/`.
 
-workflow {
-    fastqc_ch = Channel.fromPath(params.reads)
-    // fastqc_ch.view()
-    trim_ch = Channel.fromFilePairs(params.reads, flat:true)
-    // trim_ch.view()
 
-    fastqc_ch | FastQC
-    trim_ch | Fastp 
-}
-```
-
-**Run the script**
-
-{:.copy-code}
-```bash
-nextflow run pipelines/08_implementation_fastqc_fastp.nf
-```
-
-**What to expect:** FastQC and Fastp run at the same time; outputs land in `02_illuminaQC/` and `03_trimmed/`.
-
-> ✏️ **Your turn:** Uncomment the `fastqc_ch.view()` and `trim_ch.view()` lines and re-run. Compare the two channel shapes side by side — this is the single most useful debugging habit in Nextflow.
+#### Your turn
+Uncomment the `fastqc_ch.view()` and `trim_ch.view()` lines and re-run. Compare the two channel shapes side by side — this is the single most useful debugging habit in Nextflow.
 
 ---
 </li>
-<li class="usa-process-list__item" markdown="1">
+<li class="usa-process-list__item usa-prose" markdown="1">
 
 {:.usa-process-list__heading}
 ### Collecting files with `.collect()`
 
-**Create the helper script:** 
-
-{:.copy-code}
-```bash
-touch pipelines/bin/read_length_dist.py  
-```
-Open `read_length_dist.py` in the VS Code editor and copy and paste the script below:
-
-{:.copy-code}
-```python
-#!/usr/bin/env python3
-"""
-read_length_dist.py
-Usage: read_length_dist.py output.tsv input1.fastq.gz [input2.fastq.gz ...]
-
-Counts the number of reads of each length in one or more FASTQ files.
-Outputs: TSV with columns  length  count  file
-"""
-
-import sys, gzip
-from collections import Counter
-
-def count_lengths(fname):    
-    counts = Counter()
-    with gzip.open(fname, 'rt') as f:
-        for i, line in enumerate(f):
-            if i % 4 == 1:  # sequence line
-                counts[len(line.strip())] += 1
-    return counts
-
-if len(sys.argv) < 3:
-    print(__doc__)
-    sys.exit()
-
-out_tsv = sys.argv[1]
-infiles = sys.argv[2:]
-
-with open(out_tsv, 'w') as out:
-    out.write("length\tcount\tfile\n")
-    for f in infiles:
-        counts = count_lengths(f)
-        for length, count in sorted(counts.items()):
-            out.write(f"{length}\t{count}\t{f}\n")
-```
-
-**Create the nextflow script:**
-
-{:.copy-code}
-```bash
-touch pipelines/09_implementation_readLenDist.nf
-```
-
-**Concept:** Some tools need **all** files at once (a combined report). `.collect()` gathers every channel item into a single list, so the process runs **once** instead of per file. The custom script `pipelines/bin/read_length_dist.py` is auto-added to the task's `PATH` because it lives in `bin/`.
-
-Open `09_implementation_readLenDist.nf` in the VS Code editor and copy and paste the script below:
+**Concept:**   
+Some tools need **all** files at once (a combined report). `.collect()` gathers every channel item into a single list, so the process runs **once** instead of per file. The custom script `pipelines/bin/read_length_dist.py` is auto-added to the task's `PATH` because it lives in `bin/`.
 
 
-**Script contents:**
+#### Execution
+  * **Create the helper script:** 
 
-{:.copy-code}
-```nextflow
-#!/usr/bin/env nextflow
+    ```bash
+    touch pipelines/bin/read_length_dist.py  
+    ```
+    {:.copy-code}
 
-params.reads = "03_trimmed/*fastq.gz"
-params.output_rld = "04_read_len_dist"
+    Open `read_length_dist.py` in the VS Code editor and copy and paste the script below:
 
-process ReadLenDist {
-    publishDir params.output_rld, mode: 'copy'
-
-    input:
-    path reads
-
-    output:
-    path "*.tsv"
-
-    script:
+    ```python
+    #!/usr/bin/env python3
     """
-    read_length_dist.py sample_read_len_dist.tsv $reads
+    read_length_dist.py
+    Usage: read_length_dist.py output.tsv input1.fastq.gz [input2.fastq.gz ...]
+
+    Counts the number of reads of each length in one or more FASTQ files.
+    Outputs: TSV with columns  length  count  file
     """
-}
 
-workflow {
-    Channel
-        .fromPath(params.reads)
-        .collect()
-        .set { illumina_reads }
-        // .flatMap { it }
-        // .view()
+    import sys, gzip
+    from collections import Counter
 
-    ReadLenDist(illumina_reads)
-}
-```
+    def count_lengths(fname):    
+        counts = Counter()
+        with gzip.open(fname, 'rt') as f:
+            for i, line in enumerate(f):
+                if i % 4 == 1:  # sequence line
+                    counts[len(line.strip())] += 1
+        return counts
 
-**Run the script:**
+    if len(sys.argv) < 3:
+        print(__doc__)
+        sys.exit()
 
-{:.copy-code}
-```bash
-nextflow run pipelines/09_implementation_readLenDist.nf
-column -t 04_read_len_dist/sample_read_len_dist.tsv | head
-```
+    out_tsv = sys.argv[1]
+    infiles = sys.argv[2:]
 
-**What to expect:** a single `sample_read_len_dist.tsv` with `length  count  file` columns across all trimmed files.
+    with open(out_tsv, 'w') as out:
+        out.write("length\tcount\tfile\n")
+        for f in infiles:
+            counts = count_lengths(f)
+            for length, count in sorted(counts.items()):
+                out.write(f"{length}\t{count}\t{f}\n")
+    ```
+    {:.copy-code}
 
-**Reading the output:** each row is a read length and how many reads had it, per file — the distribution of read lengths after trimming.
+  * **Create the nextflow script:**
 
-> ✏️ **Your turn:** Remove `.collect()` and re-run. How many times does `ReadLenDist` run now, and what happens to the single output filename? (This is exactly the pitfall to watch for in your own pipelines.)
+    ```bash
+    touch pipelines/09_implementation_readLenDist.nf
+    ```
+    {:.copy-code}
+
+  * **Script contents:**  
+    Open `09_implementation_readLenDist.nf` in the VS Code editor and copy and paste the script below:
+
+    ```nextflow
+    #!/usr/bin/env nextflow
+
+    params.reads = "03_trimmed/*fastq.gz"
+    params.output_rld = "04_read_len_dist"
+
+    process ReadLenDist {
+        publishDir params.output_rld, mode: 'copy'
+
+        input:
+        path reads
+
+        output:
+        path "*.tsv"
+
+        script:
+        """
+        read_length_dist.py sample_read_len_dist.tsv $reads
+        """
+    }
+
+    workflow {
+        Channel
+            .fromPath(params.reads)
+            .collect()
+            .set { illumina_reads }
+            // .flatMap { it }
+            // .view()
+
+        ReadLenDist(illumina_reads)
+    }
+    ```
+    {:.copy-code}
+
+  * **Run the script:**
+
+    ```bash
+    nextflow run pipelines/09_implementation_readLenDist.nf
+    column -t 04_read_len_dist/sample_read_len_dist.tsv | head
+    ```
+    {:.copy-code}
+
+
+#### What to expect
+A single `sample_read_len_dist.tsv` with `length  count  file` columns across all trimmed files.
+
+
+#### Reading the output
+Each row is a read length and how many reads had it, per file — the distribution of read lengths after trimming.
+
+
+#### Your turn
+Remove `.collect()` and re-run. How many times does `ReadLenDist` run now, and what happens to the single output filename? (This is exactly the pitfall to watch for in your own pipelines.)
 
 ---
 </li>
-<li class="usa-process-list__item" markdown="1">
+<li class="usa-process-list__item usa-prose" markdown="1">
 
 {:.usa-process-list__heading}
 ### The full pipeline & channel transformation
 
-**Create the file:** 
-
-{:.copy-code}
-```bash
-touch pipelines/10_implementation_full.nf
-```
-
-**Concept:** Chain everything. Fastp's output tuple `(sample_id, R1, R2)` is reshaped with `.map { sample_id, r1, r2 -> [r1, r2] }`, then `.collect()`ed and fed to `ReadLenDist`. This is a common pattern in production pipelines: **transform a channel's shape to fit the next process.**
-
-Open `10_implementation_full.nf` in the VS Code editor and copy and paste the script below:
+**Concept:**   
+Chain everything. Fastp's output tuple `(sample_id, R1, R2)` is reshaped with `.map { sample_id, r1, r2 -> [r1, r2] }`, then `.collect()`ed and fed to `ReadLenDist`. This is a common pattern in production pipelines: **transform a channel's shape to fit the next process.**
 
 
-**Script contents:**
+#### Execution
+  * **Create the file:** 
 
-{:.copy-code}
-```nextflow
-#!/usr/bin/env nextflow
+    ```bash
+    touch pipelines/10_implementation_full.nf
+    ```
+    {:.copy-code}
 
-//-- Configurable params
-params.reads = '01_data/*_{R1,R2}.fastq.gz'
-params.output_qc = '02_illuminaQC'
-params.output_trim = '03_trimmed'
-params.trimmed_reads = '03_trimmed/*fastq.gz'
-params.output_rld = '04_read_len_dist'
+  * **Script contents:**  
+    Open `10_implementation_full.nf` in the VS Code editor and copy and paste the script below:
 
-process FastQC {
+    ```nextflow
+    #!/usr/bin/env nextflow
+
+    //-- Configurable params
+    params.reads = '01_data/*_{R1,R2}.fastq.gz'
+    params.output_qc = '02_illuminaQC'
+    params.output_trim = '03_trimmed'
+    params.trimmed_reads = '03_trimmed/*fastq.gz'
+    params.output_rld = '04_read_len_dist'
+
+    process FastQC {
+        tag "${sample_id}"
+
+        publishDir params.output_qc, mode: 'copy'
+
+        input:
+        path sample_id
+
+        output:
+        path "*.html"
+        path "*.zip"
+
+        script:
+        """
+        module load fastqc
+        fastqc -t 2 ${sample_id}
+        """
+    }
+
+    process Fastp {
     tag "${sample_id}"
 
-    publishDir params.output_qc, mode: 'copy'
+    publishDir params.output_trim, mode: 'copy'
 
     input:
-    path sample_id
+    tuple val(sample_id), path(read1), path(read2)
 
     output:
-    path "*.html"
-    path "*.zip"
+    tuple val(sample_id), 
+        path("${sample_id}_R1.trimmed.fastq.gz"),
+        path("${sample_id}_R2.trimmed.fastq.gz")
 
     script:
     """
-    module load fastqc
-    fastqc -t 2 ${sample_id}
+    module load miniconda
+    source activate /90daydata/scinet_workshop2/nextflow_env
+
+    fastp -i ${read1} \
+            -I ${read2} \
+            -o ${sample_id}_R1.trimmed.fastq.gz \
+            -O ${sample_id}_R2.trimmed.fastq.gz
     """
-}
+    }
 
-process Fastp {
-  tag "${sample_id}"
+    process ReadLenDist {
+        publishDir params.output_rld, mode: 'copy'
 
-  publishDir params.output_trim, mode: 'copy'
+        input:
+        path reads
 
-  input:
-  tuple val(sample_id), path(read1), path(read2)
+        output:
+        path '*.tsv'
 
-  output:
-  tuple val(sample_id), 
-      path("${sample_id}_R1.trimmed.fastq.gz"),
-      path("${sample_id}_R2.trimmed.fastq.gz")
+        script:
+        """
+        read_length_dist.py samples_read_len_dist.tsv $reads
+        """
+    }
 
-  script:
-  """
-  module load miniconda
-  source activate /90daydata/scinet_workshop2/nextflow_env
+    workflow {
+        fastqc_ch = Channel.fromPath(params.reads)
+        // fastqc_ch.view()
+        trim_ch = Channel.fromFilePairs(params.reads, flat:true)
+        // trim_ch.view()
 
-  fastp -i ${read1} \
-        -I ${read2} \
-        -o ${sample_id}_R1.trimmed.fastq.gz \
-        -O ${sample_id}_R2.trimmed.fastq.gz
-  """
-}
+        fastqc_ch | FastQC
+        trimmed_output_ch = trim_ch | Fastp 
 
-process ReadLenDist {
-    publishDir params.output_rld, mode: 'copy'
+        trimmed_output_ch
+            .map { sample_id, r1, r2 -> [r1, r2] }
+            // .flatten()
+            .collect()
+            // .view()
+            | ReadLenDist
+    }
+    ```
+    {:.copy-code}
 
-    input:
-    path reads
+  * **Run the script:**
 
-    output:
-    path '*.tsv'
+    ```bash
+    nextflow run pipelines/10_implementation_full.nf
+    ls 02_illuminaQC/ 03_trimmed/ 04_read_len_dist/
+    ```
+    {:.copy-code}
 
-    script:
-    """
-    read_length_dist.py samples_read_len_dist.tsv $reads
-    """
-}
 
-workflow {
-    fastqc_ch = Channel.fromPath(params.reads)
-    // fastqc_ch.view()
-    trim_ch = Channel.fromFilePairs(params.reads, flat:true)
-    // trim_ch.view()
+#### What to expect
+QC reports, trimmed reads, and one combined `samples_read_len_dist.tsv` — the whole workflow in one run.
 
-    fastqc_ch | FastQC
-    trimmed_output_ch = trim_ch | Fastp 
 
-    trimmed_output_ch
-        .map { sample_id, r1, r2 -> [r1, r2] }
-        // .flatten()
-        .collect()
-        // .view()
-        | ReadLenDist
-}
-```
-
-**Run the script:**
-
-{:.copy-code}
-```bash
-nextflow run pipelines/10_implementation_full.nf
-ls 02_illuminaQC/ 03_trimmed/ 04_read_len_dist/
-```
-
-**What to expect:** QC reports, trimmed reads, and one combined `samples_read_len_dist.tsv` — the whole workflow in one run.
-
-> ✏️ **Your turn:** Add `.view()` after `.map{…}` and again after `.collect()`. Predict each output *before* running, then check yourself.
+#### Your turn
+Add `.view()` after `.map{…}` and again after `.collect()`. Predict each output *before* running, then check yourself.
 
 ---
 </li>
