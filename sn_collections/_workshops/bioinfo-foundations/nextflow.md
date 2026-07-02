@@ -43,38 +43,60 @@ portable integration of tools via containers and modules, and production-ready p
 
 Steps to prepare for the tutorial session:  
 
-* Login to [Ceres Open OnDemand](http://ceres-ood.scinet.usda.gov/). For more information on login procedures for web-based SCINet access, see the [SCINet access user guide]({{site.baseurl}}/guides/access/web-based-login).
- 
-* Launch VS Code:
-  * Under the Interactive Apps menu, select VS Code
-  * Specify the following input values on the page:
-    * Account: scinet_workshop2
-    * Queue: ceres
-    * QoS: 400thread
-    * Number of cores: 16
-    * Memory required: 50G
-    * Number of hours: 6
-    * Optional Slurm Parameters: `--reservation=foundations_workshop`
-    * Working Directory:  `/90daydata/shared/$USER/`
-  * Click Launch. The screen will update to the *Interactive Sessions* page. When your VS Code session is ready, the top card will update from *Queued* to *Running* and a *Connect to VS Code* button will appear. Click *Connect to VS Code.*
+<ol class="usa-process-list">
+<li class="usa-process-list__item" markdown="1">
 
-**Create a workshop working directory by running the following commands.**  
-Note: you do not have to edit the commands with your username as it will be determined by the $USER variable.  
+{:.usa-process-list__heading}
+### Login to [Ceres Open OnDemand](http://ceres-ood.scinet.usda.gov/). 
 
-{:.copy-code}
-```bash
-mkdir -p /90daydata/shared/$USER/nextflow 
-cd /90daydata/shared/$USER/nextflow
-```
+For more information on login procedures for web-based SCINet access, see the [SCINet access user guide]({{site.baseurl}}/guides/access/web-based-login).
 
-**Create a symbolic link to the tutorial data**
+</li> 
+<li class="usa-process-list__item" markdown="1">
+  
+{:.usa-process-list__heading}
+### Set up your working directory
 
-{:.copy-code}
-```bash
-ln -s  /project/scinet_workshop2/foundations_bioinf_2026/nextflow_data/* .
-ls 
-```
-You should see a small set of paired-end FASTQ files (`*_R1.fastq.gz` / `*_R2.fastq.gz`).
+* Open a command-line session by clicking on "Clusters" -> "Ceres Shell Access" on the top menu. This will open a new tab with a command-line session on Ceres' login node.
+
+* Create a workshop working directory by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the $USER variable.  
+
+  ```bash
+  mkdir -p /90daydata/shared/$USER/nextflow 
+  cd /90daydata/shared/$USER/nextflow
+  ```
+  {:.copy-code}
+
+* Create a symbolic link to the tutorial data
+  
+  ```bash
+  ln -s  /project/scinet_workshop2/foundations_bioinf_2026/nextflow_data/* .
+  ls 
+  ```
+  {:.copy-code}
+
+  You should see a small set of paired-end FASTQ files (`*_R1.fastq.gz` / `*_R2.fastq.gz`).
+
+</li>
+<li class="usa-process-list__item" markdown="1">
+  
+{:.usa-process-list__heading}
+### Launch VS Code
+
+* Under the Interactive Apps menu, select VS Code
+* Specify the following input values on the page:
+  * Account: scinet_workshop2
+  * Queue: ceres
+  * QoS: 400thread
+  * Number of cores: 16
+  * Memory required: 50G
+  * Number of hours: 6
+  * Optional Slurm Parameters: `--reservation=foundations_workshop`
+  * Working Directory:  `/90daydata/shared/$USER/nextflow`
+* Click Launch. The screen will update to the *Interactive Sessions* page. When your VS Code session is ready, the top card will update from *Queued* to *Running* and a *Connect to VS Code* button will appear. Click *Connect to VS Code.*
+
+</li>
+</ol>
 
 -----
 ## An Introduction to Nextflow
@@ -150,8 +172,6 @@ Forgetting the backslash is one of the most common Nextflow errors — Nextflow 
 
 **Goal for today:** understand the Nextflow building blocks — processes, the work directory, publishing outputs, inputs, and parameters — by writing five small pipelines. We'll introduce these concepts one at a time, building on the previous scripts as we go.
 
-> All scripts referenced below are located in `pipelines/`. The full annotated walkthrough for Day 1 is in "hello_part1.md" and "hello_part2.md".
-
 **Why Nextflow?**
 
 A typical analysis run by hand means bash scripts with nested loops, manual file tracking, custom parallelization, and results that are hard to reproduce. Nextflow takes over task parallelization, data-flow management, failure recovery and checkpointing, and tool integration — so your code is as clean as possible and your results are reproducible. The key idea: **Nextflow doesn't care what your tools do; it manages how data flows between them.**
@@ -175,7 +195,6 @@ touch pipelines/01_hello_screen.nf
 **Script contents:**
 
 {:.copy-code}
-
 ```bash
 #!/usr/bin/env nextflow
 
@@ -202,6 +221,7 @@ workflow {
 
 **Run the script:**
 
+{:.copy-code}
 ```bash
 nextflow run pipelines/01_hello_screen.nf
 ```
@@ -231,6 +251,7 @@ Welcome to the world of Nextflow!
 
 **Create a file:** 
 
+{:.copy-code}
 ```bash
 touch pipelines/02_hello_redirect.nf
 ```
@@ -240,7 +261,6 @@ touch pipelines/02_hello_redirect.nf
 **Script contents:**
 
 {:.copy-code}
-
 ```nextflow
 #!/usr/bin/env nextflow
 
@@ -263,6 +283,7 @@ workflow {
 }
 ```
 
+{:.copy-code}
 ```bash
 nextflow run pipelines/02_hello_redirect.nf
 tree -a work        # or: find work -type f
@@ -287,6 +308,7 @@ tree -a work        # or: find work -type f
 
 **Create a file:** 
 
+{:.copy-code}
 ```bash
 touch pipelines/03_hello_publishdir.nf
 ```
@@ -296,7 +318,6 @@ touch pipelines/03_hello_publishdir.nf
 **Script contents:**
 
 {:.copy-code}
-
 ```nextflow
 #!/usr/bin/env nextflow
 
@@ -324,6 +345,7 @@ workflow {
 
 **Run the script:**
 
+{:.copy-code}
 ```bash
 nextflow run pipelines/03_hello_publishdir.nf
 cat output/result.txt
@@ -345,6 +367,7 @@ cat output/result.txt
 
 **Create a file:** 
 
+{:.copy-code}
 ```bash 
 touch pipelines/04_hello_input.nf 
 ```
@@ -354,7 +377,6 @@ touch pipelines/04_hello_input.nf
 **Script contents:**
 
 {:.copy-code}
-
 ```nextflow
 #!/usr/bin/env nextflow
 
@@ -380,6 +402,7 @@ workflow {
 
 **Run the script**
 
+{:.copy-code}
 ```bash
 nextflow run pipelines/04_hello_input.nf
 cat output/result.txt
@@ -399,6 +422,7 @@ cat output/result.txt
 
 **Create a file:** 
 
+{:.copy-code}
 ```bash
 touch pipelines/05_hello_default.nf
 ```
@@ -408,7 +432,6 @@ touch pipelines/05_hello_default.nf
 **Script contents:**
 
 {:.copy-code}
-
 ```nextflow
 #!/usr/bin/env nextflow
 
@@ -436,6 +459,7 @@ workflow {
 
 **Run the script**
 
+{:.copy-code}
 ```bash
 nextflow run pipelines/05_hello_default.nf
 nextflow run pipelines/05_hello_default.nf --welcome "Greetings from the command line!"
@@ -456,6 +480,7 @@ cat output/result.txt
 
 You now understand processes, the work directory, publishing, inputs, and parameters. Before the break, try Nextflow's caching:
 
+{:.copy-code}
 ```bash
 nextflow run pipelines/05_hello_default.nf
 nextflow run pipelines/05_hello_default.nf -resume    # note the "cached" tasks
@@ -475,6 +500,7 @@ nextflow run pipelines/05_hello_default.nf -resume    # note the "cached" tasks
 
 **Create the file:** 
 
+{:.copy-code}
 ```bash
 touch pipelines/06_implementation_fastqc.nf
 ```
@@ -484,7 +510,6 @@ touch pipelines/06_implementation_fastqc.nf
 **Script contents:**
 
 {:.copy-code}
-
 ```nextflow
 #!/usr/bin/env nextflow
 
@@ -521,6 +546,7 @@ workflow {
 
 **Run the script**
 
+{:.copy-code}
 ```bash
 nextflow run pipelines/06_implementation_fastqc.nf
 ls 02_illuminaQC/
@@ -545,6 +571,7 @@ ls 02_illuminaQC/
 
 **Script contents:**
 
+{:.copy-code}
 ```nextflow
 #!/usr/bin/env nextflow
 
@@ -589,6 +616,7 @@ workflow {
 
 **Run the script**
 
+{:.copy-code}
 ```bash
 nextflow run pipelines/07_implementation_fastp.nf
 ls 03_trimmed/
@@ -609,6 +637,7 @@ ls 03_trimmed/
 
 **Create the file:**
 
+{:.copy-code}
 ```bash
 touch pipelines/08_implementation_fastqc_fastp.nf
 ```
@@ -618,7 +647,6 @@ touch pipelines/08_implementation_fastqc_fastp.nf
 **Script contents:**
 
 {:.copy-code}
-
 ```nextflow
 #!/usr/bin/env nextflow
 
@@ -685,6 +713,7 @@ workflow {
 
 **Run the script**
 
+{:.copy-code}
 ```bash
 nextflow run pipelines/08_implementation_fastqc_fastp.nf
 ```
@@ -702,6 +731,7 @@ nextflow run pipelines/08_implementation_fastqc_fastp.nf
 
 **Create the helper script:** 
 
+{:.copy-code}
 ```bash
 touch pipelines/bin/read_length_dist.py  
 ```
@@ -747,6 +777,7 @@ with open(out_tsv, 'w') as out:
 
 **Create the nextflow script:**
 
+{:.copy-code}
 ```bash
 touch pipelines/09_implementation_readLenDist.nf
 ```
@@ -756,7 +787,6 @@ touch pipelines/09_implementation_readLenDist.nf
 **Script contents:**
 
 {:.copy-code}
-
 ```nextflow
 #!/usr/bin/env nextflow
 
@@ -792,6 +822,7 @@ workflow {
 
 **Run the script:**
 
+{:.copy-code}
 ```bash
 nextflow run pipelines/09_implementation_readLenDist.nf
 column -t 04_read_len_dist/sample_read_len_dist.tsv | head
@@ -812,6 +843,7 @@ column -t 04_read_len_dist/sample_read_len_dist.tsv | head
 
 **Create the file:** 
 
+{:.copy-code}
 ```bash
 touch pipelines/10_implementation_full.nf
 ```
@@ -910,6 +942,7 @@ workflow {
 
 **Run the script:**
 
+{:.copy-code}
 ```bash
 nextflow run pipelines/10_implementation_full.nf
 ls 02_illuminaQC/ 03_trimmed/ 04_read_len_dist/
