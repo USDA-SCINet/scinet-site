@@ -67,7 +67,7 @@ mkdir -p /90daydata/shared/$USER/nextflow
 cd /90daydata/shared/$USER/nextflow
 ```
 
-**Soft link the tutorial data**
+**Create a symbolic link to the tutorial data**
 
 {:.copy-code}
 ```bash
@@ -87,11 +87,11 @@ By the end of this workshop, you will be able to:
 
 1. **Write Nextflow pipelines from scratch** — defining processes, channels, and workflows, and wiring command-line tools together.
 2. **Process many files in parallel automatically** — letting Nextflow handle scheduling, isolation, and failure recovery instead of hand-written loops.
-3. **Make pipelines configurable, portable, and reproducible** — using parameters, configuration files, profiles, and software environments (modules/containers) so the same pipeline runs on a laptop, an HPC cluster, or the cloud.
+3. **Make pipelines configurable, portable, and reproducible** — using parameters, configuration files, profiles, and software environments (modules/containers) so Nextflow pipelines can easily be shared and run anywhere.
 
 ### What You'll Build
 
-Across the two days you progress from a one-line "hello world" process to a complete genomics pipeline:
+Across the two days you'll progress from a one-line "hello world" process to a complete genomics pipeline:
 
 ```
 Raw reads ──► FastQC (quality control)
@@ -114,7 +114,7 @@ You're ready to go.
 
 ---
 
-**Naming Conventions — Read This First**
+**Naming Conventions (Read This First!)**
 
 Nextflow code mixes several naming styles on purpose: the style of a name tells you *what kind of thing* it is. Knowing the conventions before you start makes every script on this page easier to read. You'll see all of these today.
 
@@ -141,20 +141,20 @@ echo "\$HOSTNAME"        # shell variable      → evaluated by bash at runtime
 """
 ```
 
-Forgetting the backslash is the single most common beginner error — Nextflow will try (and fail) to resolve a shell variable as one of its own.
+Forgetting the backslash is one of the most common Nextflow errors — Nextflow will try (and fail) to resolve a shell variable as one of its own.
 
 > 💡 **Naming tip for your own pipelines:** name a process after *what it does* (`AlignReads`, not `Step3`), and name a channel after *what it carries* (`aligned_bams_ch`, not `out2`). Future-you will thank you.
 
 ---
 
 
-**Goal for today:** understand the building blocks — processes, the work directory, publishing outputs, inputs, and parameters — by writing five small pipelines. Every concept is introduced one at a time, building on the previous script.
+**Goal for today:** understand the Nextflow building blocks — processes, the work directory, publishing outputs, inputs, and parameters — by writing five small pipelines. We'll introduce these concepts one at a time, building on the previous scripts as we go.
 
-> All scripts referenced below live in `pipelines/`. The full annotated walkthrough for Day 1 is in "hello_part1.md" and "hello_part2.md".
+> All scripts referenced below are located in `pipelines/`. The full annotated walkthrough for Day 1 is in "hello_part1.md" and "hello_part2.md".
 
 **Why Nextflow?**
 
-A typical analysis run by hand means bash scripts with nested loops, manual file tracking, custom parallelization, and results that are hard to reproduce. Nextflow takes over task parallelization, data-flow management, failure recovery and checkpointing, and tool integration — so your code stays clear and your results stay reproducible. The key idea: **Nextflow doesn't care what your tools do; it manages how data flows between them.**
+A typical analysis run by hand means bash scripts with nested loops, manual file tracking, custom parallelization, and results that are hard to reproduce. Nextflow takes over task parallelization, data-flow management, failure recovery and checkpointing, and tool integration — so your code is as clean as possible and your results are reproducible. The key idea: **Nextflow doesn't care what your tools do; it manages how data flows between them.**
 
 ---
 
@@ -235,7 +235,7 @@ Welcome to the world of Nextflow!
 touch pipelines/02_hello_redirect.nf
 ```
 
-**Concept:** Real pipelines save results to files. Switch `output: stdout` to `output: path 'result.txt'` and redirect inside the script. Every task runs in its own isolated **work directory**.
+**Concept:** Nextflow pipelines usually save results to files. Switch `output: stdout` to `output: path 'result.txt'` and use a bash redirect operator (`>`) inside the script to write to the file. Every task runs in its own isolated **work directory**.
 
 **Script contents:**
 
@@ -268,7 +268,7 @@ nextflow run pipelines/02_hello_redirect.nf
 tree -a work        # or: find work -type f
 ```
 
-**What to expect:** no text is printed (the result is now a file). Inside `work/xx/xxxx…/` you'll find `result.txt` alongside Nextflow's bookkeeping files.
+**What to expect:** no text is printed (the result was written to a file instead of the console). Inside `work/xx/xxxx…/` you'll find `result.txt` alongside Nextflow's bookkeeping files.
 
 **Reading the output — the `.command.*` files:**
 - `.command.sh` — the exact script Nextflow ran (great for debugging).
@@ -291,7 +291,7 @@ tree -a work        # or: find work -type f
 touch pipelines/03_hello_publishdir.nf
 ```
 
-**Concept:** Work-directory hashes are great for Nextflow, terrible for humans. `publishDir` copies (or links) outputs to a friendly location.
+**Concept:** Work-directory hashes are great for Nextflow, terrible for humans. `publishDir` copies (or links) outputs to a more human-friendly location.
 
 **Script contents:**
 
