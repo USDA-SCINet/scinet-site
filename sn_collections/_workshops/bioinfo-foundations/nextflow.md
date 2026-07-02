@@ -379,7 +379,7 @@ cat output/result.txt
 touch pipelines/04_hello_input.nf 
 ```
 
-**Concept:** Hardcoded scripts aren't reusable. An `input:` block lets a process accept data. `val` passes a simple value (string/number); the script uses it as `$variable`.
+**Concept:** Scripts with hard-coded inputs aren't easily reusable. An `input:` block lets a process accept data. `val` passes a simple value (string/number) and assigns it to a variable. For example, if the `input` block for a process includes `val var1`, the script can access the value passed to the process as `$var1`.
 
 Open `04_hello_input.nf` in the VS Code editor and copy and paste the script below:
 
@@ -437,7 +437,7 @@ cat output/result.txt
 touch pipelines/05_hello_default.nf
 ```
 
-**Concept:** `params` make a pipeline configurable *without editing code*. Set a default in the script, override it on the command line.
+**Concept:** `params` make a pipeline configurable *without editing code*. You can set default values in the script and override them on the command line.
 
 Open `05_hello_default.nf` in the VS Code editor and copy and paste the script below:
 
@@ -489,7 +489,7 @@ cat output/result.txt
 <li class="usa-process-list__item" markdown="1">
 
 {:.usa-process-list__heading}
-### Checkpoint and the `-resume` feature
+### Checkpoints and the `-resume` feature
 
 You now understand processes, the work directory, publishing, inputs, and parameters. Before the break, try Nextflow's caching:
 
@@ -509,7 +509,7 @@ nextflow run pipelines/05_hello_default.nf -resume    # note the "cached" tasks
 <li class="usa-process-list__item" markdown="1">
 
 {:.usa-process-list__heading}
-### FastQC: your first real process
+### FastQC: our first bioinformatics process
 
 **Create the file:** 
 
@@ -877,7 +877,7 @@ column -t 04_read_len_dist/sample_read_len_dist.tsv | head
 touch pipelines/10_implementation_full.nf
 ```
 
-**Concept:** Chain everything. Fastp's output tuple `(sample_id, R1, R2)` is reshaped with `.map { sample_id, r1, r2 -> [r1, r2] }`, then `.collect()`ed and fed to `ReadLenDist`. This is the core pattern of real pipelines: **transform a channel's shape to fit the next process.**
+**Concept:** Chain everything. Fastp's output tuple `(sample_id, R1, R2)` is reshaped with `.map { sample_id, r1, r2 -> [r1, r2] }`, then `.collect()`ed and fed to `ReadLenDist`. This is a common pattern in production pipelines: **transform a channel's shape to fit the next process.**
 
 Open `10_implementation_full.nf` in the VS Code editor and copy and paste the script below:
 
