@@ -1,4 +1,4 @@
----
+ ---
 title: Automating Bioinformatics Pipelines with Nextflow
 type: workshop
 display: basic
@@ -193,6 +193,8 @@ touch pipelines/01_hello_screen.nf
 
 **Concept:** A Nextflow script has two parts — a **process** (what to do) and a **workflow** (when to do it). A process captures its output into a **channel**; the `.view()` operator prints a channel's contents.
 
+Open `01_hello_screen.nf` in the VS Code editor and copy and paste the script below:
+ 
 **Script contents:**
 
 {:.copy-code}
@@ -259,6 +261,8 @@ touch pipelines/02_hello_redirect.nf
 
 **Concept:** Nextflow pipelines usually save results to files. Switch `output: stdout` to `output: path 'result.txt'` and use a bash redirect operator (`>`) inside the script to write to the file. Every task runs in its own isolated **work directory**.
 
+Open `02_hello_redirect.nf` in the VS Code editor and copy and paste the script below:
+
 **Script contents:**
 
 {:.copy-code}
@@ -315,6 +319,8 @@ touch pipelines/03_hello_publishdir.nf
 ```
 
 **Concept:** Work-directory hashes are great for Nextflow, terrible for humans. `publishDir` copies (or links) outputs to a more human-friendly location.
+
+Open `03_hello_publishdir.nf` in the VS Code editor and copy and paste the script below:
 
 **Script contents:**
 
@@ -375,6 +381,9 @@ touch pipelines/04_hello_input.nf
 
 **Concept:** Hardcoded scripts aren't reusable. An `input:` block lets a process accept data. `val` passes a simple value (string/number); the script uses it as `$variable`.
 
+Open `04_hello_input.nf` in the VS Code editor and copy and paste the script below:
+
+
 **Script contents:**
 
 {:.copy-code}
@@ -429,6 +438,9 @@ touch pipelines/05_hello_default.nf
 ```
 
 **Concept:** `params` make a pipeline configurable *without editing code*. Set a default in the script, override it on the command line.
+
+Open `05_hello_default.nf` in the VS Code editor and copy and paste the script below:
+
 
 **Script contents:**
 
@@ -508,6 +520,9 @@ touch pipelines/06_implementation_fastqc.nf
 
 **Concept:** `Channel.fromPath(params.reads)` emits one item per matching file; the process runs once per item, **in parallel**. The `tag` directive labels each task in the log.
 
+Open `06_implementation_fastqc.nf` in the VS Code editor and copy and paste the script below:
+
+
 **Script contents:**
 
 {:.copy-code}
@@ -574,6 +589,9 @@ touch pipelines/07_implementation_fastp.nf
 ```
 
 **Concept:** Paired-end data comes as R1/R2 pairs that must travel together. `Channel.fromFilePairs(params.reads, flat: true)` groups them and emits a **tuple** `(sample_id, R1, R2)`, unpacked in the process with `tuple val(sample_id), path(read1), path(read2)`.
+
+Open `07_implementation_fastp.nf` in the VS Code editor and copy and paste the script below:
+
 
 **Script contents:**
 
@@ -649,6 +667,9 @@ touch pipelines/08_implementation_fastqc_fastp.nf
 ```
 
 **Concept:** From the **same** input you can build **two differently shaped channels** — `fromPath` (individual files, for FastQC) and `fromFilePairs` (pairs, for Fastp) — and run both processes simultaneously. The pipe operator (`ch | Process`) reads cleanly.
+
+Open `08_implementation_fastqc_fastp.nf` in the VS Code editor and copy and paste the script below:
+
 
 **Script contents:**
 
@@ -741,8 +762,7 @@ nextflow run pipelines/08_implementation_fastqc_fastp.nf
 ```bash
 touch pipelines/bin/read_length_dist.py  
 ```
-
-Copy the script below into `pipelines/bin/read_length_dist.py`
+Open `read_length_dist.py` in the VS Code editor and copy and paste the script below:
 
 {:.copy-code}
 ```python
@@ -789,6 +809,9 @@ touch pipelines/09_implementation_readLenDist.nf
 ```
 
 **Concept:** Some tools need **all** files at once (a combined report). `.collect()` gathers every channel item into a single list, so the process runs **once** instead of per file. The custom script `pipelines/bin/read_length_dist.py` is auto-added to the task's `PATH` because it lives in `bin/`.
+
+Open `09_implementation_readLenDist.nf` in the VS Code editor and copy and paste the script below:
+
 
 **Script contents:**
 
@@ -855,6 +878,9 @@ touch pipelines/10_implementation_full.nf
 ```
 
 **Concept:** Chain everything. Fastp's output tuple `(sample_id, R1, R2)` is reshaped with `.map { sample_id, r1, r2 -> [r1, r2] }`, then `.collect()`ed and fed to `ReadLenDist`. This is the core pattern of real pipelines: **transform a channel's shape to fit the next process.**
+
+Open `10_implementation_full.nf` in the VS Code editor and copy and paste the script below:
+
 
 **Script contents:**
 
