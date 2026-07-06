@@ -186,14 +186,14 @@ A typical analysis run by hand means bash scripts with nested loops, manual file
 ### Hello World: your first process
 
 **Concept:**   
-A Nextflow script has two parts — a **process** (what to do) and a **workflow** (which processes to run, and in what order).
+Nextflow scripts are built from two kinds of components — **processes** (what to do) and **workflows** (which processes to run, and in what order).
 
-The glue between them is the **channel**. A channel is an asynchronous stream — think of it as a queue — of data items that flows through your pipeline. Channels are *how data moves* in Nextflow, and there are only two rules to remember:
+The glue between a process and a workflow is the **channel**. A channel is an asynchronous stream — think of it as a queue — of data items that flow through your pipeline. Channels are *how data moves* in Nextflow, and there are only two rules to remember:
 
 - **Every process output is emitted into a channel.**
 - **Every process input is read from a channel.**
 
-So a channel is the "wiring" that connects one step to the next: one process's output channel becomes the next process's input channel. In this first script the `hello` process emits its text into an output channel, and the `.view()` operator simply prints whatever is flowing through a channel (handy for debugging). Right now we're only looking at a channel *coming out* of a process — later, in the FastQC section, you'll see the other side: building a channel of input files and feeding it *into* a process.
+So a channel is the "wiring" that connects one step to the next: one process's output channel becomes the next process's input channel. In our first script, the `hello` process emits its text into an output channel, and the `.view()` operator simply prints whatever is flowing through a channel (handy for debugging). Right now we're only looking at a channel *coming out* of a process — later, in the FastQC section, you'll see the other side: building a channel of input files and feeding it *into* a process.
 
 
 #### Execution
@@ -561,7 +561,7 @@ Why is this so valuable when a pipeline fails on sample 95 of 100?
 ### FastQC: our first bioinformatics process
 
 **Concept:**   
-This is the first time we feed a channel *into* a process. `Channel.fromPath(params.reads)` scans the filesystem for every file matching the glob pattern and creates an **input channel** that emits one item per file. When you hand that channel to a process, Nextflow launches a **separate, independent task for each item** — so ten FASTQ files become ten FastQC tasks that run **in parallel**, each in its own isolated work directory. You never write a loop: the channel *is* the loop, and Nextflow schedules the tasks across available cores for you. We point the `--reads` flag at more files and the pipeline scales automatically, with no code changes. The `tag` directive simply labels each task with its filename so you can tell the parallel tasks apart in the log.
+This is the first time we feed a channel *into* a process. `Channel.fromPath(params.reads)` scans the filesystem for every file matching the pattern specified by `params.reads` and creates an **input channel** that emits one item per file. When you hand that channel to a process, Nextflow launches a **separate, independent task for each item** — so ten FASTQ files become ten FastQC tasks that run **in parallel**, each in its own isolated work directory. You never write a loop: the channel *is* the loop, and Nextflow schedules the tasks across available cores for you. If we point `params.reads` at more files (e.g., via the `--reads` flag), the pipeline scales automatically, with no code changes. The `tag` directive labels each task with its associated filename so you can tell the parallel tasks apart in the log.
 
 
 #### Execution
@@ -725,7 +725,7 @@ Temporarily add a `read_pairs_ch.view()` line in the workflow to see the tuple s
 **Concept:**   
 From the **same** input you can build **two differently shaped channels** — `fromPath` (individual files, for FastQC) and `fromFilePairs` (pairs, for Fastp) — and run both processes simultaneously. 
 
-The **pipe operator** `|` feeds a channel into a process: `fastqc_ch | FastQC` takes the items flowing through `fastqc_ch` and uses them as the input to `FastQC`. `fastqc_ch | FastQC` syntax is an alternative to `FastQC(fastqc_ch)`; because it reads left-to-right, as *data → process → next process*, it is intuitive (you'll see it chained in the full pipeline later).
+The **pipe operator** `|` feeds a channel into a process: `fastqc_ch | FastQC` takes the items flowing through `fastqc_ch` and uses them as the input to `FastQC`. `fastqc_ch | FastQC` syntax is an alternative to `FastQC(fastqc_ch)`; because it reads left-to-right, as *data → process → next process*, you might find it more intuitive to write and read (you'll see it chained in the full pipeline later).
 
 
 #### Execution
