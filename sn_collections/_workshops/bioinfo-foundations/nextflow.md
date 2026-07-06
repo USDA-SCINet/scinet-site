@@ -457,7 +457,7 @@ The message now comes from the workflow call `hello("…")`, not from inside the
 
 
 #### Your turn
-Call `hello()` twice in the workflow with two different strings. How many tasks run, and what happens to `output/result.txt`? (This previews why naming outputs uniquely matters.)
+Give the process a **second input**. Add `val name` to the `input:` block, use it in the script (e.g. `echo "$welcome $name" > result.txt`), and update the workflow call to pass both values: `hello("Hello,", "Nextflow learner")`. Re-run and check `output/result.txt`.
 
 ---
 
@@ -603,9 +603,9 @@ This is the first time we feed a channel *into* a process. `Channel.fromPath(par
     workflow {
         Channel
         .fromPath(params.reads)
-        .set { illumina_reads }
+        .set { illumina_reads_ch }
 
-        FastQC(illumina_reads)
+        FastQC(illumina_reads_ch)
     }
     ```
     {:.copy-code}
@@ -688,9 +688,9 @@ Paired-end data comes as R1/R2 pairs that must travel together. `Channel.fromFil
     workflow {
     Channel
         .fromFilePairs(params.reads, flat: true)
-        .set { read_pairs }
+        .set { read_pairs_ch }
 
-    Fastp(read_pairs)
+    Fastp(read_pairs_ch)
     }
     ```
     {:.copy-code}
@@ -713,7 +713,7 @@ Fastp prints a JSON/HTML summary (reads before/after, % passing filter) — a qu
 
 
 #### Your turn
-Temporarily uncomment a `read_pairs.view()` line in the workflow to see the tuple structure before it reaches the process. What does `flat: true` change?
+Temporarily add a `read_pairs_ch.view()` line in the workflow to see the tuple structure before it reaches the process. What does `flat: true` change?
 
 ---
 </li>
@@ -834,6 +834,7 @@ Some tools need **all** files at once (a combined report). `.collect()` gathers 
   * **Create the helper script:** 
 
     ```bash
+    mkdir -p pipelines/bin
     touch pipelines/bin/read_length_dist.py  
     ```
     {:.copy-code}
@@ -911,7 +912,7 @@ Some tools need **all** files at once (a combined report). `.collect()` gathers 
 
         script:
         """
-        read_length_dist.py sample_read_len_dist.tsv $reads
+        read_length_dist.py samples_read_len_dist.tsv $reads
         """
     }
 
@@ -919,11 +920,9 @@ Some tools need **all** files at once (a combined report). `.collect()` gathers 
         Channel
             .fromPath(params.reads)
             .collect()
-            .set { illumina_reads }
-            // .flatMap { it }
-            // .view()
+            .set { illumina_reads_ch }
 
-        ReadLenDist(illumina_reads)
+        ReadLenDist(illumina_reads_ch)
     }
     ```
     {:.copy-code}
@@ -932,13 +931,13 @@ Some tools need **all** files at once (a combined report). `.collect()` gathers 
 
     ```bash
     nextflow run pipelines/09_implementation_readLenDist.nf
-    column -t 04_read_len_dist/sample_read_len_dist.tsv | head
+    column -t 04_read_len_dist/samples_read_len_dist.tsv | head
     ```
     {:.copy-code}
 
 
 #### What to expect
-A single `sample_read_len_dist.tsv` with `length  count  file` columns across all trimmed files.
+A single `samples_read_len_dist.tsv` with `length  count  file` columns across all trimmed files.
 
 
 #### Reading the output
