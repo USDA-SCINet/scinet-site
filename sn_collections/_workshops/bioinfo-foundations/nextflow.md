@@ -1082,10 +1082,10 @@ Add `.view()` after `.map{…}` and again after `.collect()`. Predict each outpu
 ### Add FastQC on the trimmed reads
 
 **Concept:**   
-You've run FastQC on the *raw* reads and trimmed them with Fastp. A natural next step is to run FastQC again on the *trimmed* reads, so you can compare quality before and after trimming. Before we show you how, try adding it yourself — you'll run into something instructive.
+You've run FastQC on the *raw* reads and trimmed them with Fastp. A natural next step is to run FastQC again on the *trimmed* reads, so you can compare quality before and after trimming. Before we show you how, try adding this additional step to the workflow and see what happens!
 
 #### Your turn (try this first!)
-Starting from `10_implementation_full.nf`, try to also run `FastQC` on Fastp's trimmed output — add a line in the workflow that sends the trimmed reads into `FastQC`, and run it. **Give it a genuine attempt before reading on.**
+Starting from `10_implementation_full.nf`, try to also run `FastQC` on Fastp's trimmed output — add a line in the workflow that sends the trimmed reads into `FastQC`, and run it. **We recommend you give this a try before reading on. 🙂**
 
 #### What happens
 Nextflow stops with an error like:
@@ -1095,7 +1095,7 @@ Process `FastQC` has been already used -- If you need to reuse the same process,
 include it with a different name, or include it in a different workflow context
 ```
 
-This is a key rule: **within a workflow, each process can be invoked only once.** `FastQC` is already used on the raw reads, so Nextflow won't let you call it again on the trimmed reads. The straightforward fix, for now, is a second process with a different name.
+This is a key rule: **within a workflow, each process can be invoked only once.** `FastQC` is already used on the raw reads, so Nextflow won't let you call it again on the trimmed reads. A simple solution, for now, is to create a second process that is a duplicate of the first but with a different name.
 
 #### Execution
   * **Create the file:**
@@ -1232,7 +1232,7 @@ A new `05_illuminaQC_trimmed/` directory with FastQC reports for the trimmed rea
 #### Reading the output
 Compare a raw report in `02_illuminaQC/` with its trimmed counterpart in `05_illuminaQC_trimmed/` — adapter content and low-quality tails should be reduced after trimming.
 
-> 💡 Copy-pasting an entire process just to give it a different name feels wasteful — and it is. Hold that thought: in the next section you'll meet **modules**, and then a one-line trick that removes the duplication entirely.
+> 💡 Copying an entire process just to give it a different name feels wasteful — and it is. Hold that thought: in the next section you'll meet **modules**, and then a one-line trick that removes the duplication entirely.
 
 ---
 
@@ -1243,7 +1243,7 @@ Compare a raw report in `02_illuminaQC/` with its trimmed counterpart in `05_ill
 ### Using modules with `include`
 
 **Concept:**   
-As pipelines grow, copying every process into one file becomes hard to maintain. Nextflow lets you move processes into separate **module** files and bring them into the main workflow with the `include` statement. The workflow script then focuses on *how processes connect*, while each module file defines *what a single process does*. This makes code reusable, easier to read, and easier to test.
+As pipelines grow, keeping all of your processes in one file becomes hard to maintain. Nextflow lets you move processes into separate **module** files and bring them into the main workflow with the `include` statement. The workflow script then focuses on *how processes connect*, while each module file defines *what a single process does*. This makes code reusable, easier to read, and easier to test.
 
 #### Execution
   * **Create the module directory and files:**
@@ -1378,7 +1378,7 @@ As pipelines grow, copying every process into one file becomes hard to maintain.
 
 
 #### What to expect
-The same outputs as the full pipeline (QC reports, trimmed reads, and one combined `samples_read_len_dist.tsv`), but the main script is much shorter and each process lives in its own reusable module file.
+Our new script will generate the same outputs as our previous full pipeline (QC reports, trimmed reads, and one combined `samples_read_len_dist.tsv`), but the main script is much shorter and each process lives in its own reusable module file.
 
 #### Your turn
 You don't always need a whole new file to reuse a process. Import the same module under a second name with an **alias**:
@@ -1387,7 +1387,7 @@ You don't always need a whole new file to reuse a process. Import the same modul
 include { FastQC as FastQC_Trimmed } from './modules/fastqc.nf'
 ```
 
-Add that line to `12_implementation_include.nf` and call `FastQC_Trimmed` on the trimmed reads — no new process, no copy-paste. (Remember writing `FastQC_Trimmed` by hand a section ago? This is the payoff.) Notice *where* its reports get published, since the module hard-codes `publishDir params.output_qc` — we'll come back to that with MultiQC.
+Remember writing `FastQC_Trimmed` by hand a section ago? Now, as an alternative, you can add the line above to `12_implementation_include.nf` and call `FastQC_Trimmed` on the trimmed reads — no new process, no copying and pasting. Notice *where* its reports get published, since the module hard-codes `publishDir params.output_qc` — we'll come back to that with MultiQC.
 
 ---
 </li>
