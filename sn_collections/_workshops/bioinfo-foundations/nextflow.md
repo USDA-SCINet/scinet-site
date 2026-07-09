@@ -1074,13 +1074,440 @@ QC reports, trimmed reads, and one combined `samples_read_len_dist.tsv` — the 
 Add `.view()` after `.map{…}` and again after `.collect()`. Predict each output *before* running, then check yourself.
 
 ---
+
+</li>
+<li class="usa-process-list__item usa-prose" markdown="1">
+
+{:.usa-process-list__heading}
+### Add FastQC on the trimmed reads
+
+**Concept:**   
+You've run FastQC on the *raw* reads and trimmed them with Fastp. A natural next step is to run FastQC again on the *trimmed* reads, so you can compare quality before and after trimming. Before we show you how, try adding it yourself — you'll run into something instructive.
+
+#### Your turn (try this first!)
+Starting from `10_implementation_full.nf`, try to also run `FastQC` on Fastp's trimmed output — add a line in the workflow that sends the trimmed reads into `FastQC`, and run it. **Give it a genuine attempt before reading on.**
+
+#### What happens
+Nextflow stops with an error like:
+
+```
+Process `FastQC` has been already used -- If you need to reuse the same process,
+include it with a different name, or include it in a different workflow context
+```
+
+This is a key rule: **within a workflow, each process can be invoked only once.** `FastQC` is already used on the raw reads, so Nextflow won't let you call it again on the trimmed reads. The straightforward fix, for now, is a second process with a different name.
+
+#### Execution
+  * **Create the file:**
+
+    ```bash
+    touch pipelines/11_add_fastqc.nf
+    ```
+    {:.copy-code}
+
+  * **Script contents:**  
+    Open `11_add_fastqc.nf` and copy and paste the script below. It is `10_implementation_full.nf` plus a second process, `FastQC_Trimmed`, that publishes to a new directory and runs on the trimmed reads:
+
+    ```nextflow
+    #!/usr/bin/env nextflow
+
+    //-- Configurable params
+    params.reads = '01_data/*_{R1,R2}.fastq.gz'
+    params.output_qc = '02_illuminaQC'
+    params.output_trim = '03_trimmed'
+    params.output_rld = '04_read_len_dist'
+    params.output_qc_trimmed = '05_illuminaQC_trimmed'
+
+    process FastQC {
+        tag "${sample_id}"
+        publishDir params.output_qc, mode: 'copy'
+
+        input:
+        path sample_id
+
+        output:
+        path "*.html"
+        path "*.zip"
+
+        script:
+        """
+        module load fastqc
+        fastqc -t 2 ${sample_id}
+        """
+    }
+
+    process Fastp {
+        tag "${sample_id}"
+        publishDir params.output_trim, mode: 'copy'
+
+        input:
+        tuple val(sample_id), path(read1), path(read2)
+
+        output:
+        tuple val(sample_id),
+            path("${sample_id}_R1.trimmed.fastq.gz"),
+            path("${sample_id}_R2.trimmed.fastq.gz")
+
+        script:
+        """
+        module load miniconda
+        source activate /90daydata/scinet_workshop2/nextflow_env
+
+        fastp -i ${read1} \
+              -I ${read2} \
+              -o ${sample_id}_R1.trimmed.fastq.gz \
+              -O ${sample_id}_R2.trimmed.fastq.gz
+        """
+    }
+
+    process ReadLenDist {
+        publishDir params.output_rld, mode: 'copy'
+
+        input:
+        path reads
+
+        output:
+        path '*.tsv'
+
+        script:
+        """
+        read_length_dist.py samples_read_len_dist.tsv $reads
+        """
+    }
+
+    process FastQC_Trimmed {
+        tag "${sample_id}"
+        publishDir params.output_qc_trimmed, mode: 'copy'
+
+        input:
+        path sample_id
+
+        output:
+        path "*.html"
+        path "*.zip"
+
+        script:
+        """
+        module load fastqc
+        fastqc -t 2 ${sample_id}
+        """
+    }
+
+    workflow {
+        fastqc_ch = Channel.fromPath(params.reads)
+        trim_ch   = Channel.fromFilePairs(params.reads, flat:true)
+
+        // FastQC on the raw reads
+        fastqc_ch | FastQC
+
+        // Trim with Fastp
+        trimmed_output_ch = trim_ch | Fastp
+
+        // A channel of the individual trimmed read files
+        trimmed_reads_ch = trimmed_output_ch
+            .map { sample_id, r1, r2 -> [r1, r2] }
+            .flatten()
+
+        // Read-length distribution over all trimmed reads
+        trimmed_reads_ch.collect() | ReadLenDist
+
+        // FastQC on the trimmed reads
+        trimmed_reads_ch | FastQC_Trimmed
+    }
+    ```
+    {:.copy-code}
+
+  * **Run the script:**
+
+    ```bash
+    nextflow run pipelines/11_add_fastqc.nf
+    ls 05_illuminaQC_trimmed/
+    ```
+    {:.copy-code}
+
+
+#### What to expect
+A new `05_illuminaQC_trimmed/` directory with FastQC reports for the trimmed reads, alongside the raw-read reports in `02_illuminaQC/`.
+
+#### Reading the output
+Compare a raw report in `02_illuminaQC/` with its trimmed counterpart in `05_illuminaQC_trimmed/` — adapter content and low-quality tails should be reduced after trimming.
+
+> 💡 Copy-pasting an entire process just to give it a different name feels wasteful — and it is. Hold that thought: in the next section you'll meet **modules**, and then a one-line trick that removes the duplication entirely.
+
+---
+
+</li>
+<li class="usa-process-list__item usa-prose" markdown="1">
+
+{:.usa-process-list__heading}
+### Using modules with `include`
+
+**Concept:**   
+As pipelines grow, copying every process into one file becomes hard to maintain. Nextflow lets you move processes into separate **module** files and bring them into the main workflow with the `include` statement. The workflow script then focuses on *how processes connect*, while each module file defines *what a single process does*. This makes code reusable, easier to read, and easier to test.
+
+#### Execution
+  * **Create the module directory and files:**
+
+    ```bash
+    mkdir -p pipelines/modules
+    touch pipelines/modules/fastqc.nf
+    touch pipelines/modules/fastp.nf
+    touch pipelines/modules/readLenDist.nf
+    touch pipelines/12_implementation_include.nf
+    ```
+    {:.copy-code}
+
+  * **Module:** `pipelines/modules/fastqc.nf`
+
+    ```nextflow
+    process FastQC {
+        tag "${sample_id}"
+
+        publishDir params.output_qc, mode: 'copy'
+
+        input:
+        path sample_id
+
+        output:
+        path "*.html", emit: html
+        path "*.zip",  emit: zip
+
+        script:
+        """
+        module load fastqc
+        fastqc -t 2 ${sample_id}
+        """
+    }
+    ```
+    {:.copy-code}
+
+    Naming the outputs with `emit:` lets a later step refer to a specific one — e.g. `FastQC.out.zip` for just the `.zip` reports. We'll use that when we add MultiQC.
+
+  * **Module:** `pipelines/modules/fastp.nf`
+
+    ```nextflow
+    process Fastp {
+        tag "${sample_id}"
+
+        publishDir params.output_trim, mode: 'copy'
+
+        input:
+        tuple val(sample_id), path(read1), path(read2)
+
+        output:
+        tuple val(sample_id), 
+            path("${sample_id}_R1.trimmed.fastq.gz"),
+            path("${sample_id}_R2.trimmed.fastq.gz")
+
+        script:
+        """
+        module load miniconda
+        source activate /90daydata/scinet_workshop2/nextflow_env
+
+        fastp -i ${read1} \
+              -I ${read2} \
+              -o ${sample_id}_R1.trimmed.fastq.gz \
+              -O ${sample_id}_R2.trimmed.fastq.gz
+        """
+    }
+    ```
+    {:.copy-code}
+
+  * **Module:** `pipelines/modules/readLenDist.nf`
+
+    ```nextflow
+    process ReadLenDist {
+        publishDir params.output_rld, mode: 'copy'
+
+        input:
+        path reads
+
+        output:
+        path '*.tsv'
+
+        script:
+        """
+        read_length_dist.py samples_read_len_dist.tsv $reads
+        """
+    }
+    ```
+    {:.copy-code}
+
+  * **Main script:** `pipelines/12_implementation_include.nf`
+
+    ```nextflow
+    #!/usr/bin/env nextflow
+
+    //-- Configurable params
+    params.reads = '01_data/*_{R1,R2}.fastq.gz'
+    params.output_qc = '02_illuminaQC'
+    params.output_trim = '03_trimmed'
+    params.trimmed_reads = '03_trimmed/*fastq.gz'
+    params.output_rld = '04_read_len_dist'
+
+    include { FastQC } from './modules/fastqc.nf'
+    include { Fastp } from './modules/fastp.nf'
+    include { ReadLenDist } from './modules/readLenDist.nf'
+
+    workflow {
+        fastqc_ch = Channel.fromPath(params.reads)
+        // fastqc_ch.view()
+        trim_ch = Channel.fromFilePairs(params.reads, flat:true)
+        // trim_ch.view()
+
+        fastqc_ch | FastQC
+        trimmed_output_ch = trim_ch | Fastp 
+
+        trimmed_output_ch
+            .map { sample_id, r1, r2 -> [r1, r2] }
+            // .flatten()
+            .collect()
+            // .view()
+            | ReadLenDist
+    }
+    ```
+    {:.copy-code}
+
+  * **Run the script:**
+
+    ```bash
+    nextflow run pipelines/12_implementation_include.nf
+    ls 02_illuminaQC/ 03_trimmed/ 04_read_len_dist/
+    ```
+    {:.copy-code}
+
+
+#### What to expect
+The same outputs as the full pipeline (QC reports, trimmed reads, and one combined `samples_read_len_dist.tsv`), but the main script is much shorter and each process lives in its own reusable module file.
+
+#### Your turn
+You don't always need a whole new file to reuse a process. Import the same module under a second name with an **alias**:
+
+```nextflow
+include { FastQC as FastQC_Trimmed } from './modules/fastqc.nf'
+```
+
+Add that line to `12_implementation_include.nf` and call `FastQC_Trimmed` on the trimmed reads — no new process, no copy-paste. (Remember writing `FastQC_Trimmed` by hand a section ago? This is the payoff.) Notice *where* its reports get published, since the module hard-codes `publishDir params.output_qc` — we'll come back to that with MultiQC.
+
+---
+</li>
+<li class="usa-process-list__item usa-prose" markdown="1">
+
+{:.usa-process-list__heading}
+### Aggregating reports with MultiQC
+
+**Concept:**   
+Remember writing a whole second process, `FastQC_Trimmed`, just to QC the trimmed reads? Now that our processes live in modules, we can reuse `FastQC` under a new name with an **alias** — no duplicate process needed. We then feed every FastQC `.zip` report into `MultiQC`, which merges them into a single interactive HTML summary of raw *and* trimmed quality.
+
+#### Execution
+  * **Create the new module and main script:**
+
+    ```bash
+    touch pipelines/modules/multiqc.nf
+    touch pipelines/13_implementation_multiqc.nf
+    ```
+    {:.copy-code}
+
+  * **Module:** `pipelines/modules/multiqc.nf`
+
+    ```nextflow
+    process MultiQC {
+        publishDir params.output_multiqc, mode: 'copy'
+
+        input:
+        path '*'
+
+        output:
+        path '*multiqc_report.html'
+        path '*multiqc_data'
+
+        script:
+        """
+        module load multiqc
+
+        multiqc .
+        """
+    }
+    ```
+    {:.copy-code}
+
+  * **Main script:** `pipelines/13_implementation_multiqc.nf`
+
+    ```nextflow
+    #!/usr/bin/env nextflow
+
+    //-- Configurable params
+    params.reads = '01_data/*_{R1,R2}.fastq.gz'
+    params.output_qc = '02_illuminaQC'
+    params.output_trim = '03_trimmed'
+    params.output_rld = '04_read_len_dist'
+    params.output_multiqc = '06_multiqc'
+
+    include { FastQC } from './modules/fastqc.nf'
+    include { FastQC as FastQC_Trimmed } from './modules/fastqc.nf'
+    include { Fastp } from './modules/fastp.nf'
+    include { ReadLenDist } from './modules/readLenDist.nf'
+    include { MultiQC } from './modules/multiqc.nf'
+
+    workflow {
+        fastqc_ch = Channel.fromPath(params.reads)
+        // fastqc_ch.view()
+        trim_ch = Channel.fromFilePairs(params.reads, flat:true)
+        // trim_ch.view()
+
+        // Run FastQC on raw reads
+        fastqc_ch | FastQC
+        
+        // Trim reads with Fastp
+        trimmed_output_ch = trim_ch | Fastp 
+
+        // Run ReadLenDist on trimmed reads
+        trimmed_output_ch
+            .map { sample_id, r1, r2 -> [r1, r2] }
+            // .flatten()
+            .collect()
+            // .view()
+            | ReadLenDist
+
+        // Run FastQC on trimmed reads
+        trimmed_output_ch
+            .map { sample_id, r1, r2 -> [r1, r2] }
+            .flatten()
+            | FastQC_Trimmed
+
+        // Aggregate all FastQC .zip reports with MultiQC
+        FastQC.out.zip
+            .mix(FastQC_Trimmed.out.zip)
+            .collect()
+            | MultiQC
+    }
+    ```
+    {:.copy-code}
+
+  * **Run the script:**
+
+    ```bash
+    nextflow run pipelines/13_implementation_multiqc.nf
+    ls 06_multiqc/
+    ```
+    {:.copy-code}
+
+
+#### What to expect
+A `06_multiqc/` directory containing `multiqc_report.html`, which combines the raw and trimmed FastQC results in one report. Because `FastQC_Trimmed` is the *same* module as `FastQC`, both sets of reports are published to `params.output_qc` (`02_illuminaQC/`); their filenames differ (`..._fastqc` vs `...trimmed_fastqc`), so nothing is overwritten.
+
+#### Reading the output
+Open `06_multiqc/multiqc_report.html`. Each sample appears twice — once for its raw reads and once for its trimmed reads — so you can watch adapter content and quality tails improve side by side.
+
+#### Your turn
+The aliased `FastQC_Trimmed` publishes into `02_illuminaQC/` next to the raw reports. Parameterize the `FastQC` module so the alias can send trimmed reports to their own directory (e.g. `05_illuminaQC_trimmed/`) — hint: give the module a `val outdir` input and use it in `publishDir`.
+
+---
 </li>
 </ol>
 
 ### Where to go next?
 
-- Split processes into reusable **modules** (`include { FastQC } from './modules/fastqc.nf'`).
-- Adopt the **`tuple val(meta), path(reads)`** metadata-map convention used by [nf-core](https://nf-co.re/).
 - Explore community pipelines at [nf-core](https://nf-co.re/) before writing your own from scratch.
 - Work through the official [Nextflow Training](https://training.nextflow.io/).
 
