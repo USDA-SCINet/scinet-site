@@ -31,3 +31,25 @@ This hands-on workshop introduces Snakemake, a workflow management system that b
 We will start with simple examples and build to a real-world bioinformatics pipeline — learning how Snakemake's rule-based, 
 file-driven approach automatically determines job dependencies, handles parallel execution, 
 and integrates seamlessly with Python scripts and virtual environments to produce publication-ready outputs.<!--excerpt-->
+
+### What You'll Learn
+
+By the end of this workshop, you'll be able to:
+- Write Snakemake pipelines from scratch
+- Process multiple files in parallel automatically using wildcards
+- Integrate any command-line tool into workflows
+- Make pipelines configurable and user-friendly
+- Debug and troubleshoot pipeline issues
+- Build production-ready analysis workflows
+
+### Who This Workshop Is For
+
+This workshop is designed for researchers and students from **any computational field**:
+- Bioinformatics and genomics
+- Data science and machine learning
+- Image processing and computer vision
+- Climate modeling and simulations
+- Text analysis and NLP
+- Any domain requiring batch data processing
+
+**No prior Snakemake experience required!** Basic command-line knowledge is helpful.
