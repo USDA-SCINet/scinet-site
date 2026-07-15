@@ -71,7 +71,8 @@ For more information on login procedures for web-based SCINet access, see the [S
 * Unpack the workshop materials into your working directory. This one archive contains everything you need: the read data (`01_data/`), the pipeline scripts (`pipelines/`), the config files, and a ready-to-use Snakemake environment (`snakemake1_env/`).
 
   ```bash
-  tar -xzf /project/scinet_workshop2/foundations_bioinf_2026/snakemake_material.tar.gz
+  cp -a /project/scinet_workshop2/foundations_bioinf_2026/snakemake_data/snakemake_material.tar.gz .
+  tar -xzf snakemake_material.tar.gz
   ls
   ```
   {:.copy-code}
@@ -79,12 +80,11 @@ For more information on login procedures for web-based SCINet access, see the [S
   You should see the extracted contents — something like:
 
   ```
-  01_data/  config.yaml  hello_config.yaml  pipelines/  snakemake1_env/
+  01_data  test_genome  config.yaml  hello_config.yaml  pipelines  snakemake1_env
   ```
 
   Inside `01_data/` are five paired-end samples (`bio_sample_01`–`bio_sample_05`, each with an
-  `_R1`/`_R2` FASTQ file) — we use these reads on Day 1, and pick up a reference genome for variant
-  calling on Day 2.
+  `_R1`/`_R2` FASTQ file).
 
 </li>
 <li class="usa-process-list__item usa-prose" markdown="1">
@@ -119,7 +119,7 @@ snakemake --version
 ```
 {:.copy-code}
 
-`snakemake --version` should print a version number (e.g. `8.x`). You're ready to go.
+`snakemake --version` should print a version number (e.g. `8.18.2`). You're ready to go.
 
 </li>
 </ol>
@@ -136,7 +136,7 @@ By the end of this workshop, you will be able to:
 
 1. **Write Snakemake pipelines from scratch** — defining rules with inputs, outputs, and shell commands, and letting Snakemake infer how they connect.
 2. **Process many files in parallel automatically** — using wildcards and `expand()` so one rule scales to any number of samples, with no hand-written loops.
-3. **Make pipelines configurable, portable, and reproducible** — using config files, profiles, resources, and software environments (modules/conda/containers) so a pipeline runs anywhere.
+3. **Make pipelines configurable, portable, and reproducible** — using config files, profiles, resources, and software environments (modules/conda) so a pipeline runs anywhere.
 
 And, threaded through all of it, one meta-skill:
 
@@ -144,17 +144,16 @@ And, threaded through all of it, one meta-skill:
 
 ### What You'll Build
 
-Across two half-days you'll build two pipelines. **Day 1** is a read-QC pipeline (the same tools
-you met in the Nextflow workshop, so we move fast and focus on *how Snakemake thinks*). **Day 2**
-picks up where Nextflow's alignment left off and turns aligned reads into called variants.
+Across two half-days you'll build two pipelines. We start with a read-QC pipeline (the same tools
+you used in the Nextflow workshop, so we move fast and focus on *how Snakemake thinks*) and then picks up where Nextflow's alignment left off and turns aligned reads into called variants.
 
 ```
-Day 1 — Quality control
+Quality control
   Raw reads ──► FastQC (quality control)
             └─► Fastp (trimming) ──► ReadLenDist (read-length table)
                                  └─► FastQC on trimmed reads ──► MultiQC
 
-Day 2 — Variant calling  (picks up from Day 1's trimmed reads, going past where Nextflow stopped)
+Variant calling  (picks up from trimmed reads, going past where Nextflow stopped)
   Reference ─────┐
                  ├─► bwa mem | samtools sort ──► samtools index ──► bcftools call ──► VCF
   Trimmed reads ─┘                          └─► samtools flagstat / bcftools stats ──► MultiQC
@@ -164,13 +163,12 @@ Day 2 — Variant calling  (picks up from Day 1's trimmed reads, going past wher
 
 ### How this workshop works: the Target-First Lab
 
-Picture this: a colleague has left the group and handed you a folder of results — a table here, a
-VCF there — with **no pipeline and no notes**. To reproduce or extend the work, you have to reason
+Picture this: You have a folder of results - a few tables, VCF files, etc. - with **no pipeline and no notes**. To reproduce or extend the work, you have to reason
 from each result *backward* to the steps that produced it: *what had to exist for this file to
 exist?* That's not just a recovery skill — it is exactly how Snakemake thinks, and it's how we'll
-work all day. We call it the **Target-First Lab**.
+work. We call it the **Target-First Lab**.
 
-Most tutorials — including the Nextflow one — build **forward**: write step one, then step two,
+Most tutorials build **forward**: write step one, then step two,
 wiring outputs into inputs until a result appears at the end. Snakemake runs the other way. You
 name the **target** — the file you want — and the engine reasons **backward** to everything it
 depends on, stopping when it reaches files already on disk. That dependency chain, walked in
@@ -182,13 +180,13 @@ So every section today follows the same seven-beat rhythm:
 ```
 The Target-First Lab — every section, same seven beats
 
-  ① TARGET         the output file on screen — nothing else
-  ② INTERROGATE    "what does this need?"  →  draw the DAG by hand
-  ③ REVEAL         snakemake -n --reason   →  the machine asks your questions
+  ① TARGET         the output file 
+  ② INTERROGATE    "what does this need?" 
+  ③ REVEAL         snakemake -n |grep "reason:" 
   ④ PREDICT        commit out loud: how many jobs? which first? what runs in parallel?
-  ⑤ IMPLEMENT      each box on the board becomes one rule (its output + its inputs)
+  ⑤ IMPLEMENT      each process becomes one rule (its output + its inputs)
   ⑥ RUN & VERIFY   run it — did your prediction hold?
-  ⑦ 🔨 BREAK THE DAG    delete / touch / rename one file, dry-run, read the diagnosis
+  ⑦ BREAK THE DAG    delete / touch / rename one file, dry-run, read the diagnosis
 ```
 
 Two things about that rhythm:
@@ -246,15 +244,14 @@ Forgetting to double the braces is one of the most common Snakemake errors — S
 mirror of Nextflow's `$var` vs `\$var` gotcha.)*
 
 > 💡 **Naming tip for your own pipelines:** name a rule after *what it does* (`align_reads`, not
-> `step3`). Future-you will thank you.
+> `step3`). 
 
 ---
 
-# Day 1 — The pull model, on familiar ground
+# The pull model, on familiar ground
 
-**Goal for Day 1:** learn the Snakemake building blocks — rules, outputs, inputs, config, wildcards,
-and the DAG — on the read-QC pipeline you already met in Nextflow. Because the tools are familiar,
-we can spend our attention on *how Snakemake thinks*.
+**Goal:** learn the Snakemake building blocks — rules, outputs, inputs, config, wildcards,
+and the DAG. Since we are implementing a known pipeline, FastQC -> Fastp -> ReadLenDist, initially, we can spend our attention on *how Snakemake thinks*.
 
 <ol class="usa-process-list">
 <li class="usa-process-list__item usa-prose" markdown="1">
@@ -262,11 +259,7 @@ we can spend our attention on *how Snakemake thinks*.
 {:.usa-process-list__heading}
 ### The first case: start at the answer
 
-*This is the one time we walk all seven beats slowly, at the whiteboard, before touching a keyboard.
-Tomorrow you'll do this in two minutes.*
-
-**① Target.** Here is the one file the QC pipeline exists to produce. It's on the screen; VS Code
-stays closed.
+**① Target.** Here is the one file the QC pipeline exists to produce. 
 
 ```
 04_read_len_dist/samples_read_len_dist.tsv
@@ -278,8 +271,8 @@ length   count    file
 ...
 ```
 
-**② Interrogate.** Don't think about tools yet. With the person next to you, ask one question — then
-ask it again of every answer:
+**② Interrogate.** Don't think about tools yet. 
+
 
 > **"What has to already exist for this to exist?"**
 
@@ -295,7 +288,7 @@ You just hit bedrock. Walk that chain in reverse and you've drawn the pipeline:
  (found, not made)                          ← what we want
 ```
 
-One more box: **FastQC** produces a quality report. Where does it hang? It needs the **raw reads**
+One more box: **FastQC** produces a quality report. Where does it fit? It needs the **raw reads**
 too — so it branches off the same starting point, independent of trimming:
 
 ```
@@ -311,23 +304,19 @@ Now watch Snakemake do the identical thing. A finished version of this pipeline 
 just let Snakemake *reason* about it, running nothing:
 
 ```bash
-snakemake -n --reason -s pipelines/10_implementation_full.smk
+snakemake -n -s pipelines/10_implementation_full.smk
 ```
 {:.copy-code}
 
 For every job it lists, Snakemake prints a `reason:` — *"Missing output files…"*, *"Input files
 updated…"*. That list **is** your interrogation, run by a machine. *(Recent Snakemake prints the
-reason by default in a dry run; `--reason` guarantees it.)* Now have it draw the graph:
+reason by default in a dry run; `--reason` guaranteed it in previous versions.)* Now have it draw the graph:
 
 ```bash
 snakemake --dag -s pipelines/10_implementation_full.smk | dot -Tsvg > dag.svg
 # open dag.svg in the VS Code file browser
-# (needs graphviz — run `module load graphviz` first if `dot` is not found)
 ```
 {:.copy-code}
-
-Put your whiteboard next to `dag.svg`. **This is the moment:** that is not a diagram we drew for
-you — it's Snakemake showing you the *same reasoning you just did by hand.*
 
 **④ Predict.** Before we build anything, count the raw reads and commit to numbers:
 
@@ -336,7 +325,7 @@ ls 01_data/*.fastq.gz | wc -l
 ```
 {:.copy-code}
 
-Say it out loud: how many **FastQC** jobs will run (one per file)? How many **Fastp** jobs (one per
+How many **FastQC** jobs will run (one per file)? How many **Fastp** jobs (one per
 *pair*)? Which rule starts first, and what runs at the same time? Hold that guess — we'll check it
 against real runs as we fill in the boxes.
 
@@ -346,7 +335,7 @@ watch the dependency logic bite (⑦).
 
 > ↔ **Nextflow mirror.** Same DAG you'd have built with channels — but there you *wired* it forward
 > and got parallelism by splitting a channel. Here you just noticed two things need the same input.
-> You didn't wire the parallelism; you *confessed* it.
+> You didn't explicitly code the parallelism; Snakemake discovered it automatically from the shared dependencies you declared.
 
 </li>
 <li class="usa-process-list__item usa-prose" markdown="1">
@@ -355,11 +344,11 @@ watch the dependency logic bite (⑦).
 ### Syntax unlocks: the shape of a rule
 
 The Target-First rhythm needs one thing before we can play it on real data: the syntax of a rule.
-These five 60-second **unlocks** give you exactly that — they aren't the story, they're the
+These five 60-second **unlocks** give you exactly that — they are not the story, they're the
 vocabulary. If you did the Nextflow hello-world series, this is the same five ideas in Snakemake's
 spelling. Create each file, run it, watch what changes, move on.
 
-The shape never varies, and it's the shape you said out loud all through the interrogation:
+The shape never varies:
 
 > **A rule says: here is the file I make, and here are the files I need.**
 
@@ -414,7 +403,7 @@ snakemake -c1 --snakefile pipelines/02_hello_redirect.smk   # run again → "Not
 {:.copy-code}
 
 The second run does nothing because `result.txt` already exists and is up to date — the incremental
-engine we'll exploit all day.
+engine we'll use all day.
 
 > ↔ **Nextflow mirror.** `rule all` plays the role of the final consumer of a channel; the declared
 > output path *is* the `path` output — but there's no `publishDir`, because a Snakemake output simply
