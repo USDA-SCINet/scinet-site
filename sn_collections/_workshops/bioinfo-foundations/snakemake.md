@@ -33,10 +33,10 @@ file-driven approach automatically determines job dependencies, handles parallel
 and integrates seamlessly with Python scripts and virtual environments to produce publication-ready outputs.<!--excerpt-->
 
 **No prior Snakemake experience is required.** Basic command-line familiarity (navigating
-directories, running a program, editing a file) is assumed. If you attended the **Nextflow**
+directories, running a program, editing a file) is assumed. If you attended the Nextflow
 workshop in this series, you'll recognize the tools and the data — this workshop deliberately
 mirrors it, so you can feel exactly how the two engines differ. Where it helps, we call out the
-Nextflow equivalent in a **↔ Nextflow mirror** note.
+Nextflow equivalent in a "Nextflow mirror" note.
 
 ---
 
@@ -137,10 +137,8 @@ By the end of this workshop, you will be able to:
 1. **Write Snakemake pipelines from scratch** — defining rules with inputs, outputs, and shell commands, and letting Snakemake infer how they connect.
 2. **Process many files in parallel automatically** — using wildcards and `expand()` so one rule scales to any number of samples, with no hand-written loops.
 3. **Make pipelines configurable, portable, and reproducible** — using config files, profiles, resources, and software environments (modules/conda) so a pipeline runs anywhere.
-
-And, threaded through all of it, one meta-skill:
-
-4. **Reason backward from a target.** Given a result you want, work out the chain of files it depends on — which is exactly how Snakemake builds and runs a pipeline.
+4. And, threaded through all of it, one meta-skill:  
+   **Reason backward from a target.** Given a result you want, work out the chain of files it depends on — which is exactly how Snakemake builds and runs a pipeline.
 
 ### What You'll Build
 
@@ -163,16 +161,16 @@ Variant calling  (picks up from trimmed reads, going past where Nextflow stopped
 
 ### How this workshop works: the Target-First Lab
 
-Picture this: You have a folder of results - a few tables, VCF files, etc. - with **no pipeline and no notes**. To reproduce or extend the work, you have to reason
-from each result *backward* to the steps that produced it: *what had to exist for this file to
-exist?* That's not just a recovery skill — it is exactly how Snakemake thinks, and it's how we'll
+Picture this: You have a folder of results - a few tables, VCF files, etc. - with no pipeline and no notes. To reproduce or extend the work, you have to reason
+from each result *backward* to the steps that produced it: *what had to exist for this file to exist?* 
+That's not just a recovery skill — it is exactly how Snakemake thinks, and it's how we'll
 work. We call it the **Target-First Lab**.
 
-Most tutorials build **forward**: write step one, then step two,
+Most tutorials build forward: write step one, then step two,
 wiring outputs into inputs until a result appears at the end. Snakemake runs the other way. You
-name the **target** — the file you want — and the engine reasons **backward** to everything it
+name the target — the file you want — and the engine reasons *backward* to everything it
 depends on, stopping when it reaches files already on disk. That dependency chain, walked in
-reverse, *is* the pipeline. You never specify the run order; the order is a *consequence* of which
+reverse, *is* the pipeline. You never specify the run order; the order is a consequence of which
 file needs which.
 
 So every section today follows the same seven-beat rhythm:
@@ -195,14 +193,12 @@ Two things about that rhythm:
   whiteboard. By mid-morning you're interrogating in pairs in under a minute; by Day 2 it's a
   reflex. The scaffolding disappears as your reasoning speeds up — so don't expect every section
   below to spell out all seven beats. Early ones do; later ones assume you've got it.
-- **🔨 Break the DAG is where it gets real.** Once you can draw a DAG, the way you truly *understand*
+- **Break the DAG is where it gets real.** Once you can draw a DAG, the way you truly *understand*
   it is by breaking it — delete an input, touch a file, rename an output, then dry-run and read what
   Snakemake says it can (and can't) still make. Reading Snakemake's dependency logic out loud is the
   single most useful thing you'll take back to your own work.
 
-> ↔ **Nextflow mirror.** In Nextflow you *pushed* data forward through channels and thought about
-> the final process last. In Snakemake you name the final file first and let the engine *pull* the
-> pipeline into existence behind it. Same DAG — opposite direction of travel.
+> **Nextflow mirror.** In Nextflow you *pushed* data forward through channels and thought about the final process last. In Snakemake you name the final file first and let the engine *pull* the pipeline into existence behind it. Same DAG — opposite direction of travel.
 
 ---
 
@@ -220,22 +216,20 @@ of thing it is.
 | **Output directories**     | numbered prefix so results sort in pipeline order | `01_data/`, `02_illuminaQC/`, `03_trimmed/`, `04_read_len_dist/`   |
 | **Paired-end read files**  | shared sample name + `_R1`/`_R2` token            | `bio_sample_01_R1.fastq.gz`, `bio_sample_01_R2.fastq.gz`           |" %}
 
-> 💡 The numbered output directories (`01_…`, `02_…`) are *our* workshop convention, not a Snakemake
-> rule — they keep results in pipeline order. Rule and wildcard casing, however, are conventions
-> worth following.
+> The numbered output directories (`01_…`, `02_…`) are *our* workshop convention, not a Snakemake rule — they keep results in pipeline order. Rule and wildcard casing, however, are conventions worth following.
 
-**The one gotcha: `{ }` is Snakemake, `{{ }}` is a literal brace for bash.**
+**The one gotcha: `{ }` is Snakemake, `{% raw %}{{ }}{% endraw %}` is a literal brace for bash.**
 
 Inside a rule's `shell:` block, `{input}`, `{output}`, `{params}`, and `{wildcards.x}` are
-**Snakemake** placeholders — substituted *before* the command runs. If you need a **literal** brace
-for the shell (bash `${VAR}` expansion, an `awk '{print}'` body, etc.), you must **double** it as
-`{{ }}`:
+**Snakemake** placeholders — substituted *before* the command runs. If you need a literal brace
+for the shell (bash `${VAR}` expansion, an `awk '{print}'` body, etc.), you must double it as
+`{% raw %}{{ }}{% endraw %}`:
 
 ```python
 shell:
     """
-    awk '{{print $1}}' {input} > {output}   # {{ }} → literal braces for awk
-    echo "running on ${{HOSTNAME}}"          # {{ }} → literal ${ } for bash
+    awk '{% raw %}{{print $1}}{% endraw %}' {input} > {output}   # {% raw %}{{ }}{% endraw %} → literal braces for awk
+    echo "running on ${% raw %}{{HOSTNAME}}{% endraw %}"          # {% raw %}{{ }}{% endraw %} → literal ${ } for bash
     """
 ```
 
@@ -248,18 +242,20 @@ mirror of Nextflow's `$var` vs `\$var` gotcha.)*
 
 ---
 
-# The pull model, on familiar ground
+## The pull model, on familiar ground
 
 **Goal:** learn the Snakemake building blocks — rules, outputs, inputs, config, wildcards,
 and the DAG. Since we are implementing a known pipeline, FastQC -> Fastp -> ReadLenDist, initially, we can spend our attention on *how Snakemake thinks*.
+
+### The first case: start at the answer
 
 <ol class="usa-process-list">
 <li class="usa-process-list__item usa-prose" markdown="1">
 
 {:.usa-process-list__heading}
-### The first case: start at the answer
+#### Target
 
-**① Target.** Here is the one file the QC pipeline exists to produce. 
+Here is the one file the QC pipeline exists to produce. 
 
 ```
 04_read_len_dist/samples_read_len_dist.tsv
@@ -271,10 +267,15 @@ length   count    file
 ...
 ```
 
-**② Interrogate.** Don't think about tools yet. 
+</li>
+<li class="usa-process-list__item usa-prose" markdown="1">
 
+{:.usa-process-list__heading}
+#### Interrogate
 
-> **"What has to already exist for this to exist?"**
+Don't think about tools yet. 
+
+**"What has to already exist for this to exist?"**
 
 - The table needs… the **trimmed reads** (and a step that counts lengths).
 - The trimmed reads need… the **raw reads** (and a step that trims — that's Fastp).
@@ -298,7 +299,14 @@ too — so it branches off the same starting point, independent of trimming:
  (found)                     03_trimmed/           04_read_len_dist/
 ```
 
-**③ Reveal — the machine asks your questions.** You drew that from a target and a single question.
+</li>
+<li class="usa-process-list__item usa-prose" markdown="1">
+
+{:.usa-process-list__heading}
+#### Reveal — the machine asks your questions
+
+You drew that from a target and a single question.
+
 Now watch Snakemake do the identical thing. A finished version of this pipeline already ships in
 `pipelines/10_implementation_full.smk` — we'll build our own from scratch over the day, but for now
 just let Snakemake *reason* about it, running nothing:
@@ -310,7 +318,9 @@ snakemake -n -s pipelines/10_implementation_full.smk
 
 For every job it lists, Snakemake prints a `reason:` — *"Missing output files…"*, *"Input files
 updated…"*. That list **is** your interrogation, run by a machine. *(Recent Snakemake prints the
-reason by default in a dry run; `--reason` guaranteed it in previous versions.)* Now have it draw the graph:
+reason by default in a dry run; `--reason` guaranteed it in previous versions.)* 
+
+Now have it draw the graph:
 
 ```bash
 snakemake --dag -s pipelines/10_implementation_full.smk | dot -Tsvg > dag.svg
@@ -318,7 +328,13 @@ snakemake --dag -s pipelines/10_implementation_full.smk | dot -Tsvg > dag.svg
 ```
 {:.copy-code}
 
-**④ Predict.** Before we build anything, count the raw reads and commit to numbers:
+</li>
+<li class="usa-process-list__item usa-prose" markdown="1">
+
+{:.usa-process-list__heading}
+#### Predict  
+
+Before we build anything, count the raw reads and commit to numbers:
 
 ```bash
 ls 01_data/*.fastq.gz | wc -l
@@ -329,30 +345,42 @@ How many **FastQC** jobs will run (one per file)? How many **Fastp** jobs (one p
 *pair*)? Which rule starts first, and what runs at the same time? Hold that guess — we'll check it
 against real runs as we fill in the boxes.
 
-**⑤–⑦ come next.** For the rest of Day 1 we *build* this pipeline ourselves. Each box on the board
-becomes one **rule** (⑤); we run and check our predictions (⑥); and we deliberately break it to
-watch the dependency logic bite (⑦).
-
-> ↔ **Nextflow mirror.** Same DAG you'd have built with channels — but there you *wired* it forward
-> and got parallelism by splitting a channel. Here you just noticed two things need the same input.
-> You didn't explicitly code the parallelism; Snakemake discovered it automatically from the shared dependencies you declared.
-
 </li>
 <li class="usa-process-list__item usa-prose" markdown="1">
 
 {:.usa-process-list__heading}
+#### Build the pipeline
+
+For the rest of Day 1 we *build* this pipeline ourselves:  
+1. Each box on the board becomes one **rule**.  
+1. We run and check our predictions.  
+1. We deliberately break it to watch the dependency logic bite.
+
+> **Nextflow mirror.** Same DAG you'd have built with channels — but there you *wired* it forward
+> and got parallelism by splitting a channel. Here you just noticed two things need the same input.
+> You didn't explicitly code the parallelism; Snakemake discovered it automatically from the shared dependencies you declared.
+
+</li>
+</ol>
+
 ### Syntax unlocks: the shape of a rule
 
 The Target-First rhythm needs one thing before we can play it on real data: the syntax of a rule.
-These five 60-second **unlocks** give you exactly that — they are not the story, they're the
+These five 60-second unlocks give you exactly that — they are not the story, they're the
 vocabulary. If you did the Nextflow hello-world series, this is the same five ideas in Snakemake's
 spelling. Create each file, run it, watch what changes, move on.
 
 The shape never varies:
 
-> **A rule says: here is the file I make, and here are the files I need.**
+**A rule says: here is the file I make, and here are the files I need.**
 
-#### 1 — A rule that runs a command  (`01_hello_screen.smk`)
+<ol class="usa-process-list">
+<li class="usa-process-list__item usa-prose" markdown="1">
+
+{:.usa-process-list__heading}
+#### A rule that runs a command  
+(`01_hello_screen.smk`)
+{:.subheader}
 
 This rule just prints to the screen; it has no `output:`, so it makes no file.
 
@@ -374,9 +402,15 @@ snakemake -c1 --snakefile pipelines/01_hello_screen.smk
 The first rule in a file is the **default target**, so `hello` runs — you'll see the greeting print
 and no file appear.
 
-#### 2 — Track an output file  (`02_hello_redirect.smk`)
+</li>
+<li class="usa-process-list__item usa-prose" markdown="1">
 
-Add an `output:` and Snakemake starts *tracking a file*; add a `rule all` that asks for it — that's
+{:.usa-process-list__heading}
+#### Track an output file  
+(`02_hello_redirect.smk`)
+{:.subheader}
+
+Add an `output:` and Snakemake starts tracking a file; add a `rule all` that asks for it — that's
 the **target**.
 
 ```python
@@ -405,11 +439,17 @@ snakemake -c1 --snakefile pipelines/02_hello_redirect.smk   # run again → "Not
 The second run does nothing because `result.txt` already exists and is up to date — the incremental
 engine we'll use all day.
 
-> ↔ **Nextflow mirror.** `rule all` plays the role of the final consumer of a channel; the declared
+> **Nextflow mirror.** `rule all` plays the role of the final consumer of a channel; the declared
 > output path *is* the `path` output — but there's no `publishDir`, because a Snakemake output simply
 > **is** the path you name.
 
-#### 3 — Organize outputs into a directory  (`03_hello_outputdir.smk`)
+</li>
+<li class="usa-process-list__item usa-prose" markdown="1">
+
+{:.usa-process-list__heading}
+#### Organize outputs into a directory  
+(`03_hello_outputdir.smk`)
+{:.subheader}
 
 ```python
 # Script 03: Publishing to a directory
@@ -428,7 +468,13 @@ rule all:
 ```
 {:.copy-code}
 
-#### 4 — Take an input  (`04_hello_input.smk`)
+</li>
+<li class="usa-process-list__item usa-prose" markdown="1">
+
+{:.usa-process-list__heading}
+#### Take an input  
+(`04_hello_input.smk`)
+{:.subheader}
 
 An `input:` block makes a rule depend on a file; named inputs are reached as `{input.name}`.
 
@@ -458,7 +504,13 @@ cat output/result.txt
 ```
 {:.copy-code}
 
-#### 5 — Make it configurable  (`05_hello_default.smk` + `hello_config.yaml`)
+</li>
+<li class="usa-process-list__item usa-prose" markdown="1">
+
+{:.usa-process-list__heading}
+#### Make it configurable   
+(`05_hello_default.smk` + `hello_config.yaml`)
+{:.subheader}
 
 `configfile:` loads a YAML file into a `config` dictionary; `config.get("key", default)` reads a
 value with a fallback. Override any key with `--config key=value`.
@@ -500,5 +552,8 @@ cat output/result.txt
 
 **Priority:** command line > config file > in-script default.
 
-> ↔ **Nextflow mirror.** `hello_config.yaml` + `config[...]` is Snakemake's `params` + `nextflow.config`;
+> **Nextflow mirror.** `hello_config.yaml` + `config[...]` is Snakemake's `params` + `nextflow.config`;
 > the override precedence is the same idea you saw with `--welcome` on the Nextflow command line.
+
+</li>
+</ol>
