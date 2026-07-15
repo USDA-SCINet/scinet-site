@@ -7,7 +7,7 @@
     "start": "node _scripts/infolog.js && bundle exec jekyll serve",
     "dev": "node _scripts/infolog.js && bundle exec jekyll serve & npx gulp watch",
     "update": "npm install && bundle install",
-    "update-all":"npm update && bundle update && npx gulp update",
+    "update-all": "npm update && bundle update && npx gulp update",
     "start-detached": "node _scripts/infolog.js && bundle exec jekyll serve --detach",
     "setup-jekyll": "bundle",
     "watch-start": "npm run dev",
