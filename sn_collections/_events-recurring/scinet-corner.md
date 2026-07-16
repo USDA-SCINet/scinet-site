@@ -19,6 +19,10 @@ archive-label: SCINet Corner Recordings
 
 sessions:
   - session:
+    title: "Managing storage quotas on SCINet"
+    date: 2026-07-30
+    time: 1-2 pm ET
+  - session:
     title: "Working with Slurm, part 2: monitoring and analyzing Slurm jobs"
     date: 2026-05-28
     time: 1-2 pm ET
