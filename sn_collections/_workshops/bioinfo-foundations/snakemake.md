@@ -68,7 +68,7 @@ For more information on login procedures for web-based SCINet access, see the [S
   ```
   {:.copy-code}
 
-* Unpack the workshop materials into your working directory. This one archive contains everything you need: the read data (`01_data/`), the pipeline scripts (`pipelines/`), the config files, and a ready-to-use Snakemake environment (`snakemake1_env/`).
+* Unpack the workshop materials into your working directory. This one archive contains everything you need: the read data (`01_data/`), the pipeline scripts (`pipelines/`), and the config files.
 
   ```bash
   cp -a /project/scinet_workshop2/foundations_bioinf_2026/snakemake_data/snakemake_material.tar.gz .
@@ -80,7 +80,7 @@ For more information on login procedures for web-based SCINet access, see the [S
   You should see the extracted contents — something like:
 
   ```
-  01_data  test_genome  config.yaml  hello_config.yaml  pipelines  snakemake1_env
+  01_data  test_genome  config.yaml  hello_config.yaml  pipelines
   ```
 
   Inside `01_data/` are five paired-end samples (`bio_sample_01`–`bio_sample_05`, each with an
@@ -114,12 +114,13 @@ The materials you just unpacked include a ready-to-use Python environment with S
 installed. Activate it — you'll do this once in each new shell (including the terminal inside VS Code):
 
 ```bash
-source snakemake1_env/bin/activate
+module load miniconda
+mamba activate /project/scinet_workshop2/foundations_bioinf_2026/snakemake_data/envs/snakemake
 snakemake --version
 ```
 {:.copy-code}
 
-`snakemake --version` should print a version number (e.g. `8.18.2`). You're ready to go.
+`snakemake --version` should print a version number (e.g. `9.23.1`). You're ready to go.
 
 </li>
 </ol>
@@ -261,9 +262,9 @@ Here is the one file the QC pipeline exists to produce.
 04_read_len_dist/samples_read_len_dist.tsv
 
 length   count    file
-148      10234    bio_sample_01_R1.trimmed.fastq.gz
-149      9871     bio_sample_01_R1.trimmed.fastq.gz
-150      500122   bio_sample_01_R1.trimmed.fastq.gz
+20      1       03_trimmed/bio_sample_01_R1.trimmed.fastq.gz
+26      1       03_trimmed/bio_sample_01_R1.trimmed.fastq.gz
+30      1       03_trimmed/bio_sample_01_R1.trimmed.fastq.gz
 ...
 ```
 
@@ -554,6 +555,636 @@ cat output/result.txt
 
 > **Nextflow mirror.** `hello_config.yaml` + `config[...]` is Snakemake's `params` + `nextflow.config`;
 > the override precedence is the same idea you saw with `--welcome` on the Nextflow command line.
+
+#### 🔨 Break the DAG (your first one)
+
+The unlocks are done — now use one to see the incremental engine's logic in the open. Run script `04_hello_input.smk` again, 
+delete the output file, and re-run the script:
+
+```bash
+snakemake -c1 -s pipelines/04_hello_input.smk    # up to date — nothing to do
+rm output/result.txt                             # delete the output Snakemake made
+snakemake -n -s pipelines/04_hello_input.smk     # dry run: what does Snakemake now want to redo?
+```
+{:.copy-code}
+
+Read the `reason:` — the output file is missing, so Snakemake schedules the `hello` rule to
+rebuild it. You just watched a **missing file** drive the whole decision; that's the incremental
+engine in one move. *(This is Snakemake's answer to Nextflow's `-resume` — file existence here,
+content hashes there.)*
+
+💡 **What if you `touch` the output back into existence?**
+
+```bash
+rm output/result.txt
+touch output/result.txt
+snakemake -n -s pipelines/04_hello_input.smk
+```
+{:.copy-code}
+
+The dry run reports *"Nothing to be done (all requested files are present and up to date)"*.
+`touch` creates an empty `output/result.txt`, so the file **exists** and is
+**newer than `welcome.txt`**. Snakemake's decision is based on metadata — existence –
+not on the *contents* of the file. Even though `output/result.txt` is now empty,
+Snakemake trusts that it is up to date. If you ever need to override that trust (for example, an
+output file was corrupted or truncated), use `--forcerun`:
+
+```bash
+snakemake -n -s pipelines/04_hello_input.smk --forcerun hello
+```
+{:.copy-code}
+
+`--forcerun hello` schedules the rule regardless of filesystem state and prints
+`reason: Forced execution`.
+
+</li>
+<li class="usa-process-list__item usa-prose" markdown="1">
+
+{:.usa-process-list__heading}
+#### One rule, every sample: wildcards and `expand()`
+
+Everything so far made **one** file. Real data comes in dozens. In Nextflow you'd drop the files
+into a **channel** and let processes fan out over it. Snakemake has no channel; instead it uses two
+tools that are pure pattern-matching:
+
+- **`glob_wildcards(pattern)`** looks at the files *on disk* and pulls the varying part out into a
+  list. It runs once, at parse time, before any job.
+- **`expand(pattern, name=LIST)`** does the reverse: it stamps that list back into a set of concrete
+  paths — the targets you want built.
+
+Point `glob_wildcards` at the raw reads and print what it found:
+
+```python
+# put this at the top of a scratch file, or paste into the snakefile you're building
+SAMPLES, = glob_wildcards("01_data/{sample}.fastq.gz")
+print(SAMPLES)
+```
+
+```bash
+snakemake -n -s pipelines/06_implementation_fastqc.smk   # the print fires at parse time
+```
+{:.copy-code}
+
+You should see the list of sample names it lifted out of the filenames — one entry per file,
+`{sample}` standing in for everything the `*` would have matched:
+
+```
+['bio_sample_01_R1', 'bio_sample_01_R2', 'bio_sample_02_R1', 'bio_sample_02_R2', ...]
+Building DAG of jobs...
+Nothing to be done (all requested files are present and up to date).
+```
+
+> 💡 The comma in `SAMPLES, =` is not a typo. `glob_wildcards` returns a tuple *of* wildcard lists
+> (one per `{ }` in the pattern); the trailing comma unpacks the single one. Two wildcards →
+> `SAMPLES, MATES = glob_wildcards("01_data/{sample}_{mate}.fastq.gz")`.
+
+Now the other direction — `expand()` turns that list into the concrete targets a `rule all` asks
+for:
+
+```python
+print(expand("02_illuminaQC/{sample}_fastqc.html", sample=SAMPLES))
+# ->  ['02_illuminaQC/bio_sample_01_R1_fastqc.html',
+#      '02_illuminaQC/bio_sample_01_R2_fastqc.html', ...]
+```
+
+Give it two lists and it takes the **cross product** — every `sample` paired with every `mate` —
+which is exactly how the later scripts ask for both reads of every pair:
+
+```python
+print(expand("02_illuminaQC/{sample}_{mate}_fastqc.html", sample=SAMPLES, mate=["R1", "R2"]))
+```
+
+> **Nextflow mirror.** `glob_wildcards` is `Channel.fromPath` / `fromFilePairs` — the "read the
+> files that exist" step. But then it splits: Nextflow *pushes* each item through processes, while
+> Snakemake holds `SAMPLES` as a plain list and uses `expand()` to name the **targets** it should
+> pull. Discovery looks the same; direction of travel is opposite. A wildcard in a rule's
+> `output:` is the fan-out — one rule, matched once per sample, no loop written by you.
+
+**Exercise** What does `glob_wildcards("01_data/{sample}_R1.fastq.gz")` put in `SAMPLES` — and why
+is that list *half* the length of the one above? (Answer: it only matches R1 files, so `{sample}`
+is the pair name with no mate token — `bio_sample_01`, not `bio_sample_01_R1`. That's the switch 
+from *"every file"* to *"every pair,"* and it's exactly the difference between Script 06 and 
+Script 07.)
+
+</li>
+<li class="usa-process-list__item usa-prose" markdown="1">
+
+{:.usa-process-list__heading}
+### FastQC — your first real rule (cash in your Predict)
+
+**① Target.** One FastQC run for one raw-read file produces two files: the human-readable report and the data package that downstream tools parse:
+
+```
+02_illuminaQC/bio_sample_01_R1_fastqc.html
+02_illuminaQC/bio_sample_01_R1_fastqc.zip
+```
+
+**② Interrogate.** *What does it need?* -> the raw read file
+`01_data/bio_sample_01_R1.fastq.gz`, and the tool `fastqc`. The read is already on disk — bedrock.
+One box, one arrow. Now scale it: we want that report for **every** file, which is the wildcards
+move you just learned.
+
+**③ + ④ Reveal & Predict.** Before running, look at script `06_implementation_fastqc.smk`
+and dry-run it. This is the moment to cash the guess you made at the cold open (`ls 01_data/*.fastq.gz | wc -l`):
+
+```bash
+snakemake -n -s pipelines/06_implementation_fastqc.smk
+```
+{:.copy-code}
+
+Snakemake prints a job table — read the `count` column and check it against your Predict:
+
+```
+Job stats:
+job       count
+-------   -----
+all           1
+fastqc       10
+total        11
+```
+
+**⑤ Implement.** The rule is the box, verbatim — an output with a `{sample}` wildcard, the matching
+input, and the shell recipe:
+
+```python
+rule all:
+    input:
+        expand(config.get("output_qc", "02_illuminaQC") + "/{sample}_fastqc.html", sample=SAMPLES),
+        expand(config.get("output_qc", "02_illuminaQC") + "/{sample}_fastqc.zip", sample=SAMPLES)
+
+rule fastqc:
+    input:
+        "01_data/{sample}.fastq.gz"
+    output:
+        html = config.get("output_qc", "02_illuminaQC") + "/{sample}_fastqc.html",
+        zip  = config.get("output_qc", "02_illuminaQC") + "/{sample}_fastqc.zip"
+    params:
+        outdir = config.get("output_qc", "02_illuminaQC")
+    shell:
+        """
+        module load fastqc
+        mkdir -p {params.outdir}
+        fastqc -o {params.outdir} -t 2 {input}
+        """
+```
+
+The wildcard `{sample}` in `output:` is what makes this *one* rule cover *every* file: Snakemake
+matches the rule once per target `expand()` asked for, substituting `{sample}` each time. You wrote
+no loop.
+
+**⑥ Run & verify.** Give it more than one core so the independent jobs actually run at once:
+
+```bash
+snakemake -c4 -s pipelines/06_implementation_fastqc.smk
+```
+{:.copy-code}
+
+You should see Snakemake count down the steps, interleaved with FastQC's own progress lines:
+
+```
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Job stats:
+job       count
+-------   -----
+all           1
+fastqc       10
+total        11
+
+[Mon Jul 20 13:05:11 2026]
+rule fastqc:
+    input: 01_data/bio_sample_01_R1.fastq.gz
+    output: 02_illuminaQC/bio_sample_01_R1_fastqc.html, ...
+...
+application/gzip
+Started analysis of bio_sample_01_R1.fastq.gz
+Approx 45% complete for bio_sample_01_R1.fastq.gz
+Analysis complete for bio_sample_01_R1.fastq.gz
+...
+10 of 11 steps (91%) done
+Finished job 0.
+11 of 11 steps (100%) done
+Complete log: .snakemake/log/2026-07-16T153718.280260.snakemake.log
+```
+
+Confirm the reports landed: `ls 02_illuminaQC/`. **Success looks like** a matched `.html`/`.zip`
+pair per file. **A stuck-looking pause** at "Started analysis…" is normal — FastQC is working, not
+hung. **`fastqc: command not found`** means the `module load fastqc` line didn't take — check the
+module name on Ceres. **`MissingInputException`** means a filename doesn't match the glob pattern —
+your target and your files disagree.
+
+**⑦ 🔨 Break the DAG.** Delete one report and ask Snakemake what it now intends to do:
+
+```bash
+rm 02_illuminaQC/bio_sample_01_R1_fastqc.html
+snakemake -n -s pipelines/06_implementation_fastqc.smk    # dry run
+```
+{:.copy-code}
+
+Read the output: **exactly one** `fastqc` job is scheduled — the one whose output you removed —
+and everything else reports up to date. That's the incremental engine reasoning per-file, not
+per-run. Ask for a single report directly and watch Snakemake rebuild only that path:
+
+```bash
+snakemake -c1 -s pipelines/06_implementation_fastqc.smk 02_illuminaQC/bio_sample_01_R1_fastqc.html
+```
+{:.copy-code}
+
+> **Nextflow mirror.** You just asked for *one file by name* and got only the work behind it.
+> Nextflow reruns the whole workflow and leans on `-resume` (content hashes) to skip finished
+> work; Snakemake lets you name any target file and pulls only its subtree, decided by timestamps.
+
+</li>
+<li class="usa-process-list__item usa-prose" markdown="1">
+
+{:.usa-process-list__heading}
+### Fastp — a rule with paired inputs and outputs
+
+**① Target → ② Interrogate.** We want the trimmed reads for one sample:
+
+```
+03_trimmed/bio_sample_01_R1.trimmed.fastq.gz
+03_trimmed/bio_sample_01_R2.trimmed.fastq.gz
+```
+
+*What do they need?* Both raw mates — `_R1` **and** `_R2` — go into `fastp` together, because
+trimming a pair keeps the two files in sync. So this rule has **two inputs and two outputs**, and we
+give them names to keep them straight.
+
+**③ Predict.** The glob changes meaning here. script `07_implementation_fastp.smk`
+globs on the R1 pattern, so `{sample}` is the *pair* name:
+
+```python
+SAMPLES, = glob_wildcards(config.get("reads", "01_data/{sample}_R1.fastq.gz"))
+```
+
+That's the pair-vs-file switch from the wildcards exercise. **Predict:** with 5 pairs you get **5**
+`fastp` jobs (one per pair), not 10. Dry-run to check:
+
+```bash
+snakemake -n -s pipelines/07_implementation_fastp.smk
+```
+{:.copy-code}
+
+```
+job      count
+------   -----
+all          1
+fastp        5
+total        6
+```
+
+**⑤ Implement.** Named inputs/outputs are reached as `{input.r1}`, `{output.r2}`, and so on:
+
+```python
+rule fastp:
+    input:
+        r1 = "01_data/{sample}_R1.fastq.gz",
+        r2 = "01_data/{sample}_R2.fastq.gz"
+    output:
+        r1 = config.get("output_trim", "03_trimmed") + "/{sample}_R1.trimmed.fastq.gz",
+        r2 = config.get("output_trim", "03_trimmed") + "/{sample}_R2.trimmed.fastq.gz"
+    params:
+        outdir = config.get("output_trim", "03_trimmed")
+    shell:
+        """
+        module load miniconda
+        source activate /90daydata/scinet_workshop2/nextflow_env
+        mkdir -p {params.outdir}
+        fastp -i {input.r1} -I {input.r2} -o {output.r1} -O {output.r2}
+        """
+```
+
+The single `{sample}` wildcard ties all four paths together: whatever `bio_sample_01` matches in the
+output is forced to match in both inputs. That shared wildcard is what makes a pair a *pair*.
+
+**⑥ Run & verify.**
+
+```bash
+snakemake -c4 -s pipelines/07_implementation_fastp.smk
+```
+{:.copy-code}
+
+```
+[Mon Jul 20 13:20:04 2026]
+rule fastp:
+    input: 01_data/bio_sample_01_R1.fastq.gz, 01_data/bio_sample_01_R2.fastq.gz
+    output: 03_trimmed/bio_sample_01_R1.trimmed.fastq.gz, 03_trimmed/bio_sample_01_R2.trimmed.fastq.gz
+...
+Read1 before filtering: ... Read2 before filtering: ...
+6 of 7 steps (86%) done
+7 of 7 steps (100%) done
+```
+
+**Success looks like** two `.trimmed.fastq.gz` files per pair in `03_trimmed/`. Fastp also prints
+before/after filtering stats to the log — that summary is what MultiQC will collect at the end.
+
+> **Nextflow mirror.** This is `fromFilePairs` territory — the tuple `(sample, [R1, R2])`. Named
+> inputs `r1`/`r2` play the role of the destructured pair inside a process; the shared `{sample}`
+> wildcard is the tuple key that keeps the two mates married.
+
+</li>
+<li class="usa-process-list__item usa-prose" markdown="1">
+
+{:.usa-process-list__heading}
+### Two rules, one DAG — parallelism you didn't write
+
+Put FastQC and Fastp in the **same** file (script 08_implementation_fastqc_fastp.smk)
+and ask for both sets of outputs in one `rule all`. Neither rule mentions the other. Both read the
+raw reads; neither reads the other's output.
+
+**Predict, then reveal:** One input, two independent branches — let Snakemake draw it:
+
+```python
+configfile: "config.yaml"
+
+SAMPLES, = glob_wildcards(config.get("reads", "01_data/{sample}_R1.fastq.gz"))
+
+rule all:
+    input:
+        expand(config.get("output_qc", "02_illuminaQC") + "/{sample}_{mate}_fastqc.html", sample=SAMPLES, mate=["R1", "R2"]),
+        expand(config.get("output_qc", "02_illuminaQC") + "/{sample}_{mate}_fastqc.zip", sample=SAMPLES, mate=["R1", "R2"]),
+        expand("03_trimmed/{sample}_R1.trimmed.fastq.gz", sample=SAMPLES),
+        expand("03_trimmed/{sample}_R2.trimmed.fastq.gz", sample=SAMPLES)
+
+rule fastqc:
+    input:
+        "01_data/{sample}_{mate}.fastq.gz"
+    output:
+        html = config.get("output_qc", "02_illuminaQC") + "/{sample}_{mate}_fastqc.html",
+        zip  = config.get("output_qc", "02_illuminaQC") + "/{sample}_{mate}_fastqc.zip"
+    params:
+        outdir = config.get("output_qc", "02_illuminaQC")
+    shell:
+        """
+        module load fastqc
+        mkdir -p {params.outdir}
+        fastqc -o {params.outdir} -t 2 {input}
+        """
+
+rule fastp:
+    input:
+        r1 = "01_data/{sample}_R1.fastq.gz",
+        r2 = "01_data/{sample}_R2.fastq.gz"
+    output:
+        r1 = "03_trimmed/{sample}_R1.trimmed.fastq.gz",
+        r2 = "03_trimmed/{sample}_R2.trimmed.fastq.gz",
+        html = "03_trimmed/{sample}_fastp.html",
+        json = "03_trimmed/{sample}_fastp.json"
+    shell:
+        """
+        module load miniconda
+        source activate /90daydata/scinet_workshop2/nextflow_env
+        mkdir -p 03_trimmed
+        fastp -i {input.r1} -I {input.r2} \
+              -o {output.r1} -O {output.r2} \
+              -h {output.html} -j {output.json}
+        """
+```
+{:.copy-code}
+
+*Dry run*  
+
+```bash
+snakemake -n -s pipelines/08_implementation_fastqc_fastp.smk
+```
+{:.copy-code}
+
+```
+job      count
+------   -----
+all          1
+fastqc      10
+fastp        5
+total       16
+```
+
+*DAG* 
+
+```
+snakemake --rulegraph -s pipelines/08_implementation_fastqc_fastp.smk | dot -Tsvg > rules.svg
+```
+{:.copy-code}
+
+Note that in this combined file, **FastQC's glob changed** to `{sample}_{mate}` so it matches every
+individual read again (10 jobs), while Fastp stays per-pair (5). Run it and watch the two rules
+interleave freely:
+
+```bash
+snakemake -c16 -s pipelines/08_implementation_fastqc_fastp.smk
+```
+{:.copy-code}
+
+With 16 cores available, FastQC and Fastp jobs run **at the same time** — because nothing in the DAG says they
+can't. You never wrote "run these in parallel." You wrote two rules that happen to need the same
+input, and parallelism fell out.
+
+> **Nextflow mirror.** Two processes subscribing to the same channel gives you this in Nextflow.
+> Here the *same* concurrency comes from two rules confessing a shared input — no channel, no `.into`,
+> no wiring. This is the single clearest place the two engines meet at the same DAG from opposite
+> directions.
+
+</li>
+<li class="usa-process-list__item usa-prose" markdown="1">
+
+{:.usa-process-list__heading}
+### ReadLenDist — many files into one (`expand()` in `input:`)
+
+**Target:** the single table from the cold open — `04_read_len_dist/samples_read_len_dist.tsv`.
+Every earlier rule was one-in → one-out (per wildcard). This one is **many-in → one-out**: one table
+summarizing *all* the trimmed reads. That means no wildcard on the output — and `expand()` on the
+input to gather everything script `09_implementation_read_len_dist.smk`:
+
+```python
+# Script 09: Collecting Multiple Files - Read-Length Distribution (refactored)
+
+configfile: "config.yaml"
+
+SAMPLES, = glob_wildcards(config["output_trim"] + "/{sample}_R1.trimmed.fastq.gz")
+
+rule all:
+    input:
+        config["output_rld"] + "/samples_read_len_dist.tsv"
+
+rule read_len_dist:
+    input:
+        reads = expand(config["output_trim"] + "/{sample}_{mate}.trimmed.fastq.gz",
+                       sample=SAMPLES, mate=["R1", "R2"])
+    output:
+        config["output_rld"] + "/samples_read_len_dist.tsv"
+    threads: 1
+    resources:
+        mem_mb = 2000,
+        runtime = 30
+    log:
+        "logs/read_len_dist/read_len_dist.log"
+    shell:
+        "python scripts/read_length_dist.py {output} {input.reads}"
+```
+{:.copy-code}
+
+The `expand()` in `input:` is the aggregator: it lists all 10 trimmed files as dependencies, so
+Snakemake won't run this rule until *every* trimmed read exists. `{input.reads}` then expands to all
+10 paths on the command line, which the helper script `read_length_dist.py` leads in
+one pass. This script can be found in `scripts/read_length_dist.py`.
+
+```bash
+snakemake -c4 -s pipelines/09_implementation_readLenDist.smk
+head -n 3 04_read_len_dist/samples_read_len_dist.tsv
+```
+{:.copy-code}
+
+```
+job           count
+-----------   -----
+all               1
+readLenDist       1
+total             2
+```
+```
+length  count   file
+20      1       03_trimmed/bio_sample_01_R1.trimmed.fastq.gz
+26      1       03_trimmed/bio_sample_01_R1.trimmed.fastq.gz
+30      1       03_trimmed/bio_sample_01_R1.trimmed.fastq.gz
+```
+
+**One** `readLenDist` job, no matter how many samples — the fan-*in* mirror of FastQC's fan-out.
+
+> **Nextflow mirror.** This is `.collect()` — gather every item into a single emission before the
+> process fires. In Snakemake you don't stage a collect operator; you just write `expand()` in the
+> input list, and the one-job-waits-for-all-inputs behavior is automatic.
+
+</li>
+<li class="usa-process-list__item usa-prose" markdown="1">
+
+{:.usa-process-list__heading}
+### The complete QC pipeline — rebuild the cold-open DAG for real
+
+Script `10_implementation_full.smk` is all three rules — `fastqc`, `fastp`, and `readLenDist` — in one file, 
+with a `rule all` that asks for every final output. 
+
+```python 
+# Script 10: The Complete Pipeline (refactored)
+
+configfile: "config.yaml"
+
+SAMPLES, = glob_wildcards(config["reads_dir"] + "/{sample}_R1.fastq.gz")
+
+rule all:
+    input:
+        # FastQC outputs for all raw reads
+        fastqc = expand(config["output_qc"] + "/{sample}_{mate}_fastqc.html",
+                        sample=SAMPLES, mate=["R1", "R2"]),
+        # Trimmed reads
+        trimmed = expand(config["output_trim"] + "/{sample}_{mate}.trimmed.fastq.gz",
+                         sample=SAMPLES, mate=["R1", "R2"]),
+        # Read length distribution
+        rld = config["output_rld"] + "/samples_read_len_dist.tsv"
+
+rule fastqc:
+    input:
+        config["reads_dir"] + "/{sample}_{mate}.fastq.gz"
+    output:
+        html = config["output_qc"] + "/{sample}_{mate}_fastqc.html",
+        zip = config["output_qc"] + "/{sample}_{mate}_fastqc.zip"
+    params:
+        outdir = config["output_qc"]
+    threads: config["threads"]
+    resources:
+        mem_mb = 2000,
+        runtime = 30
+    log:
+        "logs/fastqc/{sample}_{mate}.log"
+    shell:
+        """
+        module load fastqc
+        fastqc -o {params.outdir} -t {threads} {input} &> {log}
+        """
+
+rule fastp:
+    input:
+        r1 = config["reads_dir"] + "/{sample}_R1.fastq.gz",
+        r2 = config["reads_dir"] + "/{sample}_R2.fastq.gz"
+    output:
+        r1 = config["output_trim"] + "/{sample}_R1.trimmed.fastq.gz",
+        r2 = config["output_trim"] + "/{sample}_R2.trimmed.fastq.gz"
+    threads: config["threads"]
+    resources:
+        mem_mb = 4000,
+        runtime = 30
+    log:
+        "logs/fastp/{sample}.log"
+    shell:
+        """
+        module load miniconda
+        source activate /90daydata/scinet_workshop2/nextflow_env
+        fastp -i {input.r1} -I {input.r2} -o {output.r1} -O {output.r2} --thread {threads} &> {log}
+        """
+
+rule read_len_dist:
+    input:
+        reads = expand(config["output_trim"] + "/{sample}_{mate}.trimmed.fastq.gz",
+                       sample=SAMPLES, mate=["R1", "R2"])
+    output:
+        config["output_rld"] + "/samples_read_len_dist.tsv"
+    threads: 1
+    resources:
+        mem_mb = 2000,
+        runtime = 30
+    log:
+        "logs/read_len_dist/read_len_dist.log"
+    shell:
+        "python scripts/read_length_dist.py {output} {input.reads}"
+```
+{:.copy-code}
+
+**Render it and compare:**
+
+```bash
+snakemake --dag -s pipelines/10_implementation_full.smk | dot -Tsvg > dag_full.svg
+snakemake -n -s pipelines/10_implementation_full.smk
+```
+{:.copy-code}
+
+```
+job           count
+-----------   -----
+all               1
+fastqc           10
+fastp             5
+readLenDist       1
+total            17
+```
+
+Trace the arrows: `fastp` feeds `readLenDist` (trimmed reads → table), while `fastqc` hangs off the
+raw reads on its own branch. That's the fork you drew. Build the whole thing from raw reads:
+
+```bash
+snakemake -c8 -s pipelines/10_implementation_full.smk
+```
+{:.copy-code}
+
+Snakemake schedules in dependency order automatically — FastQC and Fastp first (in parallel), then
+ReadLenDist once all trimmed reads exist. You wrote **zero** ordering statements.
+
+**Bonus — FastQC on trimmed reads.** [Script 11](pipelines/11_add_fastqc.smk) adds a
+`fastqc_trimmed` rule so you can QC before *and* after trimming. Notice it's a near-copy of `fastqc`
+with different paths — which is exactly the duplication the next section removes.
+
+**⑦ 🔨 Break the DAG (the real one).** Now that the whole chain exists, break a link in the *middle*
+and watch the blast radius:
+
+```bash
+touch 03_trimmed/bio_sample_01_R1.trimmed.fastq.gz   # a trimmed file is now "newer"
+snakemake -n -s pipelines/10_implementation_full.smk
+```
+{:.copy-code}
+
+Read the `reason:` lines. `readLenDist` is scheduled to rerun — it consumes that trimmed file — but
+`fastqc` and `fastp` are **not**, because nothing they depend on changed. One timestamp, one
+downstream rebuild, everything else untouched. That surgical precision is the whole point of the
+pull model.
 
 </li>
 </ol>
