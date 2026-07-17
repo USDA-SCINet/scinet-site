@@ -60,22 +60,18 @@ For more information on login procedures for web-based SCINet access, see the [S
 
 * Open a command-line session by clicking on "Clusters" -> "Ceres Shell Access" on the top menu. This will open a new tab with a command-line session on Ceres' login node.
 
-* Create your workshop working directory. You do not have to edit these commands with your username — it is filled in by the `$USER` variable.
+* Create your workshop working directory and copy the tutorial materials into it by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the `$USER` variable.
 
   ```bash
   mkdir -p /90daydata/shared/$USER/snakemake
   cd /90daydata/shared/$USER/snakemake
-  ```
-  {:.copy-code}
-
-* Unpack the workshop materials into your working directory. This one archive contains everything you need: the read data (`01_data/`), the pipeline scripts (`pipelines/`), and the config files.
-
-  ```bash
   cp -a /project/scinet_workshop2/foundations_bioinf_2026/snakemake_data/snakemake_material.tar.gz .
   tar -xf snakemake_material.tar.gz
   ls
   ```
   {:.copy-code}
+
+  This one archive contains everything you need: the read data (`01_data/`), the pipeline scripts (`pipelines/`), and the config files.
 
   You should see the extracted contents — something like:
 
