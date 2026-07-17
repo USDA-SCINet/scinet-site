@@ -178,19 +178,19 @@ So every section today follows the same seven-beat rhythm:
 
 The target-first lab — every section, same seven beats
 
-1. **Target**
+1. **Target**  
    The output file 
-1. **Interrogate**
+1. **Interrogate**  
    "What does this need?" 
-1. **Reveal**
+1. **Reveal**  
    `snakemake -n |grep "reason:"` 
-1. **Predict**
+1. **Predict**  
    Commit out loud: how many jobs? which first? what runs in parallel?
-1. **Implement**
+1. **Implement**  
     Each process becomes one rule (its output + its inputs)
-1. **Run & verify**
+1. **Run & verify**  
     Run it — did your prediction hold?
-1. **Break the DAG**
+1. **Break the DAG**  
     Delete / touch / rename one file, dry-run, read the diagnosis
 
 
@@ -1008,7 +1008,7 @@ input, and parallelism fell out.
 <li class="usa-process-list__item usa-prose" markdown="1">
 
 {:.usa-process-list__heading}
-#### ReadLenDist — many files into one (`expand()` in `input:`)
+### ReadLenDist — many files into one (`expand()` in `input:`)
 
 **Target:** the single table from the cold open — `04_read_len_dist/samples_read_len_dist.tsv`.
 Every earlier rule was one-in → one-out (per wildcard). This one is **many-in → one-out**: one table
