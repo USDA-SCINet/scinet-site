@@ -28,15 +28,15 @@ tags: bioinformatics python
 ---
 
 This hands-on workshop introduces Snakemake, a workflow management system that brings the readability of Python to scalable, reproducible computational pipelines. 
-We will start with simple examples and build to a real-world bioinformatics pipeline — learning how Snakemake's rule-based, 
+We will start with minimal examples and build to a real-world bioinformatics pipeline — learning how Snakemake's rule-based, 
 file-driven approach automatically determines job dependencies, handles parallel execution, 
 and integrates seamlessly with Python scripts and virtual environments to produce publication-ready outputs.<!--excerpt-->
 
 **No prior Snakemake experience is required.** Basic command-line familiarity (navigating
 directories, running a program, editing a file) is assumed. If you attended the Nextflow
 workshop in this series, you'll recognize the tools and the data — this workshop deliberately
-mirrors it, so you can feel exactly how the two engines differ. Where it helps, we call out the
-Nextflow equivalent in a "Nextflow mirror" note.
+mirrors it, so you can more easily compare these two workflow management systems. Where appropriate, we point out
+equivalent Nextflow commands in a "Nextflow mirror" note.
 
 ---
 
@@ -72,7 +72,7 @@ For more information on login procedures for web-based SCINet access, see the [S
 
   ```bash
   cp -a /project/scinet_workshop2/foundations_bioinf_2026/snakemake_data/snakemake_material.tar.gz .
-  tar -xzf snakemake_material.tar.gz
+  tar -xf snakemake_material.tar.gz
   ls
   ```
   {:.copy-code}
@@ -129,17 +129,17 @@ snakemake --version
 
 ## An Introduction to Snakemake
 
-*Instructors: Viswanathan Satheesh . Rick Masonbrink*
+*Instructors: Viswanathan Satheesh, Rick Masonbrink*
 
 ### Learning Objectives
 
 By the end of this workshop, you will be able to:
 
-1. **Write Snakemake pipelines from scratch** — defining rules with inputs, outputs, and shell commands, and letting Snakemake infer how they connect.
-2. **Process many files in parallel automatically** — using wildcards and `expand()` so one rule scales to any number of samples, with no hand-written loops.
-3. **Make pipelines configurable, portable, and reproducible** — using config files, profiles, resources, and software environments (modules/conda) so a pipeline runs anywhere.
-4. And, threaded through all of it, one meta-skill:  
-   **Reason backward from a target.** Given a result you want, work out the chain of files it depends on — which is exactly how Snakemake builds and runs a pipeline.
+1. **Write Snakemake pipelines from scratch** — define rules with inputs, outputs, and shell commands, and letting Snakemake infer how they connect.
+2. **Process many files in parallel automatically** — use wildcards and `expand()` so one rule scales to any number of samples, with no hand-written loops.
+3. **Make pipelines configurable, portable, and reproducible** — use config files, profiles, resources, and software environments (modules/conda) so a pipeline runs anywhere.
+4. And, threaded through all of it, one meta-skill: 
+   **Reason backward from a target.** Given a result you want, work out the chain of files and operations it depends on — which is exactly how Snakemake builds and runs a pipeline.
 
 ### What You'll Build
 
@@ -160,12 +160,12 @@ Variant calling  (picks up from trimmed reads, going past where Nextflow stopped
 
 ---
 
-### How this workshop works: the Target-First Lab
+### How this workshop works: the target-first lab
 
 Picture this: You have a folder of results - a few tables, VCF files, etc. - with no pipeline and no notes. To reproduce or extend the work, you have to reason
 from each result *backward* to the steps that produced it: *what had to exist for this file to exist?* 
 That's not just a recovery skill — it is exactly how Snakemake thinks, and it's how we'll
-work. We call it the **Target-First Lab**.
+work. We call it the **target-first lab**.
 
 Most tutorials build forward: write step one, then step two,
 wiring outputs into inputs until a result appears at the end. Snakemake runs the other way. You
@@ -176,7 +176,7 @@ file needs which.
 
 So every section today follows the same seven-beat rhythm:
 
-The Target-First Lab — every section, same seven beats
+The target-first lab — every section, same seven beats
 
 1. **Target**
    The output file 
