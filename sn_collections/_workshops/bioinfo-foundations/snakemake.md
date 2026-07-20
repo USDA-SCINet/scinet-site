@@ -106,7 +106,7 @@ Activate the ready-made conda environment for the workshop. Do this once in each
 the terminal inside VS Code:
 
 ```bash
-mamba activate /project/scinet_workshop2/foundations_bioinf_2026/snakemake_data/envs/snakemake
+source activate /project/scinet_workshop2/foundations_bioinf_2026/snakemake_data/envs/snakemake
 snakemake --version
 ```
 {:.copy-code}
@@ -226,12 +226,20 @@ apply rules to the real data with wildcards, add each tool, and finish with the 
 {:.usa-process-list__heading}
 ### The shape of a rule
 
-Create each file below, run it, and look at what changes. Every rule answers the same two questions:
-*what file do I make, and what do I need to make it?*
+**You do not have to write these files.** Every script in this workshop is already in the `pipelines/`
+directory you extracted during setup, numbered in the order we work through them. For each
+one, you follow the same three steps: **open it, read it, run it**, then look at what changed on disk.
+
+Every rule answers the same two questions: *what file do I make, and what do I need to make it?*
 
 #### 1 — A rule that runs a command  (`01_hello_screen.smk`)
 
-This rule just prints to the screen. It has no `output:`, so it makes no file.
+**What you do:**
+
+1. **Open the script.** In the VS Code file browser on the left, expand `pipelines/` and click
+   `01_hello_screen.smk`. (Or, from the terminal, `cat pipelines/01_hello_screen.smk` shows the same
+   thing.)
+2. **Read it.** This rule just prints to the screen. It has no `output:`, so it makes no file.
 
 ```python
 # Script 01: Hello World — your first Snakemake rule
@@ -243,6 +251,8 @@ rule hello:
 ```
 {:.copy-code}
 
+**Run it.**
+
 ```bash
 snakemake -c1 --snakefile pipelines/01_hello_screen.smk
 ```
@@ -253,7 +263,9 @@ and no file appears.
 
 #### 2 — Track an output file  (`02_hello_redirect.smk`)
 
-Add an `output:` and Snakemake starts tracking a file. Add a `rule all` that asks for that file, and
+**What you do:**
+
+Open `pipelines/02_hello_redirect.smk`. Add an `output:` and Snakemake starts tracking a file. Add a `rule all` that asks for that file, and
 it becomes the **target** Snakemake tries to produce.
 
 ```python
@@ -284,6 +296,9 @@ behavior is something we rely on throughout the workshop.
 
 #### 3 — Organize outputs into a directory  (`03_hello_outputdir.smk`)
 
+Open `pipelines/03_hello_outputdir.smk`. Putting a directory in the `output:` path is all it takes to
+organize results; the `mkdir -p` in the shell command makes sure the directory exists first.
+
 ```python
 # Script 03: Publishing to a directory
 rule hello:
@@ -312,7 +327,7 @@ The `result.txt` file or the `output` directory has to be deleted for the rule t
 
 #### 4 — Take an input  (`04_hello_input.smk`)
 
-An `input:` block makes a rule depend on a file. Named inputs are referenced as `{input.name}`.
+Open `pipelines/04_hello_input.smk`. An `input:` block makes a rule depend on a file. Named inputs are referenced as `{input.name}`.
 
 ```python
 # Script 04: Rule inputs
@@ -342,7 +357,7 @@ cat output/result.txt
 
 #### 5 — Make it configurable  (`05_hello_default.smk` + `hello_config.yaml`)
 
-`configfile:` loads a YAML file into a `config` dictionary. `config.get("key", default)` reads a
+Open `pipelines/05_hello_default.smk`. `configfile:` loads a YAML file into a `config` dictionary. `config.get("key", default)` reads a
 value with a fallback, and `--config key=value` overrides it on the command line.
 
 ```python
@@ -366,7 +381,7 @@ rule all:
 ```
 {:.copy-code}
 
-`hello_config.yaml` holds the key the pipeline reads:
+`hello_config.yaml` is found in your working directory (not in `pipelines/`) and holds the key the pipeline reads:
 
 ```yaml
 welcome: "Hello, welcome to the world of Snakemake!"
@@ -438,16 +453,20 @@ write a rule per sample. Two Snakemake tools handle this:
 - **`expand(pattern, name=LIST)`** does the reverse: it fills a list back into a set of concrete file
   paths — the targets you want built.
 
-First, see what `glob_wildcards` finds. Put this at the top of a scratch file and dry-run it so the
-`print` runs:
+First, see what `glob_wildcards` finds. Open `pipelines/06_implementation_fastqc.smk` and add a
+`print` line directly below the existing `glob_wildcards` call near the top:
 
 ```python
 SAMPLES, = glob_wildcards("01_data/{sample}.fastq.gz")
-print(SAMPLES)
+print(SAMPLES) # <- add this line
 ```
+{:.copy-code}
+
+Save the file, then dry-run it. Snakemake executes the top-level Python in a `.smk` file while
+parsing it, so the `print` runs even though `-n` stops any job from executing:
 
 ```bash
-snakemake -n -s pipelines/06_implementation_fastqc.smk   # the print runs while the file is parsed
+snakemake -n -s pipelines/06_implementation_fastqc.smk
 ```
 {:.copy-code}
 
@@ -461,6 +480,8 @@ standing in for whatever the `*` would have matched:
 > 💡 The comma in `SAMPLES, =` is required. `glob_wildcards` returns a tuple of wildcard lists (one
 > per `{ }` in the pattern); the trailing comma unpacks the single list. With two wildcards you would
 > write `SAMPLES, MATES = glob_wildcards("01_data/{sample}_{mate}.fastq.gz")`.
+
+Remove the `print` line again before moving on. It is only there to make the list visible.
 
 `expand()` turns a list into concrete paths — the targets a `rule all` asks for:
 
@@ -500,7 +521,7 @@ FastQC produces a quality report for one sequencing file. The target for one fil
 
 It needs one input — the raw read file `01_data/bio_sample_01_R1.fastq.gz` — and the `fastqc` tool.
 Script `06_implementation_fastqc.smk` writes this as a rule with a `{sample}` wildcard,
-so it applies to every file. Dry-run it first to see how many jobs Snakemake plans:
+so it applies to every file. Read the script and dry-run it first to see how many jobs Snakemake plans:
 
 ```bash
 snakemake -n -s pipelines/06_implementation_fastqc.smk
