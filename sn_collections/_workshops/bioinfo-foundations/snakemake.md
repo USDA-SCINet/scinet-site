@@ -241,25 +241,24 @@ Every rule answers the same two questions: *what file do I make, and what do I n
    thing.)
 2. **Read it.** This rule just prints to the screen. It has no `output:`, so it makes no file.
 
-```python
-# Script 01: Hello World — your first Snakemake rule
-rule hello:
-    shell:
-        """
-        echo "Welcome to the world of Snakemake!"
-        """
-```
-{:.copy-code}
+   ```python
+   # Script 01: Hello World — your first Snakemake rule
+   rule hello:
+       shell:
+           """
+           echo "Welcome to the world of Snakemake!"
+           """
+   ```
+   {:.copy-code}
 
-**Run it.**
+3. **Run it.**
 
-```bash
-snakemake -c1 --snakefile pipelines/01_hello_screen.smk
-```
-{:.copy-code}
+   ```bash
+   snakemake -c1 --snakefile pipelines/01_hello_screen.smk
+   ```
+   {:.copy-code}
 
-The first rule in a file is the **default target**, so `hello` runs: you will see the message print,
-and no file appears.
+   The first rule in a file is the **default target**, so `hello` runs: you will see the message print, and no file appears.
 
 #### 2 — Track an output file  (`02_hello_redirect.smk`)
 
