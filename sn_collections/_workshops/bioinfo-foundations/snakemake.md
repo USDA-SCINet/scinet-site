@@ -193,29 +193,25 @@ Snakemake follows a few simple naming conventions. The table below summarizes th
 > feature — they keep results sorted in pipeline order. Rule and wildcard casing, however, are
 > conventions worth following.
 
-{% raw %}
-
 **One important detail:** Inside a rule's `shell:` block, expressions such as `{input}`,
 `{output}`, `{params}`, and `{wildcards.sample}` are Snakemake placeholders. Snakemake replaces 
 them with their values before executing the shell command. If you need literal braces for the shell
-(for example, in an `awk` program or a Bash parameter expansion), double them (`{{...}}`). Snakemake 
-converts `{{` and `}}` back to `{` and `}` before running the command.
+(for example, in an `awk` program or a Bash parameter expansion), double them (`{% raw %}{{...}}{% endraw %}`). Snakemake 
+converts `{% raw %}{{{% endraw %}` and `{% raw %}}}{% endraw %}` back to `{` and `}` before running the command.
 
 ```python
 shell:
-    """
+    """{% raw %}
     awk '{{print $1}}' {input} > {output}
     echo "running on ${{HOSTNAME}}"
-    """
+    """{% endraw %}
 ```
 {:.copy-code}
 
-* {{print $1}} becomes {print $1} for awk.
-* ${{HOSTNAME}} becomes ${HOSTNAME} for Bash.
+* {% raw %}{{print $1}}{% endraw %} becomes {print $1} for awk.
+* {% raw %}${{HOSTNAME}}{% endraw %} becomes ${HOSTNAME} for Bash.
 
 Forgetting to double the braces is a common mistake: Snakemake will try to interpret the text inside `{...}` as one of its own placeholders, resulting in an error.
-
-{% endraw %}
 
 ---
 
