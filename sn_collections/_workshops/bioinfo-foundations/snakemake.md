@@ -28,7 +28,7 @@ tags: bioinformatics python
 ---
 
 This hands-on workshop introduces Snakemake, a workflow management system that brings the readability of Python to scalable, reproducible computational pipelines. 
-We will start with simple examples and build to a real-world bioinformatics pipeline — learning how Snakemake's rule-based, 
+We will start with foundational examples and build to a real-world bioinformatics pipeline — learning how Snakemake's rule-based, 
 file-driven approach automatically determines job dependencies, handles parallel execution, 
 and integrates seamlessly with Python scripts and virtual environments to produce publication-ready outputs.<!--excerpt-->
 
@@ -128,11 +128,11 @@ inside its rule with `module load fastqc`, as you will see below. You are ready 
 
 By the end of this workshop, you will be able to:
 
-1. **Write Snakemake rules** — defining a rule's inputs, outputs, and shell command, and letting
+1. **Write Snakemake rules** — define a rule's inputs, outputs, and shell command(s), and letting
    Snakemake work out how the rules connect.
-2. **Process many samples at once** — using wildcards and `expand()` so a single rule applies to any
+2. **Process many samples at once** — use wildcards and `expand()` so a single rule applies to any
    number of samples, without writing loops.
-3. **Make a pipeline configurable and reproducible** — using a config file for paths and settings,
+3. **Make a pipeline configurable and reproducible** — use a config file for paths and settings,
    and running tools from a conda environment.
 
 ### How Snakemake works
@@ -153,7 +153,7 @@ on, until it reaches files that already exist on disk. The result is a **directe
 - **acyclic** — no cycles: a file cannot, directly or indirectly, depend on itself.
 
 Snakemake runs the jobs in an order consistent with that graph and runs independent jobs in parallel
-when it can. If an output already exists and is newer than its inputs, Snakemake skips it — so
+when it can. If an output already exists and is not older than its inputs, Snakemake skips it — so
 re-running a pipeline only redoes the work that is actually out of date.
 
 ### What you'll build
@@ -178,7 +178,7 @@ Variant calling
 
 **Naming conventions**
 
-Snakemake follows a few simple naming conventions. The table below summarizes the conventions used throughout this workshop.
+Snakemake follows a few naming conventions that are helpful to know. The table below summarizes the conventions used throughout this workshop.
 
 {% include table caption="Naming conventions" content="| Thing                      | Convention                                        | Examples (used in this workshop)                                   |
 | -------------------------- | ------------------------------------------------- | ------------------------------------------------------------------ |
@@ -406,7 +406,7 @@ Snakemake reruns a rule when its output is **missing**, or when an **input is ne
 output. Script 04 depends on `welcome.txt`; use a **dry run** (`-n`, which reports what Snakemake
 *would* do without running anything) to watch the decision.
 
-Delete the output and dry-run:
+Delete the output and launch Snakemake in dry-run mode:
 
 ```bash
 snakemake -c1 -s pipelines/04_hello_input.smk    # up to date — nothing to do
@@ -442,14 +442,14 @@ snakemake -n -s pipelines/04_hello_input.smk --forcerun hello
 <li class="usa-process-list__item usa-prose" markdown="1">
 
 {:.usa-process-list__heading}
-### One rule, many samples: wildcards and `expand()`
+### One rule, many files: wildcards and `expand()`
 
-The examples above each made a single file. Real data comes in many files, and we do not want to
-write a rule per sample. Two Snakemake tools handle this:
+The examples above each made a single file. Real data come in many files, and we do not want to
+write a rule per file. Two Snakemake tools handle this:
 
-- **`glob_wildcards(pattern)`** looks at the files already on disk and extracts the varying part of
+- **`glob_wildcards(pattern)`** looks at the files already on disk and uses pattern matching to find files and load
   each filename into a list. It runs once, before any job.
-- **`expand(pattern, name=LIST)`** does the reverse: it fills a list back into a set of concrete file
+- **`expand(pattern, name=LIST)`** does the reverse: it turns a list back into a set of concrete file
   paths — the targets you want built.
 
 First, see what `glob_wildcards` finds. Open `pipelines/06_implementation_fastqc.smk` and add a
@@ -509,7 +509,7 @@ rule once for each requested target, substituting the wildcard each time.
 <li class="usa-process-list__item usa-prose" markdown="1">
 
 {:.usa-process-list__heading}
-### FastQC — your first real rule
+### FastQC — your first rule with data
 
 FastQC produces a quality report for one sequencing file. The target for one file is:
 
@@ -538,7 +538,7 @@ fastqc       10
 total        11
 ```
 
-The rule itself. FastQC is loaded with `module load fastqc`; the `{sample}` wildcard is what makes
+Now let's look at the rule itself. FastQC is loaded with `module load fastqc`; the `{sample}` wildcard is what makes
 one rule cover every file:
 
 ```python
@@ -609,7 +609,7 @@ a name. The target for one sample:
 03_trimmed/bio_sample_01_R2.trimmed.fastq.gz
 ```
 
-Script `07_implementation_fastp.smk` globs on the R1 pattern, so `{sample}` is the
+Script `07_implementation_fastp.smk` globs on the R1 or R2 pattern, so `{sample}` is the
 *pair* name (`bio_sample_01`). Fastp comes from the active conda environment, so the rule calls it
 directly — no `module load`:
 
@@ -657,7 +657,7 @@ statistics to its log.
 {:.usa-process-list__heading}
 ### Combining rules in one pipeline
 
-Put FastQC and Fastp in the same file Script `08_implementation_fastqc_fastp.smk` and
+Now, we put FastQC and Fastp in the same script, `08_implementation_fastqc_fastp.smk`, and
 ask for both sets of outputs in one `rule all`. Neither rule uses the other's output; both read the
 raw reads. Dry-run it:
 
@@ -677,14 +677,14 @@ total       16
 
 In this combined file, FastQC uses the `{sample}_{mate}` pattern so it again matches every individual
 read (10 jobs), while Fastp stays per-pair (5). Run it with more cores and the FastQC and Fastp jobs
-run at the same time, because nothing in the DAG forces an order between them:
+run at the same time, because nothing in the DAG requires one before the other:
 
 ```bash
 snakemake -c16 -s pipelines/08_implementation_fastqc_fastp.smk
 ```
 {:.copy-code}
 
-You never explicitly request parallel execution. Snakemake determines the execution order from the dependency 
+With Snakemake, you never explicitly request parallel execution. Snakemake determines the execution order from the dependency 
 graph. Whenever two jobs are independent, when neither depends on the output of the other, Snakemake 
 can run them concurrently, subject to the available resources.
 
@@ -937,7 +937,7 @@ output_variants: "08_variants"
 
 Before it can be aligned or called against, the reference must be indexed; once by `bwa-mem2` for
 alignment and once by `samtools` for calling. Script `12_reference_index.smk` makes
-both. The new function is `multiext`, which names one prefix with several suffixes, because `bwa-mem2`
+both. The new Snakemake function we'll use is `multiext`, which names one prefix with several suffixes, because `bwa-mem2`
 writes five index files at once:
 
 ```python
@@ -1113,12 +1113,12 @@ You built two working pipelines: a read quality-control pipeline (FastQC → Fas
 summary → FastQC on the trimmed reads) and a variant-calling pipeline (index → align → call). Along
 the way you used the parts of Snakemake that cover most day-to-day work:
 
-- **Rules** — each step declares the `output:` it produces, the `input:` it needs, and the command
+- **Rules** — each step declares the `output:` it produces, the `input:` it needs, and the command(s)
   that connects them. You never write the run order.
 - **The DAG** — Snakemake links rules by matching one rule's output to another's input, then runs
   jobs in dependency order, and in parallel wherever nothing forces a sequence.
 - **Wildcards and `expand()`** — one rule applies to every sample, and `expand()` names the targets
-  to build. No loops.
+  to build. No explicit loops are needed.
 - **Incremental rebuilds** — a job reruns only when its output is missing or older than its inputs,
   so repeating a completed workflow takes less time than running the entire workflow again.
 - **Config files** — paths, directories, and thread counts live in `config.yaml` instead of being
