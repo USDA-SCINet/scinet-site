@@ -128,12 +128,12 @@ inside its rule with `module load fastqc`, as you will see below. You are ready 
 
 By the end of this workshop, you will be able to:
 
-1. **Write Snakemake rules** — define a rule's inputs, outputs, and shell command(s), and letting
+1. **Write Snakemake rules** — define a rule's inputs, outputs, and shell command(s), and 
    Snakemake work out how the rules connect.
 2. **Process many samples at once** — use wildcards and `expand()` so a single rule applies to any
    number of samples, without writing loops.
 3. **Make a pipeline configurable and reproducible** — use a config file for paths and settings,
-   and running tools from a conda environment.
+   and run tools from a conda environment.
 
 ### How Snakemake works
 
@@ -145,11 +145,16 @@ A Snakemake workflow is a set of **rules**. Each rule describes one step of an a
 
 You do not tell Snakemake the order to run things. Instead, Snakemake looks at the output you ask
 for, finds the rule that produces it, then finds the rules that produce *that* rule's inputs, and so
-on, until it reaches files that already exist on disk. The result is a **directed acyclic graph
-(DAG)** of jobs:
+on, until it reaches files that already exist on disk. 
+
+A **job**, in Snakemake terminology, is a single execution of a rule for a particular set of input and output
+files. In practice, for this workshop, that usually corresponds to one rule applied to one sample (running `fastqc` on
+`bio_sample_01_R1` is one job; running it on `bio_sample_01_R2` is another).
+
+Snakemake determines the order in which jobs must be run by constructing a **directed acyclic graph (DAG)** of their dependencies:
 
 - **graph** — jobs connected by their input/output dependencies;
-- **directed** — each edge points from a file to the job that consumes it;
+- **directed** — each edge indicates that one job must complete before another can begin;
 - **acyclic** — no cycles: a file cannot, directly or indirectly, depend on itself.
 
 Snakemake runs the jobs in an order consistent with that graph and runs independent jobs in parallel
@@ -228,47 +233,61 @@ apply rules to the real data with wildcards, add each tool, and finish with the 
 
 **You do not have to write these files.** Every script in this workshop is already in the `pipelines/`
 directory you extracted during setup, numbered in the order we work through them. For each
-one, you follow the same three steps: **open it, read it, run it**, then look at what changed on disk.
+one, open it, read it, and run it, then look at what changed on disk.
 
 Every rule answers the same two questions: *what file do I make, and what do I need to make it?*
 
 #### 1 — A rule that runs a command  (`01_hello_screen.smk`)
 
-**What you do:**
-
-1. **Open the script.** In the VS Code file browser on the left, expand `pipelines/` and click
+Open `pipelines/01_hello_screen.smk`: in the VS Code file browser on the left, expand `pipelines/` and click
    `01_hello_screen.smk`. (Or, from the terminal, `cat pipelines/01_hello_screen.smk` shows the same
    thing.)
-2. **Read it.** This rule just prints to the screen. It has no `output:`, so it makes no file.
+This rule just prints to the screen. It has no `output:`, so it makes no file.
 
-   ```python
-   # Script 01: Hello World — your first Snakemake rule
-   rule hello:
-       shell:
-           """
-           echo "Welcome to the world of Snakemake!"
-           """
-   ```
-   {:.copy-code}
+```python
+# Script 01: Hello World — your first Snakemake rule
+rule hello:
+    shell:
+        """
+        echo "Welcome to the world of Snakemake!"
+        """
+```
+{:.copy-code}
 
-3. **Run it.**
+```bash
+snakemake -c1 --snakefile pipelines/01_hello_screen.smk
+```
+{:.copy-code}
 
-   ```bash
-   snakemake -c1 --snakefile pipelines/01_hello_screen.smk
-   ```
-   {:.copy-code}
+`-c1` (short for `--cores 1`) tells Snakemake that it may use at most one CPU core. In this workflow,
+that means it executes one job at a time. Snakemake requires you to specify the maximum number of cores
+on every run. Later, when independent jobs are available, we'll increase this value (for example,
+`-c4` or `-c8`) so they can run in parallel.
 
-   The first rule in a file is the **default target**, so `hello` runs: you will see the message print, and no file appears.
+`--snakefile` (short form `-s`) tells Snakemake which pipeline file to use. If you omit this option,
+Snakemake looks for a file named `Snakefile` in the current directory.
+
+The first rule in a file is the **default target**, so `hello` runs: you will see the message print, and no file appears.
 
 #### 2 — Track an output file  (`02_hello_redirect.smk`)
-
-**What you do:**
 
 Open `pipelines/02_hello_redirect.smk`. Add an `output:` and Snakemake starts tracking a file. Add a `rule all` that asks for that file, and
 it becomes the **target** Snakemake tries to produce.
 
+This script also introduces `rule all` — a **target rule** (Snakemake's term): a rule with no
+`output:` and no `shell:` of its own, whose `input:` is a list of the files you want the workflow to
+produce. Think of it as the workflow's shopping list.
+
+Recall from Script 01 that Snakemake builds the **first** rule in the file when you do not name a
+target. `rule all` is placed first, so it is the default target: running this file asks Snakemake to
+produce everything in its `input:` list — here, `result.txt`, which `rule hello` provides.
+
 ```python
 # Script 02: Writing to files
+rule all:
+    input:
+        "result.txt"
+
 rule hello:
     output:
         "result.txt"
@@ -276,10 +295,6 @@ rule hello:
         """
         echo "Welcome to the world of Snakemake!" > {output}
         """
-
-rule all:
-    input:
-        "result.txt"
 ```
 {:.copy-code}
 
@@ -300,6 +315,10 @@ organize results; the `mkdir -p` in the shell command makes sure the directory e
 
 ```python
 # Script 03: Publishing to a directory
+rule all:
+    input:
+        "output/result.txt"
+
 rule hello:
     output:
         "output/result.txt"
@@ -308,17 +327,12 @@ rule hello:
         mkdir -p output
         echo "Hello Snakemake World!" > {output}
         """
-
-rule all:
-    input:
-        "output/result.txt"
 ```
 {:.copy-code}
 
 ```bash
-rm output/result.txt
 snakemake -c1 --snakefile pipelines/03_hello_outputdir.smk 
-cat output/result.text
+cat output/result.txt
 ```
 {:.copy-code}
 
@@ -326,10 +340,25 @@ The `result.txt` file or the `output` directory has to be deleted for the rule t
 
 #### 4 — Take an input  (`04_hello_input.smk`)
 
-Open `pipelines/04_hello_input.smk`. An `input:` block makes a rule depend on a file. Named inputs are referenced as `{input.name}`.
+Open `pipelines/04_hello_input.smk`. Here `rule hello` gains an `input:` block. This is the same
+`input:` keyword you already saw in `rule all` — in every rule, it lists the files that must exist
+before the rule can be considered complete. What differs is how the rule treats those files:
+
+- `rule all` has no `shell:` command, so it never reads its inputs. Listing them tells
+  Snakemake "these files must exist," which is what makes Snakemake build them.
+- `rule hello` has a `shell:` command that actually reads its input (`cat {input.welcome}`), so
+  here the input is data consumed by the command to produce the output.
+
+So `input:` always declares a rule's dependencies. Whether those dependencies are actually read
+depends on what the rule does. Named inputs (`welcome = "welcome.txt"`) are referenced in shell
+commands as `{input.name}` — here, `{input.welcome}`.
 
 ```python
 # Script 04: Rule inputs
+rule all:
+    input:
+        "output/result.txt"
+
 rule hello:
     input:
         welcome = "welcome.txt"
@@ -340,10 +369,6 @@ rule hello:
         mkdir -p output
         cat {input.welcome} > {output}
         """
-
-rule all:
-    input:
-        "output/result.txt"
 ```
 {:.copy-code}
 
@@ -361,6 +386,10 @@ value with a fallback, and `--config key=value` overrides it on the command line
 
 ```python
 # Script 05: Config parameters
+rule all:
+    input:
+        "output/result.txt"
+
 configfile: "hello_config.yaml"
 
 rule hello:
@@ -373,10 +402,6 @@ rule hello:
         mkdir -p output
         echo "{params.welcome}" > {output}
         """
-
-rule all:
-    input:
-        "output/result.txt"
 ```
 {:.copy-code}
 
@@ -469,12 +494,18 @@ snakemake -n -s pipelines/06_implementation_fastqc.smk
 ```
 {:.copy-code}
 
-You will see the list of names pulled from the filenames — one entry per file, with `{sample}`
-standing in for whatever the `*` would have matched:
+You will see the list of names pulled from the filenames — one entry per file. Snakemake
+compares every file in `01_data/` against the pattern `01_data/{sample}.fastq.gz` and, for each file
+that matches, records the piece of text that fell where `{sample}` sits. So the file
+`bio_sample_01_R1.fastq.gz` contributes `bio_sample_01_R1` to the list:
 
 ```
 ['bio_sample_01_R1', 'bio_sample_01_R2', 'bio_sample_02_R1', 'bio_sample_02_R2', ...]
 ```
+
+(If you have used shell globbing, `{sample}` plays the role that `*` plays in `01_data/*.fastq.gz` —
+but where the shell only matches the files, `glob_wildcards` also captures the matched text and hands
+it back to you as the sample name. There is no literal `*` in the code.)
 
 > 💡 The comma in `SAMPLES, =` is required. `glob_wildcards` returns a tuple of wildcard lists (one
 > per `{ }` in the pattern); the trailing comma unpacks the single list. With two wildcards you would
@@ -576,7 +607,6 @@ Analysis complete for bio_sample_01_R1.fastq.gz
 ```
 
 Check the reports with `ls 02_illuminaQC/`; each file should have a matching `.html`/`.zip` pair.
-A few things to watch for:
 
 To see the incremental engine at work, delete one report and dry-run:
 
@@ -609,7 +639,7 @@ a name. The target for one sample:
 03_trimmed/bio_sample_01_R2.trimmed.fastq.gz
 ```
 
-Script `07_implementation_fastp.smk` globs on the R1 or R2 pattern, so `{sample}` is the
+Script `07_implementation_fastp.smk` globs on the R1 pattern, so `{sample}` is the
 *pair* name (`bio_sample_01`). Fastp comes from the active conda environment, so the rule calls it
 directly — no `module load`:
 
@@ -647,9 +677,31 @@ fastp        5
 total        6
 ```
 
-The single `{sample}` wildcard ties all four paths together: whatever matches in the output must
-match in both inputs, which is what keeps a pair of reads together. Fastp also writes before/after
-statistics to its log.
+**Why `r1` and `r2` appear under both `input:` and `output:`.** `input:` and `output:` are separate 
+namespaces, so using the same name in both does not cause a conflict. The input files are referenced 
+as `{input.r1}` and `{input.r2}`, while the output files are referenced as `{output.r1}` and 
+`{output.r2}`. Because they are always qualified by `input.` or `output.`, there is no ambiguity. The 
+names themselves are just labels chosen for readability—here, “read 1” and “read 2.” What links a raw 
+read to its trimmed counterpart is not the shared name but the shared wildcard, `{sample}`.
+
+**How `{sample}` keeps a pair together.** A wildcard applies within a single job. When Snakemake is 
+asked to build a trimmed file—say, `03_trimmed/bio_sample_01_R1.trimmed.fastq.gz`—it takes the value of 
+`{sample}` from that path (`bio_sample_01`) and substitutes that same value into every `{sample}` in the 
+rule, across all four paths. So one job reads `01_data/bio_sample_01_R1.fastq.gz` and 
+`01_data/bio_sample_01_R2.fastq.gz`, then writes the two matching trimmed files. Because the same wildcard 
+value is used throughout the job, R1 and R2 from one sample stay paired together: sample 01’s R1 can never
+be matched with sample 02’s R2.
+
+That leaves two uses of the word *pattern* that are worth keeping distinct:
+
+* `glob_wildcards("01_data/{sample}_R1.fastq.gz")` runs once, at parse time, scanning the disk to build the 
+list of sample names (`SAMPLES`).
+* The `{sample}` inside the rule’s `input:` and `output:` is resolved **per job**, from the specific output
+that Snakemake is asked to build.
+
+The first decides *which* samples exist; the second wires up *one* sample’s files each time the rule runs. 
+They look similar because both use `{sample}`, but they happen at different times and serve different purposes.
+
 
 </li>
 <li class="usa-process-list__item usa-prose" markdown="1">
@@ -937,7 +989,7 @@ Now we take the trimmed reads and find where each sample differs from a referenc
 are `bwa-mem2` (alignment), `samtools` (sorting and indexing), and `bcftools` (variant calling), each
 loaded with `module load`. The end result is a VCF file for each sample.
 
-These rules read three settings from `config.yaml`; add them if they are not already present:
+These rules read three settings from `config.yaml`:
 
 ```yaml
 genome: "test_genome/b73_chr1_150000001-151000000.fasta"
@@ -1142,8 +1194,10 @@ the way you used the parts of Snakemake that cover most day-to-day work:
   hard-coded into the rules.
 - **`threads:`, `resources:`, and `log:`** — each rule states what it needs and where its messages go.
 
-The habit worth keeping is a small one: describe what each output requires, then ask Snakemake for
-the result you want.
+The mindset worth carrying forward is this: instead of writing commands in the order they must run,
+you write one rule per output, each declaring the inputs it needs and the command that produces it,
+and then ask Snakemake for the final files you want. Snakemake works out the rest: which rules to run,
+in what order, and which to skip because their outputs are already up to date.
 
 ### Adapting these pipelines to your own data
 
@@ -1158,14 +1212,29 @@ Most of the time you only need to edit `config.yaml`:
 
 Run `snakemake -n` first. A dry run catches most path and pattern mistakes before anything executes.
 
+> **Where do those resources go?** In this workshop, `threads:` and `resources:` do not become SLURM
+> requests. Instead, they tell Snakemake's scheduler how to allocate the CPU cores and memory
+> available within the interactive session you already requested in Open OnDemand (and whose CPU
+> limit you cap with `-c`). If a rule needs more resources than your interactive session provides,
+> you must request a larger session—there is no `sbatch` script to edit.
+>
+> On a cluster using the SLURM executor plugin (see below), the same `threads:` and `resources:`
+> directives are translated into each job's SLURM request. For example, `threads:` becomes
+> `--cpus-per-task`, while resources such as `mem_mb` and `runtime` become the job's memory and
+> walltime requests. In both cases, you specify the resource requirements once, in the rule.
+
 ### What we did not cover
 
 Three things worth reading about:
 
 - **Running on a cluster** — Snakemake's SLURM executor plugin, together with `--profile`, submits
-  each job to the scheduler without changing a single rule.
-- **Portable software** — the `conda:` and `container:` directives let a workflow fetch or build its
-  own tools instead of relying on `module load`.
+  each job to the scheduler without requiring any changes to the workflow. The same `threads:` and `resources:`
+  directives are translated into each job's SLURM resource request.  
+- **Portable software** — where `module load` is not available (a different cluster, a laptop), the 
+  `conda:` and `container:` directives let a workflow fetch or build its own tools so it
+  runs anywhere. On a shared system like Ceres, prefer the modules that are already installed: they
+  cost you no extra storage, whereas a per-workflow conda environment or container image can take up a
+  lot of space in your allocation.
 - **Organizing large workflows** — `include:` splits rules across files, and `use rule ... as ...`
   reuses an existing rule with different inputs and outputs.
 
