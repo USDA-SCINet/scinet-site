@@ -882,7 +882,22 @@ else left as it is.
 
 To confirm that trimming did its job, run FastQC again. This time on the trimmed reads. It is the
 same tool with different inputs and outputs, so we add a second rule, `fastqc_trimmed`
-(Script `11_add_fastqc.smk`):
+(Script `11_add_fastqc.smk`).
+
+<div class="usa-accordion usa-accordion--bordered padding-top-2">
+
+  <div class="usa-accordion__heading">
+    <button
+      type="button"
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="fastqctrimmed"
+    >
+      Script 11
+    </button>
+  </div>
+
+<div id="fastqctrimmed" class="usa-accordion__content usa-prose" markdown=1 hidden>
 
 ```python
 rule fastqc_trimmed:
@@ -905,6 +920,8 @@ rule fastqc_trimmed:
         fastqc -o {params.outdir} -t {threads} {input} &> {log}
         """
 ```
+
+</div></div>
 
 Its input is the trimmed reads produced by Fastp, so Snakemake automatically runs it after trimming.
 Script 11 is the complete pipeline from before plus this rule.
