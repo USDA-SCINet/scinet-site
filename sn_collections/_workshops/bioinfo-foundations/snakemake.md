@@ -1232,7 +1232,7 @@ Three things worth reading about:
   directives are translated into each job's SLURM resource request.  
 - **Portable software** — where `module load` is not available (a different cluster, a laptop), the 
   `conda:` and `container:` directives let a workflow fetch or build its own tools so it
-  runs anywhere. On a shared system like Ceres, prefer the modules that are already installed: they
+  runs anywhere. On shared systems like Ceres and Atlas, prefer the modules that are already installed: they
   cost you no extra storage, whereas a per-workflow conda environment or container image can take up a
   lot of space in your allocation.
 - **Organizing large workflows** — `include:` splits rules across files, and `use rule ... as ...`
