@@ -129,7 +129,7 @@ inside its rule with `module load fastqc`, as you will see below. You are ready 
 By the end of this workshop, you will be able to:
 
 1. **Write Snakemake rules** — define a rule's inputs, outputs, and shell command(s), and 
-   Snakemake work out how the rules connect.
+   Snakemake works out how the rules connect.
 2. **Process many samples at once** — use wildcards and `expand()` so a single rule applies to any
    number of samples, without writing loops.
 3. **Make a pipeline configurable and reproducible** — use a config file for paths and settings,
@@ -692,7 +692,7 @@ rule, across all four paths. So one job reads `01_data/bio_sample_01_R1.fastq.gz
 value is used throughout the job, R1 and R2 from one sample stay paired together: sample 01’s R1 can never
 be matched with sample 02’s R2.
 
-That leaves two uses of the word *pattern* that are worth keeping distinct:
+We therefore need to distinguish two uses of patterns (e.g., `{sample}`):
 
 * `glob_wildcards("01_data/{sample}_R1.fastq.gz")` runs once, at parse time, scanning the disk to build the 
 list of sample names (`SAMPLES`).
@@ -1194,7 +1194,7 @@ the way you used the parts of Snakemake that cover most day-to-day work:
   hard-coded into the rules.
 - **`threads:`, `resources:`, and `log:`** — each rule states what it needs and where its messages go.
 
-The mindset worth carrying forward is this: instead of writing commands in the order they must run,
+The mindset to carry forward is this: instead of writing commands in the order they must run,
 you write one rule per output, each declaring the inputs it needs and the command that produces it,
 and then ask Snakemake for the final files you want. Snakemake works out the rest: which rules to run,
 in what order, and which to skip because their outputs are already up to date.
