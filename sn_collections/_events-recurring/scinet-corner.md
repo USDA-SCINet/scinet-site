@@ -20,6 +20,10 @@ archive-label: SCINet Corner Recordings
 sessions:
   - session:
     title: "Managing storage quotas on SCINet"
+    date: 2026-08-27
+    time: 1-2 pm ET
+  - session:
+    title: "Open Q&A"
     date: 2026-07-30
     time: 1-2 pm ET
   - session:
