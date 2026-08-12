@@ -96,6 +96,8 @@ After releasing the license go through the activation steps above to reactivate 
 
 Geneious Prime can also be accessed via [OpenOnDemand](https://scinet.usda.gov/guides/use/open-ondemand) which will allow you to run Geneious Prime directly on a cluster node.
 
+Note that each node on the cluster would count as a separate activation of your license and you can only release and move to a new device twice in 30 days.  To avoid this always request a specific node when using Geneious on the cluster with the "-w nodename" option.  Where "nodename" is the specific node you would like to use.  "-w ceres20-compute-5" as an example.
+
 First login to OpenOnDemand (OOD) as usual, then select "Geneious: Ceres" from the interactve apps menu.
 
   ![Picking Geneious in OOD menus]({{ images_path }}/geneious/menu.png)
