@@ -75,6 +75,7 @@ llama-cli -m /reference/llms/gemma-4/gemma-4-31b-it-bf16.gguf
 | Gemma 3      | [Gemma 3 270M](https://deepmind.google/models/gemma/gemma-3/) | 0.3 | 32,768 | N | Google Deepmind |
 | Gemma 4      | [Gemma 4 31B](https://deepmind.google/models/gemma/gemma-4/) | 31.3 | 262,144 | Y | Google Deepmind |
 | Gemma 4      | [Gemma 4 26B‑A4B](https://deepmind.google/models/gemma/gemma-4/) | 25.8 | 262,144 | Y | Google Deepmind |
+| Gemma 4      | [Gemma 4 12B](https://deepmind.google/models/gemma/gemma-4/) | 12.0 | 262,144 | Y | Google Deepmind |
 | Gemma 4      | [Gemma 4 E4B](https://deepmind.google/models/gemma/gemma-4/) | 7.9 | 131,072 | Y | Google Deepmind |
 | Gemma 4      | [Gemma 4 E2B](https://deepmind.google/models/gemma/gemma-4/) | 5.1 | 131,072 | Y | Google Deepmind |
 | gpt-oss      | [gpt-oss-120b](https://github.com/openai/gpt-oss) | 116.8 | 131,072 | Y | OpenAI |
@@ -82,6 +83,7 @@ llama-cli -m /reference/llms/gemma-4/gemma-4-31b-it-bf16.gguf
 | Llama 3.1    | [Llama 3.1 70B Instruct](https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_1/) | 70.6 | 131,072 | N | Meta |
 | Llama 3.1    | [Llama 3.1 8B Instruct](https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_1/) | 8.0 | 131,072 | N | Meta |
 | Llama 3.3    | [Llama 3.3 70B Instruct](https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_3/) | 70.6 | 131,072 | N | Meta |
+| Muse Glimmer | [Muse Glimmer 30B](https://developer.meta.com/ai/models/muse-glimmer/) | 29.8 | 131,072 | Y | Meta |
 | Nemotron 3   | [Nemotron 3 Super 120B A12B](https://research.nvidia.com/labs/nemotron/Nemotron-3-Super/) | 120.7 | 262,144* | Y | NVIDIA |
 | Nemotron 3   | [Nemotron 3 Nano 30B A3B](https://research.nvidia.com/labs/nemotron/Nemotron-3/) | 31.6 | 262,144* | Y | NVIDIA |
 | Olmo 3       | [Olmo 3 32B Think](https://allenai.org/olmo) | 32.2 | 65,536 | Y | Allen AI Institute |
