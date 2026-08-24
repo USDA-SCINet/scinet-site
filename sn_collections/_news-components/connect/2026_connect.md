@@ -25,7 +25,7 @@ Brian Stucky, Computational Biologist, Acting Chief Scientific Information Offic
 
 Brian Stucky, Acting Chief Scientific Information Officer  
 Rob Butler, SCINet Program Manager  
-Hye-Seon Kim, Science Advisory Committee (SAC) Chair  
+Hye-Seon Kim, Scientific Advisory Committee (SAC) Chair  
 Jeff Silverstein, Associate Administrator   
   
    
