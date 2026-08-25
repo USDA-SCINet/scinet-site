@@ -25,6 +25,8 @@ order_number: 40
 
 If you are at an ARS research location with a SCINet-X connection, you have access to a SCINet café machine - a dedicated computer for high-speed data transfer to and from SCINet’s supercomputers and long-term storage system. <!--excerpt--> However, you do not need to use the café machine to use SCINet’s computing systems - computing work should be done from your regular workstation or laptop. Please note that using the café machines requires a LincPass. 
 
+**Note:** If you plan to transfer data directly to or from an external USB drive connected to a Cafe machine, we recommend using a USB 3.0 or newer device for better performance. For the fastest transfer speeds, use a portable USB 3.2 NVMe SSD. Older USB 2.0 drives may work, but transfers can be significantly slower, especially for large datasets. 
+
 ## Logging into a café machine
 
 {: .usa-list }
