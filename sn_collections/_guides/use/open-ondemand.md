@@ -65,7 +65,9 @@ Follow [the GUI login instructions](/guides/access/web-based-login#accessing-web
 To open a shell, select the **Clusters** dropdown menu and choose `>_Ceres Shell Access`. This will open a new tab with an interactive console session on the login node.
 
 ### Files
-Open OnDemand includes a file manager. To open it, select the **Files** dropdown menu and choose the desired directory. Files can be uploaded, downloaded, viewed, and edited all from the web browser.
+Open OnDemand includes a file manager. To open it, select the **Files** dropdown menu and choose the desired directory. Files can be uploaded, downloaded, viewed, and edited all from the web browser. 
+
+Please note that only files less than 1GB can be transferred to and from your local system using Open OnDemand. With anything larger than 1GB, it is recommended to use Globus. Please see the [Data Transfer Guide](https://scinet.usda.gov/guides/data/transfer/local#data-transfer-to-and-from-local-computers) for more information. 
 
 ### Launching Interactive Apps
 Several interactive apps are available on Open Ondemand, and more can be added later. 
