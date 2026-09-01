@@ -19,6 +19,9 @@ sessions:
     date: 2026-04-13
     end_date: 2026-04-16
     multiday: April 13, 15-16
+    materials:
+      - text: Session recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/IQAivmjw4NG-T7W_-It6i96sAeOakTvht1wfu7xNZRWIqPI?e=GJqmF4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 
 registration:
     url: https://forms.office.com/g/T2teMegYSW
