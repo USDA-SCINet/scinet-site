@@ -40,7 +40,7 @@ Projects of high priority for funding are those that:
 1. Develop or adapt an AI/ML method that empowers ARS scientists to answer a specific question/problem or test a hypothesis of agricultural importance.
 2. Develop or adapt AI/ML technologies to create a prototype digital product that solves a need for producers or agricultural researchers.
 
-Proposals should be primarily focused on developing, adapting, or applying methods that fall into the category of AI or ML (see definitions below).  Please refer to the abstracts of the AI Innovation Fund proposals funded in [FY2024]({{ site.baseurl }}/opportunities/ai-innovation/fy24-awards), [FY2023]({{ site.baseurl }}/opportunities/ai-innovation/fy23-awards), [FY2022]({{ site.baseurl }}/opportunities/ai-innovation/fy22-awards), and [FY2021]({{ site.baseurl }}/opportunities/ai-innovation/fy21-awards) for examples of successful proposal topics.
+Proposals should be primarily focused on developing, adapting, or applying methods that fall into the category of AI or ML (see definitions below).  Please refer to the abstracts of the AI Innovation Fund proposals funded in [FY2026]({{ site.baseurl }}/opportunities/ai-innovation/fy26-awards), [FY2024]({{ site.baseurl }}/opportunities/ai-innovation/fy24-awards), [FY2023]({{ site.baseurl }}/opportunities/ai-innovation/fy23-awards), [FY2022]({{ site.baseurl }}/opportunities/ai-innovation/fy22-awards), and [FY2021]({{ site.baseurl }}/opportunities/ai-innovation/fy21-awards) for examples of successful proposal topics.
 
 Researchers developing a method or digital product are encouraged to define a minimum viable product as a deliverable.
  
