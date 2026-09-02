@@ -14,7 +14,9 @@ sidenav_basic:
   - title: FY2023 Awards
     url: /opportunities/fellowship-mentors/fy23-awards
   - title: FY2024 Awards
-    url: /opportunities/fellowship-proposals/fy24-awards
+    url: /opportunities/fellowship-mentors/fy24-awards
+  - title: FY2026 Awards
+    url: /opportunities/fellowship-mentors/fy26-awards
 
 
 
