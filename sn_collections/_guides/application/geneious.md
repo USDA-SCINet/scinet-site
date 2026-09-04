@@ -58,7 +58,7 @@ After Authentication is complete you should be able to use Geneious Prime on you
 
 ## Moving to a new Device
 
-Your license allows for 2 devices to be activated at the same time.  If you need to move a license to a different device  can move your license to a new device twice every 30 days.
+Your license allows for 2 devices to be activated at the same time.  If you need to move a license to a different device you can move a license twice every 30 days.
 
 If you still have access to Geneious on the old device start Geneious and select "Help" then "Release License" from the menu.
 
@@ -109,3 +109,4 @@ Next choose your version and options.
 Finally click "Launch Geneious: Ceres".
 
   ![Launching Geneious session in OOD]({{ images_path }}/geneious/launch.png)
+  
