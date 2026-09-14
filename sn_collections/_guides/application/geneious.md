@@ -17,7 +17,7 @@ subnav:
     url: '#using-geneious-on-the-ceres-cluster'
 ---
 
-SCINet manages licenses for [Geneious Prime](https://www.geneious.com/features/prime).  The licenses are paid for using individual unit funds and are purchased on an annual basis. <!--excerpt-->  Buying as a group provides better pricing for all.  For information on purchasing a license please contact XXXXXX.
+SCINet manages licenses for [Geneious Prime](https://www.geneious.com/features/prime).  The licenses are paid for using individual unit funds and are purchased on an annual basis. <!--excerpt-->  Buying as a group provides better pricing for all.  For information on purchasing a license please [contact the VRSC]({{ site.baseurl }}/about/contact).
 
 Note these licenses need to be activated with eAuth and Geneious Prime version 2026.1.1 or later is required to work with your LincPass.
 
