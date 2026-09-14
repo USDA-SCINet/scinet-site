@@ -1,56 +1,48 @@
 ---
 title: Geneious
 description: Geneious Software Use Guide
-excerpt: Geneious Software Use Guide
 ## author: VRSC
 
 categories: [Application]
 
 redirect_from: 
   - /guides/application/geneious
----
-
-{% include images_path %}
-
 
 subnav:
   - title: Activating
     url: '#activating'
   - title: Moving to a new Device
-    url: '#newdevice'
-  - title: Using Geneious on the Ceres Cluster
-    url: '#geneiousceres'
+    url: '#moving-to-a-new-device'
+  - title: Using Geneious on Ceres
+    url: '#using-geneious-on-the-ceres-cluster'
+---
+
+SCINet manages licenses for [Geneious Prime](https://www.geneious.com/features/prime).  The licenses are paid for using individual unit funds and are purchased on an annual basis. <!--excerpt-->  Buying as a group provides better pricing for all.  For information on purchasing a license please contact XXXXXX.
+
+Note these licenses need to be activated with eAuth and Geneious Prime version 2026.1.1 or later is required to work with your LincPass.
+
+{% include images_path %}
 
 
 ## Activating
 
-SCINet manages licenses for [Geneious Prime](https://www.geneious.com/features/prime).  The licenses are paid for using individual unit funds and are purchased on an annual basis. Buying as a group provides better pricing for all.  For information on purchasing a license please contact XXXXXX.
-
-Note these licenses need to be activated with eAuth and Geneious Prime version 2026.1.1 or later is required to work with your LincPass.
-
 After you  purchase a license you should receive an email from the VRSC with instructions on getting started.
 
-After either downloading [Geneious Prime](https://www.geneious.com/updates) or installing it from Software Center as needed, go ahead and start it up.  Geneious will start with a box asking for a license activation as seen here:
+1. After either downloading [Geneious Prime](https://www.geneious.com/updates) or installing it from Software Center as needed, go ahead and start it up.  Geneious will start with a box asking for a license activation as seen here:
 
- ![Geneious no license screen]({{ images_path }}/geneious/nolicense.png)
+   ![Geneious no license screen]({{ images_path }}/geneious/no-license.png)
 
-Click "Activate a License" and you will get the following screen
+2. Click "Activate a License" and you will get the following screen
 
- ![Activation Screen]({{ images_path }}/geneious/activation-picker.png)
+   ![Activation Screen]({{ images_path }}/geneious/activation-picker.png)  
+   You must pick "Continue in Your Browser" at the bottom.
 
-You must pick "Continue in Your Browser" at the bottom.
+3. Click on "Email Sign In" in the browser page that comes up.  
+   ![Choose External Browser]({{ images_path }}/geneious/email-signin-page.png)
 
- ![Choose External Browser]({{ images_path }}/geneious/email-signin-page.png)
+4. Enter your scinet email address.  (usually something like first.last@usda.gov) and click continue.  
 
-Click on "Email Sign In" in the browser page that comes up.
-
-enter your scinet email address.  (usually something like first.last@usda.gov) and click continue.
-
- ![Enter your email address]({{ images_path }}/geneious/sso-selector.png)
-
-Click "Log In with SSO"
-
-Proceed with your usual eAuth login.
+5. Click "Log In with SSO" and proceed with your usual eAuth login.
 
 After Authentication is complete you should be able to use Geneious Prime on your device.
 
@@ -60,53 +52,58 @@ After Authentication is complete you should be able to use Geneious Prime on you
 
 Your license allows for 2 devices to be activated at the same time.  If you need to move a license to a different device you can move a license twice every 30 days.
 
-If you still have access to Geneious on the old device start Geneious and select "Help" then "Release License" from the menu.
+### If you still have access to Geneious on the old device
 
- ![Help Menu]({{ images_path }}/geneious/helpmenu.png)
-
-You will get a confirmation dialog similar to this.
-
-![Geneious release confirmation]({{ images_path }}/geneious/releaseconfirmation.png)
-
-
-If you no longer have access to the old device you can still deactivate the license on the [geneious website](https://www.geneious.com/)
-
-First sign in on their homepage using the "Geneious Prime My Account" option
-
- ![Geneious login screen]({{ images_path }}/geneious/login.png)
-
-Then click "deactivate" on the device you wish to remove.
-
-![Geneious deactivate buttons]({{ images_path }}/geneious/beforedeactivate.png)
-
-confirm your action 
-
- ![Geneious Deactivate Confirmation]({{ images_path }}/geneious/confirmdeactivate.png)
-
-and you're done!
-
- ![Deactivated successfully]({{ images_path }}/geneious/afterdeactivate.png)
+1. Start Geneious
+2. Select "Help" then "Release License(s)" from the menu.  
+   ![Help Menu]({{ images_path }}/geneious/helpmenu.png)
+3. You will get a confirmation dialogue. Select "Release License"  
+   ![Geneious release confirmation]({{ images_path }}/geneious/releaseconfirmation.png)
 
 
+### If you no longer have access to the old device
 
-After releasing the license go through the activation steps above to reactivate on your new device.
+You can still deactivate the license on the [geneious website](https://www.geneious.com/)
+
+1. First sign in on their homepage using the "Geneious Prime My Account" option  
+   ![Geneious login screen]({{ images_path }}/geneious/login.png)
+2. Click "deactivate" on the device you wish to remove.  
+   ![Geneious deactivate buttons]({{ images_path }}/geneious/beforedeactivate.png)
+3. Confirm your action.  
+   ![Geneious Deactivate Confirmation]({{ images_path }}/geneious/confirmdeactivate.png)
+4. You will recieve a successful deactivation message.
+   ![Deactivated successfully]({{ images_path }}/geneious/afterdeactivate.png)
+
+
+After releasing the license go through the [activation steps](#activating) above to reactivate on your new device.
 
 
 ## Using Geneious on the Ceres Cluster
 
 Geneious Prime can also be accessed via [OpenOnDemand](https://scinet.usda.gov/guides/use/open-ondemand) which will allow you to run Geneious Prime directly on a cluster node.
 
-Note that each node on the cluster would count as a separate activation of your license and you can only release and move to a new device twice in 30 days.  To avoid this always request a specific node when using Geneious on the cluster with the "-w nodename" option.  Where "nodename" is the specific node you would like to use.  "-w ceres20-compute-5" as an example.
+<div class="shadow-2 usa-alert usa-alert--warning">
+<div class="usa-alert__body">
+<h4 class="usa-alert__heading">Each node counts as a separate activation of your license</h4>
+<div class="usa-alert__text" markdown=1>
 
-First login to OpenOnDemand (OOD) as usual, then select "Geneious: Ceres" from the interactve apps menu.
+Each node on the cluster you use with Geneious would count as a separate activation of your license and you can only release and move to a new device twice in 30 days.  
 
-  ![Picking Geneious in OOD menus]({{ images_path }}/geneious/menu.png)
+To avoid this, always request a specific node when using Geneious on the cluster with the "-w nodename" option, where "nodename" is the specific node you would like to use.  
 
-Next choose your version and options.
+For example:  
+```
+-w ceres20-compute-5
+```
 
-  ![Choosing options for geneious run in OOD]({{ images_path }}/geneious/options.png)
+</div>
+</div>
+</div>
 
-Finally click "Launch Geneious: Ceres".
-
-  ![Launching Geneious session in OOD]({{ images_path }}/geneious/launch.png)
+1. Login to OpenOnDemand (OOD) as usual, then select "Geneious: Ceres" from the interactve apps menu.  
+   ![Picking Geneious in OOD menus]({{ images_path }}/geneious/menu.png)
+2. Choose your version and options.  
+   ![Choosing options for geneious run in OOD]({{ images_path }}/geneious/options.png)
+3. Finally click "Launch Geneious: Ceres".  
+   ![Launching Geneious session in OOD]({{ images_path }}/geneious/launch.png)
   
