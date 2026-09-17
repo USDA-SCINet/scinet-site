@@ -26,9 +26,11 @@ subnav:
 
 ## Overview
 
-The goal of the ARS Artificial Intelligence Center of Excellence (AI-COE) is to enable innovative ARS science by promoting the adoption and use of AI and machine learning (ML) tools and methods in agricultural research. For FY26, the AI-COE expects to fund 4 to 6 proposals at up to $100,000 each for activities to encourage and promote AI-related research in agriculture.  For examples of successful proposal topics, please see the abstracts of the AI Innovation Fund proposals funded in [FY2024]({{ site.baseurl }}/opportunities/ai-innovation/fy24-awards), [FY2023]({{ site.baseurl }}/opportunities/ai-innovation/fy23-awards), [FY2022]({{ site.baseurl }}/opportunities/ai-innovation/fy22-awards), and [FY2021]({{ site.baseurl }}/opportunities/ai-innovation/fy21-awards) (this program was paused for FY2025).
- 
-Proposals must be submitted using the [online submission form](https://forms.office.com/g/uTnf2jdZDV) and are due **by close of business on Friday, February 6, 2026**. All submitted proposals must be approved by a relevant RL or supervisor. We expect that funds will be available for use some time in early 2026 and will need to be spent or placed in collaborative agreements by the end of FY2026. For questions, contact Brian Stucky, Computational Biologist with the SCINet Office and Acting ARS CSIO.
+The goal of the ARS Artificial Intelligence Center of Excellence (AI-COE) is to enable innovative ARS science by promoting the adoption and use of AI and machine learning (ML) tools and methods in agricultural research. The FY26 competition is now complete, and instructions specific to the FY27 call for proposals will be posted here in early FY27.
+<!-- For FY26, the AI-COE expects to fund 4 to 6 proposals at up to $100,000 each for activities to encourage and promote AI-related research in agriculture. --> 
+For examples of successful proposal topics, please see the abstracts of the AI Innovation Fund proposals funded in [FY2026]({{ site.baseurl }}/opportunities/ai-innovation/fy26-awards), [FY2024]({{ site.baseurl }}/opportunities/ai-innovation/fy24-awards), [FY2023]({{ site.baseurl }}/opportunities/ai-innovation/fy23-awards), [FY2022]({{ site.baseurl }}/opportunities/ai-innovation/fy22-awards), and [FY2021]({{ site.baseurl }}/opportunities/ai-innovation/fy21-awards) (this program was paused for FY2025).
+
+<!-- Proposals must be submitted using the [online submission form](https://forms.office.com/g/uTnf2jdZDV) and are due **by close of business on Friday, February 6, 2026**. All submitted proposals must be approved by a relevant RL or supervisor. We expect that funds will be available for use some time in early 2026 and will need to be spent or placed in collaborative agreements by the end of FY2026. For questions, contact Brian Stucky, Computational Biologist with the SCINet Office and Acting ARS CSIO. -->
 
 ## Proposal guidelines
 
@@ -38,7 +40,7 @@ Projects of high priority for funding are those that:
 1. Develop or adapt an AI/ML method that empowers ARS scientists to answer a specific question/problem or test a hypothesis of agricultural importance.
 2. Develop or adapt AI/ML technologies to create a prototype digital product that solves a need for producers or agricultural researchers.
 
-Proposals should be primarily focused on developing, adapting, or applying methods that fall into the category of AI or ML (see definitions below).  Please refer to the abstracts of the AI Innovation Fund proposals funded in [FY2024]({{ site.baseurl }}/opportunities/ai-innovation/fy24-awards), [FY2023]({{ site.baseurl }}/opportunities/ai-innovation/fy23-awards), [FY2022]({{ site.baseurl }}/opportunities/ai-innovation/fy22-awards), and [FY2021]({{ site.baseurl }}/opportunities/ai-innovation/fy21-awards) for examples of successful proposal topics.
+Proposals should be primarily focused on developing, adapting, or applying methods that fall into the category of AI or ML (see definitions below).  Please refer to the abstracts of the AI Innovation Fund proposals funded in [FY2026]({{ site.baseurl }}/opportunities/ai-innovation/fy26-awards), [FY2024]({{ site.baseurl }}/opportunities/ai-innovation/fy24-awards), [FY2023]({{ site.baseurl }}/opportunities/ai-innovation/fy23-awards), [FY2022]({{ site.baseurl }}/opportunities/ai-innovation/fy22-awards), and [FY2021]({{ site.baseurl }}/opportunities/ai-innovation/fy21-awards) for examples of successful proposal topics.
 
 Researchers developing a method or digital product are encouraged to define a minimum viable product as a deliverable.
  
@@ -54,11 +56,11 @@ Training, workshop, and working group activities are not supported by this call.
  
 ### Project Funding
 
-We expect to fund 4 to 6 proposals up to $100,000 each. Funds must be spent or obligated in fiscal year 2026, which may require a collaborative agreement.
+We expect to fund 4 to 6 proposals up to $100,000 each in each fiscal year. Funds must be spent or obligated in the same fiscal year in which they are awarded, which may require a collaborative agreement.
  
 ## Proposal format and submission
 
-All proposals must be submitted using the [online submission form](https://forms.office.com/g/uTnf2jdZDV). The PI's RL or supervisor must approve the proposal prior to submission (approval will be indicated on the submission form). A complete application will include:
+All proposals must be submitted using the <!-- [online submission form](https://forms.office.com/g/uTnf2jdZDV)--> online submission form (TBA). The PI's RL or supervisor must approve the proposal prior to submission (approval will be indicated on the submission form). A complete application will include:
 * A proposal abstract of no more than 1,500 characters.
 * Proposal (project description) of up to 2 pages in length that clearly lays out a specific challenge or question, proposes a method or tool to be developed or applied to solve the challenge or to answer the question, and demonstrates that the research team has the capability to complete the project. Deliverables for the project should be defined.
 * A detailed project budget provided as an Excel spreadsheet. Please use [REE budget form 455](https://www.ars.usda.gov/ARSUserFiles/FMAD/Agreements/ree-455-112018.xlsx).
@@ -66,7 +68,7 @@ All proposals must be submitted using the [online submission form](https://forms
 
 The proposal should be submitted as a PDF document with margins of no less than 1 inch and font size of no less than 11. The proposal may include figures, which should be included in the 2-page limit. References are not included in the 2-page limit for the proposal. Only one proposal as the lead investigator responsible for project completion can be submitted by a scientist, although a scientist can be a member of multiple proposal teams. We encourage teams of investigators collaborating on a problem.
  
-**Deadline for proposal submission:** Close of business on Friday, February 6, 2026.
+**Deadline for proposal submission:** TBD <!-- Close of business on Friday, February 6, 2026.-->
  
 **Eligibility:** ARS Category 1, 4, or 6 scientists with RL or supervisor approval. <!--Please note that PIs on an FY24 AI Innovation Fund award will not be eligible for an FY25 award.-->
  
