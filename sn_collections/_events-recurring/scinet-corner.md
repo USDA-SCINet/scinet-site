@@ -19,6 +19,11 @@ archive-label: SCINet Corner Recordings
 
 sessions:
   - session:
+    title: "Partitions on SCINet"
+    date: 2026-09-24
+    time: 1-2 pm ET
+    excerpt: "This edition of SCINet Corner will provide an overview of the hardware partitions available on SCINet and how to use them."
+  - session:
     title: "Managing storage quotas on SCINet"
     date: 2026-08-27
     time: 1-2 pm ET
