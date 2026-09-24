@@ -127,7 +127,7 @@ To run jobs on compute nodes of either cluster, the jobs need to be associated w
 
 ### Partitions
 
-One does not have to specify a partition when submitting a job to a default partition on either Ceres or Atlas. However scripts that have a partition specified will need to be updated when used on a different cluster. To see the list of available partitions on a cluster, either issue "`sinfo`" command or consult the appropriate user guide: [Ceres]({{ site.baseurl }}/guides/use/partitions-queues) or [Atlas](https://www.hpc.msstate.edu/computing/atlas).
+One does not have to specify a partition when submitting a job to a default partition on either Ceres or Atlas. However scripts that have a partition specified will need to be updated when used on a different cluster. To see the list of available partitions on a cluster, either issue "`sinfo`" command or consult the appropriate user guide: [Ceres]({{ site.baseurl }}/guides/use/partitions-queues) or [Atlas](https://docs.hpc.msstate.edu/cluster/specifications/atlas.html).
 
 ### Nodes
 
