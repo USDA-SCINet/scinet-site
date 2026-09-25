@@ -19,6 +19,10 @@ archive-label: SCINet Corner Recordings
 
 sessions:
   - session:
+    title: "Introduction to SCINet"
+    date: 2026-10-29
+    time: 1-2 pm ET
+  - session:
     title: "Partitions on SCINet"
     date: 2026-09-24
     time: 1-2 pm ET
