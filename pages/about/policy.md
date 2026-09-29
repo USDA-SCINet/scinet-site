@@ -75,7 +75,7 @@ subnav:
 :  Queue policies are subject to periodic change.
 
    *  [Ceres User Guide]({{ site.baseurl }}/guides/use/partitions-queues)
-   *  [Atlas User Guide](https://www.hpc.msstate.edu/computing/atlas/)
+   *  [Atlas User Guide](https://docs.hpc.msstate.edu/cluster/specifications/atlas.html/)
 
 
 

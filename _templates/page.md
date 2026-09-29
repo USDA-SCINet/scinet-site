@@ -23,7 +23,7 @@ subnav: # match navigation in page or add external links
     url: /news/downtime/archive
     internal: true
   - text: Atlas HPC User Guide # if you want to include an EXternal link in your subnav
-    url: https://www.hpc.msstate.edu/computing/atlas
+    url: https://docs.hpc.msstate.edu/cluster/specifications/atlas.html
     external: true
 
 ---

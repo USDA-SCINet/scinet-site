@@ -207,7 +207,7 @@ There is a call for new SAC members every spring. If you would like serve on the
 ## Parallel Computing
 ---
 ### How do I write a batch script to submit a compute job?
-Please use the [Ceres job script generator]({{ site.baseurl }}/support/ceres-job-script). The [Atlas user guide](https://www.hpc.msstate.edu/computing/atlas/) provides similar generator for the Atlas cluster.
+Please use the [Ceres job script generator]({{ site.baseurl }}/support/ceres-job-script). The [Atlas user guide](https://docs.hpc.msstate.edu/cluster/specifications/atlas.html/) provides similar generator for the Atlas cluster.
 
 ### How do I compile MPI codes?
 Load the module for the MPI library you wish to use, generally open openmpi, but mpich is available as well. MPI is included by default with the intel compiler.

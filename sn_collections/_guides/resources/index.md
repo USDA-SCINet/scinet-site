@@ -14,7 +14,7 @@ show_full: true
 
 sidenav_append:
   - title: Atlas HPC User Guide
-    url: https://www.hpc.msstate.edu/computing/atlas
+    url: https://docs.hpc.msstate.edu/cluster/specifications/atlas.html
     external: true
     class: bg-accent-warm-lighter border-y-1px border-accent-warm
   - title: SEARCH
