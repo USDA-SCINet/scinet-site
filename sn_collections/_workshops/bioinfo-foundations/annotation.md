@@ -19,6 +19,11 @@ sessions:
     date: 2026-05-11    
     end_date: 2026-05-13 
     multiday: May 11 & 13
+    materials:
+      - text: Day 1 recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/IQBonnxAjRrASbshx-T5W1YxAe8D5yF__mYQVQWMPlLyfmA?e=cBg8lv
+      - text: Day 2 recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/IQBaf9FkTjHsRZMfXYQ5m2Y_AcuL_tpW3gxlDKfUzwrPOl4?e=emjHRS
 workshop: foundations_workshop
 files: "/project/scinet_workshop2/foundations_bioinf_2026/genome_annotation/files"
 base_dir: "/90daydata/shared/$USER/genome_annotation/"
