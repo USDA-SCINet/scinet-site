@@ -20,7 +20,11 @@ sessions:
     multiday: June 22, 24-25
     materials:
       - text: Day 1 recording
-        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/IQDpDse_W4pwSpcVN_LPIbdgAbbfKlzg6UNKYuEs7FvAR3g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=cI6SPC
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/IQDpDse_W4pwSpcVN_LPIbdgAbbfKlzg6UNKYuEs7FvAR3g?e=eCzCQZ
+      - text: Day 2 recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/IQBy2t5jRQMYQZUaWEIWuJAVATGRtYw-xfU20jHsP_9mwFg?e=5riroP
+      - text: Day 3 recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/IQDObJGD0034SLnNo2hv_GGeAeHlHw8p3fxU-c4E3Rurr4Y?e=mQKZzo
     registration:
       url: https://forms.office.com/g/xU75HyHQKi
 

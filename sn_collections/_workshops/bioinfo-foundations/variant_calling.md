@@ -19,6 +19,11 @@ sessions:
     date: 2026-05-19    
     end_date: 2026-05-20 
     multiday: May 19 & 20
+    materials:
+      - text: Day 1 recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/IQBzF7EWUVEeSpDO1wRe3WOeAeYWCaPt7uNi7iLMuXTsxQY?e=NOTfTa
+      - text: Day 2 recording
+        url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/IQCKQ08Jzzk8Qa73irE5K-y7AYubajv2t_vG68VYQ0u7jh8?e=7akoow
 registration:
     url: https://forms.office.com/g/T2teMegYSW
 tags: bioinformatics
