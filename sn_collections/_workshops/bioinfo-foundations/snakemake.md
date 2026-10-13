@@ -88,7 +88,7 @@ For more information on login procedures for web-based SCINet access, see the [S
 * Specify the following input values on the page:
   * Account: scinet_workshop2
   * Queue: ceres
-  * QoS: 400thread
+  * QoS: ceres
   * Number of cores: 16
   * Memory required: 50G
   * Number of hours: 6

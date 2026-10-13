@@ -62,7 +62,7 @@ Steps to prepare for the tutorial session:
   * Specify the following input values on the page:
     * Account: scinet_workshop2
     * Queue: ceres
-    * QoS: 400thread
+    * QoS: ceres
     * Number of cores: 2
     * Memory required: 6 G
     * Number of hours: 5
@@ -782,7 +782,7 @@ cp 00_Scripts/DESeq2.R 07_DESeq2
 * Fill the input fields with the following (input fields not listed below can be left at their default values): 
   * Account: scinet_workshop2 
   * Queue: ceres 
-  * QOS: 400thread 
+  * QOS: ceres 
   * R Version: 4.4.1 
   * Number of hours: 4 
   * Number of cores: 1 

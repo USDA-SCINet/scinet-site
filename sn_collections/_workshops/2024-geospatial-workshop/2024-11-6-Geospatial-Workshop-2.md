@@ -29,8 +29,8 @@ Steps to prepare for the tutorial sessions:
 1. **Launch a VS Code session.** Under the *Interactive Apps* menu, select *VS Code*. Specify the following input values on the page:
 
     * Account: geospatialworkshop
-    * Queue: short---------Max Time: 2-00:00:00
-    * QOS: 400thread
+    * Queue: ceres---------Max Time: 2-00:00:00
+    * QOS: ceres
     * Number of cores: 2
     * Memory required: 16GB
     * Number of hours: 2

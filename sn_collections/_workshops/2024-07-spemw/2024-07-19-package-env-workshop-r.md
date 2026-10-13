@@ -106,8 +106,8 @@ Multiple R versions are available when requesting RStudio Server sessions on Ope
 
 1. For the following exercise, select the following inputs: 
     * Account: scinet_workshop1
-    * Queue: short--------Max Time: 2-00:00:00
-    * QOS: 400thread 
+    * Queue: ceres--------Max Time: 2-00:00:00
+    * QOS: ceres 
     * **R Version: 4.3.2-EL9**
     * Number of hours: 1
     * Number of cores: 2

@@ -18,7 +18,7 @@ All compute nodes have 1.5 TB of fast local temporary data file storage space su
 ```bash
 #!/bin/bash
 #SBATCH --job-name="my sequence assembly"   #name of the job submitted
-#SBATCH -p short              #name of the queue you are submitting job to
+#SBATCH -p ceres              #name of the queue you are submitting job to
 #SBATCH -N 1                  #number of nodes in this job
 #SBATCH -n 40                 #number of cores/tasks in this job, you get all 20 cores with 2 threads per core with hyper-threading
 #SBATCH -t 01:00:00           #time allocated for this job hours:mins:seconds

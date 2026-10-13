@@ -69,7 +69,7 @@ Steps to prepare for the tutorial session:
   * Specify the following input values on the page:
     * Account: scinet_workshop2
     * Queue: ceres
-    * QoS: 400thread
+    * QoS: ceres
     * Number of cores: 32
     * Memory required: 50 G
     * Number of hours: 6

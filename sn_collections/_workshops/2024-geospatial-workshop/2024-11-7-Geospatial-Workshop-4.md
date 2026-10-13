@@ -42,8 +42,8 @@ Steps to prepare for the tutorial sessions:
 1. **Launch a JupyterLab Server session.** Under the *Interactive Apps* menu, select *Jupyter*. Specify the following input values on the page:
 
     * Account: geospatialworkshop
-    * Queue: short---------Max Time: 2-00:00:00
-    * QOS: 400thread
+    * Queue: ceres---------Max Time: 2-00:00:00
+    * QOS: ceres
     * Number of hours: 2
     * Number of cores: 8
     * Memory required: 16GB
