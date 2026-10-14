@@ -23,7 +23,6 @@ sessions:
       url: https://forms.office.com/g/viLFLk2sch
 
 registration: 
-  text: Join the waitlist
   url: https://forms.office.com/g/viLFLk2sch
 
 # subnav:
