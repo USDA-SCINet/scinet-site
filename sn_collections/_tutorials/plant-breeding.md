@@ -55,7 +55,7 @@ Sequencing data for each bulk should be mapped to a reference genome using bowti
 #!/bin/bash
 
 #SBATCH --job-name="qtl_seq"
-#SBATCH -p short
+#SBATCH -p ceres
 #SBATCH -N 1
 #SBATCH -n 40
 #SBATCH -t 48:00:00
@@ -85,7 +85,7 @@ Call variants and add information about the allele frequency in each sample:
 #!/bin/bash
 
 #SBATCH --job-name="qtl_seq"
-#SBATCH -p short
+#SBATCH -p ceres
 #SBATCH -N 1
 #SBATCH -n 40
 #SBATCH -t 48:00:00

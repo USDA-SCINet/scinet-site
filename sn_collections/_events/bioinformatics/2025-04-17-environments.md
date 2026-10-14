@@ -352,7 +352,7 @@ SLURM (Simple Linux Utility for Resource Management) is an open-source job sched
     {:.copy-code}
     ```bash
 sinfo
-sinfo -p short
+sinfo -p ceres
 sinfo -p ceres
 ```
 

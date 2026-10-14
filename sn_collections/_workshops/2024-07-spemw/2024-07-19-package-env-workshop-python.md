@@ -109,8 +109,8 @@ For the next exercise, we will use [Open OnDemand on Ceres](https://ceres-ondema
 1. From the Open OnDemand landing page, select "Interactive Apps" > "Jupyter". You will be taken to a page with multiple input fields to configure your Jupyter session. 
 1. Select the following inputs: 
     * Account: scinet_workshop1
-    * Queue: short--------Max Time: 2-00:00:00
-    * QOS: 400thread 
+    * Queue: ceres--------Max Time: 2-00:00:00
+    * QOS: ceres 
     * Number of hours: 2
     * Number of cores: 2
     * Memory required: 8G
