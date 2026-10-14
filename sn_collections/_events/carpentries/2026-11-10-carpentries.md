@@ -19,11 +19,10 @@ sessions:
     time: 1:00 PM - 5:00 PM ET
     multiday: "Nov 30 & Dec 2"
     registration:    
-      text: Join the waitlist
-      url: https://forms.office.com/g/viLFLk2sch
+      url: https://forms.cloud.microsoft/g/J0S9Rf5NBW
 
 registration: 
-  url: https://forms.office.com/g/viLFLk2sch
+  url: https://forms.cloud.microsoft/g/J0S9Rf5NBW
 
 # subnav:
 #  - title: Pre-Workshop Instructions
