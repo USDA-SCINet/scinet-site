@@ -28,21 +28,23 @@ Note these licenses need to be activated with eAuth and Geneious Prime version 2
 
 After you  purchase a license you should receive an email from the VRSC with instructions on getting started.
 
-1. After either downloading [Geneious Prime](https://www.geneious.com/updates) or installing it from Software Center as needed, go ahead and start it up.  Geneious will start with a box asking for a license activation as seen here:
+1. Install [Geneious Prime](https://www.geneious.com/updates). For USDA-managed workstations, Geneious Prime can be installed from the Software Center. Mac users will need to work with their CEC support to have their computer added to the "macOS Application - Geneious Prime" group before the application will be available for self-install in Intune.
+
+3. Start the application.  Geneious will start with a box asking for a license activation as seen here:
 
    ![Geneious no license screen]({{ images_path }}/geneious/no-license.png)
 
-2. Click "Activate a License" and you will get the following screen
+4. Click "Activate a License" and you will get the following screen
 
    ![Activation Screen]({{ images_path }}/geneious/activation-picker.png)  
    You must pick "Continue in Your Browser" at the bottom.
 
-3. Click on "Email Sign In" in the browser page that comes up.  
+5. Click on "Email Sign In" in the browser page that comes up.  
    ![Choose External Browser]({{ images_path }}/geneious/email-signin-page.png)
 
-4. Enter your scinet email address.  (usually something like first.last@usda.gov) and click continue.  
+6. Enter your scinet email address.  (usually something like first.last@usda.gov) and click continue.  
 
-5. Click "Log In with SSO" and proceed with your usual eAuth login.
+7. Click "Log In with SSO" and proceed with your usual eAuth login.
 
 After Authentication is complete you should be able to use Geneious Prime on your device.
 
