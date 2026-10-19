@@ -26,7 +26,7 @@ unfetch_sidenav: true
 
 **LincPass Users** Please contact your IT Specialist if you need help with installing Step on your USDA controlled machine. 
 
-**If you are encountering errors after completing the below steps, see [SmallStepCLI Install Troubleshooting for LincPass Users](/guides/access/login/smallstepscli)**
+**If you are encountering errors after completing the below steps, see [SmallStepCLI Install Troubleshooting for LincPass Users](/guides/access/login/smallsteps)**
 
 The below instructions are a step-by-step guide to download SmallStepCLI from Software Center. If you are not on a USDA controlled machine, you can [install SmallStep yourself using the instructions found here]({{ site.baseurl}}/guides/access/ssh-login#small-step-installation-instructions).
 
