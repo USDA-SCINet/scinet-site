@@ -92,7 +92,7 @@ Jupyter operates as a client/server application. When you run Jupyter, the appli
 
 ## Jupyter Server in Open OnDemand
 
-In your browser go to [https://ceres-ood.scinet.usda.gov/](https://ceres-ood.scinet.usda.gov/), enter your SCINet credentials: `Username` and SCINet `Password`, followed by preferred multi-factor authentication ([MFA Guide]({{ site.baseurl }}/guides/access/mfa/)).
+In your browser go to [https://ceres-ondemand.scinet.usda.gov/](https://ceres-ondemand.scinet.usda.gov/), enter your SCINet credentials: `Username` and SCINet `Password`, followed by preferred multi-factor authentication ([MFA Guide]({{ site.baseurl }}/guides/access/mfa/)).
 
 ![screenshot of signing into Ceres OOD in a web browser]({{ images_path }}/jupyter/loginOOD.png)
 

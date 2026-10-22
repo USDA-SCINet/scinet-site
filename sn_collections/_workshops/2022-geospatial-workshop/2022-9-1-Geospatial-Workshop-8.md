@@ -91,7 +91,7 @@ The workshop-specific instructions are kept below.
 
 Steps to prepare for the tutorial:
 
-1. **Login to Ceres Open OnDemand** at [https://ceres-ood.scinet.usda.gov](https://ceres-ood.scinet.usda.gov). Your username is typically *firstname.lastname*. For the password, enter your SCINet account password followed by the 6-digit verification code, e.g. from a Google Authenticator app on your phone, with no spaces. Do not add a '+' between your password and code. 
+1. **Login to Ceres Open OnDemand** at [https://ceres-ondemand.scinet.usda.gov](https://ceres-ondemand.scinet.usda.gov). Your username is typically *firstname.lastname*. For the password, enter your SCINet account password followed by the 6-digit verification code, e.g. from a Google Authenticator app on your phone, with no spaces. Do not add a '+' between your password and code.
 
 2. **Copy the Session 6-8 material from the workshop project space to your temporary workshop folder.** The contents of this session have been added to the Session 6 folder since they share the same data. To get to a shell to do the copying, you can use the *Clusters* tab at the top of your Open OnDemand page to select 'Ceres Shell Access' (if prompted for a password, enter your SCINet account password without the verification code). If you are comfortable ssh-ing in instead from terminal or powershell, feel free to do so.
 
