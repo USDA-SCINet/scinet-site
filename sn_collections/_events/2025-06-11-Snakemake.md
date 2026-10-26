@@ -64,7 +64,7 @@ Note that this tutorial is for Snakemake __versions 8+__, as version 8 introduce
 ## Pre-Workshop Instructions: 
 To help minimize technical issues and delays at the start of the workshop, please try the following tests prior to the workshop. 
 
-* **Logging on to [Ceres Open OnDemand (OOD)](http://ceres-ood.scinet.usda.gov/):** 
+* **Logging on to [Ceres Open OnDemand (OOD)](https://ceres-ondemand.scinet.usda.gov/):**
   * Please confirm you can successfully log in to Ceres OOD with your SCINet account [(see login instructions here)](/guides/access/web-based-login). If you are successful, you will be able to see the Ceres OOD home page.   
 * **Ceres Shell Access:** 
   * When on Ceres OOD, click on the top navigation bar: “Clusters” > “Ceres Shell Access”. A new tab will appear that looks like a shell terminal (e.g., like PowerShell). 
@@ -75,7 +75,7 @@ To help minimize technical issues and delays at the start of the workshop, pleas
 
 Steps to prepare for the tutorial session: 
 
-* Login to [Ceres Open OnDemand](http://ceres-ood.scinet.usda.gov/). For more information on login procedures for web-based SCINet access, see the [SCINet access user guide]({{site.baseurl}}/guides/access/web-based-login). 
+* Login to [Ceres Open OnDemand](https://ceres-ondemand.scinet.usda.gov/). For more information on login procedures for web-based SCINet access, see the [SCINet access user guide]({{site.baseurl}}/guides/access/web-based-login).
 * Open a command-line session by clicking on “Clusters” -> “Ceres Shell Access” on the top menu. This will open a new tab with a command-line session on Ceres' login node. 
 * Request resources on a compute node by running the following command.
   

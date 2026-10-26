@@ -44,7 +44,7 @@ SCINet offers three main web-based interfaces:
       <ul>
         <li>Open OnDemand
           <ul>
-            <li><a href='http://ceres-ood.scinet.usda.gov/' target='_blank' class=' usa-link--external' rel='noopener noreferrer'>Open OnDemand for Ceres</a></li>
+            <li><a href='https://ceres-ondemand.scinet.usda.gov/' target='_blank' class=' usa-link--external' rel='noopener noreferrer'>Open OnDemand for Ceres</a></li>
             <li><a href='https://atlas-ood.hpc.msstate.edu/' target='_blank' class=' usa-link--external' rel='noopener noreferrer'>Open OnDemand for Atlas</a></li>
           </ul>
         </li>
@@ -73,7 +73,7 @@ SCINet offers three main web-based interfaces:
     <div class="usa-summary-box__text"  markdown='1'>
 
 * **Open OnDemand**
-  * [Open OnDemand for Ceres](http://ceres-ood.scinet.usda.gov/)
+  * [Open OnDemand for Ceres](https://ceres-ondemand.scinet.usda.gov/)
   * [Open OnDemand for Atlas](https://atlas-ood.hpc.msstate.edu/)
 * **Galaxy**
   * [Galaxy for Ceres](https://galaxy.scinet.usda.gov)
@@ -91,7 +91,7 @@ The process for logging on to SCINet via Open OnDemand or Galaxy is the same. Th
 
 * To access SCINet's web-based interfaces, start by following the relevant link below.
   * Open OnDemand:
-    * [Open OnDemand for Ceres](http://ceres-ood.scinet.usda.gov/)
+    * [Open OnDemand for Ceres](https://ceres-ondemand.scinet.usda.gov/)
     * [Open OnDemand for Atlas](https://atlas-ood.hpc.msstate.edu/)
   * Galaxy
     * [Galaxy for Ceres](https://galaxy.scinet.usda.gov)

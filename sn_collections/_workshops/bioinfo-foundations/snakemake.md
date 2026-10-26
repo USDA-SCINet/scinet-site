@@ -45,7 +45,7 @@ Steps to prepare for the tutorial session:
 <li class="usa-process-list__item usa-prose" markdown="1">
 
 {:.usa-process-list__heading}
-### Login to [Ceres Open OnDemand](http://ceres-ood.scinet.usda.gov/).
+### Login to [Ceres Open OnDemand](https://ceres-ondemand.scinet.usda.gov/).
 
 For more information on login procedures for web-based SCINet access, see the [SCINet access user guide]({{site.baseurl}}/guides/access/web-based-login).
 

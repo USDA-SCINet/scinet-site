@@ -60,7 +60,7 @@ accustomed. This session will cover a few geospatial-relevent applications avail
 <br>
 {:.border-bottom}
 
-This is the first interactive tutorial session. We will be accessing the interactive environments available via [Open OnDemand on Ceres](https://ceres-ood.scinet.usda.gov/). There will be a few introductory slides, a period of screen-sharing to navigate the portal in a browser window, and then example scripts to execute within the environments.  We will cover the following content:
+This is the first interactive tutorial session. We will be accessing the interactive environments available via [Open OnDemand on Ceres](https://ceres-ondemand.scinet.usda.gov/). There will be a few introductory slides, a period of screen-sharing to navigate the portal in a browser window, and then example scripts to execute within the environments.  We will cover the following content:
 
 * When to use interactive environments (advantages and limitations) 
 * Overview of Open OnDemand layout and Ceres/Atlas specifics

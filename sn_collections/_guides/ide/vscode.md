@@ -33,7 +33,7 @@ There are two main methods to use VS Code on SCINet clusters. Method 1 is to use
 (OOD VS Code)
 {:.subheader}
 
-1. Go to [Ceres Open Ondemand](http://ceres-ood.scinet.usda.gov/) and log in. 
+1. Go to [Ceres Open Ondemand](https://ceres-ondemand.scinet.usda.gov/) and log in.
 1. From the Interactive Apps menu at the top, select "VS Code Server"
    ![ood vscode interactiv app]({{ images_path }}/vscode/ood_vscode.png)
 1. Select the account you would like to use to run this job, as well as any other desired options. The defaults are usually sufficient, but if you want to run from a project rather than your home directory, be sure to update your working directory path.  
