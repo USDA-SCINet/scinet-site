@@ -51,7 +51,7 @@ There are several interactive apps that can be run in Open OnDemand including [J
 
 If you are using [Atlas Open OnDemand](https://atlas-ood.hpc.msstate.edu/), visit the [Atlas Open OnDemand Guide](https://docs.hpc.msstate.edu/cluster/specifications/atlas.html/ood.php) for more information. 
 
-To access Open OnDemand on the Ceres cluster, go to [Ceres OpenOndemand](http://ceres-ondemand.scinet.usda.gov/)<!--excerpt-->
+To access Open OnDemand on the Ceres cluster, go to [Ceres OpenOndemand](https://ceres-ondemand.scinet.usda.gov/)<!--excerpt-->
 
 ---
 ## Access

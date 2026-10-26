@@ -52,7 +52,7 @@ Please note that you may register for either week 1, week 2, or both, depending 
 ## Pre-Workshop Instructions: 
 To help minimize technical issues and delays at the start of the workshop, please try the following three tests prior to the workshop. 
 
-* **Logging on to [Ceres Open OnDemand (OOD)](http://ceres-ondemand.scinet.usda.gov/):**
+* **Logging on to [Ceres Open OnDemand (OOD)](https://ceres-ondemand.scinet.usda.gov/):**
   * Please confirm you can successfully log in to Ceres OOD with your SCINet account [(see login instructions here)](/guides/access/web-based-login). If you are successful, you will be able to see the Ceres OOD home page.   
 * **Ceres Shell Access:** 
   * When on Ceres OOD, click on the top navigation bar: “Clusters” > “Ceres Shell Access”. A new tab will appear that looks like a shell terminal (e.g., like PowerShell). 

@@ -49,7 +49,7 @@ By the end of the workshop, participants will have a clear understanding of how 
 
 Steps to prepare for the tutorial session:  
 
-* Login to [Ceres Open OnDemand](http://ceres-ondemand.scinet.usda.gov/). For more information on login procedures for web-based SCINet access, see the [SCINet access user guide]({{site.baseurl}}/guides/access/web-based-login).
+* Login to [Ceres Open OnDemand](https://ceres-ondemand.scinet.usda.gov/). For more information on login procedures for web-based SCINet access, see the [SCINet access user guide]({{site.baseurl}}/guides/access/web-based-login).
  
 
 * Open a command-line session by clicking on "Clusters" -> "Ceres Shell Access" on the top menu. This will open a new tab with a command-line session on Ceres' login node.

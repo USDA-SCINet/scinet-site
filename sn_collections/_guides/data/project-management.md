@@ -51,7 +51,7 @@ ipa group-remove-member proj-<project_name> --users=<scinet_username> 
 **Please Note**: If you try to run the commands above and get "ipa: ERROR: Ticket expired", run the `kinit` command, enter your SCINet password, and try again.
 
 * Using the FreeIPA graphical user interface (GUI) via Open OnDemand:
-  * Connect to [Ceres Open OnDemand](http://ceres-ondemand.scinet.usda.gov/).
+  * Connect to [Ceres Open OnDemand](https://ceres-ondemand.scinet.usda.gov/).
   * Under the "Interactive Apps" tab, launch a Desktop session. 
   * Once active, open a browser window and navigate to the FreeIPA web interface at [https://aws-ipa-0.scinet.usda.gov/](https://aws-ipa-0.scinet.usda.gov/). 
   * Login using your SCINet username and password. 
