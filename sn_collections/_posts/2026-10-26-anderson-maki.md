@@ -1,10 +1,10 @@
 ---
-title: "Distinguishing a <em>Salmonella</i> vaccine strain from native <em>Salmonella</i> Typhimurium strains using MALDI-TOF mass spectrometry "
+title: "Distinguishing a <em>Salmonella</em> vaccine strain from native <em>Salmonella</em> Typhimurium strains using MALDI-TOF mass spectrometry "
 
 description: "ARS researchers used MALDI-TOF mass spectrometry to accurately differentiate the Megan Vac 1 vaccine strain from native Salmonella Typhimurium strains."
 categories: [Stories]
 
-excerpt: "Nontyphoidal <em>Salmonella</i> causes approximately 1.3 million infections annually in the United States, costing an estimated $17.1 billion. We hypothesized that an alternative technology, matrix-assisted laser desorption/ionization time-of-flight (MALDI-TOF) mass spectrometry, which generates a protein “fingerprint” from a bacterial colony within minutes, could identify <em>Salmonella</i> vaccine strains accurately and quickly."
+excerpt: "Nontyphoidal <em>Salmonella</em> causes approximately 1.3 million infections annually in the United States, costing an estimated $17.1 billion. We hypothesized that an alternative technology, matrix-assisted laser desorption/ionization time-of-flight (MALDI-TOF) mass spectrometry, which generates a protein “fingerprint” from a bacterial colony within minutes, could identify <em>Salmonella</em> vaccine strains accurately and quickly."
 
 
 
