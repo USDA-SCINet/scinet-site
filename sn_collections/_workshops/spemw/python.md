@@ -18,7 +18,7 @@ parent:
 
 sessions:
   - session:
-    date: 2026-12-08 17:00:00
+    date: 2026-12-08 13:00:00
     time: "1-4:30 PM ET"
 
 ---

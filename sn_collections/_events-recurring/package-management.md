@@ -10,11 +10,17 @@ registration:
     text: Workshop Registration
     url: https://forms.office.com/g/K1qP7Fdcsu
 
-time: 2-5 PM ET
-
 course-list:
   - title: "Software Package/Environment Management Workshop: Python and conda"
   - title: "Software Package/Environment Management Workshop: R"
+
+sessions:
+  - session:
+    date: 2026-12-08 13:00:00
+    end_date: 2026-12-10
+    multiday: "Dec 8-12"
+    time: 1-4:30 PM ET
+
 ---
 
 On December 8 & 10, 2026, the SCINet Office will be leading a 2-day workshop on Software Package/Environment Management.
