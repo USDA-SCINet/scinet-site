@@ -2,6 +2,8 @@
 title: ARS Advanced Research Computing Innovation Fund (FY27)
 description: Internal USDA-ARS funding awards for advanced research computing projects
 permalink: /opportunities/arc-innovation/
+redirect_from: 
+  - /opportunities/ai-innovation/
 layout: page
 
 subnav:
