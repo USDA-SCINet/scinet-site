@@ -32,7 +32,14 @@ subnav: #match navigation in page or add external links
 
 ## ARS Employees
 
-ARS employees can request a SCINet account by filling out an online form (eAuthentication required). Anyone with a usda.gov email address working for ARS should use this form. It may take up to five business days to create an account after the request is approved by the supervisor.
+ARS employees can request a SCINet account by filling out an online form (eAuthentication required). This form is to be used by staff with USDA email accounts in the following categories: 
+* ARS Permanent and Temporary Employees
+* ARS Contractors (Specify COR as Supervisor on request)
+* ARS Visiting Scientists
+* ARS Post-Docs, ORISE Fellows, and Student Trainees
+* OCIO CEC Staff (Providing ARS IT Support)
+
+It may take up to five business days to create an account after the request is approved by the supervisor.
 
 **Additionally, please make sure that you are logged into your USDA Office 365 account prior to accessing either of the forms below otherwise you may receive an error.** 
 
