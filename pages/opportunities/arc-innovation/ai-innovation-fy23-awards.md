@@ -1,22 +1,22 @@
 ---
 title: ARS AI Innovation Fund - FY2023 Awards
 description: Abstracts of AI Innovation Fund proposals funded in FY2023.
-permalink: /opportunities/ai-innovation/fy23-awards
+permalink: /opportunities/arc-innovation/fy23-awards
 author: Brian Stucky 
 layout: page
 
-sidenav_link: /opportunities/ai-innovation/
+sidenav_link: /opportunities/arc-innovation/
 sidenav_append: 
   - title: ARS AI Innovation Fund - FY2021 Awards
-    url: /opportunities/ai-innovation/fy21-awards
+    url: /opportunities/arc-innovation/fy21-awards
   - title: ARS AI Innovation Fund - FY2022 Awards
-    url: /opportunities/ai-innovation/fy22-awards
+    url: /opportunities/arc-innovation/fy22-awards
   - title: ARS AI Innovation Fund - FY2023 Awards
-    url: /opportunities/ai-innovation/fy23-awards
+    url: /opportunities/arc-innovation/fy23-awards
   - title: ARS AI Innovation Fund - FY2024 Awards
-    url: /opportunities/ai-innovation/fy24-awards
+    url: /opportunities/arc-innovation/fy24-awards
   - title: ARS AI Innovation Fund - FY2026 Awards
-    url: /opportunities/ai-innovation/fy26-awards
+    url: /opportunities/arc-innovation/fy26-awards
 
 subnav:
   - title: Funded proposals
