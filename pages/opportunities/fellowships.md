@@ -1,5 +1,5 @@
 ---
-title: USDA ARS Postdoctoral Fellowship Program in Big Data Science and AI Research
+title: USDA ARS Postdoctoral Fellowship Program in Big Data Science and Advanced Research Computing
 description: current listing of SCINet-funded postdocs, administered through ORISE and partner universities
 permalink: /opportunities/fellowships
 # author: Kerrie Geil
@@ -23,7 +23,7 @@ fellowships:
 
 ---
 
-The U.S. Department of Agriculture (USDA), Agricultural Research Service (ARS) SCINet and AI Center of Excellence offer exciting collaborative research opportunities to motivated participants interested in solving agricultural-natural resource related problems. One of the goals of the ORISE Fellowship program is to develop and apply new and emerging technologies including artificial intelligence (AI) and machine learning. Many of these questions rely on the synthesis, integration, and analysis of large, diverse datasets that benefit from high performance computers (HPC) or a cloud computing environment. Fellows will have the opportunity to collaborate on problems of high priority to the USDA ARS, while being trained across a range of skills including AI, machine learning, deep learning, data science, and/or statistical software as needed for the success of the position.
+The U.S. Department of Agriculture (USDA) and Agricultural Research Service (ARS) SCINet offer exciting collaborative research opportunities to motivated participants interested in solving agricultural-natural resource related problems. One of the goals of the ORISE Fellowship program is to develop and apply new and emerging technologies including advanced research computing and machine learning. Many of these questions rely on the synthesis, integration, and analysis of large, diverse datasets that benefit from high performance computers (HPC) or a cloud computing environment. Fellows will have the opportunity to collaborate on problems of high priority to the USDA ARS, while being trained across a range of skills including AI, machine learning, deep learning, data science, and/or statistical software as needed for the success of the position.
 
 ## Postdoc and Masters Fellowships
 
@@ -32,5 +32,7 @@ Interested applicants are encouraged to visit the ORISE link for more informatio
 {% comment %}{% include table.html table=page.fellowships %}{% endcomment %}
 
 
+## Fellowship mentors
 
+SCINet offers postdoctoral fellowship funding to ARS scientists who wish to mentor SCINet fellows working in their labs. For information and to submit a proposal, please visit the [proposal application page](/opportunities/fellowship-mentors).
 
