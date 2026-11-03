@@ -9,6 +9,8 @@ layout: page
 subnav:
   - title: Postdoc and Masters Fellowships
     url: '#postdoc-and-masters-fellowships'
+  - title: Fellowship mentors
+    url: "#fellowship-mentors"
 
 
 fellowships:
