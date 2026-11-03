@@ -21,7 +21,7 @@ concurrency:
 jobs:
   # Build job
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       # Omit installation of packages in "test" group in Gemfile
       BUNDLE_WITHOUT: test
