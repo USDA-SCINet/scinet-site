@@ -82,12 +82,12 @@ Steps to prepare for the tutorial session:
   ```
   mkdir -p /90daydata/shared/$USER/carpentries_workshop 
   cd /90daydata/shared/$USER/carpentries_workshop  
-  cp -r /reference/workshops/carpentries_workshops/unix_shell/sc-shell-lesson . 
+  cp -r /reference/workshops/carpentries_workshops/unix_shell/sc-shell-lesson/shell-lesson-data/ . 
   ```
   {:.copy-code}
 
 
-Link to Carpentries curriculum: [The Unix Shell](https://librarycarpentry.github.io/lc-shell/index.html) 
+Link to Carpentries curriculum: [The Unix Shell](https://swcarpentry.github.io/shell-novice/) 
 
 
 ## November 12, 2026: Introduction to Git 
@@ -95,5 +95,5 @@ You will need a GitHub account for this training. You can create your account at
 
 Please note that for official USDA work, you may not use a free GitHub account. Instead, you must use USDA's GitHub Enterprise Cloud platform. Your unit can purchase GitHub Enterprise Cloud licenses through the SLIM system, which is also used for purchasing other centrally managed software.   If you are only using GitHub for this Carpentries course, you may use a free account.
 
-Link to Carpentries curriculum: [Introduction to Git](https://librarycarpentry.github.io/lc-git/index.html) 
+Link to Carpentries curriculum: [Introduction to Git](https://swcarpentry.github.io/git-novice/) 
 
