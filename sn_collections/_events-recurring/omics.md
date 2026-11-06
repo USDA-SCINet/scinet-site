@@ -20,6 +20,11 @@ archive-label: Webinar Recordings
 
 sessions:
   - session:
+    title: "Metagenome and Genome Assembly of Ruminant Microbial Communities Using Long-Read Sequencing Data"
+    date: 2026-11-12
+    time: 2-3pm ET
+    presenter: Derek M. Bickhart, Ph.D.
+  - session:
     title: Detection of interactions between biomolecules with novel sequencing based tools
     date: 2025-06-12
     time: 1-2pm ET
