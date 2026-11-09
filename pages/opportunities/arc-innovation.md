@@ -20,7 +20,7 @@ subnav:
 
 ## Overview
 
-The goal of the ARS Advanced Research Computing Innovation Fund is to enable cutting-edge ARS science by promoting the use of advanced research computing tools and methods in agricultural research.<!-- The FY2026 competition is now complete, and instructions specific to the FY2027 call for proposals will be posted here in early FY2027.-->For FY2027, we expect to fund 4 to 6 proposals at up to $100,000 each, depending on availability of funds. Funds will likely be available for use some time in the first half of 2027 and will need to be spent or placed in collaborative agreements by the end of FY2027. For questions, contact Brian Stucky, SCINet computational biologist and acting ARS CSIO, or Heather Savoy, SCINet computational biologist (heather.savoy@usda.gov).
+The goal of the ARS Advanced Research Computing Innovation Fund is to enable cutting-edge ARS science by promoting the use of advanced research computing tools and methods in agricultural research.<!-- The FY2026 competition is now complete, and instructions specific to the FY2027 call for proposals will be posted here in early FY2027.--> For FY2027, we expect to fund 4 to 6 proposals at up to $100,000 each, depending on availability of funds. Funds will likely be available for use some time in the first half of 2027 and will need to be spent or placed in collaborative agreements by the end of FY2027. For questions, contact Brian Stucky, SCINet computational biologist and acting ARS CSIO, or Heather Savoy, SCINet computational biologist (heather.savoy@usda.gov).
 
 **Deadline for proposal submission:** <!--TBD -->Close of business on Friday, December 4, 2026.
  
