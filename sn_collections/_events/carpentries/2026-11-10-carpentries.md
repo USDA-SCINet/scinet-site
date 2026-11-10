@@ -73,7 +73,7 @@ Steps to prepare for the tutorial session:
 * **Open a command-line session** by clicking on "Clusters" -> "Ceres Shell Access" on the top menu. This will open a new tab with a command-line session on Ceres' login node. 
 * **Request resources** on a compute node by running the following command. 
   ```
-  srun --reservation=workshop -A scinet_workshop2 -t 05:00:00 -n 1 --mem 8G --pty bash 
+  srun --reservation=Nov10_workshop -A scinet_workshop2 -t 05:00:00 -n 1 --mem 8G --pty bash 
   ``` 
   {:.copy-code}
 
