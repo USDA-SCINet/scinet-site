@@ -68,28 +68,29 @@ llama-cli -m /reference/llms/gemma-4/gemma-4-31b-it-bf16.gguf
 
 {% include table caption="Models currently available in /reference/llms" content="| Model family | Model name | Parameters (billions) | Max. context length (tokens) | Reasoning | Developer |
 | ------------ | -------------------- | --------------------- | -------------- | --------- | --------- |
-| Gemma 3      | [Gemma 3 27B](https://deepmind.google/models/gemma/gemma-3/) | 27.4 | 131,072 | N | Google Deepmind |
-| Gemma 3      | [Gemma 3 12B](https://deepmind.google/models/gemma/gemma-3/) | 12.2 | 131,072 | N | Google Deepmind |
-| Gemma 3      | [Gemma 3 4B](https://deepmind.google/models/gemma/gemma-3/) | 4.3 | 131,072 | N | Google Deepmind |
-| Gemma 3      | [Gemma 3 1B](https://deepmind.google/models/gemma/gemma-3/) | 1.0 | 32,768 | N | Google Deepmind |
-| Gemma 3      | [Gemma 3 270M](https://deepmind.google/models/gemma/gemma-3/) | 0.3 | 32,768 | N | Google Deepmind |
 | Gemma 4      | [Gemma 4 31B](https://deepmind.google/models/gemma/gemma-4/) | 31.3 | 262,144 | Y | Google Deepmind |
 | Gemma 4      | [Gemma 4 26B‑A4B](https://deepmind.google/models/gemma/gemma-4/) | 25.8 | 262,144 | Y | Google Deepmind |
 | Gemma 4      | [Gemma 4 12B](https://deepmind.google/models/gemma/gemma-4/) | 12.0 | 262,144 | Y | Google Deepmind |
 | Gemma 4      | [Gemma 4 E4B](https://deepmind.google/models/gemma/gemma-4/) | 7.9 | 131,072 | Y | Google Deepmind |
 | Gemma 4      | [Gemma 4 E2B](https://deepmind.google/models/gemma/gemma-4/) | 5.1 | 131,072 | Y | Google Deepmind |
+| Gemma 3      | [Gemma 3 27B](https://deepmind.google/models/gemma/gemma-3/) | 27.4 | 131,072 | N | Google Deepmind |
+| Gemma 3      | [Gemma 3 12B](https://deepmind.google/models/gemma/gemma-3/) | 12.2 | 131,072 | N | Google Deepmind |
+| Gemma 3      | [Gemma 3 4B](https://deepmind.google/models/gemma/gemma-3/) | 4.3 | 131,072 | N | Google Deepmind |
+| Gemma 3      | [Gemma 3 1B](https://deepmind.google/models/gemma/gemma-3/) | 1.0 | 32,768 | N | Google Deepmind |
+| Gemma 3      | [Gemma 3 270M](https://deepmind.google/models/gemma/gemma-3/) | 0.3 | 32,768 | N | Google Deepmind |
 | gpt-oss      | [gpt-oss-120b](https://github.com/openai/gpt-oss) | 116.8 | 131,072 | Y | OpenAI |
 | gpt-oss      | [gpt-oss-20b](https://github.com/openai/gpt-oss) | 20.9 | 131,072 | Y | OpenAI |
+| Llama 3.3    | [Llama 3.3 70B Instruct](https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_3/) | 70.6 | 131,072 | N | Meta |
 | Llama 3.1    | [Llama 3.1 70B Instruct](https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_1/) | 70.6 | 131,072 | N | Meta |
 | Llama 3.1    | [Llama 3.1 8B Instruct](https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_1/) | 8.0 | 131,072 | N | Meta |
-| Llama 3.3    | [Llama 3.3 70B Instruct](https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_3/) | 70.6 | 131,072 | N | Meta |
 | Muse Glimmer | [Muse Glimmer 30B](https://developer.meta.com/ai/models/muse-glimmer/) | 29.8 | 131,072 | Y | Meta |
+| Nemotron 3.5 | [Nemotron 3.5 Bolt 74B-A9B 24GB](https://research.nvidia.com/labs/nemotron/Nemotron-3.5-Bolt-24GB/) | 74.0 | 262,144* | Y | NVIDIA |
 | Nemotron 3   | [Nemotron 3 Super 120B A12B](https://research.nvidia.com/labs/nemotron/Nemotron-3-Super/) | 120.7 | 262,144* | Y | NVIDIA |
 | Nemotron 3   | [Nemotron 3 Nano 30B A3B](https://research.nvidia.com/labs/nemotron/Nemotron-3/) | 31.6 | 262,144* | Y | NVIDIA |
-| Olmo 3       | [Olmo 3 32B Think](https://allenai.org/olmo) | 32.2 | 65,536 | Y | Allen AI Institute |
-| Olmo 3       | [Olmo 3 7B Think](https://allenai.org/olmo) | 7.3 | 65,536 | Y | Allen AI Institute |
 | Olmo 3.1     | [Olmo 3.1 32B Instruct](https://allenai.org/olmo) | 32.2 | 65,536 | N | Allen AI Institute |
 | Olmo 3.1     | [Olmo 3.1 32B Think](https://allenai.org/olmo) | 32.2 | 65,536 | Y | Allen AI Institute |" %}
+| Olmo 3       | [Olmo 3 32B Think](https://allenai.org/olmo) | 32.2 | 65,536 | Y | Allen AI Institute |
+| Olmo 3       | [Olmo 3 7B Think](https://allenai.org/olmo) | 7.3 | 65,536 | Y | Allen AI Institute |
 
 \* The Nemotron 3 models have a maximum context length of 262,144 tokens by default, but this can be extended up to 1,000,000 tokens with properly configured model serving software.
 
