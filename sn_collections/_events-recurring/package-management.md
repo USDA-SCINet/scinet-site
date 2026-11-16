@@ -16,20 +16,20 @@ course-list:
 
 sessions:
   - session:
-    date: 2026-12-08 13:00:00
-    end_date: 2026-12-10
-    multiday: "Dec 8-12"
+    date: 2027-01-20 13:00:00
+    end_date: 2027-01-22
+    multiday: "Jan 20-22"
     time: 1-4:30 PM ET
 
 ---
 
-On December 8 & 10, 2026, the SCINet Office will be leading a 2-day workshop on Software Package/Environment Management.
+On January 20 & 22, 2027, the SCINet Office will be leading a 2-day workshop on Software Package/Environment Management.
 
 In this workshop, we will cover best practices for managing software packages and computing environments on SCINet's supercomputers. This will be a hands-on workshop that will provide you with the practical knowledge and skills you need to spend less time worrying about package management and more time focusing on your research!
 
 Here is a daily breakdown of the topics:
-* **Day 1, December 8, 1:00 PM - 4:30 PM ET: Introduction, Python & conda**
-* **Day 2, December 10, 1:00 PM - 4:30 PM ET: R**
+* **Day 1, January 20, 1:00 PM - 4:30 PM ET: Introduction, Python & conda**
+* **Day 2, January 22, 1:00 PM - 4:30 PM ET: R**
 
 [To register for the Software Package/Environment Management Workshop, please fill out this form.](https://forms.office.com/g/K1qP7Fdcsu)
 
