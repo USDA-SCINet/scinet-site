@@ -59,7 +59,7 @@ For examples of successful proposal topics, please see the abstracts of proposal
 
 ## Proposal format and submission
 
-All proposals must be submitted using the [online submission form](https://forms.office.com/g/uTnf2jdZDV)<!-- online submission form (TBA)-->. The PI's RL or supervisor must approve the proposal prior to submission (approval will be indicated on the submission form). (If the PI is an RL, their supervisor is still expected to approve the proposal. Any proposal listing the PI as the approver will not be considered for funding.) A complete application will include:
+All proposals must be submitted using the [online submission form](https://forms.cloud.microsoft/g/rWtNpPaTaP)<!-- online submission form (TBA)-->. The PI's RL or supervisor must approve the proposal prior to submission (approval will be indicated on the submission form). (If the PI is an RL, their supervisor is still expected to approve the proposal. Any proposal listing the PI as the approver will not be considered for funding.) A complete application will include:
 * A proposal abstract of no more than 1,500 characters.
 * Proposal (project description) of up to 2 pages in length that clearly lays out a specific challenge or question, proposes a method or tool to be developed or applied to solve the challenge or to answer the question, and demonstrates that the research team has the capability to complete the project. Deliverables for the project should be defined.
 * A detailed project budget provided as an Excel spreadsheet. Please use [REE budget form 455](https://www.ars.usda.gov/ARSUserFiles/FMAD/Agreements/ree-455-112018.xlsx).
