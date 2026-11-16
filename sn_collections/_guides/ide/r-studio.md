@@ -87,10 +87,10 @@ While the RStudio session is running, you can connect and disconnect from RStudi
 
 ### Stop Your RStudio Session
 
+Once you click **Launch** and the session starts, the requested resources are allocated to your job and are not available to other users, even when you are not actively using RStudio. Please be considerate: request only the resources you need and delete your session when done.
+
 1. Save your work.
 2. Return to the Open OnDemand **My Interactive Sessions** page.
 3. Find your RStudio session and click the red **Cancel** button to end the session.
 
-![Open OnDemand RStudio session card with Cancel button]({{ images_path }}/rstudio/ood-rstudio-cancel.png)
-
-Once you click **Launch** and the session starts, the requested resources are allocated to your job and are not available to other users, even when you are not actively using RStudio. Please be considerate: request only the resources you need and delete your session when done.
+   ![Open OnDemand RStudio session card with Cancel button]({{ images_path }}/rstudio/ood-rstudio-cancel.png)
