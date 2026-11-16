@@ -19,6 +19,11 @@ archive-label: SCINet Corner Recordings
 
 sessions:
   - session:
+    title: "Open Q&A"
+    date: 2026-12-03
+    time: 1-2 pm ET
+    excerpt: "This month, we will have an open question and answer session. Please bring your questions and research computing challenges and we will do our best to help!"
+  - session:
     title: "Introduction to SCINet"
     date: 2026-10-29
     time: 1-2 pm ET
