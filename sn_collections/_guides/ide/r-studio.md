@@ -43,16 +43,16 @@ A few Ceres-specific notes:
 2. **Data access:** your home directory is mounted inside the RStudio Server container, and the VRSC has configured Singularity to mount the /project directory.  $TMPDIR (which on a compute node is per-job local scratch on the compute node’s direct attached storage that gets deleted at the end of SLURM job) is mounted inside the container at /tmp.
 3. **Software installation:** The provided SLURM job script creates a ~/.Renviron file in your home directory that allows RStudio to install additional R packages into your home directory (the container image is immutable). Installing a lot of R libraries may contribute to the default 30G soft limit quota on your home directory being surpassed. To overcome this issue you can move R directory from your home directory to your project directory and create a symbolic link to the new location. In RStudio click on "Terminal" and enter the following commands substituting your values:
 
-```
-cd
-mkdir /project/<your_project_dir>/<account_name>
-mv R /project/<your_project_dir>/<account_name>/
-chgrp -R proj-<your_project_dir> /project/<your_project_dir>/<account_name>/R
-chmod -R g+s /project/<your_project_dir>/<account_name>/R
-ln -s /project/<your_project_dir>/<account_name>/R R
-```
+   ```
+   cd
+   mkdir /project/<your_project_dir>/<account_name>
+   mv R /project/<your_project_dir>/<account_name>/
+   chgrp -R proj-<your_project_dir> /project/<your_project_dir>/<account_name>/R
+   chmod -R g+s /project/<your_project_dir>/<account_name>/R
+   ln -s /project/<your_project_dir>/<account_name>/R R
+   ```
 
-The ``mv`` and ``chgrp`` commands may take longer time depending on how much data you have in the R directory. You will need to restart R for this new location to take effect. In the "console" window type ``quit()`` and click on "Start New Session".
+   The ``mv`` and ``chgrp`` commands may take longer time depending on how much data you have in the R directory. You will need to restart R for this new location to take effect. In the "console" window type ``quit()`` and click on "Start New Session".
 
 4. **Default working directory:** By default RStudio sets working directory to your home directory. You can change the default by clicking on Tools -> Global Options... In the General tab click on Browse, then on the three dots on the right and enter path to the folder, e.g. /project/<your_project_dir>. You can then navigate further to a subdirectory. When done click on "Choose" button, and then on "OK". This will be the default working directory that will show in the panel on the right next time you start RStudio or restart R in the RStudio.
 
