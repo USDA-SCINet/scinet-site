@@ -41,5 +41,5 @@ All applications must be submitted using the [online submission form](https://fo
  
 **Deadline for application submission:** Close of business on Friday, December 4, 2026.
  
-**Eligibility:** ARS Category 1, 4, or 6 scientists with RL or supervisor approval. Please note that ARS scientists who served as an internship mentor in 2026 are eligible to serve as a mentor again in 2027 and are welcome to apply. 
+**Eligibility:** ARS Category 1, 4, or 6 scientists with RL or supervisor approval. Please note that ARS scientists who served as an internship mentor in 2026 are eligible to serve as a mentor again in 2027 and are welcome to apply. A scientist may submit only one application as lead mentor but may be a co-mentor on multiple applications.
 
