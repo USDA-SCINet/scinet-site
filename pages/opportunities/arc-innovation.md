@@ -20,7 +20,7 @@ subnav:
 
 ## Overview
 
-The goal of the ARS Advanced Research Computing Innovation Fund is to enable cutting-edge ARS science by promoting the use of advanced research computing tools and methods in agricultural research.<!-- The FY2026 competition is now complete, and instructions specific to the FY2027 call for proposals will be posted here in early FY2027.-->For FY2027, we expect to fund 4 to 6 proposals at up to $100,000 each, depending on availability of funds. Funds will likely be available for use some time in the first half of 2027 and will need to be spent or placed in collaborative agreements by the end of FY2027. For questions, contact Brian Stucky, SCINet computational biologist and acting ARS CSIO, or Heather Savoy, SCINet computational biologist (heather.savoy@usda.gov).
+The goal of the ARS Advanced Research Computing Innovation Fund is to enable cutting-edge ARS science by promoting the use of advanced research computing tools and methods in agricultural research.<!-- The FY2026 competition is now complete, and instructions specific to the FY2027 call for proposals will be posted here in early FY2027.--> For FY2027, we expect to fund 4 to 6 proposals at up to $100,000 each, depending on availability of funds. Funds will likely be available for use some time in the first half of 2027 and will need to be spent or placed in collaborative agreements by the end of FY2027. For questions, contact Brian Stucky, SCINet computational biologist and acting ARS CSIO, or Heather Savoy, SCINet computational biologist (heather.savoy@usda.gov).
 
 **Deadline for proposal submission:** <!--TBD -->Close of business on Friday, December 4, 2026.
  
@@ -59,7 +59,7 @@ For examples of successful proposal topics, please see the abstracts of proposal
 
 ## Proposal format and submission
 
-All proposals must be submitted using the [online submission form](https://forms.office.com/g/uTnf2jdZDV)<!-- online submission form (TBA)-->. The PI's RL or supervisor must approve the proposal prior to submission (approval will be indicated on the submission form). (If the PI is an RL, their supervisor is still expected to approve the proposal. Any proposal listing the PI as the approver will not be considered for funding.) A complete application will include:
+All proposals must be submitted using the [online submission form](https://forms.cloud.microsoft/g/rWtNpPaTaP)<!-- online submission form (TBA)-->. The PI's RL or supervisor must approve the proposal prior to submission (approval will be indicated on the submission form). (If the PI is an RL, their supervisor is still expected to approve the proposal. Any proposal listing the PI as the approver will not be considered for funding.) A complete application will include:
 * A proposal abstract of no more than 1,500 characters.
 * Proposal (project description) of up to 2 pages in length that clearly lays out a specific challenge or question, proposes a method or tool to be developed or applied to solve the challenge or to answer the question, and demonstrates that the research team has the capability to complete the project. Deliverables for the project should be defined.
 * A detailed project budget provided as an Excel spreadsheet. Please use [REE budget form 455](https://www.ars.usda.gov/ARSUserFiles/FMAD/Agreements/ree-455-112018.xlsx).

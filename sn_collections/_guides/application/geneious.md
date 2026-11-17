@@ -13,13 +13,11 @@ subnav:
     url: '#activating'
   - title: Moving to a new Device
     url: '#moving-to-a-new-device'
-  - title: Using Geneious on Ceres
-    url: '#using-geneious-on-the-ceres-cluster'
 ---
 
-SCINet manages licenses for [Geneious Prime](https://www.geneious.com/features/prime).  The licenses are paid for using individual unit funds and are purchased on an annual basis. <!--excerpt-->  Buying as a group provides better pricing for all.  For information on purchasing a license please [contact the VRSC]({{ site.baseurl }}/about/contact).
+SCINet manages licenses for [Geneious Prime](https://www.geneious.com/features/prime).  The licenses are paid for using individual unit funds and are purchased on an annual basis. <!--excerpt-->  Buying as a group provides better pricing for all.  For information on purchasing a license please contact ARS-Software-Renewal@usda.gov.
 
-Note these licenses need to be activated with eAuth and Geneious Prime version 2026.1.1 or later is required to work with your LincPass.
+Note these licenses need to be activated with an active SCINet account and eAuth. Geneious Prime version **2026.1.1 or later** is required to work with your LincPass.
 
 {% include images_path %}
 
@@ -76,34 +74,3 @@ You can still deactivate the license on the [geneious website](https://www.genei
 
 
 After releasing the license go through the [activation steps](#activating) above to reactivate on your new device.
-
-
-## Using Geneious on the Ceres Cluster
-
-Geneious Prime can also be accessed via [OpenOnDemand](https://scinet.usda.gov/guides/use/open-ondemand) which will allow you to run Geneious Prime directly on a cluster node.
-
-<div class="shadow-2 usa-alert usa-alert--warning">
-<div class="usa-alert__body">
-<h4 class="usa-alert__heading">Each node counts as a separate activation of your license</h4>
-<div class="usa-alert__text" markdown=1>
-
-Each node on the cluster you use with Geneious would count as a separate activation of your license and you can only release and move to a new device twice in 30 days.  
-
-To avoid this, always request a specific node when using Geneious on the cluster with the "-w nodename" option, where "nodename" is the specific node you would like to use.  
-
-For example:  
-```
--w ceres20-compute-5
-```
-
-</div>
-</div>
-</div>
-
-1. Login to OpenOnDemand (OOD) as usual, then select "Geneious: Ceres" from the interactve apps menu.  
-   ![Picking Geneious in OOD menus]({{ images_path }}/geneious/menu.png)
-2. Choose your version and options.  
-   ![Choosing options for geneious run in OOD]({{ images_path }}/geneious/options.png)
-3. Finally click "Launch Geneious: Ceres".  
-   ![Launching Geneious session in OOD]({{ images_path }}/geneious/launch.png)
-  

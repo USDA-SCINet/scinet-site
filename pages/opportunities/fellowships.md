@@ -4,6 +4,7 @@ description: current listing of SCINet-funded postdocs, administered through ORI
 permalink: /opportunities/fellowships
 # author: Kerrie Geil
 layout: page
+published: false
 
 
 subnav:

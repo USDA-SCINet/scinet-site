@@ -49,8 +49,9 @@
 {% assign latest = nil %}
 {% endif %}
 
-{% if parent.recurring or parent.course-list or include.parenttitle %}
-{% if include.parenttitle %}
+{% if parent.recurring or parent.course-list or include.parenttitle %}{% if parent.hide-parent %}
+{% assign parenttitle = nil %}
+{% elsif include.parenttitle %}
 {% assign parenttitle = include.parenttitle %}
 {% elsif parent.title == title %}
 {% assign parenttitle = nil %}

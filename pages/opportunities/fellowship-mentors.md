@@ -3,6 +3,8 @@ title: ARS SCINet Postdoctoral Fellowships Program (FY27)
 description: Internal USDA-ARS funding for SCINet postdoctoral fellowships.
 permalink: /opportunities/fellowship-mentors
 layout: page
+redirect_from: 
+  - /opportunities/fellowships
 
 subnav:
   - title: Overview

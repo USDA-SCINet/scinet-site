@@ -134,8 +134,8 @@ primary:
     links:
       - title: SAC Membership
         url: /opportunities/SAC
-      - title: Fellowships (PhD & MS)
-        url: /opportunities/fellowships
+#      - title: Fellowships (PhD & MS)
+#        url: /opportunities/fellowships
       - title: Advanced RC Innovation Fund
         url: /opportunities/arc-innovation/
       - title: Postdoctoral Fellowship Mentor Proposals
