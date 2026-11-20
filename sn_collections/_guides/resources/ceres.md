@@ -46,13 +46,13 @@ hardware-table:
   relabel: true
   caption: Detailed Hardware Specifications
   data:
-    - Number of Nodes: 72
+    - Number of Nodes: 76
       Processors per Node: Two 24-core Intel Xeon 6240R
       Logical Cores per Node: 96
       Memory per Node: 768 GB DDR3 ECC
       Local Storage: 1.5 TB SSD
       Constraint Flags: AVX, AVX2, AVX512, INTEL, CASCADELAKE, CERES20
-    - Number of Nodes: 15
+    - Number of Nodes: 11
       Processors per Node: Two 24-core Intel Xeon 6248R
       Logical Cores per Node: 96
       Memory per Node: 1,536 GB DDR3 ECC
