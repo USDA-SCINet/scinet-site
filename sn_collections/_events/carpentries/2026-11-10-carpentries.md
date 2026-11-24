@@ -36,10 +36,6 @@ subnav:
         url: '#november-12-2026-introduction-to-git'
   - title: An Introduction to R
     url: '#an-introduction-to-R'
-  - title: Introduction to R
-    url: '#november-30-2026-an-introduction-to-r'
-  - title: Programming in R
-    url: '#december-3-2026-an-introduction-to-r'
 ---
 
 The SCINet Office, in collaboration with ARS's certified Carpentries instructors, is offering a Carpentries workshop that will teach participants the Unix command line, version control with Git, and R programming.<!--excerpt--> The workshop will span two weeks:  
