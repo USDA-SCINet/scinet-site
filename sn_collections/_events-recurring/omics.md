@@ -20,6 +20,11 @@ archive-label: Webinar Recordings
 
 sessions:
   - session:
+    title: "How well do pigs actually model the human immune system? Lessons from recent advances in swine immunology"
+    date: 2026-12-10
+    time: 2-3pm ET
+    presenter: "John Driver, Ph.D"
+  - session:
     title: "Metagenome and Genome Assembly of Ruminant Microbial Communities Using Long-Read Sequencing Data"
     date: 2026-11-12
     time: 2-3pm ET
