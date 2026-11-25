@@ -27,12 +27,15 @@ registration:
 subnav:
   - title: Pre-Workshop Instructions
     url: '#pre-workshop-instructions'
-  - title: The Unix Shell
-    url: '#november-10-2026-the-unix-shell'
-  - title: Introduction to Git 
-    url: '#november-12-2026-introduction-to-git'
- # - title: Programming in R
- #   url: '#programming-in-r'
+  - title: Unix command line and version control with Git
+    url: '#unix-command-line-and-version-control-with-git'
+    subnav:
+      - title: The Unix Shell
+        url: '#november-10-2026-the-unix-shell'
+      - title: Introduction to Git 
+        url: '#november-12-2026-introduction-to-git'
+  - title: An Introduction to R
+    url: '#an-introduction-to-R'
 ---
 
 The SCINet Office, in collaboration with ARS's certified Carpentries instructors, is offering a Carpentries workshop that will teach participants the Unix command line, version control with Git, and R programming.<!--excerpt--> The workshop will span two weeks:  
@@ -64,9 +67,11 @@ To help minimize technical issues and delays at the start of the workshop, pleas
       * Optional Slurm Arguments: (leave empty)
       * Click the "Launch" button.
   * Wait a moment for the job card to update from "Queued" to "Running".
-  * Please confirm that clicking on the "Connect to RStudio Server" button opens a new tab with the RStudio Server interface. 
+  * Please confirm that clicking on the "Connect to RStudio Server" button opens a new tab with the RStudio Server interface.
+ 
+## Unix command line and version control with Git
 
-## November 10, 2026: The Unix Shell 
+### November 10, 2026: The Unix Shell 
 Steps to prepare for the tutorial session: 
 
 * **Login to Ceres Open OnDemand.** For more information on login procedures for web-based SCINet access, see the [SCINet access user guide](/guides/access/web-based-login). 
@@ -90,10 +95,79 @@ Steps to prepare for the tutorial session:
 Link to Carpentries curriculum: [The Unix Shell](https://swcarpentry.github.io/shell-novice/) 
 
 
-## November 12, 2026: Introduction to Git 
+### November 12, 2026: Introduction to Git 
 You will need a GitHub account for this training. You can create your account at https://github.com/ Click the Sign-up button.  
 
 Please note that for official USDA work, you may not use a free GitHub account. Instead, you must use USDA's GitHub Enterprise Cloud platform. Your unit can purchase GitHub Enterprise Cloud licenses through the SLIM system, which is also used for purchasing other centrally managed software.   If you are only using GitHub for this Carpentries course, you may use a free account.
 
 Link to Carpentries curriculum: [Introduction to Git](https://swcarpentry.github.io/git-novice/) 
 
+
+## An Introduction to R
+
+### November 30, 2026: An Introduction to R 
+
+Link to Carpentries curriculum: [An Introduction to R ](https://swcarpentry.github.io/r-novice-gapminder/)  
+
+Steps to prepare for the tutorial session: 
+
+* **Login to Ceres Open OnDemand.** For more information on login procedures for web-based SCINet access, see the [SCINet access user guide](/guides/access/web-based-login). 
+
+* **Open a command-line session** by clicking on "Clusters" -> "Ceres Shell Access" on the top menu. This will open a new tab with a command-line session on Ceres' login node. 
+
+* **Request resources** on a compute node by running the following command. 
+  ```
+  srun --reservation=Nov30_workshop -A scinet_workshop2 -t 05:00:00 -n 1 --mem 8G --pty bash 
+  ``` 
+  {:.copy-code}
+
+* **Create a workshop working directory** by running the following commands.  
+  Note: you do not have to edit the commands with your username as it will be determined by the $USER variable.  
+  ```
+  mkdir -p /90daydata/shared/$USER/carpentries_workshop 
+  cd /90daydata/shared/$USER/carpentries_workshop  
+  mkdir intro_R
+  cd intro_R
+  cp -r /reference/workshops/carpentries_workshops/intro_R/gapminder .
+
+  ```
+  {:.copy-code}
+
+* **RStudio Server:** 
+  * Back on the main Ceres OOD tab, click on the top or side navigation bar: "Interactive Apps" > "RStudio Server".  
+  * Fill the input fields with the following (input fields not listed below can be left at their default values):  
+      * Account: `scinet_workshop2` 
+      * Queue: ceres
+      * QOS: ceres
+      * R Version: 4.5.3
+      * Number of hours: 4
+      * Number of cores: 1
+      * Memory required: 8GB
+      * Optional Slurm Arguments: --reservation=Nov30_workshop
+      * Click the "Launch" button.
+  * Wait a moment for the job card to update from "Queued" to "Running".
+  * Please confirm that clicking on the "Connect to RStudio Server" button opens a new tab with the RStudio Server interface. 
+
+
+## December 2, 2026: An Introduction to R 
+
+Link to Carpentries curriculum: [An Introduction to R ](https://swcarpentry.github.io/r-novice-gapminder/)  
+
+Steps to prepare for the tutorial session: 
+
+* **Login to Ceres Open OnDemand.** For more information on login procedures for web-based SCINet access, see the [SCINet access user guide](/guides/access/web-based-login). 
+
+* **RStudio Server:** 
+  * Back on the main Ceres OOD tab, click on the top or side navigation bar: "Interactive Apps" > "RStudio Server".  
+  * Fill the input fields with the following (input fields not listed below can be left at their default values):  
+      * Account: `scinet_workshop2` 
+      * Queue: ceres
+      * QOS: ceres
+      * R Version: 4.5.3
+      * Number of hours: 4
+      * Number of cores: 1
+      * Memory required: 8GB
+      * Optional Slurm Arguments: --reservation=Dec2_workshop
+      * Click the "Launch" button.
+  * Wait a moment for the job card to update from "Queued" to "Running".
+  * Please confirm that clicking on the "Connect to RStudio Server" button opens a new tab with the RStudio Server interface. 
