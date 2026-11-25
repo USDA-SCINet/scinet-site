@@ -149,7 +149,7 @@ Steps to prepare for the tutorial session:
   * Please confirm that clicking on the "Connect to RStudio Server" button opens a new tab with the RStudio Server interface. 
 
 
-## December 2, 2026: An Introduction to R 
+### December 2, 2026: An Introduction to R 
 
 Link to Carpentries curriculum: [An Introduction to R ](https://swcarpentry.github.io/r-novice-gapminder/)  
 
